@@ -1112,6 +1112,7 @@ FUNCTION ide2 (ignore)
                                 IF MID$(temp$, i, 1) = sp$ THEN MID$(temp$, i, 1) = " "
                             NEXT
                             temp$ = _TRIM$(temp$)
+                            IF UCASE$(LEFT$(temp$,10)) = "SUB VWATCH"  THEN temp$ = "End of Program"
                             IF LEN(temp$) THEN
                                 y = y + 1: x = 1
                                 temp$ = "Caused by (or after): " + CHR$(1) + temp$
@@ -20895,8 +20896,8 @@ SUB ExportCodeAs (docFormat$)
                 END IF
             CASE "RANDOMIZE": IF UCASE$(LEFT$(la$, 5)) = "USING" THEN kw$ = kw$ + " " + LEFT$(la$, 5): page$ = "RANDOMIZE USING": in% = -1
             CASE "SELECT"
-                IF UCASE$(LEFT$(la$, 4)) = "CASE" THEN kw$ = kw$ + " " + LEFT$(la$, 4): page$ = "SELECT CASE": in% = -1
-                IF UCASE$(LEFT$(la$, 9)) = "EVERYCASE" THEN kw$ = kw$ + " " + LEFT$(la$, 9): page$ = "SELECT CASE": in% = -1
+                IF UCASE$(LEFT$(la$, 4)) = "CASE" THEN kw$ = kw$ + " " + LEFT$(la$, 4): page$ = "SELECT CASE": fu% = -1: bo% = -1: in% = -1
+                IF UCASE$(LEFT$(la$, 9)) = "EVERYCASE" THEN kw$ = kw$ + " " + LEFT$(la$, 9): page$ = "SELECT CASE": fu% = -1: bo% = -1: in% = -1
             CASE "VIEW": IF UCASE$(LEFT$(la$, 5)) = "PRINT" THEN kw$ = kw$ + " " + LEFT$(la$, 5): page$ = "VIEW PRINT": in% = -1
             CASE "INPUT", "PRINT", "WRITE": IF LEFT$(la$, 1) = "#" THEN page$ = page$ + " (file statement)"
         END SELECT

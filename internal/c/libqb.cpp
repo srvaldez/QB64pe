@@ -1803,7 +1803,7 @@ void keydown_unicode(uint32 x) {
     }
     // note: full width latin characters will be mapped to their normal width equivalents
     // Wikipedia note: Range U+FF01\96FF5E reproduces the characters of ASCII 21 to 7E as fullwidth forms, that is, a fixed width form used in CJK computing.
-    // This is useful for typesetting Latin characters in a CJK  environment. U+FF00 does not correspond to a fullwith ASCII 20 (space character), since that
+    // This is useful for typesetting Latin characters in a CJK  environment. U+FF00 does not correspond to a fullwidth ASCII 20 (space character), since that
     // role is already fulfilled by U+3000 "ideographic space."
     if ((x >= 0x0000FF01) && (x <= 0x0000FF5E)) {
         keydown_ascii(x - 0x0000FF01 + 0x21);
@@ -1832,7 +1832,7 @@ void keyup_unicode(uint32 x) {
     }
     // note: full width latin characters will be mapped to their normal width equivalents
     // Wikipedia note: Range U+FF01\96FF5E reproduces the characters of ASCII 21 to 7E as fullwidth forms, that is, a fixed width form used in CJK computing.
-    // This is useful for typesetting Latin characters in a CJK  environment. U+FF00 does not correspond to a fullwith ASCII 20 (space character), since that
+    // This is useful for typesetting Latin characters in a CJK  environment. U+FF00 does not correspond to a fullwidth ASCII 20 (space character), since that
     // role is already fulfilled by U+3000 "ideographic space."
     if ((x >= 0x0000FF01) && (x <= 0x0000FF5E)) {
         keyup_ascii(x - 0x0000FF01 + 0x21);
@@ -13979,7 +13979,7 @@ finish:;
         i++;
     } //-
     if (num_significant_digits) {
-        // build nomalised mantissa
+        // build normalised mantissa
         for (i2 = 0; i2 < num_significant_digits; i2++) {
             if (i2 == 1) {
                 built_number[i] = 46;
@@ -14082,7 +14082,7 @@ hex: // hex/oct
         } // i
         return hex_value;
     }
-    return 0; //& followied by unknown
+    return 0; //& followed by unknown
 }
 
 int32 unsupported_port_accessed = 0;
@@ -17115,7 +17115,7 @@ void sub_graphics_put(float x1f, float y1f, void *element, int32 option, uint32 
         }
     }
 
-    // array size check (avoid reading unacclocated memory)
+    // array size check (avoid reading unallocated memory)
     if (bits == 32)
         z *= 32;
     z = (z + 7) >> 3; // bits per row->bytes per row
@@ -21434,7 +21434,7 @@ numeric_spacer:
     if (asterisk_spaces)
         asterisk_spaces = 42;
     else
-        asterisk_spaces = 32; // chraracter to fill blanks with
+        asterisk_spaces = 32; // character to fill blanks with
 
     if (cant_fit) {
         *cp++ = 37;
@@ -27227,49 +27227,61 @@ void GLUT_SPECIAL_FUNC(int key, int x, int y) {
 }
 void GLUT_SPECIALUP_FUNC(int key, int x, int y) { GLUT_key_special(key, 0); }
 
-#ifdef QB64_WINDOWS
-void GLUT_TIMER_EVENT(int ignore) {
-    libqb_process_glut_queue();
+static int64_t lastTick = 0;
+static double deltaTick = 0;
 
-#    ifdef QB64_GLUT
-    glutPostRedisplay();
-    int32 msdelay = 1000.0 / max_fps;
-    Sleep(4);
-    msdelay -= 4; // this forces GLUT to relinquish some CPU time to other threads but still allow for _FPS 100+
-    if (msdelay < 1)
-        msdelay = 1;
-    glutTimerFunc(msdelay, GLUT_TIMER_EVENT, 0);
-#    endif
-}
-#else
 void GLUT_IDLEFUNC() {
     libqb_process_glut_queue();
 
-#    ifdef QB64_MACOSX
-#        ifdef DEPENDENCY_DEVICEINPUT
+#ifdef QB64_MACOSX
+#    ifdef DEPENDENCY_DEVICEINPUT
     // must be in same thread as GLUT for OSX
     QB64_GAMEPAD_POLL();
     //[[[[NSApplication sharedApplication] mainWindow] standardWindowButton:NSWindowCloseButton] setEnabled:YES];
-#        endif
 #    endif
+#endif
 
-#    ifdef QB64_GLUT
+#ifdef QB64_GLUT
 
+#    ifdef QB64_LINUX
     if (x11_lock_request) {
         x11_locked = 1;
         x11_lock_request = 0;
         while (x11_locked)
             Sleep(1);
     }
+#    endif
+    int64_t curTime = GetTicks();
+
+    // This is how long the frame took to render
+    int64_t elapsed = curTime - lastTick;
+
+    // Calculate out the error between how long the frame was 'supposed' to take vs. how long it actually took.
+    deltaTick += ((double)1000 / max_fps) - (double)elapsed;
+
+    lastTick = curTime;
+
+    // If the error is positive, we sleep for that period of time.
+    if (deltaTick > 0) {
+        int32 msdelay = deltaTick;
+        Sleep(msdelay);
+
+        int64_t sleepTime = GetTicks();
+
+        // Subtract off the time we spent sleeping. This should leave deltaTick at zero or slightly negative.
+        // If it ends up negative, then we'll sleep less next frame to compensate
+        deltaTick -= sleepTime - lastTick;
+        lastTick = sleepTime;
+    } else {
+        // If we fall behind by a full frame or more, then skip to the next one
+        while (deltaTick < -((double)1000 / max_fps))
+            deltaTick += ((double)1000 / max_fps);
+    }
 
     glutPostRedisplay();
-    int32 msdelay = 1000.0 / max_fps;
-    if (msdelay < 1)
-        msdelay = 1;
-    Sleep(msdelay);
-#    endif
-}
 #endif
+}
+
 
 #ifdef QB64_MACOSX
 #    include <sys/sysctl.h>
@@ -29468,6 +29480,8 @@ int32 func__scaledheight() { return environment_2d__screen_scaled_height; }
 extern void set_dynamic_info();
 
 int main(int argc, char *argv[]) {
+    clock_init();
+
 
 #if defined(QB64_LINUX) && defined(X11)
     XInitThreads();

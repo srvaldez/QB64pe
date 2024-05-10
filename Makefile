@@ -140,7 +140,7 @@ CXXFLAGS += -std=gnu++17
 CXXFLAGS += -fno-strict-aliasing
 
 # Significant amounts of the code uses NULL as a placeholder for passing zero
-# for any parameter. This should be fixed, but supressing these warnings makes
+# for any parameter. This should be fixed, but suppressing these warnings makes
 # the warning list actually usable.
 CXXFLAGS += -Wno-conversion-null
 
@@ -350,6 +350,8 @@ ifeq ($(OS),win)
 
 	ifneq ($(filter y,$(DEP_CONSOLE_ONLY) $(DEP_CONSOLE)),)
 		CXXLIBS += -mconsole
+	else
+		CXXLIBS += -mwindows
 	endif
 
 	ifneq ($(filter y,$(DEP_CONSOLE_ONLY)),)
@@ -358,7 +360,7 @@ ifeq ($(OS),win)
 
 		LICENSE_IN_USE := $(filter-out freeglut,$(LICENSE_IN_USE))
 	else
-		CXXLIBS += -mwindows -lopengl32 -lglu32 -lwinmm
+		CXXLIBS += -lopengl32 -lglu32 -lwinmm -lgdi32
 	endif
 
 	ifneq ($(filter y,$(DEP_SOCKETS)),)
