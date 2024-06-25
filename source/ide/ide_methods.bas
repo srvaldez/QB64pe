@@ -479,20 +479,24 @@ FUNCTION ide2 (ignore)
         m = m + 1: i = 0
         menu$(m, i) = "Help": i = i + 1
         menu$(m, i) = "#View  Shift+F1": i = i + 1
-        menuDesc$(m, i - 1) = "Displays help window"
+        menuDesc$(m, i - 1) = "Opens the help window with last viewed article"
         menu$(m, i) = "#Contents Page": i = i + 1
-        menuDesc$(m, i - 1) = "Displays help contents page"
-        menu$(m, i) = "Keyword #Index": i = i + 1
-        menuDesc$(m, i - 1) = "Displays keyword index page"
+        menuDesc$(m, i - 1) = "Displays the help contents page"
+        menu$(m, i) = "Keywords #Index": i = i + 1
+        menuDesc$(m, i - 1) = "Displays the keywords index page (sorted alphabetically)"
         menu$(m, i) = "#Keywords by Usage": i = i + 1
-        menuDesc$(m, i - 1) = "Displays keywords index by usage"
+        menuDesc$(m, i - 1) = "Displays the keywords index page (sorted by usage)"
+        menu$(m, i) = "#Metacommands": i = i + 1
+        menuDesc$(m, i - 1) = "Displays the metacommands overview page"
+        menu$(m, i) = "Variable #Types": i = i + 1
+        menuDesc$(m, i - 1) = "Displays the variable types overview page"
         menu$(m, i) = "-": i = i + 1
         menu$(m, i) = "#Update Current Page": i = i + 1
-        menuDesc$(m, i - 1) = "Downloads the latest version of an article from the wiki"
+        menuDesc$(m, i - 1) = "Downloads the latest version of the current article from the Wiki"
         menu$(m, i) = "Update All #Pages...": i = i + 1
-        menuDesc$(m, i - 1) = "Downloads the latest version of all articles from the wiki"
+        menuDesc$(m, i - 1) = "Downloads the latest version of all articles from the Wiki"
         menu$(m, i) = "View Current Page On #Wiki": i = i + 1
-        menuDesc$(m, i - 1) = "Launches the default browser and navigates to the current article on the wiki"
+        menuDesc$(m, i - 1) = "Opens the current article on the Wiki using your standard browser"
         menu$(m, i) = "-": i = i + 1
         'menu$(m, i) = "Check for #Newer Version...": i = i + 1
         'menuDesc$(m, i - 1) = "Displays the current version of QB64-PE"
@@ -666,7 +670,7 @@ FUNCTION ide2 (ignore)
                 ideerror = 1
                 ideprogname = f$: _TITLE ideprogname + " - " + WindowTitle
                 IdeImportBookmarks idepath$ + idepathsep$ + ideprogname$
-                IdeAddRecent idepath$ + idepathsep$ + ideprogname$
+                AddToHistory "RECENT", idepath$ + idepathsep$ + ideprogname$
             END IF 'message 1
 
         END IF 'no restore
@@ -1925,7 +1929,7 @@ FUNCTION ide2 (ignore)
                 END IF
                 GOSUB UpdateSearchBar
                 IF KSHIFT THEN idefindinvert = 1
-                IdeAddSearched idefindtext
+                AddToHistory "SEARCH", idefindtext
                 idefindagain -1
             ELSE
                 GOTO idefindjmp
@@ -2088,7 +2092,7 @@ FUNCTION ide2 (ignore)
                         IdeSystem = 2 'no search string, so begin editing
                         idesystem2.issel = 0: idesystem2.v1 = 0
                     ELSE
-                        IdeAddSearched idefindtext
+                        AddToHistory "SEARCH", idefindtext
                         IdeSystem = 1: GOTO idemf3 'F3 functionality
                     END IF
                 ELSE
@@ -2262,7 +2266,7 @@ FUNCTION ide2 (ignore)
                 END IF
                 IF k = 13 THEN
                     IF LEN(idefindtext) THEN
-                        IdeAddSearched idefindtext
+                        AddToHistory "SEARCH", idefindtext
                         GOTO idemf3 'F3 functionality
                     END IF
                     GOTO specialchar
@@ -2422,8 +2426,9 @@ FUNCTION ide2 (ignore)
                     Help_Select = 2
                     Help_SelX1 = 1
                     Help_SelY1 = 1
-                    Help_SelX2 = 10000000
+                    Help_SelX2 = help_w
                     Help_SelY2 = help_h
+                    Help_cx1 = 1: Help_cy1 = 1
                     Help_cx = 1: Help_cy = help_h + 1
                     GOTO keep_select
                 END IF
@@ -2559,7 +2564,8 @@ FUNCTION ide2 (ignore)
                                 oldlnk = lnk
                             LOOP
 
-                            IF Back_Name$(Help_Back_Pos) = "Alphabetical" OR Back_Name$(Help_Back_Pos) = "By Usage" THEN
+                            '!!! RS:HCWD:#1 !!! (abbrev. page titles)
+                            IF Back_Name$(Help_Back_Pos) = "KWs Alphab." OR Back_Name$(Help_Back_Pos) = "KWs by Usage" THEN
                                 IF lnkx1 > 3 THEN
                                     cx = px + 1
                                     GOTO helpscanrow
@@ -2776,7 +2782,7 @@ FUNCTION ide2 (ignore)
                         Help_SelX1 = Help_cx: Help_SelX2 = Help_cx1 - 1
                     END IF
                 ELSE
-                    Help_SelX1 = 1: Help_SelX2 = 10000000
+                    Help_SelX1 = 1: Help_SelX2 = help_w
                     IF Help_cy > Help_cy1 THEN
                         Help_SelY1 = Help_cy1: Help_SelY2 = Help_cy
                         IF Help_cx = 1 THEN Help_SelY2 = Help_cy - 1
@@ -5443,7 +5449,7 @@ FUNCTION ide2 (ignore)
                 lnk$ = "QB64 Help Menu"
                 GOTO OpenHelpLink
             END IF
-            IF menu$(m, s) = "Keyword #Index" THEN
+            IF menu$(m, s) = "Keywords #Index" THEN
                 PCOPY 3, 0: SCREEN , , 3, 0
                 lnk$ = "Keyword Reference - Alphabetical"
                 GOTO OpenHelpLink
@@ -5451,6 +5457,16 @@ FUNCTION ide2 (ignore)
             IF menu$(m, s) = "#Keywords by Usage" THEN
                 PCOPY 3, 0: SCREEN , , 3, 0
                 lnk$ = "Keyword Reference - By usage"
+                GOTO OpenHelpLink
+            END IF
+            IF menu$(m, s) = "#Metacommands" THEN
+                PCOPY 3, 0: SCREEN , , 3, 0
+                lnk$ = "Metacommand"
+                GOTO OpenHelpLink
+            END IF
+            IF menu$(m, s) = "Variable #Types" THEN
+                PCOPY 3, 0: SCREEN , , 3, 0
+                lnk$ = "Variable Types"
                 GOTO OpenHelpLink
             END IF
 
@@ -5718,7 +5734,7 @@ FUNCTION ide2 (ignore)
 
             IF LEFT$(menu$(m, s), 6) = "Find '" THEN 'Contextual menu Find
                 idefindtext = idecontextualSearch$
-                IdeAddSearched idefindtext
+                AddToHistory "SEARCH", idefindtext
                 PCOPY 3, 0: SCREEN , , 3, 0
                 GOTO idemf3
             END IF
@@ -5732,7 +5748,7 @@ FUNCTION ide2 (ignore)
                 LOCATE , , 0: COLOR 0, 7: _PRINTSTRING (1, 1), menubar$
                 IF r$ = "C" OR r$ = "" THEN GOTO ideloop
                 'assume "V", verify changes
-                IdeAddSearched idefindtext
+                AddToHistory "SEARCH", idefindtext
 
                 oldcx = idecx: oldcy = idecy
                 found = 0: looped = 0
@@ -5901,10 +5917,11 @@ FUNCTION ide2 (ignore)
 
             IF menu$(m, s) = "Clear Search #History..." THEN
                 PCOPY 2, 0
-                r$ = ideclearhistory$("SEARCH")
+                r$ = AskClearHistory$("SEARCH")
                 IF r$ = "Y" THEN
                     fh = FREEFILE
-                    OPEN ".\internal\temp\searched.bin" FOR OUTPUT AS #fh: CLOSE #fh
+                    OPEN tmpdir$ + "searched.bin" FOR OUTPUT AS #fh: CLOSE #fh
+                    ClearBuffers tmpdir$ + "searched.bin"
                     idefindtext = ""
                 END IF
                 PCOPY 3, 0: SCREEN , , 3, 0
@@ -6286,6 +6303,8 @@ FUNCTION ide2 (ignore)
 
                 END IF
                 fh = FREEFILE: OPEN tmpdir$ + "autosave.bin" FOR OUTPUT AS #fh: CLOSE #fh
+                WriteBuffers tmpdir$ + "recent.bin"
+                WriteBuffers tmpdir$ + "searched.bin"
                 SYSTEM
             END IF
 
@@ -6357,18 +6376,18 @@ FUNCTION ide2 (ignore)
                 f$ = iderecentbox
                 IF f$ = "<C>" THEN
                     f$ = ""
-                    r$ = ideclearhistory$("FILES")
+                    r$ = AskClearHistory$("RECENT")
                     IF r$ = "Y" THEN
                         fh = FREEFILE
-                        OPEN ".\internal\temp\recent.bin" FOR OUTPUT AS #fh: CLOSE #fh
+                        OPEN tmpdir$ + "recent.bin" FOR OUTPUT AS #fh: CLOSE #fh
+                        ClearBuffers tmpdir$ + "recent.bin"
                         IdeMakeFileMenu LEFT$(menu$(1, FileMenuExportAs), 1) <> "~"
-                        PCOPY 3, 0: SCREEN , , 3, 0
-                        GOTO ideloop
                     ELSE
                         GOTO ideshowrecentbox
                     END IF
                 ELSEIF f$ = "<R>" THEN
                     GOSUB CleanUpRecentList
+                    PCOPY 3, 0
                     GOTO ideshowrecentbox
                 END IF
                 IF LEN(f$) THEN
@@ -6382,13 +6401,12 @@ FUNCTION ide2 (ignore)
 
             IF menu$(m, s) = "#Clear Recent..." THEN
                 PCOPY 2, 0
-                r$ = ideclearhistory$("FILES")
+                r$ = AskClearHistory$("RECENT")
                 IF r$ = "Y" THEN
                     fh = FREEFILE
-                    OPEN ".\internal\temp\recent.bin" FOR OUTPUT AS #fh: CLOSE #fh
+                    OPEN tmpdir$ + "recent.bin" FOR OUTPUT AS #fh: CLOSE #fh
+                    ClearBuffers tmpdir$ + "recent.bin"
                     IdeMakeFileMenu LEFT$(menu$(1, FileMenuExportAs), 1) <> "~"
-                    PCOPY 3, 0: SCREEN , , 3, 0
-                    GOTO ideloop
                 END IF
                 PCOPY 3, 0: SCREEN , , 3, 0
                 GOTO ideloop
@@ -6543,46 +6561,21 @@ FUNCTION ide2 (ignore)
     RETURN
 
     CleanUpRecentList:
-    l$ = "": ln = 0
-    REDIM RecentFilesList(0) AS STRING
-    fh = FREEFILE
-    OPEN ".\internal\temp\recent.bin" FOR BINARY AS #fh: a$ = SPACE$(LOF(fh)): GET #fh, , a$
-    CLOSE #fh
-    a$ = RIGHT$(a$, LEN(a$) - 2)
-    FoundBrokenLink = 0
-    DO WHILE LEN(a$)
-        ai = INSTR(a$, CRLF)
-        IF ai THEN
-            f$ = LEFT$(a$, ai - 1): IF ai = LEN(a$) - 1 THEN a$ = "" ELSE a$ = RIGHT$(a$, LEN(a$) - ai - 3)
-            IF _FILEEXISTS(f$) THEN
-                ln = ln + 1
-                REDIM _PRESERVE RecentFilesList(1 TO ln)
-                RecentFilesList(ln) = f$
-            ELSE
-                FoundBrokenLink = -1
-            END IF
+    bh% = OpenBuffer%("I", tmpdir$ + "recent.bin") 'load and/or set pos (back) to start
+    allOk% = -1 'let's assume the list is OK
+    WHILE NOT EndOfBuf%(bh%)
+        IF NOT _FILEEXISTS(ReadBufLine$(bh%)) THEN 'accessible?
+            nul& = SeekBuf&(bh%, -LEN(BufEolSeq$(bh%)), SBM_BufCurrent) 'back to prev (just read) line
+            nul& = SeekBuf&(bh%, 0, SBM_LineStart) 'and then ahead to the start of it
+            DeleteBufLine bh% 'cut out the broken file link
+            allOk% = 0 'delete OK status
         END IF
-    LOOP
-
-    IF NOT FoundBrokenLink THEN
+    WEND
+    IF allOk% THEN
         result = idemessagebox("Remove Broken Links", "All files in the list are accessible.", "#OK")
+    ELSE
+        IdeMakeFileMenu LEFT$(menu$(1, FileMenuExportAs), 1) <> "~"
     END IF
-
-    IF ln > 0 AND FoundBrokenLink THEN
-        fh = FREEFILE
-        OPEN ".\internal\temp\recent.bin" FOR OUTPUT AS #fh: CLOSE #fh
-        f$ = ""
-        FOR ln = 1 TO UBOUND(RecentFilesList)
-            f$ = f$ + CRLF + RecentFilesList(ln) + CRLF
-        NEXT
-        fh = FREEFILE
-        OPEN ".\internal\temp\recent.bin" FOR BINARY AS #fh
-        PUT #fh, 1, f$
-        CLOSE #fh
-    END IF
-
-    ERASE RecentFilesList
-    IdeMakeFileMenu LEFT$(menu$(1, FileMenuExportAs), 1) <> "~"
     RETURN
 
     redrawItAll:
@@ -7500,7 +7493,7 @@ SUB DebugMode
                     COLOR 7, 1: _PRINTSTRING (idewx - 2, idewy - 4), CHR$(195)
 
                     IF _KEYDOWN(100304) OR _KEYDOWN(100303) THEN idefindinvert = 1
-                    IdeAddSearched idefindtext
+                    AddToHistory "SEARCH", idefindtext
                     idefindagain -1
                 ELSE
                     findjmp:
@@ -10699,7 +10692,7 @@ FUNCTION idechange$
             s$ = idetxt(o(1).txt)
             idefindtext$ = s$
             idechangeto$ = idetxt(o(2).txt)
-            IdeAddSearched idefindtext
+            AddToHistory "SEARCH", idefindtext
 
             changed = 0
 
@@ -11521,7 +11514,7 @@ FUNCTION idefind$
             idefindonlystrings = o(8).sel
             s$ = idetxt(o(1).txt)
             idefindtext$ = s$
-            IdeAddSearched idefindtext
+            AddToHistory "SEARCH", idefindtext
             idefindagain 0
             EXIT FUNCTION
         END IF
@@ -12272,7 +12265,7 @@ FUNCTION idefiledialog$(programname$, mode AS _BYTE)
             'create new folder
             newpath$ = idenewfolder(path$)
             IF LEN(newpath$) THEN
-                f$ = removeDoubleSlashes$(newpath$)
+                f$ = RemoveDoubleSlashes$(newpath$)
                 GOTO changepath
             ELSE
                 GOTO ideopenloop
@@ -12292,13 +12285,13 @@ FUNCTION idefiledialog$(programname$, mode AS _BYTE)
 
         IF focus = 3 THEN
             IF (K$ = CHR$(13) OR info = 1) AND o(3).sel >= 1 THEN
-                newpath$ = removeDoubleSlashes$(idetxt(o(3).stx))
+                newpath$ = RemoveDoubleSlashes$(idetxt(o(3).stx))
                 IF newpath$ = "" THEN
                     newpath$ = ".."
                     f$ = newpath$
                     GOTO changepath
                 ELSE
-                    path$ = removeDoubleSlashes$(idezchangepath(path$, newpath$))
+                    path$ = RemoveDoubleSlashes$(idezchangepath(path$, newpath$))
                     idetxt(o(2).txt) = idezfilelist$(path$, AllFiles, "")
                     idetxt(o(3).txt) = idezpathlist$(path$)
 
@@ -12329,7 +12322,7 @@ FUNCTION idefiledialog$(programname$, mode AS _BYTE)
             changepath:
             IF _DIREXISTS(path$ + idepathsep$ + f$) THEN
                 'check/acquire file path
-                path$ = removeDoubleSlashes$(idezgetfilepath$(path$, f$ + idepathsep$)) 'note: path ending with pathsep needn't contain a file
+                path$ = RemoveDoubleSlashes$(idezgetfilepath$(path$, f$ + idepathsep$)) 'note: path ending with pathsep needn't contain a file
                 IF ideerror > 1 THEN EXIT FUNCTION
 
                 IF LEN(newpath$) = 0 THEN
@@ -12349,7 +12342,7 @@ FUNCTION idefiledialog$(programname$, mode AS _BYTE)
             IF INSTR(f$, "?") > 0 OR INSTR(f$, "*") > 0 THEN
                 IF INSTR(f$, "/") > 0 OR INSTR(f$, "\") > 0 THEN
                     'path + wildcards
-                    path$ = removeDoubleSlashes$(idezgetfilepath$(path$, f$)) 'note: path ending with pathsep needn't contain a file
+                    path$ = RemoveDoubleSlashes$(idezgetfilepath$(path$, f$)) 'note: path ending with pathsep needn't contain a file
                     IF ideerror > 1 THEN EXIT FUNCTION
                     idetxt(o(3).txt) = idezpathlist$(path$)
                     o(3).sel = -1
@@ -12369,7 +12362,7 @@ FUNCTION idefiledialog$(programname$, mode AS _BYTE)
             END IF
 
             DirectLoad:
-            path$ = removeDoubleSlashes$(idezgetfilepath$(path$, f$)) 'repeat in case of DirectLoad
+            path$ = RemoveDoubleSlashes$(idezgetfilepath$(path$, f$)) 'repeat in case of DirectLoad
             IF ideerror > 1 THEN EXIT FUNCTION
 
             IF mode = 1 THEN
@@ -12440,7 +12433,7 @@ FUNCTION idefiledialog$(programname$, mode AS _BYTE)
                 ideprogname = f$: _TITLE ideprogname + " - " + WindowTitle
                 listOfCustomKeywords$ = LEFT$(listOfCustomKeywords$, customKeywordsLength)
                 idepath$ = path$
-                IdeAddRecent idepath$ + idepathsep$ + ideprogname$
+                AddToHistory "RECENT", idepath$ + idepathsep$ + ideprogname$
                 IdeImportBookmarks idepath$ + idepathsep$ + ideprogname$
                 EXIT FUNCTION
             ELSEIF mode = 2 THEN
@@ -12462,7 +12455,7 @@ FUNCTION idefiledialog$(programname$, mode AS _BYTE)
                 ideprogname$ = f$: _TITLE ideprogname + " - " + WindowTitle
                 idesave path$ + idepathsep$ + f$
                 idepath$ = path$
-                IdeAddRecent idepath$ + idepathsep$ + ideprogname$
+                AddToHistory "RECENT", idepath$ + idepathsep$ + ideprogname$
                 IdeSaveBookmarks idepath$ + idepathsep$ + ideprogname$
                 EXIT FUNCTION
             END IF
@@ -12492,15 +12485,6 @@ FUNCTION iderestore$
     SCREEN , , 1, 0
     result = idemessagebox("Backup found", "Recover program from auto-saved backup?", "#Yes;#No")
     IF result = 1 THEN iderestore$ = "Y" ELSE iderestore$ = "N"
-END FUNCTION
-
-FUNCTION ideclearhistory$ (WhichHistory$)
-    SELECT CASE WhichHistory$
-        CASE "SEARCH": t$ = "Clear search history": m$ = "This cannot be undone. Proceed?"
-        CASE "FILES": t$ = "Clear recent files": m$ = "This cannot be undone. Proceed?"
-    END SELECT
-    result = idemessagebox(t$, m$, "#Yes;#No")
-    IF result = 1 THEN ideclearhistory$ = "Y" ELSE ideclearhistory$ = "N"
 END FUNCTION
 
 SUB idesave (f$)
@@ -18126,7 +18110,6 @@ SUB IdeSaveBookmarks (f2$)
 END SUB
 
 FUNCTION iderecentbox$
-
     '-------- generic dialog box header --------
     PCOPY 0, 2
     PCOPY 0, 1
@@ -18139,41 +18122,23 @@ FUNCTION iderecentbox$
     '-------- end of generic dialog box header --------
 
     '-------- init --------
-
-
-
-
-
-
-    l$ = ""
-    dialogWidth = 72
-    totalRecent = 0
-    fh = FREEFILE
-    OPEN ".\internal\temp\recent.bin" FOR BINARY AS #fh: a$ = SPACE$(LOF(fh)): GET #fh, , a$
-    a$ = RIGHT$(a$, LEN(a$) - 2)
-    REDIM tempList$(100)
-    DO WHILE LEN(a$)
-        ai = INSTR(a$, CRLF)
-        IF ai THEN
-            f$ = LEFT$(a$, ai - 1): IF ai = LEN(a$) - 1 THEN a$ = "" ELSE a$ = RIGHT$(a$, LEN(a$) - ai - 3)
-            IF LEN(f$) + 6 > dialogWidth THEN dialogWidth = LEN(f$) + 6
-            totalRecent = totalRecent + 1
-            IF totalRecent > UBOUND(tempList$) THEN
-                REDIM _PRESERVE tempList$(UBOUND(tempList$) + 100)
-            END IF
-            tempList$(totalRecent) = f$
-            IF LEN(l$) THEN l$ = l$ + sep + f$ ELSE l$ = f$
-        END IF
-    LOOP
-    CLOSE #fh
+    l$ = "": dialogWidth = 72: numFiles% = 0
+    REDIM tempList$(1 TO 100)
+    bh% = OpenBuffer%("I", tmpdir$ + "recent.bin") 'load and/or set pos (back) to start
+    WHILE NOT EndOfBuf%(bh%)
+        f$ = ReadBufLine$(bh%)
+        IF LEN(f$) + 6 > dialogWidth THEN dialogWidth = LEN(f$) + 6
+        numFiles% = numFiles% + 1: tempList$(numFiles%) = f$
+        l$ = l$ + sep + f$
+    WEND
+    REDIM _PRESERVE tempList$(1 TO numFiles%)
 
     '72,19
     i = 0
-    dialogHeight = (totalRecent) + 3
+    dialogHeight = (numFiles%) + 3
     IF dialogHeight > idewy + idesubwindow - 6 THEN
         dialogHeight = idewy + idesubwindow - 6
     END IF
-
     IF dialogWidth > idewx - 8 THEN dialogWidth = idewx - 8
     idepar p, dialogWidth, dialogHeight, "Open"
 
@@ -18182,7 +18147,7 @@ FUNCTION iderecentbox$
     o(i).y = 1
     '68
     o(i).w = dialogWidth - 4: o(i).h = dialogHeight - 3
-    o(i).txt = idenewtxt(l$)
+    o(i).txt = idenewtxt(MID$(l$, 2)) 'skip 1st sep
     o(i).sel = 1
     o(i).nam = idenewtxt("Recent Programs")
 
@@ -18191,7 +18156,6 @@ FUNCTION iderecentbox$
     o(i).y = dialogHeight
     o(i).txt = idenewtxt("#Open" + sep + "#Cancel" + sep + "Clear #list" + sep + "#Remove broken links")
     o(i).dft = 1
-
     '-------- end of init --------
 
     '-------- generic init --------
@@ -18199,14 +18163,12 @@ FUNCTION iderecentbox$
     '-------- end of generic init --------
 
     DO 'main loop
-
         '-------- generic display dialog box & objects --------
         idedrawpar p
         f = 1: cx = 0: cy = 0
         FOR i = 1 TO 100
             IF o(i).typ THEN
                 'prepare object
-
                 o(i).foc = focus - f 'focus offset
                 o(i).cx = 0: o(i).cy = 0
                 idedrawobj o(i), f 'display object
@@ -18215,9 +18177,6 @@ FUNCTION iderecentbox$
         NEXT i
         lastfocus = f - 1
         '-------- end of generic display dialog box & objects --------
-
-        '-------- custom display changes --------
-        '-------- end of custom display changes --------
 
         'update visual page and cursor position
         PCOPY 1, 0
@@ -18269,30 +18228,23 @@ FUNCTION iderecentbox$
             iderecentbox$ = ""
             EXIT FUNCTION
         END IF
-
         IF (K$ = CHR$(13) AND focus = 1) OR (focus = 2 AND info <> 0) OR (info = 1 AND focus = 1) THEN
             f$ = tempList$(ABS(o(1).sel))
             iderecentbox$ = f$
             EXIT FUNCTION
         END IF
-
         IF (K$ = CHR$(13) AND focus = 4) OR (focus = 4 AND info <> 0) OR (info = 1 AND focus = 4) THEN
             iderecentbox$ = "<C>"
             EXIT FUNCTION
         END IF
-
         IF (K$ = CHR$(13) AND focus = 5) OR (focus = 5 AND info <> 0) OR (info = 1 AND focus = 5) THEN
             iderecentbox$ = "<R>"
             EXIT FUNCTION
         END IF
-
         'end of custom controls
         mousedown = 0
         mouseup = 0
     LOOP
-
-
-
 END FUNCTION
 
 
@@ -18312,43 +18264,36 @@ SUB IdeMakeFileMenu (eaa%) 'ExportAs activation (boolean)
     FileMenuExportAs = i: IF eaa% THEN eaa$ = "": ELSE eaa$ = "~"
     menu$(m, i) = eaa$ + "#Export As...  " + CHR$(16): i = i + 1
     menuDesc$(m, i - 1) = "Export current program into various formats"
-    fh = FREEFILE
-    OPEN ".\internal\temp\recent.bin" FOR BINARY AS #fh: a$ = SPACE$(LOF(fh)): GET #fh, , a$
-    a$ = RIGHT$(a$, LEN(a$) - 2)
-    maxRecentInFileMenu = UBOUND(IdeRecentLink, 1)
-    maxLengthRecentFiles = 35
-    FOR r = 1 TO maxRecentInFileMenu + 1
-        IF r <= maxRecentInFileMenu THEN IdeRecentLink(r, 1) = ""
-        ai = INSTR(a$, CRLF)
-        IF ai THEN
-            IF r = 1 THEN menu$(m, i) = "-": i = i + 1
-            f$ = LEFT$(a$, ai - 1): IF ai = LEN(a$) - 1 THEN a$ = "" ELSE a$ = RIGHT$(a$, LEN(a$) - ai - 3)
-            IF r <= maxRecentInFileMenu THEN IdeRecentLink(r, 2) = f$
-            'f$ = MID$(f$, _INSTRREV(f$, pathsep$) + 1)
-            IF LEN(f$) > maxLengthRecentFiles THEN f$ = STRING$(3, 250) + RIGHT$(f$, maxLengthRecentFiles - 3)
-            f$ = "#" + str2$(r) + " " + f$
-            IF r = maxRecentInFileMenu + 1 THEN f$ = "#Recent..."
+
+    bh% = OpenBuffer%("I", tmpdir$ + "recent.bin") 'load and/or set pos (back) to start
+    maxFiles% = UBOUND(IdeRecentLink, 1): maxLength% = 35
+    FOR r% = 1 TO maxFiles% + 1
+        IF r% <= maxFiles% THEN IdeRecentLink(r%, 1) = ""
+        f$ = ReadBufLine$(bh%) 'returns empty when out of lines
+        IF LEN(f$) THEN
+            IF r% = 1 THEN menu$(m, i) = "-": i = i + 1
+            IF r% <= maxFiles% THEN IdeRecentLink(r%, 2) = f$
+            IF LEN(f$) > maxLength% THEN f$ = STRING$(3, 250) + RIGHT$(f$, maxLength% - 3)
+            f$ = "#" + str2$(r%) + " " + f$
+            IF r% = maxFiles% + 1 THEN f$ = "#Recent..."
             menu$(m, i) = f$
-            IF r <= maxRecentInFileMenu THEN
-                IdeRecentLink(r, 1) = f$
-                f$ = "Open '" + IdeRecentLink(r, 2) + "'"
-                ai = 3
-                DO UNTIL LEN(f$) <= idewx - 2
-                    ai = ai + 1
-                    f$ = "Open '" + STRING$(3, 250) + MID$(IdeRecentLink(r, 2), ai) + "'"
-                LOOP
-                menuDesc$(m, i) = f$
+            IF r% <= maxFiles% THEN
+                IdeRecentLink(r%, 1) = f$
+                cut% = LEN(IdeRecentLink(r%, 2)): f$ = "Open '"
+                '2 = left&right margin / 7 = Open '' / 3 = dots (char 250)
+                IF cut% > idewx - 2 - 7 THEN cut% = idewx - 2 - 7 - 3: f$ = f$ + STRING$(3, 250)
+                menuDesc$(m, i) = f$ + RIGHT$(IdeRecentLink(r%, 2), cut%) + "'"
             END IF
             i = i + 1
         END IF
     NEXT
-    CLOSE #fh
     IF menu$(m, i - 1) <> "#Recent..." AND menu$(m, i - 1) <> eaa$ + "#Export As...  " + CHR$(16) THEN
         menu$(m, i) = "#Clear Recent...": i = i + 1
         menuDesc$(m, i - 1) = "Clears list of recently loaded files"
     ELSE
         menuDesc$(m, i - 1) = "Displays a complete list of recently loaded files"
     END IF
+
     menu$(m, i) = "-": i = i + 1
     menu$(m, i) = "E#xit": i = i + 1
     menuDesc$(m, i - 1) = "Exits QB64-PE"
@@ -18628,18 +18573,22 @@ SUB IdeMakeContextualMenu
             menuDesc$(m, i - 1) = "Selects all contents of current article"
             menu$(m, i) = "-": i = i + 1
             menu$(m, i) = "#Contents Page": i = i + 1
-            menuDesc$(m, i - 1) = "Displays help contents page"
-            menu$(m, i) = "Keyword #Index": i = i + 1
-            menuDesc$(m, i - 1) = "Displays keyword index page"
+            menuDesc$(m, i - 1) = "Displays the help contents page"
+            menu$(m, i) = "Keywords #Index": i = i + 1
+            menuDesc$(m, i - 1) = "Displays the keywords index page (sorted alphabetically)"
             menu$(m, i) = "#Keywords by Usage": i = i + 1
-            menuDesc$(m, i - 1) = "Displays keywords index by usage"
+            menuDesc$(m, i - 1) = "Displays the keywords index page (sorted by usage)"
+            menu$(m, i) = "#Metacommands": i = i + 1
+            menuDesc$(m, i - 1) = "Displays the metacommands overview page"
+            menu$(m, i) = "Variable #Types": i = i + 1
+            menuDesc$(m, i - 1) = "Displays the variable types overview page"
             menu$(m, i) = "-": i = i + 1
             menu$(m, i) = "#Update Current Page": i = i + 1
-            menuDesc$(m, i - 1) = "Downloads the latest version of this article from the wiki"
+            menuDesc$(m, i - 1) = "Downloads the latest version of the current article from the Wiki"
             menu$(m, i) = "Update All #Pages...": i = i + 1
-            menuDesc$(m, i - 1) = "Downloads the latest version of all articles from the wiki"
+            menuDesc$(m, i - 1) = "Downloads the latest version of all articles from the Wiki"
             menu$(m, i) = "View Current Page On #Wiki": i = i + 1
-            menuDesc$(m, i - 1) = "Launches the default browser and navigates to the current article on the wiki"
+            menuDesc$(m, i - 1) = "Opens the current article on the Wiki using your standard browser"
             menu$(m, i) = "-": i = i + 1
             menu$(m, i) = "Clo#se Help  ESC": i = i + 1
             menuDesc$(m, i - 1) = "Closes help window"
@@ -18780,53 +18729,57 @@ SUB IdeMakeEditMenu
     menusize(m) = i - 1
 END SUB
 
-SUB IdeAddRecent (f2$)
-    f$ = f2$
-
-    f$ = removeDoubleSlashes(f$)
-
-    f$ = CRLF + f$ + CRLF
-    fh = FREEFILE
-    OPEN ".\internal\temp\recent.bin" FOR BINARY AS #fh: a$ = SPACE$(LOF(fh)): GET #fh, , a$
-    x = INSTR(UCASE$(a$), UCASE$(f$))
-    IF x THEN
-        a$ = f$ + LEFT$(a$, x - 1) + RIGHT$(a$, LEN(a$) - (x + LEN(f$) - 1))
-    ELSE
-        a$ = f$ + a$
-    END IF
-    PUT #fh, 1, a$
-    CLOSE #fh
-    IdeMakeFileMenu LEFT$(menu$(1, FileMenuExportAs), 1) <> "~"
+SUB AddToHistory (which$, entry$)
+    SELECT CASE which$
+        CASE "RECENT"
+            e$ = RemoveDoubleSlashes$(entry$)
+            bh% = OpenBuffer%("I", tmpdir$ + "recent.bin") 'load and/or set pos (back) to start
+            GOSUB athProcess
+            IdeMakeFileMenu LEFT$(menu$(1, FileMenuExportAs), 1) <> "~"
+        CASE "SEARCH"
+            e$ = entry$
+            bh% = OpenBuffer%("I", tmpdir$ + "searched.bin") 'load and/or set pos (back) to start
+            GOSUB athProcess
+    END SELECT
+    EXIT SUB
+    '-----
+    athProcess:
+    lc% = 0: ue$ = UCASE$(e$)
+    WHILE NOT EndOfBuf%(bh%)
+        be$ = ReadBufLine$(bh%): lc% = lc% + 1
+        IF UCASE$(be$) = ue$ OR lc% = 100 THEN 'already known or limit reached?
+            nul& = SeekBuf&(bh%, -LEN(BufEolSeq$(bh%)), SBM_BufCurrent) 'back to prev (just read) line
+            nul& = SeekBuf&(bh%, 0, SBM_LineStart) 'and then ahead to the start of it
+            DeleteBufLine bh%
+            EXIT WHILE
+        END IF
+    WEND
+    nul& = SeekBuf&(bh%, 0, SBM_BufStart) 'rewind
+    WriteBufLine bh%, e$ 'put new (or known) in 1st position (again)
+    RETURN
 END SUB
 
-FUNCTION removeDoubleSlashes$(f$)
-    x = INSTR(f$, "//")
-    DO WHILE x
-        f$ = LEFT$(f$, x - 1) + MID$(f$, x + 1)
-        x = INSTR(f$, "//")
-    LOOP
-
-    x = INSTR(f$, "\\")
-    DO WHILE x
-        f$ = LEFT$(f$, x - 1) + MID$(f$, x + 1)
-        x = INSTR(f$, "\\")
-    LOOP
-
-    removeDoubleSlashes$ = f$
+FUNCTION AskClearHistory$ (which$)
+    SELECT CASE which$
+        CASE "RECENT": t$ = "Clear recent files"
+        CASE "SEARCH": t$ = "Clear search history"
+    END SELECT
+    result = idemessagebox(t$, "This cannot be undone. Proceed?", "#Yes;#No")
+    IF result = 1 THEN AskClearHistory$ = "Y" ELSE AskClearHistory$ = "N"
 END FUNCTION
 
-SUB IdeAddSearched (s2$)
-    s$ = s2$ + CRLF
-    fh = FREEFILE
-    OPEN ".\internal\temp\searched.bin" FOR BINARY AS #fh: a$ = SPACE$(LOF(fh)): GET #fh, , a$
-    x = INSTR(UCASE$(a$), UCASE$(s$))
-    IF x THEN
-        a$ = s$ + LEFT$(a$, x - 1) + RIGHT$(a$, LEN(a$) - (x + LEN(s$) - 1))
+SUB RetrieveSearchHistory (SearchHistory() AS STRING)
+    bh% = OpenBuffer%("I", tmpdir$ + "searched.bin") 'load and/or set pos (back) to start
+    IF GetBufLen&(bh%) THEN
+        REDIM SearchHistory(1 TO 100) AS STRING: lc% = 0
+        WHILE NOT EndOfBuf%(bh%)
+           lc% = lc% + 1: SearchHistory(lc%) = ReadBufLine$(bh%)
+        WEND
+        REDIM _PRESERVE SearchHistory(1 TO lc%) AS STRING
     ELSE
-        a$ = s$ + a$
+       REDIM SearchHistory(1 TO 1) AS STRING
+       SearchHistory(1) = ""
     END IF
-    PUT #fh, 1, a$
-    CLOSE #fh
 END SUB
 
 FUNCTION ideupdatehelpbox
@@ -19008,11 +18961,19 @@ FUNCTION ideupdatehelpbox
                 IF INSTR(f$, CHR$(0) + PageName2$ + CHR$(0)) = 0 THEN f$ = CHR$(0) + PageName2$ + f$
                 PageName2$ = "QB64_Help_Menu.txt"
                 IF INSTR(f$, CHR$(0) + PageName2$ + CHR$(0)) = 0 THEN f$ = CHR$(0) + PageName2$ + f$
+                PageName2$ = "Data_types.txt"
+                IF INSTR(f$, CHR$(0) + PageName2$ + CHR$(0)) = 0 THEN f$ = CHR$(0) + PageName2$ + f$
+                PageName2$ = "Variable_Types.txt"
+                IF INSTR(f$, CHR$(0) + PageName2$ + CHR$(0)) = 0 THEN f$ = CHR$(0) + PageName2$ + f$
                 PageName2$ = "ERROR_Codes.txt"
+                IF INSTR(f$, CHR$(0) + PageName2$ + CHR$(0)) = 0 THEN f$ = CHR$(0) + PageName2$ + f$
+                PageName2$ = "Quick_Reference_-_Tables.txt"
                 IF INSTR(f$, CHR$(0) + PageName2$ + CHR$(0)) = 0 THEN f$ = CHR$(0) + PageName2$ + f$
                 PageName2$ = "Keywords_currently_not_supported_by_QB64.txt"
                 IF INSTR(f$, CHR$(0) + PageName2$ + CHR$(0)) = 0 THEN f$ = CHR$(0) + PageName2$ + f$
                 PageName2$ = "Keyword_Reference_-_By_usage.txt"
+                IF INSTR(f$, CHR$(0) + PageName2$ + CHR$(0)) = 0 THEN f$ = CHR$(0) + PageName2$ + f$
+                PageName2$ = "Metacommand.txt"
                 IF INSTR(f$, CHR$(0) + PageName2$ + CHR$(0)) = 0 THEN f$ = CHR$(0) + PageName2$ + f$
                 et# = TIMER(0.001) - st#: IF et# < 0 THEN et# = et# + 86400
                 IF 1.25 - et# > 0 THEN _DELAY 1.25 - et#
@@ -20251,24 +20212,6 @@ FUNCTION GetBytes$(__value$, numberOfBytes&)
     getBytesPosition& = getBytesPosition& + numberOfBytes&
 END FUNCTION
 
-SUB RetrieveSearchHistory (SearchHistory() as string)
-    fh = FREEFILE
-    OPEN ".\internal\temp\searched.bin" FOR BINARY AS #fh
-    redim _preserve SearchHistory(1 to 10000) AS STRING 'large initial array to hold the data
-    IF LOF(FH) THEN
-        Do until eof(fh)
-           ln = ln + 1
-           if ln > ubound(SearchHistory) then redim _preserve SearchHistory(1 to ln + 10000) AS STRING 'large resize, it necessary
-           line input #fh, SearchHistory(ln)
-        Loop
-        redim _preserve SearchHistory(1 to ln) AS STRING'resize to proper size before exit
-    ELSE
-       REDIM SearchHistory(1) AS STRING
-       SearchHistory(1) = ""
-    END IF
-    CLOSE #fh
-end sub
-
 'FUNCTION Download$ (url$, outputVar$, lookFor$, timelimit) STATIC
 '    'as seen on http://www.qb64.org/wiki/Downloading_Files
 '    'adapted for use in the IDE
@@ -20349,7 +20292,7 @@ FUNCTION SaveFile$ (IdeOpenFile AS STRING)
     _TITLE ideprogname$ + " - " + WindowTitle
     idesave path$ + idepathsep$ + f$
     idepath$ = path$
-    IdeAddRecent path$ + idepathsep$ + f$
+    AddToHistory "RECENT", path$ + idepathsep$ + f$
     IdeSaveBookmarks path$ + idepathsep$ + f$
     CLOSE #150
 END FUNCTION
@@ -20440,7 +20383,7 @@ FUNCTION OpenFile$ (IdeOpenFile AS STRING) 'load routine copied/pasted from the 
     ideprogname = f$: _TITLE ideprogname + " - " + WindowTitle
     listOfCustomKeywords$ = LEFT$(listOfCustomKeywords$, customKeywordsLength)
     idepath$ = path$
-    IdeAddRecent idepath$ + idepathsep$ + ideprogname$
+    AddToHistory "RECENT", idepath$ + idepathsep$ + ideprogname$
     IdeImportBookmarks idepath$ + idepathsep$ + ideprogname$
 END FUNCTION
 
