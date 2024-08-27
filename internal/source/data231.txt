@@ -1,41 +1,41 @@
-qbs*oldstr5489=NULL;
+qbs*oldstr5502=NULL;
 if(_SUB_FINDQUOTECOMMENT_STRING_TEXT->tmp||_SUB_FINDQUOTECOMMENT_STRING_TEXT->fixed||_SUB_FINDQUOTECOMMENT_STRING_TEXT->readonly){
-oldstr5489=_SUB_FINDQUOTECOMMENT_STRING_TEXT;
-if (oldstr5489->cmem_descriptor){
-_SUB_FINDQUOTECOMMENT_STRING_TEXT=qbs_new_cmem(oldstr5489->len,0);
+oldstr5502=_SUB_FINDQUOTECOMMENT_STRING_TEXT;
+if (oldstr5502->cmem_descriptor){
+_SUB_FINDQUOTECOMMENT_STRING_TEXT=qbs_new_cmem(oldstr5502->len,0);
 }else{
-_SUB_FINDQUOTECOMMENT_STRING_TEXT=qbs_new(oldstr5489->len,0);
+_SUB_FINDQUOTECOMMENT_STRING_TEXT=qbs_new(oldstr5502->len,0);
 }
-memcpy(_SUB_FINDQUOTECOMMENT_STRING_TEXT->chr,oldstr5489->chr,oldstr5489->len);
+memcpy(_SUB_FINDQUOTECOMMENT_STRING_TEXT->chr,oldstr5502->chr,oldstr5502->len);
 }
 int32 *_SUB_FINDQUOTECOMMENT_LONG_CURSOR=NULL;
 if(_SUB_FINDQUOTECOMMENT_LONG_CURSOR==NULL){
 _SUB_FINDQUOTECOMMENT_LONG_CURSOR=(int32*)mem_static_malloc(4);
 *_SUB_FINDQUOTECOMMENT_LONG_CURSOR=0;
 }
-byte_element_struct *byte_element_5490=NULL;
-if (!byte_element_5490){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5490=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5490=(byte_element_struct*)mem_static_malloc(12);
+byte_element_struct *byte_element_5503=NULL;
+if (!byte_element_5503){
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5503=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5503=(byte_element_struct*)mem_static_malloc(12);
 }
-byte_element_struct *byte_element_5491=NULL;
-if (!byte_element_5491){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5491=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5491=(byte_element_struct*)mem_static_malloc(12);
+byte_element_struct *byte_element_5504=NULL;
+if (!byte_element_5504){
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5504=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5504=(byte_element_struct*)mem_static_malloc(12);
 }
 int32 *_SUB_FINDQUOTECOMMENT_LONG_FIND_K=NULL;
 if(_SUB_FINDQUOTECOMMENT_LONG_FIND_K==NULL){
 _SUB_FINDQUOTECOMMENT_LONG_FIND_K=(int32*)mem_static_malloc(4);
 *_SUB_FINDQUOTECOMMENT_LONG_FIND_K=0;
 }
-int64 fornext_value5493;
-int64 fornext_finalvalue5493;
-int64 fornext_step5493;
-uint8 fornext_step_negative5493;
-static qbs *sc_5494=qbs_new(0,0);
-byte_element_struct *byte_element_5495=NULL;
-if (!byte_element_5495){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5495=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5495=(byte_element_struct*)mem_static_malloc(12);
+int64 fornext_value5506;
+int64 fornext_finalvalue5506;
+int64 fornext_step5506;
+uint8 fornext_step_negative5506;
+static qbs *sc_5507=qbs_new(0,0);
+byte_element_struct *byte_element_5508=NULL;
+if (!byte_element_5508){
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5508=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5508=(byte_element_struct*)mem_static_malloc(12);
 }
-byte_element_struct *byte_element_5496=NULL;
-if (!byte_element_5496){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5496=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5496=(byte_element_struct*)mem_static_malloc(12);
+byte_element_struct *byte_element_5509=NULL;
+if (!byte_element_5509){
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5509=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5509=(byte_element_struct*)mem_static_malloc(12);
 }

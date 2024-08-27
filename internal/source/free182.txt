@@ -1,4 +1,4 @@
-if(oldstr4043){
-if(oldstr4043->fixed)qbs_set(oldstr4043,_FUNC_ISFUNCTIONIDENTIFIER_STRING_ELE);
+if(oldstr4053){
+if(oldstr4053->fixed)qbs_set(oldstr4053,_FUNC_ISFUNCTIONIDENTIFIER_STRING_ELE);
 qbs_free(_FUNC_ISFUNCTIONIDENTIFIER_STRING_ELE);
 }
