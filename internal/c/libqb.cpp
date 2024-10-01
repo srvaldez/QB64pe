@@ -21,6 +21,7 @@
 #include "datetime.h"
 #include "error_handle.h"
 #include "event.h"
+#include "extended_math.h"
 #include "file-fields.h"
 #include "filepath.h"
 #include "filesystem.h"
@@ -632,40 +633,15 @@ uint32 *NPO2_buffer = (uint32 *)malloc(4);
 int32 NPO2_buffer_size_in_pixels = 1;
 
 uint32 *NPO2_texture_generate(int32 *px, int32 *py, uint32 *pixels) {
-    int32 ox = *px;
-    int32 oy = *py;
-    int32 nx = 1;
-    int32 ny = 1;
+    auto ox = *px;
+    auto oy = *py;
 
     // assume not negative & not 0
-    while ((ox & 1) == 0) {
-        ox >>= 1;
-        nx <<= 1;
-    }
-    if (ox != 1) { // x is not a power of 2
-        while (ox != 0) {
-            ox >>= 1;
-            nx <<= 1;
-        }
-        nx << 1;
-    }
-    while ((oy & 1) == 0) {
-        oy >>= 1;
-        ny <<= 1;
-    }
-    if (oy != 1) { // y is not a power of 2
-        while (oy != 0) {
-            oy >>= 1;
-            ny <<= 1;
-        }
-        ny << 1;
-    }
+    int32_t nx = Math_RoundUpToPowerOf2(uint32_t(ox));
+    int32_t ny = Math_RoundUpToPowerOf2(uint32_t(oy));
 
-    // reset original values
-    ox = *px;
-    oy = *py;
-
-    if (nx == ox && ny == oy) { // no action required
+    if (nx == ox && ny == oy) {
+        // no action required
         return pixels;
     }
 
@@ -1764,12 +1740,13 @@ void keyheld_add(uint32 x) {
         keyheld_size++;
         keyheld_buffer = (uint32 *)realloc(keyheld_buffer, keyheld_size * 4);
         keyheld_bind_buffer = (uint32 *)realloc(keyheld_bind_buffer, keyheld_size * 4);
-    }                              // expand buffer
+    } // expand buffer
     keyheld_buffer[keyheld_n] = x; // add entry
     keyheld_bind_buffer[keyheld_n] = bindkey;
     bindkey = 0; // add binded key (0=none)
     keyheld_n++; // note: inc. must occur after setting entry (threading reasons)
 }
+
 void keyheld_remove(uint32 x) {
     static int32 i;
     for (i = 0; i < keyheld_n; i++) {
@@ -1781,6 +1758,7 @@ void keyheld_remove(uint32 x) {
         }
     }
 }
+
 void keyheld_unbind(uint32 x) {
     static int32 i;
     for (i = 0; i < keyheld_n; i++) {
@@ -1792,6 +1770,7 @@ void keyheld_unbind(uint32 x) {
 }
 
 void keydown_ascii(uint32 x) { keydown(x); }
+
 void keydown_unicode(uint32 x) {
     keydown_glyph = 1;
     // note: UNICODE 0-127 map directly to ASCII 0-127
@@ -1800,8 +1779,8 @@ void keydown_unicode(uint32 x) {
         return;
     }
     // note: some UNICODE values map directly to CP437 values found in the extended ASCII set
-    static uint32 x2;
-    if (x2 = unicode_to_cp437(x)) {
+    auto x2 = unicode_to_cp437(x);
+    if (x2) {
         keydown_ascii(x2);
         return;
     }
@@ -1820,8 +1799,11 @@ void keydown_unicode(uint32 x) {
     x |= UC;
     keydown(x);
 }
+
 void keydown_vk(uint32 x) { keydown(x); }
+
 void keyup_ascii(uint32 x) { keyup(x); }
+
 void keyup_unicode(uint32 x) {
     // note: UNICODE 0-127 map directly to ASCII 0-127
     if (x <= 127) {
@@ -1829,8 +1811,8 @@ void keyup_unicode(uint32 x) {
         return;
     }
     // note: some UNICODE values map directly to CP437 values found in the extended ASCII set
-    static uint32 x2;
-    if (x2 = unicode_to_cp437(x)) {
+    auto x2 = unicode_to_cp437(x);
+    if (x2) {
         keyup_ascii(x2);
         return;
     }
@@ -1849,6 +1831,7 @@ void keyup_unicode(uint32 x) {
     x |= UC;
     keyup(x);
 }
+
 void keyup_vk(uint32 x) { keyup(x); }
 
 int32 exit_ok = 0;
@@ -1870,46 +1853,6 @@ void GLUT_MAINLOOP_THREAD(void *);
 void GLUT_DISPLAY_REQUEST();
 
 extern qbs *WHATISMYIP();
-
-// directory access defines
-#define EPERM 1
-#define ENOENT 2
-#define ESRCH 3
-#define EINTR 4
-#define EIO 5
-#define ENXIO 6
-#define E2BIG 7
-#define ENOEXEC 8
-#define EBADF 9
-#define ECHILD 10
-#define EAGAIN 11
-#define ENOMEM 12
-#define EACCES 13
-#define EFAULT 14
-#define EBUSY 16
-#define EEXIST 17
-#define EXDEV 18
-#define ENODEV 19
-#define ENOTDIR 20
-#define EISDIR 21
-#define EINVAL 22
-#define ENFILE 23
-#define EMFILE 24
-#define ENOTTY 25
-#define EFBIG 27
-#define ENOSPC 28
-#define ESPIPE 29
-#define EROFS 30
-#define EMLINK 31
-#define EPIPE 32
-#define EDOM 33
-#define ERANGE 34
-#define EDEADLK 36
-#define ENAMETOOint32 38
-#define ENOLCK 39
-#define ENOSYS 40
-#define ENOTEMPTY 41
-#define EILSEQ 42
 
 int32 lprint = 0; // set to 1 during LPRINT operations
 int32 lprint_image = 0;
@@ -3567,7 +3510,7 @@ void convert_text_to_utf16(int32 fonthandle, void *buf, int32 size) {
         unicode16_buf = (uint16 *)malloc(unicode16_buf_size);
     }
     // convert text
-    if ((fontflags[fonthandle] & FONT_LOAD_UNICODE) && (fonthandle != NULL)) { // unicode font
+    if ((fontflags[fonthandle] & FONT_LOAD_UNICODE) && fonthandle) { // unicode font
         if (size == 1)
             size = 4;
         convert_unicode(32, buf, size, 16, unicode16_buf);
@@ -5881,6 +5824,8 @@ uint32 sib() {
         return *reg32[i & 7] + (*reg32[i >> 3 & 7] << 3);
         break;
     }
+
+    return 0;
 }
 
 uint32 sib_mod0() {
@@ -5918,6 +5863,8 @@ uint32 sib_mod0() {
         return *reg32[i & 7] + (*reg32[i >> 3 & 7] << 3);
         break;
     }
+
+    return 0;
 }
 
 uint8 *rm8() {
@@ -6101,6 +6048,8 @@ uint8 *rm8() {
         }
         break;
     }
+
+    return nullptr;
 }
 
 uint16 *rm16() {
@@ -6288,6 +6237,8 @@ uint16 *rm16() {
         }
         break;
     }
+
+    return nullptr;
 }
 
 uint32 *rm32() {
@@ -6475,6 +6426,8 @@ uint32 *rm32() {
         }
         break;
     }
+
+    return nullptr;
 }
 
 uint8 *seg_es_ptr;
@@ -7039,7 +6992,7 @@ uint8 *cmem_dynamic_malloc(uint32 size) {
     //(if not, memory will be allocated at bottom of heap)
     top = &cmem[0] + 655360; // top is the base of the higher block
     prev_link = NULL;
-    if (link = cmem_dynamic_link_first) {
+    if ((link = cmem_dynamic_link_first)) {
     cmem_dynamic_findspace:
         if ((top - link->top) >= size) { // gpf
             // found free space
@@ -7047,7 +7000,7 @@ uint8 *cmem_dynamic_malloc(uint32 size) {
         }
         prev_link = link;
         top = link->offset; // set top to the base of current block for future comparisons
-        if (link = link->next)
+        if ((link = link->next))
             goto cmem_dynamic_findspace;
     }
     // no space between existing blocks is large enough, alloc below 'top'
@@ -7106,7 +7059,7 @@ check_next:
         return;
     }
     prev_link = link;
-    if (link = link->next)
+    if ((link = link->next))
         goto check_next;
     return;
 }
@@ -8013,7 +7966,7 @@ void qbg_screen(int32 mode, int32 color_switch, int32 active_page, int32 visual_
             // calculate previous width & height if possible
             prev_width_in_characters = 0;
             prev_height_in_characters = 0;
-            if (i = page[0]) { // currently in a screen mode?
+            if ((i = page[0])) { // currently in a screen mode?
                 im = &img[i];
                 if (!im->compatible_mode) {
                     prev_width_in_characters = im->width;
@@ -8031,7 +7984,7 @@ void qbg_screen(int32 mode, int32 color_switch, int32 active_page, int32 visual_
             // free pages in reverse order
             if (page[0]) { // currently in a screen mode?
                 for (i = 1; i < pages; i++) {
-                    if (i2 = page[i]) {
+                    if ((i2 = page[i])) {
                         // manual delete, freeing video pages is usually illegal
                         if (img[i2].flags & IMG_FREEMEM)
                             free(img[i2].offset); // free pixel data
@@ -8655,7 +8608,7 @@ void qbsub_width(int32 option, int32 value1, int32 value2, int32 value3, int32 v
             if (write_page->flags & IMG_SCREEN) {
                 // delete pages 1-?
                 for (i = 1; i < pages; i++) {
-                    if (i2 = page[i]) {
+                    if ((i2 = page[i])) {
                         if (display_page_index == i2) {
                             display_page_index = page[0];
                             display_page = &img[display_page_index];
@@ -8745,7 +8698,7 @@ void qbsub_width(int32 option, int32 value1, int32 value2, int32 value3, int32 v
                     if (write_page->flags & IMG_SCREEN) {
                         // delete pages 1-?
                         for (i = 1; i < pages; i++) {
-                            if (i2 = page[i]) {
+                            if ((i2 = page[i])) {
                                 if (display_page_index == i2) {
                                     display_page_index = page[0];
                                     display_page = &img[display_page_index];
@@ -8802,7 +8755,7 @@ void qbsub_width(int32 option, int32 value1, int32 value2, int32 value3, int32 v
                     if (write_page->flags & IMG_SCREEN) {
                         // delete pages 1-?
                         for (i = 1; i < pages; i++) {
-                            if (i2 = page[i]) {
+                            if ((i2 = page[i])) {
                                 if (display_page_index == i2) {
                                     display_page_index = page[0];
                                     display_page = &img[display_page_index];
@@ -8851,7 +8804,7 @@ void qbsub_width(int32 option, int32 value1, int32 value2, int32 value3, int32 v
                     if (write_page->flags & IMG_SCREEN) {
                         // delete pages 1-?
                         for (i = 1; i < pages; i++) {
-                            if (i2 = page[i]) {
+                            if ((i2 = page[i])) {
                                 if (display_page_index == i2) {
                                     display_page_index = page[0];
                                     display_page = &img[display_page_index];
@@ -8929,7 +8882,7 @@ void qbsub_width(int32 option, int32 value1, int32 value2, int32 value3, int32 v
                     if (write_page->flags & IMG_SCREEN) {
                         // delete pages 1-?
                         for (i = 1; i < pages; i++) {
-                            if (i2 = page[i]) {
+                            if ((i2 = page[i])) {
                                 if (display_page_index == i2) {
                                     display_page_index = page[0];
                                     display_page = &img[display_page_index];
@@ -8985,7 +8938,7 @@ void qbsub_width(int32 option, int32 value1, int32 value2, int32 value3, int32 v
                     if (write_page->flags & IMG_SCREEN) {
                         // delete pages 1-?
                         for (i = 1; i < pages; i++) {
-                            if (i2 = page[i]) {
+                            if ((i2 = page[i])) {
                                 if (display_page_index == i2) {
                                     display_page_index = page[0];
                                     display_page = &img[display_page_index];
@@ -9035,7 +8988,7 @@ void qbsub_width(int32 option, int32 value1, int32 value2, int32 value3, int32 v
                     if (write_page->flags & IMG_SCREEN) {
                         // delete pages 1-?
                         for (i = 1; i < pages; i++) {
-                            if (i2 = page[i]) {
+                            if ((i2 = page[i])) {
                                 if (display_page_index == i2) {
                                     display_page_index = page[0];
                                     display_page = &img[display_page_index];
@@ -9112,7 +9065,7 @@ void qbsub_width(int32 option, int32 value1, int32 value2, int32 value3, int32 v
                 if (write_page->flags & IMG_SCREEN) {
                     // delete pages 1-?
                     for (i = 1; i < pages; i++) {
-                        if (i2 = page[i]) {
+                        if ((i2 = page[i])) {
                             if (display_page_index == i2) {
                                 display_page_index = page[0];
                                 display_page = &img[display_page_index];
@@ -9171,7 +9124,7 @@ void qbsub_width(int32 option, int32 value1, int32 value2, int32 value3, int32 v
                 if (write_page->flags & IMG_SCREEN) {
                     // delete pages 1-?
                     for (i = 1; i < pages; i++) {
-                        if (i2 = page[i]) {
+                        if ((i2 = page[i])) {
                             if (display_page_index == i2) {
                                 display_page_index = page[0];
                                 display_page = &img[display_page_index];
@@ -9224,7 +9177,7 @@ void qbsub_width(int32 option, int32 value1, int32 value2, int32 value3, int32 v
                 if (write_page->flags & IMG_SCREEN) {
                     // delete pages 1-?
                     for (i = 1; i < pages; i++) {
-                        if (i2 = page[i]) {
+                        if ((i2 = page[i])) {
                             if (display_page_index == i2) {
                                 display_page_index = page[0];
                                 display_page = &img[display_page_index];
@@ -9924,7 +9877,7 @@ void sub_paint32(float x, float y, uint32 fillcol, uint32 bordercol, int32 passe
         *doff32 = fillcol;
         break;
     case 0x0:
-        doff32;
+        // doff32;
         break;
     case 0x80000000:
         *doff32 = (((*doff32 & 0xFEFEFE) + (fillcol & 0xFEFEFE)) >> 1) + (ablend128[*doff32 >> 24] << 24);
@@ -9964,7 +9917,7 @@ nextpass:
                             *doff32 = fillcol;
                             break;
                         case 0x0:
-                            doff32;
+                            // doff32;
                             break;
                         case 0x80000000:
                             *doff32 = (((*doff32 & 0xFEFEFE) + (fillcol & 0xFEFEFE)) >> 1) + (ablend128[*doff32 >> 24] << 24);
@@ -10004,7 +9957,7 @@ nextpass:
                             *doff32 = fillcol;
                             break;
                         case 0x0:
-                            doff32;
+                            // doff32;
                             break;
                         case 0x80000000:
                             *doff32 = (((*doff32 & 0xFEFEFE) + (fillcol & 0xFEFEFE)) >> 1) + (ablend128[*doff32 >> 24] << 24);
@@ -10044,7 +9997,7 @@ nextpass:
                             *doff32 = fillcol;
                             break;
                         case 0x0:
-                            doff32;
+                            // doff32;
                             break;
                         case 0x80000000:
                             *doff32 = (((*doff32 & 0xFEFEFE) + (fillcol & 0xFEFEFE)) >> 1) + (ablend128[*doff32 >> 24] << 24);
@@ -10084,7 +10037,7 @@ nextpass:
                             *doff32 = fillcol;
                             break;
                         case 0x0:
-                            doff32;
+                            // doff32;
                             break;
                         case 0x80000000:
                             *doff32 = (((*doff32 & 0xFEFEFE) + (fillcol & 0xFEFEFE)) >> 1) + (ablend128[*doff32 >> 24] << 24);
@@ -12953,7 +12906,7 @@ qbs_input_sep_arg_done:
                 max--;
 
                 // check for hex/oct/bin
-                if (i3 = hexoct2uint64(qbs_input_arguements[argn])) {
+                if ((i3 = hexoct2uint64(qbs_input_arguements[argn]))) {
                     hexvalue = hexoct2uint64_value;
                     if (hexvalue > max) {
                         valid = 0;
@@ -13111,7 +13064,7 @@ qbs_input_sep_arg_done:
                 }
 
                 // check for hex/oct/bin
-                if (i3 = hexoct2uint64(qbs_input_arguements[argn])) {
+                if ((i3 = hexoct2uint64(qbs_input_arguements[argn]))) {
                     hexvalue = hexoct2uint64_value;
                     if (hexvalue > max) {
                         valid = 0;
@@ -13199,17 +13152,9 @@ qbs_input_sep_arg_done:
                 c->chr[0] = 0;
                 qbs_set(qbs_input_arguements[argn], qbs_add(qbs_input_arguements[argn], c));
                 if (qbs_input_variabletypes[argn] & ISUNSIGNED) {
-#ifdef QB64_WINDOWS
-                    sscanf((char *)qbs_input_arguements[argn]->chr, "%I64u", (uint64 *)qbs_input_variableoffsets[argn]);
-#else
-                    sscanf((char *)qbs_input_arguements[argn]->chr, "%llu", (uint64 *)qbs_input_variableoffsets[argn]);
-#endif
+                    sscanf((char *)qbs_input_arguements[argn]->chr, "%" SCNu64, (uint64_t *)qbs_input_variableoffsets[argn]);
                 } else {
-#ifdef QB64_WINDOWS
-                    sscanf((char *)qbs_input_arguements[argn]->chr, "%I64i", (int64 *)qbs_input_variableoffsets[argn]);
-#else
-                    sscanf((char *)qbs_input_arguements[argn]->chr, "%lli", (int64 *)qbs_input_variableoffsets[argn]);
-#endif
+                    sscanf((char *)qbs_input_arguements[argn]->chr, "%" SCNd64, (int64_t *)qbs_input_variableoffsets[argn]);
                 }
                 goto typechecked;
             }
@@ -13245,7 +13190,7 @@ qbs_input_sep_arg_done:
         }
 
         // check for hex/oct/bin
-        if (i3 = hexoct2uint64(qbs_input_arguements[argn])) {
+        if ((i3 = hexoct2uint64(qbs_input_arguements[argn]))) {
             hexvalue = hexoct2uint64_value;
             // set completewith value (if necessary)
             if (i3 == 1)
@@ -13994,12 +13939,8 @@ finish:;
         }
         built_number[i] = 69;
         i++; // E
-// add exponent
-#ifdef QB64_WINDOWS
-        i2 = sprintf((char *)&built_number[i], "%I64i", exponent_value);
-#else
-        i2 = sprintf((char *)&built_number[i], "%lli", exponent_value);
-#endif
+             // add exponent
+        i2 = sprintf((char *)&built_number[i], "%" PRId64, exponent_value);
         i = i + i2;
     } else {
         built_number[i] = 48;
@@ -14515,8 +14456,8 @@ void sub_open(qbs *name, int32 type, int32 access, int32 sharing, int32 i, int64
         if (x64) {
             // read first byte
             static uint8 c;
-            static int32 e;
-            if (e = gfs_read(x, -1, &c, 1)) {
+            auto e = gfs_read(x, -1, &c, 1);
+            if (e) {
                 // if (e==-10) return -1;
                 // if (e==-2){error(258); return -2;}//invalid handle
                 // if (e==-3){error(54); return -2;}//bad file mode
@@ -14599,6 +14540,10 @@ void sub_close(int32 i2, int32 passed) {
             case special_handle_type::Http:
                 libqb_http_close(x);
                 break;
+
+            case special_handle_type::Invalid:
+                // TODO: Check if anything needs to be done here
+                break;
             }
 
             return;
@@ -14629,8 +14574,8 @@ int32 file_input_chr(int32 i) {
     // returns -2 for other errors (internally handled), the calling function should abort
 
     static uint8 c;
-    static int32 e;
-    if (e = gfs_read(i, -1, &c, 1)) {
+    auto e = gfs_read(i, -1, &c, 1);
+    if (e) {
         if (e == -10)
             return -1;
         if (e == -2) {
@@ -14989,11 +14934,7 @@ int32 n_float() {
     }
     built[i] = 69;
     i++; // E
-#ifdef QB64_WINDOWS
-    i2 = sprintf((char *)&built[i], "%I64i", n_exp);
-#else
-    i2 = sprintf((char *)&built[i], "%lli", n_exp);
-#endif
+    i2 = sprintf((char *)&built[i], "%" PRId64, n_exp);
     i = i + i2;
     built[i] = 0; // NULL terminate for sscanf
 
@@ -18107,7 +18048,7 @@ void sub_bsave(qbs *filename, int32 offset, int32 size) {
         size &= 0xFFFF;
     qbs_set(tqbs, qbs_add(filename, nullt)); // prepare null-terminated filename
     fh.open(filepath_fix_directory(tqbs), std::ios::binary | std::ios::out);
-    if (fh.is_open() == NULL) {
+    if (!fh.is_open()) {
         error(64);
         return;
     } // Bad file name
@@ -18148,7 +18089,7 @@ void sub_bload(qbs *filename, int32 offset, int32 passed) {
     }
     qbs_set(tqbs, qbs_add(filename, nullt)); // prepare null-terminated filename
     fh.open(filepath_fix_directory(tqbs), std::ios::binary | std::ios::in);
-    if (fh.is_open() == NULL) {
+    if (!fh.is_open()) {
         error(53);
         return;
     } // File not found
@@ -19366,8 +19307,8 @@ void sub__freeimage(int32 i, int32 passed) {
             return; // The SCREEN's pages cannot be freed!
         } else {
 
-            static hardware_img_struct *himg;
-            if (himg = get_hardware_img(i)) {
+            auto himg = get_hardware_img(i);
+            if (himg) {
                 flush_old_hardware_commands();
                 // add command to free image
                 // create new command handle & structure
@@ -19494,8 +19435,8 @@ void sub__blend(int32 i, int32 passed) {
             validatepage(i);
             i = page[i];
         } else {
-            static hardware_img_struct *himg;
-            if (himg = get_hardware_img(i)) {
+            auto himg = get_hardware_img(i);
+            if (himg) {
                 himg->alpha_disabled = 0;
                 return;
             }
@@ -19527,8 +19468,8 @@ void sub__dontblend(int32 i, int32 passed) {
             validatepage(i);
             i = page[i];
         } else {
-            static hardware_img_struct *himg;
-            if (himg = get_hardware_img(i)) {
+            auto himg = get_hardware_img(i);
+            if (himg) {
                 himg->alpha_disabled = 1;
                 return;
             }
@@ -19756,8 +19697,8 @@ int32 func__width(int32 i, int32 passed) {
             validatepage(i);
             i = page[i];
         } else {
-            static hardware_img_struct *himg;
-            if (himg = get_hardware_img(i)) {
+            auto himg = get_hardware_img(i);
+            if (himg) {
                 return himg->w;
             }
             i = -i;
@@ -19796,8 +19737,8 @@ int32 func__height(int32 i, int32 passed) {
             validatepage(i);
             i = page[i];
         } else {
-            static hardware_img_struct *himg;
-            if (himg = get_hardware_img(i)) {
+            auto himg = get_hardware_img(i);
+            if (himg) {
                 return himg->h;
             }
             i = -i;
@@ -21742,11 +21683,7 @@ invalid_string_format:
 int32 print_using_integer64(qbs *format, int64 value, int32 start, qbs *output) {
     if (is_error_pending())
         return 0;
-#ifdef QB64_WINDOWS
-    pu_ndig = sprintf((char *)pu_buf, "% I64i", value);
-#else
-    pu_ndig = sprintf((char *)pu_buf, "% lli", value);
-#endif
+    pu_ndig = sprintf((char *)pu_buf, "% " PRId64, value);
     if (pu_buf[0] == 45)
         pu_neg = 1;
     else
@@ -21761,11 +21698,7 @@ int32 print_using_integer64(qbs *format, int64 value, int32 start, qbs *output) 
 int32 print_using_uinteger64(qbs *format, uint64 value, int32 start, qbs *output) {
     if (is_error_pending())
         return 0;
-#ifdef QB64_WINDOWS
-    pu_ndig = sprintf((char *)pu_dig, "%I64u", value);
-#else
-    pu_ndig = sprintf((char *)pu_dig, "%llu", value);
-#endif
+    pu_ndig = sprintf((char *)pu_dig, "%" PRIu64, value);
     pu_neg = 0;
     pu_dp = 0;
     start = print_using(format, start, output, NULL);
@@ -23144,7 +23077,7 @@ void *tcp_host_open(int64 port) {
     int sockfd;
     char str_port[6];
     int yes = 1;
-    snprintf(str_port, 6, "%d", port);
+    snprintf(str_port, 6, "%" PRId64, port);
     memset(&hints, 0, sizeof(hints));
     hints.ai_family = AF_INET;
     hints.ai_socktype = SOCK_STREAM;
@@ -23234,7 +23167,7 @@ void *tcp_client_open(uint8 *host, int64 port) {
     struct addrinfo hints, *servinfo, *p;
     int sockfd;
     char str_port[6];
-    snprintf(str_port, 6, "%d", port);
+    snprintf(str_port, 6, "%" PRId64, port);
     memset(&hints, 0, sizeof(hints));
     hints.ai_family = AF_INET;
     hints.ai_socktype = SOCK_STREAM;
@@ -23470,6 +23403,10 @@ void connection_close(ptrszint i) {
     case special_handle_type::Http:
         libqb_http_close(i);
         list_remove(special_handles, list_get_index(special_handles, sh));
+        break;
+
+    case special_handle_type::Invalid:
+        // TODO: Check if anything needs to be done here
         break;
     }
 }
@@ -23832,6 +23769,12 @@ qbs *func__connectionaddress(int32 i) {
                 qbs_set(str, qbs_add(str, qbs_new_txt("UNKNOWN")));
 
             return str;
+
+            break;
+
+        case special_handle_type::Invalid:
+            // TODO: Check if anything needs to be done here
+            break;
         }
     } // i<0
     error(52);
@@ -23884,6 +23827,11 @@ int32 func__connected(int32 i) {
 
         case special_handle_type::Http:
             return libqb_http_connected(x)? -1: 0;
+            break;
+
+        case special_handle_type::Invalid:
+            // TODO: Check if anything needs to be done here
+            break;
         }
 
     } // i<0
@@ -23940,13 +23888,13 @@ void sub__allowfullscreen(int32 method, int32 smooth) {
     fullscreen_allowedmode = method;
     if (method == 3 || method == 5)
         fullscreen_allowedmode = -1;
-    if (method == 4 || method == NULL)
+    if (method == 4 || method == 0)
         fullscreen_allowedmode = 0;
 
     fullscreen_allowedsmooth = smooth;
     if (smooth == 2 || smooth == 4)
         fullscreen_allowedsmooth = -1;
-    if (smooth == 3 || smooth == NULL)
+    if (smooth == 3 || smooth == 0)
         fullscreen_allowedsmooth = 0;
 }
 
@@ -25438,7 +25386,7 @@ void sub__printimage(int32 i) {
     static LPSTR szPrinterName = NULL;
     DWORD dwNameLen;
     HDC dc;
-    DOCINFO di;
+    DOCINFOA di;
     uint32 w, h;
     int32 x, y;
     int32 i2;
@@ -25465,13 +25413,13 @@ void sub__printimage(int32 i) {
     if (!szPrinterName)
         szPrinterName = (LPSTR)malloc(65536);
     dwNameLen = 65536;
-    GetDefaultPrinter(szPrinterName, &dwNameLen);
-    if ((dc = CreateDC(TEXT("WINSPOOL"), szPrinterName, NULL, NULL)) == NULL)
+    GetDefaultPrinterA(szPrinterName, &dwNameLen);
+    if ((dc = CreateDCA("WINSPOOL", szPrinterName, NULL, NULL)) == NULL)
         goto failed;
     ZeroMemory(&di, sizeof(DOCINFO));
     di.cbSize = sizeof(DOCINFO);
-    di.lpszDocName = TEXT("Document");
-    if (StartDoc(dc, &di) <= 0) {
+    di.lpszDocName = "Document";
+    if (StartDocA(dc, &di) <= 0) {
         DeleteDC(dc);
         goto failed;
     }
@@ -26926,7 +26874,7 @@ void sub__consoletitle(qbs *s) {
     memcpy(title, s->chr, s->len);
     if (console) {
         if (console_active) {
-            SetConsoleTitle(title);
+            SetConsoleTitleA(title);
             Sleep(40);
         }
     }
@@ -29384,7 +29332,7 @@ void sub__filedrop(int32 on_off = NULL) {
         DragAcceptFiles(win, TRUE);
         acceptFileDrop = -1;
     }
-    if ((on_off == 2)) {
+    if (on_off == 2) {
         DragAcceptFiles(win, FALSE);
         acceptFileDrop = 0;
     }
@@ -29426,7 +29374,7 @@ qbs *func__droppedfile(int32 fileIndex, int32 passed) {
             return qbs_new_txt("");
         }
         // fetch file[index] from hdrop:
-        if (DragQueryFile(hdrop, index, szNextFile, MAX_PATH) > 0) {
+        if (DragQueryFileA(hdrop, index, szNextFile, MAX_PATH) > 0) {
             if ((!passed) && (index == totalDroppedFiles - 1)) {
                 // last file read sequentially
                 sub__finishdrop();
@@ -29674,7 +29622,7 @@ int main(int argc, char *argv[]) {
 // http://stackoverflow.com/questions/1023306/finding-current-executables-path-without-proc-self-exe
 #if defined(QB64_WINDOWS) && !defined(QB64_MICROSOFT)
     static char *exepath = (char *)malloc(65536);
-    GetModuleFileName(NULL, exepath, 65536);
+    GetModuleFileNameA(NULL, exepath, 65536);
     i = strlen(exepath);
     for (i2 = i - 1; i2 >= 0; i2--) {
         x = exepath[i2];
@@ -29813,7 +29761,7 @@ int main(int argc, char *argv[]) {
     // keyboard
     i++;
     devices[i].type = DEVICETYPE_KEYBOARD;
-    devices[i].name = "[KEYBOARD][BUTTON]";
+    devices[i].name = strdup("[KEYBOARD][BUTTON]"); // TODO: when re-writing game_controller.cpp use std::string
     devices[i].lastbutton = 512;
     devices[i].description = "Keyboard";
     setupDevice(&devices[i]);
@@ -29821,7 +29769,7 @@ int main(int argc, char *argv[]) {
     // mouse
     i++;
     devices[i].type = DEVICETYPE_MOUSE;
-    devices[i].name = "[MOUSE][BUTTON][AXIS][WHEEL]";
+    devices[i].name = strdup("[MOUSE][BUTTON][AXIS][WHEEL]"); // TODO: when re-writing game_controller.cpp use std::string
     devices[i].lastbutton = 3;
     devices[i].lastaxis = 2;
     devices[i].lastwheel = 3;
@@ -31672,7 +31620,7 @@ void keydown(uint32 x) {
     if (x <= 255) {
         static int32 b1, b2, z, o;
         b1 = x;
-        if (b2 = scancode_lookup[x * 10 + 1]) { // table entry exists
+        if ((b2 = scancode_lookup[x * 10 + 1])) { // table entry exists
             scancodedown(b2);
 
             // check for relevant table modifiers

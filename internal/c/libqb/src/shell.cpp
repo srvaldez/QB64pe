@@ -1,12 +1,13 @@
 
 #include "libqb-common.h"
 
+#include <cstring>
 #include <math.h>
 #include <stdlib.h>
 #include <unistd.h>
 
 #ifdef QB64_WINDOWS
-# include <windows.h>
+#    include <windows.h>
 #endif
 
 #include "command.h"
@@ -25,23 +26,30 @@ int32_t shell_call_in_progress = 0;
 static int32_t cmd_available = -1;
 
 static int32_t cmd_ok() {
+    static const char testCommandLine[] = "cmd.exe /c ver";
+
     if (cmd_available == -1) {
-        static STARTUPINFO si;
+        static STARTUPINFOA si;
         static PROCESS_INFORMATION pi;
         ZeroMemory(&si, sizeof(si));
         si.cb = sizeof(si);
         ZeroMemory(&pi, sizeof(pi));
-        if (CreateProcess(NULL,             // No module name (use command line)
-                          "cmd.exe /c ver", // Command line
-                          NULL,             // Process handle not inheritable
-                          NULL,             // Thread handle not inheritable
-                          FALSE,            // Set handle inheritance to FALSE
-                          CREATE_NO_WINDOW, // No creation flags
-                          NULL,             // Use parent's environment block
-                          NULL,             // Use parent's starting directory
-                          &si,              // Pointer to STARTUPINFO structure
-                          &pi               // Pointer to PROCESS_INFORMATION structure
-                          )) {
+
+        // Safety: lpCommandLine should not be a read-only string
+        char commandLine[sizeof(testCommandLine)];
+        std::strcpy(commandLine, testCommandLine);
+
+        if (CreateProcessA(NULL,             // No module name (use command line)
+                           commandLine,      // Command line
+                           NULL,             // Process handle not inheritable
+                           NULL,             // Thread handle not inheritable
+                           FALSE,            // Set handle inheritance to FALSE
+                           CREATE_NO_WINDOW, // No creation flags
+                           NULL,             // Use parent's environment block
+                           NULL,             // Use parent's starting directory
+                           &si,              // Pointer to STARTUPINFO structure
+                           &pi               // Pointer to PROCESS_INFORMATION structure
+                           )) {
             WaitForSingleObject(pi.hProcess, INFINITE);
             CloseHandle(pi.hProcess);
             CloseHandle(pi.hThread);
@@ -52,7 +60,6 @@ static int32_t cmd_ok() {
     } //-1
     return cmd_available;
 }
-#endif
 
 static int32_t cmd_command(qbs *str2) {
     static qbs *str = NULL;
@@ -155,6 +162,7 @@ static int32_t cmd_command(qbs *str2) {
         s = 1;
     return s;
 }
+#endif
 
 // FIXME: Move this elsewhere
 extern int32_t full_screen;
@@ -164,7 +172,7 @@ int64_t func_shell(qbs *str) {
     if (is_error_pending())
         return 1;
 
-    int64_t return_code;
+    int64_t return_code = 0;
 
     // exit full screen mode if necessary
     static int32_t full_screen_mode;
@@ -180,7 +188,6 @@ int64_t func_shell(qbs *str) {
     static qbs *str1z = NULL;
     static qbs *str2 = NULL;
     static qbs *str2z = NULL;
-    static int32_t i;
 
     static int32_t use_console;
     use_console = 0;
@@ -238,12 +245,12 @@ int64_t func_shell(qbs *str) {
             goto shell_complete;
         }
 
-        static STARTUPINFO si;
+        static STARTUPINFOA si;
         static PROCESS_INFORMATION pi;
 
         if (cmd_ok()) {
 
-            static SHELLEXECUTEINFO shi;
+            static SHELLEXECUTEINFOA shi;
             static char cmd[10] = "cmd\0";
 
             // attempt to separate file name (if any) from parameters
@@ -263,7 +270,7 @@ int64_t func_shell(qbs *str) {
                 shi.lpParameters = NULL;
                 shi.fMask = SEE_MASK_NOCLOSEPROCESS | SEE_MASK_FLAG_NO_UI;
                 shi.nShow = SW_SHOW;
-                if (ShellExecuteEx(&shi)) {
+                if (ShellExecuteExA(&shi)) {
                     shell_call_in_progress = 1;
                     // Wait until child process exits.
                     WaitForSingleObject(shi.hProcess, INFINITE);
@@ -307,7 +314,7 @@ int64_t func_shell(qbs *str) {
                     // if (str2->len<=1) shi.lpParameters=NULL;
                     shi.fMask = SEE_MASK_NOCLOSEPROCESS | SEE_MASK_FLAG_NO_UI;
                     shi.nShow = SW_SHOW;
-                    if (ShellExecuteEx(&shi)) {
+                    if (ShellExecuteExA(&shi)) {
                         shell_call_in_progress = 1;
                         // Wait until child process exits.
                         WaitForSingleObject(shi.hProcess, INFINITE);
@@ -331,7 +338,7 @@ int64_t func_shell(qbs *str) {
             shi.lpParameters = (char *)&strz->chr[0];
             shi.fMask = SEE_MASK_NOCLOSEPROCESS | SEE_MASK_FLAG_NO_UI;
             shi.nShow = SW_SHOW;
-            if (ShellExecuteEx(&shi)) {
+            if (ShellExecuteExA(&shi)) {
                 shell_call_in_progress = 1;
                 // Wait until child process exits.
                 WaitForSingleObject(shi.hProcess, INFINITE);
@@ -378,16 +385,16 @@ int64_t func_shell(qbs *str) {
             ZeroMemory(&si, sizeof(si));
             si.cb = sizeof(si);
             ZeroMemory(&pi, sizeof(pi));
-            if (CreateProcess(NULL,                  // No module name (use command line)
-                              (char *)&strz->chr[0], // Command line
-                              NULL,                  // Process handle not inheritable
-                              NULL,                  // Thread handle not inheritable
-                              FALSE,                 // Set handle inheritance to FALSE
-                              CREATE_NEW_CONSOLE,    // No creation flags
-                              NULL,                  // Use parent's environment block
-                              NULL,                  // Use parent's starting directory
-                              &si,                   // Pointer to STARTUPINFO structure
-                              &pi)                   // Pointer to PROCESS_INFORMATION structure
+            if (CreateProcessA(NULL,                  // No module name (use command line)
+                               (char *)&strz->chr[0], // Command line
+                               NULL,                  // Process handle not inheritable
+                               NULL,                  // Thread handle not inheritable
+                               FALSE,                 // Set handle inheritance to FALSE
+                               CREATE_NEW_CONSOLE,    // No creation flags
+                               NULL,                  // Use parent's environment block
+                               NULL,                  // Use parent's starting directory
+                               &si,                   // Pointer to STARTUPINFO structure
+                               &pi)                   // Pointer to PROCESS_INFORMATION structure
             ) {
                 shell_call_in_progress = 1;
                 // Wait until child process exits.
@@ -433,7 +440,10 @@ int64_t func_shell(qbs *str) {
 #endif
     }
 
+#ifdef QB64_WINDOWS
 shell_complete:
+#endif
+
     // reenter full screen mode if necessary
     if (full_screen_mode) {
         full_screen_set = full_screen_mode;
@@ -453,7 +463,6 @@ int64_t func__shellhide(qbs *str) { // func _SHELLHIDE(...
     return_code = 0;
 
     static qbs *strz = NULL;
-    static int32_t i;
     if (!strz)
         strz = qbs_new(0, 0);
     if (!str->len) {
@@ -476,12 +485,12 @@ int64_t func__shellhide(qbs *str) { // func _SHELLHIDE(...
 
 #ifdef QB64_WINDOWS
 
-    static STARTUPINFO si;
+    static STARTUPINFOA si;
     static PROCESS_INFORMATION pi;
 
     if (cmd_ok()) {
 
-        static SHELLEXECUTEINFO shi;
+        static SHELLEXECUTEINFOA shi;
         static char cmd[10] = "cmd\0";
 
         // attempt to separate file name (if any) from parameters
@@ -499,7 +508,7 @@ int64_t func__shellhide(qbs *str) { // func _SHELLHIDE(...
             shi.lpParameters = NULL;
             shi.fMask = SEE_MASK_NOCLOSEPROCESS | SEE_MASK_FLAG_NO_UI;
             shi.nShow = SW_HIDE;
-            if (ShellExecuteEx(&shi)) {
+            if (ShellExecuteExA(&shi)) {
                 shell_call_in_progress = 1;
                 // Wait until child process exits.
                 WaitForSingleObject(shi.hProcess, INFINITE);
@@ -545,7 +554,7 @@ int64_t func__shellhide(qbs *str) { // func _SHELLHIDE(...
                 // if (str2->len<=1) shi.lpParameters=NULL;
                 shi.fMask = SEE_MASK_NOCLOSEPROCESS | SEE_MASK_FLAG_NO_UI;
                 shi.nShow = SW_HIDE;
-                if (ShellExecuteEx(&shi)) {
+                if (ShellExecuteExA(&shi)) {
                     shell_call_in_progress = 1;
                     // Wait until child process exits.
                     WaitForSingleObject(shi.hProcess, INFINITE);
@@ -569,7 +578,7 @@ int64_t func__shellhide(qbs *str) { // func _SHELLHIDE(...
         shi.lpParameters = (char *)&strz->chr[0];
         shi.fMask = SEE_MASK_NOCLOSEPROCESS | SEE_MASK_FLAG_NO_UI;
         shi.nShow = SW_HIDE;
-        if (ShellExecuteEx(&shi)) {
+        if (ShellExecuteExA(&shi)) {
             shell_call_in_progress = 1;
             // Wait until child process exits.
             WaitForSingleObject(shi.hProcess, INFINITE);
@@ -616,7 +625,7 @@ int64_t func__shellhide(qbs *str) { // func _SHELLHIDE(...
         ZeroMemory(&si, sizeof(si));
         si.cb = sizeof(si);
         ZeroMemory(&pi, sizeof(pi));
-        if (CreateProcess(
+        if (CreateProcessA(
 
                 NULL,                  // No module name (use command line)
                 (char *)&strz->chr[0], // Command line
@@ -652,7 +661,9 @@ int64_t func__shellhide(qbs *str) { // func _SHELLHIDE(...
 
 #endif
 
-shell_complete:;
+#ifdef QB64_WINDOWS
+shell_complete:
+#endif
 
     return return_code;
 } // func _SHELLHIDE(...
@@ -675,7 +686,6 @@ void sub_shell(qbs *str, int32_t passed) {
     static qbs *str1z = NULL;
     static qbs *str2 = NULL;
     static qbs *str2z = NULL;
-    static int32_t i;
 
     static int32_t use_console;
     use_console = 0;
@@ -736,12 +746,12 @@ void sub_shell(qbs *str, int32_t passed) {
             goto shell_complete;
         }
 
-        static STARTUPINFO si;
+        static STARTUPINFOA si;
         static PROCESS_INFORMATION pi;
 
         if (cmd_ok()) {
 
-            static SHELLEXECUTEINFO shi;
+            static SHELLEXECUTEINFOA shi;
             static char cmd[10] = "cmd\0";
 
             // attempt to separate file name (if any) from parameters
@@ -761,7 +771,7 @@ void sub_shell(qbs *str, int32_t passed) {
                 shi.lpParameters = NULL;
                 shi.fMask = SEE_MASK_NOCLOSEPROCESS | SEE_MASK_FLAG_NO_UI;
                 shi.nShow = SW_SHOW;
-                if (ShellExecuteEx(&shi)) {
+                if (ShellExecuteExA(&shi)) {
                     shell_call_in_progress = 1;
                     // Wait until child process exits.
                     WaitForSingleObject(shi.hProcess, INFINITE);
@@ -804,7 +814,7 @@ void sub_shell(qbs *str, int32_t passed) {
                     // if (str2->len<=1) shi.lpParameters=NULL;
                     shi.fMask = SEE_MASK_NOCLOSEPROCESS | SEE_MASK_FLAG_NO_UI;
                     shi.nShow = SW_SHOW;
-                    if (ShellExecuteEx(&shi)) {
+                    if (ShellExecuteExA(&shi)) {
                         shell_call_in_progress = 1;
                         // Wait until child process exits.
                         WaitForSingleObject(shi.hProcess, INFINITE);
@@ -827,7 +837,7 @@ void sub_shell(qbs *str, int32_t passed) {
             shi.lpParameters = (char *)&strz->chr[0];
             shi.fMask = SEE_MASK_NOCLOSEPROCESS | SEE_MASK_FLAG_NO_UI;
             shi.nShow = SW_SHOW;
-            if (ShellExecuteEx(&shi)) {
+            if (ShellExecuteExA(&shi)) {
                 shell_call_in_progress = 1;
                 // Wait until child process exits.
                 WaitForSingleObject(shi.hProcess, INFINITE);
@@ -872,16 +882,16 @@ void sub_shell(qbs *str, int32_t passed) {
             ZeroMemory(&si, sizeof(si));
             si.cb = sizeof(si);
             ZeroMemory(&pi, sizeof(pi));
-            if (CreateProcess(NULL,                  // No module name (use command line)
-                              (char *)&strz->chr[0], // Command line
-                              NULL,                  // Process handle not inheritable
-                              NULL,                  // Thread handle not inheritable
-                              FALSE,                 // Set handle inheritance to FALSE
-                              CREATE_NEW_CONSOLE,    // No creation flags
-                              NULL,                  // Use parent's environment block
-                              NULL,                  // Use parent's starting directory
-                              &si,                   // Pointer to STARTUPINFO structure
-                              &pi)                   // Pointer to PROCESS_INFORMATION structure
+            if (CreateProcessA(NULL,                  // No module name (use command line)
+                               (char *)&strz->chr[0], // Command line
+                               NULL,                  // Process handle not inheritable
+                               NULL,                  // Thread handle not inheritable
+                               FALSE,                 // Set handle inheritance to FALSE
+                               CREATE_NEW_CONSOLE,    // No creation flags
+                               NULL,                  // Use parent's environment block
+                               NULL,                  // Use parent's starting directory
+                               &si,                   // Pointer to STARTUPINFO structure
+                               &pi)                   // Pointer to PROCESS_INFORMATION structure
             ) {
                 shell_call_in_progress = 1;
                 // Wait until child process exits.
@@ -923,7 +933,10 @@ void sub_shell(qbs *str, int32_t passed) {
 #endif
     }
 
+#ifdef QB64_WINDOWS
 shell_complete:
+#endif
+
     // reenter full screen mode if necessary
     if (full_screen_mode) {
         full_screen_set = full_screen_mode;
@@ -947,7 +960,6 @@ void sub_shell2(qbs *str, int32_t passed) { // HIDE
     } // should not hide a shell waiting for input
 
     static qbs *strz = NULL;
-    static int32_t i;
     if (!strz)
         strz = qbs_new(0, 0);
     if (!str->len) {
@@ -970,12 +982,12 @@ void sub_shell2(qbs *str, int32_t passed) { // HIDE
 
 #ifdef QB64_WINDOWS
 
-    static STARTUPINFO si;
+    static STARTUPINFOA si;
     static PROCESS_INFORMATION pi;
 
     if (cmd_ok()) {
 
-        static SHELLEXECUTEINFO shi;
+        static SHELLEXECUTEINFOA shi;
         static char cmd[10] = "cmd\0";
 
         // attempt to separate file name (if any) from parameters
@@ -993,7 +1005,7 @@ void sub_shell2(qbs *str, int32_t passed) { // HIDE
             shi.lpParameters = NULL;
             shi.fMask = SEE_MASK_NOCLOSEPROCESS | SEE_MASK_FLAG_NO_UI;
             shi.nShow = SW_HIDE;
-            if (ShellExecuteEx(&shi)) {
+            if (ShellExecuteExA(&shi)) {
                 shell_call_in_progress = 1;
                 // Wait until child process exits.
                 WaitForSingleObject(shi.hProcess, INFINITE);
@@ -1036,7 +1048,7 @@ void sub_shell2(qbs *str, int32_t passed) { // HIDE
                 // if (str2->len<=1) shi.lpParameters=NULL;
                 shi.fMask = SEE_MASK_NOCLOSEPROCESS | SEE_MASK_FLAG_NO_UI;
                 shi.nShow = SW_HIDE;
-                if (ShellExecuteEx(&shi)) {
+                if (ShellExecuteExA(&shi)) {
                     shell_call_in_progress = 1;
                     // Wait until child process exits.
                     WaitForSingleObject(shi.hProcess, INFINITE);
@@ -1059,7 +1071,7 @@ void sub_shell2(qbs *str, int32_t passed) { // HIDE
         shi.lpParameters = (char *)&strz->chr[0];
         shi.fMask = SEE_MASK_NOCLOSEPROCESS | SEE_MASK_FLAG_NO_UI;
         shi.nShow = SW_HIDE;
-        if (ShellExecuteEx(&shi)) {
+        if (ShellExecuteExA(&shi)) {
             shell_call_in_progress = 1;
             // Wait until child process exits.
             WaitForSingleObject(shi.hProcess, INFINITE);
@@ -1104,7 +1116,7 @@ void sub_shell2(qbs *str, int32_t passed) { // HIDE
         ZeroMemory(&si, sizeof(si));
         si.cb = sizeof(si);
         ZeroMemory(&pi, sizeof(pi));
-        if (CreateProcess(
+        if (CreateProcessA(
 
                 NULL,                  // No module name (use command line)
                 (char *)&strz->chr[0], // Command line
@@ -1140,7 +1152,9 @@ void sub_shell2(qbs *str, int32_t passed) { // HIDE
 
 #endif
 
+#ifdef QB64_WINDOWS
 shell_complete:;
+#endif
 }
 
 void sub_shell3(qbs *str, int32_t passed) { //_DONTWAIT
@@ -1154,8 +1168,6 @@ void sub_shell3(qbs *str, int32_t passed) { //_DONTWAIT
     }
 
     static qbs *strz = NULL;
-    static int32_t i;
-
     static qbs *str1 = NULL;
     static qbs *str2 = NULL;
     static qbs *str1z = NULL;
@@ -1174,12 +1186,12 @@ void sub_shell3(qbs *str, int32_t passed) { //_DONTWAIT
 
 #ifdef QB64_WINDOWS
 
-    static STARTUPINFO si;
+    static STARTUPINFOA si;
     static PROCESS_INFORMATION pi;
 
     if (cmd_ok()) {
 
-        static SHELLEXECUTEINFO shi;
+        static SHELLEXECUTEINFOA shi;
         static char cmd[10] = "cmd\0";
 
         // attempt to separate file name (if any) from parameters
@@ -1204,7 +1216,7 @@ void sub_shell3(qbs *str, int32_t passed) { //_DONTWAIT
             shi.lpParameters = NULL;
             shi.fMask = SEE_MASK_FLAG_NO_UI;
             shi.nShow = SW_SHOW;
-            if (ShellExecuteEx(&shi)) {
+            if (ShellExecuteExA(&shi)) {
                 goto shell_complete;
             }
         }
@@ -1242,7 +1254,7 @@ void sub_shell3(qbs *str, int32_t passed) { //_DONTWAIT
                 // if (str2->len<=1) shi.lpParameters=NULL;
                 shi.fMask = SEE_MASK_FLAG_NO_UI;
                 shi.nShow = SW_SHOW;
-                if (ShellExecuteEx(&shi)) {
+                if (ShellExecuteExA(&shi)) {
                     goto shell_complete;
                 }
             }
@@ -1260,7 +1272,7 @@ void sub_shell3(qbs *str, int32_t passed) { //_DONTWAIT
         shi.lpParameters = (char *)&strz->chr[0];
         shi.fMask = SEE_MASK_FLAG_NO_UI;
         shi.nShow = SW_SHOW;
-        if (ShellExecuteEx(&shi)) {
+        if (ShellExecuteExA(&shi)) {
             goto shell_complete;
         }
 
@@ -1297,16 +1309,16 @@ void sub_shell3(qbs *str, int32_t passed) { //_DONTWAIT
         ZeroMemory(&si, sizeof(si));
         si.cb = sizeof(si);
         ZeroMemory(&pi, sizeof(pi));
-        if (CreateProcess(NULL,                  // No module name (use command line)
-                          (char *)&strz->chr[0], // Command line
-                          NULL,                  // Process handle not inheritable
-                          NULL,                  // Thread handle not inheritable
-                          FALSE,                 // Set handle inheritance to FALSE
-                          CREATE_NEW_CONSOLE,    // note: cannot hide new console, but can preserve existing one
-                          NULL,                  // Use parent's environment block
-                          NULL,                  // Use parent's starting directory
-                          &si,                   // Pointer to STARTUPINFO structure
-                          &pi)                   // Pointer to PROCESS_INFORMATION structure
+        if (CreateProcessA(NULL,                  // No module name (use command line)
+                           (char *)&strz->chr[0], // Command line
+                           NULL,                  // Process handle not inheritable
+                           NULL,                  // Thread handle not inheritable
+                           FALSE,                 // Set handle inheritance to FALSE
+                           CREATE_NEW_CONSOLE,    // note: cannot hide new console, but can preserve existing one
+                           NULL,                  // Use parent's environment block
+                           NULL,                  // Use parent's starting directory
+                           &si,                   // Pointer to STARTUPINFO structure
+                           &pi)                   // Pointer to PROCESS_INFORMATION structure
         ) {
             // ref: The created process remains in the system until all threads within the process have terminated and all handles to the process and any of its
             // threads have been closed through calls to CloseHandle. The handles for both the process and the main thread must be closed through calls to
@@ -1329,7 +1341,9 @@ void sub_shell3(qbs *str, int32_t passed) { //_DONTWAIT
 
 #endif
 
+#ifdef QB64_WINDOWS
 shell_complete:;
+#endif
 } // SHELL _DONTWAIT
 
 void sub_shell4(qbs *str, int32_t passed) { //_DONTWAIT & _HIDE
@@ -1340,8 +1354,6 @@ void sub_shell4(qbs *str, int32_t passed) { //_DONTWAIT & _HIDE
     } // should not hide a shell waiting for input
 
     static qbs *strz = NULL;
-    static int32_t i;
-
     static qbs *str1 = NULL;
     static qbs *str2 = NULL;
     static qbs *str1z = NULL;
@@ -1365,12 +1377,12 @@ void sub_shell4(qbs *str, int32_t passed) { //_DONTWAIT & _HIDE
 
 #ifdef QB64_WINDOWS
 
-    static STARTUPINFO si;
+    static STARTUPINFOA si;
     static PROCESS_INFORMATION pi;
 
     if (cmd_ok()) {
 
-        static SHELLEXECUTEINFO shi;
+        static SHELLEXECUTEINFOA shi;
         static char cmd[10] = "cmd\0";
 
         // attempt to separate file name (if any) from parameters
@@ -1388,7 +1400,7 @@ void sub_shell4(qbs *str, int32_t passed) { //_DONTWAIT & _HIDE
             shi.lpParameters = NULL;
             shi.fMask = SEE_MASK_FLAG_NO_UI;
             shi.nShow = SW_HIDE;
-            if (ShellExecuteEx(&shi)) {
+            if (ShellExecuteExA(&shi)) {
                 goto shell_complete;
             }
         }
@@ -1426,7 +1438,7 @@ void sub_shell4(qbs *str, int32_t passed) { //_DONTWAIT & _HIDE
                 // if (str2->len<=1) shi.lpParameters=NULL;
                 shi.fMask = SEE_MASK_FLAG_NO_UI;
                 shi.nShow = SW_HIDE;
-                if (ShellExecuteEx(&shi)) {
+                if (ShellExecuteExA(&shi)) {
                     goto shell_complete;
                 }
             }
@@ -1444,7 +1456,7 @@ void sub_shell4(qbs *str, int32_t passed) { //_DONTWAIT & _HIDE
         shi.lpParameters = (char *)&strz->chr[0];
         shi.fMask = SEE_MASK_FLAG_NO_UI;
         shi.nShow = SW_HIDE;
-        if (ShellExecuteEx(&shi)) {
+        if (ShellExecuteExA(&shi)) {
             goto shell_complete;
         }
 
@@ -1481,16 +1493,16 @@ void sub_shell4(qbs *str, int32_t passed) { //_DONTWAIT & _HIDE
         ZeroMemory(&si, sizeof(si));
         si.cb = sizeof(si);
         ZeroMemory(&pi, sizeof(pi));
-        if (CreateProcess(NULL,                  // No module name (use command line)
-                          (char *)&strz->chr[0], // Command line
-                          NULL,                  // Process handle not inheritable
-                          NULL,                  // Thread handle not inheritable
-                          FALSE,                 // Set handle inheritance to FALSE
-                          CREATE_NEW_CONSOLE,    // note: cannot hide new console, but can preserve existing one
-                          NULL,                  // Use parent's environment block
-                          NULL,                  // Use parent's starting directory
-                          &si,                   // Pointer to STARTUPINFO structure
-                          &pi)                   // Pointer to PROCESS_INFORMATION structure
+        if (CreateProcessA(NULL,                  // No module name (use command line)
+                           (char *)&strz->chr[0], // Command line
+                           NULL,                  // Process handle not inheritable
+                           NULL,                  // Thread handle not inheritable
+                           FALSE,                 // Set handle inheritance to FALSE
+                           CREATE_NEW_CONSOLE,    // note: cannot hide new console, but can preserve existing one
+                           NULL,                  // Use parent's environment block
+                           NULL,                  // Use parent's starting directory
+                           &si,                   // Pointer to STARTUPINFO structure
+                           &pi)                   // Pointer to PROCESS_INFORMATION structure
         ) {
             // ref: The created process remains in the system until all threads within the process have terminated and all handles to the process and any of its
             // threads have been closed through calls to CloseHandle. The handles for both the process and the main thread must be closed through calls to
@@ -1513,6 +1525,7 @@ void sub_shell4(qbs *str, int32_t passed) { //_DONTWAIT & _HIDE
 
 #endif
 
+#ifdef QB64_WINDOWS
 shell_complete:;
-
+#endif
 } //_DONTWAIT & _HIDE

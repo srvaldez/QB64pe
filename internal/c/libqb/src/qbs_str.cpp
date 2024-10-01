@@ -1,9 +1,10 @@
 
 #include "libqb-common.h"
 
-#include <string.h>
-#include <stdlib.h>
+#include <inttypes.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "qbs.h"
 #include <stdint.h>
@@ -13,11 +14,7 @@
 qbs *qbs_str(int64_t value) {
     qbs *tqbs;
     tqbs = qbs_new(20, 1);
-#ifdef QB64_WINDOWS
-    tqbs->len = sprintf((char *)tqbs->chr, "% I64i", value);
-#else
-    tqbs->len = sprintf((char *)tqbs->chr, "% lli", value);
-#endif
+    tqbs->len = sprintf((char *)tqbs->chr, "% " PRId64, value);
     return tqbs;
 }
 qbs *qbs_str(int32_t value) {
@@ -42,11 +39,7 @@ qbs *qbs_str(int8_t value) {
 qbs *qbs_str(uint64_t value) {
     qbs *tqbs;
     tqbs = qbs_new(21, 1);
-#ifdef QB64_WINDOWS
-    tqbs->len = sprintf((char *)tqbs->chr, " %I64u", value);
-#else
-    tqbs->len = sprintf((char *)tqbs->chr, " %llu", value);
-#endif
+    tqbs->len = sprintf((char *)tqbs->chr, " %" PRIu64, value);
     return tqbs;
 }
 qbs *qbs_str(uint32_t value) {
@@ -363,4 +356,3 @@ qbs *qbs_str(long double value){
 }
     return tqbs;
 }
-
