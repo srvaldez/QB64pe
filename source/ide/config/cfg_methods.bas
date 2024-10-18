@@ -53,7 +53,7 @@ SUB CopyFromOther
             END IF
             'copying autosave & undo file(s) makes not much sense
         ELSE
-            IF _MESSAGEBOX("QB64-PE IDE", "No qb64pe executable found, so that seems not to be a QB64-PE installation, select another folder?", "yesno", "warning" ) = 1 GOTO cfoAgain
+            IF _MESSAGEBOX("QB64-PE IDE", "No qb64pe executable found, so that seems not to be a QB64-PE installation, select another folder?", "yesno", "warning") = 1 GOTO cfoAgain
         END IF
     END IF
     QB64_uptime# = TIMER(0.001) 'reinit to avoid startup resize events going wild
@@ -230,7 +230,7 @@ SUB ReadInitialConfig
     result = ReadConfigSetting(generalSettingsSection$, "BackupSize", value$)
     idebackupsize = VAL(value$)
     IF idebackupsize < 10 OR idebackupsize > 2000 THEN
-        idebackupsize = 100: WriteConfigSetting generalSettingsSection$, "BackupSize", "100"
+        idebackupsize = 500: WriteConfigSetting generalSettingsSection$, "BackupSize", "500"
     END IF
 
     result = ReadConfigSetting(generalSettingsSection$, "MaxRecentFiles", value$)

@@ -104,7 +104,7 @@ FUNCTION BinaryFormatCheck% (pathToCheck$, pathSepToCheck$, fileToCheck$)
     END SELECT
 END FUNCTION
 
-FUNCTION OfferNoprefixConversion(file$)
+FUNCTION OfferNoprefixConversion% (file$)
     what$ = ideyesnobox("$NOPREFIX", "This program uses the $NOPREFIX directive which is unsupported.\n\nQB64PE can automatically convert this file and any included files to\nremove $NOPREFIX. Backups of all files will be made.\n\nConvert this program?")
     IF what$ <> "Y" THEN EXIT FUNCTION
 
@@ -115,22 +115,22 @@ FUNCTION OfferNoprefixConversion(file$)
     PCOPY 3, 0
 
     IF INSTR(_OS$, "WIN") THEN
-        convertUtility$ = "internal\utilities\addprefix.exe"
+        convertUtility$ = "internal\utilities\AddPREFIX.exe"
     ELSE
-        convertUtility$ = "internal/utilities/addprefix"
+        convertUtility$ = "./internal/utilities/AddPREFIX"
     END IF
     IF NOT _FILEEXISTS(convertUtility$) THEN
         IF _DIREXISTS("./internal/utilities") = 0 THEN MKDIR "./internal/utilities"
         IF INSTR(_OS$, "WIN") THEN
-            SHELL _HIDE "qb64pe -x internal/support/addprefix/addprefix.bas -o " + convertUtility$
+            SHELL _HIDE "qb64pe -x internal/support/converter/AddPREFIX.bas -o " + convertUtility$
         ELSE
-            SHELL _HIDE "./qb64pe -x ./internal/support/addprefix/addprefix.bas -o " + convertUtility$
+            SHELL _HIDE "./qb64pe -x ./internal/support/converter/AddPREFIX.bas -o " + convertUtility$
         END IF
     END IF
 
     convertLine$ = convertUtility$ + " " + QuotedFilename$(file$)
     IF _SHELLHIDE(convertLine$) = 0 _ANDALSO OpenFile$(file$) <> "C" THEN
-        OfferNoprefixConversion = -1
+        OfferNoprefixConversion% = -1
     ELSE
         clearStatusWindow 0
         dummy = DarkenFGBG(0)
