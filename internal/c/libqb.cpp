@@ -1073,7 +1073,6 @@ int32 convert_unicode(int32 src_fmt, void *src_buf, int32 src_size, int32 dest_f
 #ifdef QB64_WINDOWS
 void showvalue(__int64);
 #endif
-void sub_beep();
 
 int32 lastfont = 48;
 int32 *font = (int32 *)calloc(4 * (48 + 1), 1); // NULL=unused index
@@ -11782,8 +11781,7 @@ void qbs_print(qbs *str, int32 finish_on_new_line) {
         } // 9
 
         if (character == 7) {
-            // qb64_generatesound(783.99,0.2,0);
-            Sleep(250);
+            sub_beep();
             goto skip;
         }
 
@@ -23546,6 +23544,8 @@ qbs *func__connectionaddress(int32 i) {
     static int32 x;
     if (is_error_pending())
         goto error;
+
+#ifdef DEPENDENCY_SOCKETS
     if (!str)
         str = qbs_new(0, 0);
     if (!str2)
@@ -23629,8 +23629,8 @@ qbs *func__connectionaddress(int32 i) {
             break;
         }
     } // i<0
+#endif
     error(52);
-    goto error;
 
 error:
     tqbs = qbs_new(0, 1);
