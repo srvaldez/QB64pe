@@ -15,8 +15,9 @@
 #include <stdio.h>
 
 #if defined(AUDIO_DEBUG) && AUDIO_DEBUG > 0
+#    define AUDIO_DEBUG_FILENAME (std::strrchr(__FILE__, '/') ? std::strrchr(__FILE__, '/') + 1 : __FILE__)
 #    define AUDIO_DEBUG_PRINT(_fmt_, _args_...)                                                                                                                \
-        fprintf(stderr, "\e[1;37mDEBUG: %s:%d:%s(): \e[1;33m" _fmt_ "\e[1;37m\n", __FILE__, __LINE__, __func__, ##_args_)
+        fprintf(stderr, "\e[1;37mDEBUG: %s:%d:%s: \e[1;33m" _fmt_ "\e[1;37m\n", AUDIO_DEBUG_FILENAME, __LINE__, __PRETTY_FUNCTION__, ##_args_)
 #    define AUDIO_DEBUG_CHECK(_exp_)                                                                                                                           \
         if (!(_exp_))                                                                                                                                          \
         AUDIO_DEBUG_PRINT("\e[0;31mCondition (%s) failed", #_exp_)
@@ -57,11 +58,13 @@ void sub__sndstop(int32_t handle);
 int32_t func__sndopenraw();
 void sub__sndraw(float left, float right, int32_t handle, int32_t passed);
 void sub__sndrawbatch(void *sampleFrameArray, int32_t channels, int32_t handle, uint32_t frameCount, int32_t passed);
+
 static inline void sub__sndrawdone(int32_t handle, int32_t passed) {
     // Dummy function that does nothing
     (void)handle;
     (void)passed;
 }
+
 double func__sndrawlen(int32_t handle, int32_t passed);
 
 mem_block func__memsound(int32_t handle, int32_t targetChannel, int32_t passed);

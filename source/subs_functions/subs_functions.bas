@@ -2894,7 +2894,7 @@ SUB reginternal
     id.args = 3
     id.arg = MKL$(LONGTYPE - ISPOINTER) + MKL$(ULONGTYPE - ISPOINTER) + MKL$(LONGTYPE - ISPOINTER)
     id.specialformat = "[?][,[?][,?]]"
-    id.hr_syntax = "CLS [method%] [, bgColor&] [, dest&]"
+    id.hr_syntax = "CLS [method%][, bgColor&][, dest&]"
     regid
 
     clearid
@@ -3281,6 +3281,18 @@ SUB reginternal
     id.arg = MKL$(-1)
     id.ret = STRINGTYPE - ISPOINTER
     id.hr_syntax = "STR$(number)"
+    regid
+
+    clearid
+    id.n = "_ToStr"
+    id.musthave = "$"
+    id.subfunc = 1
+    id.callname = "qbs__tostr"
+    id.args = 2
+    id.specialformat = "?[,?]"
+    id.arg = MKL$(-1) + MKL$(LONGTYPE - ISPOINTER)
+    id.ret = STRINGTYPE - ISPOINTER
+    id.hr_syntax = "_TOSTR$(number[,digits])"
     regid
 
     clearid

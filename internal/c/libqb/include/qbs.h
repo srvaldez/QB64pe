@@ -40,6 +40,7 @@ qbs *qbs_set(qbs *, qbs *);
 
 void qbs_free(qbs *str);
 
+// legacy STR$ function prototypes
 qbs *qbs_str(int64_t value);
 qbs *qbs_str(int32_t value);
 qbs *qbs_str(int16_t value);
@@ -51,6 +52,19 @@ qbs *qbs_str(uint8_t value);
 qbs *qbs_str(float value);
 qbs *qbs_str(double value);
 qbs *qbs_str(long double value);
+
+// modern _TOSTR$ function prototypes
+qbs *qbs__tostr(int64_t value, int32_t digits, int32_t passed);
+qbs *qbs__tostr(int32_t value, int32_t digits, int32_t passed);
+qbs *qbs__tostr(int16_t value, int32_t digits, int32_t passed);
+qbs *qbs__tostr(int8_t value, int32_t digits, int32_t passed);
+qbs *qbs__tostr(uint64_t value, int32_t digits, int32_t passed);
+qbs *qbs__tostr(uint32_t value, int32_t digits, int32_t passed);
+qbs *qbs__tostr(uint16_t value, int32_t digits, int32_t passed);
+qbs *qbs__tostr(uint8_t value, int32_t digits, int32_t passed);
+qbs *qbs__tostr(float value, int32_t digits, int32_t passed);
+qbs *qbs__tostr(double value, int32_t digits, int32_t passed);
+qbs *qbs__tostr(long double value, int32_t digits, int32_t passed);
 
 qbs *func_chr(int32_t value);
 
@@ -69,7 +83,9 @@ int32_t qbs_greaterorequal(qbs *str2, qbs *str1);
 int32_t qbs_asc(qbs *str, uint32_t i);
 int32_t qbs_asc(qbs *str);
 
-static inline int32_t qbs_len(qbs *str) { return str->len; }
+static inline int32_t qbs_len(qbs *str) {
+    return str->len;
+}
 
 // FIXME: Usages of these outside of qbx.c (and qbs_cleanup()) need to be removed.
 extern intptr_t *qbs_tmp_list;
@@ -102,6 +118,8 @@ int32_t func__str_nc_compare(qbs *s1, qbs *s2);
 int32_t func__str_compare(qbs *s1, qbs *s2);
 
 // Called by vWatch
-static inline void set_qbs_size(intptr_t *target_qbs, int32_t newlength) { qbs_set((qbs *)(*target_qbs), func_space(newlength)); }
+static inline void set_qbs_size(intptr_t *target_qbs, int32_t newlength) {
+    qbs_set((qbs *)(*target_qbs), func_space(newlength));
+}
 
 #endif
