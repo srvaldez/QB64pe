@@ -1,4 +1,4 @@
-if(oldstr3908){
-if(oldstr3908->fixed)qbs_set(oldstr3908,_FUNC_SETBUFFIND_STRING_FIND);
+if(oldstr3912){
+if(oldstr3912->fixed)qbs_set(oldstr3912,_FUNC_SETBUFFIND_STRING_FIND);
 qbs_free(_FUNC_SETBUFFIND_STRING_FIND);
 }

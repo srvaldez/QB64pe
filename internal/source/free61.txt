@@ -1,8 +1,8 @@
-if(oldstr3550){
-if(oldstr3550->fixed)qbs_set(oldstr3550,_SUB_SETPRELET_STRING_FLAGNAME);
+if(oldstr3554){
+if(oldstr3554->fixed)qbs_set(oldstr3554,_SUB_SETPRELET_STRING_FLAGNAME);
 qbs_free(_SUB_SETPRELET_STRING_FLAGNAME);
 }
-if(oldstr3551){
-if(oldstr3551->fixed)qbs_set(oldstr3551,_SUB_SETPRELET_STRING_FLAGVALUE);
+if(oldstr3555){
+if(oldstr3555->fixed)qbs_set(oldstr3555,_SUB_SETPRELET_STRING_FLAGVALUE);
 qbs_free(_SUB_SETPRELET_STRING_FLAGVALUE);
 }

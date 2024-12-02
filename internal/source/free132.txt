@@ -1,4 +1,4 @@
-if(oldstr3873){
-if(oldstr3873->fixed)qbs_set(oldstr3873,_SUB_INILOAD_STRING_FILE);
+if(oldstr3877){
+if(oldstr3877->fixed)qbs_set(oldstr3877,_SUB_INILOAD_STRING_FILE);
 qbs_free(_SUB_INILOAD_STRING_FILE);
 }

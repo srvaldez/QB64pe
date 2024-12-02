@@ -1,14 +1,14 @@
 qbs *_FUNC_ANSITEXTTOUTF8TEXT_STRING_ANSITEXTTOUTF8TEXT=NULL;
 if (!_FUNC_ANSITEXTTOUTF8TEXT_STRING_ANSITEXTTOUTF8TEXT)_FUNC_ANSITEXTTOUTF8TEXT_STRING_ANSITEXTTOUTF8TEXT=qbs_new(0,0);
-qbs*oldstr7118=NULL;
+qbs*oldstr7123=NULL;
 if(_FUNC_ANSITEXTTOUTF8TEXT_STRING_TEXT->tmp||_FUNC_ANSITEXTTOUTF8TEXT_STRING_TEXT->fixed||_FUNC_ANSITEXTTOUTF8TEXT_STRING_TEXT->readonly){
-oldstr7118=_FUNC_ANSITEXTTOUTF8TEXT_STRING_TEXT;
-if (oldstr7118->cmem_descriptor){
-_FUNC_ANSITEXTTOUTF8TEXT_STRING_TEXT=qbs_new_cmem(oldstr7118->len,0);
+oldstr7123=_FUNC_ANSITEXTTOUTF8TEXT_STRING_TEXT;
+if (oldstr7123->cmem_descriptor){
+_FUNC_ANSITEXTTOUTF8TEXT_STRING_TEXT=qbs_new_cmem(oldstr7123->len,0);
 }else{
-_FUNC_ANSITEXTTOUTF8TEXT_STRING_TEXT=qbs_new(oldstr7118->len,0);
+_FUNC_ANSITEXTTOUTF8TEXT_STRING_TEXT=qbs_new(oldstr7123->len,0);
 }
-memcpy(_FUNC_ANSITEXTTOUTF8TEXT_STRING_TEXT->chr,oldstr7118->chr,oldstr7118->len);
+memcpy(_FUNC_ANSITEXTTOUTF8TEXT_STRING_TEXT->chr,oldstr7123->chr,oldstr7123->len);
 }
 qbs *_FUNC_ANSITEXTTOUTF8TEXT_STRING_UTF=NULL;
 if (!_FUNC_ANSITEXTTOUTF8TEXT_STRING_UTF)_FUNC_ANSITEXTTOUTF8TEXT_STRING_UTF=qbs_new(0,0);
@@ -17,13 +17,13 @@ if(_FUNC_ANSITEXTTOUTF8TEXT_LONG_CHI==NULL){
 _FUNC_ANSITEXTTOUTF8TEXT_LONG_CHI=(int32*)mem_static_malloc(4);
 *_FUNC_ANSITEXTTOUTF8TEXT_LONG_CHI=0;
 }
-int64 fornext_value7120;
-int64 fornext_finalvalue7120;
-int64 fornext_step7120;
-uint8 fornext_step_negative7120;
-byte_element_struct *byte_element_7121=NULL;
-if (!byte_element_7121){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_7121=(byte_element_struct*)(mem_static_pointer-12); else byte_element_7121=(byte_element_struct*)mem_static_malloc(12);
+int64 fornext_value7125;
+int64 fornext_finalvalue7125;
+int64 fornext_step7125;
+uint8 fornext_step_negative7125;
+byte_element_struct *byte_element_7126=NULL;
+if (!byte_element_7126){
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_7126=(byte_element_struct*)(mem_static_pointer-12); else byte_element_7126=(byte_element_struct*)mem_static_malloc(12);
 }
 int16 *_FUNC_ANSITEXTTOUTF8TEXT_INTEGER_ASCII=NULL;
 if(_FUNC_ANSITEXTTOUTF8TEXT_INTEGER_ASCII==NULL){

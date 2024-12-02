@@ -10769,12 +10769,6 @@ DO
                         e$ = evaluate(e2$, sourcetyp)
                         IF Error_Happened THEN GOTO errmes
 
-                        IF sourcetyp AND ISOFFSET THEN
-                            IF (targettyp AND ISOFFSET) = 0 THEN
-                                IF id2.internal_subfunc = 0 THEN a$ = "Cannot convert _OFFSET type to other types": GOTO errmes
-                            END IF
-                        END IF
-
                         IF RTRIM$(id2.callname) = "sub_paint" THEN
                             IF i = 3 THEN
                                 IF (sourcetyp AND ISSTRING) THEN
@@ -16491,6 +16485,32 @@ FUNCTION evaluatefunc$ (a2$, args AS LONG, typ AS LONG)
 
 
 
+                ' CAST support
+                IF n$ = "_CAST" THEN
+                    IF curarg = 1 THEN ' data type
+                        castType$ = type2symbol$(e$)
+                        IF Error_Happened THEN EXIT FUNCTION
+
+                        SELECT CASE castType$
+                            CASE "%%", "~%%", "%", "~%", "&", "~&", "&&", "~&&", "%&", "~%&", "!", "#", "##"
+                                typ& = typname2typ(castType$) - ISPOINTER
+                                IF Error_Happened THEN EXIT FUNCTION
+
+                                r$ = r$ + "(" + typ2ctyp(typ&, castType$) + ")" ' both args are not really needed. Oh well!
+                                IF Error_Happened THEN EXIT FUNCTION
+
+                            CASE ELSE
+                                Give_Error "_CAST TYPE unsupported"
+                                EXIT FUNCTION
+                        END SELECT
+
+                        e$ = ""
+                        nocomma = 1
+
+                        GOTO dontevaluate
+                    END IF
+                END IF
+
                 '*special case CVI,CVL,CVS,CVD,_CV (part #1)
                 IF n$ = "_CV" THEN
                     IF curarg = 1 THEN
@@ -16676,41 +16696,104 @@ FUNCTION evaluatefunc$ (a2$, args AS LONG, typ AS LONG)
                 IF Error_Happened THEN EXIT FUNCTION
                 '------------------------------------------------------------------------------------------------------------
 
+                ' CAST support
+                IF n$ = "_CAST" THEN
+                    IF curarg = 2 THEN ' numeric value
+                        nocomma = 0
+
+                        IF sourcetyp AND ISSTRING THEN
+                            Give_Error "Expected numeric value"
+                            EXIT FUNCTION
+                        END IF
+
+                        IF sourcetyp AND ISREFERENCE THEN e$ = refer(e$, sourcetyp, 0)
+                        IF Error_Happened THEN EXIT FUNCTION
+
+                        r$ = r$ + "(" + e$ + "))"
+
+                        GOTO evalfuncspecial
+                    END IF
+                END IF
+
+                ' IIF support
+                IF n$ = "_IIF" THEN
+                    IF curarg = 1 THEN ' expression
+                        r$ = r$ + "("
+                        nocomma = 1
+                    ELSEIF curarg = 2 THEN ' true part
+                        IF sourcetyp AND ISREFERENCE THEN e$ = refer(e$, sourcetyp, 0)
+                        IF Error_Happened THEN EXIT FUNCTION
+
+                        typ& = sourcetyp ' return type is always derived from true part
+                        r$ = r$ + ")?(" + e$ + "):"
+                        e$ = ""
+                        nocomma = 1
+
+                        GOTO dontevaluate
+                    ELSEIF curarg = 3 THEN ' false part
+                        nocomma = 0
+
+                        IF (sourcetyp AND ISSTRING) <> (typ& AND ISSTRING) THEN
+                            Give_Error "falsePart and truePart must be of the same type"
+                            EXIT FUNCTION
+                        END IF
+
+                        IF sourcetyp AND ISREFERENCE THEN e$ = refer(e$, sourcetyp, 0)
+                        IF Error_Happened THEN EXIT FUNCTION
+
+                        r$ = r$ + "(" + e$ + "))"
+
+                        GOTO evalfuncspecial
+                    END IF
+                END IF
+
                 ' ROR & ROL support
-                IF n$ = "_ROR" OR n$ = "_ROL" THEN
-                    rotlr_n$ = LCASE$(RIGHT$(n$, 3)) ' Get the last 3 characters and convert to lower case. We'll need this to construct the C call
-                    IF curarg = 1 THEN ' First parameter
-                        IF (sourcetyp AND ISSTRING) OR (sourcetyp AND ISFLOAT) OR (sourcetyp AND ISOFFSET) OR (sourcetyp AND ISUDT) THEN ' Bad parameters types
+                IF n$ = "_ROR" _ORELSE n$ = "_ROL" THEN
+                    rotlr_n$ = LCASE$(RIGHT$(n$, 3)) ' we'll need this to construct the C call
+
+                    IF curarg = 1 THEN ' first parameter
+                        IF (sourcetyp AND ISSTRING) _ORELSE (sourcetyp AND ISFLOAT) THEN
                             Give_Error "Expected non-floating-point value"
                             EXIT FUNCTION
                         END IF
-                        IF sourcetyp AND ISREFERENCE THEN e$ = refer(e$, sourcetyp, 0) ' This gets the C-style dereferencing syntax for an identifier (I think XD)
+
+                        IF sourcetyp AND ISREFERENCE THEN e$ = refer(e$, sourcetyp, 0)
                         IF Error_Happened THEN EXIT FUNCTION
+
                         ' Establish which function (if any!) should be used
                         IF (sourcetyp AND 511) = 8 THEN ' sourcetyp is the type of data (bits can be examined to get more details)
-                            e$ = "func__" + rotlr_n$ + "8(" + e$
-                            typ& = UBYTETYPE - ISPOINTER ' We force the return type here. This is passed back up to the caller
+                            e$ = "func__" + rotlr_n$ + "<uint8_t>(" + e$
+                            typ& = UBYTETYPE - ISPOINTER ' the return type is passed back up to the caller
                         ELSEIF (sourcetyp AND 511) = 16 THEN
-                            e$ = "func__" + rotlr_n$ + "16(" + e$
+                            e$ = "func__" + rotlr_n$ + "<uint16_t>(" + e$
                             typ& = UINTEGERTYPE - ISPOINTER
                         ELSEIF (sourcetyp AND 511) = 32 THEN
-                            e$ = "func__" + rotlr_n$ + "32(" + e$
+                            e$ = "func__" + rotlr_n$ + "<uint32_t>(" + e$
                             typ& = ULONGTYPE - ISPOINTER
                         ELSEIF (sourcetyp AND 511) = 64 THEN
-                            e$ = "func__" + rotlr_n$ + "64(" + e$
+                            e$ = "func__" + rotlr_n$ + "<uint64_t>(" + e$
                             typ& = UINTEGER64TYPE - ISPOINTER
                         ELSE
                             Give_Error "Unknown data size"
                             EXIT FUNCTION
                         END IF
-                        r$ = e$ ' Save whatever syntax he have so far
-                        e$ = "" ' This must be cleared so that it is not repeated when we get to parameter 2
-                        GOTO dontevaluate ' Don't evaluate until we get the second parameter
-                    ELSEIF curarg = 2 THEN ' Second parameter
+
+                        r$ = e$ ' save whatever syntax he have so far
+                        e$ = "" ' this must be cleared so that it is not repeated when we get to parameter 2
+
+                        GOTO dontevaluate ' don't evaluate until we get the second parameter
+                    ELSEIF curarg = 2 THEN ' second parameter
+                        IF (sourcetyp AND ISSTRING) _ORELSE (sourcetyp AND ISFLOAT) THEN
+                            Give_Error "Expected non-floating-point value"
+                            EXIT FUNCTION
+                        END IF
+
                         IF sourcetyp AND ISREFERENCE THEN e$ = refer(e$, sourcetyp, 0)
                         IF Error_Happened THEN EXIT FUNCTION
+
                         r$ = r$ + e$ + ")"
-                        GOTO evalfuncspecial ' Evaluate now that we have everything
+
+                        GOTO evalfuncspecial ' evaluate now that we have everything
                     END IF
                 END IF
 
@@ -16762,11 +16845,6 @@ FUNCTION evaluatefunc$ (a2$, args AS LONG, typ AS LONG)
                     GOTO evalfuncspecial
                 END IF '_OFFSET
 
-                '*_OFFSET exceptions*
-                IF sourcetyp AND ISOFFSET THEN
-                    IF n$ = "MKSMBF" AND RTRIM$(id2.musthave) = "$" THEN Give_Error "Cannot convert _OFFSET type to other types": EXIT FUNCTION
-                    IF n$ = "MKDMBF" AND RTRIM$(id2.musthave) = "$" THEN Give_Error "Cannot convert _OFFSET type to other types": EXIT FUNCTION
-                END IF
 
                 '*special case*
                 IF n$ = "ENVIRON" THEN
@@ -16955,7 +17033,6 @@ FUNCTION evaluatefunc$ (a2$, args AS LONG, typ AS LONG)
 
                 '*special case*
                 IF n$ = "CDBL" THEN
-                    IF (sourcetyp AND ISOFFSET) THEN Give_Error "Cannot convert _OFFSET type to other types": EXIT FUNCTION
                     IF (sourcetyp AND ISSTRING) THEN Give_Error "Expected numeric value": EXIT FUNCTION
                     IF (sourcetyp AND ISREFERENCE) THEN e$ = refer(e$, sourcetyp, 0)
                     IF Error_Happened THEN EXIT FUNCTION
@@ -16973,7 +17050,6 @@ FUNCTION evaluatefunc$ (a2$, args AS LONG, typ AS LONG)
 
                 '*special case*
                 IF n$ = "CSNG" THEN
-                    IF (sourcetyp AND ISOFFSET) THEN Give_Error "Cannot convert _OFFSET type to other types": EXIT FUNCTION
                     IF (sourcetyp AND ISSTRING) THEN Give_Error "Expected numeric value": EXIT FUNCTION
                     IF (sourcetyp AND ISREFERENCE) THEN e$ = refer(e$, sourcetyp, 0)
                     IF Error_Happened THEN EXIT FUNCTION
@@ -16993,7 +17069,6 @@ FUNCTION evaluatefunc$ (a2$, args AS LONG, typ AS LONG)
 
                 '*special case*
                 IF n$ = "CLNG" THEN
-                    IF (sourcetyp AND ISOFFSET) THEN Give_Error "Cannot convert _OFFSET type to other types": EXIT FUNCTION
                     IF (sourcetyp AND ISSTRING) THEN Give_Error "Expected numeric value": EXIT FUNCTION
                     IF (sourcetyp AND ISREFERENCE) THEN e$ = refer(e$, sourcetyp, 0)
                     IF Error_Happened THEN EXIT FUNCTION
@@ -17016,7 +17091,6 @@ FUNCTION evaluatefunc$ (a2$, args AS LONG, typ AS LONG)
 
                 '*special case*
                 IF n$ = "CINT" THEN
-                    IF (sourcetyp AND ISOFFSET) THEN Give_Error "Cannot convert _OFFSET type to other types": EXIT FUNCTION
                     IF (sourcetyp AND ISSTRING) THEN Give_Error "Expected numeric value": EXIT FUNCTION
                     IF (sourcetyp AND ISREFERENCE) THEN e$ = refer(e$, sourcetyp, 0)
                     IF Error_Happened THEN EXIT FUNCTION
@@ -17048,7 +17122,6 @@ FUNCTION evaluatefunc$ (a2$, args AS LONG, typ AS LONG)
                 IF n$ = "_MK" THEN mktype = -1
                 IF mktype THEN
                     IF mktype <> -1 OR curarg = 2 THEN
-                        'IF (sourcetyp AND ISOFFSET) THEN Give_Error "Cannot convert " + "_OFFSET type to other types": EXIT FUNCTION
                         'both _MK and trad. process the following
                         qtyp& = 0
                         IF mktype$ = "%%" THEN ctype$ = "b": qtyp& = BYTETYPE - ISPOINTER
@@ -17424,12 +17497,6 @@ FUNCTION evaluatefunc$ (a2$, args AS LONG, typ AS LONG)
                     IF Error_Happened THEN EXIT FUNCTION
                     GOTO dontevaluate
                 END IF '-8
-
-                IF sourcetyp AND ISOFFSET THEN
-                    IF (targettyp AND ISOFFSET) = 0 THEN
-                        IF id2.internal_subfunc = 0 THEN Give_Error "Cannot convert _OFFSET type to other types": EXIT FUNCTION
-                    END IF
-                END IF
 
                 'note: this is used for functions like STR(...) which accept all types...
                 explicitreference = 0
@@ -17917,13 +17984,6 @@ FUNCTION evaluatetotyp$ (a2$, targettyp AS LONG)
     a$ = a2$
     e$ = evaluate(a$, sourcetyp)
     IF Error_Happened THEN EXIT FUNCTION
-
-    'Offset protection:
-    IF sourcetyp AND ISOFFSET THEN
-        IF (targettyp AND ISOFFSET) = 0 AND targettyp >= 0 THEN
-            Give_Error "Cannot convert _OFFSET type to other types": EXIT FUNCTION
-        END IF
-    END IF
 
     '-5 size
     '-6 offset
@@ -23690,14 +23750,8 @@ FUNCTION SCase2$ (t$)
             CASE "_ANDALSO"
                 SCase2$ = "_AndAlso"
 
-            CASE "ANDALSO"
-                SCase2$ = "AndAlso"
-
             CASE "_ORELSE"
                 SCase2$ = "_OrElse"
-
-            CASE "ORELSE"
-                SCase2$ = "OrElse"
 
             CASE ELSE
                 newWord = -1

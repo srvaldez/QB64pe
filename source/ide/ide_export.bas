@@ -149,7 +149,7 @@ SUB ExportCodeAs (docFormat$)
                         END IF
                     END IF
                 END IF
-                IF NOT (me% OR kw%) THEN GOSUB EscapeChar 'html
+                IF NOT (me% OR kw%) THEN GOSUB EscapeChar 'html, wiki
             CASE 39 ''
                 IF nl% THEN
                     IF sPos& + 1 <= sLen& THEN
@@ -177,7 +177,7 @@ SUB ExportCodeAs (docFormat$)
                 END IF
                 IF nu% THEN post% = 0: what$ = "nu": GOSUB CloseText: nu% = 0
                 IF curr% = 61 AND NOT (co% OR qu% OR (fu% < -1) OR bo%) THEN fu% = -3
-                IF curr% = 60 OR curr% = 62 OR curr% = 92 THEN GOSUB EscapeChar 'html, rtf
+                IF curr% = 60 OR curr% = 62 OR curr% = 92 THEN GOSUB EscapeChar 'html, rtf, wiki
                 nt% = -1
             CASE 45 '-
                 IF kw% THEN
@@ -453,6 +453,9 @@ SUB ExportCodeAs (docFormat$)
             CASE "SELECT"
                 IF UCASE$(LEFT$(la$, 4)) = "CASE" THEN kw$ = kw$ + " " + LEFT$(la$, 4): page$ = "SELECT CASE": fu% = -1: bo% = -1: in% = -1
                 IF UCASE$(LEFT$(la$, 9)) = "EVERYCASE" THEN kw$ = kw$ + " " + LEFT$(la$, 9): page$ = "SELECT CASE": fu% = -1: bo% = -1: in% = -1
+            CASE "SOUND"
+                IF UCASE$(LEFT$(la$, 4)) = "WAIT" THEN kw$ = kw$ + " " + LEFT$(la$, 4): in% = -1
+                IF UCASE$(LEFT$(la$, 6)) = "RESUME" THEN kw$ = kw$ + " " + LEFT$(la$, 6): in% = -1
             CASE "VIEW": IF UCASE$(LEFT$(la$, 5)) = "PRINT" THEN kw$ = kw$ + " " + LEFT$(la$, 5): page$ = "VIEW PRINT": in% = -1
             CASE "INPUT", "PRINT", "WRITE": IF LEFT$(la$, 1) = "#" THEN page$ = page$ + " (file statement)"
         END SELECT
@@ -540,8 +543,16 @@ SUB ExportCodeAs (docFormat$)
                     ech$ = "\u" + LTRIM$(STR$(uni&)) + "\'bf": sk% = -1
                 CASE ELSE: RETURN
             END SELECT
-        CASE "foru", "wiki" ' 'Keeps the original encoding, so Forum/Wiki examples can be copied
+        CASE "foru" '         'Keeps the original encoding, so Forum/Wiki examples can be copied
             SELECT CASE curr% 'back to the IDE. However, chars appear wrong in the Forum/Wiki.
+                CASE IS > 127: ech$ = "&#" + LTRIM$(STR$(curr%)) + ";": sk% = -1
+                CASE ELSE: RETURN
+            END SELECT
+        CASE "wiki" '         'Keeps the original encoding, so Forum/Wiki examples can be copied
+            SELECT CASE curr% 'back to the IDE. However, chars appear wrong in the Forum/Wiki.
+                CASE 38: ech$ = "&amp;": sk% = -1
+                CASE 60: ech$ = "&lt;": sk% = -1
+                CASE 62: ech$ = "&gt;": sk% = -1
                 CASE IS > 127: ech$ = "&#" + LTRIM$(STR$(curr%)) + ";": sk% = -1
                 CASE ELSE: RETURN
             END SELECT
