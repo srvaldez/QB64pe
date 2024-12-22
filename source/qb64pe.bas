@@ -2547,18 +2547,15 @@ DO
                                     apo% = INSTR(UCASE$(pwl$), "STATIC")
                                     IF apo% = 0 THEN apo% = INSTR(pwl$, "'")
                                     IF apo% = 0 THEN apo% = LEN(pwl$) + 1
-                                    cpo% = INSTR(pwl$, ")")
-                                    IF cpo% = 0 OR cpo% > apo% THEN cpo% = apo% ELSE cpo% = cpo% + 1
-                                    id.hr_syntax = n$ + StrReplace$(RTRIM$(LEFT$(pwl$, cpo% - 1)), "_", "")
+                                    cpo% = _INSTRREV(apo%, pwl$, ")")
+                                    pwl$ = n$ + symbol$ + StrReplace$(RTRIM$(LEFT$(pwl$, cpo%)), "_", "")
+                                    pwl$ = StrReplace$(pwl$, " ()", "()")
+                                    id.hr_syntax = pwl$
                                 END IF
 
                                 IF UCASE$(LEFT$(n$, 5)) = "_IKW_" THEN
                                     reginternalsubfunc = 1: id.n = MID$(n$, 5): id.callname = "FUNC_" + UCASE$(MID$(n$, 5))
-                                    IF symbol$ = "$" THEN
-                                        id.hr_syntax = UCASE$(MID$(n$, 5)) + "$" + MID$(id.hr_syntax, LEN(n$) + 1)
-                                    ELSE
-                                        id.hr_syntax = UCASE$(MID$(n$, 5)) + MID$(id.hr_syntax, LEN(n$) + 1)
-                                    END IF
+                                    id.hr_syntax = UCASE$(MID$(n$, 5)) + _IIF(symbol$ = "$", "$", "") + MID$(id.hr_syntax, LEN(n$) + LEN(symbol$) + 1)
                                 END IF
                                 regid
                                 reginternalsubfunc = 0
@@ -2588,10 +2585,9 @@ DO
                                     apo% = INSTR(UCASE$(pwl$), "STATIC")
                                     IF apo% = 0 THEN apo% = INSTR(pwl$, "'")
                                     IF apo% = 0 THEN apo% = LEN(pwl$) + 1
-                                    cpo% = INSTR(pwl$, ")")
-                                    IF cpo% = 0 OR cpo% > apo% THEN cpo% = apo% ELSE cpo% = cpo% + 1
-                                    pwl$ = n$ + StrReplace$(RTRIM$(LEFT$(pwl$, cpo% - 1)), "_", "")
-                                    pwl$ = StrReplace$(pwl$, "(", " "): pwl$ = StrReplace$(pwl$, ")", "")
+                                    cpo% = _INSTRREV(apo%, pwl$, ")")
+                                    pwl$ = n$ + " " + StrReplace$(RTRIM$(MID$(pwl$, 2, cpo% - 2)), "_", "")
+                                    pwl$ = StrReplace$(pwl$, " ()", "()")
                                     id.hr_syntax = pwl$
                                 END IF
 
@@ -9277,7 +9273,7 @@ DO
                 IF s THEN
                     WriteBufLine MainTxtBuf, "*(" + st$ + "*)" + varoffs$ + "=*(" + st$ + "*)(" + offs$ + ");"
                 ELSE
-                    WriteBufLine MainTxtBuf, "memmove(" + varoffs$ + ",(void*)" + offs$ + "," + varsize$ + ");"
+                    WriteBufLine MainTxtBuf, "memmove(" + varoffs$ + ",(uint8_t*)" + offs$ + "," + varsize$ + ");"
                 END IF
             ELSE
                 'safe version:
@@ -9372,7 +9368,7 @@ DO
                     IF s THEN
                         WriteBufLine MainTxtBuf, "*(" + st$ + "*)(" + offs$ + ")=*(" + st$ + "*)" + varoffs$ + ";"
                     ELSE
-                        WriteBufLine MainTxtBuf, "memmove((void*)" + offs$ + "," + varoffs$ + "," + varsize$ + ");"
+                        WriteBufLine MainTxtBuf, "memmove((uint8_t*)" + offs$ + "," + varoffs$ + "," + varsize$ + ");"
                     END IF
                 ELSE
                     'safe version:
@@ -23887,7 +23883,7 @@ END FUNCTION
 '$INCLUDE:'utilities\type.bas'
 '$INCLUDE:'utilities\give_error.bas'
 '$INCLUDE:'utilities\format.bas'
-'$include:'utilities\terminal.bas'
+'$INCLUDE:'utilities\terminal.bas'
 '$INCLUDE:'emit\logging.bas'
 
 DEFLNG A-Z

@@ -1,4 +1,4 @@
-//----------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------
 //  QB64-PE Compression Library
 //  Powered by miniz (https://github.com/richgel999/miniz)
 //-----------------------------------------------------------------------------------------------------
@@ -9,7 +9,5 @@
 
 struct qbs;
 
-uint32_t func__adler32(qbs *text);
-uint32_t func__crc32(qbs *text);
-qbs *func__deflate(qbs *text);
+qbs *func__deflate(qbs *src, int32_t level = -1, int32_t passed = 0);
 qbs *func__inflate(qbs *text, int64_t originalsize, int32_t passed);
