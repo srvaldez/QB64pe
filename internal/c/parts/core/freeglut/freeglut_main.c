@@ -40,14 +40,9 @@
 #endif
 
 // QB64-PE: custom code begin
+#include "../../../libqb/include/event.h"
 #include "../../../libqb/include/keyhandler.h"
 
-#define QB64_EVENT_CLOSE 1
-#define QB64_EVENT_KEY 2
-#define QB64_EVENT_RELATIVE_MOUSE_MOVEMENT 3
-#define QB64_EVENT_FILE_DROP 4
-
-int qb64_custom_event(int event, int v1, int v2, int v3, int v4, int v5, int v6, int v7, int v8, void *p1, void *p2);
 #if TARGET_HOST_POSIX_X11
 void qb64_os_event_linux(XEvent *event, Display *display, int *qb64_os_event_info);
 #else
@@ -1677,7 +1672,8 @@ LRESULT CALLBACK fgWindowProc( HWND hWnd, UINT uMsg, WPARAM wParam,
 {
     // QB64-PE: custom code begin
     static int raw_setup = 0;
-    static RAWINPUTDEVICE Rid[1];
+    static RAWINPUTDEVICE rawInputDevice;
+    static RAWINPUT rawInput;
     int qb64_os_event_info = 0;
     LRESULT qb64_os_event_return = 1;
 
@@ -2051,16 +2047,14 @@ LRESULT CALLBACK fgWindowProc( HWND hWnd, UINT uMsg, WPARAM wParam,
         return 0;
 
     // QB64-PE: custom code begin
+    // Adapted from https://learn.microsoft.com/en-us/windows/win32/dxtecharts/taking-advantage-of-high-dpi-mouse-movement
     case WM_INPUT: {
         if (raw_setup) {
-            // Adapted from http://msdn.microsoft.com/en-us/library/windows/desktop/ee418864%28v=vs.85%29.aspx#WM_INPUT
-            UINT dwSize = sizeof(RAWINPUT);
-            static BYTE lpb[sizeof(RAWINPUT)];
-            GetRawInputData((HRAWINPUT)lParam, RID_INPUT, lpb, &dwSize, sizeof(RAWINPUTHEADER));
-            RAWINPUT *raw = (RAWINPUT *)lpb;
-            if (raw->header.dwType == RIM_TYPEMOUSE) {
-                int xPosRelative = raw->data.mouse.lLastX;
-                int yPosRelative = raw->data.mouse.lLastY;
+            UINT dwSize = sizeof(rawInput);
+            GetRawInputData((HRAWINPUT)lParam, RID_INPUT, (LPVOID)&rawInput, &dwSize, sizeof(RAWINPUTHEADER));
+            if (rawInput.header.dwType == RIM_TYPEMOUSE) {
+                LONG xPosRelative = rawInput.data.mouse.lLastX;
+                LONG yPosRelative = rawInput.data.mouse.lLastY;
                 if (xPosRelative || yPosRelative)
                     qb64_custom_event(QB64_EVENT_RELATIVE_MOUSE_MOVEMENT, xPosRelative, yPosRelative, 0, 0, 0, 0, 0, 0, NULL, NULL);
             }
@@ -2071,7 +2065,7 @@ LRESULT CALLBACK fgWindowProc( HWND hWnd, UINT uMsg, WPARAM wParam,
 
     case WM_MOUSEMOVE:
     {
-	// QB64-PE: custom code begin
+        // QB64-PE: custom code begin
         if (!raw_setup) {
             raw_setup = 1;
 #    ifndef HID_USAGE_PAGE_GENERIC
@@ -2080,13 +2074,13 @@ LRESULT CALLBACK fgWindowProc( HWND hWnd, UINT uMsg, WPARAM wParam,
 #    ifndef HID_USAGE_GENERIC_MOUSE
 #        define HID_USAGE_GENERIC_MOUSE ((USHORT)0x02)
 #    endif
-            Rid[0].usUsagePage = HID_USAGE_PAGE_GENERIC;
-            Rid[0].usUsage = HID_USAGE_GENERIC_MOUSE;
-            Rid[0].dwFlags = RIDEV_INPUTSINK;
-            Rid[0].hwndTarget = window->Window.Handle;
-            RegisterRawInputDevices(Rid, 1, sizeof(Rid[0]));
+            rawInputDevice.usUsagePage = HID_USAGE_PAGE_GENERIC;
+            rawInputDevice.usUsage = HID_USAGE_GENERIC_MOUSE;
+            rawInputDevice.dwFlags = RIDEV_INPUTSINK;
+            rawInputDevice.hwndTarget = window->Window.Handle;
+            RegisterRawInputDevices(&rawInputDevice, 1, sizeof(rawInputDevice));
         }
-	// QB64-PE: custom code end
+        // QB64-PE: custom code end
 
 #if defined(_WIN32_WCE)
         window->State.MouseX = 320-HIWORD( lParam );
