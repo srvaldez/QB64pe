@@ -786,7 +786,7 @@ int32 get_hardware_img_index(int32 handle) {
 // clang-format off
 /// @brief Code page 437 to UTF16 LUT. This is not static because it is shared by other translation units
 uint16_t codepage437_to_unicode16[] = {
-    0x0020, 0x263A, 0x263B, 0x2665, 0x2666, 0x2663, 0x2660, 0x2022, 0x25D8, 0x25CB, 0x25D9, 0x2642, 0x2640, 0x266A, 0x266B, 0x263C,
+    0x0000, 0x263A, 0x263B, 0x2665, 0x2666, 0x2663, 0x2660, 0x2022, 0x25D8, 0x25CB, 0x25D9, 0x2642, 0x2640, 0x266A, 0x266B, 0x263C,
     0x25BA, 0x25C4, 0x2195, 0x203C, 0x00B6, 0x00A7, 0x25AC, 0x21A8, 0x2191, 0x2193, 0x2192, 0x2190, 0x221F, 0x2194, 0x25B2, 0x25BC,
     0x0020, 0x0021, 0x0022, 0x0023, 0x0024, 0x0025, 0x0026, 0x0027, 0x0028, 0x0029, 0x002A, 0x002B, 0x002C, 0x002D, 0x002E, 0x002F,
     0x0030, 0x0031, 0x0032, 0x0033, 0x0034, 0x0035, 0x0036, 0x0037, 0x0038, 0x0039, 0x003A, 0x003B, 0x003C, 0x003D, 0x003E, 0x003F,
@@ -801,7 +801,7 @@ uint16_t codepage437_to_unicode16[] = {
     0x2514, 0x2534, 0x252C, 0x251C, 0x2500, 0x253C, 0x255E, 0x255F, 0x255A, 0x2554, 0x2569, 0x2566, 0x2560, 0x2550, 0x256C, 0x2567,
     0x2568, 0x2564, 0x2565, 0x2559, 0x2558, 0x2552, 0x2553, 0x256B, 0x256A, 0x2518, 0x250C, 0x2588, 0x2584, 0x258C, 0x2590, 0x2580,
     0x03B1, 0x00DF, 0x0393, 0x03C0, 0x03A3, 0x03C3, 0x00B5, 0x03C4, 0x03A6, 0x0398, 0x03A9, 0x03B4, 0x221E, 0x03C6, 0x03B5, 0x2229,
-    0x2261, 0x00B1, 0x2265, 0x2264, 0x2320, 0x2321, 0x00F7, 0x2248, 0x00B0, 0x2219, 0x00B7, 0x221A, 0x207F, 0x00B2, 0x25A0, 0x0020
+    0x2261, 0x00B1, 0x2265, 0x2264, 0x2320, 0x2321, 0x00F7, 0x2248, 0x00B0, 0x2219, 0x00B7, 0x221A, 0x207F, 0x00B2, 0x25A0, 0x00A0
 };
 // clang-format on
 
@@ -13694,257 +13694,6 @@ qbs_input_wait_for_key:
 
 } // qbs_input
 
-long double func_val(qbs *s) {
-    char c;
-    static int32 i, i2, step, num_significant_digits, most_significant_digit_position;
-    static int32 num_exponent_digits;
-    static int32 negate, negate_exponent;
-    static uint8 significant_digits[256];
-    static int64 exponent_value;
-    static uint8 built_number[256];
-    static long double return_value;
-    static int64 value;
-    static int64 hex_value;
-    static int32 hex_digits;
-    if (!s->len)
-        return 0;
-    value = 0;
-    negate_exponent = 0;
-    num_exponent_digits = 0;
-    num_significant_digits = 0;
-    most_significant_digit_position = 0;
-    step = 0;
-    exponent_value = 0;
-    negate = 0;
-
-    i = 0;
-    for (i = 0; i < s->len; i++) {
-        c = (char)s->chr[i];
-        switch (c) {
-        case ' ':
-        case '\t':
-            goto whitespace;
-            break;
-
-        case '&':
-            if (step == 0)
-                goto hex;
-            goto finish;
-            break;
-
-        case '-':
-            if (step == 0) {
-                negate = 1;
-                step = 1;
-                goto checked;
-            } else if (step == 3) {
-                negate_exponent = 1;
-                step = 4;
-                goto checked;
-            }
-            goto finish;
-            break;
-
-        case '+':
-            if (step == 0 || step == 3) {
-                step++;
-                goto checked;
-            }
-            goto finish;
-            break;
-
-        case '0':
-        case '1':
-        case '2':
-        case '3':
-        case '4':
-        case '5':
-        case '6':
-        case '7':
-        case '8':
-        case '9':
-            if (step <= 1) { // before decimal point
-                step = 1;
-                if ((num_significant_digits) || (c > 48)) {
-                    most_significant_digit_position++;
-                    significant_digits[num_significant_digits] = c;
-                    num_significant_digits++;
-                    value = value * 10 + c - 48;
-                }
-            } else if (step == 2) { // after decimal point
-                if ((num_significant_digits == 0) && (c == 48))
-                    most_significant_digit_position--;
-                if ((num_significant_digits) || (c > 48)) {
-                    significant_digits[num_significant_digits] = c;
-                    num_significant_digits++;
-                }
-            }
-
-            else if (step >= 3) { // exponent
-                step = 4;
-                if ((num_exponent_digits) || (c > 48)) {
-                    if (num_exponent_digits >= 18)
-                        goto finish;
-                    exponent_value *= 10;
-                    exponent_value = exponent_value + c - 48; // precalculate
-                    num_exponent_digits++;
-                }
-            }
-            goto checked;
-            break;
-
-        case '.':
-            if (step > 1)
-                goto finish;
-            step = 2;
-            goto checked;
-            break;
-
-        case 'D':
-        case 'E':
-        case 'F':
-        case 'd':
-        case 'e':
-        case 'f':
-            if (step > 2)
-                goto finish;
-            step = 3;
-            goto checked;
-            break;
-
-        default:
-            goto finish; // invalid character
-            break;
-        }
-
-    checked:
-    whitespace:;
-    }
-finish:;
-
-    // Check for all-zero mantissa
-    if (num_significant_digits == 0)
-        return 0;
-
-    // If no exponent (or E0) and no decimal part and no chance of overflowing value, return straight away
-    if (exponent_value == 0 && num_significant_digits == most_significant_digit_position && num_significant_digits < 19) {
-        return negate ? -value : value;
-    }
-
-    // normalise number (change 123.456E2 to 1.23456E4, or 123.456 to 1.23456E2)
-    exponent_value = exponent_value + most_significant_digit_position - 1;
-
-    if (negate_exponent)
-        exponent_value = -exponent_value;
-    i = 0;
-    // we are now building a floating point number in ascii characters
-    if (negate) {
-        built_number[i] = 45;
-        i++;
-    } //-
-    if (num_significant_digits) {
-        // build normalised mantissa
-        for (i2 = 0; i2 < num_significant_digits; i2++) {
-            if (i2 == 1) {
-                built_number[i] = 46;
-                i++;
-            }
-            built_number[i] = significant_digits[i2];
-            i++;
-        }
-        built_number[i] = 69;
-        i++; // E
-             // add exponent
-        i2 = sprintf((char *)&built_number[i], "%" PRId64, exponent_value);
-        i = i + i2;
-    } else {
-        built_number[i] = 48;
-        i++; // 0
-    }
-    built_number[i] = 0; // NULL terminate
-
-#ifdef QB64_MINGW
-    __mingw_sscanf((char *)&built_number[0], "%Lf", &return_value);
-#else
-    sscanf((char *)&built_number[0], "%Lf", &return_value);
-#endif
-    return return_value;
-
-hex: // hex/oct
-    if (i >= (s->len - 2))
-        return 0;
-    c = s->chr[i + 1];
-    if ((c == 79) || (c == 111)) { //"O"or"o"
-        hex_digits = 0;
-        hex_value = 0;
-        for (i = i + 2; i < s->len; i++) {
-            c = s->chr[i];
-            if ((c >= 48) && (c <= 55)) { // 0-7
-                c -= 48;
-                hex_value <<= 3;
-                hex_value |= c;
-                if (hex_digits || c)
-                    hex_digits++;
-                if (hex_digits >= 22) {
-                    if ((hex_digits > 22) || (s->chr[i - 21] > 49)) {
-                        error(6);
-                        return 0;
-                    }
-                }
-            } else
-                break;
-        } // i
-        return hex_value;
-    }
-    if ((c == 66) || (c == 98)) { //"B"or"b"
-        hex_digits = 0;
-        hex_value = 0;
-        for (i = i + 2; i < s->len; i++) {
-            c = s->chr[i];
-            if ((c > 47) && (c < 50)) { // 0-1
-                c -= 48;
-                hex_value <<= 1;
-                hex_value |= c;
-                if (hex_digits || c)
-                    hex_digits++;
-                if (hex_digits > 64) {
-                    error(6);
-                    return 0;
-                }
-            } else
-                break;
-        } // i
-        return hex_value;
-    }
-    if ((c == 72) || (c == 104)) { //"H"or"h"
-        hex_digits = 0;
-        hex_value = 0;
-        for (i = i + 2; i < s->len; i++) {
-            c = s->chr[i];
-            if (((c >= 48) && (c <= 57)) || ((c >= 65) && (c <= 70)) || ((c >= 97) && (c <= 102))) { // 0-9 or A-F or a-f
-                if ((c >= 48) && (c <= 57))
-                    c -= 48;
-                if ((c >= 65) && (c <= 70))
-                    c -= 55;
-
-                if ((c >= 97) && (c <= 102))
-                    c -= 87;
-                hex_value <<= 4;
-                hex_value |= c;
-                if (hex_digits || c)
-                    hex_digits++;
-                if (hex_digits > 16) {
-                    error(6);
-                    return 0;
-                }
-            } else
-                break;
-        } // i
-        return hex_value;
-    }
-    return 0; //& followed by unknown
-}
-
 int32 unsupported_port_accessed = 0;
 
 int32 H3C7_palette_register_read_index = 0;
@@ -22072,6 +21821,8 @@ int32 func_screenicon() {
     #endif */
     return 0; // if we get here and haven't exited already, we failed somewhere along the way.
 #    endif
+#else
+    return 0;
 #endif
 }
 
@@ -23331,7 +23082,7 @@ int32 connection_new(int32 method, qbs *info_in, int32 value) {
             }
         }
 
-        d = func_val(info_part[2]);
+        d = qbs_val<long double>(info_part[2]);
         port = qbr_double_to_long(d); //***assume*** port number is within valid range
 
         if (method == 0) { //_OPENCLIENT

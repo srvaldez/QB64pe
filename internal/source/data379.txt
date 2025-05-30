@@ -1,35 +1,13 @@
-double *_FUNC__BRIGHTNESS32_DOUBLE__BRIGHTNESS32=NULL;
-if(_FUNC__BRIGHTNESS32_DOUBLE__BRIGHTNESS32==NULL){
-_FUNC__BRIGHTNESS32_DOUBLE__BRIGHTNESS32=(double*)mem_static_malloc(8);
-*_FUNC__BRIGHTNESS32_DOUBLE__BRIGHTNESS32=0;
+byte_element_struct *byte_element_6887=NULL;
+if (!byte_element_6887){
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6887=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6887=(byte_element_struct*)mem_static_malloc(12);
 }
-double *_FUNC__BRIGHTNESS32_DOUBLE__RE=NULL;
-if(_FUNC__BRIGHTNESS32_DOUBLE__RE==NULL){
-_FUNC__BRIGHTNESS32_DOUBLE__RE=(double*)mem_static_malloc(8);
-*_FUNC__BRIGHTNESS32_DOUBLE__RE=0;
+int32 *_SUB_HELP_CHECKREMOVEBLANKLINE_LONG_I=NULL;
+if(_SUB_HELP_CHECKREMOVEBLANKLINE_LONG_I==NULL){
+_SUB_HELP_CHECKREMOVEBLANKLINE_LONG_I=(int32*)mem_static_malloc(4);
+*_SUB_HELP_CHECKREMOVEBLANKLINE_LONG_I=0;
 }
-double *_FUNC__BRIGHTNESS32_DOUBLE__GR=NULL;
-if(_FUNC__BRIGHTNESS32_DOUBLE__GR==NULL){
-_FUNC__BRIGHTNESS32_DOUBLE__GR=(double*)mem_static_malloc(8);
-*_FUNC__BRIGHTNESS32_DOUBLE__GR=0;
-}
-double *_FUNC__BRIGHTNESS32_DOUBLE__BL=NULL;
-if(_FUNC__BRIGHTNESS32_DOUBLE__BL==NULL){
-_FUNC__BRIGHTNESS32_DOUBLE__BL=(double*)mem_static_malloc(8);
-*_FUNC__BRIGHTNESS32_DOUBLE__BL=0;
-}
-double *_FUNC__BRIGHTNESS32_DOUBLE__HU=NULL;
-if(_FUNC__BRIGHTNESS32_DOUBLE__HU==NULL){
-_FUNC__BRIGHTNESS32_DOUBLE__HU=(double*)mem_static_malloc(8);
-*_FUNC__BRIGHTNESS32_DOUBLE__HU=0;
-}
-double *_FUNC__BRIGHTNESS32_DOUBLE__SA=NULL;
-if(_FUNC__BRIGHTNESS32_DOUBLE__SA==NULL){
-_FUNC__BRIGHTNESS32_DOUBLE__SA=(double*)mem_static_malloc(8);
-*_FUNC__BRIGHTNESS32_DOUBLE__SA=0;
-}
-double *_FUNC__BRIGHTNESS32_DOUBLE__BR=NULL;
-if(_FUNC__BRIGHTNESS32_DOUBLE__BR==NULL){
-_FUNC__BRIGHTNESS32_DOUBLE__BR=(double*)mem_static_malloc(8);
-*_FUNC__BRIGHTNESS32_DOUBLE__BR=0;
-}
+int64 fornext_value6889;
+int64 fornext_finalvalue6889;
+int64 fornext_step6889;
+uint8 fornext_step_negative6889;

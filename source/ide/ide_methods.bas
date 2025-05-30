@@ -12689,6 +12689,10 @@ SUB ideshowtext
                 manualList = -1
                 listOfCustomKeywords$ = LEFT$(listOfCustomKeywords$, customKeywordsLength)
                 FOR y = 1 TO iden
+                    DO UNTIL y < UBOUND(InvalidLine)
+                        REDIM _PRESERVE InvalidLine(UBOUND(InvalidLine) + 1000) AS _BYTE
+                    LOOP
+
                     IF InvalidLine(y) <> 0 THEN _CONTINUE
                     a$ = UCASE$(_TRIM$(idegetline(y)))
                     sf = 0
@@ -14948,7 +14952,10 @@ FUNCTION idezfilelist$ (path$, method, mask$) 'method0=*.bas, method1=*.*, metho
         DO UNTIL EOF(150)
             LINE INPUT #150, a$
             IF LEN(a$) THEN 'skip blank entries
-                IF path$ = "internal/help" THEN a$ = LEFT$(a$, (LEN(a$) - 5) \ 2) + ".txt" 'remove spelling label
+                IF path$ = "internal/help" THEN
+                    IF UCASE$(LEFT$(a$, 3)) = "_GL" THEN _CONTINUE 'ignore _gl commands
+                    a$ = LEFT$(a$, (LEN(a$) - 5) \ 2) + RIGHT$(a$, 4) 'remove spelling label
+                END IF
                 IF filelist$ = "" THEN filelist$ = a$ ELSE filelist$ = filelist$ + sep + a$
             END IF
         LOOP
@@ -14988,7 +14995,10 @@ FUNCTION idezfilelist$ (path$, method, mask$) 'method0=*.bas, method1=*.*, metho
                     EXIT FOR
                 END IF
             NEXT
-            IF path$ = "internal/help" THEN a$ = LEFT$(a$, (LEN(a$) - 5) \ 2) + ".txt" 'remove spelling label
+            IF path$ = "internal/help" THEN
+                IF UCASE$(LEFT$(a$, 3)) = "_GL" THEN _CONTINUE 'ignore _gl commands
+                a$ = LEFT$(a$, (LEN(a$) - 5) \ 2) + RIGHT$(a$, 4) 'remove spelling label
+            END IF
             IF filelist$ = "" THEN filelist$ = a$ ELSE filelist$ = filelist$ + sep + a$
         LOOP
         CLOSE #150
@@ -15689,7 +15699,7 @@ FUNCTION ideCompilerSettingsBox
 
     '-------- init dialog box & objects --------
     i = 0
-    idepar p, 48, 15, "Compiler Settings"
+    idepar p, 48, _IIF(os$ = "WIN", 16, 15), "Compiler Settings"
 
     i = i + 1: ocpChk = i
     o(i).typ = 4 'check box
@@ -15732,9 +15742,17 @@ FUNCTION ideCompilerSettingsBox
     o(i).x = 44: o(i).y = 12
     o(i).txt = idenewtxt(CHR$(31)): o(i).rpt = 10
 
+    IF os$ = "WIN" THEN
+        i = i + 1: uscChk = i
+        o(i).typ = 4 'check box
+        o(i).y = 14
+        o(i).nam = idenewtxt("#Use system C++ compiler")
+        o(i).sel = ABS(UseSystemMinGW)
+    END IF
+
     i = i + 1: okBut = i: caBut = i + 1
     o(i).typ = 3 'action buttons
-    o(i).y = 15
+    o(i).y = _IIF(os$ = "WIN", 16, 15)
     o(i).txt = idenewtxt("#OK" + sep + "#Cancel"): o(i).dft = 1
     '-------- end of init dialog box & objects --------
 
@@ -15863,6 +15881,17 @@ FUNCTION ideCompilerSettingsBox
             v% = VAL(idetxt(o(mppBox).txt))
             IF MaxParallelProcesses <> v% THEN MaxParallelProcesses = v%: optChg% = -1
 
+            IF os$ = "WIN" THEN
+                v% = o(uscChk).sel: IF v% <> 0 THEN v% = _TRUE
+                IF UseSystemMinGW <> v% THEN UseSystemMinGW = v%: optChg% = _TRUE
+
+                ' Show a warning if the user is using the system MinGW compiler
+                IF UseSystemMinGW _ANDALSO optChg% THEN
+                    retval = idemessagebox("Warning", "Using the system MinGW compiler may cause problems.", "#OK")
+                    PCOPY 2, 1
+                END IF
+            END IF
+
             IF optChg% THEN
                 'save changes
                 WriteConfigSetting compilerSettingsSection$, "OptimizeCppProgram", BoolToTFString$(OptimizeCppProgram)
@@ -15873,6 +15902,10 @@ FUNCTION ideCompilerSettingsBox
                 WriteConfigSetting compilerSettingsSection$, "ExtraLinkerFlags", ExtraLinkerFlags$
 
                 WriteConfigSetting compilerSettingsSection$, "MaxParallelProcesses", str2$(MaxParallelProcesses)
+
+                IF os$ = "WIN" THEN
+                    WriteConfigSetting compilerSettingsSection$, "UseSystemMinGW", BoolToTFString$(UseSystemMinGW)
+                END IF
 
                 'clean compiled files, since they may change due to the different settings
                 PurgeTemporaryBuildFiles (os$), (MacOSX)
@@ -19242,7 +19275,7 @@ FUNCTION ideupdatehelpbox
                     IF LEN(l$) THEN
                         c = INSTR(l$, ","): l$ = MID$(l$, c + 1) '              'we only need the page name here
                         c = INSTR(l$, "#"): IF c > 0 THEN l$ = LEFT$(l$, c - 1) 'but not the local link target (if any)
-                        IF Help_Recaching < 2 OR LEFT$(l$, 3) <> "_gl" THEN '   'ignore _GL pages for 'qb64pe -u' (build time update)
+                        IF Help_Recaching < 1 OR LEFT$(l$, 3) <> "_gl" THEN '   'ignore _GL pages for "Update All" operations
                             'Escape all invalid and other critical chars in filenames
                             PageName2$ = ""
                             FOR i = 1 TO LEN(l$)

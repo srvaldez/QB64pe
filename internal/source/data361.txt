@@ -1,10 +1,4 @@
-int32 *_FUNC_HELP_COL_LONG_HELP_COL=NULL;
-if(_FUNC_HELP_COL_LONG_HELP_COL==NULL){
-_FUNC_HELP_COL_LONG_HELP_COL=(int32*)mem_static_malloc(4);
-*_FUNC_HELP_COL_LONG_HELP_COL=0;
-}
-int32 *_FUNC_HELP_COL_LONG_COL=NULL;
-if(_FUNC_HELP_COL_LONG_COL==NULL){
-_FUNC_HELP_COL_LONG_COL=(int32*)mem_static_malloc(4);
-*_FUNC_HELP_COL_LONG_COL=0;
-}
+int64 fornext_value6804;
+int64 fornext_finalvalue6804;
+int64 fornext_step6804;
+uint8 fornext_step_negative6804;

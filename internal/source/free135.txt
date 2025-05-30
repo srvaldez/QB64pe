@@ -1,0 +1,4 @@
+if(oldstr3967){
+if(oldstr3967->fixed)qbs_set(oldstr3967,_SUB_INILOAD_STRING_FILE);
+qbs_free(_SUB_INILOAD_STRING_FILE);
+}

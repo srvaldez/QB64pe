@@ -1,1 +1,5 @@
-qbs_free(_FUNC_UNICODETOUTF8CHAR_STRING_UTF);
+if(oldstr6850){
+if(oldstr6850->fixed)qbs_set(oldstr6850,_FUNC_GETBYTES_STRING___VALUE);
+qbs_free(_FUNC_GETBYTES_STRING___VALUE);
+}
+qbs_free(_FUNC_GETBYTES_STRING_VALUE);

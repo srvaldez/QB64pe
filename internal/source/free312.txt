@@ -1,8 +1,9 @@
-if(oldstr6568){
-if(oldstr6568->fixed)qbs_set(oldstr6568,_FUNC_COUNTITEMS_STRING_SEARCHSTRING);
-qbs_free(_FUNC_COUNTITEMS_STRING_SEARCHSTRING);
+if(oldstr6224){
+if(oldstr6224->fixed)qbs_set(oldstr6224,_FUNC_IDEZCHANGEPATH_STRING_PATH);
+qbs_free(_FUNC_IDEZCHANGEPATH_STRING_PATH);
 }
-if(oldstr6569){
-if(oldstr6569->fixed)qbs_set(oldstr6569,_FUNC_COUNTITEMS_STRING_ITEM);
-qbs_free(_FUNC_COUNTITEMS_STRING_ITEM);
+if(oldstr6225){
+if(oldstr6225->fixed)qbs_set(oldstr6225,_FUNC_IDEZCHANGEPATH_STRING_NEWPATH);
+qbs_free(_FUNC_IDEZCHANGEPATH_STRING_NEWPATH);
 }
+qbs_free(_FUNC_IDEZCHANGEPATH_STRING_A);
