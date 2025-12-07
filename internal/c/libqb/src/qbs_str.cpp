@@ -266,16 +266,16 @@ qbs *qbs_str(double value){
 
 qbs *qbs_str(long double value){
     static qbs *tqbs;
-    tqbs=qbs_new(32,1);
+    tqbs=qbs_new(64,1);
     static int32_t l, i,j,digits,exponent;
    
     #ifdef QB64_MINGW
-        __mingw_sprintf((char*)&qbs_str_buffer,"% .17Le", value);
+        __mingw_sprintf((char*)&qbs_str_buffer,"% .32Le", value);
     #else
-        sprintf((char*)&qbs_str_buffer,"% .17Le", value);
+        sprintf((char*)&qbs_str_buffer,"% .32Le", value);
     #endif
-    exponent=atoi((char*)&qbs_str_buffer[21]);
-    digits=19;
+    exponent=atoi((char*)&qbs_str_buffer[36]);
+    digits=34;
     while((qbs_str_buffer[digits]=='0')&&(digits>0)) digits--;
     tqbs->chr[0]=qbs_str_buffer[0]; // copy sign
     if(exponent==0){
@@ -288,7 +288,7 @@ qbs *qbs_str(long double value){
             tqbs->len=digits+1; // terminate
     }
     else if(exponent<0){
-        if((digits-exponent)>=22){ // use sci format
+        if((digits-exponent)>=37){ // use sci format
             for(i=1;i<=digits;i++){
                 tqbs->chr[i]=qbs_str_buffer[i];
             }
@@ -322,7 +322,7 @@ qbs *qbs_str(long double value){
         }
     }
     else if(exponent>0){
-        if((digits<20)&&(exponent<18)){
+        if((digits<35)&&(exponent<33)){
             tqbs->chr[1]=qbs_str_buffer[1]; // first digit
             j=3;            // skip over .
             for(i=2;i<=(exponent+1);i++){
