@@ -264,6 +264,108 @@ qbs *qbs_str(double value){
     return tqbs;
 }
 
+#ifdef QB64_ARM
+qbs *qbs_str(long double value){
+    static qbs *tqbs;
+    tqbs=qbs_new(64,1);
+    static int32_t l, i,j,digits,exponent;
+   
+    #ifdef QB64_MINGW
+        __mingw_sprintf((char*)&qbs_str_buffer,"% .32Le", value);
+    #else
+        sprintf((char*)&qbs_str_buffer,"% .32Le", value);
+    #endif
+    exponent=atoi((char*)&qbs_str_buffer[36]);
+    digits=34;
+    while((qbs_str_buffer[digits]=='0')&&(digits>0)) digits--;
+    tqbs->chr[0]=qbs_str_buffer[0]; // copy sign
+    if(exponent==0){
+        for(i=1;i<=(digits);i++){
+            tqbs->chr[i]=qbs_str_buffer[i];
+        }
+        if(tqbs->chr[digits]=='.') // if no digits after . then nip it
+            tqbs->len=digits;  // by zero terminating
+        else
+            tqbs->len=digits+1; // terminate
+    }
+    else if(exponent<0){
+        if((digits-exponent)>=37){ // use sci format
+            for(i=1;i<=digits;i++){
+                tqbs->chr[i]=qbs_str_buffer[i];
+            }
+            if(tqbs->chr[digits]=='.'){
+                tqbs->chr[digits]='F';
+                sprintf((char*)&tqbs->chr[digits+1],"%+03d", exponent);
+				l=digits+1;
+				while((tqbs->chr[l])!=0) l++;
+				tqbs->len=l;
+            }
+            else{
+                tqbs->chr[digits+1]='F';
+                sprintf((char*)&tqbs->chr[digits+2],"%+03d", exponent);
+				l=digits+2;
+				while((tqbs->chr[l])!=0) l++;
+				tqbs->len=l;
+            }
+        }
+        else{
+            tqbs->chr[1]='.';
+            for(i=2;i<=abs(exponent);i++){
+                tqbs->chr[i]='0';
+            }
+            tqbs->chr[abs(exponent)+1]=qbs_str_buffer[1]; // first non-zero digit
+            j=3;                    // skip decimal point
+            for(i=abs(exponent)+2;i<(abs(exponent)+digits);i++){
+                tqbs->chr[i]=qbs_str_buffer[j];
+                j++;
+            }
+            tqbs->len=abs(exponent)+digits; // terminate
+        }
+    }
+    else if(exponent>0){
+        if((digits<35)&&(exponent<33)){
+            tqbs->chr[1]=qbs_str_buffer[1]; // first digit
+            j=3;            // skip over .
+            for(i=2;i<=(exponent+1);i++){
+                tqbs->chr[i]=qbs_str_buffer[j];
+                j++;
+            }
+            if((digits>exponent)&&(digits>(j-1))){
+                tqbs->chr[exponent+2]='.';
+                for(i=exponent+3;i<=(digits);i++){
+                    tqbs->chr[i]=qbs_str_buffer[j];
+                    j++;
+                }
+                tqbs->len=digits+1;
+            }
+            else{
+                tqbs->len=exponent+2;
+            }
+    }
+    else{
+        for(i=0;i<=digits;i++){
+            tqbs->chr[i]=qbs_str_buffer[i];
+        }
+        if(tqbs->chr[digits]=='.'){
+            tqbs->chr[digits]='F';
+            sprintf((char*)&tqbs->chr[digits+1],"%+03d", exponent);
+			l=digits+1;
+			while((tqbs->chr[l])!=0) l++;
+			tqbs->len=l;
+        }
+        else{
+            tqbs->chr[digits+1]='F';
+            sprintf((char*)&tqbs->chr[digits+2],"%+03d", exponent);
+			l=digits+2;
+			while((tqbs->chr[l])!=0) l++;
+			tqbs->len=l;
+        }
+    }
+}
+    return tqbs;
+}
+
+#else
 qbs *qbs_str(long double value){
     static qbs *tqbs;
     tqbs=qbs_new(32,1);
@@ -363,3 +465,4 @@ qbs *qbs_str(long double value){
 }
     return tqbs;
 }
+#endif
