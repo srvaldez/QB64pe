@@ -1,5 +1,5 @@
-if(oldstr7071){
-if(oldstr7071->fixed)qbs_set(oldstr7071,_FUNC_WIKISAFENAME_STRING_PAGE);
+if(oldstr7075){
+if(oldstr7075->fixed)qbs_set(oldstr7075,_FUNC_WIKISAFENAME_STRING_PAGE);
 qbs_free(_FUNC_WIKISAFENAME_STRING_PAGE);
 }
 qbs_free(_FUNC_WIKISAFENAME_STRING_EXT);

@@ -1,17 +1,17 @@
-if(oldstr5853){
-if(oldstr5853->fixed)qbs_set(oldstr5853,_FUNC_IDEINPUTBOX_STRING_TITLE);
+if(oldstr5857){
+if(oldstr5857->fixed)qbs_set(oldstr5857,_FUNC_IDEINPUTBOX_STRING_TITLE);
 qbs_free(_FUNC_IDEINPUTBOX_STRING_TITLE);
 }
-if(oldstr5854){
-if(oldstr5854->fixed)qbs_set(oldstr5854,_FUNC_IDEINPUTBOX_STRING_CAPTION);
+if(oldstr5858){
+if(oldstr5858->fixed)qbs_set(oldstr5858,_FUNC_IDEINPUTBOX_STRING_CAPTION);
 qbs_free(_FUNC_IDEINPUTBOX_STRING_CAPTION);
 }
-if(oldstr5855){
-if(oldstr5855->fixed)qbs_set(oldstr5855,_FUNC_IDEINPUTBOX_STRING_INITIALVALUE);
+if(oldstr5859){
+if(oldstr5859->fixed)qbs_set(oldstr5859,_FUNC_IDEINPUTBOX_STRING_INITIALVALUE);
 qbs_free(_FUNC_IDEINPUTBOX_STRING_INITIALVALUE);
 }
-if(oldstr5856){
-if(oldstr5856->fixed)qbs_set(oldstr5856,_FUNC_IDEINPUTBOX_STRING_VALIDINPUT);
+if(oldstr5860){
+if(oldstr5860->fixed)qbs_set(oldstr5860,_FUNC_IDEINPUTBOX_STRING_VALIDINPUT);
 qbs_free(_FUNC_IDEINPUTBOX_STRING_VALIDINPUT);
 }
 if (_FUNC_IDEINPUTBOX_ARRAY_UDT_O[2]&1){

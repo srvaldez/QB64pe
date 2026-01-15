@@ -1,9 +1,9 @@
-if(oldstr6135){
-if(oldstr6135->fixed)qbs_set(oldstr6135,_SUB_IDEOBJUPDATE_STRING_KK);
+if(oldstr6139){
+if(oldstr6139->fixed)qbs_set(oldstr6139,_SUB_IDEOBJUPDATE_STRING_KK);
 qbs_free(_SUB_IDEOBJUPDATE_STRING_KK);
 }
-if(oldstr6136){
-if(oldstr6136->fixed)qbs_set(oldstr6136,_SUB_IDEOBJUPDATE_STRING_ALTLETTER);
+if(oldstr6140){
+if(oldstr6140->fixed)qbs_set(oldstr6140,_SUB_IDEOBJUPDATE_STRING_ALTLETTER);
 qbs_free(_SUB_IDEOBJUPDATE_STRING_ALTLETTER);
 }
 qbs_free(_SUB_IDEOBJUPDATE_STRING1_SEP);

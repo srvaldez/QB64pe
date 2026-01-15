@@ -1,9 +1,9 @@
-if(oldstr6203){
-if(oldstr6203->fixed)qbs_set(oldstr6203,_FUNC_IDEZFILELIST_STRING_PATH);
+if(oldstr6207){
+if(oldstr6207->fixed)qbs_set(oldstr6207,_FUNC_IDEZFILELIST_STRING_PATH);
 qbs_free(_FUNC_IDEZFILELIST_STRING_PATH);
 }
-if(oldstr6204){
-if(oldstr6204->fixed)qbs_set(oldstr6204,_FUNC_IDEZFILELIST_STRING_MASK);
+if(oldstr6208){
+if(oldstr6208->fixed)qbs_set(oldstr6208,_FUNC_IDEZFILELIST_STRING_MASK);
 qbs_free(_FUNC_IDEZFILELIST_STRING_MASK);
 }
 qbs_free(_FUNC_IDEZFILELIST_STRING1_SEP);
