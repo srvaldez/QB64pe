@@ -1,33 +1,33 @@
 qbs *_FUNC_IDEFILEEXISTS_STRING_IDEFILEEXISTS=NULL;
 if (!_FUNC_IDEFILEEXISTS_STRING_IDEFILEEXISTS)_FUNC_IDEFILEEXISTS_STRING_IDEFILEEXISTS=qbs_new(0,0);
-qbs*oldstr5787=NULL;
+qbs*oldstr5791=NULL;
 if(_FUNC_IDEFILEEXISTS_STRING_F->tmp||_FUNC_IDEFILEEXISTS_STRING_F->fixed||_FUNC_IDEFILEEXISTS_STRING_F->readonly){
-oldstr5787=_FUNC_IDEFILEEXISTS_STRING_F;
-if (oldstr5787->cmem_descriptor){
-_FUNC_IDEFILEEXISTS_STRING_F=qbs_new_cmem(oldstr5787->len,0);
+oldstr5791=_FUNC_IDEFILEEXISTS_STRING_F;
+if (oldstr5791->cmem_descriptor){
+_FUNC_IDEFILEEXISTS_STRING_F=qbs_new_cmem(oldstr5791->len,0);
 }else{
-_FUNC_IDEFILEEXISTS_STRING_F=qbs_new(oldstr5787->len,0);
+_FUNC_IDEFILEEXISTS_STRING_F=qbs_new(oldstr5791->len,0);
 }
-memcpy(_FUNC_IDEFILEEXISTS_STRING_F->chr,oldstr5787->chr,oldstr5787->len);
+memcpy(_FUNC_IDEFILEEXISTS_STRING_F->chr,oldstr5791->chr,oldstr5791->len);
 }
 int32 *_FUNC_IDEFILEEXISTS_LONG_L=NULL;
 if(_FUNC_IDEFILEEXISTS_LONG_L==NULL){
 _FUNC_IDEFILEEXISTS_LONG_L=(int32*)mem_static_malloc(4);
 *_FUNC_IDEFILEEXISTS_LONG_L=0;
 }
-byte_element_struct *byte_element_5788=NULL;
-if (!byte_element_5788){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5788=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5788=(byte_element_struct*)mem_static_malloc(12);
+byte_element_struct *byte_element_5792=NULL;
+if (!byte_element_5792){
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5792=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5792=(byte_element_struct*)mem_static_malloc(12);
 }
-byte_element_struct *byte_element_5790=NULL;
-if (!byte_element_5790){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5790=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5790=(byte_element_struct*)mem_static_malloc(12);
+byte_element_struct *byte_element_5794=NULL;
+if (!byte_element_5794){
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5794=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5794=(byte_element_struct*)mem_static_malloc(12);
 }
 qbs *_FUNC_IDEFILEEXISTS_STRING_M=NULL;
 if (!_FUNC_IDEFILEEXISTS_STRING_M)_FUNC_IDEFILEEXISTS_STRING_M=qbs_new(0,0);
-byte_element_struct *byte_element_5791=NULL;
-if (!byte_element_5791){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5791=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5791=(byte_element_struct*)mem_static_malloc(12);
+byte_element_struct *byte_element_5795=NULL;
+if (!byte_element_5795){
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5795=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5795=(byte_element_struct*)mem_static_malloc(12);
 }
 int32 *_FUNC_IDEFILEEXISTS_LONG_RESULT=NULL;
 if(_FUNC_IDEFILEEXISTS_LONG_RESULT==NULL){
