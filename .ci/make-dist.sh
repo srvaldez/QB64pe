@@ -7,11 +7,10 @@ format=
 ARCHIVE_ROOT=qb64pe
 DIST_ROOT=./dist/$ARCHIVE_ROOT
 
-# populate internal/help from static download and updates from Wiki
-curl --silent --retry 5 -o ./help.zip https://qb64phoenix.com/qb64_files/help.zip
-unzip -oqq ./help.zip -d ./internal >/dev/null 2>&1 || true
+# create internal/help with static GL pages and KW updates from Wiki
+unzip -oqq ./internal/gl_help_pages.zip -d ./internal
 ./qb64pe -u
-# end internal/help
+# end creating/updating internal/help
 
 case "$buildPlatform" in
     win)
