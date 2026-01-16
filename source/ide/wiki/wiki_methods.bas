@@ -1198,17 +1198,20 @@ FUNCTION wikiDLPage$ (url$, timeout#)
     'and instead only give that information to people who complain about
     'not working Wiki downloads in the Forum/Discord.
     '--- check for curl ---
-    IF _SHELLHIDE("curl --version >NUL") = 0 THEN
-        '--- 1st restore https: protocol, if changed above ---
-        IF LCASE$(LEFT$(wik$, 7)) = "http://" THEN wik$ = "https://" + MID$(wik$, 8)
-        '--- issue curl request ---
-        responseFile$ = Cache_Folder$ + "/curlResponse.txt"
-        SHELL _HIDE "curl --silent -o " + CHR$(34) + responseFile$ + CHR$(34) + " " + CHR$(34) + wik$ + CHR$(34)
-        '--- read the response ---
-        res$ = _READFILE$(responseFile$)
-        KILL responseFile$
-        '--- set result ---
-        wikiDLPage$ = res$
+    IF Help_Recaching < 2 THEN 'avoid using cUrl for 'qb64pe -u' (build time update)
+        redirDev$ = "/dev/null": IF INSTR(_OS$, "WIN") > 0 THEN redirDev$ = "NUL"
+        IF _SHELLHIDE("curl --version >" + redirDev$) = 0 THEN
+            '--- 1st restore https: protocol, if changed above ---
+            IF LCASE$(LEFT$(wik$, 7)) = "http://" THEN wik$ = "https://" + MID$(wik$, 8)
+            '--- issue curl request ---
+            responseFile$ = Cache_Folder$ + "/curlResponse.txt"
+            SHELL _HIDE "curl --silent -o " + CHR$(34) + responseFile$ + CHR$(34) + " " + CHR$(34) + wik$ + CHR$(34)
+            '--- read the response ---
+            res$ = _READFILE$(responseFile$)
+            KILL responseFile$
+            '--- set result ---
+            wikiDLPage$ = res$
+        END IF
     END IF
 END FUNCTION
 
