@@ -8,8 +8,8 @@ ARCHIVE_ROOT=qb64pe
 DIST_ROOT=./dist/$ARCHIVE_ROOT
 
 # populate internal/help from static download and updates from Wiki
-curl --silent -o ./help.zip https://qb64phoenix.com/qb64_files/help.zip
-unzip -oqq ./help.zip -d ./internal
+curl --silent --retry 5 -o ./help.zip https://qb64phoenix.com/qb64_files/help.zip
+unzip -oqq ./help.zip -d ./internal >/dev/null 2>&1 || true
 ./qb64pe -u
 # end internal/help
 
