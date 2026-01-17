@@ -1150,12 +1150,16 @@ FUNCTION wikiDLPage$ (url$, timeout#)
     '--- set default result & avoid side effects ---
     wikiDLPage$ = ""
     wik$ = url$: tio# = timeout#
+    redirDev$ = "/dev/null": IF INSTR(_OS$, "WIN") > 0 THEN redirDev$ = "NUL"
     '--- request wiki page ---
     retry:
-    ch& = _OPENCLIENT(wik$)
+    FOR r% = 1 TO 3
+        ch& = _OPENCLIENT(wik$)
+        IF ch& = 0 THEN _DELAY 5: ELSE EXIT FOR
+    NEXT r%
     IF Help_Recaching < 2 THEN 'avoid messages for 'qb64pe -u' (build time update)
         IF ch& = 0 AND LCASE$(LEFT$(wik$, 8)) = "https://" THEN
-            IF _SHELLHIDE("curl --version >NUL") <> 0 THEN
+            IF _SHELLHIDE("curl --version >" + redirDev$) <> 0 THEN
                 'no external curl available (see notes below)
                 IF _MESSAGEBOX("QB64-PE Help", "Can't make secure connection (https:) to Wiki, shall the IDE use unsecure (http:) instead?", "yesno", "warning") = 1 THEN
                     IF _MESSAGEBOX("QB64-PE Help", "Do you wanna save your choice permanently for the future?", "yesno", "question") = 1 THEN
@@ -1199,7 +1203,6 @@ FUNCTION wikiDLPage$ (url$, timeout#)
     'not working Wiki downloads in the Forum/Discord.
     '--- check for curl ---
     IF Help_Recaching < 2 THEN 'avoid using cUrl for 'qb64pe -u' (build time update)
-        redirDev$ = "/dev/null": IF INSTR(_OS$, "WIN") > 0 THEN redirDev$ = "NUL"
         IF _SHELLHIDE("curl --version >" + redirDev$) = 0 THEN
             '--- 1st restore https: protocol, if changed above ---
             IF LCASE$(LEFT$(wik$, 7)) = "http://" THEN wik$ = "https://" + MID$(wik$, 8)
