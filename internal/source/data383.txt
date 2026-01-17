@@ -1,28 +1,28 @@
 qbs *_FUNC_WIKILOOKAHEAD_STRING_WIKILOOKAHEAD=NULL;
 if (!_FUNC_WIKILOOKAHEAD_STRING_WIKILOOKAHEAD)_FUNC_WIKILOOKAHEAD_STRING_WIKILOOKAHEAD=qbs_new(0,0);
-qbs*oldstr7084=NULL;
+qbs*oldstr7086=NULL;
 if(_FUNC_WIKILOOKAHEAD_STRING_A->tmp||_FUNC_WIKILOOKAHEAD_STRING_A->fixed||_FUNC_WIKILOOKAHEAD_STRING_A->readonly){
-oldstr7084=_FUNC_WIKILOOKAHEAD_STRING_A;
-if (oldstr7084->cmem_descriptor){
-_FUNC_WIKILOOKAHEAD_STRING_A=qbs_new_cmem(oldstr7084->len,0);
+oldstr7086=_FUNC_WIKILOOKAHEAD_STRING_A;
+if (oldstr7086->cmem_descriptor){
+_FUNC_WIKILOOKAHEAD_STRING_A=qbs_new_cmem(oldstr7086->len,0);
 }else{
-_FUNC_WIKILOOKAHEAD_STRING_A=qbs_new(oldstr7084->len,0);
+_FUNC_WIKILOOKAHEAD_STRING_A=qbs_new(oldstr7086->len,0);
 }
-memcpy(_FUNC_WIKILOOKAHEAD_STRING_A->chr,oldstr7084->chr,oldstr7084->len);
+memcpy(_FUNC_WIKILOOKAHEAD_STRING_A->chr,oldstr7086->chr,oldstr7086->len);
 }
-qbs*oldstr7085=NULL;
+qbs*oldstr7087=NULL;
 if(_FUNC_WIKILOOKAHEAD_STRING_TOKEN->tmp||_FUNC_WIKILOOKAHEAD_STRING_TOKEN->fixed||_FUNC_WIKILOOKAHEAD_STRING_TOKEN->readonly){
-oldstr7085=_FUNC_WIKILOOKAHEAD_STRING_TOKEN;
-if (oldstr7085->cmem_descriptor){
-_FUNC_WIKILOOKAHEAD_STRING_TOKEN=qbs_new_cmem(oldstr7085->len,0);
+oldstr7087=_FUNC_WIKILOOKAHEAD_STRING_TOKEN;
+if (oldstr7087->cmem_descriptor){
+_FUNC_WIKILOOKAHEAD_STRING_TOKEN=qbs_new_cmem(oldstr7087->len,0);
 }else{
-_FUNC_WIKILOOKAHEAD_STRING_TOKEN=qbs_new(oldstr7085->len,0);
+_FUNC_WIKILOOKAHEAD_STRING_TOKEN=qbs_new(oldstr7087->len,0);
 }
-memcpy(_FUNC_WIKILOOKAHEAD_STRING_TOKEN->chr,oldstr7085->chr,oldstr7085->len);
+memcpy(_FUNC_WIKILOOKAHEAD_STRING_TOKEN->chr,oldstr7087->chr,oldstr7087->len);
 }
-byte_element_struct *byte_element_7086=NULL;
-if (!byte_element_7086){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_7086=(byte_element_struct*)(mem_static_pointer-12); else byte_element_7086=(byte_element_struct*)mem_static_malloc(12);
+byte_element_struct *byte_element_7088=NULL;
+if (!byte_element_7088){
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_7088=(byte_element_struct*)(mem_static_pointer-12); else byte_element_7088=(byte_element_struct*)mem_static_malloc(12);
 }
 int32 *_FUNC_WIKILOOKAHEAD_LONG_J=NULL;
 if(_FUNC_WIKILOOKAHEAD_LONG_J==NULL){

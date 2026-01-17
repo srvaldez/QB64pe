@@ -1,8 +1,8 @@
-if(oldstr7084){
-if(oldstr7084->fixed)qbs_set(oldstr7084,_FUNC_WIKILOOKAHEAD_STRING_A);
+if(oldstr7086){
+if(oldstr7086->fixed)qbs_set(oldstr7086,_FUNC_WIKILOOKAHEAD_STRING_A);
 qbs_free(_FUNC_WIKILOOKAHEAD_STRING_A);
 }
-if(oldstr7085){
-if(oldstr7085->fixed)qbs_set(oldstr7085,_FUNC_WIKILOOKAHEAD_STRING_TOKEN);
+if(oldstr7087){
+if(oldstr7087->fixed)qbs_set(oldstr7087,_FUNC_WIKILOOKAHEAD_STRING_TOKEN);
 qbs_free(_FUNC_WIKILOOKAHEAD_STRING_TOKEN);
 }
