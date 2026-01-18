@@ -1,9 +1,9 @@
-if(oldstr6644){
-if(oldstr6644->fixed)qbs_set(oldstr6644,_SUB_ADDTOHISTORY_STRING_WHICH);
+if(oldstr6648){
+if(oldstr6648->fixed)qbs_set(oldstr6648,_SUB_ADDTOHISTORY_STRING_WHICH);
 qbs_free(_SUB_ADDTOHISTORY_STRING_WHICH);
 }
-if(oldstr6645){
-if(oldstr6645->fixed)qbs_set(oldstr6645,_SUB_ADDTOHISTORY_STRING_ENTRY);
+if(oldstr6649){
+if(oldstr6649->fixed)qbs_set(oldstr6649,_SUB_ADDTOHISTORY_STRING_ENTRY);
 qbs_free(_SUB_ADDTOHISTORY_STRING_ENTRY);
 }
 qbs_free(_SUB_ADDTOHISTORY_STRING_E);

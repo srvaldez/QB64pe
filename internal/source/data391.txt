@@ -1,14 +1,14 @@
 qbs *_FUNC__ENCODEURL_STRING__ENCODEURL=NULL;
 if (!_FUNC__ENCODEURL_STRING__ENCODEURL)_FUNC__ENCODEURL_STRING__ENCODEURL=qbs_new(0,0);
-qbs*oldstr7229=NULL;
+qbs*oldstr7236=NULL;
 if(_FUNC__ENCODEURL_STRING__URL->tmp||_FUNC__ENCODEURL_STRING__URL->fixed||_FUNC__ENCODEURL_STRING__URL->readonly){
-oldstr7229=_FUNC__ENCODEURL_STRING__URL;
-if (oldstr7229->cmem_descriptor){
-_FUNC__ENCODEURL_STRING__URL=qbs_new_cmem(oldstr7229->len,0);
+oldstr7236=_FUNC__ENCODEURL_STRING__URL;
+if (oldstr7236->cmem_descriptor){
+_FUNC__ENCODEURL_STRING__URL=qbs_new_cmem(oldstr7236->len,0);
 }else{
-_FUNC__ENCODEURL_STRING__URL=qbs_new(oldstr7229->len,0);
+_FUNC__ENCODEURL_STRING__URL=qbs_new(oldstr7236->len,0);
 }
-memcpy(_FUNC__ENCODEURL_STRING__URL->chr,oldstr7229->chr,oldstr7229->len);
+memcpy(_FUNC__ENCODEURL_STRING__URL->chr,oldstr7236->chr,oldstr7236->len);
 }
 qbs *_FUNC__ENCODEURL_STRING__TMP=NULL;
 if (!_FUNC__ENCODEURL_STRING__TMP)_FUNC__ENCODEURL_STRING__TMP=qbs_new(0,0);
@@ -37,11 +37,11 @@ if(_FUNC__ENCODEURL_INTEGER__VALID==NULL){
 _FUNC__ENCODEURL_INTEGER__VALID=(int16*)mem_static_malloc(2);
 *_FUNC__ENCODEURL_INTEGER__VALID=0;
 }
-int32 fornext_value7231;
-int32 fornext_finalvalue7231;
-int32 fornext_step7231;
-uint8 fornext_step_negative7231;
-byte_element_struct *byte_element_7232=NULL;
-if (!byte_element_7232){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_7232=(byte_element_struct*)(mem_static_pointer-12); else byte_element_7232=(byte_element_struct*)mem_static_malloc(12);
+int32 fornext_value7238;
+int32 fornext_finalvalue7238;
+int32 fornext_step7238;
+uint8 fornext_step_negative7238;
+byte_element_struct *byte_element_7239=NULL;
+if (!byte_element_7239){
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_7239=(byte_element_struct*)(mem_static_pointer-12); else byte_element_7239=(byte_element_struct*)mem_static_malloc(12);
 }

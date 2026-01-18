@@ -1,8 +1,8 @@
-if(oldstr6543){
-if(oldstr6543->fixed)qbs_set(oldstr6543,_FUNC_COUNTITEMS_STRING_SEARCHSTRING);
+if(oldstr6547){
+if(oldstr6547->fixed)qbs_set(oldstr6547,_FUNC_COUNTITEMS_STRING_SEARCHSTRING);
 qbs_free(_FUNC_COUNTITEMS_STRING_SEARCHSTRING);
 }
-if(oldstr6544){
-if(oldstr6544->fixed)qbs_set(oldstr6544,_FUNC_COUNTITEMS_STRING_ITEM);
+if(oldstr6548){
+if(oldstr6548->fixed)qbs_set(oldstr6548,_FUNC_COUNTITEMS_STRING_ITEM);
 qbs_free(_FUNC_COUNTITEMS_STRING_ITEM);
 }
