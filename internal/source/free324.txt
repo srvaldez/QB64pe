@@ -1,13 +1,13 @@
-if(oldstr6345){
-if(oldstr6345->fixed)qbs_set(oldstr6345,_FUNC_IDEMESSAGEBOX_STRING_TITLESTR);
+if(oldstr6349){
+if(oldstr6349->fixed)qbs_set(oldstr6349,_FUNC_IDEMESSAGEBOX_STRING_TITLESTR);
 qbs_free(_FUNC_IDEMESSAGEBOX_STRING_TITLESTR);
 }
-if(oldstr6346){
-if(oldstr6346->fixed)qbs_set(oldstr6346,_FUNC_IDEMESSAGEBOX_STRING_MESSAGESTR);
+if(oldstr6350){
+if(oldstr6350->fixed)qbs_set(oldstr6350,_FUNC_IDEMESSAGEBOX_STRING_MESSAGESTR);
 qbs_free(_FUNC_IDEMESSAGEBOX_STRING_MESSAGESTR);
 }
-if(oldstr6347){
-if(oldstr6347->fixed)qbs_set(oldstr6347,_FUNC_IDEMESSAGEBOX_STRING_BUTTONS);
+if(oldstr6351){
+if(oldstr6351->fixed)qbs_set(oldstr6351,_FUNC_IDEMESSAGEBOX_STRING_BUTTONS);
 qbs_free(_FUNC_IDEMESSAGEBOX_STRING_BUTTONS);
 }
 if (_FUNC_IDEMESSAGEBOX_ARRAY_UDT_O[2]&1){

@@ -3,37 +3,37 @@ if(_FUNC_MULTISEARCH_LONG_MULTISEARCH==NULL){
 _FUNC_MULTISEARCH_LONG_MULTISEARCH=(int32*)mem_static_malloc(4);
 *_FUNC_MULTISEARCH_LONG_MULTISEARCH=0;
 }
-qbs*oldstr5466=NULL;
+qbs*oldstr5470=NULL;
 if(_FUNC_MULTISEARCH_STRING___FULLTEXT->tmp||_FUNC_MULTISEARCH_STRING___FULLTEXT->fixed||_FUNC_MULTISEARCH_STRING___FULLTEXT->readonly){
-oldstr5466=_FUNC_MULTISEARCH_STRING___FULLTEXT;
-if (oldstr5466->cmem_descriptor){
-_FUNC_MULTISEARCH_STRING___FULLTEXT=qbs_new_cmem(oldstr5466->len,0);
+oldstr5470=_FUNC_MULTISEARCH_STRING___FULLTEXT;
+if (oldstr5470->cmem_descriptor){
+_FUNC_MULTISEARCH_STRING___FULLTEXT=qbs_new_cmem(oldstr5470->len,0);
 }else{
-_FUNC_MULTISEARCH_STRING___FULLTEXT=qbs_new(oldstr5466->len,0);
+_FUNC_MULTISEARCH_STRING___FULLTEXT=qbs_new(oldstr5470->len,0);
 }
-memcpy(_FUNC_MULTISEARCH_STRING___FULLTEXT->chr,oldstr5466->chr,oldstr5466->len);
+memcpy(_FUNC_MULTISEARCH_STRING___FULLTEXT->chr,oldstr5470->chr,oldstr5470->len);
 }
-qbs*oldstr5467=NULL;
+qbs*oldstr5471=NULL;
 if(_FUNC_MULTISEARCH_STRING___SEARCHSTRING->tmp||_FUNC_MULTISEARCH_STRING___SEARCHSTRING->fixed||_FUNC_MULTISEARCH_STRING___SEARCHSTRING->readonly){
-oldstr5467=_FUNC_MULTISEARCH_STRING___SEARCHSTRING;
-if (oldstr5467->cmem_descriptor){
-_FUNC_MULTISEARCH_STRING___SEARCHSTRING=qbs_new_cmem(oldstr5467->len,0);
+oldstr5471=_FUNC_MULTISEARCH_STRING___SEARCHSTRING;
+if (oldstr5471->cmem_descriptor){
+_FUNC_MULTISEARCH_STRING___SEARCHSTRING=qbs_new_cmem(oldstr5471->len,0);
 }else{
-_FUNC_MULTISEARCH_STRING___SEARCHSTRING=qbs_new(oldstr5467->len,0);
+_FUNC_MULTISEARCH_STRING___SEARCHSTRING=qbs_new(oldstr5471->len,0);
 }
-memcpy(_FUNC_MULTISEARCH_STRING___SEARCHSTRING->chr,oldstr5467->chr,oldstr5467->len);
+memcpy(_FUNC_MULTISEARCH_STRING___SEARCHSTRING->chr,oldstr5471->chr,oldstr5471->len);
 }
 qbs *_FUNC_MULTISEARCH_STRING_FULLTEXT=NULL;
 if (!_FUNC_MULTISEARCH_STRING_FULLTEXT)_FUNC_MULTISEARCH_STRING_FULLTEXT=qbs_new(0,0);
 qbs *_FUNC_MULTISEARCH_STRING_SEARCHSTRING=NULL;
 if (!_FUNC_MULTISEARCH_STRING_SEARCHSTRING)_FUNC_MULTISEARCH_STRING_SEARCHSTRING=qbs_new(0,0);
-byte_element_struct *byte_element_5468=NULL;
-if (!byte_element_5468){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5468=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5468=(byte_element_struct*)mem_static_malloc(12);
+byte_element_struct *byte_element_5472=NULL;
+if (!byte_element_5472){
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5472=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5472=(byte_element_struct*)mem_static_malloc(12);
 }
-byte_element_struct *byte_element_5469=NULL;
-if (!byte_element_5469){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5469=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5469=(byte_element_struct*)mem_static_malloc(12);
+byte_element_struct *byte_element_5473=NULL;
+if (!byte_element_5473){
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5473=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5473=(byte_element_struct*)mem_static_malloc(12);
 }
 int32 *_FUNC_MULTISEARCH_LONG_FINDPLUS=NULL;
 if(_FUNC_MULTISEARCH_LONG_FINDPLUS==NULL){
@@ -42,7 +42,7 @@ _FUNC_MULTISEARCH_LONG_FINDPLUS=(int32*)mem_static_malloc(4);
 }
 qbs *_FUNC_MULTISEARCH_STRING_THISTERM=NULL;
 if (!_FUNC_MULTISEARCH_STRING_THISTERM)_FUNC_MULTISEARCH_STRING_THISTERM=qbs_new(0,0);
-byte_element_struct *byte_element_5471=NULL;
-if (!byte_element_5471){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5471=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5471=(byte_element_struct*)mem_static_malloc(12);
+byte_element_struct *byte_element_5475=NULL;
+if (!byte_element_5475){
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5475=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5475=(byte_element_struct*)mem_static_malloc(12);
 }

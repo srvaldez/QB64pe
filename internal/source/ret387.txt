@@ -139,6 +139,9 @@ break;
 case 237:
 goto RETURN_237;
 break;
+case 238:
+goto RETURN_238;
+break;
 }
 }
 error(3);
