@@ -663,7 +663,7 @@ DIM SHARED module AS STRING
 
 DIM SHARED subfunc AS STRING
 DIM SHARED subfuncn AS LONG
-DIM SHARED closedsubfunc AS _BYTE
+dim shared subfuncnlast as long
 DIM SHARED subfuncid AS LONG
 
 DIM SHARED defdatahandle AS INTEGER
@@ -1378,7 +1378,7 @@ arrayprocessinghappened = 0
 stringprocessinghappened = 0
 inputfunctioncalled = 0
 subfuncn = 0
-closedsubfunc = 0
+subfuncnlast = 0
 subfunc = ""
 SelectCaseCounter = 0
 ExecCounter = 0
@@ -1624,12 +1624,7 @@ DO
         wholeline$ = lineinput3$ 'otherwise read from source
         IF wholeline$ = CHR$(13) THEN EXIT DO 'check for end
     END IF
-    'detection of main end (implicit by 1st SUB/FUNC or explicit by lastLine = 1)
-    IF ExecLevel(ExecCounter) = 0 _ANDALSO declaringlibrary = 0 _ANDALSO mainEndLine = 0 THEN
-        tmp$ = UCASE$(LEFT$(LTRIM$(wholeline$), 9))
-        IF tmp$ = "FUNCTION " _ORELSE LEFT$(tmp$, 4) = "SUB " THEN mainEndLine = 1
-    END IF
-    IF lastLine = 1 AND mainEndLine = 0 THEN mainEndLine = 1
+    IF lastLine = 1 THEN mainEndLine = 1
     'perform auto-including according to code position
     IF firstLine = 1 OR (mainEndLine = 1 AND firstLine = 3) OR lastLine = 1 THEN
         lineBackup$ = wholeline$ 'backup the real line
@@ -1955,7 +1950,7 @@ DO
                         '========================================
 
                         IF n = 2 AND firstelement$ = "END" AND (secondelement$ = "SUB" OR secondelement$ = "FUNCTION") THEN
-                            closedsubfunc = -1
+                            subfuncn = 0
                         END IF
 
                         'declare library
@@ -1969,7 +1964,7 @@ DO
 
                             declaringlibrary = 2
 
-                            IF firstelement$ = "SUB" OR firstelement$ = "FUNCTION" THEN subfuncn = subfuncn - 1: GOTO declaresubfunc
+                            IF firstelement$ = "SUB" OR firstelement$ = "FUNCTION" THEN GOTO declaresubfunc
 
                             a$ = "Expected SUB/FUNCTION definition or END DECLARE (#2)": GOTO errmes
                         END IF
@@ -2183,8 +2178,6 @@ DO
                             'l$ = "CONST"
                             'DEF... do not change type, the expression is stored in a suitable type
                             'based on its value if type isn't forced/specified
-
-                            IF subfuncn > 0 AND closedsubfunc <> 0 THEN a$ = "Statement cannot be placed between SUB/FUNCTIONs": GOTO errmes
 
                             'convert periods to _046_
                             i2 = INSTR(a$, sp + "." + sp)
@@ -2426,10 +2419,9 @@ DO
                                 ELSEIF mainEndLine = 2 THEN '"AfterMain" auto-including in progress
                                     a$ = "SUB/FUNCTION not allowed in $USELIBRARY its 'AfterMain' files": GOTO errmes
                                 END IF
+                                subfuncnlast = subfuncnlast + 1
+                                subfuncn = subfuncnlast
                             END IF
-
-                            subfuncn = subfuncn + 1
-                            closedsubfunc = 0
 
                             IF n = 1 THEN a$ = "Expected name after SUB/FUNCTION": GOTO errmes
 
@@ -2899,6 +2891,7 @@ IncOneBuf = OpenBuffer%("O", tmpdir$ + "incone.txt") 'and $INCLUDEONCE buffer
 DataOffset = 0
 inclevel = 0
 subfuncn = 0
+subfuncnlast = 0
 lastLineReturn = 0
 lastLine = 0
 firstLine = 1
@@ -2913,7 +2906,7 @@ FOR i = 1 TO 27: defineaz(i) = "SINGLE": defineextaz(i) = "!": NEXT
 
 DIM SHARED DataBinBuf: DataBinBuf = OpenBuffer%("O", tmpdir$ + "data.bin")
 
-DIM SHARED MainTxtBuf: MainTxtBuf = OpenBuffer%("O", tmpdir$ + "main.txt")
+DIM SHARED MainTxtBuf: MainTxtBuf = OpenBuffer%("O", tmpdir$ + "main0.txt")
 DIM SHARED DataTxtBuf: DataTxtBuf = OpenBuffer%("O", tmpdir$ + "maindata.txt")
 
 DIM SHARED RegTxtBuf: RegTxtBuf = OpenBuffer%("O", tmpdir$ + "regsf.txt")
@@ -3008,12 +3001,7 @@ DO
         a3$ = lineinput3$ 'otherwise read from source
         IF a3$ = CHR$(13) THEN EXIT DO 'check for end
     END IF
-    'detection of main end (implicit by 1st SUB/FUNC or explicit by lastLine = 1)
-    IF ExecLevel(ExecCounter) = 0 _ANDALSO declaringlibrary = 0 _ANDALSO mainEndLine = 0 THEN
-        tmp$ = UCASE$(LEFT$(LTRIM$(a3$), 9))
-        IF tmp$ = "FUNCTION " _ORELSE LEFT$(tmp$, 4) = "SUB " THEN mainEndLine = 1
-    END IF
-    IF lastLine = 1 AND mainEndLine = 0 THEN mainEndLine = 1
+    IF lastLine = 1 THEN mainEndLine = 1
     'perform auto-including according to code position
     IF firstLine = 1 OR (mainEndLine = 1 AND firstLine = 3) OR lastLine = 1 THEN
         lineBackup$ = a3$ 'backup the real line
@@ -3574,8 +3562,6 @@ DO
         label$ = getelement(entireline$, 1)
         IF validlabel(label$) THEN
 
-            IF closedmain <> 0 AND subfunc = "" THEN a$ = "Labels cannot be placed between SUB/FUNCTIONs": GOTO errmes
-
             v = HashFind(label$, HASHFLAG_LABEL, ignore, r)
             addlabchk100:
             IF v THEN
@@ -3638,8 +3624,6 @@ DO
             IF validlabel(a$) THEN
 
                 IF validname(a$) = 0 THEN a$ = "Invalid name": GOTO errmes
-
-                IF closedmain <> 0 AND subfunc = "" THEN a$ = "Labels cannot be placed between SUB/FUNCTIONs": GOTO errmes
 
                 v = HashFind(a$, HASHFLAG_LABEL, ignore, r)
                 addlabchk:
@@ -4949,9 +4933,6 @@ DO
 
             IF declaringlibrary THEN GOTO declibjmp1
 
-
-            IF closedmain = 0 THEN closemain
-
             'check for open controls (copy #2)
             IF controllevel <> 0 AND controltype(controllevel) <> 6 THEN 'It's OK for subs to be inside $IF blocks
                 a$ = "Unidentified open control block"
@@ -4975,12 +4956,13 @@ DO
             subfunc = RTRIM$(id.callname) 'SUB_..."
             IF id.subfunc = 1 THEN subfuncoriginalname$ = "FUNCTION " ELSE subfuncoriginalname$ = "SUB "
             subfuncoriginalname$ = subfuncoriginalname$ + RTRIM$(id.cn)
-            subfuncn = subfuncn + 1
-            closedsubfunc = 0
+            subfuncnlast = subfuncnlast + 1
+            subfuncn = subfuncnlast
             subfuncid = targetid
 
             subfuncret$ = ""
 
+            MainTxtBuf = OpenBuffer%("O", tmpdir$ + "main" + _TOSTR$(subfuncn) + ".txt")
             DataTxtBuf = OpenBuffer%("O", tmpdir$ + "data" + _TOSTR$(subfuncn) + ".txt")
             FreeTxtBuf = OpenBuffer%("O", tmpdir$ + "free" + _TOSTR$(subfuncn) + ".txt")
             RetTxtBuf = OpenBuffer%("O", tmpdir$ + "ret" + _TOSTR$(subfuncn) + ".txt")
@@ -5541,7 +5523,12 @@ DO
                 WriteBufLine RetTxtBuf, "}"
                 WriteBufLine RetTxtBuf, "error(3);" 'no valid return possible
                 subfunc = ""
-                closedsubfunc = -1
+                subfuncn = 0
+                MainTxtBuf = OpenBuffer%("A", tmpdir$ + "main0.txt")
+                DataTxtBuf = OpenBuffer%("A", tmpdir$ + "maindata.txt")
+                defdatahandle = GlobTxtBuf
+                FreeTxtBuf = OpenBuffer%("A", tmpdir$ + "mainfree.txt")
+                RetTxtBuf = OpenBuffer%("A", tmpdir$ + "ret0.txt")
 
                 'unshare temp. shared variables
                 FOR i = 1 TO idn
@@ -5706,8 +5693,6 @@ DO
         END IF '_DEFINE
     END IF '2
     IF predefining = 1 THEN GOTO predefined
-
-    IF closedmain <> 0 AND subfunc = "" THEN a$ = "Statement cannot be placed between SUB/FUNCTIONs": GOTO errmes
 
     'executable section:
 
@@ -8592,7 +8577,8 @@ DO
 
                         use_global_byte_elements = 1
 
-                        'switch output from main.txt to chain.txt
+                        'switch output from main to chain.txt
+                        maintxtbufprev = MainTxtBuf
                         MainTxtBuf = OpenBuffer%("A", tmpdir$ + "chain.txt")
                         l2$ = tlayout$
 
@@ -8633,13 +8619,10 @@ DO
                         WriteBufLine MainTxtBuf, "sub_put(FF,NULL," + e$ + ",0);"
 
                         tlayout$ = l2$
-                        'revert output to main.txt
-                        MainTxtBuf = OpenBuffer%("A", tmpdir$ + "main.txt")
-
 
                         'INPCHAIN.TXT (load)
 
-                        'switch output from main.txt to chain.txt
+                        'switch output from chain.txt to inpchain.txt
                         MainTxtBuf = OpenBuffer%("A", tmpdir$ + "inpchain.txt")
                         l2$ = tlayout$
 
@@ -8676,8 +8659,8 @@ DO
                         WriteBufLine MainTxtBuf, "}"
 
                         tlayout$ = l2$
-                        'revert output to main.txt
-                        MainTxtBuf = OpenBuffer%("A", tmpdir$ + "main.txt")
+                        'revert output to main
+                        MainTxtBuf = maintxtbufprev
 
                         use_global_byte_elements = 0
 
@@ -11627,8 +11610,7 @@ END IF
 
 ide5:
 linenumber = 0
-
-IF closedmain = 0 THEN closemain
+closemain
 
 IF definingtype THEN linenumber = definingtypeerror: a$ = "TYPE without END TYPE": GOTO errmes
 
@@ -14440,6 +14422,11 @@ SUB closemain
     WriteBufLine RetTxtBuf, "}" 'end case
     WriteBufLine RetTxtBuf, "}"
     WriteBufLine RetTxtBuf, "error(3);" 'no valid return possible
+
+    mainincbuf = OpenBuffer%("O", tmpdir$ + "main.txt")
+    for i = 0 to subfuncnlast
+        WriteBufLine mainincbuf, "#include " + chr$(34) + "main" + _tostr$(i) +  ".txt" + chr$(34)
+    next i
 
     closedmain = 1
     firstLineNumberLabelvWatch = 0
