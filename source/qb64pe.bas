@@ -658,7 +658,6 @@ DIM SHARED addmetainclude AS STRING
 DIM SHARED autoIncludingFile AS INTEGER
 DIM SHARED autoIncForceUScore AS INTEGER
 
-DIM SHARED closedmain AS INTEGER
 DIM SHARED module AS STRING
 
 DIM SHARED subfunc AS STRING
@@ -1352,7 +1351,6 @@ REDIM SHARED udtenext(1000) AS LONG
 definingtype = 0
 definingtypeerror = 0
 constlast = -1
-closedmain = 0
 addmetastatic = 0
 addmetadynamic = 0
 DynamicMode = 0
@@ -2908,6 +2906,8 @@ DIM SHARED DataBinBuf: DataBinBuf = OpenBuffer%("O", tmpdir$ + "data.bin")
 
 DIM SHARED MainTxtBuf: MainTxtBuf = OpenBuffer%("O", tmpdir$ + "main0.txt")
 DIM SHARED DataTxtBuf: DataTxtBuf = OpenBuffer%("O", tmpdir$ + "maindata.txt")
+DIM SHARED VWatchMainDispatchBuf: VWatchMainDispatchBuf = OpenBuffer%("O", tmpdir$ + "vw_main_dispatch.txt")
+DIM SHARED VWatchMainSkipBuf: VWatchMainSkipBuf = OpenBuffer%("O", tmpdir$ + "vw_main_skip.txt")
 
 DIM SHARED RegTxtBuf: RegTxtBuf = OpenBuffer%("O", tmpdir$ + "regsf.txt")
 
@@ -4961,6 +4961,11 @@ DO
             subfuncid = targetid
 
             subfuncret$ = ""
+            IF GetRCStateVar(vWatchOn) = 1 AND firstLineNumberLabelvWatch > 0 THEN
+                vWatchAddLabel linenumber, -1
+                closeMainVwatchSection
+                firstLineNumberLabelvWatch = 0
+            end if
 
             MainTxtBuf = OpenBuffer%("O", tmpdir$ + "main" + _TOSTR$(subfuncn) + ".txt")
             DataTxtBuf = OpenBuffer%("O", tmpdir$ + "data" + _TOSTR$(subfuncn) + ".txt")
@@ -14385,21 +14390,31 @@ SUB vWatchAddLabel (this AS LONG, lastLine AS _BYTE)
     END IF
 END SUB
 
+SUB closeMainVwatchSection
+    FOR i = firstLineNumberLabelvWatch TO lastLineNumberLabelvWatch
+        IF ASC(vWatchUsedLabels, i) = 1 THEN
+            WriteBufLine VWatchMainDispatchBuf, "    case " + _TOSTR$(i) + ":"
+            WriteBufLine VWatchMainDispatchBuf, "        goto VWATCH_LABEL_" + _TOSTR$(i) + ";"
+            WriteBufLine VWatchMainDispatchBuf, "        break;"
+        END IF
+    NEXT
+    FOR i = firstLineNumberLabelvWatch TO lastLineNumberLabelvWatch
+        IF ASC(vWatchUsedSkipLabels, i) = 1 THEN
+            WriteBufLine VWatchMainSkipBuf, "    case -" + _TOSTR$(i) + ":"
+            WriteBufLine VWatchMainSkipBuf, "        goto VWATCH_SKIPLABEL_" + _TOSTR$(i) + ";"
+            WriteBufLine VWatchMainSkipBuf, "        break;"
+        END IF
+    NEXT
+END SUB
+
 SUB closemain
+    IF GetRCStateVar(vWatchOn) = 1 THEN vWatchAddLabel 0, -1
     xend
-
     WriteBufLine MainTxtBuf, "return;"
-
-    IF GetRCStateVar(vWatchOn) = 1 AND firstLineNumberLabelvWatch > 0 THEN
+    IF GetRCStateVar(vWatchOn) = 1 THEN
         WriteBufLine MainTxtBuf, "VWATCH_SETNEXTLINE:;"
         WriteBufLine MainTxtBuf, "switch (*__LONG_VWATCH_GOTO) {"
-        FOR i = firstLineNumberLabelvWatch TO lastLineNumberLabelvWatch
-            IF ASC(vWatchUsedLabels, i) = 1 THEN
-                WriteBufLine MainTxtBuf, "    case " + _TOSTR$(i) + ":"
-                WriteBufLine MainTxtBuf, "        goto VWATCH_LABEL_" + _TOSTR$(i) + ";"
-                WriteBufLine MainTxtBuf, "        break;"
-            END IF
-        NEXT
+        WriteBufLine MainTxtBuf, "#include " + chr$(34) + "vw_main_dispatch.txt" + chr$(34)
         WriteBufLine MainTxtBuf, "    default:"
         WriteBufLine MainTxtBuf, "        *__LONG_VWATCH_GOTO=*__LONG_VWATCH_LINENUMBER;"
         WriteBufLine MainTxtBuf, "        goto VWATCH_SETNEXTLINE;"
@@ -14407,15 +14422,8 @@ SUB closemain
 
         WriteBufLine MainTxtBuf, "VWATCH_SKIPLINE:;"
         WriteBufLine MainTxtBuf, "switch (*__LONG_VWATCH_GOTO) {"
-        FOR i = firstLineNumberLabelvWatch TO lastLineNumberLabelvWatch
-            IF ASC(vWatchUsedSkipLabels, i) = 1 THEN
-                WriteBufLine MainTxtBuf, "    case -" + _TOSTR$(i) + ":"
-                WriteBufLine MainTxtBuf, "        goto VWATCH_SKIPLABEL_" + _TOSTR$(i) + ";"
-                WriteBufLine MainTxtBuf, "        break;"
-            END IF
-        NEXT
+        WriteBufLine MainTxtBuf, "#include " + chr$(34) + "vw_main_skip.txt" + chr$(34)
         WriteBufLine MainTxtBuf, "}"
-
     END IF
 
     WriteBufLine MainTxtBuf, "}"
@@ -14428,7 +14436,6 @@ SUB closemain
         WriteBufLine mainincbuf, "#include " + chr$(34) + "main" + _tostr$(i) +  ".txt" + chr$(34)
     next i
 
-    closedmain = 1
     firstLineNumberLabelvWatch = 0
 END SUB
 
@@ -22690,8 +22697,6 @@ END FUNCTION
 
 SUB xend
     IF GetRCStateVar(vWatchOn) THEN
-        'check if closedmain = 0 in case a main module ends in an include.
-        IF (inclinenumber(inclevel) = 0 OR closedmain = 0) THEN vWatchAddLabel 0, -1
         WriteBufLine MainTxtBuf, "*__LONG_VWATCH_LINENUMBER= 0; SUB_VWATCH((ptrszint*)vwatch_global_vars,(ptrszint*)vwatch_local_vars);"
     END IF
     WriteBufLine MainTxtBuf, "sub_end();"
