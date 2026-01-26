@@ -1622,7 +1622,7 @@ DO
         wholeline$ = lineinput3$ 'otherwise read from source
         IF wholeline$ = CHR$(13) THEN EXIT DO 'check for end
     END IF
-    IF lastLine = 1 THEN mainEndLine = 1
+    IF lastLine = 1 and mainEndLine = 0 THEN mainEndLine = 1
     'perform auto-including according to code position
     IF firstLine = 1 OR (mainEndLine = 1 AND firstLine = 3) OR lastLine = 1 THEN
         lineBackup$ = wholeline$ 'backup the real line
@@ -2412,11 +2412,6 @@ DO
                         IF sf THEN
 
                             IF declaringlibrary = 0 THEN
-                                IF firstLine = 2 THEN '"AtTop" auto-including in progress
-                                    a$ = "SUB/FUNCTION not allowed in $USELIBRARY its 'AtTop' files": GOTO errmes
-                                ELSEIF mainEndLine = 2 THEN '"AfterMain" auto-including in progress
-                                    a$ = "SUB/FUNCTION not allowed in $USELIBRARY its 'AfterMain' files": GOTO errmes
-                                END IF
                                 subfuncnlast = subfuncnlast + 1
                                 subfuncn = subfuncnlast
                             END IF
@@ -3001,7 +2996,7 @@ DO
         a3$ = lineinput3$ 'otherwise read from source
         IF a3$ = CHR$(13) THEN EXIT DO 'check for end
     END IF
-    IF lastLine = 1 THEN mainEndLine = 1
+    IF lastLine = 1 and mainEndLine = 0 THEN mainEndLine = 1
     'perform auto-including according to code position
     IF firstLine = 1 OR (mainEndLine = 1 AND firstLine = 3) OR lastLine = 1 THEN
         lineBackup$ = a3$ 'backup the real line
