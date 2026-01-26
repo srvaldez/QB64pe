@@ -662,7 +662,7 @@ DIM SHARED module AS STRING
 
 DIM SHARED subfunc AS STRING
 DIM SHARED subfuncn AS LONG
-dim shared subfuncnlast as long
+DIM SHARED subfuncnlast AS LONG
 DIM SHARED subfuncid AS LONG
 
 DIM SHARED defdatahandle AS INTEGER
@@ -1622,7 +1622,7 @@ DO
         wholeline$ = lineinput3$ 'otherwise read from source
         IF wholeline$ = CHR$(13) THEN EXIT DO 'check for end
     END IF
-    IF lastLine = 1 and mainEndLine = 0 THEN mainEndLine = 1
+    IF lastLine = 1 AND mainEndLine = 0 THEN mainEndLine = 1
     'perform auto-including according to code position
     IF firstLine = 1 OR (mainEndLine = 1 AND firstLine = 3) OR lastLine = 1 THEN
         lineBackup$ = wholeline$ 'backup the real line
@@ -2996,7 +2996,7 @@ DO
         a3$ = lineinput3$ 'otherwise read from source
         IF a3$ = CHR$(13) THEN EXIT DO 'check for end
     END IF
-    IF lastLine = 1 and mainEndLine = 0 THEN mainEndLine = 1
+    IF lastLine = 1 AND mainEndLine = 0 THEN mainEndLine = 1
     'perform auto-including according to code position
     IF firstLine = 1 OR (mainEndLine = 1 AND firstLine = 3) OR lastLine = 1 THEN
         lineBackup$ = a3$ 'backup the real line
@@ -4960,7 +4960,7 @@ DO
                 vWatchAddLabel linenumber, -1
                 closeMainVwatchSection
                 firstLineNumberLabelvWatch = 0
-            end if
+            END IF
 
             MainTxtBuf = OpenBuffer%("O", tmpdir$ + "main" + _TOSTR$(subfuncn) + ".txt")
             DataTxtBuf = OpenBuffer%("O", tmpdir$ + "data" + _TOSTR$(subfuncn) + ".txt")
@@ -14409,7 +14409,7 @@ SUB closemain
     IF GetRCStateVar(vWatchOn) = 1 THEN
         WriteBufLine MainTxtBuf, "VWATCH_SETNEXTLINE:;"
         WriteBufLine MainTxtBuf, "switch (*__LONG_VWATCH_GOTO) {"
-        WriteBufLine MainTxtBuf, "#include " + chr$(34) + "vw_main_dispatch.txt" + chr$(34)
+        WriteBufLine MainTxtBuf, "#include " + CHR$(34) + "vw_main_dispatch.txt" + CHR$(34)
         WriteBufLine MainTxtBuf, "    default:"
         WriteBufLine MainTxtBuf, "        *__LONG_VWATCH_GOTO=*__LONG_VWATCH_LINENUMBER;"
         WriteBufLine MainTxtBuf, "        goto VWATCH_SETNEXTLINE;"
@@ -14417,7 +14417,7 @@ SUB closemain
 
         WriteBufLine MainTxtBuf, "VWATCH_SKIPLINE:;"
         WriteBufLine MainTxtBuf, "switch (*__LONG_VWATCH_GOTO) {"
-        WriteBufLine MainTxtBuf, "#include " + chr$(34) + "vw_main_skip.txt" + chr$(34)
+        WriteBufLine MainTxtBuf, "#include " + CHR$(34) + "vw_main_skip.txt" + CHR$(34)
         WriteBufLine MainTxtBuf, "}"
     END IF
 
@@ -14427,9 +14427,9 @@ SUB closemain
     WriteBufLine RetTxtBuf, "error(3);" 'no valid return possible
 
     mainincbuf = OpenBuffer%("O", tmpdir$ + "main.txt")
-    for i = 0 to subfuncnlast
-        WriteBufLine mainincbuf, "#include " + chr$(34) + "main" + _tostr$(i) +  ".txt" + chr$(34)
-    next i
+    FOR i = 0 TO subfuncnlast
+        WriteBufLine mainincbuf, "#include " + CHR$(34) + "main" + _TOSTR$(i) + ".txt" + CHR$(34)
+    NEXT i
 
     firstLineNumberLabelvWatch = 0
 END SUB
