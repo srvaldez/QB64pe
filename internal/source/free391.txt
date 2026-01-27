@@ -1,5 +1,0 @@
-if(oldstr7236){
-if(oldstr7236->fixed)qbs_set(oldstr7236,_FUNC__ENCODEURL_STRING__URL);
-qbs_free(_FUNC__ENCODEURL_STRING__URL);
-}
-qbs_free(_FUNC__ENCODEURL_STRING__TMP);
