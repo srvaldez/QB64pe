@@ -10315,7 +10315,9 @@ DO
                         redosemi:
                         FOR i = elementon TO n - 1
                             nextchar$ = getelement$(a$, i + 1)
-                            IF nextchar$ <> ";" AND nextchar$ <> "," AND nextchar$ <> "+" AND nextchar$ <> ")" THEN
+                            'Only insert ; if next char cannot continue an expression from a string literal.
+                            'The cute pattern is a match for all the less-equal-greater than operators.
+                            IF INSTR(";,+)<=>=<>", nextchar$) = 0 THEN
                                 temp1$ = getelement$(a$, i)
                                 beginpoint = INSTR(beginpoint, temp1$, CHR$(34))
                                 endpoint = INSTR(beginpoint + 1, temp1$, CHR$(34) + ",")
@@ -10333,7 +10335,8 @@ DO
                                 END IF
                                 IF temp1$ <> "USING" THEN
                                     IF LEFT$(LTRIM$(nextchar$), 1) = CHR$(34) THEN
-                                        IF temp1$ <> ";" AND temp1$ <> "," AND temp1$ <> "+" AND temp1$ <> "(" THEN
+                                        IF INSTR(";,+(<=>=<>", temp1$) = 0 THEN
+                                            'Current element can't appear before a string literal in an expression
                                             insertelements a$, i, ";"
                                             insertelements ca$, i, ";"
                                             n = n + 1
