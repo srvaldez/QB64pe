@@ -269,7 +269,7 @@ do{
 *_FUNC_IDELANGUAGEBOX_LONG_LASTFOCUS=*_FUNC_IDELANGUAGEBOX_LONG_F- 1 ;
 if(!qbevent)break;evnt(24235,14122,"ide_methods.bas");}while(r);
 do{
-qbg_sub_color( 2 , 7 ,NULL,3);
+qbg_sub_color( 2 , 7 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,14126,"ide_methods.bas");}while(r);
 do{
 qbg_sub_locate(*(int32*)(((char*)_FUNC_IDELANGUAGEBOX_UDT_P)+(4))+ 1 ,*(int32*)(((char*)_FUNC_IDELANGUAGEBOX_UDT_P)+(0))+ 2 ,NULL,NULL,NULL,3);

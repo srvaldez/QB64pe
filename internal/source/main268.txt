@@ -314,7 +314,7 @@ do{
 *_FUNC_IDEELEMENTWATCHBOX_LONG_LASTFOCUS=*_FUNC_IDEELEMENTWATCHBOX_LONG_F- 1 ;
 if(!qbevent)break;evnt(24235,10061,"ide_methods.bas");}while(r);
 do{
-qbg_sub_color( 0 , 7 ,NULL,3);
+qbg_sub_color( 0 , 7 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,10065,"ide_methods.bas");}while(r);
 do{
 qbs_set(_FUNC_IDEELEMENTWATCHBOX_STRING_TEMP,_FUNC_IDEELEMENTWATCHBOX_STRING_CURRENTPATH);

@@ -15,7 +15,7 @@ do{
 SUB_IDEBOX(_SUB_IDEBOXSHADOW_LONG_X,_SUB_IDEBOXSHADOW_LONG_Y,_SUB_IDEBOXSHADOW_LONG_W,_SUB_IDEBOXSHADOW_LONG_H);
 if(!qbevent)break;evnt(24235,10663,"ide_methods.bas");}while(r);
 do{
-qbg_sub_color( 2 , 0 ,NULL,3);
+qbg_sub_color( 2 , 0 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,10666,"ide_methods.bas");}while(r);
 S_49853:;
 fornext_value5690=*_SUB_IDEBOXSHADOW_LONG_Y+ 1 ;
