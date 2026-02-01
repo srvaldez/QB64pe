@@ -6740,7 +6740,7 @@ qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(943);}while(r);
 }
 do{
-qbs_set(__STRING_EXECUTELINE,qbs_add(qbs_add(qbs_add(__STRING_PREFIX,FUNC_QUOTEDFILENAME(__STRING_LASTBINARYGENERATED)),__STRING_MODIFYCOMMAND),__STRING_SUFFIX));
+qbs_set(__STRING_EXECUTELINE,qbs_add(qbs_add(qbs_add(__STRING_PREFIX,FUNC_QUOTEDFILENAME(func__fullpath(__STRING_LASTBINARYGENERATED))),__STRING_MODIFYCOMMAND),__STRING_SUFFIX));
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(946);}while(r);
 S_1385:;
@@ -6766,12 +6766,12 @@ S_1391:;
 if ((qbs_cleanup(qbs_tmp_base,qbs_equal(qbs_left(__STRING_LASTBINARYGENERATED,__STRING_PATH__ASCII_CHR_046__EXE->len),__STRING_PATH__ASCII_CHR_046__EXE)))||is_error_pending()){
 if(qbevent){evnt(953);if(r)goto S_1391;}
 do{
-qbs_set(__STRING_EXECUTELINE,FUNC_STRREPLACE(__STRING_EXECUTELINE,qbs_new_txt_len("$$",2),FUNC_QUOTEDFILENAME(__STRING_LASTBINARYGENERATED)));
+qbs_set(__STRING_EXECUTELINE,FUNC_STRREPLACE(__STRING_EXECUTELINE,qbs_new_txt_len("$$",2),FUNC_QUOTEDFILENAME(func__fullpath(__STRING_LASTBINARYGENERATED))));
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(954);}while(r);
 }else{
 do{
-qbs_set(__STRING_EXECUTELINE,FUNC_STRREPLACE(__STRING_EXECUTELINE,qbs_new_txt_len("$$",2),FUNC_QUOTEDFILENAME(qbs_add(__STRING_PATH__ASCII_CHR_046__EXE,__STRING_LASTBINARYGENERATED))));
+qbs_set(__STRING_EXECUTELINE,FUNC_STRREPLACE(__STRING_EXECUTELINE,qbs_new_txt_len("$$",2),FUNC_QUOTEDFILENAME(func__fullpath(qbs_add(__STRING_PATH__ASCII_CHR_046__EXE,__STRING_LASTBINARYGENERATED)))));
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(956);}while(r);
 }
@@ -6788,12 +6788,12 @@ S_1399:;
 if ((qbs_cleanup(qbs_tmp_base,qbs_equal(qbs_left(__STRING_LASTBINARYGENERATED,__STRING_PATH__ASCII_CHR_046__EXE->len),__STRING_PATH__ASCII_CHR_046__EXE)))||is_error_pending()){
 if(qbevent){evnt(962);if(r)goto S_1399;}
 do{
-qbs_set(__STRING_EXECUTELINE,qbs_add(FUNC_QUOTEDFILENAME(__STRING_LASTBINARYGENERATED),__STRING_MODIFYCOMMAND));
+qbs_set(__STRING_EXECUTELINE,qbs_add(FUNC_QUOTEDFILENAME(func__fullpath(__STRING_LASTBINARYGENERATED)),__STRING_MODIFYCOMMAND));
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(963);}while(r);
 }else{
 do{
-qbs_set(__STRING_EXECUTELINE,qbs_add(FUNC_QUOTEDFILENAME(qbs_add(__STRING_PATH__ASCII_CHR_046__EXE,__STRING_LASTBINARYGENERATED)),__STRING_MODIFYCOMMAND));
+qbs_set(__STRING_EXECUTELINE,qbs_add(FUNC_QUOTEDFILENAME(func__fullpath(qbs_add(__STRING_PATH__ASCII_CHR_046__EXE,__STRING_LASTBINARYGENERATED))),__STRING_MODIFYCOMMAND));
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(965);}while(r);
 }
