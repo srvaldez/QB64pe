@@ -40,7 +40,7 @@ S_32257:;
 if ((~(*__BYTE_MONOCHROMELOGGINGMODE))||is_error_pending()){
 if(qbevent){evnt(24089);if(r)goto S_32257;}
 do{
-qbg_sub_color( 15 ,NULL,NULL,1);
+qbg_sub_color( 15 ,NULL,NULL,NULL,1);
 if(!qbevent)break;evnt(24089);}while(r);
 }
 S_32260:;
@@ -108,7 +108,7 @@ S_32267:;
 if ((~(*__BYTE_MONOCHROMELOGGINGMODE))||is_error_pending()){
 if(qbevent){evnt(24098);if(r)goto S_32267;}
 do{
-qbg_sub_color( 13 ,NULL,NULL,1);
+qbg_sub_color( 13 ,NULL,NULL,NULL,1);
 if(!qbevent)break;evnt(24098);}while(r);
 }
 do{
@@ -125,7 +125,7 @@ S_32271:;
 if ((~(*__BYTE_MONOCHROMELOGGINGMODE))||is_error_pending()){
 if(qbevent){evnt(24100);if(r)goto S_32271;}
 do{
-qbg_sub_color( 7 ,NULL,NULL,1);
+qbg_sub_color( 7 ,NULL,NULL,NULL,1);
 if(!qbevent)break;evnt(24100);}while(r);
 }
 do{
@@ -146,7 +146,7 @@ S_32276:;
 if ((~(*__BYTE_MONOCHROMELOGGINGMODE))||is_error_pending()){
 if(qbevent){evnt(24104);if(r)goto S_32276;}
 do{
-qbg_sub_color( 2 ,NULL,NULL,1);
+qbg_sub_color( 2 ,NULL,NULL,NULL,1);
 if(!qbevent)break;evnt(24104);}while(r);
 }
 do{
@@ -168,7 +168,7 @@ S_32280:;
 if ((~(*__BYTE_MONOCHROMELOGGINGMODE))||is_error_pending()){
 if(qbevent){evnt(24106);if(r)goto S_32280;}
 do{
-qbg_sub_color( 7 ,NULL,NULL,1);
+qbg_sub_color( 7 ,NULL,NULL,NULL,1);
 if(!qbevent)break;evnt(24106);}while(r);
 }
 }

@@ -31,7 +31,7 @@ do{
 qbg_screen(NULL,NULL, 3 , 0 ,NULL,12);
 if(!qbevent)break;evnt(24235,6970,"ide_methods.bas");}while(r);
 do{
-qbg_sub_color( 15 , 3 ,NULL,3);
+qbg_sub_color( 15 , 3 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,6972,"ide_methods.bas");}while(r);
 do{
 sub__printstring( 1 , 1 ,func_space(__STRING_MENUBAR->len),NULL,0);
@@ -2679,14 +2679,14 @@ S_46797:;
 if ((qbs_cleanup(qbs_tmp_base,qbs_notequal(__STRING_IDEFINDTEXT,qbs_new_txt_len("",0))))||is_error_pending()){
 if(qbevent){evnt(24235,7707,"ide_methods.bas");if(r)goto S_46797;}
 do{
-qbg_sub_color( 7 , 1 ,NULL,3);
+qbg_sub_color( 7 , 1 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,7710,"ide_methods.bas");}while(r);
 do{
 sub__printstring(*__LONG_IDEWX-( 20ll + 10 ),*__LONG_IDEWY- 4 ,func_chr( 180 ),NULL,0);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(24235,7710,"ide_methods.bas");}while(r);
 do{
-qbg_sub_color( 3 , 1 ,NULL,3);
+qbg_sub_color( 3 , 1 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,7711,"ide_methods.bas");}while(r);
 do{
 sub__printstring( 1 +*__LONG_IDEWX-( 20ll + 10 ),*__LONG_IDEWY- 4 ,qbs_add(qbs_add(qbs_add(qbs_new_txt_len("Find[",5),func_space( 20ll + 1 )),func_chr( 18 )),qbs_new_txt_len("]",1)),NULL,0);
@@ -2701,7 +2701,7 @@ sub__printstring(*__LONG_IDEWX-( 20ll + 8 )+ 4 ,*__LONG_IDEWY- 4 ,_SUB_DEBUGMODE
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(24235,7714,"ide_methods.bas");}while(r);
 do{
-qbg_sub_color( 7 , 1 ,NULL,3);
+qbg_sub_color( 7 , 1 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,7715,"ide_methods.bas");}while(r);
 do{
 sub__printstring(*__LONG_IDEWX- 2 ,*__LONG_IDEWY- 4 ,func_chr( 195 ),NULL,0);
@@ -4876,7 +4876,7 @@ do{
 SUB_CLEARSTATUSWINDOW(&(pass5380= 1 ));
 if(!qbevent)break;evnt(24235,8303,"ide_methods.bas");}while(r);
 do{
-qbg_sub_color(NULL, 4 ,NULL,2);
+qbg_sub_color(NULL, 4 ,NULL,NULL,2);
 if(!qbevent)break;evnt(24235,8304,"ide_methods.bas");}while(r);
 do{
 SUB_SETSTATUSMESSAGE(&(pass5381= 1 ),qbs_add(qbs_new_txt_len("Error occurred on line",22),qbs_str((int32)(*_SUB_DEBUGMODE_LONG_L))),&(pass5382= 15 ));
@@ -5247,7 +5247,7 @@ S_47510:;
 if (((-(*__LONG_MY==*(int16*)(((char*)_SUB_DEBUGMODE_ARRAY_UDT_BUTTON[0])+((array_check((*_SUB_DEBUGMODE_LONG_I)-_SUB_DEBUGMODE_ARRAY_UDT_BUTTON[4],_SUB_DEBUGMODE_ARRAY_UDT_BUTTON[5]))*16+2))))&(-(*__LONG_MX>=*(int16*)(((char*)_SUB_DEBUGMODE_ARRAY_UDT_BUTTON[0])+((array_check((*_SUB_DEBUGMODE_LONG_I)-_SUB_DEBUGMODE_ARRAY_UDT_BUTTON[4],_SUB_DEBUGMODE_ARRAY_UDT_BUTTON[5]))*16))))&(-(*__LONG_MX<=(*(int16*)(((char*)_SUB_DEBUGMODE_ARRAY_UDT_BUTTON[0])+((array_check((*_SUB_DEBUGMODE_LONG_I)-_SUB_DEBUGMODE_ARRAY_UDT_BUTTON[4],_SUB_DEBUGMODE_ARRAY_UDT_BUTTON[5]))*16))+*(int16*)(((char*)_SUB_DEBUGMODE_ARRAY_UDT_BUTTON[0])+((array_check((*_SUB_DEBUGMODE_LONG_I)-_SUB_DEBUGMODE_ARRAY_UDT_BUTTON[4],_SUB_DEBUGMODE_ARRAY_UDT_BUTTON[5]))*16+4)))))&(~(*(int8*)(((char*)_SUB_DEBUGMODE_UDT_VWATCHPANEL)+(32))))&(~(*(int8*)(((char*)_SUB_DEBUGMODE_UDT_VWATCHPANEL)+(33)))))||is_error_pending()){
 if(qbevent){evnt(24235,8419,"ide_methods.bas");if(r)goto S_47510;}
 do{
-qbg_sub_color( 0 , 7 ,NULL,3);
+qbg_sub_color( 0 , 7 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,8420,"ide_methods.bas");}while(r);
 do{
 qbs_set(_SUB_DEBUGMODE_STRING_TEMP,qbs_new_txt_len("",0));
@@ -5255,7 +5255,7 @@ qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(24235,8421,"ide_methods.bas");}while(r);
 }else{
 do{
-qbg_sub_color( 13 , 1 ,NULL,3);
+qbg_sub_color( 13 , 1 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,8423,"ide_methods.bas");}while(r);
 do{
 qbs_set(_SUB_DEBUGMODE_STRING_TEMP,qbs_new_txt_len(" ",1));
@@ -5472,7 +5472,7 @@ qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(24235,8474,"ide_methods.bas");}while(r);
 }
 do{
-qbg_sub_color( 2 , 3 ,NULL,3);
+qbg_sub_color( 2 , 3 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,8476,"ide_methods.bas");}while(r);
 do{
 sub__printstring(*__LONG_IDEWX- 21 -__STRING_VERSIONSTRINGSTATUS->len,*__LONG_IDEWY+*__LONG_IDESUBWINDOW,__STRING_VERSIONSTRINGSTATUS,NULL,0);

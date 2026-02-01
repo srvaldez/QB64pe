@@ -806,7 +806,7 @@ if (fornext_value5715>fornext_finalvalue5715) break;
 fornext_error5715:;
 if(qbevent){evnt(24235,10926,"ide_methods.bas");if(r)goto S_50112;}
 do{
-qbg_sub_color( 0 , 7 ,NULL,3);
+qbg_sub_color( 0 , 7 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,10927,"ide_methods.bas");}while(r);
 do{
 *_FUNC_IDECHANGE_LONG_MAXPROGRESSWIDTH=*(int32*)(((char*)_FUNC_IDECHANGE_UDT_P)+(8))- 4 ;

@@ -26,7 +26,7 @@ do{
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(24235,20251,"ide_methods.bas");}while(r);
 do{
-qbg_sub_color( 13 , 1 ,NULL,3);
+qbg_sub_color( 13 , 1 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,20252,"ide_methods.bas");}while(r);
 do{
 sub__printstring( 2 ,*__LONG_IDEWY- 1 ,func_string(qbr(((*__LONG_IDEWX- 2 )**_SUB_UPDATEIDEINFO_INTEGER_PERCENTAGE)/ ((long double)( 100 ))),(qbs_new_txt_len("_",1)->chr[0])),NULL,0);
@@ -55,7 +55,7 @@ qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(24235,20258,"ide_methods.bas");}while(r);
 }
 do{
-qbg_sub_color( 0 , 3 ,NULL,3);
+qbg_sub_color( 0 , 3 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,20259,"ide_methods.bas");}while(r);
 do{
 sub__printstring( 2 ,*__LONG_IDEWY+*__LONG_IDESUBWINDOW,_SUB_UPDATEIDEINFO_STRING_A,NULL,0);
@@ -74,7 +74,7 @@ qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(24235,20264,"ide_methods.bas");}while(r);
 }
 do{
-qbg_sub_color( 2 , 3 ,NULL,3);
+qbg_sub_color( 2 , 3 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,20267,"ide_methods.bas");}while(r);
 do{
 sub__printstring(*__LONG_IDEWX- 21 -__STRING_VERSIONSTRINGSTATUS->len,*__LONG_IDEWY+*__LONG_IDESUBWINDOW,__STRING_VERSIONSTRINGSTATUS,NULL,0);
