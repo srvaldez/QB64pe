@@ -18,7 +18,7 @@ do{
 *_FUNC_IDEHBAR_LONG_N=*_FUNC_IDEHBAR_LONG_N2;
 if(!qbevent)break;evnt(24235,11952,"ide_methods.bas");}while(r);
 do{
-qbg_sub_color( 0 , 7 ,NULL,3);
+qbg_sub_color( 0 , 7 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,11970,"ide_methods.bas");}while(r);
 do{
 sub__printstring(*_FUNC_IDEHBAR_LONG_X,*_FUNC_IDEHBAR_LONG_Y,func_chr( 27 ),NULL,0);

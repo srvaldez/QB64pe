@@ -330,7 +330,7 @@ do{
 *_FUNC_IDEMESSAGEBOX_LONG_LASTFOCUS=*_FUNC_IDEMESSAGEBOX_LONG_F- 1 ;
 if(!qbevent)break;evnt(24235,16513,"ide_methods.bas");}while(r);
 do{
-qbg_sub_color( 0 , 7 ,NULL,3);
+qbg_sub_color( 0 , 7 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,16517,"ide_methods.bas");}while(r);
 S_56284:;
 fornext_value6373= 1 ;

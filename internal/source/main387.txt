@@ -29,7 +29,7 @@ do{
 *_FUNC_OFFERNOPREFIXCONVERSION_LONG_DUMMY=FUNC_DARKENFGBG(&(pass7163= 1 ));
 if(!qbevent)break;evnt(24235,112,"ide_converters.bas");}while(r);
 do{
-qbg_sub_color( 15 , 1 ,NULL,3);
+qbg_sub_color( 15 , 1 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,113,"ide_converters.bas");}while(r);
 do{
 sub__printstring( 2 ,*__LONG_IDEWY- 3 ,qbs_new_txt_len("Converting...          ",23),NULL,0);

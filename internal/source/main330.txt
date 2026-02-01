@@ -960,7 +960,7 @@ qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(24235,18032,"ide_methods.bas");}while(r);
 do{
-qbg_sub_color( 4 ,NULL,NULL,1);
+qbg_sub_color( 4 ,NULL,NULL,NULL,1);
 if(!qbevent)break;evnt(24235,18033,"ide_methods.bas");}while(r);
 do{
 tqbs=qbs_new(0,0);
@@ -1004,7 +1004,7 @@ sub__printstring(*(int32*)(((char*)_FUNC_IDERGBMIXER_UDT_P)+(0))+ 15 +*_FUNC_IDE
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(24235,18038,"ide_methods.bas");}while(r);
 do{
-qbg_sub_color( 0 ,NULL,NULL,1);
+qbg_sub_color( 0 ,NULL,NULL,NULL,1);
 if(!qbevent)break;evnt(24235,18040,"ide_methods.bas");}while(r);
 do{
 qbg_sub_locate(*(int32*)(((char*)_FUNC_IDERGBMIXER_UDT_P)+(4))+ 5 ,*(int32*)(((char*)_FUNC_IDERGBMIXER_UDT_P)+(0))+ 13 ,NULL,NULL,NULL,3);
@@ -1020,7 +1020,7 @@ qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(24235,18040,"ide_methods.bas");}while(r);
 do{
-qbg_sub_color( 5 ,NULL,NULL,1);
+qbg_sub_color( 5 ,NULL,NULL,NULL,1);
 if(!qbevent)break;evnt(24235,18041,"ide_methods.bas");}while(r);
 do{
 tqbs=qbs_new(0,0);
@@ -1064,7 +1064,7 @@ sub__printstring(*(int32*)(((char*)_FUNC_IDERGBMIXER_UDT_P)+(0))+ 15 +*_FUNC_IDE
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(24235,18046,"ide_methods.bas");}while(r);
 do{
-qbg_sub_color( 0 ,NULL,NULL,1);
+qbg_sub_color( 0 ,NULL,NULL,NULL,1);
 if(!qbevent)break;evnt(24235,18048,"ide_methods.bas");}while(r);
 do{
 qbg_sub_locate(*(int32*)(((char*)_FUNC_IDERGBMIXER_UDT_P)+(4))+ 8 ,*(int32*)(((char*)_FUNC_IDERGBMIXER_UDT_P)+(0))+ 13 ,NULL,NULL,NULL,3);
@@ -1080,7 +1080,7 @@ qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(24235,18048,"ide_methods.bas");}while(r);
 do{
-qbg_sub_color( 9 ,NULL,NULL,1);
+qbg_sub_color( 9 ,NULL,NULL,NULL,1);
 if(!qbevent)break;evnt(24235,18049,"ide_methods.bas");}while(r);
 do{
 tqbs=qbs_new(0,0);
@@ -1124,14 +1124,14 @@ sub__printstring(*(int32*)(((char*)_FUNC_IDERGBMIXER_UDT_P)+(0))+ 15 +*_FUNC_IDE
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(24235,18054,"ide_methods.bas");}while(r);
 do{
-qbg_sub_color( 0 ,NULL,NULL,1);
+qbg_sub_color( 0 ,NULL,NULL,NULL,1);
 if(!qbevent)break;evnt(24235,18056,"ide_methods.bas");}while(r);
 do{
 sub__printstring(*(int32*)(((char*)_FUNC_IDERGBMIXER_UDT_P)+(0))+ 19 ,*(int32*)(((char*)_FUNC_IDERGBMIXER_UDT_P)+(4))+ 9 ,qbs_new_txt_len("Hold CTRL to drag all sliders at once.",38),NULL,0);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(24235,18056,"ide_methods.bas");}while(r);
 do{
-qbg_sub_color( 12 ,NULL,NULL,1);
+qbg_sub_color( 12 ,NULL,NULL,NULL,1);
 if(!qbevent)break;evnt(24235,18058,"ide_methods.bas");}while(r);
 S_58134:;
 fornext_value6531= 2 ;

@@ -52715,7 +52715,7 @@ do{
 qbg_screen(func__newimage( 80 , 25 , 0 ,0|1),NULL, 0 , 0 ,NULL,13);
 if(!qbevent)break;evnt(13122);}while(r);
 do{
-qbg_sub_color( 7 , 0 ,NULL,3);
+qbg_sub_color( 7 , 0 ,NULL,NULL,3);
 if(!qbevent)break;evnt(13123);}while(r);
 }
 do{
@@ -53254,11 +53254,11 @@ S_15752:;
 if ((qbs_cleanup(qbs_tmp_base,func_instr(NULL,func__os(),qbs_new_txt_len("WIN",3),0)))||is_error_pending()){
 if(qbevent){evnt(13209);if(r)goto S_15752;}
 do{
-qbg_sub_color( 4 ,NULL,NULL,1);
+qbg_sub_color( 4 ,NULL,NULL,NULL,1);
 if(!qbevent)break;evnt(13210);}while(r);
 }else{
 do{
-qbg_sub_color( 9 ,NULL,NULL,1);
+qbg_sub_color( 9 ,NULL,NULL,NULL,1);
 if(!qbevent)break;evnt(13212);}while(r);
 }
 }
@@ -53277,7 +53277,7 @@ S_15759:;
 if ((~(*__BYTE_MONOCHROMELOGGINGMODE))||is_error_pending()){
 if(qbevent){evnt(13216);if(r)goto S_15759;}
 do{
-qbg_sub_color( 7 ,NULL,NULL,1);
+qbg_sub_color( 7 ,NULL,NULL,NULL,1);
 if(!qbevent)break;evnt(13216);}while(r);
 }
 S_15762:;
@@ -53353,7 +53353,7 @@ S_15773:;
 if ((~(*__BYTE_MONOCHROMELOGGINGMODE))||is_error_pending()){
 if(qbevent){evnt(13224);if(r)goto S_15773;}
 do{
-qbg_sub_color( 8 ,NULL,NULL,1);
+qbg_sub_color( 8 ,NULL,NULL,NULL,1);
 if(!qbevent)break;evnt(13224);}while(r);
 }
 do{
@@ -53370,7 +53370,7 @@ S_15777:;
 if ((~(*__BYTE_MONOCHROMELOGGINGMODE))||is_error_pending()){
 if(qbevent){evnt(13226);if(r)goto S_15777;}
 do{
-qbg_sub_color( 15 ,NULL,NULL,1);
+qbg_sub_color( 15 ,NULL,NULL,NULL,1);
 if(!qbevent)break;evnt(13226);}while(r);
 }
 do{
@@ -53387,7 +53387,7 @@ S_15781:;
 if ((~(*__BYTE_MONOCHROMELOGGINGMODE))||is_error_pending()){
 if(qbevent){evnt(13228);if(r)goto S_15781;}
 do{
-qbg_sub_color( 7 ,NULL,NULL,1);
+qbg_sub_color( 7 ,NULL,NULL,NULL,1);
 if(!qbevent)break;evnt(13228);}while(r);
 }
 do{
