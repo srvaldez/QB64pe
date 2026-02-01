@@ -161,7 +161,7 @@ do{
 SUB_CLEARSTATUSWINDOW(&(pass7152= 0 ));
 if(!qbevent)break;evnt(24235,47,"ide_converters.bas");}while(r);
 do{
-qbg_sub_color( 15 , 1 ,NULL,3);
+qbg_sub_color( 15 , 1 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,48,"ide_converters.bas");}while(r);
 do{
 sub__printstring( 2 ,*__LONG_IDEWY- 3 ,qbs_new_txt_len("Converting...          ",23),NULL,0);
@@ -268,7 +268,7 @@ do{
 SUB_CLEARSTATUSWINDOW(&(pass7159= 0 ));
 if(!qbevent)break;evnt(24235,87,"ide_converters.bas");}while(r);
 do{
-qbg_sub_color( 15 , 1 ,NULL,3);
+qbg_sub_color( 15 , 1 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,88,"ide_converters.bas");}while(r);
 do{
 sub__printstring( 2 ,*__LONG_IDEWY- 3 ,qbs_new_txt_len("Preparing to convert...",23),NULL,0);

@@ -387,11 +387,11 @@ S_59758:;
 if ((-(*_FUNC_IDEUPDATEHELPBOX_LONG_I== 1 ))||is_error_pending()){
 if(qbevent){evnt(24235,19514,"ide_methods.bas");if(r)goto S_59758;}
 do{
-qbg_sub_color( 0 , 7 ,NULL,3);
+qbg_sub_color( 0 , 7 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,19514,"ide_methods.bas");}while(r);
 }else{
 do{
-qbg_sub_color( 2 , 7 ,NULL,3);
+qbg_sub_color( 2 , 7 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,19514,"ide_methods.bas");}while(r);
 }
 S_59763:;
@@ -411,7 +411,7 @@ fornext_continue_6673:;
 }
 fornext_exit_6673:;
 do{
-qbg_sub_color( 0 , 7 ,NULL,3);
+qbg_sub_color( 0 , 7 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,19521,"ide_methods.bas");}while(r);
 S_59769:;
 if ((-(*_FUNC_IDEUPDATEHELPBOX_LONG_UPDATESTEP== 5 ))||is_error_pending()){

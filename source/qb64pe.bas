@@ -943,7 +943,7 @@ IF C = 9 THEN 'run
             prefix$ = "": suffix$ = ""
         END IF
 
-        ExecuteLine$ = prefix$ + QuotedFilename$(lastBinaryGenerated$) + ModifyCOMMAND$ + suffix$
+        ExecuteLine$ = prefix$ + QuotedFilename$(_FULLPATH$(lastBinaryGenerated$)) + ModifyCOMMAND$ + suffix$
     ELSEIF os$ = "LNX" THEN
         IF path.exe$ = "" THEN path.exe$ = "./"
 
@@ -951,18 +951,18 @@ IF C = 9 THEN 'run
             ExecuteLine$ = DefaultTerminal$
 
             IF LEFT$(lastBinaryGenerated$, LEN(path.exe$)) = path.exe$ THEN
-                ExecuteLine$ = StrReplace$(ExecuteLine$, "$$", QuotedFilename$(lastBinaryGenerated$))
+                ExecuteLine$ = StrReplace$(ExecuteLine$, "$$", QuotedFilename$(_FULLPATH$(lastBinaryGenerated$)))
             ELSE
-                ExecuteLine$ = StrReplace$(ExecuteLine$, "$$", QuotedFilename$(path.exe$ + lastBinaryGenerated$))
+                ExecuteLine$ = StrReplace$(ExecuteLine$, "$$", QuotedFilename$(_FULLPATH$(path.exe$ + lastBinaryGenerated$)))
             END IF
 
             ExecuteLine$ = StrReplace$(ExecuteLine$, "$@", ModifyCOMMAND$)
             ExecuteLine$ = ExecuteLine$ + _IIF(LogToConsole, " && read -rsn1 -p 'Press any key...'; echo", "")
         ELSE
             IF LEFT$(lastBinaryGenerated$, LEN(path.exe$)) = path.exe$ THEN
-                ExecuteLine$ = QuotedFilename$(lastBinaryGenerated$) + ModifyCOMMAND$
+                ExecuteLine$ = QuotedFilename$(_FULLPATH$(lastBinaryGenerated$)) + ModifyCOMMAND$
             ELSE
-                ExecuteLine$ = QuotedFilename$(path.exe$ + lastBinaryGenerated$) + ModifyCOMMAND$
+                ExecuteLine$ = QuotedFilename$(_FULLPATH$(path.exe$ + lastBinaryGenerated$)) + ModifyCOMMAND$
             END IF
         END IF
 
@@ -18824,7 +18824,7 @@ FUNCTION evaluatetotyp$ (a2$, targettyp AS LONG)
             ELSE
                 bytes = (sourcetyp AND 511) \ 8
             END IF
-            bytes$ = bytes$ + "-(" + _TOSTR$(bytes) + "*(" + index$ + "))"
+            bytes$ = "(" + bytes$ + "-(" + _TOSTR$(bytes) + "*(" + index$ + ")))"
             evaluatetotyp$ = "byte_element((uint64)" + e$ + "," + bytes$ + "," + NewByteElement$ + ")"
             IF targettyp = -5 THEN evaluatetotyp$ = bytes$
             IF targettyp = -6 THEN evaluatetotyp$ = e$

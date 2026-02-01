@@ -386,7 +386,7 @@ do{
 *_FUNC_IDEWARNINGBOX_LONG_LASTFOCUS=*_FUNC_IDEWARNINGBOX_LONG_F- 1 ;
 if(!qbevent)break;evnt(24235,14323,"ide_methods.bas");}while(r);
 do{
-qbg_sub_color( 0 , 7 ,NULL,3);
+qbg_sub_color( 0 , 7 ,NULL,NULL,3);
 if(!qbevent)break;evnt(24235,14327,"ide_methods.bas");}while(r);
 do{
 sub__printstring(*(int32*)(((char*)_FUNC_IDEWARNINGBOX_UDT_P)+(0))+ 2 ,*(int32*)(((char*)_FUNC_IDEWARNINGBOX_UDT_P)+(4))+ 1 ,qbs_new_txt_len("Double-click on an item to jump to the line indicated",53),NULL,0);
