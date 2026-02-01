@@ -18824,7 +18824,7 @@ FUNCTION evaluatetotyp$ (a2$, targettyp AS LONG)
             ELSE
                 bytes = (sourcetyp AND 511) \ 8
             END IF
-            bytes$ = bytes$ + "-(" + _TOSTR$(bytes) + "*(" + index$ + "))"
+            bytes$ = "(" + bytes$ + "-(" + _TOSTR$(bytes) + "*(" + index$ + ")))"
             evaluatetotyp$ = "byte_element((uint64)" + e$ + "," + bytes$ + "," + NewByteElement$ + ")"
             IF targettyp = -5 THEN evaluatetotyp$ = bytes$
             IF targettyp = -6 THEN evaluatetotyp$ = e$
