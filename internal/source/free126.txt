@@ -1,4 +1,9 @@
-if(oldstr4407){
-if(oldstr4407->fixed)qbs_set(oldstr4407,_FUNC_FIXDIRECTORYNAME_STRING_DIR_NAME);
-qbs_free(_FUNC_FIXDIRECTORYNAME_STRING_DIR_NAME);
+if(oldstr3540){
+if(oldstr3540->fixed)qbs_set(oldstr3540,_FUNC_COPYFILE_STRING_SOURCEFILE);
+qbs_free(_FUNC_COPYFILE_STRING_SOURCEFILE);
 }
+if(oldstr3541){
+if(oldstr3541->fixed)qbs_set(oldstr3541,_FUNC_COPYFILE_STRING_DESTFILE);
+qbs_free(_FUNC_COPYFILE_STRING_DESTFILE);
+}
+qbs_free(_FUNC_COPYFILE_STRING_DAT);

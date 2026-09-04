@@ -1,4 +1,5 @@
-if(oldstr4850){
-if(oldstr4850->fixed)qbs_set(oldstr4850,_SUB_FIXUPERRORMESSAGE_STRING_OP);
-qbs_free(_SUB_FIXUPERRORMESSAGE_STRING_OP);
+if(oldstr3933){
+if(oldstr3933->fixed)qbs_set(oldstr3933,_FUNC_LOGICALNOT_STRING_EXP);
+qbs_free(_FUNC_LOGICALNOT_STRING_EXP);
 }
+qbs_free(_FUNC_LOGICALNOT_STRING_ELE);

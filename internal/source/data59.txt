@@ -1,64 +1,92 @@
-int32 *_FUNC_FINDARRAY_LONG_FINDARRAY=NULL;
-if(_FUNC_FINDARRAY_LONG_FINDARRAY==NULL){
-_FUNC_FINDARRAY_LONG_FINDARRAY=(int32*)mem_static_malloc(4);
-*_FUNC_FINDARRAY_LONG_FINDARRAY=0;
+int16 *_FUNC_HASINDEXEDFINALMEMBERARRAY_INTEGER_HASINDEXEDFINALMEMBERARRAY=NULL;
+#line 18987 "qb64pe.bas"
+if(_FUNC_HASINDEXEDFINALMEMBERARRAY_INTEGER_HASINDEXEDFINALMEMBERARRAY==NULL){
+#line 18987 "qb64pe.bas"
+_FUNC_HASINDEXEDFINALMEMBERARRAY_INTEGER_HASINDEXEDFINALMEMBERARRAY=(int16*)mem_static_malloc(2);
+#line 18987 "qb64pe.bas"
+*_FUNC_HASINDEXEDFINALMEMBERARRAY_INTEGER_HASINDEXEDFINALMEMBERARRAY=0;
+#line 18987 "qb64pe.bas"
 }
-qbs*oldstr3551=NULL;
-if(_FUNC_FINDARRAY_STRING_SECURE->tmp||_FUNC_FINDARRAY_STRING_SECURE->fixed||_FUNC_FINDARRAY_STRING_SECURE->readonly){
-oldstr3551=_FUNC_FINDARRAY_STRING_SECURE;
-if (oldstr3551->cmem_descriptor){
-_FUNC_FINDARRAY_STRING_SECURE=qbs_new_cmem(oldstr3551->len,0);
+#line 18987 "qb64pe.bas"
+qbs*oldstr2515=NULL;
+#line 18987 "qb64pe.bas"
+if(_FUNC_HASINDEXEDFINALMEMBERARRAY_STRING_EXPR->tmp||_FUNC_HASINDEXEDFINALMEMBERARRAY_STRING_EXPR->fixed||_FUNC_HASINDEXEDFINALMEMBERARRAY_STRING_EXPR->readonly){
+#line 18987 "qb64pe.bas"
+oldstr2515=_FUNC_HASINDEXEDFINALMEMBERARRAY_STRING_EXPR;
+#line 18987 "qb64pe.bas"
+if (oldstr2515->cmem_descriptor){
+#line 18987 "qb64pe.bas"
+_FUNC_HASINDEXEDFINALMEMBERARRAY_STRING_EXPR=qbs_new_cmem(oldstr2515->len,0);
+#line 18987 "qb64pe.bas"
 }else{
-_FUNC_FINDARRAY_STRING_SECURE=qbs_new(oldstr3551->len,0);
+#line 18987 "qb64pe.bas"
+_FUNC_HASINDEXEDFINALMEMBERARRAY_STRING_EXPR=qbs_new(oldstr2515->len,0);
+#line 18987 "qb64pe.bas"
 }
-memcpy(_FUNC_FINDARRAY_STRING_SECURE->chr,oldstr3551->chr,oldstr3551->len);
+#line 18987 "qb64pe.bas"
+memcpy(_FUNC_HASINDEXEDFINALMEMBERARRAY_STRING_EXPR->chr,oldstr2515->chr,oldstr2515->len);
+#line 18987 "qb64pe.bas"
 }
-qbs *_FUNC_FINDARRAY_STRING_N=NULL;
-if (!_FUNC_FINDARRAY_STRING_N)_FUNC_FINDARRAY_STRING_N=qbs_new(0,0);
-int32 *_FUNC_FINDARRAY_LONG_I=NULL;
-if(_FUNC_FINDARRAY_LONG_I==NULL){
-_FUNC_FINDARRAY_LONG_I=(int32*)mem_static_malloc(4);
-*_FUNC_FINDARRAY_LONG_I=0;
+int32 *_FUNC_HASINDEXEDFINALMEMBERARRAY_LONG_N=NULL;
+#line 18988 "qb64pe.bas"
+if(_FUNC_HASINDEXEDFINALMEMBERARRAY_LONG_N==NULL){
+#line 18988 "qb64pe.bas"
+_FUNC_HASINDEXEDFINALMEMBERARRAY_LONG_N=(int32*)mem_static_malloc(4);
+#line 18988 "qb64pe.bas"
+*_FUNC_HASINDEXEDFINALMEMBERARRAY_LONG_N=0;
+#line 18988 "qb64pe.bas"
 }
-qbs *_FUNC_FINDARRAY_STRING_SC=NULL;
-if (!_FUNC_FINDARRAY_STRING_SC)_FUNC_FINDARRAY_STRING_SC=qbs_new(0,0);
-byte_element_struct *byte_element_3553=NULL;
-if (!byte_element_3553){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3553=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3553=(byte_element_struct*)mem_static_malloc(12);
+#line 18992 "qb64pe.bas"
+int32 pass2517;
+int32 *_FUNC_HASINDEXEDFINALMEMBERARRAY_LONG_B=NULL;
+#line 18994 "qb64pe.bas"
+if(_FUNC_HASINDEXEDFINALMEMBERARRAY_LONG_B==NULL){
+#line 18994 "qb64pe.bas"
+_FUNC_HASINDEXEDFINALMEMBERARRAY_LONG_B=(int32*)mem_static_malloc(4);
+#line 18994 "qb64pe.bas"
+*_FUNC_HASINDEXEDFINALMEMBERARRAY_LONG_B=0;
+#line 18994 "qb64pe.bas"
 }
-byte_element_struct *byte_element_3554=NULL;
-if (!byte_element_3554){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3554=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3554=(byte_element_struct*)mem_static_malloc(12);
+int32 *_FUNC_HASINDEXEDFINALMEMBERARRAY_LONG_WRAPPED=NULL;
+#line 18995 "qb64pe.bas"
+if(_FUNC_HASINDEXEDFINALMEMBERARRAY_LONG_WRAPPED==NULL){
+#line 18995 "qb64pe.bas"
+_FUNC_HASINDEXEDFINALMEMBERARRAY_LONG_WRAPPED=(int32*)mem_static_malloc(4);
+#line 18995 "qb64pe.bas"
+*_FUNC_HASINDEXEDFINALMEMBERARRAY_LONG_WRAPPED=0;
+#line 18995 "qb64pe.bas"
 }
-byte_element_struct *byte_element_3555=NULL;
-if (!byte_element_3555){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3555=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3555=(byte_element_struct*)mem_static_malloc(12);
+int32 *_FUNC_HASINDEXEDFINALMEMBERARRAY_LONG_I=NULL;
+#line 18996 "qb64pe.bas"
+if(_FUNC_HASINDEXEDFINALMEMBERARRAY_LONG_I==NULL){
+#line 18996 "qb64pe.bas"
+_FUNC_HASINDEXEDFINALMEMBERARRAY_LONG_I=(int32*)mem_static_malloc(4);
+#line 18996 "qb64pe.bas"
+*_FUNC_HASINDEXEDFINALMEMBERARRAY_LONG_I=0;
+#line 18996 "qb64pe.bas"
 }
-byte_element_struct *byte_element_3556=NULL;
-if (!byte_element_3556){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3556=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3556=(byte_element_struct*)mem_static_malloc(12);
-}
-byte_element_struct *byte_element_3557=NULL;
-if (!byte_element_3557){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3557=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3557=(byte_element_struct*)mem_static_malloc(12);
-}
-byte_element_struct *byte_element_3558=NULL;
-if (!byte_element_3558){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3558=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3558=(byte_element_struct*)mem_static_malloc(12);
-}
-byte_element_struct *byte_element_3559=NULL;
-if (!byte_element_3559){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3559=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3559=(byte_element_struct*)mem_static_malloc(12);
-}
-qbs *_FUNC_FINDARRAY_STRING_N2=NULL;
-if (!_FUNC_FINDARRAY_STRING_N2)_FUNC_FINDARRAY_STRING_N2=qbs_new(0,0);
-int32 *_FUNC_FINDARRAY_LONG_TRY=NULL;
-if(_FUNC_FINDARRAY_LONG_TRY==NULL){
-_FUNC_FINDARRAY_LONG_TRY=(int32*)mem_static_malloc(4);
-*_FUNC_FINDARRAY_LONG_TRY=0;
-}
-int32 *_FUNC_FINDARRAY_LONG_A=NULL;
-if(_FUNC_FINDARRAY_LONG_A==NULL){
-_FUNC_FINDARRAY_LONG_A=(int32*)mem_static_malloc(4);
-*_FUNC_FINDARRAY_LONG_A=0;
-}
+#line 18996 "qb64pe.bas"
+int64 fornext_value2519;
+#line 18996 "qb64pe.bas"
+int64 fornext_finalvalue2519;
+#line 18996 "qb64pe.bas"
+int64 fornext_step2519;
+#line 18996 "qb64pe.bas"
+uint8 fornext_step_negative2519;
+qbs *_FUNC_HASINDEXEDFINALMEMBERARRAY_STRING_T=NULL;
+#line 18997 "qb64pe.bas"
+if (!_FUNC_HASINDEXEDFINALMEMBERARRAY_STRING_T)_FUNC_HASINDEXEDFINALMEMBERARRAY_STRING_T=qbs_new(0,0);
+#line 19006 "qb64pe.bas"
+int32 pass2520;
+#line 19006 "qb64pe.bas"
+int32 pass2521;
+#line 19014 "qb64pe.bas"
+int64 fornext_value2523;
+#line 19014 "qb64pe.bas"
+int64 fornext_finalvalue2523;
+#line 19014 "qb64pe.bas"
+int64 fornext_step2523;
+#line 19014 "qb64pe.bas"
+uint8 fornext_step_negative2523;
+#line 19024 "qb64pe.bas"
+int32 pass2524;

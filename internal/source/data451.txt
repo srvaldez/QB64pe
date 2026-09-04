@@ -1,11 +1,20 @@
-int32 *_SUB_HELP_NEWLINE_LONG_W=NULL;
-if(_SUB_HELP_NEWLINE_LONG_W==NULL){
-_SUB_HELP_NEWLINE_LONG_W=(int32*)mem_static_malloc(4);
-*_SUB_HELP_NEWLINE_LONG_W=0;
+#line 20984 "ide/ide_methods.bas"
+qbs*oldstr6866=NULL;
+#line 20984 "ide/ide_methods.bas"
+if(_SUB_SETSTATUSMESSAGE_STRING_TEXT->tmp||_SUB_SETSTATUSMESSAGE_STRING_TEXT->fixed||_SUB_SETSTATUSMESSAGE_STRING_TEXT->readonly){
+#line 20984 "ide/ide_methods.bas"
+oldstr6866=_SUB_SETSTATUSMESSAGE_STRING_TEXT;
+#line 20984 "ide/ide_methods.bas"
+if (oldstr6866->cmem_descriptor){
+#line 20984 "ide/ide_methods.bas"
+_SUB_SETSTATUSMESSAGE_STRING_TEXT=qbs_new_cmem(oldstr6866->len,0);
+#line 20984 "ide/ide_methods.bas"
+}else{
+#line 20984 "ide/ide_methods.bas"
+_SUB_SETSTATUSMESSAGE_STRING_TEXT=qbs_new(oldstr6866->len,0);
+#line 20984 "ide/ide_methods.bas"
 }
-int32 pass7785;
-int32 pass7786;
-int32 pass7787;
-int32 pass7788;
-int32 pass7789;
-int32 pass7790;
+#line 20984 "ide/ide_methods.bas"
+memcpy(_SUB_SETSTATUSMESSAGE_STRING_TEXT->chr,oldstr6866->chr,oldstr6866->len);
+#line 20984 "ide/ide_methods.bas"
+}

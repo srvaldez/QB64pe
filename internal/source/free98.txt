@@ -1,8 +1,4 @@
-if(oldstr4256){
-if(oldstr4256->fixed)qbs_set(oldstr4256,_SUB_SETPRELET_STRING_FLAGNAME);
-qbs_free(_SUB_SETPRELET_STRING_FLAGNAME);
-}
-if(oldstr4257){
-if(oldstr4257->fixed)qbs_set(oldstr4257,_SUB_SETPRELET_STRING_FLAGVALUE);
-qbs_free(_SUB_SETPRELET_STRING_FLAGVALUE);
+if(oldstr3406){
+if(oldstr3406->fixed)qbs_set(oldstr3406,_FUNC_QUOTEDFILENAME_STRING_F);
+qbs_free(_FUNC_QUOTEDFILENAME_STRING_F);
 }

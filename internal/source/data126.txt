@@ -1,16 +1,52 @@
-qbs *_FUNC_FIXDIRECTORYNAME_STRING_FIXDIRECTORYNAME=NULL;
-if (!_FUNC_FIXDIRECTORYNAME_STRING_FIXDIRECTORYNAME)_FUNC_FIXDIRECTORYNAME_STRING_FIXDIRECTORYNAME=qbs_new(0,0);
-qbs*oldstr4407=NULL;
-if(_FUNC_FIXDIRECTORYNAME_STRING_DIR_NAME->tmp||_FUNC_FIXDIRECTORYNAME_STRING_DIR_NAME->fixed||_FUNC_FIXDIRECTORYNAME_STRING_DIR_NAME->readonly){
-oldstr4407=_FUNC_FIXDIRECTORYNAME_STRING_DIR_NAME;
-if (oldstr4407->cmem_descriptor){
-_FUNC_FIXDIRECTORYNAME_STRING_DIR_NAME=qbs_new_cmem(oldstr4407->len,0);
+int32 *_FUNC_COPYFILE_LONG_COPYFILE=NULL;
+#line 6 "utilities/file.bas"
+if(_FUNC_COPYFILE_LONG_COPYFILE==NULL){
+#line 6 "utilities/file.bas"
+_FUNC_COPYFILE_LONG_COPYFILE=(int32*)mem_static_malloc(4);
+#line 6 "utilities/file.bas"
+*_FUNC_COPYFILE_LONG_COPYFILE=0;
+#line 6 "utilities/file.bas"
+}
+#line 6 "utilities/file.bas"
+qbs*oldstr3540=NULL;
+#line 6 "utilities/file.bas"
+if(_FUNC_COPYFILE_STRING_SOURCEFILE->tmp||_FUNC_COPYFILE_STRING_SOURCEFILE->fixed||_FUNC_COPYFILE_STRING_SOURCEFILE->readonly){
+#line 6 "utilities/file.bas"
+oldstr3540=_FUNC_COPYFILE_STRING_SOURCEFILE;
+#line 6 "utilities/file.bas"
+if (oldstr3540->cmem_descriptor){
+#line 6 "utilities/file.bas"
+_FUNC_COPYFILE_STRING_SOURCEFILE=qbs_new_cmem(oldstr3540->len,0);
+#line 6 "utilities/file.bas"
 }else{
-_FUNC_FIXDIRECTORYNAME_STRING_DIR_NAME=qbs_new(oldstr4407->len,0);
+#line 6 "utilities/file.bas"
+_FUNC_COPYFILE_STRING_SOURCEFILE=qbs_new(oldstr3540->len,0);
+#line 6 "utilities/file.bas"
 }
-memcpy(_FUNC_FIXDIRECTORYNAME_STRING_DIR_NAME->chr,oldstr4407->chr,oldstr4407->len);
+#line 6 "utilities/file.bas"
+memcpy(_FUNC_COPYFILE_STRING_SOURCEFILE->chr,oldstr3540->chr,oldstr3540->len);
+#line 6 "utilities/file.bas"
 }
-byte_element_struct *byte_element_4408=NULL;
-if (!byte_element_4408){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4408=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4408=(byte_element_struct*)mem_static_malloc(12);
+#line 6 "utilities/file.bas"
+qbs*oldstr3541=NULL;
+#line 6 "utilities/file.bas"
+if(_FUNC_COPYFILE_STRING_DESTFILE->tmp||_FUNC_COPYFILE_STRING_DESTFILE->fixed||_FUNC_COPYFILE_STRING_DESTFILE->readonly){
+#line 6 "utilities/file.bas"
+oldstr3541=_FUNC_COPYFILE_STRING_DESTFILE;
+#line 6 "utilities/file.bas"
+if (oldstr3541->cmem_descriptor){
+#line 6 "utilities/file.bas"
+_FUNC_COPYFILE_STRING_DESTFILE=qbs_new_cmem(oldstr3541->len,0);
+#line 6 "utilities/file.bas"
+}else{
+#line 6 "utilities/file.bas"
+_FUNC_COPYFILE_STRING_DESTFILE=qbs_new(oldstr3541->len,0);
+#line 6 "utilities/file.bas"
 }
+#line 6 "utilities/file.bas"
+memcpy(_FUNC_COPYFILE_STRING_DESTFILE->chr,oldstr3541->chr,oldstr3541->len);
+#line 6 "utilities/file.bas"
+}
+qbs *_FUNC_COPYFILE_STRING_DAT=NULL;
+#line 9 "utilities/file.bas"
+if (!_FUNC_COPYFILE_STRING_DAT)_FUNC_COPYFILE_STRING_DAT=qbs_new(0,0);

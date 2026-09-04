@@ -1,62 +1,68 @@
-qbs* FUNC_GETFILEPATH(qbs*_FUNC_GETFILEPATH_STRING_F){
+#line 58 "utilities/strings.bas"
+qbs* FUNC_BOOLTOTFSTRING(int32*_FUNC_BOOLTOTFSTRING_LONG_B){
+#line 58 "utilities/strings.bas"
 qbs *tqbs;
+#line 58 "utilities/strings.bas"
 ptrszint tmp_long;
+#line 58 "utilities/strings.bas"
 int32 tmp_fileno;
+#line 58 "utilities/strings.bas"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
+#line 58 "utilities/strings.bas"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
+#line 58 "utilities/strings.bas"
 uint32 tmp_cmem_sp=cmem_sp;
+#line 58 "utilities/strings.bas"
 #include "data119.txt"
+#line 58 "utilities/strings.bas"
 mem_lock *sf_mem_lock;
+#line 58 "utilities/strings.bas"
 new_mem_lock();
+#line 58 "utilities/strings.bas"
 sf_mem_lock=mem_lock_tmp;
+#line 58 "utilities/strings.bas"
 sf_mem_lock->type=3;
+#line 58 "utilities/strings.bas"
 libqb_check_stack();
+#line 58 "utilities/strings.bas"
 if (is_error_pending()) goto exit_subfunc;
-S_36776:;
-fornext_value4379=_FUNC_GETFILEPATH_STRING_F->len;
-fornext_finalvalue4379= 1 ;
-fornext_step4379= -1 ;
-if (fornext_step4379<0) fornext_step_negative4379=1; else fornext_step_negative4379=0;
-if (is_error_pending()) goto fornext_error4379;
-goto fornext_entrylabel4379;
-while(1){
-fornext_value4379=fornext_step4379+(*_FUNC_GETFILEPATH_LONG_I);
-fornext_entrylabel4379:
-*_FUNC_GETFILEPATH_LONG_I=fornext_value4379;
+#line 59 "utilities/strings.bas"
+S_37249:;
+#line 59 "utilities/strings.bas"
+if ((*_FUNC_BOOLTOTFSTRING_LONG_B)||is_error_pending()){
+#line 59 "utilities/strings.bas"
+if(qbevent){evnt(28652,59,"strings.bas");if(r)goto S_37249;}
+#line 60 "utilities/strings.bas"
+do{
+#line 60 "utilities/strings.bas"
+qbs_set(_FUNC_BOOLTOTFSTRING_STRING_BOOLTOTFSTRING,qbs_new_txt_len("True",4));
+#line 60 "utilities/strings.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if (fornext_step_negative4379){
-if (fornext_value4379<fornext_finalvalue4379) break;
+#line 60 "utilities/strings.bas"
+if(!qbevent)break;evnt(28652,60,"strings.bas");}while(r);
+#line 61 "utilities/strings.bas"
 }else{
-if (fornext_value4379>fornext_finalvalue4379) break;
-}
-fornext_error4379:;
-if(qbevent){evnt(28163,21,"file.bas");if(r)goto S_36776;}
+#line 62 "utilities/strings.bas"
 do{
-qbs_set(_FUNC_GETFILEPATH_STRING_A,func_mid(_FUNC_GETFILEPATH_STRING_F,*_FUNC_GETFILEPATH_LONG_I, 1 ,0|1));
+#line 62 "utilities/strings.bas"
+qbs_set(_FUNC_BOOLTOTFSTRING_STRING_BOOLTOTFSTRING,qbs_new_txt_len("False",5));
+#line 62 "utilities/strings.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(28163,22,"file.bas");}while(r);
-S_36778:;
-if ((qbs_cleanup(qbs_tmp_base,(qbs_equal(_FUNC_GETFILEPATH_STRING_A,qbs_new_txt_len("/",1)))|(qbs_equal(_FUNC_GETFILEPATH_STRING_A,qbs_new_txt_len("\\",1)))))||is_error_pending()){
-if(qbevent){evnt(28163,23,"file.bas");if(r)goto S_36778;}
-do{
-qbs_set(_FUNC_GETFILEPATH_STRING_GETFILEPATH,qbs_left(_FUNC_GETFILEPATH_STRING_F,*_FUNC_GETFILEPATH_LONG_I));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(28163,24,"file.bas");}while(r);
-do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(28163,25,"file.bas");}while(r);
+#line 62 "utilities/strings.bas"
+if(!qbevent)break;evnt(28652,62,"strings.bas");}while(r);
+#line 63 "utilities/strings.bas"
 }
-fornext_continue_4378:;
-}
-fornext_exit_4378:;
-do{
-qbs_set(_FUNC_GETFILEPATH_STRING_GETFILEPATH,qbs_new_txt_len("",0));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(28163,28,"file.bas");}while(r);
+#line 64 "utilities/strings.bas"
 exit_subfunc:;
+#line 64 "utilities/strings.bas"
 free_mem_lock(sf_mem_lock);
+#line 64 "utilities/strings.bas"
 #include "free119.txt"
+#line 64 "utilities/strings.bas"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
+#line 64 "utilities/strings.bas"
 cmem_sp=tmp_cmem_sp;
-qbs_maketmp(_FUNC_GETFILEPATH_STRING_GETFILEPATH);return _FUNC_GETFILEPATH_STRING_GETFILEPATH;
+#line 64 "utilities/strings.bas"
+qbs_maketmp(_FUNC_BOOLTOTFSTRING_STRING_BOOLTOTFSTRING);return _FUNC_BOOLTOTFSTRING_STRING_BOOLTOTFSTRING;
+#line 64 "utilities/strings.bas"
 }

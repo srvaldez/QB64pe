@@ -1,36 +1,138 @@
-qbs *_FUNC_WIKISAFENAME_STRING_WIKISAFENAME=NULL;
-if (!_FUNC_WIKISAFENAME_STRING_WIKISAFENAME)_FUNC_WIKISAFENAME_STRING_WIKISAFENAME=qbs_new(0,0);
-qbs*oldstr8024=NULL;
-if(_FUNC_WIKISAFENAME_STRING_PAGE->tmp||_FUNC_WIKISAFENAME_STRING_PAGE->fixed||_FUNC_WIKISAFENAME_STRING_PAGE->readonly){
-oldstr8024=_FUNC_WIKISAFENAME_STRING_PAGE;
-if (oldstr8024->cmem_descriptor){
-_FUNC_WIKISAFENAME_STRING_PAGE=qbs_new_cmem(oldstr8024->len,0);
+int32 *_FUNC_ISNUMBER_LONG_ISNUMBER=NULL;
+#line 21152 "ide/ide_methods.bas"
+if(_FUNC_ISNUMBER_LONG_ISNUMBER==NULL){
+#line 21152 "ide/ide_methods.bas"
+_FUNC_ISNUMBER_LONG_ISNUMBER=(int32*)mem_static_malloc(4);
+#line 21152 "ide/ide_methods.bas"
+*_FUNC_ISNUMBER_LONG_ISNUMBER=0;
+#line 21152 "ide/ide_methods.bas"
+}
+#line 21152 "ide/ide_methods.bas"
+qbs*oldstr6896=NULL;
+#line 21152 "ide/ide_methods.bas"
+if(_FUNC_ISNUMBER_STRING___A->tmp||_FUNC_ISNUMBER_STRING___A->fixed||_FUNC_ISNUMBER_STRING___A->readonly){
+#line 21152 "ide/ide_methods.bas"
+oldstr6896=_FUNC_ISNUMBER_STRING___A;
+#line 21152 "ide/ide_methods.bas"
+if (oldstr6896->cmem_descriptor){
+#line 21152 "ide/ide_methods.bas"
+_FUNC_ISNUMBER_STRING___A=qbs_new_cmem(oldstr6896->len,0);
+#line 21152 "ide/ide_methods.bas"
 }else{
-_FUNC_WIKISAFENAME_STRING_PAGE=qbs_new(oldstr8024->len,0);
+#line 21152 "ide/ide_methods.bas"
+_FUNC_ISNUMBER_STRING___A=qbs_new(oldstr6896->len,0);
+#line 21152 "ide/ide_methods.bas"
 }
-memcpy(_FUNC_WIKISAFENAME_STRING_PAGE->chr,oldstr8024->chr,oldstr8024->len);
+#line 21152 "ide/ide_methods.bas"
+memcpy(_FUNC_ISNUMBER_STRING___A->chr,oldstr6896->chr,oldstr6896->len);
+#line 21152 "ide/ide_methods.bas"
 }
-qbs *_FUNC_WIKISAFENAME_STRING_EXT=NULL;
-if (!_FUNC_WIKISAFENAME_STRING_EXT)_FUNC_WIKISAFENAME_STRING_EXT=qbs_new(0,0);
-byte_element_struct *byte_element_8025=NULL;
-if (!byte_element_8025){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_8025=(byte_element_struct*)(mem_static_pointer-12); else byte_element_8025=(byte_element_struct*)mem_static_malloc(12);
+qbs *_FUNC_ISNUMBER_STRING_A=NULL;
+#line 21153 "ide/ide_methods.bas"
+if (!_FUNC_ISNUMBER_STRING_A)_FUNC_ISNUMBER_STRING_A=qbs_new(0,0);
+#line 21154 "ide/ide_methods.bas"
+byte_element_struct *byte_element_6897=NULL;
+#line 21154 "ide/ide_methods.bas"
+if (!byte_element_6897){
+#line 21154 "ide/ide_methods.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6897=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6897=(byte_element_struct*)mem_static_malloc(12);
+#line 21154 "ide/ide_methods.bas"
 }
-int32 *_FUNC_WIKISAFENAME_LONG_I=NULL;
-if(_FUNC_WIKISAFENAME_LONG_I==NULL){
-_FUNC_WIKISAFENAME_LONG_I=(int32*)mem_static_malloc(4);
-*_FUNC_WIKISAFENAME_LONG_I=0;
+int32 *_FUNC_ISNUMBER_LONG_I=NULL;
+#line 21158 "ide/ide_methods.bas"
+if(_FUNC_ISNUMBER_LONG_I==NULL){
+#line 21158 "ide/ide_methods.bas"
+_FUNC_ISNUMBER_LONG_I=(int32*)mem_static_malloc(4);
+#line 21158 "ide/ide_methods.bas"
+*_FUNC_ISNUMBER_LONG_I=0;
+#line 21158 "ide/ide_methods.bas"
 }
-int64 fornext_value8027;
-int64 fornext_finalvalue8027;
-int64 fornext_step8027;
-uint8 fornext_step_negative8027;
-byte_element_struct *byte_element_8028=NULL;
-if (!byte_element_8028){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_8028=(byte_element_struct*)(mem_static_pointer-12); else byte_element_8028=(byte_element_struct*)mem_static_malloc(12);
+qbs *_FUNC_ISNUMBER_STRING_SYMBOL=NULL;
+#line 21168 "ide/ide_methods.bas"
+if (!_FUNC_ISNUMBER_STRING_SYMBOL)_FUNC_ISNUMBER_STRING_SYMBOL=qbs_new(0,0);
+#line 21168 "ide/ide_methods.bas"
+byte_element_struct *byte_element_6898=NULL;
+#line 21168 "ide/ide_methods.bas"
+if (!byte_element_6898){
+#line 21168 "ide/ide_methods.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6898=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6898=(byte_element_struct*)mem_static_malloc(12);
+#line 21168 "ide/ide_methods.bas"
 }
-int32 *_FUNC_WIKISAFENAME_LONG_C=NULL;
-if(_FUNC_WIKISAFENAME_LONG_C==NULL){
-_FUNC_WIKISAFENAME_LONG_C=(int32*)mem_static_malloc(4);
-*_FUNC_WIKISAFENAME_LONG_C=0;
+int32 *_FUNC_ISNUMBER_LONG_FF=NULL;
+#line 21173 "ide/ide_methods.bas"
+if(_FUNC_ISNUMBER_LONG_FF==NULL){
+#line 21173 "ide/ide_methods.bas"
+_FUNC_ISNUMBER_LONG_FF=(int32*)mem_static_malloc(4);
+#line 21173 "ide/ide_methods.bas"
+*_FUNC_ISNUMBER_LONG_FF=0;
+#line 21173 "ide/ide_methods.bas"
+}
+int32 *_FUNC_ISNUMBER_LONG_EE=NULL;
+#line 21174 "ide/ide_methods.bas"
+if(_FUNC_ISNUMBER_LONG_EE==NULL){
+#line 21174 "ide/ide_methods.bas"
+_FUNC_ISNUMBER_LONG_EE=(int32*)mem_static_malloc(4);
+#line 21174 "ide/ide_methods.bas"
+*_FUNC_ISNUMBER_LONG_EE=0;
+#line 21174 "ide/ide_methods.bas"
+}
+int32 *_FUNC_ISNUMBER_LONG_DD=NULL;
+#line 21175 "ide/ide_methods.bas"
+if(_FUNC_ISNUMBER_LONG_DD==NULL){
+#line 21175 "ide/ide_methods.bas"
+_FUNC_ISNUMBER_LONG_DD=(int32*)mem_static_malloc(4);
+#line 21175 "ide/ide_methods.bas"
+*_FUNC_ISNUMBER_LONG_DD=0;
+#line 21175 "ide/ide_methods.bas"
+}
+int32 *_FUNC_ISNUMBER_LONG_NEG=NULL;
+#line 21176 "ide/ide_methods.bas"
+if(_FUNC_ISNUMBER_LONG_NEG==NULL){
+#line 21176 "ide/ide_methods.bas"
+_FUNC_ISNUMBER_LONG_NEG=(int32*)mem_static_malloc(4);
+#line 21176 "ide/ide_methods.bas"
+*_FUNC_ISNUMBER_LONG_NEG=0;
+#line 21176 "ide/ide_methods.bas"
+}
+#line 21177 "ide/ide_methods.bas"
+int64 fornext_value6900;
+#line 21177 "ide/ide_methods.bas"
+int64 fornext_finalvalue6900;
+#line 21177 "ide/ide_methods.bas"
+int64 fornext_step6900;
+#line 21177 "ide/ide_methods.bas"
+uint8 fornext_step_negative6900;
+#line 21177 "ide/ide_methods.bas"
+byte_element_struct *byte_element_6901=NULL;
+#line 21177 "ide/ide_methods.bas"
+if (!byte_element_6901){
+#line 21177 "ide/ide_methods.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6901=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6901=(byte_element_struct*)mem_static_malloc(12);
+#line 21177 "ide/ide_methods.bas"
+}
+int32 *_FUNC_ISNUMBER_LONG_A=NULL;
+#line 21178 "ide/ide_methods.bas"
+if(_FUNC_ISNUMBER_LONG_A==NULL){
+#line 21178 "ide/ide_methods.bas"
+_FUNC_ISNUMBER_LONG_A=(int32*)mem_static_malloc(4);
+#line 21178 "ide/ide_methods.bas"
+*_FUNC_ISNUMBER_LONG_A=0;
+#line 21178 "ide/ide_methods.bas"
+}
+#line 21180 "ide/ide_methods.bas"
+byte_element_struct *byte_element_6902=NULL;
+#line 21180 "ide/ide_methods.bas"
+if (!byte_element_6902){
+#line 21180 "ide/ide_methods.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6902=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6902=(byte_element_struct*)mem_static_malloc(12);
+#line 21180 "ide/ide_methods.bas"
+}
+int32 *_FUNC_ISNUMBER_LONG_DP=NULL;
+#line 21184 "ide/ide_methods.bas"
+if(_FUNC_ISNUMBER_LONG_DP==NULL){
+#line 21184 "ide/ide_methods.bas"
+_FUNC_ISNUMBER_LONG_DP=(int32*)mem_static_malloc(4);
+#line 21184 "ide/ide_methods.bas"
+*_FUNC_ISNUMBER_LONG_DP=0;
+#line 21184 "ide/ide_methods.bas"
 }

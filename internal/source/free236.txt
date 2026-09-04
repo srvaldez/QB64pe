@@ -1,6 +1,7 @@
-if(oldstr4872){
-if(oldstr4872->fixed)qbs_set(oldstr4872,_SUB_PREPARSE_STRING_E);
-qbs_free(_SUB_PREPARSE_STRING_E);
+if(oldstr4002){
+if(oldstr4002->fixed)qbs_set(oldstr4002,_FUNC_FACTOR_STRING_EXP);
+qbs_free(_FUNC_FACTOR_STRING_EXP);
 }
-qbs_free(_SUB_PREPARSE_STRING_T);
-qbs_free(_SUB_PREPARSE_STRING_ELE);
+#line 583 "utilities/const_eval.bas"
+qbs_free(*((qbs**)(((char*)_FUNC_FACTOR_UDT_NUM)+ 48)));
+qbs_free(_FUNC_FACTOR_STRING_ELE);

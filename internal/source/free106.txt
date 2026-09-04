@@ -1,10 +1,8 @@
-if(oldstr4337){
-if(oldstr4337->fixed)qbs_set(oldstr4337,_FUNC_STRREMOVE_STRING_MYSTRING);
-qbs_free(_FUNC_STRREMOVE_STRING_MYSTRING);
+if(oldstr3421){
+if(oldstr3421->fixed)qbs_set(oldstr3421,_SUB_SETPRELET_STRING_FLAGNAME);
+qbs_free(_SUB_SETPRELET_STRING_FLAGNAME);
 }
-if(oldstr4338){
-if(oldstr4338->fixed)qbs_set(oldstr4338,_FUNC_STRREMOVE_STRING_WHATTOREMOVE);
-qbs_free(_FUNC_STRREMOVE_STRING_WHATTOREMOVE);
+if(oldstr3422){
+if(oldstr3422->fixed)qbs_set(oldstr3422,_SUB_SETPRELET_STRING_FLAGVALUE);
+qbs_free(_SUB_SETPRELET_STRING_FLAGVALUE);
 }
-qbs_free(_FUNC_STRREMOVE_STRING_A);
-qbs_free(_FUNC_STRREMOVE_STRING_B);

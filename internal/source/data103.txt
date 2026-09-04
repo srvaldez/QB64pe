@@ -1,12 +1,3 @@
-qbs *_FUNC_SCASE_STRING_SCASE=NULL;
-if (!_FUNC_SCASE_STRING_SCASE)_FUNC_SCASE_STRING_SCASE=qbs_new(0,0);
-qbs*oldstr4324=NULL;
-if(_FUNC_SCASE_STRING_T->tmp||_FUNC_SCASE_STRING_T->fixed||_FUNC_SCASE_STRING_T->readonly){
-oldstr4324=_FUNC_SCASE_STRING_T;
-if (oldstr4324->cmem_descriptor){
-_FUNC_SCASE_STRING_T=qbs_new_cmem(oldstr4324->len,0);
-}else{
-_FUNC_SCASE_STRING_T=qbs_new(oldstr4324->len,0);
-}
-memcpy(_FUNC_SCASE_STRING_T->chr,oldstr4324->chr,oldstr4324->len);
-}
+qbs *_FUNC_STR_NTH_STRING_STR_NTH=NULL;
+#line 28174 "qb64pe.bas"
+if (!_FUNC_STR_NTH_STRING_STR_NTH)_FUNC_STR_NTH_STRING_STR_NTH=qbs_new(0,0);

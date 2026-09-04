@@ -1,5 +1,6 @@
-if(oldstr8024){
-if(oldstr8024->fixed)qbs_set(oldstr8024,_FUNC_WIKISAFENAME_STRING_PAGE);
-qbs_free(_FUNC_WIKISAFENAME_STRING_PAGE);
+if(oldstr6896){
+if(oldstr6896->fixed)qbs_set(oldstr6896,_FUNC_ISNUMBER_STRING___A);
+qbs_free(_FUNC_ISNUMBER_STRING___A);
 }
-qbs_free(_FUNC_WIKISAFENAME_STRING_EXT);
+qbs_free(_FUNC_ISNUMBER_STRING_A);
+qbs_free(_FUNC_ISNUMBER_STRING_SYMBOL);

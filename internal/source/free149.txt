@@ -1,4 +1,4 @@
-if(oldstr4469){
-if(oldstr4469->fixed)qbs_set(oldstr4469,_FUNC_ELEMENTISSTRING_STRING_ELE);
-qbs_free(_FUNC_ELEMENTISSTRING_STRING_ELE);
+if(oldstr3609){
+if(oldstr3609->fixed)qbs_set(oldstr3609,_FUNC_NUMELEMENTS_STRING_A);
+qbs_free(_FUNC_NUMELEMENTS_STRING_A);
 }

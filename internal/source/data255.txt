@@ -1,19 +1,67 @@
-qbs *_FUNC_ID2FULLTYPENAME_STRING_ID2FULLTYPENAME=NULL;
-if (!_FUNC_ID2FULLTYPENAME_STRING_ID2FULLTYPENAME)_FUNC_ID2FULLTYPENAME_STRING_ID2FULLTYPENAME=qbs_new(0,0);
-int32 *_FUNC_ID2FULLTYPENAME_LONG_T=NULL;
-if(_FUNC_ID2FULLTYPENAME_LONG_T==NULL){
-_FUNC_ID2FULLTYPENAME_LONG_T=(int32*)mem_static_malloc(4);
-*_FUNC_ID2FULLTYPENAME_LONG_T=0;
+int32 *_FUNC_HASHFINDREV_LONG_HASHFINDREV=NULL;
+#line 117 "utilities/hash.bas"
+if(_FUNC_HASHFINDREV_LONG_HASHFINDREV==NULL){
+#line 117 "utilities/hash.bas"
+_FUNC_HASHFINDREV_LONG_HASHFINDREV=(int32*)mem_static_malloc(4);
+#line 117 "utilities/hash.bas"
+*_FUNC_HASHFINDREV_LONG_HASHFINDREV=0;
+#line 117 "utilities/hash.bas"
 }
-int32 *_FUNC_ID2FULLTYPENAME_LONG_SIZE=NULL;
-if(_FUNC_ID2FULLTYPENAME_LONG_SIZE==NULL){
-_FUNC_ID2FULLTYPENAME_LONG_SIZE=(int32*)mem_static_malloc(4);
-*_FUNC_ID2FULLTYPENAME_LONG_SIZE=0;
+#line 117 "utilities/hash.bas"
+qbs*oldstr4074=NULL;
+#line 117 "utilities/hash.bas"
+if(_FUNC_HASHFINDREV_STRING_A->tmp||_FUNC_HASHFINDREV_STRING_A->fixed||_FUNC_HASHFINDREV_STRING_A->readonly){
+#line 117 "utilities/hash.bas"
+oldstr4074=_FUNC_HASHFINDREV_STRING_A;
+#line 117 "utilities/hash.bas"
+if (oldstr4074->cmem_descriptor){
+#line 117 "utilities/hash.bas"
+_FUNC_HASHFINDREV_STRING_A=qbs_new_cmem(oldstr4074->len,0);
+#line 117 "utilities/hash.bas"
+}else{
+#line 117 "utilities/hash.bas"
+_FUNC_HASHFINDREV_STRING_A=qbs_new(oldstr4074->len,0);
+#line 117 "utilities/hash.bas"
 }
-int32 *_FUNC_ID2FULLTYPENAME_LONG_BITS=NULL;
-if(_FUNC_ID2FULLTYPENAME_LONG_BITS==NULL){
-_FUNC_ID2FULLTYPENAME_LONG_BITS=(int32*)mem_static_malloc(4);
-*_FUNC_ID2FULLTYPENAME_LONG_BITS=0;
+#line 117 "utilities/hash.bas"
+memcpy(_FUNC_HASHFINDREV_STRING_A->chr,oldstr4074->chr,oldstr4074->len);
+#line 117 "utilities/hash.bas"
 }
-qbs *_FUNC_ID2FULLTYPENAME_STRING_A=NULL;
-if (!_FUNC_ID2FULLTYPENAME_STRING_A)_FUNC_ID2FULLTYPENAME_STRING_A=qbs_new(0,0);
+int32 *_FUNC_HASHFINDREV_LONG_I=NULL;
+#line 122 "utilities/hash.bas"
+if(_FUNC_HASHFINDREV_LONG_I==NULL){
+#line 122 "utilities/hash.bas"
+_FUNC_HASHFINDREV_LONG_I=(int32*)mem_static_malloc(4);
+#line 122 "utilities/hash.bas"
+*_FUNC_HASHFINDREV_LONG_I=0;
+#line 122 "utilities/hash.bas"
+}
+qbs *_FUNC_HASHFINDREV_STRING_UA=NULL;
+#line 125 "utilities/hash.bas"
+if (!_FUNC_HASHFINDREV_STRING_UA)_FUNC_HASHFINDREV_STRING_UA=qbs_new(0,0);
+#line 125 "utilities/hash.bas"
+byte_element_struct *byte_element_4075=NULL;
+#line 125 "utilities/hash.bas"
+if (!byte_element_4075){
+#line 125 "utilities/hash.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4075=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4075=(byte_element_struct*)mem_static_malloc(12);
+#line 125 "utilities/hash.bas"
+}
+int32 *_FUNC_HASHFINDREV_LONG_F=NULL;
+#line 127 "utilities/hash.bas"
+if(_FUNC_HASHFINDREV_LONG_F==NULL){
+#line 127 "utilities/hash.bas"
+_FUNC_HASHFINDREV_LONG_F=(int32*)mem_static_malloc(4);
+#line 127 "utilities/hash.bas"
+*_FUNC_HASHFINDREV_LONG_F=0;
+#line 127 "utilities/hash.bas"
+}
+int32 *_FUNC_HASHFINDREV_LONG_I2=NULL;
+#line 132 "utilities/hash.bas"
+if(_FUNC_HASHFINDREV_LONG_I2==NULL){
+#line 132 "utilities/hash.bas"
+_FUNC_HASHFINDREV_LONG_I2=(int32*)mem_static_malloc(4);
+#line 132 "utilities/hash.bas"
+*_FUNC_HASHFINDREV_LONG_I2=0;
+#line 132 "utilities/hash.bas"
+}

@@ -1,34 +1,57 @@
-int32 *_FUNC_ELEMENTGETSTRINGVALUE_LONG_ELEMENTGETSTRINGVALUE=NULL;
-if(_FUNC_ELEMENTGETSTRINGVALUE_LONG_ELEMENTGETSTRINGVALUE==NULL){
-_FUNC_ELEMENTGETSTRINGVALUE_LONG_ELEMENTGETSTRINGVALUE=(int32*)mem_static_malloc(4);
-*_FUNC_ELEMENTGETSTRINGVALUE_LONG_ELEMENTGETSTRINGVALUE=0;
-}
-qbs*oldstr4470=NULL;
-if(_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE->tmp||_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE->fixed||_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE->readonly){
-oldstr4470=_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE;
-if (oldstr4470->cmem_descriptor){
-_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE=qbs_new_cmem(oldstr4470->len,0);
+#line 178 "utilities/elements.bas"
+qbs*oldstr3610=NULL;
+#line 178 "utilities/elements.bas"
+if(_SUB_REMOVEELEMENTS_STRING_A->tmp||_SUB_REMOVEELEMENTS_STRING_A->fixed||_SUB_REMOVEELEMENTS_STRING_A->readonly){
+#line 178 "utilities/elements.bas"
+oldstr3610=_SUB_REMOVEELEMENTS_STRING_A;
+#line 178 "utilities/elements.bas"
+if (oldstr3610->cmem_descriptor){
+#line 178 "utilities/elements.bas"
+_SUB_REMOVEELEMENTS_STRING_A=qbs_new_cmem(oldstr3610->len,0);
+#line 178 "utilities/elements.bas"
 }else{
-_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE=qbs_new(oldstr4470->len,0);
+#line 178 "utilities/elements.bas"
+_SUB_REMOVEELEMENTS_STRING_A=qbs_new(oldstr3610->len,0);
+#line 178 "utilities/elements.bas"
 }
-memcpy(_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE->chr,oldstr4470->chr,oldstr4470->len);
+#line 178 "utilities/elements.bas"
+memcpy(_SUB_REMOVEELEMENTS_STRING_A->chr,oldstr3610->chr,oldstr3610->len);
+#line 178 "utilities/elements.bas"
 }
-qbs*oldstr4471=NULL;
-if(_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE->tmp||_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE->fixed||_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE->readonly){
-oldstr4471=_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE;
-if (oldstr4471->cmem_descriptor){
-_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE=qbs_new_cmem(oldstr4471->len,0);
-}else{
-_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE=qbs_new(oldstr4471->len,0);
+int32 *_SUB_REMOVEELEMENTS_LONG_N=NULL;
+#line 179 "utilities/elements.bas"
+if(_SUB_REMOVEELEMENTS_LONG_N==NULL){
+#line 179 "utilities/elements.bas"
+_SUB_REMOVEELEMENTS_LONG_N=(int32*)mem_static_malloc(4);
+#line 179 "utilities/elements.bas"
+*_SUB_REMOVEELEMENTS_LONG_N=0;
+#line 179 "utilities/elements.bas"
 }
-memcpy(_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE->chr,oldstr4471->chr,oldstr4471->len);
+int32 *_SUB_REMOVEELEMENTS_LONG_I=NULL;
+#line 179 "utilities/elements.bas"
+if(_SUB_REMOVEELEMENTS_LONG_I==NULL){
+#line 179 "utilities/elements.bas"
+_SUB_REMOVEELEMENTS_LONG_I=(int32*)mem_static_malloc(4);
+#line 179 "utilities/elements.bas"
+*_SUB_REMOVEELEMENTS_LONG_I=0;
+#line 179 "utilities/elements.bas"
 }
-qbs *_FUNC_ELEMENTGETSTRINGVALUE_STRING_RAWSTRING=NULL;
-if (!_FUNC_ELEMENTGETSTRINGVALUE_STRING_RAWSTRING)_FUNC_ELEMENTGETSTRINGVALUE_STRING_RAWSTRING=qbs_new(0,0);
-qbs *_FUNC_ELEMENTGETSTRINGVALUE_STRING_RES=NULL;
-if (!_FUNC_ELEMENTGETSTRINGVALUE_STRING_RES)_FUNC_ELEMENTGETSTRINGVALUE_STRING_RES=qbs_new(0,0);
-int32 *_FUNC_ELEMENTGETSTRINGVALUE_LONG_I=NULL;
-if(_FUNC_ELEMENTGETSTRINGVALUE_LONG_I==NULL){
-_FUNC_ELEMENTGETSTRINGVALUE_LONG_I=(int32*)mem_static_malloc(4);
-*_FUNC_ELEMENTGETSTRINGVALUE_LONG_I=0;
+qbs *_SUB_REMOVEELEMENTS_STRING_A2=NULL;
+#line 179 "utilities/elements.bas"
+if (!_SUB_REMOVEELEMENTS_STRING_A2)_SUB_REMOVEELEMENTS_STRING_A2=qbs_new(0,0);
+#line 187 "utilities/elements.bas"
+int64 fornext_value3612;
+#line 187 "utilities/elements.bas"
+int64 fornext_finalvalue3612;
+#line 187 "utilities/elements.bas"
+int64 fornext_step3612;
+#line 187 "utilities/elements.bas"
+uint8 fornext_step_negative3612;
+#line 194 "utilities/elements.bas"
+byte_element_struct *byte_element_3613=NULL;
+#line 194 "utilities/elements.bas"
+if (!byte_element_3613){
+#line 194 "utilities/elements.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3613=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3613=(byte_element_struct*)mem_static_malloc(12);
+#line 194 "utilities/elements.bas"
 }

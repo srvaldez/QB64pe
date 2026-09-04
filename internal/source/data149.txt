@@ -1,15 +1,56 @@
-int32 *_FUNC_ELEMENTISSTRING_LONG_ELEMENTISSTRING=NULL;
-if(_FUNC_ELEMENTISSTRING_LONG_ELEMENTISSTRING==NULL){
-_FUNC_ELEMENTISSTRING_LONG_ELEMENTISSTRING=(int32*)mem_static_malloc(4);
-*_FUNC_ELEMENTISSTRING_LONG_ELEMENTISSTRING=0;
+int32 *_FUNC_NUMELEMENTS_LONG_NUMELEMENTS=NULL;
+#line 164 "utilities/elements.bas"
+if(_FUNC_NUMELEMENTS_LONG_NUMELEMENTS==NULL){
+#line 164 "utilities/elements.bas"
+_FUNC_NUMELEMENTS_LONG_NUMELEMENTS=(int32*)mem_static_malloc(4);
+#line 164 "utilities/elements.bas"
+*_FUNC_NUMELEMENTS_LONG_NUMELEMENTS=0;
+#line 164 "utilities/elements.bas"
 }
-qbs*oldstr4469=NULL;
-if(_FUNC_ELEMENTISSTRING_STRING_ELE->tmp||_FUNC_ELEMENTISSTRING_STRING_ELE->fixed||_FUNC_ELEMENTISSTRING_STRING_ELE->readonly){
-oldstr4469=_FUNC_ELEMENTISSTRING_STRING_ELE;
-if (oldstr4469->cmem_descriptor){
-_FUNC_ELEMENTISSTRING_STRING_ELE=qbs_new_cmem(oldstr4469->len,0);
+#line 164 "utilities/elements.bas"
+qbs*oldstr3609=NULL;
+#line 164 "utilities/elements.bas"
+if(_FUNC_NUMELEMENTS_STRING_A->tmp||_FUNC_NUMELEMENTS_STRING_A->fixed||_FUNC_NUMELEMENTS_STRING_A->readonly){
+#line 164 "utilities/elements.bas"
+oldstr3609=_FUNC_NUMELEMENTS_STRING_A;
+#line 164 "utilities/elements.bas"
+if (oldstr3609->cmem_descriptor){
+#line 164 "utilities/elements.bas"
+_FUNC_NUMELEMENTS_STRING_A=qbs_new_cmem(oldstr3609->len,0);
+#line 164 "utilities/elements.bas"
 }else{
-_FUNC_ELEMENTISSTRING_STRING_ELE=qbs_new(oldstr4469->len,0);
+#line 164 "utilities/elements.bas"
+_FUNC_NUMELEMENTS_STRING_A=qbs_new(oldstr3609->len,0);
+#line 164 "utilities/elements.bas"
 }
-memcpy(_FUNC_ELEMENTISSTRING_STRING_ELE->chr,oldstr4469->chr,oldstr4469->len);
+#line 164 "utilities/elements.bas"
+memcpy(_FUNC_NUMELEMENTS_STRING_A->chr,oldstr3609->chr,oldstr3609->len);
+#line 164 "utilities/elements.bas"
+}
+int32 *_FUNC_NUMELEMENTS_LONG_P=NULL;
+#line 165 "utilities/elements.bas"
+if(_FUNC_NUMELEMENTS_LONG_P==NULL){
+#line 165 "utilities/elements.bas"
+_FUNC_NUMELEMENTS_LONG_P=(int32*)mem_static_malloc(4);
+#line 165 "utilities/elements.bas"
+*_FUNC_NUMELEMENTS_LONG_P=0;
+#line 165 "utilities/elements.bas"
+}
+int32 *_FUNC_NUMELEMENTS_LONG_N=NULL;
+#line 165 "utilities/elements.bas"
+if(_FUNC_NUMELEMENTS_LONG_N==NULL){
+#line 165 "utilities/elements.bas"
+_FUNC_NUMELEMENTS_LONG_N=(int32*)mem_static_malloc(4);
+#line 165 "utilities/elements.bas"
+*_FUNC_NUMELEMENTS_LONG_N=0;
+#line 165 "utilities/elements.bas"
+}
+int32 *_FUNC_NUMELEMENTS_LONG_I=NULL;
+#line 165 "utilities/elements.bas"
+if(_FUNC_NUMELEMENTS_LONG_I==NULL){
+#line 165 "utilities/elements.bas"
+_FUNC_NUMELEMENTS_LONG_I=(int32*)mem_static_malloc(4);
+#line 165 "utilities/elements.bas"
+*_FUNC_NUMELEMENTS_LONG_I=0;
+#line 165 "utilities/elements.bas"
 }

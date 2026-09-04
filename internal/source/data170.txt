@@ -1,24 +1,42 @@
-int16 *_FUNC_CREATEBUF_INTEGER_CREATEBUF=NULL;
-if(_FUNC_CREATEBUF_INTEGER_CREATEBUF==NULL){
-_FUNC_CREATEBUF_INTEGER_CREATEBUF=(int16*)mem_static_malloc(2);
-*_FUNC_CREATEBUF_INTEGER_CREATEBUF=0;
+qbs *_FUNC_INIFORMATSECTION_STRING_INIFORMATSECTION=NULL;
+#line 138 "utilities/ini-manager/ini.bm"
+if (!_FUNC_INIFORMATSECTION_STRING_INIFORMATSECTION)_FUNC_INIFORMATSECTION_STRING_INIFORMATSECTION=qbs_new(0,0);
+#line 138 "utilities/ini-manager/ini.bm"
+qbs*oldstr3731=NULL;
+#line 138 "utilities/ini-manager/ini.bm"
+if(_FUNC_INIFORMATSECTION_STRING___SECTION->tmp||_FUNC_INIFORMATSECTION_STRING___SECTION->fixed||_FUNC_INIFORMATSECTION_STRING___SECTION->readonly){
+#line 138 "utilities/ini-manager/ini.bm"
+oldstr3731=_FUNC_INIFORMATSECTION_STRING___SECTION;
+#line 138 "utilities/ini-manager/ini.bm"
+if (oldstr3731->cmem_descriptor){
+#line 138 "utilities/ini-manager/ini.bm"
+_FUNC_INIFORMATSECTION_STRING___SECTION=qbs_new_cmem(oldstr3731->len,0);
+#line 138 "utilities/ini-manager/ini.bm"
+}else{
+#line 138 "utilities/ini-manager/ini.bm"
+_FUNC_INIFORMATSECTION_STRING___SECTION=qbs_new(oldstr3731->len,0);
+#line 138 "utilities/ini-manager/ini.bm"
 }
-int32 *_FUNC_CREATEBUF_LONG_AUB=NULL;
-if(_FUNC_CREATEBUF_LONG_AUB==NULL){
-_FUNC_CREATEBUF_LONG_AUB=(int32*)mem_static_malloc(4);
-*_FUNC_CREATEBUF_LONG_AUB=0;
+#line 138 "utilities/ini-manager/ini.bm"
+memcpy(_FUNC_INIFORMATSECTION_STRING___SECTION->chr,oldstr3731->chr,oldstr3731->len);
+#line 138 "utilities/ini-manager/ini.bm"
 }
-int32 *_FUNC_CREATEBUF_LONG_BUF=NULL;
-if(_FUNC_CREATEBUF_LONG_BUF==NULL){
-_FUNC_CREATEBUF_LONG_BUF=(int32*)mem_static_malloc(4);
-*_FUNC_CREATEBUF_LONG_BUF=0;
+qbs *_FUNC_INIFORMATSECTION_STRING_SECTION=NULL;
+#line 141 "utilities/ini-manager/ini.bm"
+if (!_FUNC_INIFORMATSECTION_STRING_SECTION)_FUNC_INIFORMATSECTION_STRING_SECTION=qbs_new(0,0);
+#line 149 "utilities/ini-manager/ini.bm"
+byte_element_struct *byte_element_3732=NULL;
+#line 149 "utilities/ini-manager/ini.bm"
+if (!byte_element_3732){
+#line 149 "utilities/ini-manager/ini.bm"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3732=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3732=(byte_element_struct*)mem_static_malloc(12);
+#line 149 "utilities/ini-manager/ini.bm"
 }
-int16 *_FUNC_CREATEBUF_INTEGER_IDX=NULL;
-if(_FUNC_CREATEBUF_INTEGER_IDX==NULL){
-_FUNC_CREATEBUF_INTEGER_IDX=(int16*)mem_static_malloc(2);
-*_FUNC_CREATEBUF_INTEGER_IDX=0;
+#line 149 "utilities/ini-manager/ini.bm"
+byte_element_struct *byte_element_3733=NULL;
+#line 149 "utilities/ini-manager/ini.bm"
+if (!byte_element_3733){
+#line 149 "utilities/ini-manager/ini.bm"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3733=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3733=(byte_element_struct*)mem_static_malloc(12);
+#line 149 "utilities/ini-manager/ini.bm"
 }
-int32 fornext_value4591;
-int32 fornext_finalvalue4591;
-int32 fornext_step4591;
-uint8 fornext_step_negative4591;

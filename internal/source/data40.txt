@@ -1,89 +1,33 @@
-qbs*oldstr2924=NULL;
-if(_SUB_ASSIGN_STRING_A->tmp||_SUB_ASSIGN_STRING_A->fixed||_SUB_ASSIGN_STRING_A->readonly){
-oldstr2924=_SUB_ASSIGN_STRING_A;
-if (oldstr2924->cmem_descriptor){
-_SUB_ASSIGN_STRING_A=qbs_new_cmem(oldstr2924->len,0);
+#line 16788 "qb64pe.bas"
+qbs*oldstr2251=NULL;
+#line 16788 "qb64pe.bas"
+if(_SUB_CHECKASGRHS_STRING_RHS_REF->tmp||_SUB_CHECKASGRHS_STRING_RHS_REF->fixed||_SUB_CHECKASGRHS_STRING_RHS_REF->readonly){
+#line 16788 "qb64pe.bas"
+oldstr2251=_SUB_CHECKASGRHS_STRING_RHS_REF;
+#line 16788 "qb64pe.bas"
+if (oldstr2251->cmem_descriptor){
+#line 16788 "qb64pe.bas"
+_SUB_CHECKASGRHS_STRING_RHS_REF=qbs_new_cmem(oldstr2251->len,0);
+#line 16788 "qb64pe.bas"
 }else{
-_SUB_ASSIGN_STRING_A=qbs_new(oldstr2924->len,0);
+#line 16788 "qb64pe.bas"
+_SUB_CHECKASGRHS_STRING_RHS_REF=qbs_new(oldstr2251->len,0);
+#line 16788 "qb64pe.bas"
 }
-memcpy(_SUB_ASSIGN_STRING_A->chr,oldstr2924->chr,oldstr2924->len);
+#line 16788 "qb64pe.bas"
+memcpy(_SUB_CHECKASGRHS_STRING_RHS_REF->chr,oldstr2251->chr,oldstr2251->len);
+#line 16788 "qb64pe.bas"
 }
-qbs *_SUB_ASSIGN_STRING_LHSWHOLE=NULL;
-if (!_SUB_ASSIGN_STRING_LHSWHOLE)_SUB_ASSIGN_STRING_LHSWHOLE=qbs_new(0,0);
-qbs *_SUB_ASSIGN_STRING_RHSWHOLE=NULL;
-if (!_SUB_ASSIGN_STRING_RHSWHOLE)_SUB_ASSIGN_STRING_RHSWHOLE=qbs_new(0,0);
-qbs *_SUB_ASSIGN_STRING_RHSALL=NULL;
-if (!_SUB_ASSIGN_STRING_RHSALL)_SUB_ASSIGN_STRING_RHSALL=qbs_new(0,0);
-void *_SUB_ASSIGN_UDT_LHSID=NULL;
-if(_SUB_ASSIGN_UDT_LHSID==NULL){
-_SUB_ASSIGN_UDT_LHSID=(void*)mem_static_malloc(2973);
-memset(_SUB_ASSIGN_UDT_LHSID,0,2973);
-*(qbs**)(((char*)_SUB_ASSIGN_UDT_LHSID)+ 2965) = qbs_new(0,0);
+int32 *_SUB_CHECKASGRHS_LONG_RHS_STATE=NULL;
+#line 16789 "qb64pe.bas"
+if(_SUB_CHECKASGRHS_LONG_RHS_STATE==NULL){
+#line 16789 "qb64pe.bas"
+_SUB_CHECKASGRHS_LONG_RHS_STATE=(int32*)mem_static_malloc(4);
+#line 16789 "qb64pe.bas"
+*_SUB_CHECKASGRHS_LONG_RHS_STATE=0;
+#line 16789 "qb64pe.bas"
 }
-void *_SUB_ASSIGN_UDT_RHSID=NULL;
-if(_SUB_ASSIGN_UDT_RHSID==NULL){
-_SUB_ASSIGN_UDT_RHSID=(void*)mem_static_malloc(2973);
-memset(_SUB_ASSIGN_UDT_RHSID,0,2973);
-*(qbs**)(((char*)_SUB_ASSIGN_UDT_RHSID)+ 2965) = qbs_new(0,0);
-}
-int32 *_SUB_ASSIGN_LONG_LHSOK=NULL;
-if(_SUB_ASSIGN_LONG_LHSOK==NULL){
-_SUB_ASSIGN_LONG_LHSOK=(int32*)mem_static_malloc(4);
-*_SUB_ASSIGN_LONG_LHSOK=0;
-}
-int32 *_SUB_ASSIGN_LONG_RHSOK=NULL;
-if(_SUB_ASSIGN_LONG_RHSOK==NULL){
-_SUB_ASSIGN_LONG_RHSOK=(int32*)mem_static_malloc(4);
-*_SUB_ASSIGN_LONG_RHSOK=0;
-}
-int32 *_SUB_ASSIGN_LONG_LHSUDT=NULL;
-if(_SUB_ASSIGN_LONG_LHSUDT==NULL){
-_SUB_ASSIGN_LONG_LHSUDT=(int32*)mem_static_malloc(4);
-*_SUB_ASSIGN_LONG_LHSUDT=0;
-}
-int32 *_SUB_ASSIGN_LONG_RHSUDT=NULL;
-if(_SUB_ASSIGN_LONG_RHSUDT==NULL){
-_SUB_ASSIGN_LONG_RHSUDT=(int32*)mem_static_malloc(4);
-*_SUB_ASSIGN_LONG_RHSUDT=0;
-}
-int32 *_SUB_ASSIGN_LONG_I=NULL;
-if(_SUB_ASSIGN_LONG_I==NULL){
-_SUB_ASSIGN_LONG_I=(int32*)mem_static_malloc(4);
-*_SUB_ASSIGN_LONG_I=0;
-}
-int64 fornext_value2926;
-int64 fornext_finalvalue2926;
-int64 fornext_step2926;
-uint8 fornext_step_negative2926;
-int32 *_SUB_ASSIGN_LONG_C=NULL;
-if(_SUB_ASSIGN_LONG_C==NULL){
-_SUB_ASSIGN_LONG_C=(int32*)mem_static_malloc(4);
-*_SUB_ASSIGN_LONG_C=0;
-}
-int32 *_SUB_ASSIGN_LONG_B=NULL;
-if(_SUB_ASSIGN_LONG_B==NULL){
-_SUB_ASSIGN_LONG_B=(int32*)mem_static_malloc(4);
-*_SUB_ASSIGN_LONG_B=0;
-}
-qbs *_SUB_ASSIGN_STRING_A2=NULL;
-if (!_SUB_ASSIGN_STRING_A2)_SUB_ASSIGN_STRING_A2=qbs_new(0,0);
-int32 pass2927;
-int32 pass2928;
-qbs *_SUB_ASSIGN_STRING_L=NULL;
-if (!_SUB_ASSIGN_STRING_L)_SUB_ASSIGN_STRING_L=qbs_new(0,0);
-int32 pass2929;
-int32 *_SUB_ASSIGN_LONG_TRY=NULL;
-if(_SUB_ASSIGN_LONG_TRY==NULL){
-_SUB_ASSIGN_LONG_TRY=(int32*)mem_static_malloc(4);
-*_SUB_ASSIGN_LONG_TRY=0;
-}
-int32 pass2932;
-int32 pass2933;
-int32 pass2934;
-int32 *_SUB_ASSIGN_LONG_TYP=NULL;
-if(_SUB_ASSIGN_LONG_TYP==NULL){
-_SUB_ASSIGN_LONG_TYP=(int32*)mem_static_malloc(4);
-*_SUB_ASSIGN_LONG_TYP=0;
-}
-int32 pass2936;
-int32 pass2937;
+#line 16791 "qb64pe.bas"
+int32 pass2252;
+#line 16791 "qb64pe.bas"
+int32 pass2253;

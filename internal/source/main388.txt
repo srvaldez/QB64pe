@@ -1,78 +1,100 @@
-qbs* FUNC_IDEZGETROOT(){
+#line 12952 "ide/ide_methods.bas"
+qbs* FUNC_IDERESTORE(){
+#line 12952 "ide/ide_methods.bas"
 qbs *tqbs;
+#line 12952 "ide/ide_methods.bas"
 ptrszint tmp_long;
+#line 12952 "ide/ide_methods.bas"
 int32 tmp_fileno;
+#line 12952 "ide/ide_methods.bas"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
+#line 12952 "ide/ide_methods.bas"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
+#line 12952 "ide/ide_methods.bas"
 uint32 tmp_cmem_sp=cmem_sp;
+#line 12952 "ide/ide_methods.bas"
 #include "data388.txt"
+#line 12952 "ide/ide_methods.bas"
 mem_lock *sf_mem_lock;
+#line 12952 "ide/ide_methods.bas"
 new_mem_lock();
+#line 12952 "ide/ide_methods.bas"
 sf_mem_lock=mem_lock_tmp;
+#line 12952 "ide/ide_methods.bas"
 sf_mem_lock->type=3;
+#line 12952 "ide/ide_methods.bas"
 libqb_check_stack();
+#line 12952 "ide/ide_methods.bas"
 if (is_error_pending()) goto exit_subfunc;
-S_61042:;
-if ((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_OS,qbs_new_txt_len("WIN",3))))||is_error_pending()){
-if(qbevent){evnt(28182,15634,"ide_methods.bas");if(r)goto S_61042;}
+#line 12953 "ide/ide_methods.bas"
 do{
-sub_shell2(qbs_new_txt_len("cd >.\\internal\\temp\\root.txt",28),2);
+#line 12953 "ide/ide_methods.bas"
+sub_pcopy( 3 , 0 );
+#line 12953 "ide/ide_methods.bas"
+if(!qbevent)break;evnt(28672,12953,"ide_methods.bas");}while(r);
+#line 12954 "ide/ide_methods.bas"
+do{
+#line 12954 "ide/ide_methods.bas"
+sub_pcopy( 0 , 2 );
+#line 12954 "ide/ide_methods.bas"
+if(!qbevent)break;evnt(28672,12954,"ide_methods.bas");}while(r);
+#line 12955 "ide/ide_methods.bas"
+do{
+#line 12955 "ide/ide_methods.bas"
+sub_pcopy( 0 , 1 );
+#line 12955 "ide/ide_methods.bas"
+if(!qbevent)break;evnt(28672,12955,"ide_methods.bas");}while(r);
+#line 12956 "ide/ide_methods.bas"
+do{
+#line 12956 "ide/ide_methods.bas"
+qbg_screen(NULL,NULL, 1 , 0 ,NULL,12);
+#line 12956 "ide/ide_methods.bas"
+if(!qbevent)break;evnt(28672,12956,"ide_methods.bas");}while(r);
+#line 12957 "ide/ide_methods.bas"
+do{
+#line 12957 "ide/ide_methods.bas"
+*_FUNC_IDERESTORE_LONG_RESULT=FUNC_IDEMESSAGEBOX(qbs_new_txt_len("Backup found",12),qbs_new_txt_len("Recover program from auto-saved backup?",39),qbs_new_txt_len("#Yes;#No",8));
+#line 12957 "ide/ide_methods.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(28182,15635,"ide_methods.bas");}while(r);
+#line 12957 "ide/ide_methods.bas"
+if(!qbevent)break;evnt(28672,12957,"ide_methods.bas");}while(r);
+#line 12958 "ide/ide_methods.bas"
+S_58798:;
+#line 12958 "ide/ide_methods.bas"
+if ((-(*_FUNC_IDERESTORE_LONG_RESULT== 1 ))||is_error_pending()){
+#line 12958 "ide/ide_methods.bas"
+if(qbevent){evnt(28672,12958,"ide_methods.bas");if(r)goto S_58798;}
+#line 12958 "ide/ide_methods.bas"
 do{
-sub_open(qbs_new_txt_len(".\\internal\\temp\\root.txt",24), 3 ,NULL,NULL, 150 ,NULL,0);
+#line 12958 "ide/ide_methods.bas"
+qbs_set(_FUNC_IDERESTORE_STRING_IDERESTORE,qbs_new_txt_len("Y",1));
+#line 12958 "ide/ide_methods.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(28182,15636,"ide_methods.bas");}while(r);
-do{
-tmp_fileno= 150 ;
-if (is_error_pending()) goto skip7171;
-sub_file_line_input_string(tmp_fileno,_FUNC_IDEZGETROOT_STRING_A);
-if (is_error_pending()) goto skip7171;
-skip7171:
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(28182,15637,"ide_methods.bas");}while(r);
-do{
-qbs_set(_FUNC_IDEZGETROOT_STRING_IDEZGETROOT,_FUNC_IDEZGETROOT_STRING_A);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(28182,15638,"ide_methods.bas");}while(r);
-do{
-sub_close( 150 ,1);
-if(!qbevent)break;evnt(28182,15639,"ide_methods.bas");}while(r);
-do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(28182,15640,"ide_methods.bas");}while(r);
+#line 12958 "ide/ide_methods.bas"
+if(!qbevent)break;evnt(28672,12958,"ide_methods.bas");}while(r);
+#line 12958 "ide/ide_methods.bas"
 }else{
+#line 12958 "ide/ide_methods.bas"
 do{
-sub_shell2(qbs_new_txt_len("pwd >./internal/temp/root.txt",29),2);
+#line 12958 "ide/ide_methods.bas"
+qbs_set(_FUNC_IDERESTORE_STRING_IDERESTORE,qbs_new_txt_len("N",1));
+#line 12958 "ide/ide_methods.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(28182,15642,"ide_methods.bas");}while(r);
-do{
-sub_open(qbs_new_txt_len("./internal/temp/root.txt",24), 3 ,NULL,NULL, 150 ,NULL,0);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(28182,15643,"ide_methods.bas");}while(r);
-do{
-tmp_fileno= 150 ;
-if (is_error_pending()) goto skip7172;
-sub_file_line_input_string(tmp_fileno,_FUNC_IDEZGETROOT_STRING_A);
-if (is_error_pending()) goto skip7172;
-skip7172:
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(28182,15644,"ide_methods.bas");}while(r);
-do{
-qbs_set(_FUNC_IDEZGETROOT_STRING_IDEZGETROOT,_FUNC_IDEZGETROOT_STRING_A);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(28182,15645,"ide_methods.bas");}while(r);
-do{
-sub_close( 150 ,1);
-if(!qbevent)break;evnt(28182,15646,"ide_methods.bas");}while(r);
-do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(28182,15647,"ide_methods.bas");}while(r);
+#line 12958 "ide/ide_methods.bas"
+if(!qbevent)break;evnt(28672,12958,"ide_methods.bas");}while(r);
+#line 12958 "ide/ide_methods.bas"
 }
+#line 12959 "ide/ide_methods.bas"
 exit_subfunc:;
+#line 12959 "ide/ide_methods.bas"
 free_mem_lock(sf_mem_lock);
+#line 12959 "ide/ide_methods.bas"
 #include "free388.txt"
+#line 12959 "ide/ide_methods.bas"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
+#line 12959 "ide/ide_methods.bas"
 cmem_sp=tmp_cmem_sp;
-qbs_maketmp(_FUNC_IDEZGETROOT_STRING_IDEZGETROOT);return _FUNC_IDEZGETROOT_STRING_IDEZGETROOT;
+#line 12959 "ide/ide_methods.bas"
+qbs_maketmp(_FUNC_IDERESTORE_STRING_IDERESTORE);return _FUNC_IDERESTORE_STRING_IDERESTORE;
+#line 12959 "ide/ide_methods.bas"
 }

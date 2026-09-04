@@ -1,41 +1,74 @@
-int32 *_FUNC_SEEKBUF_LONG_SEEKBUF=NULL;
-if(_FUNC_SEEKBUF_LONG_SEEKBUF==NULL){
-_FUNC_SEEKBUF_LONG_SEEKBUF=(int32*)mem_static_malloc(4);
-*_FUNC_SEEKBUF_LONG_SEEKBUF=0;
+int32 *_SUB_DELETEBUFRAWDATA_LONG_BUF=NULL;
+#line 331 "utilities/s-buffer/simplebuffer.bm"
+if(_SUB_DELETEBUFRAWDATA_LONG_BUF==NULL){
+#line 331 "utilities/s-buffer/simplebuffer.bm"
+_SUB_DELETEBUFRAWDATA_LONG_BUF=(int32*)mem_static_malloc(4);
+#line 331 "utilities/s-buffer/simplebuffer.bm"
+*_SUB_DELETEBUFRAWDATA_LONG_BUF=0;
+#line 331 "utilities/s-buffer/simplebuffer.bm"
 }
-int32 *_FUNC_SEEKBUF_LONG_BUF=NULL;
-if(_FUNC_SEEKBUF_LONG_BUF==NULL){
-_FUNC_SEEKBUF_LONG_BUF=(int32*)mem_static_malloc(4);
-*_FUNC_SEEKBUF_LONG_BUF=0;
+int32 *_SUB_DELETEBUFRAWDATA_LONG_CUR=NULL;
+#line 331 "utilities/s-buffer/simplebuffer.bm"
+if(_SUB_DELETEBUFRAWDATA_LONG_CUR==NULL){
+#line 331 "utilities/s-buffer/simplebuffer.bm"
+_SUB_DELETEBUFRAWDATA_LONG_CUR=(int32*)mem_static_malloc(4);
+#line 331 "utilities/s-buffer/simplebuffer.bm"
+*_SUB_DELETEBUFRAWDATA_LONG_CUR=0;
+#line 331 "utilities/s-buffer/simplebuffer.bm"
 }
-int32 *_FUNC_SEEKBUF_LONG_CUR=NULL;
-if(_FUNC_SEEKBUF_LONG_CUR==NULL){
-_FUNC_SEEKBUF_LONG_CUR=(int32*)mem_static_malloc(4);
-*_FUNC_SEEKBUF_LONG_CUR=0;
+int64 *_SUB_DELETEBUFRAWDATA_INTEGER64_CBL=NULL;
+#line 331 "utilities/s-buffer/simplebuffer.bm"
+if(_SUB_DELETEBUFRAWDATA_INTEGER64_CBL==NULL){
+#line 331 "utilities/s-buffer/simplebuffer.bm"
+_SUB_DELETEBUFRAWDATA_INTEGER64_CBL=(int64*)mem_static_malloc(8);
+#line 331 "utilities/s-buffer/simplebuffer.bm"
+*_SUB_DELETEBUFRAWDATA_INTEGER64_CBL=0;
+#line 331 "utilities/s-buffer/simplebuffer.bm"
 }
-int32 *_FUNC_SEEKBUF_LONG_EOB=NULL;
-if(_FUNC_SEEKBUF_LONG_EOB==NULL){
-_FUNC_SEEKBUF_LONG_EOB=(int32*)mem_static_malloc(4);
-*_FUNC_SEEKBUF_LONG_EOB=0;
+int32 *_SUB_DELETEBUFRAWDATA_LONG_EOB=NULL;
+#line 331 "utilities/s-buffer/simplebuffer.bm"
+if(_SUB_DELETEBUFRAWDATA_LONG_EOB==NULL){
+#line 331 "utilities/s-buffer/simplebuffer.bm"
+_SUB_DELETEBUFRAWDATA_LONG_EOB=(int32*)mem_static_malloc(4);
+#line 331 "utilities/s-buffer/simplebuffer.bm"
+*_SUB_DELETEBUFRAWDATA_LONG_EOB=0;
+#line 331 "utilities/s-buffer/simplebuffer.bm"
 }
-qbs *_FUNC_SEEKBUF_STRING_BRC=NULL;
-if (!_FUNC_SEEKBUF_STRING_BRC)_FUNC_SEEKBUF_STRING_BRC=qbs_new(0,0);
-int16 *_FUNC_SEEKBUF_INTEGER_BRL=NULL;
-if(_FUNC_SEEKBUF_INTEGER_BRL==NULL){
-_FUNC_SEEKBUF_INTEGER_BRL=(int16*)mem_static_malloc(2);
-*_FUNC_SEEKBUF_INTEGER_BRL=0;
+int32 *_SUB_DELETEBUFRAWDATA_LONG_EXT=NULL;
+#line 331 "utilities/s-buffer/simplebuffer.bm"
+if(_SUB_DELETEBUFRAWDATA_LONG_EXT==NULL){
+#line 331 "utilities/s-buffer/simplebuffer.bm"
+_SUB_DELETEBUFRAWDATA_LONG_EXT=(int32*)mem_static_malloc(4);
+#line 331 "utilities/s-buffer/simplebuffer.bm"
+*_SUB_DELETEBUFRAWDATA_LONG_EXT=0;
+#line 331 "utilities/s-buffer/simplebuffer.bm"
 }
-int32 *_FUNC_SEEKBUF_LONG_ORIGIN=NULL;
-if(_FUNC_SEEKBUF_LONG_ORIGIN==NULL){
-_FUNC_SEEKBUF_LONG_ORIGIN=(int32*)mem_static_malloc(4);
-*_FUNC_SEEKBUF_LONG_ORIGIN=0;
+int32 *_SUB_DELETEBUFRAWDATA_LONG_FSZ=NULL;
+#line 331 "utilities/s-buffer/simplebuffer.bm"
+if(_SUB_DELETEBUFRAWDATA_LONG_FSZ==NULL){
+#line 331 "utilities/s-buffer/simplebuffer.bm"
+_SUB_DELETEBUFRAWDATA_LONG_FSZ=(int32*)mem_static_malloc(4);
+#line 331 "utilities/s-buffer/simplebuffer.bm"
+*_SUB_DELETEBUFRAWDATA_LONG_FSZ=0;
+#line 331 "utilities/s-buffer/simplebuffer.bm"
 }
-int32 *_FUNC_SEEKBUF_LONG_NEWPOS=NULL;
-if(_FUNC_SEEKBUF_LONG_NEWPOS==NULL){
-_FUNC_SEEKBUF_LONG_NEWPOS=(int32*)mem_static_malloc(4);
-*_FUNC_SEEKBUF_LONG_NEWPOS=0;
+#line 346 "utilities/s-buffer/simplebuffer.bm"
+byte_element_struct *byte_element_3790=NULL;
+#line 346 "utilities/s-buffer/simplebuffer.bm"
+if (!byte_element_3790){
+#line 346 "utilities/s-buffer/simplebuffer.bm"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3790=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3790=(byte_element_struct*)mem_static_malloc(12);
+#line 346 "utilities/s-buffer/simplebuffer.bm"
 }
-byte_element_struct *byte_element_4644=NULL;
-if (!byte_element_4644){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4644=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4644=(byte_element_struct*)mem_static_malloc(12);
+#line 347 "utilities/s-buffer/simplebuffer.bm"
+byte_element_struct *byte_element_3791=NULL;
+#line 347 "utilities/s-buffer/simplebuffer.bm"
+if (!byte_element_3791){
+#line 347 "utilities/s-buffer/simplebuffer.bm"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3791=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3791=(byte_element_struct*)mem_static_malloc(12);
+#line 347 "utilities/s-buffer/simplebuffer.bm"
 }
+#line 352 "utilities/s-buffer/simplebuffer.bm"
+int32 pass3792;
+#line 353 "utilities/s-buffer/simplebuffer.bm"
+int32 pass3793;

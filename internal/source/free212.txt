@@ -1,6 +1,8 @@
-if(oldstr4720){
-if(oldstr4720->fixed)qbs_set(oldstr4720,_FUNC_LOGICALIMP_STRING_EXP);
-qbs_free(_FUNC_LOGICALIMP_STRING_EXP);
+if(oldstr3857){
+if(oldstr3857->fixed)qbs_set(oldstr3857,_FUNC_OPENBUFFER_STRING_SBMODE);
+qbs_free(_FUNC_OPENBUFFER_STRING_SBMODE);
 }
-qbs_free(*((qbs**)(((char*)_FUNC_LOGICALIMP_UDT_NUM)+ 48)));
-qbs_free(_FUNC_LOGICALIMP_STRING_ELE);
+if(oldstr3858){
+if(oldstr3858->fixed)qbs_set(oldstr3858,_FUNC_OPENBUFFER_STRING_SBNAME);
+qbs_free(_FUNC_OPENBUFFER_STRING_SBNAME);
+}

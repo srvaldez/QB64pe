@@ -1,2 +1,4 @@
-qbs_free(_SUB_HASHDUMP_STRING_B);
-qbs_free(_SUB_HASHDUMP_STRING_X);
+if(oldstr4032){
+if(oldstr4032->fixed)qbs_set(oldstr4032,_SUB_PARSENUMSETS_STRING_S);
+qbs_free(_SUB_PARSENUMSETS_STRING_S);
+}

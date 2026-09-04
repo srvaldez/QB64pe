@@ -1,54 +1,61 @@
-qbs *_FUNC_EXPANDARRAY_STRING_EXPANDARRAY=NULL;
-if (!_FUNC_EXPANDARRAY_STRING_EXPANDARRAY)_FUNC_EXPANDARRAY_STRING_EXPANDARRAY=qbs_new(0,0);
-qbs*oldstr6568=NULL;
-if(_FUNC_EXPANDARRAY_STRING___INDEXES->tmp||_FUNC_EXPANDARRAY_STRING___INDEXES->fixed||_FUNC_EXPANDARRAY_STRING___INDEXES->readonly){
-oldstr6568=_FUNC_EXPANDARRAY_STRING___INDEXES;
-if (oldstr6568->cmem_descriptor){
-_FUNC_EXPANDARRAY_STRING___INDEXES=qbs_new_cmem(oldstr6568->len,0);
+#line 2 "emit/logging.bas"
+qbs*oldstr4434=NULL;
+#line 2 "emit/logging.bas"
+if(_SUB_EMITLOGGINGSTATEMENT_STRING_ELEMENTS->tmp||_SUB_EMITLOGGINGSTATEMENT_STRING_ELEMENTS->fixed||_SUB_EMITLOGGINGSTATEMENT_STRING_ELEMENTS->readonly){
+#line 2 "emit/logging.bas"
+oldstr4434=_SUB_EMITLOGGINGSTATEMENT_STRING_ELEMENTS;
+#line 2 "emit/logging.bas"
+if (oldstr4434->cmem_descriptor){
+#line 2 "emit/logging.bas"
+_SUB_EMITLOGGINGSTATEMENT_STRING_ELEMENTS=qbs_new_cmem(oldstr4434->len,0);
+#line 2 "emit/logging.bas"
 }else{
-_FUNC_EXPANDARRAY_STRING___INDEXES=qbs_new(oldstr6568->len,0);
+#line 2 "emit/logging.bas"
+_SUB_EMITLOGGINGSTATEMENT_STRING_ELEMENTS=qbs_new(oldstr4434->len,0);
+#line 2 "emit/logging.bas"
 }
-memcpy(_FUNC_EXPANDARRAY_STRING___INDEXES->chr,oldstr6568->chr,oldstr6568->len);
+#line 2 "emit/logging.bas"
+memcpy(_SUB_EMITLOGGINGSTATEMENT_STRING_ELEMENTS->chr,oldstr4434->chr,oldstr4434->len);
+#line 2 "emit/logging.bas"
 }
-qbs*oldstr6569=NULL;
-if(_FUNC_EXPANDARRAY_STRING___PATH->tmp||_FUNC_EXPANDARRAY_STRING___PATH->fixed||_FUNC_EXPANDARRAY_STRING___PATH->readonly){
-oldstr6569=_FUNC_EXPANDARRAY_STRING___PATH;
-if (oldstr6569->cmem_descriptor){
-_FUNC_EXPANDARRAY_STRING___PATH=qbs_new_cmem(oldstr6569->len,0);
+#line 2 "emit/logging.bas"
+qbs*oldstr4435=NULL;
+#line 2 "emit/logging.bas"
+if(_SUB_EMITLOGGINGSTATEMENT_STRING_LOGLEVEL->tmp||_SUB_EMITLOGGINGSTATEMENT_STRING_LOGLEVEL->fixed||_SUB_EMITLOGGINGSTATEMENT_STRING_LOGLEVEL->readonly){
+#line 2 "emit/logging.bas"
+oldstr4435=_SUB_EMITLOGGINGSTATEMENT_STRING_LOGLEVEL;
+#line 2 "emit/logging.bas"
+if (oldstr4435->cmem_descriptor){
+#line 2 "emit/logging.bas"
+_SUB_EMITLOGGINGSTATEMENT_STRING_LOGLEVEL=qbs_new_cmem(oldstr4435->len,0);
+#line 2 "emit/logging.bas"
 }else{
-_FUNC_EXPANDARRAY_STRING___PATH=qbs_new(oldstr6569->len,0);
+#line 2 "emit/logging.bas"
+_SUB_EMITLOGGINGSTATEMENT_STRING_LOGLEVEL=qbs_new(oldstr4435->len,0);
+#line 2 "emit/logging.bas"
 }
-memcpy(_FUNC_EXPANDARRAY_STRING___PATH->chr,oldstr6569->chr,oldstr6569->len);
+#line 2 "emit/logging.bas"
+memcpy(_SUB_EMITLOGGINGSTATEMENT_STRING_LOGLEVEL->chr,oldstr4435->chr,oldstr4435->len);
+#line 2 "emit/logging.bas"
 }
-int32 *_FUNC_EXPANDARRAY_LONG_TOTALINDEXES=NULL;
-if(_FUNC_EXPANDARRAY_LONG_TOTALINDEXES==NULL){
-_FUNC_EXPANDARRAY_LONG_TOTALINDEXES=(int32*)mem_static_malloc(4);
-*_FUNC_EXPANDARRAY_LONG_TOTALINDEXES=0;
-}
-qbs *_FUNC_EXPANDARRAY_STRING_INDEXES=NULL;
-if (!_FUNC_EXPANDARRAY_STRING_INDEXES)_FUNC_EXPANDARRAY_STRING_INDEXES=qbs_new(0,0);
-qbs *_FUNC_EXPANDARRAY_STRING_REMAININGINDEXES=NULL;
-if (!_FUNC_EXPANDARRAY_STRING_REMAININGINDEXES)_FUNC_EXPANDARRAY_STRING_REMAININGINDEXES=qbs_new(0,0);
-int32 *_FUNC_EXPANDARRAY_LONG_I=NULL;
-if(_FUNC_EXPANDARRAY_LONG_I==NULL){
-_FUNC_EXPANDARRAY_LONG_I=(int32*)mem_static_malloc(4);
-*_FUNC_EXPANDARRAY_LONG_I=0;
-}
-int64 fornext_value6571;
-int64 fornext_finalvalue6571;
-int64 fornext_step6571;
-uint8 fornext_step_negative6571;
-qbs *_FUNC_EXPANDARRAY_STRING_TEMP=NULL;
-if (!_FUNC_EXPANDARRAY_STRING_TEMP)_FUNC_EXPANDARRAY_STRING_TEMP=qbs_new(0,0);
-byte_element_struct *byte_element_6572=NULL;
-if (!byte_element_6572){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6572=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6572=(byte_element_struct*)mem_static_malloc(12);
-}
-byte_element_struct *byte_element_6573=NULL;
-if (!byte_element_6573){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6573=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6573=(byte_element_struct*)mem_static_malloc(12);
-}
-byte_element_struct *byte_element_6574=NULL;
-if (!byte_element_6574){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6574=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6574=(byte_element_struct*)mem_static_malloc(12);
-}
+qbs *_SUB_EMITLOGGINGSTATEMENT_STRING_FUNC=NULL;
+#line 4 "emit/logging.bas"
+if (!_SUB_EMITLOGGINGSTATEMENT_STRING_FUNC)_SUB_EMITLOGGINGSTATEMENT_STRING_FUNC=qbs_new(0,0);
+qbs *_SUB_EMITLOGGINGSTATEMENT_STRING_SCASELAYOUT=NULL;
+#line 4 "emit/logging.bas"
+if (!_SUB_EMITLOGGINGSTATEMENT_STRING_SCASELAYOUT)_SUB_EMITLOGGINGSTATEMENT_STRING_SCASELAYOUT=qbs_new(0,0);
+qbs *_SUB_EMITLOGGINGSTATEMENT_STRING_E=NULL;
+#line 10 "emit/logging.bas"
+if (!_SUB_EMITLOGGINGSTATEMENT_STRING_E)_SUB_EMITLOGGINGSTATEMENT_STRING_E=qbs_new(0,0);
+qbs *_SUB_EMITLOGGINGSTATEMENT_STRING_L=NULL;
+#line 13 "emit/logging.bas"
+if (!_SUB_EMITLOGGINGSTATEMENT_STRING_L)_SUB_EMITLOGGINGSTATEMENT_STRING_L=qbs_new(0,0);
+qbs *_SUB_EMITLOGGINGSTATEMENT_STRING_SUBFUNCNAME=NULL;
+#line 19 "emit/logging.bas"
+if (!_SUB_EMITLOGGINGSTATEMENT_STRING_SUBFUNCNAME)_SUB_EMITLOGGINGSTATEMENT_STRING_SUBFUNCNAME=qbs_new(0,0);
+#line 25 "emit/logging.bas"
+int16 pass4437;
+#line 27 "emit/logging.bas"
+int16 pass4438;
+#line 30 "emit/logging.bas"
+int16 pass4439;

@@ -1,4 +1,5 @@
-if(oldstr4587){
-if(oldstr4587->fixed)qbs_set(oldstr4587,_SUB_INILOAD_STRING_FILE);
-qbs_free(_SUB_INILOAD_STRING_FILE);
+if(oldstr3720){
+if(oldstr3720->fixed)qbs_set(oldstr3720,_FUNC_INIGETSECTION_STRING___SECTION);
+qbs_free(_FUNC_INIGETSECTION_STRING___SECTION);
 }
+qbs_free(_FUNC_INIGETSECTION_STRING_SECTION);

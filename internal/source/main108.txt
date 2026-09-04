@@ -1,29 +1,80 @@
-int8 FUNC_HASSTRINGENCLOSINGPAIR(qbs*_FUNC_HASSTRINGENCLOSINGPAIR_STRING_TEXT,qbs*_FUNC_HASSTRINGENCLOSINGPAIR_STRING_PAIR){
+#line 28406 "qb64pe.bas"
+int32 FUNC_VERIFYNUMBER(qbs*_FUNC_VERIFYNUMBER_STRING_TEXT){
+#line 28406 "qb64pe.bas"
 qbs *tqbs;
+#line 28406 "qb64pe.bas"
 ptrszint tmp_long;
+#line 28406 "qb64pe.bas"
 int32 tmp_fileno;
+#line 28406 "qb64pe.bas"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
+#line 28406 "qb64pe.bas"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
+#line 28406 "qb64pe.bas"
 uint32 tmp_cmem_sp=cmem_sp;
+#line 28406 "qb64pe.bas"
 #include "data108.txt"
+#line 28406 "qb64pe.bas"
 mem_lock *sf_mem_lock;
+#line 28406 "qb64pe.bas"
 new_mem_lock();
+#line 28406 "qb64pe.bas"
 sf_mem_lock=mem_lock_tmp;
+#line 28406 "qb64pe.bas"
 sf_mem_lock->type=3;
+#line 28406 "qb64pe.bas"
 libqb_check_stack();
+#line 28406 "qb64pe.bas"
 if (is_error_pending()) goto exit_subfunc;
-S_36709:;
-if ((qbs_cleanup(qbs_tmp_base,(-(_FUNC_HASSTRINGENCLOSINGPAIR_STRING_TEXT->len> 1 ))&(-(_FUNC_HASSTRINGENCLOSINGPAIR_STRING_PAIR->len> 1 ))))||is_error_pending()){
-if(qbevent){evnt(28162,36,"strings.bas");if(r)goto S_36709;}
+#line 28407 "qb64pe.bas"
 do{
-*_FUNC_HASSTRINGENCLOSINGPAIR_BYTE_HASSTRINGENCLOSINGPAIR=(-(qbs_asc(_FUNC_HASSTRINGENCLOSINGPAIR_STRING_PAIR, 1 )==qbs_asc(_FUNC_HASSTRINGENCLOSINGPAIR_STRING_TEXT, 1 )))&(-(qbs_asc(_FUNC_HASSTRINGENCLOSINGPAIR_STRING_PAIR, 2 )==qbs_asc(_FUNC_HASSTRINGENCLOSINGPAIR_STRING_TEXT,_FUNC_HASSTRINGENCLOSINGPAIR_STRING_TEXT->len)));
+#line 28407 "qb64pe.bas"
+qbs_set(_FUNC_VERIFYNUMBER_STRING_T,qbs_ltrim(qbs_rtrim(_FUNC_VERIFYNUMBER_STRING_TEXT)));
+#line 28407 "qb64pe.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(28162,37,"strings.bas");}while(r);
+#line 28407 "qb64pe.bas"
+if(!qbevent)break;evnt(28407);}while(r);
+#line 28408 "qb64pe.bas"
+do{
+#line 28408 "qb64pe.bas"
+*_FUNC_VERIFYNUMBER_LONG_V=qbr(qbs_val<long double>(_FUNC_VERIFYNUMBER_STRING_T));
+#line 28408 "qb64pe.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 28408 "qb64pe.bas"
+if(!qbevent)break;evnt(28408);}while(r);
+#line 28409 "qb64pe.bas"
+do{
+#line 28409 "qb64pe.bas"
+qbs_set(_FUNC_VERIFYNUMBER_STRING_T1,qbs__tostr((int32)(*_FUNC_VERIFYNUMBER_LONG_V),NULL,0));
+#line 28409 "qb64pe.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 28409 "qb64pe.bas"
+if(!qbevent)break;evnt(28409);}while(r);
+#line 28410 "qb64pe.bas"
+S_36963:;
+#line 28410 "qb64pe.bas"
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_VERIFYNUMBER_STRING_T,_FUNC_VERIFYNUMBER_STRING_T1)))||is_error_pending()){
+#line 28410 "qb64pe.bas"
+if(qbevent){evnt(28410);if(r)goto S_36963;}
+#line 28410 "qb64pe.bas"
+do{
+#line 28410 "qb64pe.bas"
+*_FUNC_VERIFYNUMBER_LONG_VERIFYNUMBER= -1 ;
+#line 28410 "qb64pe.bas"
+if(!qbevent)break;evnt(28410);}while(r);
+#line 28410 "qb64pe.bas"
 }
+#line 28411 "qb64pe.bas"
 exit_subfunc:;
+#line 28411 "qb64pe.bas"
 free_mem_lock(sf_mem_lock);
+#line 28411 "qb64pe.bas"
 #include "free108.txt"
+#line 28411 "qb64pe.bas"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
+#line 28411 "qb64pe.bas"
 cmem_sp=tmp_cmem_sp;
-return *_FUNC_HASSTRINGENCLOSINGPAIR_BYTE_HASSTRINGENCLOSINGPAIR;
+#line 28411 "qb64pe.bas"
+return *_FUNC_VERIFYNUMBER_LONG_VERIFYNUMBER;
+#line 28411 "qb64pe.bas"
 }

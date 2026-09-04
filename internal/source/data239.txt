@@ -1,30 +1,36 @@
-qbs*oldstr4888=NULL;
-if(_SUB_HASHADD_STRING_A->tmp||_SUB_HASHADD_STRING_A->fixed||_SUB_HASHADD_STRING_A->readonly){
-oldstr4888=_SUB_HASHADD_STRING_A;
-if (oldstr4888->cmem_descriptor){
-_SUB_HASHADD_STRING_A=qbs_new_cmem(oldstr4888->len,0);
+int32 *_FUNC_NUMERIC_LONG_NUMERIC=NULL;
+#line 682 "utilities/const_eval.bas"
+if(_FUNC_NUMERIC_LONG_NUMERIC==NULL){
+#line 682 "utilities/const_eval.bas"
+_FUNC_NUMERIC_LONG_NUMERIC=(int32*)mem_static_malloc(4);
+#line 682 "utilities/const_eval.bas"
+*_FUNC_NUMERIC_LONG_NUMERIC=0;
+#line 682 "utilities/const_eval.bas"
+}
+#line 682 "utilities/const_eval.bas"
+qbs*oldstr4027=NULL;
+#line 682 "utilities/const_eval.bas"
+if(_FUNC_NUMERIC_STRING_EXP->tmp||_FUNC_NUMERIC_STRING_EXP->fixed||_FUNC_NUMERIC_STRING_EXP->readonly){
+#line 682 "utilities/const_eval.bas"
+oldstr4027=_FUNC_NUMERIC_STRING_EXP;
+#line 682 "utilities/const_eval.bas"
+if (oldstr4027->cmem_descriptor){
+#line 682 "utilities/const_eval.bas"
+_FUNC_NUMERIC_STRING_EXP=qbs_new_cmem(oldstr4027->len,0);
+#line 682 "utilities/const_eval.bas"
 }else{
-_SUB_HASHADD_STRING_A=qbs_new(oldstr4888->len,0);
+#line 682 "utilities/const_eval.bas"
+_FUNC_NUMERIC_STRING_EXP=qbs_new(oldstr4027->len,0);
+#line 682 "utilities/const_eval.bas"
 }
-memcpy(_SUB_HASHADD_STRING_A->chr,oldstr4888->chr,oldstr4888->len);
+#line 682 "utilities/const_eval.bas"
+memcpy(_FUNC_NUMERIC_STRING_EXP->chr,oldstr4027->chr,oldstr4027->len);
+#line 682 "utilities/const_eval.bas"
 }
-int32 *_SUB_HASHADD_LONG_I=NULL;
-if(_SUB_HASHADD_LONG_I==NULL){
-_SUB_HASHADD_LONG_I=(int32*)mem_static_malloc(4);
-*_SUB_HASHADD_LONG_I=0;
-}
-int32 *_SUB_HASHADD_LONG_X=NULL;
-if(_SUB_HASHADD_LONG_X==NULL){
-_SUB_HASHADD_LONG_X=(int32*)mem_static_malloc(4);
-*_SUB_HASHADD_LONG_X=0;
-}
-int32 *_SUB_HASHADD_LONG_I2=NULL;
-if(_SUB_HASHADD_LONG_I2==NULL){
-_SUB_HASHADD_LONG_I2=(int32*)mem_static_malloc(4);
-*_SUB_HASHADD_LONG_I2=0;
-}
-int32 *_SUB_HASHADD_LONG_I3=NULL;
-if(_SUB_HASHADD_LONG_I3==NULL){
-_SUB_HASHADD_LONG_I3=(int32*)mem_static_malloc(4);
-*_SUB_HASHADD_LONG_I3=0;
-}
+qbs *_FUNC_NUMERIC_STRING_ELE=NULL;
+#line 684 "utilities/const_eval.bas"
+if (!_FUNC_NUMERIC_STRING_ELE)_FUNC_NUMERIC_STRING_ELE=qbs_new(0,0);
+#line 696 "utilities/const_eval.bas"
+int32 pass4028;
+#line 696 "utilities/const_eval.bas"
+long double pass4029;

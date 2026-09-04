@@ -1,4 +1,4 @@
-if(oldstr4438){
-if(oldstr4438->fixed)qbs_set(oldstr4438,_SUB_REMOVEELEMENT_STRING_A);
-qbs_free(_SUB_REMOVEELEMENT_STRING_A);
+if(oldstr3592){
+if(oldstr3592->fixed)qbs_set(oldstr3592,_FUNC_PEEKNEXTELEMENT_STRING_A);
+qbs_free(_FUNC_PEEKNEXTELEMENT_STRING_A);
 }

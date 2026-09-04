@@ -1,43 +1,60 @@
-qbs*oldstr5138=NULL;
-if(_SUB_FREE_UDT_VARSTRINGS_STRING_N->tmp||_SUB_FREE_UDT_VARSTRINGS_STRING_N->fixed||_SUB_FREE_UDT_VARSTRINGS_STRING_N->readonly){
-oldstr5138=_SUB_FREE_UDT_VARSTRINGS_STRING_N;
-if (oldstr5138->cmem_descriptor){
-_SUB_FREE_UDT_VARSTRINGS_STRING_N=qbs_new_cmem(oldstr5138->len,0);
+#line 1537 "utilities/type.bas"
+qbs*oldstr4240=NULL;
+#line 1537 "utilities/type.bas"
+if(_SUB_APPENDDYNUDTDESCINIT_STRING_N->tmp||_SUB_APPENDDYNUDTDESCINIT_STRING_N->fixed||_SUB_APPENDDYNUDTDESCINIT_STRING_N->readonly){
+#line 1537 "utilities/type.bas"
+oldstr4240=_SUB_APPENDDYNUDTDESCINIT_STRING_N;
+#line 1537 "utilities/type.bas"
+if (oldstr4240->cmem_descriptor){
+#line 1537 "utilities/type.bas"
+_SUB_APPENDDYNUDTDESCINIT_STRING_N=qbs_new_cmem(oldstr4240->len,0);
+#line 1537 "utilities/type.bas"
 }else{
-_SUB_FREE_UDT_VARSTRINGS_STRING_N=qbs_new(oldstr5138->len,0);
+#line 1537 "utilities/type.bas"
+_SUB_APPENDDYNUDTDESCINIT_STRING_N=qbs_new(oldstr4240->len,0);
+#line 1537 "utilities/type.bas"
 }
-memcpy(_SUB_FREE_UDT_VARSTRINGS_STRING_N->chr,oldstr5138->chr,oldstr5138->len);
+#line 1537 "utilities/type.bas"
+memcpy(_SUB_APPENDDYNUDTDESCINIT_STRING_N->chr,oldstr4240->chr,oldstr4240->len);
+#line 1537 "utilities/type.bas"
 }
-int32 *_SUB_FREE_UDT_VARSTRINGS_LONG_ELEMENT=NULL;
-if(_SUB_FREE_UDT_VARSTRINGS_LONG_ELEMENT==NULL){
-_SUB_FREE_UDT_VARSTRINGS_LONG_ELEMENT=(int32*)mem_static_malloc(4);
-*_SUB_FREE_UDT_VARSTRINGS_LONG_ELEMENT=0;
+#line 1537 "utilities/type.bas"
+qbs*oldstr4241=NULL;
+#line 1537 "utilities/type.bas"
+if(_SUB_APPENDDYNUDTDESCINIT_STRING_BYTESPERELEMENT->tmp||_SUB_APPENDDYNUDTDESCINIT_STRING_BYTESPERELEMENT->fixed||_SUB_APPENDDYNUDTDESCINIT_STRING_BYTESPERELEMENT->readonly){
+#line 1537 "utilities/type.bas"
+oldstr4241=_SUB_APPENDDYNUDTDESCINIT_STRING_BYTESPERELEMENT;
+#line 1537 "utilities/type.bas"
+if (oldstr4241->cmem_descriptor){
+#line 1537 "utilities/type.bas"
+_SUB_APPENDDYNUDTDESCINIT_STRING_BYTESPERELEMENT=qbs_new_cmem(oldstr4241->len,0);
+#line 1537 "utilities/type.bas"
+}else{
+#line 1537 "utilities/type.bas"
+_SUB_APPENDDYNUDTDESCINIT_STRING_BYTESPERELEMENT=qbs_new(oldstr4241->len,0);
+#line 1537 "utilities/type.bas"
 }
-int32 *_SUB_FREE_UDT_VARSTRINGS_LONG_OFFSET=NULL;
-if(_SUB_FREE_UDT_VARSTRINGS_LONG_OFFSET==NULL){
-_SUB_FREE_UDT_VARSTRINGS_LONG_OFFSET=(int32*)mem_static_malloc(4);
-*_SUB_FREE_UDT_VARSTRINGS_LONG_OFFSET=0;
+#line 1537 "utilities/type.bas"
+memcpy(_SUB_APPENDDYNUDTDESCINIT_STRING_BYTESPERELEMENT->chr,oldstr4241->chr,oldstr4241->len);
+#line 1537 "utilities/type.bas"
 }
-int32 *_SUB_FREE_UDT_VARSTRINGS_LONG_ELEM_BYTES=NULL;
-if(_SUB_FREE_UDT_VARSTRINGS_LONG_ELEM_BYTES==NULL){
-_SUB_FREE_UDT_VARSTRINGS_LONG_ELEM_BYTES=(int32*)mem_static_malloc(4);
-*_SUB_FREE_UDT_VARSTRINGS_LONG_ELEM_BYTES=0;
+#line 1537 "utilities/type.bas"
+qbs*oldstr4242=NULL;
+#line 1537 "utilities/type.bas"
+if(_SUB_APPENDDYNUDTDESCINIT_STRING_ACC->tmp||_SUB_APPENDDYNUDTDESCINIT_STRING_ACC->fixed||_SUB_APPENDDYNUDTDESCINIT_STRING_ACC->readonly){
+#line 1537 "utilities/type.bas"
+oldstr4242=_SUB_APPENDDYNUDTDESCINIT_STRING_ACC;
+#line 1537 "utilities/type.bas"
+if (oldstr4242->cmem_descriptor){
+#line 1537 "utilities/type.bas"
+_SUB_APPENDDYNUDTDESCINIT_STRING_ACC=qbs_new_cmem(oldstr4242->len,0);
+#line 1537 "utilities/type.bas"
+}else{
+#line 1537 "utilities/type.bas"
+_SUB_APPENDDYNUDTDESCINIT_STRING_ACC=qbs_new(oldstr4242->len,0);
+#line 1537 "utilities/type.bas"
 }
-int32 *_SUB_FREE_UDT_VARSTRINGS_LONG_ARRAY_I=NULL;
-if(_SUB_FREE_UDT_VARSTRINGS_LONG_ARRAY_I==NULL){
-_SUB_FREE_UDT_VARSTRINGS_LONG_ARRAY_I=(int32*)mem_static_malloc(4);
-*_SUB_FREE_UDT_VARSTRINGS_LONG_ARRAY_I=0;
+#line 1537 "utilities/type.bas"
+memcpy(_SUB_APPENDDYNUDTDESCINIT_STRING_ACC->chr,oldstr4242->chr,oldstr4242->len);
+#line 1537 "utilities/type.bas"
 }
-int64 fornext_value5141;
-int64 fornext_finalvalue5141;
-int64 fornext_step5141;
-uint8 fornext_step_negative5141;
-int32 *_SUB_FREE_UDT_VARSTRINGS_LONG_ARRAY_OFFSET=NULL;
-if(_SUB_FREE_UDT_VARSTRINGS_LONG_ARRAY_OFFSET==NULL){
-_SUB_FREE_UDT_VARSTRINGS_LONG_ARRAY_OFFSET=(int32*)mem_static_malloc(4);
-*_SUB_FREE_UDT_VARSTRINGS_LONG_ARRAY_OFFSET=0;
-}
-int16 pass5142;
-int32 pass5143;
-int16 pass5144;
-int32 pass5145;

@@ -1,24 +1,48 @@
-qbs*oldstr5201=NULL;
-if(_SUB_COPY_FULL_UDT_DYN_STRING_DST->tmp||_SUB_COPY_FULL_UDT_DYN_STRING_DST->fixed||_SUB_COPY_FULL_UDT_DYN_STRING_DST->readonly){
-oldstr5201=_SUB_COPY_FULL_UDT_DYN_STRING_DST;
-if (oldstr5201->cmem_descriptor){
-_SUB_COPY_FULL_UDT_DYN_STRING_DST=qbs_new_cmem(oldstr5201->len,0);
+#line 1732 "utilities/type.bas"
+qbs*oldstr4273=NULL;
+#line 1732 "utilities/type.bas"
+if(_SUB_APPENDDYNMEMBERERASEEX_STRING_DESC_SLOT->tmp||_SUB_APPENDDYNMEMBERERASEEX_STRING_DESC_SLOT->fixed||_SUB_APPENDDYNMEMBERERASEEX_STRING_DESC_SLOT->readonly){
+#line 1732 "utilities/type.bas"
+oldstr4273=_SUB_APPENDDYNMEMBERERASEEX_STRING_DESC_SLOT;
+#line 1732 "utilities/type.bas"
+if (oldstr4273->cmem_descriptor){
+#line 1732 "utilities/type.bas"
+_SUB_APPENDDYNMEMBERERASEEX_STRING_DESC_SLOT=qbs_new_cmem(oldstr4273->len,0);
+#line 1732 "utilities/type.bas"
 }else{
-_SUB_COPY_FULL_UDT_DYN_STRING_DST=qbs_new(oldstr5201->len,0);
+#line 1732 "utilities/type.bas"
+_SUB_APPENDDYNMEMBERERASEEX_STRING_DESC_SLOT=qbs_new(oldstr4273->len,0);
+#line 1732 "utilities/type.bas"
 }
-memcpy(_SUB_COPY_FULL_UDT_DYN_STRING_DST->chr,oldstr5201->chr,oldstr5201->len);
+#line 1732 "utilities/type.bas"
+memcpy(_SUB_APPENDDYNMEMBERERASEEX_STRING_DESC_SLOT->chr,oldstr4273->chr,oldstr4273->len);
+#line 1732 "utilities/type.bas"
 }
-qbs*oldstr5202=NULL;
-if(_SUB_COPY_FULL_UDT_DYN_STRING_SRC->tmp||_SUB_COPY_FULL_UDT_DYN_STRING_SRC->fixed||_SUB_COPY_FULL_UDT_DYN_STRING_SRC->readonly){
-oldstr5202=_SUB_COPY_FULL_UDT_DYN_STRING_SRC;
-if (oldstr5202->cmem_descriptor){
-_SUB_COPY_FULL_UDT_DYN_STRING_SRC=qbs_new_cmem(oldstr5202->len,0);
+#line 1732 "utilities/type.bas"
+qbs*oldstr4274=NULL;
+#line 1732 "utilities/type.bas"
+if(_SUB_APPENDDYNMEMBERERASEEX_STRING_ACC->tmp||_SUB_APPENDDYNMEMBERERASEEX_STRING_ACC->fixed||_SUB_APPENDDYNMEMBERERASEEX_STRING_ACC->readonly){
+#line 1732 "utilities/type.bas"
+oldstr4274=_SUB_APPENDDYNMEMBERERASEEX_STRING_ACC;
+#line 1732 "utilities/type.bas"
+if (oldstr4274->cmem_descriptor){
+#line 1732 "utilities/type.bas"
+_SUB_APPENDDYNMEMBERERASEEX_STRING_ACC=qbs_new_cmem(oldstr4274->len,0);
+#line 1732 "utilities/type.bas"
 }else{
-_SUB_COPY_FULL_UDT_DYN_STRING_SRC=qbs_new(oldstr5202->len,0);
+#line 1732 "utilities/type.bas"
+_SUB_APPENDDYNMEMBERERASEEX_STRING_ACC=qbs_new(oldstr4274->len,0);
+#line 1732 "utilities/type.bas"
 }
-memcpy(_SUB_COPY_FULL_UDT_DYN_STRING_SRC->chr,oldstr5202->chr,oldstr5202->len);
+#line 1732 "utilities/type.bas"
+memcpy(_SUB_APPENDDYNMEMBERERASEEX_STRING_ACC->chr,oldstr4274->chr,oldstr4274->len);
+#line 1732 "utilities/type.bas"
 }
-qbs *_SUB_COPY_FULL_UDT_DYN_STRING_DYN_ACC=NULL;
-if (!_SUB_COPY_FULL_UDT_DYN_STRING_DYN_ACC)_SUB_COPY_FULL_UDT_DYN_STRING_DYN_ACC=qbs_new(0,0);
-int16 pass5203;
-int16 pass5204;
+qbs *_SUB_APPENDDYNMEMBERERASEEX_STRING_CR=NULL;
+#line 1733 "utilities/type.bas"
+if (!_SUB_APPENDDYNMEMBERERASEEX_STRING_CR)_SUB_APPENDDYNMEMBERERASEEX_STRING_CR=qbs_new(0,0);
+qbs *_SUB_APPENDDYNMEMBERERASEEX_STRING_ELEM_IDX=NULL;
+#line 1734 "utilities/type.bas"
+if (!_SUB_APPENDDYNMEMBERERASEEX_STRING_ELEM_IDX)_SUB_APPENDDYNMEMBERERASEEX_STRING_ELEM_IDX=qbs_new(0,0);
+#line 1758 "utilities/type.bas"
+int32 pass4275;
