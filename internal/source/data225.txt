@@ -1,19 +1,29 @@
-int32 *_FUNC_NUMERIC_LONG_NUMERIC=NULL;
-if(_FUNC_NUMERIC_LONG_NUMERIC==NULL){
-_FUNC_NUMERIC_LONG_NUMERIC=(int32*)mem_static_malloc(4);
-*_FUNC_NUMERIC_LONG_NUMERIC=0;
+int32 *_FUNC_NUMERICEXPRESSION_LONG_NUMERICEXPRESSION=NULL;
+#line 251 "utilities/const_eval.bas"
+if(_FUNC_NUMERICEXPRESSION_LONG_NUMERICEXPRESSION==NULL){
+#line 251 "utilities/const_eval.bas"
+_FUNC_NUMERICEXPRESSION_LONG_NUMERICEXPRESSION=(int32*)mem_static_malloc(4);
+#line 251 "utilities/const_eval.bas"
+*_FUNC_NUMERICEXPRESSION_LONG_NUMERICEXPRESSION=0;
+#line 251 "utilities/const_eval.bas"
 }
-qbs*oldstr4844=NULL;
-if(_FUNC_NUMERIC_STRING_EXP->tmp||_FUNC_NUMERIC_STRING_EXP->fixed||_FUNC_NUMERIC_STRING_EXP->readonly){
-oldstr4844=_FUNC_NUMERIC_STRING_EXP;
-if (oldstr4844->cmem_descriptor){
-_FUNC_NUMERIC_STRING_EXP=qbs_new_cmem(oldstr4844->len,0);
+#line 251 "utilities/const_eval.bas"
+qbs*oldstr3902=NULL;
+#line 251 "utilities/const_eval.bas"
+if(_FUNC_NUMERICEXPRESSION_STRING_EXP->tmp||_FUNC_NUMERICEXPRESSION_STRING_EXP->fixed||_FUNC_NUMERICEXPRESSION_STRING_EXP->readonly){
+#line 251 "utilities/const_eval.bas"
+oldstr3902=_FUNC_NUMERICEXPRESSION_STRING_EXP;
+#line 251 "utilities/const_eval.bas"
+if (oldstr3902->cmem_descriptor){
+#line 251 "utilities/const_eval.bas"
+_FUNC_NUMERICEXPRESSION_STRING_EXP=qbs_new_cmem(oldstr3902->len,0);
+#line 251 "utilities/const_eval.bas"
 }else{
-_FUNC_NUMERIC_STRING_EXP=qbs_new(oldstr4844->len,0);
+#line 251 "utilities/const_eval.bas"
+_FUNC_NUMERICEXPRESSION_STRING_EXP=qbs_new(oldstr3902->len,0);
+#line 251 "utilities/const_eval.bas"
 }
-memcpy(_FUNC_NUMERIC_STRING_EXP->chr,oldstr4844->chr,oldstr4844->len);
+#line 251 "utilities/const_eval.bas"
+memcpy(_FUNC_NUMERICEXPRESSION_STRING_EXP->chr,oldstr3902->chr,oldstr3902->len);
+#line 251 "utilities/const_eval.bas"
 }
-qbs *_FUNC_NUMERIC_STRING_ELE=NULL;
-if (!_FUNC_NUMERIC_STRING_ELE)_FUNC_NUMERIC_STRING_ELE=qbs_new(0,0);
-int32 pass4845;
-long double pass4846;

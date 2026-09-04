@@ -1,23 +1,80 @@
-int32 *_FUNC_IDEHLEN_LONG_IDEHLEN=NULL;
-if(_FUNC_IDEHLEN_LONG_IDEHLEN==NULL){
-_FUNC_IDEHLEN_LONG_IDEHLEN=(int32*)mem_static_malloc(4);
-*_FUNC_IDEHLEN_LONG_IDEHLEN=0;
-}
-qbs*oldstr6766=NULL;
-if(_FUNC_IDEHLEN_STRING_A->tmp||_FUNC_IDEHLEN_STRING_A->fixed||_FUNC_IDEHLEN_STRING_A->readonly){
-oldstr6766=_FUNC_IDEHLEN_STRING_A;
-if (oldstr6766->cmem_descriptor){
-_FUNC_IDEHLEN_STRING_A=qbs_new_cmem(oldstr6766->len,0);
+#line 11250 "ide/ide_methods.bas"
+qbs*oldstr5805=NULL;
+#line 11250 "ide/ide_methods.bas"
+if(_SUB_FINDQUOTECOMMENT_STRING_TEXT->tmp||_SUB_FINDQUOTECOMMENT_STRING_TEXT->fixed||_SUB_FINDQUOTECOMMENT_STRING_TEXT->readonly){
+#line 11250 "ide/ide_methods.bas"
+oldstr5805=_SUB_FINDQUOTECOMMENT_STRING_TEXT;
+#line 11250 "ide/ide_methods.bas"
+if (oldstr5805->cmem_descriptor){
+#line 11250 "ide/ide_methods.bas"
+_SUB_FINDQUOTECOMMENT_STRING_TEXT=qbs_new_cmem(oldstr5805->len,0);
+#line 11250 "ide/ide_methods.bas"
 }else{
-_FUNC_IDEHLEN_STRING_A=qbs_new(oldstr6766->len,0);
+#line 11250 "ide/ide_methods.bas"
+_SUB_FINDQUOTECOMMENT_STRING_TEXT=qbs_new(oldstr5805->len,0);
+#line 11250 "ide/ide_methods.bas"
 }
-memcpy(_FUNC_IDEHLEN_STRING_A->chr,oldstr6766->chr,oldstr6766->len);
+#line 11250 "ide/ide_methods.bas"
+memcpy(_SUB_FINDQUOTECOMMENT_STRING_TEXT->chr,oldstr5805->chr,oldstr5805->len);
+#line 11250 "ide/ide_methods.bas"
 }
-byte_element_struct *byte_element_6767=NULL;
-if (!byte_element_6767){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6767=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6767=(byte_element_struct*)mem_static_malloc(12);
+int32 *_SUB_FINDQUOTECOMMENT_LONG_CURSOR=NULL;
+#line 11252 "ide/ide_methods.bas"
+if(_SUB_FINDQUOTECOMMENT_LONG_CURSOR==NULL){
+#line 11252 "ide/ide_methods.bas"
+_SUB_FINDQUOTECOMMENT_LONG_CURSOR=(int32*)mem_static_malloc(4);
+#line 11252 "ide/ide_methods.bas"
+*_SUB_FINDQUOTECOMMENT_LONG_CURSOR=0;
+#line 11252 "ide/ide_methods.bas"
 }
-byte_element_struct *byte_element_6768=NULL;
-if (!byte_element_6768){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6768=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6768=(byte_element_struct*)mem_static_malloc(12);
+#line 11253 "ide/ide_methods.bas"
+byte_element_struct *byte_element_5806=NULL;
+#line 11253 "ide/ide_methods.bas"
+if (!byte_element_5806){
+#line 11253 "ide/ide_methods.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5806=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5806=(byte_element_struct*)mem_static_malloc(12);
+#line 11253 "ide/ide_methods.bas"
+}
+#line 11253 "ide/ide_methods.bas"
+byte_element_struct *byte_element_5807=NULL;
+#line 11253 "ide/ide_methods.bas"
+if (!byte_element_5807){
+#line 11253 "ide/ide_methods.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5807=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5807=(byte_element_struct*)mem_static_malloc(12);
+#line 11253 "ide/ide_methods.bas"
+}
+int32 *_SUB_FINDQUOTECOMMENT_LONG_FIND_K=NULL;
+#line 11254 "ide/ide_methods.bas"
+if(_SUB_FINDQUOTECOMMENT_LONG_FIND_K==NULL){
+#line 11254 "ide/ide_methods.bas"
+_SUB_FINDQUOTECOMMENT_LONG_FIND_K=(int32*)mem_static_malloc(4);
+#line 11254 "ide/ide_methods.bas"
+*_SUB_FINDQUOTECOMMENT_LONG_FIND_K=0;
+#line 11254 "ide/ide_methods.bas"
+}
+#line 11254 "ide/ide_methods.bas"
+int64 fornext_value5809;
+#line 11254 "ide/ide_methods.bas"
+int64 fornext_finalvalue5809;
+#line 11254 "ide/ide_methods.bas"
+int64 fornext_step5809;
+#line 11254 "ide/ide_methods.bas"
+uint8 fornext_step_negative5809;
+#line 11255 "ide/ide_methods.bas"
+static qbs *sc_5810=qbs_new(0,0);
+#line 11265 "ide/ide_methods.bas"
+byte_element_struct *byte_element_5811=NULL;
+#line 11265 "ide/ide_methods.bas"
+if (!byte_element_5811){
+#line 11265 "ide/ide_methods.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5811=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5811=(byte_element_struct*)mem_static_malloc(12);
+#line 11265 "ide/ide_methods.bas"
+}
+#line 11265 "ide/ide_methods.bas"
+byte_element_struct *byte_element_5812=NULL;
+#line 11265 "ide/ide_methods.bas"
+if (!byte_element_5812){
+#line 11265 "ide/ide_methods.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5812=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5812=(byte_element_struct*)mem_static_malloc(12);
+#line 11265 "ide/ide_methods.bas"
 }

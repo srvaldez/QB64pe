@@ -1,1 +1,5 @@
-qbs_free(_FUNC_TYPEVALUE2SYMBOL_STRING_S);
+if(oldstr4072){
+if(oldstr4072->fixed)qbs_set(oldstr4072,_FUNC_HASHFIND_STRING_A);
+qbs_free(_FUNC_HASHFIND_STRING_A);
+}
+qbs_free(_FUNC_HASHFIND_STRING_UA);

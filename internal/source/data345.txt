@@ -1,114 +1,51 @@
-qbs *_FUNC_PARSERANGE_STRING_PARSERANGE=NULL;
-if (!_FUNC_PARSERANGE_STRING_PARSERANGE)_FUNC_PARSERANGE_STRING_PARSERANGE=qbs_new(0,0);
-qbs*oldstr6575=NULL;
-if(_FUNC_PARSERANGE_STRING___TEXT->tmp||_FUNC_PARSERANGE_STRING___TEXT->fixed||_FUNC_PARSERANGE_STRING___TEXT->readonly){
-oldstr6575=_FUNC_PARSERANGE_STRING___TEXT;
-if (oldstr6575->cmem_descriptor){
-_FUNC_PARSERANGE_STRING___TEXT=qbs_new_cmem(oldstr6575->len,0);
-}else{
-_FUNC_PARSERANGE_STRING___TEXT=qbs_new(oldstr6575->len,0);
+qbs *_SUB_COPYFROMOTHER_STRING_OQBI=NULL;
+#line 4 "ide/config/cfg_methods.bas"
+if (!_SUB_COPYFROMOTHER_STRING_OQBI)_SUB_COPYFROMOTHER_STRING_OQBI=qbs_new(0,0);
+qbs *_SUB_COPYFROMOTHER_STRING_CHKNAME=NULL;
+#line 6 "ide/config/cfg_methods.bas"
+if (!_SUB_COPYFROMOTHER_STRING_CHKNAME)_SUB_COPYFROMOTHER_STRING_CHKNAME=qbs_new(0,0);
+int16 *_SUB_COPYFROMOTHER_INTEGER_OQBV=NULL;
+#line 9 "ide/config/cfg_methods.bas"
+if(_SUB_COPYFROMOTHER_INTEGER_OQBV==NULL){
+#line 9 "ide/config/cfg_methods.bas"
+_SUB_COPYFROMOTHER_INTEGER_OQBV=(int16*)mem_static_malloc(2);
+#line 9 "ide/config/cfg_methods.bas"
+*_SUB_COPYFROMOTHER_INTEGER_OQBV=0;
+#line 9 "ide/config/cfg_methods.bas"
 }
-memcpy(_FUNC_PARSERANGE_STRING___TEXT->chr,oldstr6575->chr,oldstr6575->len);
+int32 *_SUB_COPYFROMOTHER_LONG_NUL=NULL;
+#line 11 "ide/config/cfg_methods.bas"
+if(_SUB_COPYFROMOTHER_LONG_NUL==NULL){
+#line 11 "ide/config/cfg_methods.bas"
+_SUB_COPYFROMOTHER_LONG_NUL=(int32*)mem_static_malloc(4);
+#line 11 "ide/config/cfg_methods.bas"
+*_SUB_COPYFROMOTHER_LONG_NUL=0;
+#line 11 "ide/config/cfg_methods.bas"
 }
-int8 *_FUNC_PARSERANGE_BYTE_ZEROINCLUDED=NULL;
-if(_FUNC_PARSERANGE_BYTE_ZEROINCLUDED==NULL){
-_FUNC_PARSERANGE_BYTE_ZEROINCLUDED=(int8*)mem_static_malloc(1);
-*_FUNC_PARSERANGE_BYTE_ZEROINCLUDED=0;
+qbs *_SUB_COPYFROMOTHER_STRING_OQBD=NULL;
+#line 17 "ide/config/cfg_methods.bas"
+if (!_SUB_COPYFROMOTHER_STRING_OQBD)_SUB_COPYFROMOTHER_STRING_OQBD=qbs_new(0,0);
+int16 *_SUB_COPYFROMOTHER_INTEGER_SID=NULL;
+#line 18 "ide/config/cfg_methods.bas"
+if(_SUB_COPYFROMOTHER_INTEGER_SID==NULL){
+#line 18 "ide/config/cfg_methods.bas"
+_SUB_COPYFROMOTHER_INTEGER_SID=(int16*)mem_static_malloc(2);
+#line 18 "ide/config/cfg_methods.bas"
+*_SUB_COPYFROMOTHER_INTEGER_SID=0;
+#line 18 "ide/config/cfg_methods.bas"
 }
-qbs *_FUNC_PARSERANGE_STRING_FILTER=NULL;
-if (!_FUNC_PARSERANGE_STRING_FILTER)_FUNC_PARSERANGE_STRING_FILTER=qbs_new(0,0);
-int32 *_FUNC_PARSERANGE_LONG_J=NULL;
-if(_FUNC_PARSERANGE_LONG_J==NULL){
-_FUNC_PARSERANGE_LONG_J=(int32*)mem_static_malloc(4);
-*_FUNC_PARSERANGE_LONG_J=0;
+int16 *_SUB_COPYFROMOTHER_INTEGER_ID=NULL;
+#line 20 "ide/config/cfg_methods.bas"
+if(_SUB_COPYFROMOTHER_INTEGER_ID==NULL){
+#line 20 "ide/config/cfg_methods.bas"
+_SUB_COPYFROMOTHER_INTEGER_ID=(int16*)mem_static_malloc(2);
+#line 20 "ide/config/cfg_methods.bas"
+*_SUB_COPYFROMOTHER_INTEGER_ID=0;
+#line 20 "ide/config/cfg_methods.bas"
 }
-qbs *_FUNC_PARSERANGE_STRING_TEMP=NULL;
-if (!_FUNC_PARSERANGE_STRING_TEMP)_FUNC_PARSERANGE_STRING_TEMP=qbs_new(0,0);
-int32 *_FUNC_PARSERANGE_LONG_READING=NULL;
-if(_FUNC_PARSERANGE_LONG_READING==NULL){
-_FUNC_PARSERANGE_LONG_READING=(int32*)mem_static_malloc(4);
-*_FUNC_PARSERANGE_LONG_READING=0;
-}
-int64 fornext_value6577;
-int64 fornext_finalvalue6577;
-int64 fornext_step6577;
-uint8 fornext_step_negative6577;
-byte_element_struct *byte_element_6578=NULL;
-if (!byte_element_6578){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6578=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6578=(byte_element_struct*)mem_static_malloc(12);
-}
-int32 *_FUNC_PARSERANGE_LONG_V=NULL;
-if(_FUNC_PARSERANGE_LONG_V==NULL){
-_FUNC_PARSERANGE_LONG_V=(int32*)mem_static_malloc(4);
-*_FUNC_PARSERANGE_LONG_V=0;
-}
-int32 *_FUNC_PARSERANGE_LONG_PREVCHAR=NULL;
-if(_FUNC_PARSERANGE_LONG_PREVCHAR==NULL){
-_FUNC_PARSERANGE_LONG_PREVCHAR=(int32*)mem_static_malloc(4);
-*_FUNC_PARSERANGE_LONG_PREVCHAR=0;
-}
-byte_element_struct *byte_element_6580=NULL;
-if (!byte_element_6580){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6580=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6580=(byte_element_struct*)mem_static_malloc(12);
-}
-qbs *_FUNC_PARSERANGE_STRING_V1=NULL;
-if (!_FUNC_PARSERANGE_STRING_V1)_FUNC_PARSERANGE_STRING_V1=qbs_new(0,0);
-qbs *_FUNC_PARSERANGE_STRING_V2=NULL;
-if (!_FUNC_PARSERANGE_STRING_V2)_FUNC_PARSERANGE_STRING_V2=qbs_new(0,0);
-byte_element_struct *byte_element_6581=NULL;
-if (!byte_element_6581){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6581=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6581=(byte_element_struct*)mem_static_malloc(12);
-}
-qbs *_FUNC_PARSERANGE_STRING_RETURNVALUE=NULL;
-if (!_FUNC_PARSERANGE_STRING_RETURNVALUE)_FUNC_PARSERANGE_STRING_RETURNVALUE=qbs_new(0,0);
-int32 *_FUNC_PARSERANGE_LONG_I=NULL;
-if(_FUNC_PARSERANGE_LONG_I==NULL){
-_FUNC_PARSERANGE_LONG_I=(int32*)mem_static_malloc(4);
-*_FUNC_PARSERANGE_LONG_I=0;
-}
-int64 fornext_value6583;
-int64 fornext_finalvalue6583;
-int64 fornext_step6583;
-uint8 fornext_step_negative6583;
-byte_element_struct *byte_element_6584=NULL;
-if (!byte_element_6584){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6584=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6584=(byte_element_struct*)mem_static_malloc(12);
-}
-int32 *_FUNC_PARSERANGE_LONG_V1=NULL;
-if(_FUNC_PARSERANGE_LONG_V1==NULL){
-_FUNC_PARSERANGE_LONG_V1=(int32*)mem_static_malloc(4);
-*_FUNC_PARSERANGE_LONG_V1=0;
-}
-int32 *_FUNC_PARSERANGE_LONG_V2=NULL;
-if(_FUNC_PARSERANGE_LONG_V2==NULL){
-_FUNC_PARSERANGE_LONG_V2=(int32*)mem_static_malloc(4);
-*_FUNC_PARSERANGE_LONG_V2=0;
-}
-byte_element_struct *byte_element_6585=NULL;
-if (!byte_element_6585){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6585=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6585=(byte_element_struct*)mem_static_malloc(12);
-}
-byte_element_struct *byte_element_6586=NULL;
-if (!byte_element_6586){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6586=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6586=(byte_element_struct*)mem_static_malloc(12);
-}
-byte_element_struct *byte_element_6587=NULL;
-if (!byte_element_6587){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6587=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6587=(byte_element_struct*)mem_static_malloc(12);
-}
-byte_element_struct *byte_element_6588=NULL;
-if (!byte_element_6588){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6588=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6588=(byte_element_struct*)mem_static_malloc(12);
-}
-int64 fornext_value6590;
-int64 fornext_finalvalue6590;
-int64 fornext_step6590;
-uint8 fornext_step_negative6590;
-byte_element_struct *byte_element_6591=NULL;
-if (!byte_element_6591){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6591=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6591=(byte_element_struct*)mem_static_malloc(12);
-}
-byte_element_struct *byte_element_6592=NULL;
-if (!byte_element_6592){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6592=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6592=(byte_element_struct*)mem_static_malloc(12);
-}
+qbs *_SUB_COPYFROMOTHER_STRING_NCSO=NULL;
+#line 26 "ide/config/cfg_methods.bas"
+if (!_SUB_COPYFROMOTHER_STRING_NCSO)_SUB_COPYFROMOTHER_STRING_NCSO=qbs_new(0,0);
+qbs *_SUB_COPYFROMOTHER_STRING_TEMP=NULL;
+#line 55 "ide/config/cfg_methods.bas"
+if (!_SUB_COPYFROMOTHER_STRING_TEMP)_SUB_COPYFROMOTHER_STRING_TEMP=qbs_new(0,0);

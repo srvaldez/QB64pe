@@ -1,50 +1,106 @@
-qbs*oldstr4310=NULL;
-if(_SUB_ADDWARNING_STRING_INCFILENAME->tmp||_SUB_ADDWARNING_STRING_INCFILENAME->fixed||_SUB_ADDWARNING_STRING_INCFILENAME->readonly){
-oldstr4310=_SUB_ADDWARNING_STRING_INCFILENAME;
-if (oldstr4310->cmem_descriptor){
-_SUB_ADDWARNING_STRING_INCFILENAME=qbs_new_cmem(oldstr4310->len,0);
+int32 *_FUNC_VALIDNAME_LONG_VALIDNAME=NULL;
+#line 28117 "qb64pe.bas"
+if(_FUNC_VALIDNAME_LONG_VALIDNAME==NULL){
+#line 28117 "qb64pe.bas"
+_FUNC_VALIDNAME_LONG_VALIDNAME=(int32*)mem_static_malloc(4);
+#line 28117 "qb64pe.bas"
+*_FUNC_VALIDNAME_LONG_VALIDNAME=0;
+#line 28117 "qb64pe.bas"
+}
+#line 28117 "qb64pe.bas"
+qbs*oldstr3413=NULL;
+#line 28117 "qb64pe.bas"
+if(_FUNC_VALIDNAME_STRING_A->tmp||_FUNC_VALIDNAME_STRING_A->fixed||_FUNC_VALIDNAME_STRING_A->readonly){
+#line 28117 "qb64pe.bas"
+oldstr3413=_FUNC_VALIDNAME_STRING_A;
+#line 28117 "qb64pe.bas"
+if (oldstr3413->cmem_descriptor){
+#line 28117 "qb64pe.bas"
+_FUNC_VALIDNAME_STRING_A=qbs_new_cmem(oldstr3413->len,0);
+#line 28117 "qb64pe.bas"
 }else{
-_SUB_ADDWARNING_STRING_INCFILENAME=qbs_new(oldstr4310->len,0);
+#line 28117 "qb64pe.bas"
+_FUNC_VALIDNAME_STRING_A=qbs_new(oldstr3413->len,0);
+#line 28117 "qb64pe.bas"
 }
-memcpy(_SUB_ADDWARNING_STRING_INCFILENAME->chr,oldstr4310->chr,oldstr4310->len);
+#line 28117 "qb64pe.bas"
+memcpy(_FUNC_VALIDNAME_STRING_A->chr,oldstr3413->chr,oldstr3413->len);
+#line 28117 "qb64pe.bas"
 }
-qbs*oldstr4311=NULL;
-if(_SUB_ADDWARNING_STRING_HEADER->tmp||_SUB_ADDWARNING_STRING_HEADER->fixed||_SUB_ADDWARNING_STRING_HEADER->readonly){
-oldstr4311=_SUB_ADDWARNING_STRING_HEADER;
-if (oldstr4311->cmem_descriptor){
-_SUB_ADDWARNING_STRING_HEADER=qbs_new_cmem(oldstr4311->len,0);
-}else{
-_SUB_ADDWARNING_STRING_HEADER=qbs_new(oldstr4311->len,0);
+int32 *_FUNC_VALIDNAME_LONG_L=NULL;
+#line 28123 "qb64pe.bas"
+if(_FUNC_VALIDNAME_LONG_L==NULL){
+#line 28123 "qb64pe.bas"
+_FUNC_VALIDNAME_LONG_L=(int32*)mem_static_malloc(4);
+#line 28123 "qb64pe.bas"
+*_FUNC_VALIDNAME_LONG_L=0;
+#line 28123 "qb64pe.bas"
 }
-memcpy(_SUB_ADDWARNING_STRING_HEADER->chr,oldstr4311->chr,oldstr4311->len);
+#line 28123 "qb64pe.bas"
+byte_element_struct *byte_element_3414=NULL;
+#line 28123 "qb64pe.bas"
+if (!byte_element_3414){
+#line 28123 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3414=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3414=(byte_element_struct*)mem_static_malloc(12);
+#line 28123 "qb64pe.bas"
 }
-qbs*oldstr4312=NULL;
-if(_SUB_ADDWARNING_STRING_TEXT->tmp||_SUB_ADDWARNING_STRING_TEXT->fixed||_SUB_ADDWARNING_STRING_TEXT->readonly){
-oldstr4312=_SUB_ADDWARNING_STRING_TEXT;
-if (oldstr4312->cmem_descriptor){
-_SUB_ADDWARNING_STRING_TEXT=qbs_new_cmem(oldstr4312->len,0);
-}else{
-_SUB_ADDWARNING_STRING_TEXT=qbs_new(oldstr4312->len,0);
+int32 *_FUNC_VALIDNAME_LONG_I=NULL;
+#line 28128 "qb64pe.bas"
+if(_FUNC_VALIDNAME_LONG_I==NULL){
+#line 28128 "qb64pe.bas"
+_FUNC_VALIDNAME_LONG_I=(int32*)mem_static_malloc(4);
+#line 28128 "qb64pe.bas"
+*_FUNC_VALIDNAME_LONG_I=0;
+#line 28128 "qb64pe.bas"
 }
-memcpy(_SUB_ADDWARNING_STRING_TEXT->chr,oldstr4312->chr,oldstr4312->len);
+#line 28130 "qb64pe.bas"
+byte_element_struct *byte_element_3416=NULL;
+#line 28130 "qb64pe.bas"
+if (!byte_element_3416){
+#line 28130 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3416=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3416=(byte_element_struct*)mem_static_malloc(12);
+#line 28130 "qb64pe.bas"
 }
-qbs *_SUB_ADDWARNING_STRING_THISSOURCE=NULL;
-if (!_SUB_ADDWARNING_STRING_THISSOURCE)_SUB_ADDWARNING_STRING_THISSOURCE=qbs_new(0,0);
-byte_element_struct *byte_element_4313=NULL;
-if (!byte_element_4313){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4313=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4313=(byte_element_struct*)mem_static_malloc(12);
+#line 28134 "qb64pe.bas"
+byte_element_struct *byte_element_3417=NULL;
+#line 28134 "qb64pe.bas"
+if (!byte_element_3417){
+#line 28134 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3417=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3417=(byte_element_struct*)mem_static_malloc(12);
+#line 28134 "qb64pe.bas"
 }
-qbs *_SUB_ADDWARNING_STRING_THISINCNAME=NULL;
-if (!_SUB_ADDWARNING_STRING_THISINCNAME)_SUB_ADDWARNING_STRING_THISINCNAME=qbs_new(0,0);
-byte_element_struct *byte_element_4314=NULL;
-if (!byte_element_4314){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4314=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4314=(byte_element_struct*)mem_static_malloc(12);
+#line 28155 "qb64pe.bas"
+int64 fornext_value3419;
+#line 28155 "qb64pe.bas"
+int64 fornext_finalvalue3419;
+#line 28155 "qb64pe.bas"
+int64 fornext_step3419;
+#line 28155 "qb64pe.bas"
+uint8 fornext_step_negative3419;
+int32 *_FUNC_VALIDNAME_LONG_A=NULL;
+#line 28156 "qb64pe.bas"
+if(_FUNC_VALIDNAME_LONG_A==NULL){
+#line 28156 "qb64pe.bas"
+_FUNC_VALIDNAME_LONG_A=(int32*)mem_static_malloc(4);
+#line 28156 "qb64pe.bas"
+*_FUNC_VALIDNAME_LONG_A=0;
+#line 28156 "qb64pe.bas"
 }
-byte_element_struct *byte_element_4321=NULL;
-if (!byte_element_4321){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4321=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4321=(byte_element_struct*)mem_static_malloc(12);
+int32 *_FUNC_VALIDNAME_LONG_TRAILINGUNDERSCORE=NULL;
+#line 28159 "qb64pe.bas"
+if(_FUNC_VALIDNAME_LONG_TRAILINGUNDERSCORE==NULL){
+#line 28159 "qb64pe.bas"
+_FUNC_VALIDNAME_LONG_TRAILINGUNDERSCORE=(int32*)mem_static_malloc(4);
+#line 28159 "qb64pe.bas"
+*_FUNC_VALIDNAME_LONG_TRAILINGUNDERSCORE=0;
+#line 28159 "qb64pe.bas"
 }
-byte_element_struct *byte_element_4323=NULL;
-if (!byte_element_4323){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4323=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4323=(byte_element_struct*)mem_static_malloc(12);
+int32 *_FUNC_VALIDNAME_LONG_ALPHABETLETTER=NULL;
+#line 28160 "qb64pe.bas"
+if(_FUNC_VALIDNAME_LONG_ALPHABETLETTER==NULL){
+#line 28160 "qb64pe.bas"
+_FUNC_VALIDNAME_LONG_ALPHABETLETTER=(int32*)mem_static_malloc(4);
+#line 28160 "qb64pe.bas"
+*_FUNC_VALIDNAME_LONG_ALPHABETLETTER=0;
+#line 28160 "qb64pe.bas"
 }

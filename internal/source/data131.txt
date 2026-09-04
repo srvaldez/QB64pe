@@ -1,31 +1,61 @@
-qbs *_FUNC_GETELEMENT_STRING_GETELEMENT=NULL;
-if (!_FUNC_GETELEMENT_STRING_GETELEMENT)_FUNC_GETELEMENT_STRING_GETELEMENT=qbs_new(0,0);
-qbs*oldstr4411=NULL;
-if(_FUNC_GETELEMENT_STRING_A->tmp||_FUNC_GETELEMENT_STRING_A->fixed||_FUNC_GETELEMENT_STRING_A->readonly){
-oldstr4411=_FUNC_GETELEMENT_STRING_A;
-if (oldstr4411->cmem_descriptor){
-_FUNC_GETELEMENT_STRING_A=qbs_new_cmem(oldstr4411->len,0);
+#line 73 "utilities/file.bas"
+qbs*oldstr3558=NULL;
+#line 73 "utilities/file.bas"
+if(_SUB_PATH_SLASH_CORRECT_STRING_A->tmp||_SUB_PATH_SLASH_CORRECT_STRING_A->fixed||_SUB_PATH_SLASH_CORRECT_STRING_A->readonly){
+#line 73 "utilities/file.bas"
+oldstr3558=_SUB_PATH_SLASH_CORRECT_STRING_A;
+#line 73 "utilities/file.bas"
+if (oldstr3558->cmem_descriptor){
+#line 73 "utilities/file.bas"
+_SUB_PATH_SLASH_CORRECT_STRING_A=qbs_new_cmem(oldstr3558->len,0);
+#line 73 "utilities/file.bas"
 }else{
-_FUNC_GETELEMENT_STRING_A=qbs_new(oldstr4411->len,0);
+#line 73 "utilities/file.bas"
+_SUB_PATH_SLASH_CORRECT_STRING_A=qbs_new(oldstr3558->len,0);
+#line 73 "utilities/file.bas"
 }
-memcpy(_FUNC_GETELEMENT_STRING_A->chr,oldstr4411->chr,oldstr4411->len);
+#line 73 "utilities/file.bas"
+memcpy(_SUB_PATH_SLASH_CORRECT_STRING_A->chr,oldstr3558->chr,oldstr3558->len);
+#line 73 "utilities/file.bas"
 }
-int32 *_FUNC_GETELEMENT_LONG_P=NULL;
-if(_FUNC_GETELEMENT_LONG_P==NULL){
-_FUNC_GETELEMENT_LONG_P=(int32*)mem_static_malloc(4);
-*_FUNC_GETELEMENT_LONG_P=0;
+int32 *_SUB_PATH_SLASH_CORRECT_LONG_X=NULL;
+#line 75 "utilities/file.bas"
+if(_SUB_PATH_SLASH_CORRECT_LONG_X==NULL){
+#line 75 "utilities/file.bas"
+_SUB_PATH_SLASH_CORRECT_LONG_X=(int32*)mem_static_malloc(4);
+#line 75 "utilities/file.bas"
+*_SUB_PATH_SLASH_CORRECT_LONG_X=0;
+#line 75 "utilities/file.bas"
 }
-int32 *_FUNC_GETELEMENT_LONG_N=NULL;
-if(_FUNC_GETELEMENT_LONG_N==NULL){
-_FUNC_GETELEMENT_LONG_N=(int32*)mem_static_malloc(4);
-*_FUNC_GETELEMENT_LONG_N=0;
+#line 75 "utilities/file.bas"
+int64 fornext_value3560;
+#line 75 "utilities/file.bas"
+int64 fornext_finalvalue3560;
+#line 75 "utilities/file.bas"
+int64 fornext_step3560;
+#line 75 "utilities/file.bas"
+uint8 fornext_step_negative3560;
+#line 75 "utilities/file.bas"
+byte_element_struct *byte_element_3561=NULL;
+#line 75 "utilities/file.bas"
+if (!byte_element_3561){
+#line 75 "utilities/file.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3561=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3561=(byte_element_struct*)mem_static_malloc(12);
+#line 75 "utilities/file.bas"
 }
-int32 *_FUNC_GETELEMENT_LONG_I=NULL;
-if(_FUNC_GETELEMENT_LONG_I==NULL){
-_FUNC_GETELEMENT_LONG_I=(int32*)mem_static_malloc(4);
-*_FUNC_GETELEMENT_LONG_I=0;
-}
-byte_element_struct *byte_element_4412=NULL;
-if (!byte_element_4412){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4412=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4412=(byte_element_struct*)mem_static_malloc(12);
+#line 79 "utilities/file.bas"
+int64 fornext_value3563;
+#line 79 "utilities/file.bas"
+int64 fornext_finalvalue3563;
+#line 79 "utilities/file.bas"
+int64 fornext_step3563;
+#line 79 "utilities/file.bas"
+uint8 fornext_step_negative3563;
+#line 79 "utilities/file.bas"
+byte_element_struct *byte_element_3564=NULL;
+#line 79 "utilities/file.bas"
+if (!byte_element_3564){
+#line 79 "utilities/file.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3564=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3564=(byte_element_struct*)mem_static_malloc(12);
+#line 79 "utilities/file.bas"
 }

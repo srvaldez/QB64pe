@@ -1,27 +1,108 @@
-int32 *_SUB_CONVBUFTOLNXMACEOL_LONG_BUF=NULL;
-if(_SUB_CONVBUFTOLNXMACEOL_LONG_BUF==NULL){
-_SUB_CONVBUFTOLNXMACEOL_LONG_BUF=(int32*)mem_static_malloc(4);
-*_SUB_CONVBUFTOLNXMACEOL_LONG_BUF=0;
+int32 *_FUNC_FINDBUFFWD_LONG_FINDBUFFWD=NULL;
+#line 512 "utilities/s-buffer/simplebuffer.bm"
+if(_FUNC_FINDBUFFWD_LONG_FINDBUFFWD==NULL){
+#line 512 "utilities/s-buffer/simplebuffer.bm"
+_FUNC_FINDBUFFWD_LONG_FINDBUFFWD=(int32*)mem_static_malloc(4);
+#line 512 "utilities/s-buffer/simplebuffer.bm"
+*_FUNC_FINDBUFFWD_LONG_FINDBUFFWD=0;
+#line 512 "utilities/s-buffer/simplebuffer.bm"
 }
-int32 *_SUB_CONVBUFTOLNXMACEOL_LONG_RES=NULL;
-if(_SUB_CONVBUFTOLNXMACEOL_LONG_RES==NULL){
-_SUB_CONVBUFTOLNXMACEOL_LONG_RES=(int32*)mem_static_malloc(4);
-*_SUB_CONVBUFTOLNXMACEOL_LONG_RES=0;
+int32 *_FUNC_FINDBUFFWD_LONG_BUF=NULL;
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+if(_FUNC_FINDBUFFWD_LONG_BUF==NULL){
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+_FUNC_FINDBUFFWD_LONG_BUF=(int32*)mem_static_malloc(4);
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+*_FUNC_FINDBUFFWD_LONG_BUF=0;
+#line 514 "utilities/s-buffer/simplebuffer.bm"
 }
-int32 *_SUB_CONVBUFTOLNXMACEOL_LONG_PO=NULL;
-if(_SUB_CONVBUFTOLNXMACEOL_LONG_PO==NULL){
-_SUB_CONVBUFTOLNXMACEOL_LONG_PO=(int32*)mem_static_malloc(4);
-*_SUB_CONVBUFTOLNXMACEOL_LONG_PO=0;
+int32 *_FUNC_FINDBUFFWD_LONG_CPOS=NULL;
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+if(_FUNC_FINDBUFFWD_LONG_CPOS==NULL){
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+_FUNC_FINDBUFFWD_LONG_CPOS=(int32*)mem_static_malloc(4);
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+*_FUNC_FINDBUFFWD_LONG_CPOS=0;
+#line 514 "utilities/s-buffer/simplebuffer.bm"
 }
-int32 pass4648;
-int16 pass4649;
-int32 pass4650;
-int16 pass4651;
-int16 pass4653;
-int16 pass4654;
-int16 pass4655;
-int32 pass4656;
-int32 pass4657;
-int16 pass4658;
-int16 pass4659;
-int16 pass4660;
+int32 *_FUNC_FINDBUFFWD_LONG_EOB=NULL;
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+if(_FUNC_FINDBUFFWD_LONG_EOB==NULL){
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+_FUNC_FINDBUFFWD_LONG_EOB=(int32*)mem_static_malloc(4);
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+*_FUNC_FINDBUFFWD_LONG_EOB=0;
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+}
+int32 *_FUNC_FINDBUFFWD_LONG_FPOS=NULL;
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+if(_FUNC_FINDBUFFWD_LONG_FPOS==NULL){
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+_FUNC_FINDBUFFWD_LONG_FPOS=(int32*)mem_static_malloc(4);
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+*_FUNC_FINDBUFFWD_LONG_FPOS=0;
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+}
+int32 *_FUNC_FINDBUFFWD_LONG_FLEN=NULL;
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+if(_FUNC_FINDBUFFWD_LONG_FLEN==NULL){
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+_FUNC_FINDBUFFWD_LONG_FLEN=(int32*)mem_static_malloc(4);
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+*_FUNC_FINDBUFFWD_LONG_FLEN=0;
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+}
+qbs *_FUNC_FINDBUFFWD_STRING_FIND=NULL;
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+if (!_FUNC_FINDBUFFWD_STRING_FIND)_FUNC_FINDBUFFWD_STRING_FIND=qbs_new(0,0);
+int32 *_FUNC_FINDBUFFWD_LONG_CH=NULL;
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+if(_FUNC_FINDBUFFWD_LONG_CH==NULL){
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+_FUNC_FINDBUFFWD_LONG_CH=(int32*)mem_static_malloc(4);
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+*_FUNC_FINDBUFFWD_LONG_CH=0;
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+}
+int32 *_FUNC_FINDBUFFWD_LONG_BPOS=NULL;
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+if(_FUNC_FINDBUFFWD_LONG_BPOS==NULL){
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+_FUNC_FINDBUFFWD_LONG_BPOS=(int32*)mem_static_malloc(4);
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+*_FUNC_FINDBUFFWD_LONG_BPOS=0;
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+}
+int16 *_FUNC_FINDBUFFWD_INTEGER_CHV=NULL;
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+if(_FUNC_FINDBUFFWD_INTEGER_CHV==NULL){
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+_FUNC_FINDBUFFWD_INTEGER_CHV=(int16*)mem_static_malloc(2);
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+*_FUNC_FINDBUFFWD_INTEGER_CHV=0;
+#line 514 "utilities/s-buffer/simplebuffer.bm"
+}
+#line 520 "utilities/s-buffer/simplebuffer.bm"
+byte_element_struct *byte_element_3802=NULL;
+#line 520 "utilities/s-buffer/simplebuffer.bm"
+if (!byte_element_3802){
+#line 520 "utilities/s-buffer/simplebuffer.bm"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3802=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3802=(byte_element_struct*)mem_static_malloc(12);
+#line 520 "utilities/s-buffer/simplebuffer.bm"
+}
+#line 535 "utilities/s-buffer/simplebuffer.bm"
+int64 fornext_value3806;
+#line 535 "utilities/s-buffer/simplebuffer.bm"
+int64 fornext_finalvalue3806;
+#line 535 "utilities/s-buffer/simplebuffer.bm"
+int64 fornext_step3806;
+#line 535 "utilities/s-buffer/simplebuffer.bm"
+uint8 fornext_step_negative3806;
+#line 550 "utilities/s-buffer/simplebuffer.bm"
+int64 fornext_value3810;
+#line 550 "utilities/s-buffer/simplebuffer.bm"
+int64 fornext_finalvalue3810;
+#line 550 "utilities/s-buffer/simplebuffer.bm"
+int64 fornext_step3810;
+#line 550 "utilities/s-buffer/simplebuffer.bm"
+uint8 fornext_step_negative3810;

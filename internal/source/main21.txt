@@ -1,419 +1,50 @@
-int32 FUNC_PARSEUDTARRAYBOUNDSEX(qbs*_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_INDEXES,int32*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_EFFECTIVE_OPTIONBASE,int32*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_LOWER_BOUND,int32*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_ELEMENT_COUNT,int32*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DIMENSION_COUNT,qbs*_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_DESCRIPTOR){
+#line 15755 "qb64pe.bas"
+int32 FUNC_PARSEUDTARRAYBOUNDS(qbs*_FUNC_PARSEUDTARRAYBOUNDS_STRING_INDEXES,int32*_FUNC_PARSEUDTARRAYBOUNDS_LONG_LOWER_BOUND,int32*_FUNC_PARSEUDTARRAYBOUNDS_LONG_ELEMENT_COUNT,int32*_FUNC_PARSEUDTARRAYBOUNDS_LONG_DIMENSION_COUNT,qbs*_FUNC_PARSEUDTARRAYBOUNDS_STRING_DESCRIPTOR){
+#line 15755 "qb64pe.bas"
 qbs *tqbs;
+#line 15755 "qb64pe.bas"
 ptrszint tmp_long;
+#line 15755 "qb64pe.bas"
 int32 tmp_fileno;
+#line 15755 "qb64pe.bas"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
+#line 15755 "qb64pe.bas"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
+#line 15755 "qb64pe.bas"
 uint32 tmp_cmem_sp=cmem_sp;
+#line 15755 "qb64pe.bas"
 #include "data21.txt"
+#line 15755 "qb64pe.bas"
 mem_lock *sf_mem_lock;
+#line 15755 "qb64pe.bas"
 new_mem_lock();
+#line 15755 "qb64pe.bas"
 sf_mem_lock=mem_lock_tmp;
+#line 15755 "qb64pe.bas"
 sf_mem_lock->type=3;
+#line 15755 "qb64pe.bas"
 libqb_check_stack();
+#line 15755 "qb64pe.bas"
 if (is_error_pending()) goto exit_subfunc;
+#line 15756 "qb64pe.bas"
 do{
-if(!qbevent)break;evnt(15693);}while(r);
-do{
-if(!qbevent)break;evnt(15694);}while(r);
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_N=FUNC_NUMELEMENTS(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_INDEXES);
+#line 15756 "qb64pe.bas"
+*_FUNC_PARSEUDTARRAYBOUNDS_LONG_PARSEUDTARRAYBOUNDS=FUNC_PARSEUDTARRAYBOUNDSEX(_FUNC_PARSEUDTARRAYBOUNDS_STRING_INDEXES,&(pass2090=*__INTEGER_OPTIONBASE),_FUNC_PARSEUDTARRAYBOUNDS_LONG_LOWER_BOUND,_FUNC_PARSEUDTARRAYBOUNDS_LONG_ELEMENT_COUNT,_FUNC_PARSEUDTARRAYBOUNDS_LONG_DIMENSION_COUNT,_FUNC_PARSEUDTARRAYBOUNDS_STRING_DESCRIPTOR);
+#line 15756 "qb64pe.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15696);}while(r);
-S_18175:;
-if ((-(*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_N== 0 ))||is_error_pending()){
-if(qbevent){evnt(15697);if(r)goto S_18175;}
-do{
-SUB_GIVE_ERROR(qbs_new_txt_len("Array bounds missing",20));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15697);}while(r);
-do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(15697);}while(r);
-}
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_LOWER_BOUND= 0 ;
-if(!qbevent)break;evnt(15699);}while(r);
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_ELEMENT_COUNT= 1 ;
-if(!qbevent)break;evnt(15700);}while(r);
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DIMENSION_COUNT= 0 ;
-if(!qbevent)break;evnt(15701);}while(r);
-do{
-qbs_set(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_DESCRIPTOR,qbs_new_txt_len("",0));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15702);}while(r);
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_B= 0 ;
-if(!qbevent)break;evnt(15704);}while(r);
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_FIRSTI= 1 ;
-if(!qbevent)break;evnt(15705);}while(r);
-S_18185:;
-fornext_value2677= 1 ;
-fornext_finalvalue2677=*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_N;
-fornext_step2677= 1 ;
-if (fornext_step2677<0) fornext_step_negative2677=1; else fornext_step_negative2677=0;
-if (is_error_pending()) goto fornext_error2677;
-goto fornext_entrylabel2677;
-while(1){
-fornext_value2677=fornext_step2677+(*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_I);
-fornext_entrylabel2677:
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_I=fornext_value2677;
-if (fornext_step_negative2677){
-if (fornext_value2677<fornext_finalvalue2677) break;
-}else{
-if (fornext_value2677>fornext_finalvalue2677) break;
-}
-fornext_error2677:;
-if(qbevent){evnt(15706);if(r)goto S_18185;}
-do{
-qbs_set(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_E,FUNC_GETELEMENT(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_INDEXES,_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_I));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15707);}while(r);
-S_18187:;
-if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_E,qbs_new_txt_len("(",1))))||is_error_pending()){
-if(qbevent){evnt(15708);if(r)goto S_18187;}
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_B=*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_B+ 1 ;
-if(!qbevent)break;evnt(15708);}while(r);
-}
-S_18190:;
-if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_E,qbs_new_txt_len(")",1))))||is_error_pending()){
-if(qbevent){evnt(15709);if(r)goto S_18190;}
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_B=*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_B- 1 ;
-if(!qbevent)break;evnt(15709);}while(r);
-}
-S_18193:;
-if ((-(*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_B< 0 ))||is_error_pending()){
-if(qbevent){evnt(15710);if(r)goto S_18193;}
-do{
-SUB_GIVE_ERROR(qbs_new_txt_len("Invalid array bounds",20));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15710);}while(r);
-do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(15710);}while(r);
-}
-S_18197:;
-if ((qbs_cleanup(qbs_tmp_base,(((-(*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_B== 0 ))&(qbs_equal(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_E,qbs_new_txt_len(",",1)))))|(-(*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_I==*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_N))))||is_error_pending()){
-if(qbevent){evnt(15711);if(r)goto S_18197;}
-S_18198:;
-if ((-(*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_I==*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_N))||is_error_pending()){
-if(qbevent){evnt(15712);if(r)goto S_18198;}
-do{
-qbs_set(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_DIM_EXPR,FUNC_GETELEMENTS(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_INDEXES,_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_FIRSTI,_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_I));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15713);}while(r);
-}else{
-do{
-qbs_set(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_DIM_EXPR,FUNC_GETELEMENTS(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_INDEXES,_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_FIRSTI,&(pass2678=*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_I- 1 )));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15715);}while(r);
-}
-S_18203:;
-if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_DIM_EXPR,qbs_new_txt_len("",0))))||is_error_pending()){
-if(qbevent){evnt(15717);if(r)goto S_18203;}
-do{
-SUB_GIVE_ERROR(qbs_new_txt_len("Invalid array bounds",20));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15717);}while(r);
-do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(15717);}while(r);
-}
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DN=FUNC_NUMELEMENTS(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_DIM_EXPR);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15719);}while(r);
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_TO_POS= 0 ;
-if(!qbevent)break;evnt(15720);}while(r);
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_B2= 0 ;
-if(!qbevent)break;evnt(15721);}while(r);
-S_18210:;
-fornext_value2680= 1 ;
-fornext_finalvalue2680=*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DN;
-fornext_step2680= 1 ;
-if (fornext_step2680<0) fornext_step_negative2680=1; else fornext_step_negative2680=0;
-if (is_error_pending()) goto fornext_error2680;
-goto fornext_entrylabel2680;
-while(1){
-fornext_value2680=fornext_step2680+(*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DI);
-fornext_entrylabel2680:
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DI=fornext_value2680;
-if (fornext_step_negative2680){
-if (fornext_value2680<fornext_finalvalue2680) break;
-}else{
-if (fornext_value2680>fornext_finalvalue2680) break;
-}
-fornext_error2680:;
-if(qbevent){evnt(15722);if(r)goto S_18210;}
-do{
-qbs_set(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_E2,FUNC_GETELEMENT(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_DIM_EXPR,_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DI));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15723);}while(r);
-S_18212:;
-if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_E2,qbs_new_txt_len("(",1))))||is_error_pending()){
-if(qbevent){evnt(15724);if(r)goto S_18212;}
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_B2=*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_B2+ 1 ;
-if(!qbevent)break;evnt(15724);}while(r);
-}
-S_18215:;
-if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_E2,qbs_new_txt_len(")",1))))||is_error_pending()){
-if(qbevent){evnt(15725);if(r)goto S_18215;}
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_B2=*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_B2- 1 ;
-if(!qbevent)break;evnt(15725);}while(r);
-}
-S_18218:;
-if ((-(*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_B2< 0 ))||is_error_pending()){
-if(qbevent){evnt(15726);if(r)goto S_18218;}
-do{
-SUB_GIVE_ERROR(qbs_new_txt_len("Invalid array bounds",20));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15726);}while(r);
-do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(15726);}while(r);
-}
-S_18222:;
-if ((qbs_cleanup(qbs_tmp_base,(-(*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_B2== 0 ))&(qbs_equal(qbs_ucase(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_E2),qbs_new_txt_len("TO",2)))))||is_error_pending()){
-if(qbevent){evnt(15727);if(r)goto S_18222;}
-S_18223:;
-if ((*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_TO_POS)||is_error_pending()){
-if(qbevent){evnt(15728);if(r)goto S_18223;}
-do{
-SUB_GIVE_ERROR(qbs_new_txt_len("Invalid array bounds",20));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15728);}while(r);
-do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(15728);}while(r);
-}
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_TO_POS=*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DI;
-if(!qbevent)break;evnt(15729);}while(r);
-}
-fornext_continue_2679:;
-}
-fornext_exit_2679:;
-S_18230:;
-if ((-(*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_B2!= 0 ))||is_error_pending()){
-if(qbevent){evnt(15732);if(r)goto S_18230;}
-do{
-SUB_GIVE_ERROR(qbs_new_txt_len("Invalid array bounds",20));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15732);}while(r);
-do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(15732);}while(r);
-}
-S_18234:;
-if ((*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_TO_POS)||is_error_pending()){
-if(qbevent){evnt(15734);if(r)goto S_18234;}
-do{
-qbs_set(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_LOWER_EXPR,FUNC_GETELEMENTS(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_DIM_EXPR,&(pass2681= 1 ),&(pass2682=*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_TO_POS- 1 )));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15735);}while(r);
-do{
-qbs_set(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_UPPER_EXPR,FUNC_GETELEMENTS(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_DIM_EXPR,&(pass2683=*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_TO_POS+ 1 ),_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DN));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15736);}while(r);
-S_18237:;
-if ((qbs_cleanup(qbs_tmp_base,(qbs_equal(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_LOWER_EXPR,qbs_new_txt_len("",0)))|(qbs_equal(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_UPPER_EXPR,qbs_new_txt_len("",0)))))||is_error_pending()){
-if(qbevent){evnt(15737);if(r)goto S_18237;}
-do{
-SUB_GIVE_ERROR(qbs_new_txt_len("Invalid array bounds",20));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15737);}while(r);
-do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(15737);}while(r);
-}
-}else{
-do{
-qbs_set(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_LOWER_EXPR,qbs__tostr((int64)(*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_EFFECTIVE_OPTIONBASE+ 0 ),NULL,0));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15739);}while(r);
-do{
-qbs_set(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_UPPER_EXPR,_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_DIM_EXPR);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15740);}while(r);
-}
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_LOWER_CONST= 0 ;
-if(!qbevent)break;evnt(15743);}while(r);
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_UPPER_CONST= 0 ;
-if(!qbevent)break;evnt(15744);}while(r);
-do{
-qbs_set(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_LOWER_TXT,qbs__trim(FUNC_EVALUATE_EXPRESSION(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_LOWER_EXPR,(void*)( ((char*)(_FUNC_PARSEUDTARRAYBOUNDSEX_UDT_UDT_LOWER_NUM)) + ((0+0)) ))));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15749);}while(r);
-S_18248:;
-if ((qbs_cleanup(qbs_tmp_base,qbs_equal(qbs_left(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_LOWER_TXT, 8 ),qbs_new_txt_len("ERROR - ",8))))||is_error_pending()){
-if(qbevent){evnt(15750);if(r)goto S_18248;}
-do{
-qbs_set(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_LOWER_TXT,_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_LOWER_EXPR);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15751);}while(r);
-S_18250:;
-}else{
-if (-((*(int32*)(((char*)_FUNC_PARSEUDTARRAYBOUNDSEX_UDT_UDT_LOWER_NUM)+((0+56)))&*__LONG_ISSTRING)== 0 )){
-if(qbevent){evnt(15752);if(r)goto S_18250;}
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_LOWER_CONST= -1 ;
-if(!qbevent)break;evnt(15753);}while(r);
-}else{
-do{
-qbs_set(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_LOWER_TXT,_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_LOWER_EXPR);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15755);}while(r);
-}
-}
-do{
-qbs_set(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_UPPER_TXT,qbs__trim(FUNC_EVALUATE_EXPRESSION(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_UPPER_EXPR,(void*)( ((char*)(_FUNC_PARSEUDTARRAYBOUNDSEX_UDT_UDT_UPPER_NUM)) + ((0+0)) ))));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15758);}while(r);
-S_18256:;
-if ((qbs_cleanup(qbs_tmp_base,qbs_equal(qbs_left(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_UPPER_TXT, 8 ),qbs_new_txt_len("ERROR - ",8))))||is_error_pending()){
-if(qbevent){evnt(15759);if(r)goto S_18256;}
-do{
-qbs_set(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_UPPER_TXT,_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_UPPER_EXPR);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15760);}while(r);
-S_18258:;
-}else{
-if (-((*(int32*)(((char*)_FUNC_PARSEUDTARRAYBOUNDSEX_UDT_UDT_UPPER_NUM)+((0+56)))&*__LONG_ISSTRING)== 0 )){
-if(qbevent){evnt(15761);if(r)goto S_18258;}
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_UPPER_CONST= -1 ;
-if(!qbevent)break;evnt(15762);}while(r);
-}else{
-do{
-qbs_set(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_UPPER_TXT,_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_UPPER_EXPR);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15764);}while(r);
-}
-}
-S_18263:;
-if ((-((*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_LOWER_CONST&*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_UPPER_CONST)== 0 ))||is_error_pending()){
-if(qbevent){evnt(15767);if(r)goto S_18263;}
-do{
-SUB_GIVE_ERROR(qbs_new_txt_len("TYPE member array bounds must be numeric constant",49));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15768);}while(r);
-do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(15769);}while(r);
-}
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DIM_LOWER=qbr(qbs_val<long double>(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_LOWER_TXT));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15772);}while(r);
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DIM_UPPER=qbr(qbs_val<long double>(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_UPPER_TXT));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15773);}while(r);
-S_18269:;
-if ((-(*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DIM_UPPER<*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DIM_LOWER))||is_error_pending()){
-if(qbevent){evnt(15774);if(r)goto S_18269;}
-do{
-SUB_GIVE_ERROR(qbs_new_txt_len("Invalid array bounds",20));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15774);}while(r);
-do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(15774);}while(r);
-}
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DIM_ELEMENTS=*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DIM_UPPER-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DIM_LOWER+ 1 ;
-if(!qbevent)break;evnt(15776);}while(r);
-S_18274:;
-if ((-(*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DIM_ELEMENTS<= 0 ))||is_error_pending()){
-if(qbevent){evnt(15777);if(r)goto S_18274;}
-do{
-SUB_GIVE_ERROR(qbs_new_txt_len("Invalid array bounds",20));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15777);}while(r);
-do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(15777);}while(r);
-}
-do{
-qbs_set(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_DIM_LOWER_TXT,qbs_ltrim(qbs_str((int32)(*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DIM_LOWER))));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15779);}while(r);
-do{
-qbs_set(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_DIM_ELEMENTS_TXT,qbs_ltrim(qbs_str((int32)(*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DIM_ELEMENTS))));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15780);}while(r);
-S_18280:;
-if ((-(*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DIMENSION_COUNT== 0 ))||is_error_pending()){
-if(qbevent){evnt(15782);if(r)goto S_18280;}
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_LOWER_BOUND=*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DIM_LOWER;
-if(!qbevent)break;evnt(15782);}while(r);
-}
-S_18283:;
-if ((qbs_cleanup(qbs_tmp_base,qbs_notequal(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_DESCRIPTOR,qbs_new_txt_len("",0))))||is_error_pending()){
-if(qbevent){evnt(15783);if(r)goto S_18283;}
-do{
-qbs_set(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_DESCRIPTOR,qbs_add(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_DESCRIPTOR,qbs_new_txt_len(";",1)));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15783);}while(r);
-}
-do{
-qbs_set(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_DESCRIPTOR,qbs_add(qbs_add(qbs_add(_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_DESCRIPTOR,_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_DIM_LOWER_TXT),qbs_new_txt_len(",",1)),_FUNC_PARSEUDTARRAYBOUNDSEX_STRING_DIM_ELEMENTS_TXT));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15784);}while(r);
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_ELEMENT_COUNT=*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_ELEMENT_COUNT**_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DIM_ELEMENTS;
-if(!qbevent)break;evnt(15785);}while(r);
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DIMENSION_COUNT=*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DIMENSION_COUNT+ 1 ;
-if(!qbevent)break;evnt(15787);}while(r);
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_FIRSTI=*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_I+ 1 ;
-if(!qbevent)break;evnt(15788);}while(r);
-}
-fornext_continue_2676:;
-}
-fornext_exit_2676:;
-S_18292:;
-if ((-(*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_B!= 0 ))||is_error_pending()){
-if(qbevent){evnt(15792);if(r)goto S_18292;}
-do{
-SUB_GIVE_ERROR(qbs_new_txt_len("Invalid array bounds",20));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15792);}while(r);
-do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(15792);}while(r);
-}
-S_18296:;
-if ((-(*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_DIMENSION_COUNT== 0 ))||is_error_pending()){
-if(qbevent){evnt(15793);if(r)goto S_18296;}
-do{
-SUB_GIVE_ERROR(qbs_new_txt_len("Array bounds missing",20));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15793);}while(r);
-do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(15793);}while(r);
-}
-do{
-*_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_PARSEUDTARRAYBOUNDSEX= -1 ;
-if(!qbevent)break;evnt(15795);}while(r);
+#line 15756 "qb64pe.bas"
+if(!qbevent)break;evnt(15756);}while(r);
+#line 15757 "qb64pe.bas"
 exit_subfunc:;
+#line 15757 "qb64pe.bas"
 free_mem_lock(sf_mem_lock);
+#line 15757 "qb64pe.bas"
 #include "free21.txt"
+#line 15757 "qb64pe.bas"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
+#line 15757 "qb64pe.bas"
 cmem_sp=tmp_cmem_sp;
-return *_FUNC_PARSEUDTARRAYBOUNDSEX_LONG_PARSEUDTARRAYBOUNDSEX;
+#line 15757 "qb64pe.bas"
+return *_FUNC_PARSEUDTARRAYBOUNDS_LONG_PARSEUDTARRAYBOUNDS;
+#line 15757 "qb64pe.bas"
 }

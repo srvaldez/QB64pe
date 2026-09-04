@@ -1,11 +1,27 @@
-qbs*oldstr4438=NULL;
-if(_SUB_REMOVEELEMENT_STRING_A->tmp||_SUB_REMOVEELEMENT_STRING_A->fixed||_SUB_REMOVEELEMENT_STRING_A->readonly){
-oldstr4438=_SUB_REMOVEELEMENT_STRING_A;
-if (oldstr4438->cmem_descriptor){
-_SUB_REMOVEELEMENT_STRING_A=qbs_new_cmem(oldstr4438->len,0);
+qbs *_FUNC_PEEKNEXTELEMENT_STRING_PEEKNEXTELEMENT=NULL;
+#line 53 "utilities/elements.bas"
+if (!_FUNC_PEEKNEXTELEMENT_STRING_PEEKNEXTELEMENT)_FUNC_PEEKNEXTELEMENT_STRING_PEEKNEXTELEMENT=qbs_new(0,0);
+#line 53 "utilities/elements.bas"
+qbs*oldstr3592=NULL;
+#line 53 "utilities/elements.bas"
+if(_FUNC_PEEKNEXTELEMENT_STRING_A->tmp||_FUNC_PEEKNEXTELEMENT_STRING_A->fixed||_FUNC_PEEKNEXTELEMENT_STRING_A->readonly){
+#line 53 "utilities/elements.bas"
+oldstr3592=_FUNC_PEEKNEXTELEMENT_STRING_A;
+#line 53 "utilities/elements.bas"
+if (oldstr3592->cmem_descriptor){
+#line 53 "utilities/elements.bas"
+_FUNC_PEEKNEXTELEMENT_STRING_A=qbs_new_cmem(oldstr3592->len,0);
+#line 53 "utilities/elements.bas"
 }else{
-_SUB_REMOVEELEMENT_STRING_A=qbs_new(oldstr4438->len,0);
+#line 53 "utilities/elements.bas"
+_FUNC_PEEKNEXTELEMENT_STRING_A=qbs_new(oldstr3592->len,0);
+#line 53 "utilities/elements.bas"
 }
-memcpy(_SUB_REMOVEELEMENT_STRING_A->chr,oldstr4438->chr,oldstr4438->len);
+#line 53 "utilities/elements.bas"
+memcpy(_FUNC_PEEKNEXTELEMENT_STRING_A->chr,oldstr3592->chr,oldstr3592->len);
+#line 53 "utilities/elements.bas"
 }
-int32 pass4439;
+#line 54 "utilities/elements.bas"
+int32 pass3593;
+#line 54 "utilities/elements.bas"
+int32 pass3594;

@@ -1,59 +1,78 @@
-qbs* FUNC_INIFORMATSECTION(qbs*_FUNC_INIFORMATSECTION_STRING___SECTION){
+#line 609 "utilities/elements.bas"
+qbs* FUNC_CREATEELEMENTSTRING(qbs*_FUNC_CREATEELEMENTSTRING_STRING_S){
+#line 609 "utilities/elements.bas"
 qbs *tqbs;
+#line 609 "utilities/elements.bas"
 ptrszint tmp_long;
+#line 609 "utilities/elements.bas"
 int32 tmp_fileno;
+#line 609 "utilities/elements.bas"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
+#line 609 "utilities/elements.bas"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
+#line 609 "utilities/elements.bas"
 uint32 tmp_cmem_sp=cmem_sp;
+#line 609 "utilities/elements.bas"
 #include "data161.txt"
+#line 609 "utilities/elements.bas"
 mem_lock *sf_mem_lock;
+#line 609 "utilities/elements.bas"
 new_mem_lock();
+#line 609 "utilities/elements.bas"
 sf_mem_lock=mem_lock_tmp;
+#line 609 "utilities/elements.bas"
 sf_mem_lock->type=3;
+#line 609 "utilities/elements.bas"
 libqb_check_stack();
+#line 609 "utilities/elements.bas"
 if (is_error_pending()) goto exit_subfunc;
+#line 610 "utilities/elements.bas"
 do{
-if(!qbevent)break;evnt(28167,139,"ini.bm");}while(r);
+#line 610 "utilities/elements.bas"
+if(!qbevent)break;evnt(28655,610,"elements.bas");}while(r);
+#line 611 "utilities/elements.bas"
 do{
-if(!qbevent)break;evnt(28167,141,"ini.bm");}while(r);
-do{
-qbs_set(_FUNC_INIFORMATSECTION_STRING_SECTION,qbs_ltrim(qbs_rtrim(_FUNC_INIFORMATSECTION_STRING___SECTION)));
+#line 611 "utilities/elements.bas"
+qbs_set(_FUNC_CREATEELEMENTSTRING_STRING_ELE,func_chr( 34 ));
+#line 611 "utilities/elements.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(28167,143,"ini.bm");}while(r);
-S_37910:;
-if ((qbs_cleanup(qbs_tmp_base,qbs_notequal(qbs_left(_FUNC_INIFORMATSECTION_STRING_SECTION, 1 ),qbs_new_txt_len("[",1))))||is_error_pending()){
-if(qbevent){evnt(28167,146,"ini.bm");if(r)goto S_37910;}
+#line 611 "utilities/elements.bas"
+if(!qbevent)break;evnt(28655,611,"elements.bas");}while(r);
+#line 613 "utilities/elements.bas"
 do{
-qbs_set(_FUNC_INIFORMATSECTION_STRING_SECTION,qbs_add(qbs_new_txt_len("[",1),_FUNC_INIFORMATSECTION_STRING_SECTION));
+#line 613 "utilities/elements.bas"
+qbs_set(_FUNC_CREATEELEMENTSTRING_STRING_ELE,qbs_add(_FUNC_CREATEELEMENTSTRING_STRING_ELE,FUNC_ESCAPESTRING(_FUNC_CREATEELEMENTSTRING_STRING_S)));
+#line 613 "utilities/elements.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(28167,146,"ini.bm");}while(r);
-}
-S_37913:;
-if ((qbs_cleanup(qbs_tmp_base,qbs_notequal(qbs_right(_FUNC_INIFORMATSECTION_STRING_SECTION, 1 ),qbs_new_txt_len("]",1))))||is_error_pending()){
-if(qbevent){evnt(28167,147,"ini.bm");if(r)goto S_37913;}
+#line 613 "utilities/elements.bas"
+if(!qbevent)break;evnt(28655,613,"elements.bas");}while(r);
+#line 615 "utilities/elements.bas"
 do{
-qbs_set(_FUNC_INIFORMATSECTION_STRING_SECTION,qbs_add(_FUNC_INIFORMATSECTION_STRING_SECTION,qbs_new_txt_len("]",1)));
+#line 615 "utilities/elements.bas"
+qbs_set(_FUNC_CREATEELEMENTSTRING_STRING_ELE,qbs_add(qbs_add(qbs_add(_FUNC_CREATEELEMENTSTRING_STRING_ELE,func_chr( 34 )),qbs_new_txt_len(",",1)),qbs__tostr((int32)(_FUNC_CREATEELEMENTSTRING_STRING_S->len),NULL,0)));
+#line 615 "utilities/elements.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(28167,147,"ini.bm");}while(r);
-}
-S_37916:;
-if ((qbs_cleanup(qbs_tmp_base,func_instr(NULL,func_mid(_FUNC_INIFORMATSECTION_STRING_SECTION, 2 ,_FUNC_INIFORMATSECTION_STRING_SECTION->len- 3 ,0|1),qbs_new_txt_len("[",1),0)|func_instr(NULL,func_mid(_FUNC_INIFORMATSECTION_STRING_SECTION, 2 ,_FUNC_INIFORMATSECTION_STRING_SECTION->len- 3 ,0|1),qbs_new_txt_len("]",1),0)))||is_error_pending()){
-if(qbevent){evnt(28167,149,"ini.bm");if(r)goto S_37916;}
+#line 615 "utilities/elements.bas"
+if(!qbevent)break;evnt(28655,615,"elements.bas");}while(r);
+#line 616 "utilities/elements.bas"
 do{
-*__LONG_INICODE= 15 ;
-if(!qbevent)break;evnt(28167,150,"ini.bm");}while(r);
-do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(28167,151,"ini.bm");}while(r);
-}
-do{
-qbs_set(_FUNC_INIFORMATSECTION_STRING_INIFORMATSECTION,_FUNC_INIFORMATSECTION_STRING_SECTION);
+#line 616 "utilities/elements.bas"
+qbs_set(_FUNC_CREATEELEMENTSTRING_STRING_CREATEELEMENTSTRING,_FUNC_CREATEELEMENTSTRING_STRING_ELE);
+#line 616 "utilities/elements.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(28167,154,"ini.bm");}while(r);
+#line 616 "utilities/elements.bas"
+if(!qbevent)break;evnt(28655,616,"elements.bas");}while(r);
+#line 617 "utilities/elements.bas"
 exit_subfunc:;
+#line 617 "utilities/elements.bas"
 free_mem_lock(sf_mem_lock);
+#line 617 "utilities/elements.bas"
 #include "free161.txt"
+#line 617 "utilities/elements.bas"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
+#line 617 "utilities/elements.bas"
 cmem_sp=tmp_cmem_sp;
-qbs_maketmp(_FUNC_INIFORMATSECTION_STRING_INIFORMATSECTION);return _FUNC_INIFORMATSECTION_STRING_INIFORMATSECTION;
+#line 617 "utilities/elements.bas"
+qbs_maketmp(_FUNC_CREATEELEMENTSTRING_STRING_CREATEELEMENTSTRING);return _FUNC_CREATEELEMENTSTRING_STRING_CREATEELEMENTSTRING;
+#line 617 "utilities/elements.bas"
 }

@@ -1,5 +1,4 @@
-if(oldstr4844){
-if(oldstr4844->fixed)qbs_set(oldstr4844,_FUNC_NUMERIC_STRING_EXP);
-qbs_free(_FUNC_NUMERIC_STRING_EXP);
+if(oldstr3902){
+if(oldstr3902->fixed)qbs_set(oldstr3902,_FUNC_NUMERICEXPRESSION_STRING_EXP);
+qbs_free(_FUNC_NUMERICEXPRESSION_STRING_EXP);
 }
-qbs_free(_FUNC_NUMERIC_STRING_ELE);

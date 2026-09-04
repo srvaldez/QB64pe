@@ -1,5 +1,6 @@
-if(oldstr6717){
-if(oldstr6717->fixed)qbs_set(oldstr6717,_FUNC_IDEFILEEXISTS_STRING_F);
-qbs_free(_FUNC_IDEFILEEXISTS_STRING_F);
+if(oldstr5722){
+if(oldstr5722->fixed)qbs_set(oldstr5722,_FUNC_FORMATRANGE_STRING___TEXT);
+qbs_free(_FUNC_FORMATRANGE_STRING___TEXT);
 }
-qbs_free(_FUNC_IDEFILEEXISTS_STRING_M);
+qbs_free(_FUNC_FORMATRANGE_STRING_TEMP);
+qbs_free(_FUNC_FORMATRANGE_STRING_A2);

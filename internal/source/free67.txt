@@ -1,4 +1,7 @@
-if(oldstr3807){
-if(oldstr3807->fixed)qbs_set(oldstr3807,_SUB_MAKEIDREFER_STRING_REF);
-qbs_free(_SUB_MAKEIDREFER_STRING_REF);
+if(oldstr2862){
+if(oldstr2862->fixed)qbs_set(oldstr2862,_FUNC_FINDARRAY_STRING_SECURE);
+qbs_free(_FUNC_FINDARRAY_STRING_SECURE);
 }
+qbs_free(_FUNC_FINDARRAY_STRING_N);
+qbs_free(_FUNC_FINDARRAY_STRING_SC);
+qbs_free(_FUNC_FINDARRAY_STRING_N2);

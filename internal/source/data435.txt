@@ -1,15 +1,18 @@
-qbs*oldstr7705=NULL;
-if(_SUB_CLEANSUBNAME_STRING_N->tmp||_SUB_CLEANSUBNAME_STRING_N->fixed||_SUB_CLEANSUBNAME_STRING_N->readonly){
-oldstr7705=_SUB_CLEANSUBNAME_STRING_N;
-if (oldstr7705->cmem_descriptor){
-_SUB_CLEANSUBNAME_STRING_N=qbs_new_cmem(oldstr7705->len,0);
-}else{
-_SUB_CLEANSUBNAME_STRING_N=qbs_new(oldstr7705->len,0);
+int16 *_SUB_RETRIEVESEARCHHISTORY_INTEGER_BH=NULL;
+#line 19946 "ide/ide_methods.bas"
+if(_SUB_RETRIEVESEARCHHISTORY_INTEGER_BH==NULL){
+#line 19946 "ide/ide_methods.bas"
+_SUB_RETRIEVESEARCHHISTORY_INTEGER_BH=(int16*)mem_static_malloc(2);
+#line 19946 "ide/ide_methods.bas"
+*_SUB_RETRIEVESEARCHHISTORY_INTEGER_BH=0;
+#line 19946 "ide/ide_methods.bas"
 }
-memcpy(_SUB_CLEANSUBNAME_STRING_N->chr,oldstr7705->chr,oldstr7705->len);
-}
-int32 *_SUB_CLEANSUBNAME_LONG_X=NULL;
-if(_SUB_CLEANSUBNAME_LONG_X==NULL){
-_SUB_CLEANSUBNAME_LONG_X=(int32*)mem_static_malloc(4);
-*_SUB_CLEANSUBNAME_LONG_X=0;
+int16 *_SUB_RETRIEVESEARCHHISTORY_INTEGER_LC=NULL;
+#line 19948 "ide/ide_methods.bas"
+if(_SUB_RETRIEVESEARCHHISTORY_INTEGER_LC==NULL){
+#line 19948 "ide/ide_methods.bas"
+_SUB_RETRIEVESEARCHHISTORY_INTEGER_LC=(int16*)mem_static_malloc(2);
+#line 19948 "ide/ide_methods.bas"
+*_SUB_RETRIEVESEARCHHISTORY_INTEGER_LC=0;
+#line 19948 "ide/ide_methods.bas"
 }

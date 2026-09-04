@@ -1,86 +1,118 @@
-int16 FUNC_ISWHOLEMEMBERARRAYREF(qbs*_FUNC_ISWHOLEMEMBERARRAYREF_STRING_ENCODED,int32*_FUNC_ISWHOLEMEMBERARRAYREF_LONG_SOURCE_TYPE){
+#line 17429 "qb64pe.bas"
+void SUB_CLEARID(){
+#line 17429 "qb64pe.bas"
 qbs *tqbs;
+#line 17429 "qb64pe.bas"
 ptrszint tmp_long;
+#line 17429 "qb64pe.bas"
 int32 tmp_fileno;
+#line 17429 "qb64pe.bas"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
+#line 17429 "qb64pe.bas"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
+#line 17429 "qb64pe.bas"
 uint32 tmp_cmem_sp=cmem_sp;
+#line 17429 "qb64pe.bas"
 #include "data49.txt"
+#line 17429 "qb64pe.bas"
 mem_lock *sf_mem_lock;
+#line 17429 "qb64pe.bas"
 new_mem_lock();
+#line 17429 "qb64pe.bas"
 sf_mem_lock=mem_lock_tmp;
+#line 17429 "qb64pe.bas"
 sf_mem_lock->type=3;
+#line 17429 "qb64pe.bas"
 libqb_check_stack();
+#line 17429 "qb64pe.bas"
 if (is_error_pending()) goto exit_subfunc;
-S_21458:;
-if ((-((*_FUNC_ISWHOLEMEMBERARRAYREF_LONG_SOURCE_TYPE&*__LONG_ISREFERENCE)== 0 ))||is_error_pending()){
-if(qbevent){evnt(18472);if(r)goto S_21458;}
+#line 17430 "qb64pe.bas"
 do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(18472);}while(r);
-}
-S_21461:;
-if ((-((*_FUNC_ISWHOLEMEMBERARRAYREF_LONG_SOURCE_TYPE&*__LONG_ISARRAY)== 0 ))||is_error_pending()){
-if(qbevent){evnt(18473);if(r)goto S_21461;}
-do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(18473);}while(r);
-}
-do{
-*_FUNC_ISWHOLEMEMBERARRAYREF_LONG_FIRST_SEP=func_instr(NULL,_FUNC_ISWHOLEMEMBERARRAYREF_STRING_ENCODED,__STRING1_SP3,0);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(18475);}while(r);
-S_21465:;
-if ((-(*_FUNC_ISWHOLEMEMBERARRAYREF_LONG_FIRST_SEP== 0 ))||is_error_pending()){
-if(qbevent){evnt(18476);if(r)goto S_21465;}
-do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(18476);}while(r);
-}
-do{
-*_FUNC_ISWHOLEMEMBERARRAYREF_LONG_SECOND_SEP=func_instr(*_FUNC_ISWHOLEMEMBERARRAYREF_LONG_FIRST_SEP+1,_FUNC_ISWHOLEMEMBERARRAYREF_STRING_ENCODED,__STRING1_SP3,0|1);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(18477);}while(r);
-S_21469:;
-if ((-(*_FUNC_ISWHOLEMEMBERARRAYREF_LONG_SECOND_SEP== 0 ))||is_error_pending()){
-if(qbevent){evnt(18478);if(r)goto S_21469;}
-do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(18478);}while(r);
-}
-do{
-*_FUNC_ISWHOLEMEMBERARRAYREF_LONG_THIRD_SEP=func_instr(*_FUNC_ISWHOLEMEMBERARRAYREF_LONG_SECOND_SEP+1,_FUNC_ISWHOLEMEMBERARRAYREF_STRING_ENCODED,__STRING1_SP3,0|1);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(18479);}while(r);
-S_21473:;
-if ((-(*_FUNC_ISWHOLEMEMBERARRAYREF_LONG_THIRD_SEP== 0 ))||is_error_pending()){
-if(qbevent){evnt(18480);if(r)goto S_21473;}
-do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(18480);}while(r);
-}
-do{
-*_FUNC_ISWHOLEMEMBERARRAYREF_LONG_FINAL_MEMBER_ID=qbr(qbs_val<long double>(func_mid(_FUNC_ISWHOLEMEMBERARRAYREF_STRING_ENCODED,*_FUNC_ISWHOLEMEMBERARRAYREF_LONG_SECOND_SEP+1,*_FUNC_ISWHOLEMEMBERARRAYREF_LONG_THIRD_SEP-*_FUNC_ISWHOLEMEMBERARRAYREF_LONG_SECOND_SEP-1,0|1)));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(18482);}while(r);
-S_21477:;
-if ((-(*_FUNC_ISWHOLEMEMBERARRAYREF_LONG_FINAL_MEMBER_ID<= 0 ))||is_error_pending()){
-if(qbevent){evnt(18483);if(r)goto S_21477;}
-do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(18483);}while(r);
-}
-S_21480:;
-if ((((int32*)(__ARRAY_LONG_UDTEARRAYELEMENTS[0]))[array_check((*_FUNC_ISWHOLEMEMBERARRAYREF_LONG_FINAL_MEMBER_ID)-__ARRAY_LONG_UDTEARRAYELEMENTS[4],__ARRAY_LONG_UDTEARRAYELEMENTS[5])])||is_error_pending()){
-if(qbevent){evnt(18484);if(r)goto S_21480;}
-do{
-*_FUNC_ISWHOLEMEMBERARRAYREF_INTEGER_ISWHOLEMEMBERARRAYREF= -1 ;
-if(!qbevent)break;evnt(18484);}while(r);
-}
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 0),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 0), 256);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 256),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 256), 256);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 512),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 512), 4);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 516),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 516), 2);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 518),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 518), 2);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 520),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 520), 2);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 522),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 522), 2);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 524),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 524), 8);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 532),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 532), 8);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 540),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 540), 4);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 544),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 544), 4);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 548),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 548), 2);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 550),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 550), 2);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 552),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 552), 2);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 554),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 554), 256);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 810),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 810), 2);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 812),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 812), 1);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 813),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 813), 2);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 815),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 815), 2);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 817),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 817), 400);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 1217),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 1217), 400);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 1617),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 1617), 256);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 1873),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 1873), 256);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 2129),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 2129), 256);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 2385),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 2385), 4);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 2389),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 2389), 256);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 2645),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 2645), 4);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 2649),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 2649), 2);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 2651),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 2651), 100);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 2751),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 2751), 100);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 2851),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 2851), 100);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 2951),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 2951), 4);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 2955),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 2955), 2);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 2957),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 2957), 2);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 2959),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 2959), 4);
+#line 17430 "qb64pe.bas"
+memcpy((((char*)__UDT_ID)+((0+0))+ 2963),(((char*)__UDT_CLEARIDDATA)+((0+0))+ 2963), 2);
+#line 17430 "qb64pe.bas"
+qbs_set(*(qbs**)(((char*)__UDT_ID)+((0+0))+ 2965), *(qbs**)(((char*)__UDT_CLEARIDDATA)+((0+0))+ 2965));
+#line 17430 "qb64pe.bas"
+if(!qbevent)break;evnt(17430);}while(r);
+#line 17431 "qb64pe.bas"
 exit_subfunc:;
+#line 17431 "qb64pe.bas"
 free_mem_lock(sf_mem_lock);
+#line 17431 "qb64pe.bas"
 #include "free49.txt"
+#line 17431 "qb64pe.bas"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
+#line 17431 "qb64pe.bas"
 cmem_sp=tmp_cmem_sp;
-return *_FUNC_ISWHOLEMEMBERARRAYREF_INTEGER_ISWHOLEMEMBERARRAYREF;
+#line 17431 "qb64pe.bas"
 }

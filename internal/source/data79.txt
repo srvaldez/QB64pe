@@ -1,157 +1,192 @@
-qbs*oldstr3991=NULL;
-if(_SUB_XFILEPRINT_STRING_A->tmp||_SUB_XFILEPRINT_STRING_A->fixed||_SUB_XFILEPRINT_STRING_A->readonly){
-oldstr3991=_SUB_XFILEPRINT_STRING_A;
-if (oldstr3991->cmem_descriptor){
-_SUB_XFILEPRINT_STRING_A=qbs_new_cmem(oldstr3991->len,0);
+#line 26010 "qb64pe.bas"
+qbs*oldstr3133=NULL;
+#line 26010 "qb64pe.bas"
+if(_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_DSTBASE->tmp||_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_DSTBASE->fixed||_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_DSTBASE->readonly){
+#line 26010 "qb64pe.bas"
+oldstr3133=_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_DSTBASE;
+#line 26010 "qb64pe.bas"
+if (oldstr3133->cmem_descriptor){
+#line 26010 "qb64pe.bas"
+_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_DSTBASE=qbs_new_cmem(oldstr3133->len,0);
+#line 26010 "qb64pe.bas"
 }else{
-_SUB_XFILEPRINT_STRING_A=qbs_new(oldstr3991->len,0);
+#line 26010 "qb64pe.bas"
+_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_DSTBASE=qbs_new(oldstr3133->len,0);
+#line 26010 "qb64pe.bas"
 }
-memcpy(_SUB_XFILEPRINT_STRING_A->chr,oldstr3991->chr,oldstr3991->len);
+#line 26010 "qb64pe.bas"
+memcpy(_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_DSTBASE->chr,oldstr3133->chr,oldstr3133->len);
+#line 26010 "qb64pe.bas"
 }
-qbs*oldstr3992=NULL;
-if(_SUB_XFILEPRINT_STRING_CA->tmp||_SUB_XFILEPRINT_STRING_CA->fixed||_SUB_XFILEPRINT_STRING_CA->readonly){
-oldstr3992=_SUB_XFILEPRINT_STRING_CA;
-if (oldstr3992->cmem_descriptor){
-_SUB_XFILEPRINT_STRING_CA=qbs_new_cmem(oldstr3992->len,0);
+#line 26010 "qb64pe.bas"
+qbs*oldstr3134=NULL;
+#line 26010 "qb64pe.bas"
+if(_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_SRCBASE->tmp||_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_SRCBASE->fixed||_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_SRCBASE->readonly){
+#line 26010 "qb64pe.bas"
+oldstr3134=_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_SRCBASE;
+#line 26010 "qb64pe.bas"
+if (oldstr3134->cmem_descriptor){
+#line 26010 "qb64pe.bas"
+_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_SRCBASE=qbs_new_cmem(oldstr3134->len,0);
+#line 26010 "qb64pe.bas"
 }else{
-_SUB_XFILEPRINT_STRING_CA=qbs_new(oldstr3992->len,0);
+#line 26010 "qb64pe.bas"
+_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_SRCBASE=qbs_new(oldstr3134->len,0);
+#line 26010 "qb64pe.bas"
 }
-memcpy(_SUB_XFILEPRINT_STRING_CA->chr,oldstr3992->chr,oldstr3992->len);
+#line 26010 "qb64pe.bas"
+memcpy(_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_SRCBASE->chr,oldstr3134->chr,oldstr3134->len);
+#line 26010 "qb64pe.bas"
 }
-qbs *_SUB_XFILEPRINT_STRING_U=NULL;
-if (!_SUB_XFILEPRINT_STRING_U)_SUB_XFILEPRINT_STRING_U=qbs_new(0,0);
-int16 pass3993;
-qbs *_SUB_XFILEPRINT_STRING_A3=NULL;
-if (!_SUB_XFILEPRINT_STRING_A3)_SUB_XFILEPRINT_STRING_A3=qbs_new(0,0);
-int32 *_SUB_XFILEPRINT_LONG_B=NULL;
-if(_SUB_XFILEPRINT_LONG_B==NULL){
-_SUB_XFILEPRINT_LONG_B=(int32*)mem_static_malloc(4);
-*_SUB_XFILEPRINT_LONG_B=0;
+#line 26010 "qb64pe.bas"
+qbs*oldstr3135=NULL;
+#line 26010 "qb64pe.bas"
+if(_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_DSTOFF->tmp||_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_DSTOFF->fixed||_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_DSTOFF->readonly){
+#line 26010 "qb64pe.bas"
+oldstr3135=_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_DSTOFF;
+#line 26010 "qb64pe.bas"
+if (oldstr3135->cmem_descriptor){
+#line 26010 "qb64pe.bas"
+_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_DSTOFF=qbs_new_cmem(oldstr3135->len,0);
+#line 26010 "qb64pe.bas"
+}else{
+#line 26010 "qb64pe.bas"
+_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_DSTOFF=qbs_new(oldstr3135->len,0);
+#line 26010 "qb64pe.bas"
 }
-int32 *_SUB_XFILEPRINT_LONG_I=NULL;
-if(_SUB_XFILEPRINT_LONG_I==NULL){
-_SUB_XFILEPRINT_LONG_I=(int32*)mem_static_malloc(4);
-*_SUB_XFILEPRINT_LONG_I=0;
+#line 26010 "qb64pe.bas"
+memcpy(_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_DSTOFF->chr,oldstr3135->chr,oldstr3135->len);
+#line 26010 "qb64pe.bas"
 }
-int64 fornext_value3995;
-int64 fornext_finalvalue3995;
-int64 fornext_step3995;
-uint8 fornext_step_negative3995;
-qbs *_SUB_XFILEPRINT_STRING_A2=NULL;
-if (!_SUB_XFILEPRINT_STRING_A2)_SUB_XFILEPRINT_STRING_A2=qbs_new(0,0);
-qbs *_SUB_XFILEPRINT_STRING_E=NULL;
-if (!_SUB_XFILEPRINT_STRING_E)_SUB_XFILEPRINT_STRING_E=qbs_new(0,0);
-qbs *_SUB_XFILEPRINT_STRING_L=NULL;
-if (!_SUB_XFILEPRINT_STRING_L)_SUB_XFILEPRINT_STRING_L=qbs_new(0,0);
-int32 pass3996;
-int16 pass3997;
-int16 pass3998;
-qbs *_SUB_XFILEPRINT_STRING_PUFORMAT=NULL;
-if (!_SUB_XFILEPRINT_STRING_PUFORMAT)_SUB_XFILEPRINT_STRING_PUFORMAT=qbs_new(0,0);
-int64 fornext_value4000;
-int64 fornext_finalvalue4000;
-int64 fornext_step4000;
-uint8 fornext_step_negative4000;
-int32 *_SUB_XFILEPRINT_LONG_TYP=NULL;
-if(_SUB_XFILEPRINT_LONG_TYP==NULL){
-_SUB_XFILEPRINT_LONG_TYP=(int32*)mem_static_malloc(4);
-*_SUB_XFILEPRINT_LONG_TYP=0;
+#line 26010 "qb64pe.bas"
+qbs*oldstr3136=NULL;
+#line 26010 "qb64pe.bas"
+if(_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_SRCOFF->tmp||_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_SRCOFF->fixed||_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_SRCOFF->readonly){
+#line 26010 "qb64pe.bas"
+oldstr3136=_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_SRCOFF;
+#line 26010 "qb64pe.bas"
+if (oldstr3136->cmem_descriptor){
+#line 26010 "qb64pe.bas"
+_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_SRCOFF=qbs_new_cmem(oldstr3136->len,0);
+#line 26010 "qb64pe.bas"
+}else{
+#line 26010 "qb64pe.bas"
+_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_SRCOFF=qbs_new(oldstr3136->len,0);
+#line 26010 "qb64pe.bas"
 }
-int32 pass4001;
-byte_element_struct *byte_element_4002=NULL;
-if (!byte_element_4002){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4002=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4002=(byte_element_struct*)mem_static_malloc(12);
+#line 26010 "qb64pe.bas"
+memcpy(_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_SRCOFF->chr,oldstr3136->chr,oldstr3136->len);
+#line 26010 "qb64pe.bas"
 }
-int16 pass4003;
-int16 pass4004;
-qbs *_SUB_XFILEPRINT_STRING_PUF=NULL;
-if (!_SUB_XFILEPRINT_STRING_PUF)_SUB_XFILEPRINT_STRING_PUF=qbs_new(0,0);
-int16 pass4005;
-int16 pass4006;
-int16 pass4007;
-int16 pass4008;
-int32 *_SUB_XFILEPRINT_LONG_LAST=NULL;
-if(_SUB_XFILEPRINT_LONG_LAST==NULL){
-_SUB_XFILEPRINT_LONG_LAST=(int32*)mem_static_malloc(4);
-*_SUB_XFILEPRINT_LONG_LAST=0;
+#line 26010 "qb64pe.bas"
+qbs*oldstr3137=NULL;
+#line 26010 "qb64pe.bas"
+if(_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_ACC->tmp||_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_ACC->fixed||_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_ACC->readonly){
+#line 26010 "qb64pe.bas"
+oldstr3137=_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_ACC;
+#line 26010 "qb64pe.bas"
+if (oldstr3137->cmem_descriptor){
+#line 26010 "qb64pe.bas"
+_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_ACC=qbs_new_cmem(oldstr3137->len,0);
+#line 26010 "qb64pe.bas"
+}else{
+#line 26010 "qb64pe.bas"
+_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_ACC=qbs_new(oldstr3137->len,0);
+#line 26010 "qb64pe.bas"
 }
-int64 fornext_value4010;
-int64 fornext_finalvalue4010;
-int64 fornext_step4010;
-uint8 fornext_step_negative4010;
-int32 pass4011;
-int16 pass4012;
-int16 pass4013;
-int16 pass4014;
-int16 pass4015;
-int16 pass4016;
-int16 pass4017;
-int16 pass4018;
-int16 pass4019;
-int16 pass4020;
-int16 pass4021;
-int16 pass4022;
-int16 pass4023;
-byte_element_struct *byte_element_4024=NULL;
-if (!byte_element_4024){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4024=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4024=(byte_element_struct*)mem_static_malloc(12);
+#line 26010 "qb64pe.bas"
+memcpy(_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_ACC->chr,oldstr3137->chr,oldstr3137->len);
+#line 26010 "qb64pe.bas"
 }
-int16 pass4025;
-int16 pass4026;
-int16 pass4027;
-int16 pass4028;
-int32 *_SUB_XFILEPRINT_LONG_NL=NULL;
-if(_SUB_XFILEPRINT_LONG_NL==NULL){
-_SUB_XFILEPRINT_LONG_NL=(int32*)mem_static_malloc(4);
-*_SUB_XFILEPRINT_LONG_NL=0;
+int32 *_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_E=NULL;
+#line 26011 "qb64pe.bas"
+if(_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_E==NULL){
+#line 26011 "qb64pe.bas"
+_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_E=(int32*)mem_static_malloc(4);
+#line 26011 "qb64pe.bas"
+*_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_E=0;
+#line 26011 "qb64pe.bas"
 }
-int16 pass4029;
-int16 pass4030;
-int16 pass4031;
-int16 pass4032;
-int16 pass4033;
-int16 pass4034;
-int16 pass4035;
-int16 pass4036;
-int64 fornext_value4038;
-int64 fornext_finalvalue4038;
-int64 fornext_step4038;
-uint8 fornext_step_negative4038;
-int32 *_SUB_XFILEPRINT_LONG_GOTOFPU=NULL;
-if(_SUB_XFILEPRINT_LONG_GOTOFPU==NULL){
-_SUB_XFILEPRINT_LONG_GOTOFPU=(int32*)mem_static_malloc(4);
-*_SUB_XFILEPRINT_LONG_GOTOFPU=0;
+int32 *_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_OFFBYTES=NULL;
+#line 26012 "qb64pe.bas"
+if(_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_OFFBYTES==NULL){
+#line 26012 "qb64pe.bas"
+_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_OFFBYTES=(int32*)mem_static_malloc(4);
+#line 26012 "qb64pe.bas"
+*_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_OFFBYTES=0;
+#line 26012 "qb64pe.bas"
 }
-int32 *_SUB_XFILEPRINT_LONG_USETAB=NULL;
-if(_SUB_XFILEPRINT_LONG_USETAB==NULL){
-_SUB_XFILEPRINT_LONG_USETAB=(int32*)mem_static_malloc(4);
-*_SUB_XFILEPRINT_LONG_USETAB=0;
+int32 *_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_MEMBERBYTES=NULL;
+#line 26013 "qb64pe.bas"
+if(_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_MEMBERBYTES==NULL){
+#line 26013 "qb64pe.bas"
+_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_MEMBERBYTES=(int32*)mem_static_malloc(4);
+#line 26013 "qb64pe.bas"
+*_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_MEMBERBYTES=0;
+#line 26013 "qb64pe.bas"
 }
-int32 *_SUB_XFILEPRINT_LONG_NEWLINE=NULL;
-if(_SUB_XFILEPRINT_LONG_NEWLINE==NULL){
-_SUB_XFILEPRINT_LONG_NEWLINE=(int32*)mem_static_malloc(4);
-*_SUB_XFILEPRINT_LONG_NEWLINE=0;
+int32 *_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_ELEMBYTES=NULL;
+#line 26014 "qb64pe.bas"
+if(_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_ELEMBYTES==NULL){
+#line 26014 "qb64pe.bas"
+_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_ELEMBYTES=(int32*)mem_static_malloc(4);
+#line 26014 "qb64pe.bas"
+*_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_ELEMBYTES=0;
+#line 26014 "qb64pe.bas"
 }
-int32 *_SUB_XFILEPRINT_LONG_EXTRASPACE=NULL;
-if(_SUB_XFILEPRINT_LONG_EXTRASPACE==NULL){
-_SUB_XFILEPRINT_LONG_EXTRASPACE=(int32*)mem_static_malloc(4);
-*_SUB_XFILEPRINT_LONG_EXTRASPACE=0;
+int32 *_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_T=NULL;
+#line 26015 "qb64pe.bas"
+if(_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_T==NULL){
+#line 26015 "qb64pe.bas"
+_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_T=(int32*)mem_static_malloc(4);
+#line 26015 "qb64pe.bas"
+*_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_T=0;
+#line 26015 "qb64pe.bas"
 }
-byte_element_struct *byte_element_4039=NULL;
-if (!byte_element_4039){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4039=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4039=(byte_element_struct*)mem_static_malloc(12);
+int32 *_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_I=NULL;
+#line 26016 "qb64pe.bas"
+if(_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_I==NULL){
+#line 26016 "qb64pe.bas"
+_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_I=(int32*)mem_static_malloc(4);
+#line 26016 "qb64pe.bas"
+*_SUB_COPY_PRESERVE_UDT_VARSTRINGS_LONG_I=0;
+#line 26016 "qb64pe.bas"
 }
-qbs *_SUB_XFILEPRINT_STRING_EBAK=NULL;
-if (!_SUB_XFILEPRINT_STRING_EBAK)_SUB_XFILEPRINT_STRING_EBAK=qbs_new(0,0);
-int32 *_SUB_XFILEPRINT_LONG_PNRTNUM=NULL;
-if(_SUB_XFILEPRINT_LONG_PNRTNUM==NULL){
-_SUB_XFILEPRINT_LONG_PNRTNUM=(int32*)mem_static_malloc(4);
-*_SUB_XFILEPRINT_LONG_PNRTNUM=0;
-}
-int32 pass4040;
-int16 pass4041;
-int16 pass4042;
-int16 pass4043;
-int16 pass4044;
-int16 pass4045;
-int16 pass4046;
+qbs *_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_DSTMEMBER=NULL;
+#line 26017 "qb64pe.bas"
+if (!_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_DSTMEMBER)_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_DSTMEMBER=qbs_new(0,0);
+qbs *_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_SRCMEMBER=NULL;
+#line 26018 "qb64pe.bas"
+if (!_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_SRCMEMBER)_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_SRCMEMBER=qbs_new(0,0);
+qbs *_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_DSTQ=NULL;
+#line 26019 "qb64pe.bas"
+if (!_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_DSTQ)_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_DSTQ=qbs_new(0,0);
+qbs *_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_SRCQ=NULL;
+#line 26020 "qb64pe.bas"
+if (!_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_SRCQ)_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_SRCQ=qbs_new(0,0);
+qbs *_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_NEXTDSTOFF=NULL;
+#line 26021 "qb64pe.bas"
+if (!_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_NEXTDSTOFF)_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_NEXTDSTOFF=qbs_new(0,0);
+qbs *_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_NEXTSRCOFF=NULL;
+#line 26022 "qb64pe.bas"
+if (!_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_NEXTSRCOFF)_SUB_COPY_PRESERVE_UDT_VARSTRINGS_STRING_NEXTSRCOFF=qbs_new(0,0);
+#line 26035 "qb64pe.bas"
+int64 fornext_value3140;
+#line 26035 "qb64pe.bas"
+int64 fornext_finalvalue3140;
+#line 26035 "qb64pe.bas"
+int64 fornext_step3140;
+#line 26035 "qb64pe.bas"
+uint8 fornext_step_negative3140;
+#line 26043 "qb64pe.bas"
+int64 fornext_value3142;
+#line 26043 "qb64pe.bas"
+int64 fornext_finalvalue3142;
+#line 26043 "qb64pe.bas"
+int64 fornext_step3142;
+#line 26043 "qb64pe.bas"
+uint8 fornext_step_negative3142;
+#line 26046 "qb64pe.bas"
+int32 pass3143;
+#line 26063 "qb64pe.bas"
+int32 pass3144;

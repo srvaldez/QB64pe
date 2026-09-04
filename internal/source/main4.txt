@@ -1,320 +1,216 @@
-void SUB_CMDLINETEMPORARYSETTINGSHELP(){
+#line 14535 "qb64pe.bas"
+void SUB_CMDLINESETTINGSHELP(){
+#line 14535 "qb64pe.bas"
 qbs *tqbs;
+#line 14535 "qb64pe.bas"
 ptrszint tmp_long;
+#line 14535 "qb64pe.bas"
 int32 tmp_fileno;
+#line 14535 "qb64pe.bas"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
+#line 14535 "qb64pe.bas"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
+#line 14535 "qb64pe.bas"
 uint32 tmp_cmem_sp=cmem_sp;
+#line 14535 "qb64pe.bas"
 #include "data4.txt"
+#line 14535 "qb64pe.bas"
 mem_lock *sf_mem_lock;
+#line 14535 "qb64pe.bas"
 new_mem_lock();
+#line 14535 "qb64pe.bas"
 sf_mem_lock=mem_lock_tmp;
+#line 14535 "qb64pe.bas"
 sf_mem_lock->type=3;
+#line 14535 "qb64pe.bas"
 libqb_check_stack();
+#line 14535 "qb64pe.bas"
 if (is_error_pending()) goto exit_subfunc;
+#line 14536 "qb64pe.bas"
 do{
+#line 14536 "qb64pe.bas"
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("Note:",5));
-if (is_error_pending()) goto skip2503;
+#line 14536 "qb64pe.bas"
+qbs_set(tqbs,qbs_new_txt_len("Supported (-s) Compiler settings:",33));
+#line 14536 "qb64pe.bas"
+if (is_error_pending()) goto skip1942;
+#line 14536 "qb64pe.bas"
 makefit(tqbs);
+#line 14536 "qb64pe.bas"
 qbs_print(tqbs,0);
+#line 14536 "qb64pe.bas"
 qbs_print(nothingstring,1);
-skip2503:
+#line 14536 "qb64pe.bas"
+skip1942:
+#line 14536 "qb64pe.bas"
 qbs_free(tqbs);
+#line 14536 "qb64pe.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14481);}while(r);
+#line 14536 "qb64pe.bas"
+if(!qbevent)break;evnt(14536);}while(r);
+#line 14537 "qb64pe.bas"
 do{
+#line 14537 "qb64pe.bas"
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("  Defaults for the following settings can be set via the IDE Options menu,",74));
-if (is_error_pending()) goto skip2504;
+#line 14537 "qb64pe.bas"
+qbs_set(tqbs,qbs_new_txt_len("  -s                              Show the current state of all settings",72));
+#line 14537 "qb64pe.bas"
+if (is_error_pending()) goto skip1943;
+#line 14537 "qb64pe.bas"
 makefit(tqbs);
+#line 14537 "qb64pe.bas"
 qbs_print(tqbs,0);
+#line 14537 "qb64pe.bas"
 qbs_print(nothingstring,1);
-skip2504:
+#line 14537 "qb64pe.bas"
+skip1943:
+#line 14537 "qb64pe.bas"
 qbs_free(tqbs);
+#line 14537 "qb64pe.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14482);}while(r);
+#line 14537 "qb64pe.bas"
+if(!qbevent)break;evnt(14537);}while(r);
+#line 14538 "qb64pe.bas"
 do{
+#line 14538 "qb64pe.bas"
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("  any values given here are just temporary overrides per compilation.",69));
-if (is_error_pending()) goto skip2505;
+#line 14538 "qb64pe.bas"
+qbs_set(tqbs,qbs_new_txt_len("  -s:DebugInfo=[true|false]       Embed C++ debug info into executable",70));
+#line 14538 "qb64pe.bas"
+if (is_error_pending()) goto skip1944;
+#line 14538 "qb64pe.bas"
 makefit(tqbs);
+#line 14538 "qb64pe.bas"
 qbs_print(tqbs,0);
+#line 14538 "qb64pe.bas"
 qbs_print(nothingstring,1);
-skip2505:
+#line 14538 "qb64pe.bas"
+skip1944:
+#line 14538 "qb64pe.bas"
 qbs_free(tqbs);
+#line 14538 "qb64pe.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14483);}while(r);
+#line 14538 "qb64pe.bas"
+if(!qbevent)break;evnt(14538);}while(r);
+#line 14539 "qb64pe.bas"
 do{
+#line 14539 "qb64pe.bas"
 tqbs=qbs_new(0,0);
-qbs_print(nothingstring,1);
-skip2506:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14484);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("Supported (-f) Compiler settings:",33));
-if (is_error_pending()) goto skip2507;
+#line 14539 "qb64pe.bas"
+qbs_set(tqbs,qbs_new_txt_len("  -s:ExeWithSource=[true|false]   Save executable in the source folder",70));
+#line 14539 "qb64pe.bas"
+if (is_error_pending()) goto skip1945;
+#line 14539 "qb64pe.bas"
 makefit(tqbs);
+#line 14539 "qb64pe.bas"
 qbs_print(tqbs,0);
+#line 14539 "qb64pe.bas"
 qbs_print(nothingstring,1);
-skip2507:
+#line 14539 "qb64pe.bas"
+skip1945:
+#line 14539 "qb64pe.bas"
 qbs_free(tqbs);
+#line 14539 "qb64pe.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14485);}while(r);
+#line 14539 "qb64pe.bas"
+if(!qbevent)break;evnt(14539);}while(r);
+#line 14540 "qb64pe.bas"
 do{
+#line 14540 "qb64pe.bas"
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("  -f                                    Show this list of supported settings",76));
-if (is_error_pending()) goto skip2508;
+#line 14540 "qb64pe.bas"
+qbs_set(tqbs,qbs_new_txt_len("  -s:ExeDefaultDir=[string]       Save executables here per default,",68));
+#line 14540 "qb64pe.bas"
+if (is_error_pending()) goto skip1946;
+#line 14540 "qb64pe.bas"
 makefit(tqbs);
+#line 14540 "qb64pe.bas"
 qbs_print(tqbs,0);
+#line 14540 "qb64pe.bas"
 qbs_print(nothingstring,1);
-skip2508:
+#line 14540 "qb64pe.bas"
+skip1946:
+#line 14540 "qb64pe.bas"
 qbs_free(tqbs);
+#line 14540 "qb64pe.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14486);}while(r);
+#line 14540 "qb64pe.bas"
+if(!qbevent)break;evnt(14540);}while(r);
+#line 14541 "qb64pe.bas"
 do{
+#line 14541 "qb64pe.bas"
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("  -f:OptimizeCppProgram=[true|false]    Compile with C++ Optimization flag",74));
-if (is_error_pending()) goto skip2509;
+#line 14541 "qb64pe.bas"
+qbs_set(tqbs,qbs_new_txt_len("                                  if not saving with source",59));
+#line 14541 "qb64pe.bas"
+if (is_error_pending()) goto skip1947;
+#line 14541 "qb64pe.bas"
 makefit(tqbs);
+#line 14541 "qb64pe.bas"
 qbs_print(tqbs,0);
+#line 14541 "qb64pe.bas"
 qbs_print(nothingstring,1);
-skip2509:
+#line 14541 "qb64pe.bas"
+skip1947:
+#line 14541 "qb64pe.bas"
 qbs_free(tqbs);
+#line 14541 "qb64pe.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14487);}while(r);
+#line 14541 "qb64pe.bas"
+if(!qbevent)break;evnt(14541);}while(r);
+#line 14542 "qb64pe.bas"
 do{
+#line 14542 "qb64pe.bas"
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("  -f:StripDebugSymbols=[true|false]     Strip C++ Symbols from executable",73));
-if (is_error_pending()) goto skip2510;
+#line 14542 "qb64pe.bas"
+qbs_set(tqbs,qbs_new_txt_len("      You may specify a setting without equal sign and value to",63));
+#line 14542 "qb64pe.bas"
+if (is_error_pending()) goto skip1948;
+#line 14542 "qb64pe.bas"
 makefit(tqbs);
+#line 14542 "qb64pe.bas"
 qbs_print(tqbs,0);
+#line 14542 "qb64pe.bas"
 qbs_print(nothingstring,1);
-skip2510:
+#line 14542 "qb64pe.bas"
+skip1948:
+#line 14542 "qb64pe.bas"
 qbs_free(tqbs);
+#line 14542 "qb64pe.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14488);}while(r);
+#line 14542 "qb64pe.bas"
+if(!qbevent)break;evnt(14542);}while(r);
+#line 14543 "qb64pe.bas"
 do{
+#line 14543 "qb64pe.bas"
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("  -f:ExtraCppFlags=[string]             Extra flags for the C++ Compiler",72));
-if (is_error_pending()) goto skip2511;
+#line 14543 "qb64pe.bas"
+qbs_set(tqbs,qbs_new_txt_len("      show the current state of that specific setting only.",59));
+#line 14543 "qb64pe.bas"
+if (is_error_pending()) goto skip1949;
+#line 14543 "qb64pe.bas"
 makefit(tqbs);
+#line 14543 "qb64pe.bas"
 qbs_print(tqbs,0);
+#line 14543 "qb64pe.bas"
 qbs_print(nothingstring,1);
-skip2511:
+#line 14543 "qb64pe.bas"
+skip1949:
+#line 14543 "qb64pe.bas"
 qbs_free(tqbs);
+#line 14543 "qb64pe.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14489);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("  -f:ExtraLinkerFlags=[string]          Extra flags for the Linker",66));
-if (is_error_pending()) goto skip2512;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_print(nothingstring,1);
-skip2512:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14490);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("  -f:MaxCompilerProcesses=[integer]     Max C++ Compiler processes to use",73));
-if (is_error_pending()) goto skip2513;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_print(nothingstring,1);
-skip2513:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14491);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("  -f:GenerateLicenseFile=[true|false]   Produce a license.txt file for program",78));
-if (is_error_pending()) goto skip2514;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_print(nothingstring,1);
-skip2514:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14492);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("  -f:UseSystemCompiler=[true|false]     Use the system C++ compiler instead of",78));
-if (is_error_pending()) goto skip2515;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_print(nothingstring,1);
-skip2515:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14493);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("                                        the bundled one (Windows only)",70));
-if (is_error_pending()) goto skip2516;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_print(nothingstring,1);
-skip2516:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14494);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_print(nothingstring,1);
-skip2517:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14495);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("Supported (-f) Layout settings:",31));
-if (is_error_pending()) goto skip2518;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_print(nothingstring,1);
-skip2518:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14496);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("  -f:AutoIndent=[true|false]            Auto Indent lines",57));
-if (is_error_pending()) goto skip2519;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_print(nothingstring,1);
-skip2519:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14497);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("      The next two also require the above to be enabled or they will have",73));
-if (is_error_pending()) goto skip2520;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_print(nothingstring,1);
-skip2520:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14498);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("      no effect, unless AutoIndent is enabled per default in the IDE.",69));
-if (is_error_pending()) goto skip2521;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_print(nothingstring,1);
-skip2521:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14499);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("  -f:AutoIndentSize=[integer]           Indent Spacing per indent level",71));
-if (is_error_pending()) goto skip2522;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_print(nothingstring,1);
-skip2522:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14500);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("  -f:IndentSubs=[true|false]            Indent SUBs and FUNCTIONs",65));
-if (is_error_pending()) goto skip2523;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_print(nothingstring,1);
-skip2523:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14501);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("  -f:AutoLayout=[true|false]            Auto Single-spacing of code elements",76));
-if (is_error_pending()) goto skip2524;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_print(nothingstring,1);
-skip2524:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14502);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("      The next two work together, if both are given with the same state",71));
-if (is_error_pending()) goto skip2525;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_print(nothingstring,1);
-skip2525:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14503);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("      it's CaMeL case, otherwise the enabled one determines the case,",69));
-if (is_error_pending()) goto skip2526;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_print(nothingstring,1);
-skip2526:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14504);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("      hence no need to specify both if you just want UPPER or lower case.",73));
-if (is_error_pending()) goto skip2527;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_print(nothingstring,1);
-skip2527:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14505);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("      If none is given the default as set in the IDE is used.",61));
-if (is_error_pending()) goto skip2528;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_print(nothingstring,1);
-skip2528:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14506);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("  -f:KeywordCapitals=[true|false]       Make keywords to ALL CAPITALS",69));
-if (is_error_pending()) goto skip2529;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_print(nothingstring,1);
-skip2529:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14507);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("  -f:KeywordLowercase=[true|false]      Make keywords to ALL lower case",71));
-if (is_error_pending()) goto skip2530;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_print(nothingstring,1);
-skip2530:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(14508);}while(r);
+#line 14543 "qb64pe.bas"
+if(!qbevent)break;evnt(14543);}while(r);
+#line 14544 "qb64pe.bas"
 exit_subfunc:;
+#line 14544 "qb64pe.bas"
 free_mem_lock(sf_mem_lock);
+#line 14544 "qb64pe.bas"
 #include "free4.txt"
+#line 14544 "qb64pe.bas"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
+#line 14544 "qb64pe.bas"
 cmem_sp=tmp_cmem_sp;
+#line 14544 "qb64pe.bas"
 }

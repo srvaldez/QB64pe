@@ -1,10 +1,49 @@
-qbs*oldstr4850=NULL;
-if(_SUB_FIXUPERRORMESSAGE_STRING_OP->tmp||_SUB_FIXUPERRORMESSAGE_STRING_OP->fixed||_SUB_FIXUPERRORMESSAGE_STRING_OP->readonly){
-oldstr4850=_SUB_FIXUPERRORMESSAGE_STRING_OP;
-if (oldstr4850->cmem_descriptor){
-_SUB_FIXUPERRORMESSAGE_STRING_OP=qbs_new_cmem(oldstr4850->len,0);
+int32 *_FUNC_LOGICALNOT_LONG_LOGICALNOT=NULL;
+#line 385 "utilities/const_eval.bas"
+if(_FUNC_LOGICALNOT_LONG_LOGICALNOT==NULL){
+#line 385 "utilities/const_eval.bas"
+_FUNC_LOGICALNOT_LONG_LOGICALNOT=(int32*)mem_static_malloc(4);
+#line 385 "utilities/const_eval.bas"
+*_FUNC_LOGICALNOT_LONG_LOGICALNOT=0;
+#line 385 "utilities/const_eval.bas"
+}
+#line 385 "utilities/const_eval.bas"
+qbs*oldstr3933=NULL;
+#line 385 "utilities/const_eval.bas"
+if(_FUNC_LOGICALNOT_STRING_EXP->tmp||_FUNC_LOGICALNOT_STRING_EXP->fixed||_FUNC_LOGICALNOT_STRING_EXP->readonly){
+#line 385 "utilities/const_eval.bas"
+oldstr3933=_FUNC_LOGICALNOT_STRING_EXP;
+#line 385 "utilities/const_eval.bas"
+if (oldstr3933->cmem_descriptor){
+#line 385 "utilities/const_eval.bas"
+_FUNC_LOGICALNOT_STRING_EXP=qbs_new_cmem(oldstr3933->len,0);
+#line 385 "utilities/const_eval.bas"
 }else{
-_SUB_FIXUPERRORMESSAGE_STRING_OP=qbs_new(oldstr4850->len,0);
+#line 385 "utilities/const_eval.bas"
+_FUNC_LOGICALNOT_STRING_EXP=qbs_new(oldstr3933->len,0);
+#line 385 "utilities/const_eval.bas"
 }
-memcpy(_SUB_FIXUPERRORMESSAGE_STRING_OP->chr,oldstr4850->chr,oldstr4850->len);
+#line 385 "utilities/const_eval.bas"
+memcpy(_FUNC_LOGICALNOT_STRING_EXP->chr,oldstr3933->chr,oldstr3933->len);
+#line 385 "utilities/const_eval.bas"
 }
+qbs *_FUNC_LOGICALNOT_STRING_ELE=NULL;
+#line 387 "utilities/const_eval.bas"
+if (!_FUNC_LOGICALNOT_STRING_ELE)_FUNC_LOGICALNOT_STRING_ELE=qbs_new(0,0);
+int32 *_FUNC_LOGICALNOT_LONG_NUM__ASCII_CHR_046__TYP=NULL;
+#line 393 "utilities/const_eval.bas"
+if(_FUNC_LOGICALNOT_LONG_NUM__ASCII_CHR_046__TYP==NULL){
+#line 393 "utilities/const_eval.bas"
+_FUNC_LOGICALNOT_LONG_NUM__ASCII_CHR_046__TYP=(int32*)mem_static_malloc(4);
+#line 393 "utilities/const_eval.bas"
+*_FUNC_LOGICALNOT_LONG_NUM__ASCII_CHR_046__TYP=0;
+#line 393 "utilities/const_eval.bas"
+}
+#line 394 "utilities/const_eval.bas"
+int32 pass3934;
+#line 394 "utilities/const_eval.bas"
+uint64 pass3935;
+#line 396 "utilities/const_eval.bas"
+int32 pass3936;
+#line 396 "utilities/const_eval.bas"
+int64 pass3937;

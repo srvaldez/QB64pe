@@ -1,56 +1,29 @@
-qbs *_FUNC_GETSELECTEDTEXT_STRING_GETSELECTEDTEXT=NULL;
-if (!_FUNC_GETSELECTEDTEXT_STRING_GETSELECTEDTEXT)_FUNC_GETSELECTEDTEXT_STRING_GETSELECTEDTEXT=qbs_new(0,0);
-int32 *_FUNC_GETSELECTEDTEXT_LONG_SY1=NULL;
-if(_FUNC_GETSELECTEDTEXT_LONG_SY1==NULL){
-_FUNC_GETSELECTEDTEXT_LONG_SY1=(int32*)mem_static_malloc(4);
-*_FUNC_GETSELECTEDTEXT_LONG_SY1=0;
+int32 *_SUB_SORT_LONG_I=NULL;
+#line 20643 "ide/ide_methods.bas"
+if(_SUB_SORT_LONG_I==NULL){
+#line 20643 "ide/ide_methods.bas"
+_SUB_SORT_LONG_I=(int32*)mem_static_malloc(4);
+#line 20643 "ide/ide_methods.bas"
+*_SUB_SORT_LONG_I=0;
+#line 20643 "ide/ide_methods.bas"
 }
-int32 *_FUNC_GETSELECTEDTEXT_LONG_SY2=NULL;
-if(_FUNC_GETSELECTEDTEXT_LONG_SY2==NULL){
-_FUNC_GETSELECTEDTEXT_LONG_SY2=(int32*)mem_static_malloc(4);
-*_FUNC_GETSELECTEDTEXT_LONG_SY2=0;
-}
-int32 *_FUNC_GETSELECTEDTEXT_LONG_SX1=NULL;
-if(_FUNC_GETSELECTEDTEXT_LONG_SX1==NULL){
-_FUNC_GETSELECTEDTEXT_LONG_SX1=(int32*)mem_static_malloc(4);
-*_FUNC_GETSELECTEDTEXT_LONG_SX1=0;
-}
-int32 *_FUNC_GETSELECTEDTEXT_LONG_SX2=NULL;
-if(_FUNC_GETSELECTEDTEXT_LONG_SX2==NULL){
-_FUNC_GETSELECTEDTEXT_LONG_SX2=(int32*)mem_static_malloc(4);
-*_FUNC_GETSELECTEDTEXT_LONG_SX2=0;
-}
-int32 *_FUNC_GETSELECTEDTEXT_LONG_Y=NULL;
-if(_FUNC_GETSELECTEDTEXT_LONG_Y==NULL){
-_FUNC_GETSELECTEDTEXT_LONG_Y=(int32*)mem_static_malloc(4);
-*_FUNC_GETSELECTEDTEXT_LONG_Y=0;
-}
-int64 fornext_value7718;
-int64 fornext_finalvalue7718;
-int64 fornext_step7718;
-uint8 fornext_step_negative7718;
-qbs *_FUNC_GETSELECTEDTEXT_STRING_A=NULL;
-if (!_FUNC_GETSELECTEDTEXT_STRING_A)_FUNC_GETSELECTEDTEXT_STRING_A=qbs_new(0,0);
-int32 *_FUNC_GETSELECTEDTEXT_LONG_X=NULL;
-if(_FUNC_GETSELECTEDTEXT_LONG_X==NULL){
-_FUNC_GETSELECTEDTEXT_LONG_X=(int32*)mem_static_malloc(4);
-*_FUNC_GETSELECTEDTEXT_LONG_X=0;
-}
-int64 fornext_value7720;
-int64 fornext_finalvalue7720;
-int64 fornext_step7720;
-uint8 fornext_step_negative7720;
-byte_element_struct *byte_element_7721=NULL;
-if (!byte_element_7721){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_7721=(byte_element_struct*)(mem_static_pointer-12); else byte_element_7721=(byte_element_struct*)mem_static_malloc(12);
-}
-qbs *_FUNC_GETSELECTEDTEXT_STRING_CLIP=NULL;
-if (!_FUNC_GETSELECTEDTEXT_STRING_CLIP)_FUNC_GETSELECTEDTEXT_STRING_CLIP=qbs_new(0,0);
-byte_element_struct *byte_element_7722=NULL;
-if (!byte_element_7722){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_7722=(byte_element_struct*)(mem_static_pointer-12); else byte_element_7722=(byte_element_struct*)mem_static_malloc(12);
-}
-byte_element_struct *byte_element_7723=NULL;
-if (!byte_element_7723){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_7723=(byte_element_struct*)(mem_static_pointer-12); else byte_element_7723=(byte_element_struct*)mem_static_malloc(12);
+#line 20643 "ide/ide_methods.bas"
+int64 fornext_value6837;
+#line 20643 "ide/ide_methods.bas"
+int64 fornext_finalvalue6837;
+#line 20643 "ide/ide_methods.bas"
+int64 fornext_step6837;
+#line 20643 "ide/ide_methods.bas"
+uint8 fornext_step_negative6837;
+qbs *_SUB_SORT_STRING_X=NULL;
+#line 20644 "ide/ide_methods.bas"
+if (!_SUB_SORT_STRING_X)_SUB_SORT_STRING_X=qbs_new(0,0);
+int32 *_SUB_SORT_LONG_J=NULL;
+#line 20645 "ide/ide_methods.bas"
+if(_SUB_SORT_LONG_J==NULL){
+#line 20645 "ide/ide_methods.bas"
+_SUB_SORT_LONG_J=(int32*)mem_static_malloc(4);
+#line 20645 "ide/ide_methods.bas"
+*_SUB_SORT_LONG_J=0;
+#line 20645 "ide/ide_methods.bas"
 }

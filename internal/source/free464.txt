@@ -1,5 +1,5 @@
-if(oldstr8181){
-if(oldstr8181->fixed)qbs_set(oldstr8181,_FUNC_STRIPDISCORDANSI_STRING_CLIP);
-qbs_free(_FUNC_STRIPDISCORDANSI_STRING_CLIP);
+if(oldstr6936){
+if(oldstr6936->fixed)qbs_set(oldstr6936,_SUB_HELP_ADDTXT_STRING_T);
+qbs_free(_SUB_HELP_ADDTXT_STRING_T);
 }
-qbs_free(_FUNC_STRIPDISCORDANSI_STRING_TEMP);
+qbs_free(_SUB_HELP_ADDTXT_STRING_B);

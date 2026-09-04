@@ -1,15 +1,21 @@
-int32 *_FUNC_IDENEWTXT_LONG_IDENEWTXT=NULL;
-if(_FUNC_IDENEWTXT_LONG_IDENEWTXT==NULL){
-_FUNC_IDENEWTXT_LONG_IDENEWTXT=(int32*)mem_static_malloc(4);
-*_FUNC_IDENEWTXT_LONG_IDENEWTXT=0;
+#line 11717 "ide/ide_methods.bas"
+int32 pass5872;
+#line 11717 "ide/ide_methods.bas"
+int32 pass5873;
+int32 *_SUB_IDEDRAWPAR_LONG_X=NULL;
+#line 11719 "ide/ide_methods.bas"
+if(_SUB_IDEDRAWPAR_LONG_X==NULL){
+#line 11719 "ide/ide_methods.bas"
+_SUB_IDEDRAWPAR_LONG_X=(int32*)mem_static_malloc(4);
+#line 11719 "ide/ide_methods.bas"
+*_SUB_IDEDRAWPAR_LONG_X=0;
+#line 11719 "ide/ide_methods.bas"
 }
-qbs*oldstr6817=NULL;
-if(_FUNC_IDENEWTXT_STRING_A->tmp||_FUNC_IDENEWTXT_STRING_A->fixed||_FUNC_IDENEWTXT_STRING_A->readonly){
-oldstr6817=_FUNC_IDENEWTXT_STRING_A;
-if (oldstr6817->cmem_descriptor){
-_FUNC_IDENEWTXT_STRING_A=qbs_new_cmem(oldstr6817->len,0);
-}else{
-_FUNC_IDENEWTXT_STRING_A=qbs_new(oldstr6817->len,0);
-}
-memcpy(_FUNC_IDENEWTXT_STRING_A->chr,oldstr6817->chr,oldstr6817->len);
+#line 11719 "ide/ide_methods.bas"
+byte_element_struct *byte_element_5874=NULL;
+#line 11719 "ide/ide_methods.bas"
+if (!byte_element_5874){
+#line 11719 "ide/ide_methods.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5874=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5874=(byte_element_struct*)mem_static_malloc(12);
+#line 11719 "ide/ide_methods.bas"
 }

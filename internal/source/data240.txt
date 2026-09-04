@@ -1,36 +1,80 @@
-int32 *_FUNC_HASHFIND_LONG_HASHFIND=NULL;
-if(_FUNC_HASHFIND_LONG_HASHFIND==NULL){
-_FUNC_HASHFIND_LONG_HASHFIND=(int32*)mem_static_malloc(4);
-*_FUNC_HASHFIND_LONG_HASHFIND=0;
+int32 *_FUNC_PARSENUMHASHLOOKUP_LONG_PARSENUMHASHLOOKUP=NULL;
+#line 714 "utilities/const_eval.bas"
+if(_FUNC_PARSENUMHASHLOOKUP_LONG_PARSENUMHASHLOOKUP==NULL){
+#line 714 "utilities/const_eval.bas"
+_FUNC_PARSENUMHASHLOOKUP_LONG_PARSENUMHASHLOOKUP=(int32*)mem_static_malloc(4);
+#line 714 "utilities/const_eval.bas"
+*_FUNC_PARSENUMHASHLOOKUP_LONG_PARSENUMHASHLOOKUP=0;
+#line 714 "utilities/const_eval.bas"
 }
-qbs*oldstr4889=NULL;
-if(_FUNC_HASHFIND_STRING_A->tmp||_FUNC_HASHFIND_STRING_A->fixed||_FUNC_HASHFIND_STRING_A->readonly){
-oldstr4889=_FUNC_HASHFIND_STRING_A;
-if (oldstr4889->cmem_descriptor){
-_FUNC_HASHFIND_STRING_A=qbs_new_cmem(oldstr4889->len,0);
+#line 714 "utilities/const_eval.bas"
+qbs*oldstr4030=NULL;
+#line 714 "utilities/const_eval.bas"
+if(_FUNC_PARSENUMHASHLOOKUP_STRING_ELE->tmp||_FUNC_PARSENUMHASHLOOKUP_STRING_ELE->fixed||_FUNC_PARSENUMHASHLOOKUP_STRING_ELE->readonly){
+#line 714 "utilities/const_eval.bas"
+oldstr4030=_FUNC_PARSENUMHASHLOOKUP_STRING_ELE;
+#line 714 "utilities/const_eval.bas"
+if (oldstr4030->cmem_descriptor){
+#line 714 "utilities/const_eval.bas"
+_FUNC_PARSENUMHASHLOOKUP_STRING_ELE=qbs_new_cmem(oldstr4030->len,0);
+#line 714 "utilities/const_eval.bas"
 }else{
-_FUNC_HASHFIND_STRING_A=qbs_new(oldstr4889->len,0);
+#line 714 "utilities/const_eval.bas"
+_FUNC_PARSENUMHASHLOOKUP_STRING_ELE=qbs_new(oldstr4030->len,0);
+#line 714 "utilities/const_eval.bas"
 }
-memcpy(_FUNC_HASHFIND_STRING_A->chr,oldstr4889->chr,oldstr4889->len);
+#line 714 "utilities/const_eval.bas"
+memcpy(_FUNC_PARSENUMHASHLOOKUP_STRING_ELE->chr,oldstr4030->chr,oldstr4030->len);
+#line 714 "utilities/const_eval.bas"
 }
-int32 *_FUNC_HASHFIND_LONG_I=NULL;
-if(_FUNC_HASHFIND_LONG_I==NULL){
-_FUNC_HASHFIND_LONG_I=(int32*)mem_static_malloc(4);
-*_FUNC_HASHFIND_LONG_I=0;
+int32 *_FUNC_PARSENUMHASHLOOKUP_LONG_HASHFOUND=NULL;
+#line 717 "utilities/const_eval.bas"
+if(_FUNC_PARSENUMHASHLOOKUP_LONG_HASHFOUND==NULL){
+#line 717 "utilities/const_eval.bas"
+_FUNC_PARSENUMHASHLOOKUP_LONG_HASHFOUND=(int32*)mem_static_malloc(4);
+#line 717 "utilities/const_eval.bas"
+*_FUNC_PARSENUMHASHLOOKUP_LONG_HASHFOUND=0;
+#line 717 "utilities/const_eval.bas"
 }
-qbs *_FUNC_HASHFIND_STRING_UA=NULL;
-if (!_FUNC_HASHFIND_STRING_UA)_FUNC_HASHFIND_STRING_UA=qbs_new(0,0);
-byte_element_struct *byte_element_4890=NULL;
-if (!byte_element_4890){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4890=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4890=(byte_element_struct*)mem_static_malloc(12);
+qbs *_FUNC_PARSENUMHASHLOOKUP_STRING_HASHNAME=NULL;
+#line 719 "utilities/const_eval.bas"
+if (!_FUNC_PARSENUMHASHLOOKUP_STRING_HASHNAME)_FUNC_PARSENUMHASHLOOKUP_STRING_HASHNAME=qbs_new(0,0);
+qbs *_FUNC_PARSENUMHASHLOOKUP_STRING_UNUSEDSYMBOL=NULL;
+#line 720 "utilities/const_eval.bas"
+if (!_FUNC_PARSENUMHASHLOOKUP_STRING_UNUSEDSYMBOL)_FUNC_PARSENUMHASHLOOKUP_STRING_UNUSEDSYMBOL=qbs_new(0,0);
+int32 *_FUNC_PARSENUMHASHLOOKUP_LONG_HASHCHKFLAGS=NULL;
+#line 724 "utilities/const_eval.bas"
+if(_FUNC_PARSENUMHASHLOOKUP_LONG_HASHCHKFLAGS==NULL){
+#line 724 "utilities/const_eval.bas"
+_FUNC_PARSENUMHASHLOOKUP_LONG_HASHCHKFLAGS=(int32*)mem_static_malloc(4);
+#line 724 "utilities/const_eval.bas"
+*_FUNC_PARSENUMHASHLOOKUP_LONG_HASHCHKFLAGS=0;
+#line 724 "utilities/const_eval.bas"
 }
-int32 *_FUNC_HASHFIND_LONG_F=NULL;
-if(_FUNC_HASHFIND_LONG_F==NULL){
-_FUNC_HASHFIND_LONG_F=(int32*)mem_static_malloc(4);
-*_FUNC_HASHFIND_LONG_F=0;
+int32 *_FUNC_PARSENUMHASHLOOKUP_LONG_HASHRES=NULL;
+#line 725 "utilities/const_eval.bas"
+if(_FUNC_PARSENUMHASHLOOKUP_LONG_HASHRES==NULL){
+#line 725 "utilities/const_eval.bas"
+_FUNC_PARSENUMHASHLOOKUP_LONG_HASHRES=(int32*)mem_static_malloc(4);
+#line 725 "utilities/const_eval.bas"
+*_FUNC_PARSENUMHASHLOOKUP_LONG_HASHRES=0;
+#line 725 "utilities/const_eval.bas"
 }
-int32 *_FUNC_HASHFIND_LONG_I2=NULL;
-if(_FUNC_HASHFIND_LONG_I2==NULL){
-_FUNC_HASHFIND_LONG_I2=(int32*)mem_static_malloc(4);
-*_FUNC_HASHFIND_LONG_I2=0;
+int32 *_FUNC_PARSENUMHASHLOOKUP_LONG_HASHRESFLAGS=NULL;
+#line 725 "utilities/const_eval.bas"
+if(_FUNC_PARSENUMHASHLOOKUP_LONG_HASHRESFLAGS==NULL){
+#line 725 "utilities/const_eval.bas"
+_FUNC_PARSENUMHASHLOOKUP_LONG_HASHRESFLAGS=(int32*)mem_static_malloc(4);
+#line 725 "utilities/const_eval.bas"
+*_FUNC_PARSENUMHASHLOOKUP_LONG_HASHRESFLAGS=0;
+#line 725 "utilities/const_eval.bas"
+}
+int32 *_FUNC_PARSENUMHASHLOOKUP_LONG_HASHRESREF=NULL;
+#line 725 "utilities/const_eval.bas"
+if(_FUNC_PARSENUMHASHLOOKUP_LONG_HASHRESREF==NULL){
+#line 725 "utilities/const_eval.bas"
+_FUNC_PARSENUMHASHLOOKUP_LONG_HASHRESREF=(int32*)mem_static_malloc(4);
+#line 725 "utilities/const_eval.bas"
+*_FUNC_PARSENUMHASHLOOKUP_LONG_HASHRESREF=0;
+#line 725 "utilities/const_eval.bas"
 }

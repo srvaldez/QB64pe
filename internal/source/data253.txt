@@ -1,35 +1,56 @@
-int32 *_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_PARSENEXTUDTARRAYDESCRIPTORDIM=NULL;
-if(_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_PARSENEXTUDTARRAYDESCRIPTORDIM==NULL){
-_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_PARSENEXTUDTARRAYDESCRIPTORDIM=(int32*)mem_static_malloc(4);
-*_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_PARSENEXTUDTARRAYDESCRIPTORDIM=0;
-}
-qbs*oldstr4919=NULL;
-if(_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_DESCRIPTOR->tmp||_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_DESCRIPTOR->fixed||_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_DESCRIPTOR->readonly){
-oldstr4919=_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_DESCRIPTOR;
-if (oldstr4919->cmem_descriptor){
-_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_DESCRIPTOR=qbs_new_cmem(oldstr4919->len,0);
+#line 42 "utilities/hash.bas"
+qbs*oldstr4071=NULL;
+#line 42 "utilities/hash.bas"
+if(_SUB_HASHADD_STRING_A->tmp||_SUB_HASHADD_STRING_A->fixed||_SUB_HASHADD_STRING_A->readonly){
+#line 42 "utilities/hash.bas"
+oldstr4071=_SUB_HASHADD_STRING_A;
+#line 42 "utilities/hash.bas"
+if (oldstr4071->cmem_descriptor){
+#line 42 "utilities/hash.bas"
+_SUB_HASHADD_STRING_A=qbs_new_cmem(oldstr4071->len,0);
+#line 42 "utilities/hash.bas"
 }else{
-_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_DESCRIPTOR=qbs_new(oldstr4919->len,0);
+#line 42 "utilities/hash.bas"
+_SUB_HASHADD_STRING_A=qbs_new(oldstr4071->len,0);
+#line 42 "utilities/hash.bas"
 }
-memcpy(_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_DESCRIPTOR->chr,oldstr4919->chr,oldstr4919->len);
+#line 42 "utilities/hash.bas"
+memcpy(_SUB_HASHADD_STRING_A->chr,oldstr4071->chr,oldstr4071->len);
+#line 42 "utilities/hash.bas"
 }
-byte_element_struct *byte_element_4920=NULL;
-if (!byte_element_4920){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4920=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4920=(byte_element_struct*)mem_static_malloc(12);
+int32 *_SUB_HASHADD_LONG_I=NULL;
+#line 47 "utilities/hash.bas"
+if(_SUB_HASHADD_LONG_I==NULL){
+#line 47 "utilities/hash.bas"
+_SUB_HASHADD_LONG_I=(int32*)mem_static_malloc(4);
+#line 47 "utilities/hash.bas"
+*_SUB_HASHADD_LONG_I=0;
+#line 47 "utilities/hash.bas"
 }
-int32 *_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_NEXT_SEPARATOR=NULL;
-if(_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_NEXT_SEPARATOR==NULL){
-_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_NEXT_SEPARATOR=(int32*)mem_static_malloc(4);
-*_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_NEXT_SEPARATOR=0;
+int32 *_SUB_HASHADD_LONG_X=NULL;
+#line 61 "utilities/hash.bas"
+if(_SUB_HASHADD_LONG_X==NULL){
+#line 61 "utilities/hash.bas"
+_SUB_HASHADD_LONG_X=(int32*)mem_static_malloc(4);
+#line 61 "utilities/hash.bas"
+*_SUB_HASHADD_LONG_X=0;
+#line 61 "utilities/hash.bas"
 }
-qbs *_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_PAIR=NULL;
-if (!_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_PAIR)_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_PAIR=qbs_new(0,0);
-byte_element_struct *byte_element_4921=NULL;
-if (!byte_element_4921){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4921=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4921=(byte_element_struct*)mem_static_malloc(12);
+int32 *_SUB_HASHADD_LONG_I2=NULL;
+#line 62 "utilities/hash.bas"
+if(_SUB_HASHADD_LONG_I2==NULL){
+#line 62 "utilities/hash.bas"
+_SUB_HASHADD_LONG_I2=(int32*)mem_static_malloc(4);
+#line 62 "utilities/hash.bas"
+*_SUB_HASHADD_LONG_I2=0;
+#line 62 "utilities/hash.bas"
 }
-int32 *_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_COMMA_POS=NULL;
-if(_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_COMMA_POS==NULL){
-_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_COMMA_POS=(int32*)mem_static_malloc(4);
-*_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_COMMA_POS=0;
+int32 *_SUB_HASHADD_LONG_I3=NULL;
+#line 64 "utilities/hash.bas"
+if(_SUB_HASHADD_LONG_I3==NULL){
+#line 64 "utilities/hash.bas"
+_SUB_HASHADD_LONG_I3=(int32*)mem_static_malloc(4);
+#line 64 "utilities/hash.bas"
+*_SUB_HASHADD_LONG_I3=0;
+#line 64 "utilities/hash.bas"
 }

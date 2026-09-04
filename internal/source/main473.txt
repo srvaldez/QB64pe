@@ -1,66 +1,98 @@
-qbs* FUNC__DECODEURL(qbs*_FUNC__DECODEURL_STRING__URL){
+#line 1231 "ide/wiki/wiki_methods.bas"
+qbs* FUNC_WIKILOOKAHEAD(qbs*_FUNC_WIKILOOKAHEAD_STRING_A,int32*_FUNC_WIKILOOKAHEAD_LONG_I,qbs*_FUNC_WIKILOOKAHEAD_STRING_TOKEN){
+#line 1231 "ide/wiki/wiki_methods.bas"
 qbs *tqbs;
+#line 1231 "ide/wiki/wiki_methods.bas"
 ptrszint tmp_long;
+#line 1231 "ide/wiki/wiki_methods.bas"
 int32 tmp_fileno;
+#line 1231 "ide/wiki/wiki_methods.bas"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
+#line 1231 "ide/wiki/wiki_methods.bas"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
+#line 1231 "ide/wiki/wiki_methods.bas"
 uint32 tmp_cmem_sp=cmem_sp;
+#line 1231 "ide/wiki/wiki_methods.bas"
 #include "data473.txt"
+#line 1231 "ide/wiki/wiki_methods.bas"
 mem_lock *sf_mem_lock;
+#line 1231 "ide/wiki/wiki_methods.bas"
 new_mem_lock();
+#line 1231 "ide/wiki/wiki_methods.bas"
 sf_mem_lock=mem_lock_tmp;
+#line 1231 "ide/wiki/wiki_methods.bas"
 sf_mem_lock->type=3;
+#line 1231 "ide/wiki/wiki_methods.bas"
+libqb_check_stack();
+#line 1231 "ide/wiki/wiki_methods.bas"
 if (is_error_pending()) goto exit_subfunc;
-error_track_line(28346,101,"afterlastline.bm");
-error_track_line(28346,103,"afterlastline.bm");
-qbs_set(_FUNC__DECODEURL_STRING__TMP,qbs_new_txt_len("",0));
+#line 1232 "ide/wiki/wiki_methods.bas"
+do{
+#line 1232 "ide/wiki/wiki_methods.bas"
+qbs_set(_FUNC_WIKILOOKAHEAD_STRING_WIKILOOKAHEAD,qbs_new_txt_len("",0));
+#line 1232 "ide/wiki/wiki_methods.bas"
 qbs_cleanup(qbs_tmp_base,0);
-error_track_line(28346,105,"afterlastline.bm");
-fornext_value8279= 1 ;
-fornext_finalvalue8279=_FUNC__DECODEURL_STRING__URL->len;
-fornext_step8279= 1 ;
-if (fornext_step8279<0) fornext_step_negative8279=1; else fornext_step_negative8279=0;
-if (is_error_pending()) goto fornext_error8279;
-goto fornext_entrylabel8279;
-while(1){
-fornext_value8279=fornext_step8279+(*_FUNC__DECODEURL_INTEGER__P);
-fornext_entrylabel8279:
-*_FUNC__DECODEURL_INTEGER__P=fornext_value8279;
+#line 1232 "ide/wiki/wiki_methods.bas"
+if(!qbevent)break;evnt(28672,1232,"wiki_methods.bas");}while(r);
+#line 1232 "ide/wiki/wiki_methods.bas"
+S_69939:;
+#line 1232 "ide/wiki/wiki_methods.bas"
+if ((qbs_cleanup(qbs_tmp_base,-(*_FUNC_WIKILOOKAHEAD_LONG_I>=_FUNC_WIKILOOKAHEAD_STRING_A->len)))||is_error_pending()){
+#line 1232 "ide/wiki/wiki_methods.bas"
+if(qbevent){evnt(28672,1232,"wiki_methods.bas");if(r)goto S_69939;}
+#line 1232 "ide/wiki/wiki_methods.bas"
+do{
+#line 1232 "ide/wiki/wiki_methods.bas"
+goto exit_subfunc;
+#line 1232 "ide/wiki/wiki_methods.bas"
+if(!qbevent)break;evnt(28672,1232,"wiki_methods.bas");}while(r);
+#line 1232 "ide/wiki/wiki_methods.bas"
+}
+#line 1233 "ide/wiki/wiki_methods.bas"
+do{
+#line 1233 "ide/wiki/wiki_methods.bas"
+*_FUNC_WIKILOOKAHEAD_LONG_J=func_instr(*_FUNC_WIKILOOKAHEAD_LONG_I,_FUNC_WIKILOOKAHEAD_STRING_A,_FUNC_WIKILOOKAHEAD_STRING_TOKEN,0|1);
+#line 1233 "ide/wiki/wiki_methods.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if (fornext_step_negative8279){
-if (fornext_value8279<fornext_finalvalue8279) break;
+#line 1233 "ide/wiki/wiki_methods.bas"
+if(!qbevent)break;evnt(28672,1233,"wiki_methods.bas");}while(r);
+#line 1234 "ide/wiki/wiki_methods.bas"
+S_69943:;
+#line 1234 "ide/wiki/wiki_methods.bas"
+if ((-(*_FUNC_WIKILOOKAHEAD_LONG_J== 0 ))||is_error_pending()){
+#line 1234 "ide/wiki/wiki_methods.bas"
+if(qbevent){evnt(28672,1234,"wiki_methods.bas");if(r)goto S_69943;}
+#line 1235 "ide/wiki/wiki_methods.bas"
+do{
+#line 1235 "ide/wiki/wiki_methods.bas"
+qbs_set(_FUNC_WIKILOOKAHEAD_STRING_WIKILOOKAHEAD,func_mid(_FUNC_WIKILOOKAHEAD_STRING_A,*_FUNC_WIKILOOKAHEAD_LONG_I,NULL,0));
+#line 1235 "ide/wiki/wiki_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 1235 "ide/wiki/wiki_methods.bas"
+if(!qbevent)break;evnt(28672,1235,"wiki_methods.bas");}while(r);
+#line 1236 "ide/wiki/wiki_methods.bas"
 }else{
-if (fornext_value8279>fornext_finalvalue8279) break;
+#line 1237 "ide/wiki/wiki_methods.bas"
+do{
+#line 1237 "ide/wiki/wiki_methods.bas"
+qbs_set(_FUNC_WIKILOOKAHEAD_STRING_WIKILOOKAHEAD,func_mid(_FUNC_WIKILOOKAHEAD_STRING_A,*_FUNC_WIKILOOKAHEAD_LONG_I,*_FUNC_WIKILOOKAHEAD_LONG_J-*_FUNC_WIKILOOKAHEAD_LONG_I,0|1));
+#line 1237 "ide/wiki/wiki_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 1237 "ide/wiki/wiki_methods.bas"
+if(!qbevent)break;evnt(28672,1237,"wiki_methods.bas");}while(r);
+#line 1238 "ide/wiki/wiki_methods.bas"
 }
-fornext_error8279:;
-error_track_line(28346,106,"afterlastline.bm");
-*_FUNC__DECODEURL_INTEGER__A=qbs_asc(_FUNC__DECODEURL_STRING__URL,*_FUNC__DECODEURL_INTEGER__P);
-qbs_cleanup(qbs_tmp_base,0);
-error_track_line(28346,108,"afterlastline.bm");
-if ((-(*_FUNC__DECODEURL_INTEGER__A!= 37ll ))||is_error_pending()){
-error_track_line(28346,109,"afterlastline.bm");
-qbs_set(_FUNC__DECODEURL_STRING__TMP,qbs_add(_FUNC__DECODEURL_STRING__TMP,func_chr(*_FUNC__DECODEURL_INTEGER__A)));
-qbs_cleanup(qbs_tmp_base,0);
-error_track_line(28346,110,"afterlastline.bm");
-}else{
-error_track_line(28346,111,"afterlastline.bm");
-qbs_set(_FUNC__DECODEURL_STRING__TMP,qbs_add(_FUNC__DECODEURL_STRING__TMP,func_chr(qbr(qbs_val<long double>(qbs_add(qbs_new_txt_len("&H",2),func_mid(_FUNC__DECODEURL_STRING__URL,*_FUNC__DECODEURL_INTEGER__P+ 1 , 2 ,0|1))))& 255 )));
-qbs_cleanup(qbs_tmp_base,0);
-error_track_line(28346,112,"afterlastline.bm");
-*_FUNC__DECODEURL_INTEGER__P=*_FUNC__DECODEURL_INTEGER__P+ 2 ;
-error_track_line(28346,113,"afterlastline.bm");
-}
-error_track_line(28346,114,"afterlastline.bm");
-fornext_continue_8278:;
-}
-fornext_exit_8278:;
-error_track_line(28346,116,"afterlastline.bm");
-qbs_set(_FUNC__DECODEURL_STRING__DECODEURL,_FUNC__DECODEURL_STRING__TMP);
-qbs_cleanup(qbs_tmp_base,0);
+#line 1239 "ide/wiki/wiki_methods.bas"
 exit_subfunc:;
+#line 1239 "ide/wiki/wiki_methods.bas"
 free_mem_lock(sf_mem_lock);
+#line 1239 "ide/wiki/wiki_methods.bas"
 #include "free473.txt"
+#line 1239 "ide/wiki/wiki_methods.bas"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
+#line 1239 "ide/wiki/wiki_methods.bas"
 cmem_sp=tmp_cmem_sp;
-qbs_maketmp(_FUNC__DECODEURL_STRING__DECODEURL);return _FUNC__DECODEURL_STRING__DECODEURL;
+#line 1239 "ide/wiki/wiki_methods.bas"
+qbs_maketmp(_FUNC_WIKILOOKAHEAD_STRING_WIKILOOKAHEAD);return _FUNC_WIKILOOKAHEAD_STRING_WIKILOOKAHEAD;
+#line 1239 "ide/wiki/wiki_methods.bas"
 }

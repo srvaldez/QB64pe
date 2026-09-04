@@ -1,122 +1,664 @@
-qbs* FUNC_INICURRENTSECTION(){
+#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs* FUNC_GL2QB_TYPE_CONVERT(qbs*_FUNC_GL2QB_TYPE_CONVERT_STRING_A,qbs*_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL,int32*_FUNC_GL2QB_TYPE_CONVERT_LONG_TYP,qbs*_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP){
+#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
 qbs *tqbs;
+#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
 ptrszint tmp_long;
+#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
 int32 tmp_fileno;
+#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
+#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
+#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
 uint32 tmp_cmem_sp=cmem_sp;
+#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
 #include "data163.txt"
+#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
 mem_lock *sf_mem_lock;
+#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
 new_mem_lock();
+#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
 sf_mem_lock=mem_lock_tmp;
+#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
 sf_mem_lock->type=3;
+#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
 libqb_check_stack();
+#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
 if (is_error_pending()) goto exit_subfunc;
+#line 2 "subs_functions/extensions/opengl/opengl_methods.bas"
 do{
-if(!qbevent)break;evnt(28167,260,"ini.bm");}while(r);
-do{
-if(!qbevent)break;evnt(28167,262,"ini.bm");}while(r);
-do{
-if(!qbevent)break;evnt(28167,263,"ini.bm");}while(r);
-do{
-*_FUNC_INICURRENTSECTION_ULONG_GLOBALPOSITION=func_instr(NULL,__STRING_INIWHOLEFILE,__STRING_INISECTIONDATA,0)+*__ULONG_INIPOSITION- 1 ;
+#line 2 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL,qbs_new_txt_len("",0));
+#line 2 "subs_functions/extensions/opengl/opengl_methods.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(28167,265,"ini.bm");}while(r);
-LABEL_CHECKSECTION:;
-if(qbevent){evnt(28167,267,"ini.bm");r=0;}
-S_38027:;
-fornext_value4571=*_FUNC_INICURRENTSECTION_ULONG_GLOBALPOSITION- 1 ;
-fornext_finalvalue4571= 1 ;
-fornext_step4571= -1 ;
-if (fornext_step4571<0) fornext_step_negative4571=1; else fornext_step_negative4571=0;
-if (is_error_pending()) goto fornext_error4571;
-goto fornext_entrylabel4571;
-while(1){
-fornext_value4571=fornext_step4571+(*_FUNC_INICURRENTSECTION_ULONG_I);
-fornext_entrylabel4571:
-*_FUNC_INICURRENTSECTION_ULONG_I=fornext_value4571;
-if (fornext_step_negative4571){
-if (fornext_value4571<fornext_finalvalue4571) break;
-}else{
-if (fornext_value4571>fornext_finalvalue4571) break;
-}
-fornext_error4571:;
-if(qbevent){evnt(28167,268,"ini.bm");if(r)goto S_38027;}
-S_38028:;
-if ((qbs_cleanup(qbs_tmp_base,-(qbs_asc(__STRING_INIWHOLEFILE,*_FUNC_INICURRENTSECTION_ULONG_I)==qbs_asc(qbs_new_txt_len("[",1)))))||is_error_pending()){
-if(qbevent){evnt(28167,269,"ini.bm");if(r)goto S_38028;}
+#line 2 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,2,"opengl_methods.bas");}while(r);
+#line 5 "subs_functions/extensions/opengl/opengl_methods.bas"
+S_37945:;
+#line 5 "subs_functions/extensions/opengl/opengl_methods.bas"
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_GL2QB_TYPE_CONVERT_STRING_A,qbs_new_txt_len("GLenum",6))))||is_error_pending()){
+#line 5 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(qbevent){evnt(28656,5,"opengl_methods.bas");if(r)goto S_37945;}
+#line 5 "subs_functions/extensions/opengl/opengl_methods.bas"
 do{
-*_FUNC_INICURRENTSECTION_ULONG_GLOBALPOSITION=*_FUNC_INICURRENTSECTION_ULONG_I;
-if(!qbevent)break;evnt(28167,270,"ini.bm");}while(r);
-do{
-goto fornext_exit_4570;
-if(!qbevent)break;evnt(28167,270,"ini.bm");}while(r);
-}
-fornext_continue_4570:;
-}
-fornext_exit_4570:;
-S_38033:;
-if ((-(*_FUNC_INICURRENTSECTION_ULONG_I== 0 ))||is_error_pending()){
-if(qbevent){evnt(28167,274,"ini.bm");if(r)goto S_38033;}
-do{
-qbs_set(_FUNC_INICURRENTSECTION_STRING_INICURRENTSECTION,qbs_new_txt_len("[]",2));
+#line 5 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_B,qbs_new_txt_len("_UNSIGNED LONG",14));
+#line 5 "subs_functions/extensions/opengl/opengl_methods.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(28167,274,"ini.bm");}while(r);
+#line 5 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,5,"opengl_methods.bas");}while(r);
+#line 5 "subs_functions/extensions/opengl/opengl_methods.bas"
 do{
-goto exit_subfunc;
-if(!qbevent)break;evnt(28167,274,"ini.bm");}while(r);
-}
-S_38037:;
-fornext_value4573=*_FUNC_INICURRENTSECTION_ULONG_GLOBALPOSITION- 1 ;
-fornext_finalvalue4573= 1 ;
-fornext_step4573= -1 ;
-if (fornext_step4573<0) fornext_step_negative4573=1; else fornext_step_negative4573=0;
-if (is_error_pending()) goto fornext_error4573;
-goto fornext_entrylabel4573;
-while(1){
-fornext_value4573=fornext_step4573+(*_FUNC_INICURRENTSECTION_ULONG_I);
-fornext_entrylabel4573:
-*_FUNC_INICURRENTSECTION_ULONG_I=fornext_value4573;
-if (fornext_step_negative4573){
-if (fornext_value4573<fornext_finalvalue4573) break;
-}else{
-if (fornext_value4573>fornext_finalvalue4573) break;
-}
-fornext_error4573:;
-if(qbevent){evnt(28167,277,"ini.bm");if(r)goto S_38037;}
-S_38038:;
-if ((qbs_cleanup(qbs_tmp_base,-(qbs_asc(__STRING_INIWHOLEFILE,*_FUNC_INICURRENTSECTION_ULONG_I)== 10 )))||is_error_pending()){
-if(qbevent){evnt(28167,278,"ini.bm");if(r)goto S_38038;}
-do{
-goto fornext_exit_4572;
-if(!qbevent)break;evnt(28167,278,"ini.bm");}while(r);
-}
-S_38041:;
-if ((qbs_cleanup(qbs_tmp_base,(-(qbs_asc(__STRING_INIWHOLEFILE,*_FUNC_INICURRENTSECTION_ULONG_I)!= 10 ))&(-(qbs_asc(__STRING_INIWHOLEFILE,*_FUNC_INICURRENTSECTION_ULONG_I)!= 32 ))))||is_error_pending()){
-if(qbevent){evnt(28167,279,"ini.bm");if(r)goto S_38041;}
-do{
-goto LABEL_CHECKSECTION;
-if(!qbevent)break;evnt(28167,281,"ini.bm");}while(r);
-}
-fornext_continue_4572:;
-}
-fornext_exit_4572:;
-do{
-*_FUNC_INICURRENTSECTION_ULONG_CLOSINGBRACKET=func_instr(*_FUNC_INICURRENTSECTION_ULONG_GLOBALPOSITION,__STRING_INIWHOLEFILE,qbs_new_txt_len("]",1),0|1);
+#line 5 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL,qbs_new_txt_len("~&",2));
+#line 5 "subs_functions/extensions/opengl/opengl_methods.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(28167,285,"ini.bm");}while(r);
-S_38046:;
-if ((-(*_FUNC_INICURRENTSECTION_ULONG_CLOSINGBRACKET> 0 ))||is_error_pending()){
-if(qbevent){evnt(28167,286,"ini.bm");if(r)goto S_38046;}
+#line 5 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,5,"opengl_methods.bas");}while(r);
+#line 5 "subs_functions/extensions/opengl/opengl_methods.bas"
 do{
-qbs_set(_FUNC_INICURRENTSECTION_STRING_INICURRENTSECTION,func_mid(__STRING_INIWHOLEFILE,*_FUNC_INICURRENTSECTION_ULONG_GLOBALPOSITION,*_FUNC_INICURRENTSECTION_ULONG_CLOSINGBRACKET-*_FUNC_INICURRENTSECTION_ULONG_GLOBALPOSITION+ 1 ,0|1));
+#line 5 "subs_functions/extensions/opengl/opengl_methods.bas"
+*_FUNC_GL2QB_TYPE_CONVERT_LONG_TYP=*__LONG_ULONGTYPE-*__LONG_ISPOINTER;
+#line 5 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,5,"opengl_methods.bas");}while(r);
+#line 5 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 5 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP,qbs_new_txt_len("uint32",6));
+#line 5 "subs_functions/extensions/opengl/opengl_methods.bas"
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(28167,287,"ini.bm");}while(r);
+#line 5 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,5,"opengl_methods.bas");}while(r);
+#line 5 "subs_functions/extensions/opengl/opengl_methods.bas"
 }
+#line 6 "subs_functions/extensions/opengl/opengl_methods.bas"
+S_37951:;
+#line 6 "subs_functions/extensions/opengl/opengl_methods.bas"
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_GL2QB_TYPE_CONVERT_STRING_A,qbs_new_txt_len("GLbitfield",10))))||is_error_pending()){
+#line 6 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(qbevent){evnt(28656,6,"opengl_methods.bas");if(r)goto S_37951;}
+#line 6 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 6 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_B,qbs_new_txt_len("_UNSIGNED LONG",14));
+#line 6 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 6 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,6,"opengl_methods.bas");}while(r);
+#line 6 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 6 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL,qbs_new_txt_len("~&",2));
+#line 6 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 6 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,6,"opengl_methods.bas");}while(r);
+#line 6 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 6 "subs_functions/extensions/opengl/opengl_methods.bas"
+*_FUNC_GL2QB_TYPE_CONVERT_LONG_TYP=*__LONG_ULONGTYPE-*__LONG_ISPOINTER;
+#line 6 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,6,"opengl_methods.bas");}while(r);
+#line 6 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 6 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP,qbs_new_txt_len("uint32",6));
+#line 6 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 6 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,6,"opengl_methods.bas");}while(r);
+#line 6 "subs_functions/extensions/opengl/opengl_methods.bas"
+}
+#line 7 "subs_functions/extensions/opengl/opengl_methods.bas"
+S_37957:;
+#line 7 "subs_functions/extensions/opengl/opengl_methods.bas"
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_GL2QB_TYPE_CONVERT_STRING_A,qbs_new_txt_len("GLuint",6))))||is_error_pending()){
+#line 7 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(qbevent){evnt(28656,7,"opengl_methods.bas");if(r)goto S_37957;}
+#line 7 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 7 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_B,qbs_new_txt_len("_UNSIGNED LONG",14));
+#line 7 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 7 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,7,"opengl_methods.bas");}while(r);
+#line 7 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 7 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL,qbs_new_txt_len("~&",2));
+#line 7 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 7 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,7,"opengl_methods.bas");}while(r);
+#line 7 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 7 "subs_functions/extensions/opengl/opengl_methods.bas"
+*_FUNC_GL2QB_TYPE_CONVERT_LONG_TYP=*__LONG_ULONGTYPE-*__LONG_ISPOINTER;
+#line 7 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,7,"opengl_methods.bas");}while(r);
+#line 7 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 7 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP,qbs_new_txt_len("uint32",6));
+#line 7 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 7 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,7,"opengl_methods.bas");}while(r);
+#line 7 "subs_functions/extensions/opengl/opengl_methods.bas"
+}
+#line 10 "subs_functions/extensions/opengl/opengl_methods.bas"
+S_37963:;
+#line 10 "subs_functions/extensions/opengl/opengl_methods.bas"
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_GL2QB_TYPE_CONVERT_STRING_A,qbs_new_txt_len("GLint",5))))||is_error_pending()){
+#line 10 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(qbevent){evnt(28656,10,"opengl_methods.bas");if(r)goto S_37963;}
+#line 10 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 10 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_B,qbs_new_txt_len("LONG",4));
+#line 10 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 10 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,10,"opengl_methods.bas");}while(r);
+#line 10 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 10 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL,qbs_new_txt_len("&",1));
+#line 10 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 10 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,10,"opengl_methods.bas");}while(r);
+#line 10 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 10 "subs_functions/extensions/opengl/opengl_methods.bas"
+*_FUNC_GL2QB_TYPE_CONVERT_LONG_TYP=*__LONG_LONGTYPE-*__LONG_ISPOINTER;
+#line 10 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,10,"opengl_methods.bas");}while(r);
+#line 10 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 10 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP,qbs_new_txt_len("int32",5));
+#line 10 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 10 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,10,"opengl_methods.bas");}while(r);
+#line 10 "subs_functions/extensions/opengl/opengl_methods.bas"
+}
+#line 11 "subs_functions/extensions/opengl/opengl_methods.bas"
+S_37969:;
+#line 11 "subs_functions/extensions/opengl/opengl_methods.bas"
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_GL2QB_TYPE_CONVERT_STRING_A,qbs_new_txt_len("GLsizei",7))))||is_error_pending()){
+#line 11 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(qbevent){evnt(28656,11,"opengl_methods.bas");if(r)goto S_37969;}
+#line 11 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 11 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_B,qbs_new_txt_len("LONG",4));
+#line 11 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 11 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,11,"opengl_methods.bas");}while(r);
+#line 11 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 11 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL,qbs_new_txt_len("&",1));
+#line 11 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 11 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,11,"opengl_methods.bas");}while(r);
+#line 11 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 11 "subs_functions/extensions/opengl/opengl_methods.bas"
+*_FUNC_GL2QB_TYPE_CONVERT_LONG_TYP=*__LONG_LONGTYPE-*__LONG_ISPOINTER;
+#line 11 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,11,"opengl_methods.bas");}while(r);
+#line 11 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 11 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP,qbs_new_txt_len("int32",5));
+#line 11 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 11 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,11,"opengl_methods.bas");}while(r);
+#line 11 "subs_functions/extensions/opengl/opengl_methods.bas"
+}
+#line 14 "subs_functions/extensions/opengl/opengl_methods.bas"
+S_37975:;
+#line 14 "subs_functions/extensions/opengl/opengl_methods.bas"
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_GL2QB_TYPE_CONVERT_STRING_A,qbs_new_txt_len("GLboolean",9))))||is_error_pending()){
+#line 14 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(qbevent){evnt(28656,14,"opengl_methods.bas");if(r)goto S_37975;}
+#line 14 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 14 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_B,qbs_new_txt_len("_UNSIGNED _BYTE",15));
+#line 14 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 14 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,14,"opengl_methods.bas");}while(r);
+#line 14 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 14 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL,qbs_new_txt_len("~%%",3));
+#line 14 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 14 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,14,"opengl_methods.bas");}while(r);
+#line 14 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 14 "subs_functions/extensions/opengl/opengl_methods.bas"
+*_FUNC_GL2QB_TYPE_CONVERT_LONG_TYP=*__LONG_UBYTETYPE-*__LONG_ISPOINTER;
+#line 14 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,14,"opengl_methods.bas");}while(r);
+#line 14 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 14 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP,qbs_new_txt_len("uint8",5));
+#line 14 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 14 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,14,"opengl_methods.bas");}while(r);
+#line 14 "subs_functions/extensions/opengl/opengl_methods.bas"
+}
+#line 15 "subs_functions/extensions/opengl/opengl_methods.bas"
+S_37981:;
+#line 15 "subs_functions/extensions/opengl/opengl_methods.bas"
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_GL2QB_TYPE_CONVERT_STRING_A,qbs_new_txt_len("GLubyte",7))))||is_error_pending()){
+#line 15 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(qbevent){evnt(28656,15,"opengl_methods.bas");if(r)goto S_37981;}
+#line 15 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 15 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_B,qbs_new_txt_len("_UNSIGNED _BYTE",15));
+#line 15 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 15 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,15,"opengl_methods.bas");}while(r);
+#line 15 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 15 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL,qbs_new_txt_len("~%%",3));
+#line 15 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 15 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,15,"opengl_methods.bas");}while(r);
+#line 15 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 15 "subs_functions/extensions/opengl/opengl_methods.bas"
+*_FUNC_GL2QB_TYPE_CONVERT_LONG_TYP=*__LONG_UBYTETYPE-*__LONG_ISPOINTER;
+#line 15 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,15,"opengl_methods.bas");}while(r);
+#line 15 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 15 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP,qbs_new_txt_len("uint8",5));
+#line 15 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 15 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,15,"opengl_methods.bas");}while(r);
+#line 15 "subs_functions/extensions/opengl/opengl_methods.bas"
+}
+#line 18 "subs_functions/extensions/opengl/opengl_methods.bas"
+S_37987:;
+#line 18 "subs_functions/extensions/opengl/opengl_methods.bas"
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_GL2QB_TYPE_CONVERT_STRING_A,qbs_new_txt_len("GLbyte",6))))||is_error_pending()){
+#line 18 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(qbevent){evnt(28656,18,"opengl_methods.bas");if(r)goto S_37987;}
+#line 18 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 18 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_B,qbs_new_txt_len("_BYTE",5));
+#line 18 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 18 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,18,"opengl_methods.bas");}while(r);
+#line 18 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 18 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL,qbs_new_txt_len("%%",2));
+#line 18 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 18 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,18,"opengl_methods.bas");}while(r);
+#line 18 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 18 "subs_functions/extensions/opengl/opengl_methods.bas"
+*_FUNC_GL2QB_TYPE_CONVERT_LONG_TYP=*__LONG_BYTETYPE-*__LONG_ISPOINTER;
+#line 18 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,18,"opengl_methods.bas");}while(r);
+#line 18 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 18 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP,qbs_new_txt_len("int8",4));
+#line 18 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 18 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,18,"opengl_methods.bas");}while(r);
+#line 18 "subs_functions/extensions/opengl/opengl_methods.bas"
+}
+#line 21 "subs_functions/extensions/opengl/opengl_methods.bas"
+S_37993:;
+#line 21 "subs_functions/extensions/opengl/opengl_methods.bas"
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_GL2QB_TYPE_CONVERT_STRING_A,qbs_new_txt_len("GLushort",8))))||is_error_pending()){
+#line 21 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(qbevent){evnt(28656,21,"opengl_methods.bas");if(r)goto S_37993;}
+#line 21 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 21 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_B,qbs_new_txt_len("_UNSIGNED INTEGER",17));
+#line 21 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 21 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,21,"opengl_methods.bas");}while(r);
+#line 21 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 21 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL,qbs_new_txt_len("~%",2));
+#line 21 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 21 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,21,"opengl_methods.bas");}while(r);
+#line 21 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 21 "subs_functions/extensions/opengl/opengl_methods.bas"
+*_FUNC_GL2QB_TYPE_CONVERT_LONG_TYP=*__LONG_UINTEGERTYPE-*__LONG_ISPOINTER;
+#line 21 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,21,"opengl_methods.bas");}while(r);
+#line 21 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 21 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP,qbs_new_txt_len("uint16",6));
+#line 21 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 21 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,21,"opengl_methods.bas");}while(r);
+#line 21 "subs_functions/extensions/opengl/opengl_methods.bas"
+}
+#line 24 "subs_functions/extensions/opengl/opengl_methods.bas"
+S_37999:;
+#line 24 "subs_functions/extensions/opengl/opengl_methods.bas"
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_GL2QB_TYPE_CONVERT_STRING_A,qbs_new_txt_len("GLshort",7))))||is_error_pending()){
+#line 24 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(qbevent){evnt(28656,24,"opengl_methods.bas");if(r)goto S_37999;}
+#line 24 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 24 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_B,qbs_new_txt_len("INTEGER",7));
+#line 24 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 24 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,24,"opengl_methods.bas");}while(r);
+#line 24 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 24 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL,qbs_new_txt_len("%",1));
+#line 24 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 24 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,24,"opengl_methods.bas");}while(r);
+#line 24 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 24 "subs_functions/extensions/opengl/opengl_methods.bas"
+*_FUNC_GL2QB_TYPE_CONVERT_LONG_TYP=*__LONG_INTEGERTYPE-*__LONG_ISPOINTER;
+#line 24 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,24,"opengl_methods.bas");}while(r);
+#line 24 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 24 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP,qbs_new_txt_len("int16",5));
+#line 24 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 24 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,24,"opengl_methods.bas");}while(r);
+#line 24 "subs_functions/extensions/opengl/opengl_methods.bas"
+}
+#line 27 "subs_functions/extensions/opengl/opengl_methods.bas"
+S_38005:;
+#line 27 "subs_functions/extensions/opengl/opengl_methods.bas"
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_GL2QB_TYPE_CONVERT_STRING_A,qbs_new_txt_len("GLfloat",7))))||is_error_pending()){
+#line 27 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(qbevent){evnt(28656,27,"opengl_methods.bas");if(r)goto S_38005;}
+#line 27 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 27 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_B,qbs_new_txt_len("SINGLE",6));
+#line 27 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 27 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,27,"opengl_methods.bas");}while(r);
+#line 27 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 27 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL,qbs_new_txt_len("!",1));
+#line 27 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 27 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,27,"opengl_methods.bas");}while(r);
+#line 27 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 27 "subs_functions/extensions/opengl/opengl_methods.bas"
+*_FUNC_GL2QB_TYPE_CONVERT_LONG_TYP=*__LONG_SINGLETYPE-*__LONG_ISPOINTER;
+#line 27 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,27,"opengl_methods.bas");}while(r);
+#line 27 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 27 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP,qbs_new_txt_len("float",5));
+#line 27 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 27 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,27,"opengl_methods.bas");}while(r);
+#line 27 "subs_functions/extensions/opengl/opengl_methods.bas"
+}
+#line 28 "subs_functions/extensions/opengl/opengl_methods.bas"
+S_38011:;
+#line 28 "subs_functions/extensions/opengl/opengl_methods.bas"
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_GL2QB_TYPE_CONVERT_STRING_A,qbs_new_txt_len("GLclampf",8))))||is_error_pending()){
+#line 28 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(qbevent){evnt(28656,28,"opengl_methods.bas");if(r)goto S_38011;}
+#line 28 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 28 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_B,qbs_new_txt_len("SINGLE",6));
+#line 28 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 28 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,28,"opengl_methods.bas");}while(r);
+#line 28 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 28 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL,qbs_new_txt_len("!",1));
+#line 28 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 28 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,28,"opengl_methods.bas");}while(r);
+#line 28 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 28 "subs_functions/extensions/opengl/opengl_methods.bas"
+*_FUNC_GL2QB_TYPE_CONVERT_LONG_TYP=*__LONG_SINGLETYPE-*__LONG_ISPOINTER;
+#line 28 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,28,"opengl_methods.bas");}while(r);
+#line 28 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 28 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP,qbs_new_txt_len("float",5));
+#line 28 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 28 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,28,"opengl_methods.bas");}while(r);
+#line 28 "subs_functions/extensions/opengl/opengl_methods.bas"
+}
+#line 31 "subs_functions/extensions/opengl/opengl_methods.bas"
+S_38017:;
+#line 31 "subs_functions/extensions/opengl/opengl_methods.bas"
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_GL2QB_TYPE_CONVERT_STRING_A,qbs_new_txt_len("GLdouble",8))))||is_error_pending()){
+#line 31 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(qbevent){evnt(28656,31,"opengl_methods.bas");if(r)goto S_38017;}
+#line 31 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 31 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_B,qbs_new_txt_len("DOUBLE",6));
+#line 31 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 31 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,31,"opengl_methods.bas");}while(r);
+#line 31 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 31 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL,qbs_new_txt_len("#",1));
+#line 31 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 31 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,31,"opengl_methods.bas");}while(r);
+#line 31 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 31 "subs_functions/extensions/opengl/opengl_methods.bas"
+*_FUNC_GL2QB_TYPE_CONVERT_LONG_TYP=*__LONG_DOUBLETYPE-*__LONG_ISPOINTER;
+#line 31 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,31,"opengl_methods.bas");}while(r);
+#line 31 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 31 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP,qbs_new_txt_len("double",6));
+#line 31 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 31 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,31,"opengl_methods.bas");}while(r);
+#line 31 "subs_functions/extensions/opengl/opengl_methods.bas"
+}
+#line 32 "subs_functions/extensions/opengl/opengl_methods.bas"
+S_38023:;
+#line 32 "subs_functions/extensions/opengl/opengl_methods.bas"
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_GL2QB_TYPE_CONVERT_STRING_A,qbs_new_txt_len("GLclampd",8))))||is_error_pending()){
+#line 32 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(qbevent){evnt(28656,32,"opengl_methods.bas");if(r)goto S_38023;}
+#line 32 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 32 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_B,qbs_new_txt_len("DOUBLE",6));
+#line 32 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 32 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,32,"opengl_methods.bas");}while(r);
+#line 32 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 32 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL,qbs_new_txt_len("#",1));
+#line 32 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 32 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,32,"opengl_methods.bas");}while(r);
+#line 32 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 32 "subs_functions/extensions/opengl/opengl_methods.bas"
+*_FUNC_GL2QB_TYPE_CONVERT_LONG_TYP=*__LONG_DOUBLETYPE-*__LONG_ISPOINTER;
+#line 32 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,32,"opengl_methods.bas");}while(r);
+#line 32 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 32 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP,qbs_new_txt_len("double",6));
+#line 32 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 32 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,32,"opengl_methods.bas");}while(r);
+#line 32 "subs_functions/extensions/opengl/opengl_methods.bas"
+}
+#line 35 "subs_functions/extensions/opengl/opengl_methods.bas"
+S_38029:;
+#line 35 "subs_functions/extensions/opengl/opengl_methods.bas"
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_GL2QB_TYPE_CONVERT_STRING_A,qbs_new_txt_len("GLvoid",6))))||is_error_pending()){
+#line 35 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(qbevent){evnt(28656,35,"opengl_methods.bas");if(r)goto S_38029;}
+#line 35 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 35 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_B,qbs_new_txt_len("_OFFSET",7));
+#line 35 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 35 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,35,"opengl_methods.bas");}while(r);
+#line 35 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 35 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL,qbs_new_txt_len("%&",2));
+#line 35 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 35 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,35,"opengl_methods.bas");}while(r);
+#line 35 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 35 "subs_functions/extensions/opengl/opengl_methods.bas"
+*_FUNC_GL2QB_TYPE_CONVERT_LONG_TYP=*__LONG_OFFSETTYPE-*__LONG_ISPOINTER;
+#line 35 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,35,"opengl_methods.bas");}while(r);
+#line 35 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 35 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP,qbs_new_txt_len("ptrszint",8));
+#line 35 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 35 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,35,"opengl_methods.bas");}while(r);
+#line 35 "subs_functions/extensions/opengl/opengl_methods.bas"
+}
+#line 53 "subs_functions/extensions/opengl/opengl_methods.bas"
+S_38035:;
+#line 53 "subs_functions/extensions/opengl/opengl_methods.bas"
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_GL2QB_TYPE_CONVERT_STRING_B,qbs_new_txt_len("",0))))||is_error_pending()){
+#line 53 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(qbevent){evnt(28656,53,"opengl_methods.bas");if(r)goto S_38035;}
+#line 53 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 53 "subs_functions/extensions/opengl/opengl_methods.bas"
+tqbs=qbs_new(0,0);
+#line 53 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(tqbs,qbs_add(qbs_new_txt_len("Unknown type:",13),_FUNC_GL2QB_TYPE_CONVERT_STRING_A));
+#line 53 "subs_functions/extensions/opengl/opengl_methods.bas"
+if (is_error_pending()) goto skip3666;
+#line 53 "subs_functions/extensions/opengl/opengl_methods.bas"
+makefit(tqbs);
+#line 53 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_print(tqbs,0);
+#line 53 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_print(nothingstring,1);
+#line 53 "subs_functions/extensions/opengl/opengl_methods.bas"
+skip3666:
+#line 53 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_free(tqbs);
+#line 53 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 53 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,53,"opengl_methods.bas");}while(r);
+#line 53 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 53 "subs_functions/extensions/opengl/opengl_methods.bas"
+sub_end();
+#line 53 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,53,"opengl_methods.bas");}while(r);
+#line 53 "subs_functions/extensions/opengl/opengl_methods.bas"
+}
+#line 54 "subs_functions/extensions/opengl/opengl_methods.bas"
+do{
+#line 54 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_set(_FUNC_GL2QB_TYPE_CONVERT_STRING_GL2QB_TYPE_CONVERT,_FUNC_GL2QB_TYPE_CONVERT_STRING_B);
+#line 54 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 54 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(!qbevent)break;evnt(28656,54,"opengl_methods.bas");}while(r);
+#line 55 "subs_functions/extensions/opengl/opengl_methods.bas"
 exit_subfunc:;
+#line 55 "subs_functions/extensions/opengl/opengl_methods.bas"
 free_mem_lock(sf_mem_lock);
+#line 55 "subs_functions/extensions/opengl/opengl_methods.bas"
 #include "free163.txt"
+#line 55 "subs_functions/extensions/opengl/opengl_methods.bas"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
+#line 55 "subs_functions/extensions/opengl/opengl_methods.bas"
 cmem_sp=tmp_cmem_sp;
-qbs_maketmp(_FUNC_INICURRENTSECTION_STRING_INICURRENTSECTION);return _FUNC_INICURRENTSECTION_STRING_INICURRENTSECTION;
+#line 55 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs_maketmp(_FUNC_GL2QB_TYPE_CONVERT_STRING_GL2QB_TYPE_CONVERT);return _FUNC_GL2QB_TYPE_CONVERT_STRING_GL2QB_TYPE_CONVERT;
+#line 55 "subs_functions/extensions/opengl/opengl_methods.bas"
 }

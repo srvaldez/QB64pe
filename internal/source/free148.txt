@@ -1,5 +1,9 @@
-if(oldstr4467){
-if(oldstr4467->fixed)qbs_set(oldstr4467,_FUNC_ELEMENTISNUMBER_STRING_OELE);
-qbs_free(_FUNC_ELEMENTISNUMBER_STRING_OELE);
+if(oldstr3605){
+if(oldstr3605->fixed)qbs_set(oldstr3605,_SUB_INSERTELEMENTS_STRING_A);
+qbs_free(_SUB_INSERTELEMENTS_STRING_A);
 }
-qbs_free(_FUNC_ELEMENTISNUMBER_STRING_ELE);
+if(oldstr3606){
+if(oldstr3606->fixed)qbs_set(oldstr3606,_SUB_INSERTELEMENTS_STRING_ELEMENTS);
+qbs_free(_SUB_INSERTELEMENTS_STRING_ELEMENTS);
+}
+qbs_free(_SUB_INSERTELEMENTS_STRING_A2);

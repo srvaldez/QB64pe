@@ -1,38 +1,75 @@
-int32 *_FUNC_IDEWATCHOFFSET_LONG_IDEWATCHOFFSET=NULL;
-if(_FUNC_IDEWATCHOFFSET_LONG_IDEWATCHOFFSET==NULL){
-_FUNC_IDEWATCHOFFSET_LONG_IDEWATCHOFFSET=(int32*)mem_static_malloc(4);
-*_FUNC_IDEWATCHOFFSET_LONG_IDEWATCHOFFSET=0;
+qbs *_FUNC_FINDWORKINGTERMINAL_STRING_FINDWORKINGTERMINAL=NULL;
+#line 7 "utilities/terminal.bas"
+if (!_FUNC_FINDWORKINGTERMINAL_STRING_FINDWORKINGTERMINAL)_FUNC_FINDWORKINGTERMINAL_STRING_FINDWORKINGTERMINAL=qbs_new(0,0);
+ptrszint *_FUNC_FINDWORKINGTERMINAL_ARRAY_STRING_EXES=NULL;
+#line 8 "utilities/terminal.bas"
+if (!_FUNC_FINDWORKINGTERMINAL_ARRAY_STRING_EXES){
+#line 8 "utilities/terminal.bas"
+_FUNC_FINDWORKINGTERMINAL_ARRAY_STRING_EXES=(ptrszint*)mem_static_malloc(9*ptrsz);
+#line 8 "utilities/terminal.bas"
+new_mem_lock();
+#line 8 "utilities/terminal.bas"
+mem_lock_tmp->type=4;
+#line 8 "utilities/terminal.bas"
+((ptrszint*)_FUNC_FINDWORKINGTERMINAL_ARRAY_STRING_EXES)[8]=(ptrszint)mem_lock_tmp;
+#line 8 "utilities/terminal.bas"
+_FUNC_FINDWORKINGTERMINAL_ARRAY_STRING_EXES[2]=0;
+#line 8 "utilities/terminal.bas"
+_FUNC_FINDWORKINGTERMINAL_ARRAY_STRING_EXES[4]=2147483647;
+#line 8 "utilities/terminal.bas"
+_FUNC_FINDWORKINGTERMINAL_ARRAY_STRING_EXES[5]=0;
+#line 8 "utilities/terminal.bas"
+_FUNC_FINDWORKINGTERMINAL_ARRAY_STRING_EXES[6]=0;
+#line 8 "utilities/terminal.bas"
+_FUNC_FINDWORKINGTERMINAL_ARRAY_STRING_EXES[0]=(ptrszint)&nothingstring;
+#line 8 "utilities/terminal.bas"
 }
-qbs*oldstr6561=NULL;
-if(_FUNC_IDEWATCHOFFSET_STRING_REFERENCETEXT->tmp||_FUNC_IDEWATCHOFFSET_STRING_REFERENCETEXT->fixed||_FUNC_IDEWATCHOFFSET_STRING_REFERENCETEXT->readonly){
-oldstr6561=_FUNC_IDEWATCHOFFSET_STRING_REFERENCETEXT;
-if (oldstr6561->cmem_descriptor){
-_FUNC_IDEWATCHOFFSET_STRING_REFERENCETEXT=qbs_new_cmem(oldstr6561->len,0);
-}else{
-_FUNC_IDEWATCHOFFSET_STRING_REFERENCETEXT=qbs_new(oldstr6561->len,0);
+ptrszint *_FUNC_FINDWORKINGTERMINAL_ARRAY_STRING_FORMATS=NULL;
+#line 8 "utilities/terminal.bas"
+if (!_FUNC_FINDWORKINGTERMINAL_ARRAY_STRING_FORMATS){
+#line 8 "utilities/terminal.bas"
+_FUNC_FINDWORKINGTERMINAL_ARRAY_STRING_FORMATS=(ptrszint*)mem_static_malloc(9*ptrsz);
+#line 8 "utilities/terminal.bas"
+new_mem_lock();
+#line 8 "utilities/terminal.bas"
+mem_lock_tmp->type=4;
+#line 8 "utilities/terminal.bas"
+((ptrszint*)_FUNC_FINDWORKINGTERMINAL_ARRAY_STRING_FORMATS)[8]=(ptrszint)mem_lock_tmp;
+#line 8 "utilities/terminal.bas"
+_FUNC_FINDWORKINGTERMINAL_ARRAY_STRING_FORMATS[2]=0;
+#line 8 "utilities/terminal.bas"
+_FUNC_FINDWORKINGTERMINAL_ARRAY_STRING_FORMATS[4]=2147483647;
+#line 8 "utilities/terminal.bas"
+_FUNC_FINDWORKINGTERMINAL_ARRAY_STRING_FORMATS[5]=0;
+#line 8 "utilities/terminal.bas"
+_FUNC_FINDWORKINGTERMINAL_ARRAY_STRING_FORMATS[6]=0;
+#line 8 "utilities/terminal.bas"
+_FUNC_FINDWORKINGTERMINAL_ARRAY_STRING_FORMATS[0]=(ptrszint)&nothingstring;
+#line 8 "utilities/terminal.bas"
 }
-memcpy(_FUNC_IDEWATCHOFFSET_STRING_REFERENCETEXT->chr,oldstr6561->chr,oldstr6561->len);
+int32 *_FUNC_FINDWORKINGTERMINAL_LONG_I=NULL;
+#line 18 "utilities/terminal.bas"
+if(_FUNC_FINDWORKINGTERMINAL_LONG_I==NULL){
+#line 18 "utilities/terminal.bas"
+_FUNC_FINDWORKINGTERMINAL_LONG_I=(int32*)mem_static_malloc(4);
+#line 18 "utilities/terminal.bas"
+*_FUNC_FINDWORKINGTERMINAL_LONG_I=0;
+#line 18 "utilities/terminal.bas"
 }
-qbs *_FUNC_IDEWATCHOFFSET_STRING_OFFSETTEXT=NULL;
-if (!_FUNC_IDEWATCHOFFSET_STRING_OFFSETTEXT)_FUNC_IDEWATCHOFFSET_STRING_OFFSETTEXT=qbs_new(0,0);
-qbs *_FUNC_IDEWATCHOFFSET_STRING_EVALTEXT=NULL;
-if (!_FUNC_IDEWATCHOFFSET_STRING_EVALTEXT)_FUNC_IDEWATCHOFFSET_STRING_EVALTEXT=qbs_new(0,0);
-void *_FUNC_IDEWATCHOFFSET_UDT_PARSEDNUMBER=NULL;
-if(_FUNC_IDEWATCHOFFSET_UDT_PARSEDNUMBER==NULL){
-_FUNC_IDEWATCHOFFSET_UDT_PARSEDNUMBER=(void*)mem_static_malloc(60);
-memset(_FUNC_IDEWATCHOFFSET_UDT_PARSEDNUMBER,0,60);
-*(qbs**)(((char*)_FUNC_IDEWATCHOFFSET_UDT_PARSEDNUMBER)+ 48) = qbs_new(0,0);
-}
-int64 *_FUNC_IDEWATCHOFFSET_INTEGER64_OFFSETVALUE=NULL;
-if(_FUNC_IDEWATCHOFFSET_INTEGER64_OFFSETVALUE==NULL){
-_FUNC_IDEWATCHOFFSET_INTEGER64_OFFSETVALUE=(int64*)mem_static_malloc(8);
-*_FUNC_IDEWATCHOFFSET_INTEGER64_OFFSETVALUE=0;
-}
-byte_element_struct *byte_element_6562=NULL;
-if (!byte_element_6562){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6562=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6562=(byte_element_struct*)mem_static_malloc(12);
-}
-byte_element_struct *byte_element_6563=NULL;
-if (!byte_element_6563){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6563=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6563=(byte_element_struct*)mem_static_malloc(12);
+#line 18 "utilities/terminal.bas"
+int64 fornext_value4421;
+#line 18 "utilities/terminal.bas"
+int64 fornext_finalvalue4421;
+#line 18 "utilities/terminal.bas"
+int64 fornext_step4421;
+#line 18 "utilities/terminal.bas"
+uint8 fornext_step_negative4421;
+int32 *_FUNC_FINDWORKINGTERMINAL_LONG_RET=NULL;
+#line 19 "utilities/terminal.bas"
+if(_FUNC_FINDWORKINGTERMINAL_LONG_RET==NULL){
+#line 19 "utilities/terminal.bas"
+_FUNC_FINDWORKINGTERMINAL_LONG_RET=(int32*)mem_static_malloc(4);
+#line 19 "utilities/terminal.bas"
+*_FUNC_FINDWORKINGTERMINAL_LONG_RET=0;
+#line 19 "utilities/terminal.bas"
 }

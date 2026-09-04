@@ -1,27 +1,11 @@
-int32 *_FUNC_LOGICALOR_LONG_LOGICALOR=NULL;
-if(_FUNC_LOGICALOR_LONG_LOGICALOR==NULL){
-_FUNC_LOGICALOR_LONG_LOGICALOR=(int32*)mem_static_malloc(4);
-*_FUNC_LOGICALOR_LONG_LOGICALOR=0;
+qbs *_FUNC_DEBUGPATHBASE_STRING_DEBUGPATHBASE=NULL;
+#line 116 "utilities/s-buffer/sb_qb64pe_extension.bm"
+if (!_FUNC_DEBUGPATHBASE_STRING_DEBUGPATHBASE)_FUNC_DEBUGPATHBASE_STRING_DEBUGPATHBASE=qbs_new(0,0);
+#line 117 "utilities/s-buffer/sb_qb64pe_extension.bm"
+byte_element_struct *byte_element_3878=NULL;
+#line 117 "utilities/s-buffer/sb_qb64pe_extension.bm"
+if (!byte_element_3878){
+#line 117 "utilities/s-buffer/sb_qb64pe_extension.bm"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3878=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3878=(byte_element_struct*)mem_static_malloc(12);
+#line 117 "utilities/s-buffer/sb_qb64pe_extension.bm"
 }
-qbs*oldstr4738=NULL;
-if(_FUNC_LOGICALOR_STRING_EXP->tmp||_FUNC_LOGICALOR_STRING_EXP->fixed||_FUNC_LOGICALOR_STRING_EXP->readonly){
-oldstr4738=_FUNC_LOGICALOR_STRING_EXP;
-if (oldstr4738->cmem_descriptor){
-_FUNC_LOGICALOR_STRING_EXP=qbs_new_cmem(oldstr4738->len,0);
-}else{
-_FUNC_LOGICALOR_STRING_EXP=qbs_new(oldstr4738->len,0);
-}
-memcpy(_FUNC_LOGICALOR_STRING_EXP->chr,oldstr4738->chr,oldstr4738->len);
-}
-void *_FUNC_LOGICALOR_UDT_NUM=NULL;
-if(_FUNC_LOGICALOR_UDT_NUM==NULL){
-_FUNC_LOGICALOR_UDT_NUM=(void*)mem_static_malloc(60);
-memset(_FUNC_LOGICALOR_UDT_NUM,0,60);
-*(qbs**)(((char*)_FUNC_LOGICALOR_UDT_NUM)+ 48) = qbs_new(0,0);
-}
-qbs *_FUNC_LOGICALOR_STRING_ELE=NULL;
-if (!_FUNC_LOGICALOR_STRING_ELE)_FUNC_LOGICALOR_STRING_ELE=qbs_new(0,0);
-int32 pass4740;
-uint64 pass4741;
-int32 pass4742;
-int64 pass4743;

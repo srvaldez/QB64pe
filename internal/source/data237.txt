@@ -1,24 +1,40 @@
-int32 *_FUNC_ISFUNCTIONIDENTIFIER_LONG_ISFUNCTIONIDENTIFIER=NULL;
-if(_FUNC_ISFUNCTIONIDENTIFIER_LONG_ISFUNCTIONIDENTIFIER==NULL){
-_FUNC_ISFUNCTIONIDENTIFIER_LONG_ISFUNCTIONIDENTIFIER=(int32*)mem_static_malloc(4);
-*_FUNC_ISFUNCTIONIDENTIFIER_LONG_ISFUNCTIONIDENTIFIER=0;
+int32 *_FUNC_UNARY_LONG_UNARY=NULL;
+#line 614 "utilities/const_eval.bas"
+if(_FUNC_UNARY_LONG_UNARY==NULL){
+#line 614 "utilities/const_eval.bas"
+_FUNC_UNARY_LONG_UNARY=(int32*)mem_static_malloc(4);
+#line 614 "utilities/const_eval.bas"
+*_FUNC_UNARY_LONG_UNARY=0;
+#line 614 "utilities/const_eval.bas"
 }
-qbs*oldstr4881=NULL;
-if(_FUNC_ISFUNCTIONIDENTIFIER_STRING_ELE->tmp||_FUNC_ISFUNCTIONIDENTIFIER_STRING_ELE->fixed||_FUNC_ISFUNCTIONIDENTIFIER_STRING_ELE->readonly){
-oldstr4881=_FUNC_ISFUNCTIONIDENTIFIER_STRING_ELE;
-if (oldstr4881->cmem_descriptor){
-_FUNC_ISFUNCTIONIDENTIFIER_STRING_ELE=qbs_new_cmem(oldstr4881->len,0);
+#line 614 "utilities/const_eval.bas"
+qbs*oldstr4012=NULL;
+#line 614 "utilities/const_eval.bas"
+if(_FUNC_UNARY_STRING_EXP->tmp||_FUNC_UNARY_STRING_EXP->fixed||_FUNC_UNARY_STRING_EXP->readonly){
+#line 614 "utilities/const_eval.bas"
+oldstr4012=_FUNC_UNARY_STRING_EXP;
+#line 614 "utilities/const_eval.bas"
+if (oldstr4012->cmem_descriptor){
+#line 614 "utilities/const_eval.bas"
+_FUNC_UNARY_STRING_EXP=qbs_new_cmem(oldstr4012->len,0);
+#line 614 "utilities/const_eval.bas"
 }else{
-_FUNC_ISFUNCTIONIDENTIFIER_STRING_ELE=qbs_new(oldstr4881->len,0);
+#line 614 "utilities/const_eval.bas"
+_FUNC_UNARY_STRING_EXP=qbs_new(oldstr4012->len,0);
+#line 614 "utilities/const_eval.bas"
 }
-memcpy(_FUNC_ISFUNCTIONIDENTIFIER_STRING_ELE->chr,oldstr4881->chr,oldstr4881->len);
+#line 614 "utilities/const_eval.bas"
+memcpy(_FUNC_UNARY_STRING_EXP->chr,oldstr4012->chr,oldstr4012->len);
+#line 614 "utilities/const_eval.bas"
 }
-int32 *_FUNC_ISFUNCTIONIDENTIFIER_LONG_I=NULL;
-if(_FUNC_ISFUNCTIONIDENTIFIER_LONG_I==NULL){
-_FUNC_ISFUNCTIONIDENTIFIER_LONG_I=(int32*)mem_static_malloc(4);
-*_FUNC_ISFUNCTIONIDENTIFIER_LONG_I=0;
-}
-int64 fornext_value4883;
-int64 fornext_finalvalue4883;
-int64 fornext_step4883;
-uint8 fornext_step_negative4883;
+qbs *_FUNC_UNARY_STRING_ELE=NULL;
+#line 616 "utilities/const_eval.bas"
+if (!_FUNC_UNARY_STRING_ELE)_FUNC_UNARY_STRING_ELE=qbs_new(0,0);
+#line 623 "utilities/const_eval.bas"
+int32 pass4013;
+#line 623 "utilities/const_eval.bas"
+long double pass4014;
+#line 625 "utilities/const_eval.bas"
+int32 pass4015;
+#line 625 "utilities/const_eval.bas"
+int64 pass4016;

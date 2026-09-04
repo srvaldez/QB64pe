@@ -1,33 +1,15 @@
-qbs *_FUNC_IDEZTAKEPATH_STRING_IDEZTAKEPATH=NULL;
-if (!_FUNC_IDEZTAKEPATH_STRING_IDEZTAKEPATH)_FUNC_IDEZTAKEPATH_STRING_IDEZTAKEPATH=qbs_new(0,0);
-qbs*oldstr7190=NULL;
-if(_FUNC_IDEZTAKEPATH_STRING_F->tmp||_FUNC_IDEZTAKEPATH_STRING_F->fixed||_FUNC_IDEZTAKEPATH_STRING_F->readonly){
-oldstr7190=_FUNC_IDEZTAKEPATH_STRING_F;
-if (oldstr7190->cmem_descriptor){
-_FUNC_IDEZTAKEPATH_STRING_F=qbs_new_cmem(oldstr7190->len,0);
-}else{
-_FUNC_IDEZTAKEPATH_STRING_F=qbs_new(oldstr7190->len,0);
-}
-memcpy(_FUNC_IDEZTAKEPATH_STRING_F->chr,oldstr7190->chr,oldstr7190->len);
-}
-qbs *_FUNC_IDEZTAKEPATH_STRING_P=NULL;
-if (!_FUNC_IDEZTAKEPATH_STRING_P)_FUNC_IDEZTAKEPATH_STRING_P=qbs_new(0,0);
-int32 *_FUNC_IDEZTAKEPATH_LONG_I=NULL;
-if(_FUNC_IDEZTAKEPATH_LONG_I==NULL){
-_FUNC_IDEZTAKEPATH_LONG_I=(int32*)mem_static_malloc(4);
-*_FUNC_IDEZTAKEPATH_LONG_I=0;
-}
-int64 fornext_value7192;
-int64 fornext_finalvalue7192;
-int64 fornext_step7192;
-uint8 fornext_step_negative7192;
-byte_element_struct *byte_element_7193=NULL;
-if (!byte_element_7193){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_7193=(byte_element_struct*)(mem_static_pointer-12); else byte_element_7193=(byte_element_struct*)mem_static_malloc(12);
-}
-qbs *_FUNC_IDEZTAKEPATH_STRING_A=NULL;
-if (!_FUNC_IDEZTAKEPATH_STRING_A)_FUNC_IDEZTAKEPATH_STRING_A=qbs_new(0,0);
-byte_element_struct *byte_element_7194=NULL;
-if (!byte_element_7194){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_7194=(byte_element_struct*)(mem_static_pointer-12); else byte_element_7194=(byte_element_struct*)mem_static_malloc(12);
+qbs *_FUNC_IDESAVENOW_STRING_IDESAVENOW=NULL;
+#line 12976 "ide/ide_methods.bas"
+if (!_FUNC_IDESAVENOW_STRING_IDESAVENOW)_FUNC_IDESAVENOW_STRING_IDESAVENOW=qbs_new(0,0);
+qbs *_FUNC_IDESAVENOW_STRING_M=NULL;
+#line 12977 "ide/ide_methods.bas"
+if (!_FUNC_IDESAVENOW_STRING_M)_FUNC_IDESAVENOW_STRING_M=qbs_new(0,0);
+int32 *_FUNC_IDESAVENOW_LONG_RESULT=NULL;
+#line 12978 "ide/ide_methods.bas"
+if(_FUNC_IDESAVENOW_LONG_RESULT==NULL){
+#line 12978 "ide/ide_methods.bas"
+_FUNC_IDESAVENOW_LONG_RESULT=(int32*)mem_static_malloc(4);
+#line 12978 "ide/ide_methods.bas"
+*_FUNC_IDESAVENOW_LONG_RESULT=0;
+#line 12978 "ide/ide_methods.bas"
 }

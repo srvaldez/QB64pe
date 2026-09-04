@@ -1,11 +1,71 @@
-int32 pass6714;
-int32 pass6715;
-int32 *_SUB_IDEDRAWPAR_LONG_X=NULL;
-if(_SUB_IDEDRAWPAR_LONG_X==NULL){
-_SUB_IDEDRAWPAR_LONG_X=(int32*)mem_static_malloc(4);
-*_SUB_IDEDRAWPAR_LONG_X=0;
+int32 *_FUNC_IDEWATCHOFFSET_LONG_IDEWATCHOFFSET=NULL;
+#line 10515 "ide/ide_methods.bas"
+if(_FUNC_IDEWATCHOFFSET_LONG_IDEWATCHOFFSET==NULL){
+#line 10515 "ide/ide_methods.bas"
+_FUNC_IDEWATCHOFFSET_LONG_IDEWATCHOFFSET=(int32*)mem_static_malloc(4);
+#line 10515 "ide/ide_methods.bas"
+*_FUNC_IDEWATCHOFFSET_LONG_IDEWATCHOFFSET=0;
+#line 10515 "ide/ide_methods.bas"
 }
-byte_element_struct *byte_element_6716=NULL;
-if (!byte_element_6716){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6716=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6716=(byte_element_struct*)mem_static_malloc(12);
+#line 10515 "ide/ide_methods.bas"
+qbs*oldstr5719=NULL;
+#line 10515 "ide/ide_methods.bas"
+if(_FUNC_IDEWATCHOFFSET_STRING_REFERENCETEXT->tmp||_FUNC_IDEWATCHOFFSET_STRING_REFERENCETEXT->fixed||_FUNC_IDEWATCHOFFSET_STRING_REFERENCETEXT->readonly){
+#line 10515 "ide/ide_methods.bas"
+oldstr5719=_FUNC_IDEWATCHOFFSET_STRING_REFERENCETEXT;
+#line 10515 "ide/ide_methods.bas"
+if (oldstr5719->cmem_descriptor){
+#line 10515 "ide/ide_methods.bas"
+_FUNC_IDEWATCHOFFSET_STRING_REFERENCETEXT=qbs_new_cmem(oldstr5719->len,0);
+#line 10515 "ide/ide_methods.bas"
+}else{
+#line 10515 "ide/ide_methods.bas"
+_FUNC_IDEWATCHOFFSET_STRING_REFERENCETEXT=qbs_new(oldstr5719->len,0);
+#line 10515 "ide/ide_methods.bas"
+}
+#line 10515 "ide/ide_methods.bas"
+memcpy(_FUNC_IDEWATCHOFFSET_STRING_REFERENCETEXT->chr,oldstr5719->chr,oldstr5719->len);
+#line 10515 "ide/ide_methods.bas"
+}
+qbs *_FUNC_IDEWATCHOFFSET_STRING_OFFSETTEXT=NULL;
+#line 10516 "ide/ide_methods.bas"
+if (!_FUNC_IDEWATCHOFFSET_STRING_OFFSETTEXT)_FUNC_IDEWATCHOFFSET_STRING_OFFSETTEXT=qbs_new(0,0);
+qbs *_FUNC_IDEWATCHOFFSET_STRING_EVALTEXT=NULL;
+#line 10517 "ide/ide_methods.bas"
+if (!_FUNC_IDEWATCHOFFSET_STRING_EVALTEXT)_FUNC_IDEWATCHOFFSET_STRING_EVALTEXT=qbs_new(0,0);
+void *_FUNC_IDEWATCHOFFSET_UDT_PARSEDNUMBER=NULL;
+#line 10518 "ide/ide_methods.bas"
+if(_FUNC_IDEWATCHOFFSET_UDT_PARSEDNUMBER==NULL){
+#line 10518 "ide/ide_methods.bas"
+_FUNC_IDEWATCHOFFSET_UDT_PARSEDNUMBER=(void*)mem_static_malloc(60);
+#line 10518 "ide/ide_methods.bas"
+memset(_FUNC_IDEWATCHOFFSET_UDT_PARSEDNUMBER,0,60);
+#line 10518 "ide/ide_methods.bas"
+*(qbs**)(((char*)_FUNC_IDEWATCHOFFSET_UDT_PARSEDNUMBER)+ 48) = qbs_new(0,0);
+#line 10518 "ide/ide_methods.bas"
+}
+int64 *_FUNC_IDEWATCHOFFSET_INTEGER64_OFFSETVALUE=NULL;
+#line 10519 "ide/ide_methods.bas"
+if(_FUNC_IDEWATCHOFFSET_INTEGER64_OFFSETVALUE==NULL){
+#line 10519 "ide/ide_methods.bas"
+_FUNC_IDEWATCHOFFSET_INTEGER64_OFFSETVALUE=(int64*)mem_static_malloc(8);
+#line 10519 "ide/ide_methods.bas"
+*_FUNC_IDEWATCHOFFSET_INTEGER64_OFFSETVALUE=0;
+#line 10519 "ide/ide_methods.bas"
+}
+#line 10522 "ide/ide_methods.bas"
+byte_element_struct *byte_element_5720=NULL;
+#line 10522 "ide/ide_methods.bas"
+if (!byte_element_5720){
+#line 10522 "ide/ide_methods.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5720=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5720=(byte_element_struct*)mem_static_malloc(12);
+#line 10522 "ide/ide_methods.bas"
+}
+#line 10523 "ide/ide_methods.bas"
+byte_element_struct *byte_element_5721=NULL;
+#line 10523 "ide/ide_methods.bas"
+if (!byte_element_5721){
+#line 10523 "ide/ide_methods.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5721=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5721=(byte_element_struct*)mem_static_malloc(12);
+#line 10523 "ide/ide_methods.bas"
 }

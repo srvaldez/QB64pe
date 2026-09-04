@@ -1,32 +1,75 @@
-qbs *_FUNC_GETESCAPEDPATH_STRING_GETESCAPEDPATH=NULL;
-if (!_FUNC_GETESCAPEDPATH_STRING_GETESCAPEDPATH)_FUNC_GETESCAPEDPATH_STRING_GETESCAPEDPATH=qbs_new(0,0);
-qbs*oldstr4400=NULL;
-if(_FUNC_GETESCAPEDPATH_STRING_PATH_NAME->tmp||_FUNC_GETESCAPEDPATH_STRING_PATH_NAME->fixed||_FUNC_GETESCAPEDPATH_STRING_PATH_NAME->readonly){
-oldstr4400=_FUNC_GETESCAPEDPATH_STRING_PATH_NAME;
-if (oldstr4400->cmem_descriptor){
-_FUNC_GETESCAPEDPATH_STRING_PATH_NAME=qbs_new_cmem(oldstr4400->len,0);
+qbs *_FUNC_READWRITESTRINGSETTINGVALUE_STRING_READWRITESTRINGSETTINGVALUE=NULL;
+#line 116 "utilities/strings.bas"
+if (!_FUNC_READWRITESTRINGSETTINGVALUE_STRING_READWRITESTRINGSETTINGVALUE)_FUNC_READWRITESTRINGSETTINGVALUE_STRING_READWRITESTRINGSETTINGVALUE=qbs_new(0,0);
+#line 116 "utilities/strings.bas"
+qbs*oldstr3535=NULL;
+#line 116 "utilities/strings.bas"
+if(_FUNC_READWRITESTRINGSETTINGVALUE_STRING_SECTION->tmp||_FUNC_READWRITESTRINGSETTINGVALUE_STRING_SECTION->fixed||_FUNC_READWRITESTRINGSETTINGVALUE_STRING_SECTION->readonly){
+#line 116 "utilities/strings.bas"
+oldstr3535=_FUNC_READWRITESTRINGSETTINGVALUE_STRING_SECTION;
+#line 116 "utilities/strings.bas"
+if (oldstr3535->cmem_descriptor){
+#line 116 "utilities/strings.bas"
+_FUNC_READWRITESTRINGSETTINGVALUE_STRING_SECTION=qbs_new_cmem(oldstr3535->len,0);
+#line 116 "utilities/strings.bas"
 }else{
-_FUNC_GETESCAPEDPATH_STRING_PATH_NAME=qbs_new(oldstr4400->len,0);
+#line 116 "utilities/strings.bas"
+_FUNC_READWRITESTRINGSETTINGVALUE_STRING_SECTION=qbs_new(oldstr3535->len,0);
+#line 116 "utilities/strings.bas"
 }
-memcpy(_FUNC_GETESCAPEDPATH_STRING_PATH_NAME->chr,oldstr4400->chr,oldstr4400->len);
+#line 116 "utilities/strings.bas"
+memcpy(_FUNC_READWRITESTRINGSETTINGVALUE_STRING_SECTION->chr,oldstr3535->chr,oldstr3535->len);
+#line 116 "utilities/strings.bas"
 }
-qbs *_FUNC_GETESCAPEDPATH_STRING_BUF=NULL;
-if (!_FUNC_GETESCAPEDPATH_STRING_BUF)_FUNC_GETESCAPEDPATH_STRING_BUF=qbs_new(0,0);
-uint32 *_FUNC_GETESCAPEDPATH_ULONG_Z=NULL;
-if(_FUNC_GETESCAPEDPATH_ULONG_Z==NULL){
-_FUNC_GETESCAPEDPATH_ULONG_Z=(uint32*)mem_static_malloc(4);
-*_FUNC_GETESCAPEDPATH_ULONG_Z=0;
+#line 116 "utilities/strings.bas"
+qbs*oldstr3536=NULL;
+#line 116 "utilities/strings.bas"
+if(_FUNC_READWRITESTRINGSETTINGVALUE_STRING_SETTING->tmp||_FUNC_READWRITESTRINGSETTINGVALUE_STRING_SETTING->fixed||_FUNC_READWRITESTRINGSETTINGVALUE_STRING_SETTING->readonly){
+#line 116 "utilities/strings.bas"
+oldstr3536=_FUNC_READWRITESTRINGSETTINGVALUE_STRING_SETTING;
+#line 116 "utilities/strings.bas"
+if (oldstr3536->cmem_descriptor){
+#line 116 "utilities/strings.bas"
+_FUNC_READWRITESTRINGSETTINGVALUE_STRING_SETTING=qbs_new_cmem(oldstr3536->len,0);
+#line 116 "utilities/strings.bas"
+}else{
+#line 116 "utilities/strings.bas"
+_FUNC_READWRITESTRINGSETTINGVALUE_STRING_SETTING=qbs_new(oldstr3536->len,0);
+#line 116 "utilities/strings.bas"
 }
-uint8 *_FUNC_GETESCAPEDPATH_UBYTE_A=NULL;
-if(_FUNC_GETESCAPEDPATH_UBYTE_A==NULL){
-_FUNC_GETESCAPEDPATH_UBYTE_A=(uint8*)mem_static_malloc(1);
-*_FUNC_GETESCAPEDPATH_UBYTE_A=0;
+#line 116 "utilities/strings.bas"
+memcpy(_FUNC_READWRITESTRINGSETTINGVALUE_STRING_SETTING->chr,oldstr3536->chr,oldstr3536->len);
+#line 116 "utilities/strings.bas"
 }
-int64 fornext_value4402;
-int64 fornext_finalvalue4402;
-int64 fornext_step4402;
-uint8 fornext_step_negative4402;
-byte_element_struct *byte_element_4403=NULL;
-if (!byte_element_4403){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4403=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4403=(byte_element_struct*)mem_static_malloc(12);
+#line 116 "utilities/strings.bas"
+qbs*oldstr3537=NULL;
+#line 116 "utilities/strings.bas"
+if(_FUNC_READWRITESTRINGSETTINGVALUE_STRING_DEFAULT->tmp||_FUNC_READWRITESTRINGSETTINGVALUE_STRING_DEFAULT->fixed||_FUNC_READWRITESTRINGSETTINGVALUE_STRING_DEFAULT->readonly){
+#line 116 "utilities/strings.bas"
+oldstr3537=_FUNC_READWRITESTRINGSETTINGVALUE_STRING_DEFAULT;
+#line 116 "utilities/strings.bas"
+if (oldstr3537->cmem_descriptor){
+#line 116 "utilities/strings.bas"
+_FUNC_READWRITESTRINGSETTINGVALUE_STRING_DEFAULT=qbs_new_cmem(oldstr3537->len,0);
+#line 116 "utilities/strings.bas"
+}else{
+#line 116 "utilities/strings.bas"
+_FUNC_READWRITESTRINGSETTINGVALUE_STRING_DEFAULT=qbs_new(oldstr3537->len,0);
+#line 116 "utilities/strings.bas"
+}
+#line 116 "utilities/strings.bas"
+memcpy(_FUNC_READWRITESTRINGSETTINGVALUE_STRING_DEFAULT->chr,oldstr3537->chr,oldstr3537->len);
+#line 116 "utilities/strings.bas"
+}
+qbs *_FUNC_READWRITESTRINGSETTINGVALUE_STRING_VALUE=NULL;
+#line 117 "utilities/strings.bas"
+if (!_FUNC_READWRITESTRINGSETTINGVALUE_STRING_VALUE)_FUNC_READWRITESTRINGSETTINGVALUE_STRING_VALUE=qbs_new(0,0);
+int16 *_FUNC_READWRITESTRINGSETTINGVALUE_INTEGER_RESULT=NULL;
+#line 118 "utilities/strings.bas"
+if(_FUNC_READWRITESTRINGSETTINGVALUE_INTEGER_RESULT==NULL){
+#line 118 "utilities/strings.bas"
+_FUNC_READWRITESTRINGSETTINGVALUE_INTEGER_RESULT=(int16*)mem_static_malloc(2);
+#line 118 "utilities/strings.bas"
+*_FUNC_READWRITESTRINGSETTINGVALUE_INTEGER_RESULT=0;
+#line 118 "utilities/strings.bas"
 }

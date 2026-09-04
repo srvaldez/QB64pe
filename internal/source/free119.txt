@@ -1,5 +1,0 @@
-if(oldstr4377){
-if(oldstr4377->fixed)qbs_set(oldstr4377,_FUNC_GETFILEPATH_STRING_F);
-qbs_free(_FUNC_GETFILEPATH_STRING_F);
-}
-qbs_free(_FUNC_GETFILEPATH_STRING_A);

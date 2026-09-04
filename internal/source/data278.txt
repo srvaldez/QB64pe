@@ -1,32 +1,43 @@
-qbs*oldstr5007=NULL;
-if(_SUB_APPENDDYNSTRFREE_STRING_BASE_EXPR->tmp||_SUB_APPENDDYNSTRFREE_STRING_BASE_EXPR->fixed||_SUB_APPENDDYNSTRFREE_STRING_BASE_EXPR->readonly){
-oldstr5007=_SUB_APPENDDYNSTRFREE_STRING_BASE_EXPR;
-if (oldstr5007->cmem_descriptor){
-_SUB_APPENDDYNSTRFREE_STRING_BASE_EXPR=qbs_new_cmem(oldstr5007->len,0);
+qbs *_FUNC_TRYREMOVESYMBOL_STRING_TRYREMOVESYMBOL=NULL;
+#line 760 "utilities/type.bas"
+if (!_FUNC_TRYREMOVESYMBOL_STRING_TRYREMOVESYMBOL)_FUNC_TRYREMOVESYMBOL_STRING_TRYREMOVESYMBOL=qbs_new(0,0);
+#line 760 "utilities/type.bas"
+qbs*oldstr4152=NULL;
+#line 760 "utilities/type.bas"
+if(_FUNC_TRYREMOVESYMBOL_STRING_VARNAME->tmp||_FUNC_TRYREMOVESYMBOL_STRING_VARNAME->fixed||_FUNC_TRYREMOVESYMBOL_STRING_VARNAME->readonly){
+#line 760 "utilities/type.bas"
+oldstr4152=_FUNC_TRYREMOVESYMBOL_STRING_VARNAME;
+#line 760 "utilities/type.bas"
+if (oldstr4152->cmem_descriptor){
+#line 760 "utilities/type.bas"
+_FUNC_TRYREMOVESYMBOL_STRING_VARNAME=qbs_new_cmem(oldstr4152->len,0);
+#line 760 "utilities/type.bas"
 }else{
-_SUB_APPENDDYNSTRFREE_STRING_BASE_EXPR=qbs_new(oldstr5007->len,0);
+#line 760 "utilities/type.bas"
+_FUNC_TRYREMOVESYMBOL_STRING_VARNAME=qbs_new(oldstr4152->len,0);
+#line 760 "utilities/type.bas"
 }
-memcpy(_SUB_APPENDDYNSTRFREE_STRING_BASE_EXPR->chr,oldstr5007->chr,oldstr5007->len);
+#line 760 "utilities/type.bas"
+memcpy(_FUNC_TRYREMOVESYMBOL_STRING_VARNAME->chr,oldstr4152->chr,oldstr4152->len);
+#line 760 "utilities/type.bas"
 }
-qbs*oldstr5008=NULL;
-if(_SUB_APPENDDYNSTRFREE_STRING_TOTAL_EXPR->tmp||_SUB_APPENDDYNSTRFREE_STRING_TOTAL_EXPR->fixed||_SUB_APPENDDYNSTRFREE_STRING_TOTAL_EXPR->readonly){
-oldstr5008=_SUB_APPENDDYNSTRFREE_STRING_TOTAL_EXPR;
-if (oldstr5008->cmem_descriptor){
-_SUB_APPENDDYNSTRFREE_STRING_TOTAL_EXPR=qbs_new_cmem(oldstr5008->len,0);
-}else{
-_SUB_APPENDDYNSTRFREE_STRING_TOTAL_EXPR=qbs_new(oldstr5008->len,0);
+int32 *_FUNC_TRYREMOVESYMBOL_LONG_I=NULL;
+#line 761 "utilities/type.bas"
+if(_FUNC_TRYREMOVESYMBOL_LONG_I==NULL){
+#line 761 "utilities/type.bas"
+_FUNC_TRYREMOVESYMBOL_LONG_I=(int32*)mem_static_malloc(4);
+#line 761 "utilities/type.bas"
+*_FUNC_TRYREMOVESYMBOL_LONG_I=0;
+#line 761 "utilities/type.bas"
 }
-memcpy(_SUB_APPENDDYNSTRFREE_STRING_TOTAL_EXPR->chr,oldstr5008->chr,oldstr5008->len);
+qbs *_FUNC_TRYREMOVESYMBOL_STRING_SYMBOL=NULL;
+#line 770 "utilities/type.bas"
+if (!_FUNC_TRYREMOVESYMBOL_STRING_SYMBOL)_FUNC_TRYREMOVESYMBOL_STRING_SYMBOL=qbs_new(0,0);
+#line 770 "utilities/type.bas"
+byte_element_struct *byte_element_4153=NULL;
+#line 770 "utilities/type.bas"
+if (!byte_element_4153){
+#line 770 "utilities/type.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4153=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4153=(byte_element_struct*)mem_static_malloc(12);
+#line 770 "utilities/type.bas"
 }
-qbs*oldstr5009=NULL;
-if(_SUB_APPENDDYNSTRFREE_STRING_ACC->tmp||_SUB_APPENDDYNSTRFREE_STRING_ACC->fixed||_SUB_APPENDDYNSTRFREE_STRING_ACC->readonly){
-oldstr5009=_SUB_APPENDDYNSTRFREE_STRING_ACC;
-if (oldstr5009->cmem_descriptor){
-_SUB_APPENDDYNSTRFREE_STRING_ACC=qbs_new_cmem(oldstr5009->len,0);
-}else{
-_SUB_APPENDDYNSTRFREE_STRING_ACC=qbs_new(oldstr5009->len,0);
-}
-memcpy(_SUB_APPENDDYNSTRFREE_STRING_ACC->chr,oldstr5009->chr,oldstr5009->len);
-}
-qbs *_SUB_APPENDDYNSTRFREE_STRING_CR=NULL;
-if (!_SUB_APPENDDYNSTRFREE_STRING_CR)_SUB_APPENDDYNSTRFREE_STRING_CR=qbs_new(0,0);

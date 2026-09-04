@@ -1,5 +1,9 @@
-float *_FUNC_MAP_SINGLE_MAP=NULL;
-if(_FUNC_MAP_SINGLE_MAP==NULL){
-_FUNC_MAP_SINGLE_MAP=(float*)mem_static_malloc(4);
-*_FUNC_MAP_SINGLE_MAP=0;
+int8 *_FUNC_TYPE_ISOFFSET_BYTE_TYPE_ISOFFSET=NULL;
+#line 2614 "utilities/type.bas"
+if(_FUNC_TYPE_ISOFFSET_BYTE_TYPE_ISOFFSET==NULL){
+#line 2614 "utilities/type.bas"
+_FUNC_TYPE_ISOFFSET_BYTE_TYPE_ISOFFSET=(int8*)mem_static_malloc(1);
+#line 2614 "utilities/type.bas"
+*_FUNC_TYPE_ISOFFSET_BYTE_TYPE_ISOFFSET=0;
+#line 2614 "utilities/type.bas"
 }

@@ -1,6 +1,0 @@
-if(oldstr4064){
-if(oldstr4064->fixed)qbs_set(oldstr4064,_SUB_XGOSUB_STRING_CA);
-qbs_free(_SUB_XGOSUB_STRING_CA);
-}
-qbs_free(_SUB_XGOSUB_STRING_A2);
-qbs_free(_SUB_XGOSUB_STRING_L);
