@@ -1,52 +1,45 @@
-int32 *_FUNC_COPYFILE_LONG_COPYFILE=NULL;
-#line 6 "utilities/file.bas"
-if(_FUNC_COPYFILE_LONG_COPYFILE==NULL){
-#line 6 "utilities/file.bas"
-_FUNC_COPYFILE_LONG_COPYFILE=(int32*)mem_static_malloc(4);
-#line 6 "utilities/file.bas"
-*_FUNC_COPYFILE_LONG_COPYFILE=0;
-#line 6 "utilities/file.bas"
-}
-#line 6 "utilities/file.bas"
-qbs*oldstr3567=NULL;
-#line 6 "utilities/file.bas"
-if(_FUNC_COPYFILE_STRING_SOURCEFILE->tmp||_FUNC_COPYFILE_STRING_SOURCEFILE->fixed||_FUNC_COPYFILE_STRING_SOURCEFILE->readonly){
-#line 6 "utilities/file.bas"
-oldstr3567=_FUNC_COPYFILE_STRING_SOURCEFILE;
-#line 6 "utilities/file.bas"
-if (oldstr3567->cmem_descriptor){
-#line 6 "utilities/file.bas"
-_FUNC_COPYFILE_STRING_SOURCEFILE=qbs_new_cmem(oldstr3567->len,0);
-#line 6 "utilities/file.bas"
+#line 460 "utilities/arrcpy.bm"
+qbs*oldstr3610=NULL;
+#line 460 "utilities/arrcpy.bm"
+if(_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_EXPR->tmp||_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_EXPR->fixed||_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_EXPR->readonly){
+#line 460 "utilities/arrcpy.bm"
+oldstr3610=_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_EXPR;
+#line 460 "utilities/arrcpy.bm"
+if (oldstr3610->cmem_descriptor){
+#line 460 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_EXPR=qbs_new_cmem(oldstr3610->len,0);
+#line 460 "utilities/arrcpy.bm"
 }else{
-#line 6 "utilities/file.bas"
-_FUNC_COPYFILE_STRING_SOURCEFILE=qbs_new(oldstr3567->len,0);
-#line 6 "utilities/file.bas"
+#line 460 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_EXPR=qbs_new(oldstr3610->len,0);
+#line 460 "utilities/arrcpy.bm"
 }
-#line 6 "utilities/file.bas"
-memcpy(_FUNC_COPYFILE_STRING_SOURCEFILE->chr,oldstr3567->chr,oldstr3567->len);
-#line 6 "utilities/file.bas"
+#line 460 "utilities/arrcpy.bm"
+memcpy(_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_EXPR->chr,oldstr3610->chr,oldstr3610->len);
+#line 460 "utilities/arrcpy.bm"
 }
-#line 6 "utilities/file.bas"
-qbs*oldstr3568=NULL;
-#line 6 "utilities/file.bas"
-if(_FUNC_COPYFILE_STRING_DESTFILE->tmp||_FUNC_COPYFILE_STRING_DESTFILE->fixed||_FUNC_COPYFILE_STRING_DESTFILE->readonly){
-#line 6 "utilities/file.bas"
-oldstr3568=_FUNC_COPYFILE_STRING_DESTFILE;
-#line 6 "utilities/file.bas"
-if (oldstr3568->cmem_descriptor){
-#line 6 "utilities/file.bas"
-_FUNC_COPYFILE_STRING_DESTFILE=qbs_new_cmem(oldstr3568->len,0);
-#line 6 "utilities/file.bas"
+#line 460 "utilities/arrcpy.bm"
+qbs*oldstr3611=NULL;
+#line 460 "utilities/arrcpy.bm"
+if(_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_CODE->tmp||_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_CODE->fixed||_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_CODE->readonly){
+#line 460 "utilities/arrcpy.bm"
+oldstr3611=_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_CODE;
+#line 460 "utilities/arrcpy.bm"
+if (oldstr3611->cmem_descriptor){
+#line 460 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_CODE=qbs_new_cmem(oldstr3611->len,0);
+#line 460 "utilities/arrcpy.bm"
 }else{
-#line 6 "utilities/file.bas"
-_FUNC_COPYFILE_STRING_DESTFILE=qbs_new(oldstr3568->len,0);
-#line 6 "utilities/file.bas"
+#line 460 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_CODE=qbs_new(oldstr3611->len,0);
+#line 460 "utilities/arrcpy.bm"
 }
-#line 6 "utilities/file.bas"
-memcpy(_FUNC_COPYFILE_STRING_DESTFILE->chr,oldstr3568->chr,oldstr3568->len);
-#line 6 "utilities/file.bas"
+#line 460 "utilities/arrcpy.bm"
+memcpy(_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_CODE->chr,oldstr3611->chr,oldstr3611->len);
+#line 460 "utilities/arrcpy.bm"
 }
-qbs *_FUNC_COPYFILE_STRING_DAT=NULL;
-#line 9 "utilities/file.bas"
-if (!_FUNC_COPYFILE_STRING_DAT)_FUNC_COPYFILE_STRING_DAT=qbs_new(0,0);
+qbs *_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_WORK=NULL;
+#line 461 "utilities/arrcpy.bm"
+if (!_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_WORK)_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_WORK=qbs_new(0,0);
+#line 465 "utilities/arrcpy.bm"
+int32 pass3612;

@@ -1,26 +1,33 @@
-int16 *_FUNC_REMOVEBUFMARK_INTEGER_REMOVEBUFMARK=NULL;
-#line 420 "utilities/s-buffer/simplebuffer.bm"
-if(_FUNC_REMOVEBUFMARK_INTEGER_REMOVEBUFMARK==NULL){
-#line 420 "utilities/s-buffer/simplebuffer.bm"
-_FUNC_REMOVEBUFMARK_INTEGER_REMOVEBUFMARK=(int16*)mem_static_malloc(2);
-#line 420 "utilities/s-buffer/simplebuffer.bm"
-*_FUNC_REMOVEBUFMARK_INTEGER_REMOVEBUFMARK=0;
-#line 420 "utilities/s-buffer/simplebuffer.bm"
+#line 46 "utilities/ini-manager/ini.bm"
+byte_element_struct *byte_element_3896=NULL;
+#line 46 "utilities/ini-manager/ini.bm"
+if (!byte_element_3896){
+#line 46 "utilities/ini-manager/ini.bm"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3896=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3896=(byte_element_struct*)mem_static_malloc(12);
+#line 46 "utilities/ini-manager/ini.bm"
 }
-int32 *_FUNC_REMOVEBUFMARK_LONG_BUF=NULL;
-#line 422 "utilities/s-buffer/simplebuffer.bm"
-if(_FUNC_REMOVEBUFMARK_LONG_BUF==NULL){
-#line 422 "utilities/s-buffer/simplebuffer.bm"
-_FUNC_REMOVEBUFMARK_LONG_BUF=(int32*)mem_static_malloc(4);
-#line 422 "utilities/s-buffer/simplebuffer.bm"
-*_FUNC_REMOVEBUFMARK_LONG_BUF=0;
-#line 422 "utilities/s-buffer/simplebuffer.bm"
+int16 *_SUB_INICOMMIT_INTEGER_FILENUM=NULL;
+#line 49 "utilities/ini-manager/ini.bm"
+if(_SUB_INICOMMIT_INTEGER_FILENUM==NULL){
+#line 49 "utilities/ini-manager/ini.bm"
+_SUB_INICOMMIT_INTEGER_FILENUM=(int16*)mem_static_malloc(2);
+#line 49 "utilities/ini-manager/ini.bm"
+*_SUB_INICOMMIT_INTEGER_FILENUM=0;
+#line 49 "utilities/ini-manager/ini.bm"
 }
-#line 428 "utilities/s-buffer/simplebuffer.bm"
-byte_element_struct *byte_element_3822=NULL;
-#line 428 "utilities/s-buffer/simplebuffer.bm"
-if (!byte_element_3822){
-#line 428 "utilities/s-buffer/simplebuffer.bm"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3822=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3822=(byte_element_struct*)mem_static_malloc(12);
-#line 428 "utilities/s-buffer/simplebuffer.bm"
+#line 54 "utilities/ini-manager/ini.bm"
+byte_element_struct *byte_element_3897=NULL;
+#line 54 "utilities/ini-manager/ini.bm"
+if (!byte_element_3897){
+#line 54 "utilities/ini-manager/ini.bm"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3897=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3897=(byte_element_struct*)mem_static_malloc(12);
+#line 54 "utilities/ini-manager/ini.bm"
+}
+#line 60 "utilities/ini-manager/ini.bm"
+byte_element_struct *byte_element_3898=NULL;
+#line 60 "utilities/ini-manager/ini.bm"
+if (!byte_element_3898){
+#line 60 "utilities/ini-manager/ini.bm"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3898=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3898=(byte_element_struct*)mem_static_malloc(12);
+#line 60 "utilities/ini-manager/ini.bm"
 }

@@ -1,81 +1,303 @@
-qbs *_FUNC_FORMATRANGE_STRING_FORMATRANGE=NULL;
-#line 10540 "ide/ide_methods.bas"
-if (!_FUNC_FORMATRANGE_STRING_FORMATRANGE)_FUNC_FORMATRANGE_STRING_FORMATRANGE=qbs_new(0,0);
-#line 10540 "ide/ide_methods.bas"
-qbs*oldstr5744=NULL;
-#line 10540 "ide/ide_methods.bas"
-if(_FUNC_FORMATRANGE_STRING___TEXT->tmp||_FUNC_FORMATRANGE_STRING___TEXT->fixed||_FUNC_FORMATRANGE_STRING___TEXT->readonly){
-#line 10540 "ide/ide_methods.bas"
-oldstr5744=_FUNC_FORMATRANGE_STRING___TEXT;
-#line 10540 "ide/ide_methods.bas"
-if (oldstr5744->cmem_descriptor){
-#line 10540 "ide/ide_methods.bas"
-_FUNC_FORMATRANGE_STRING___TEXT=qbs_new_cmem(oldstr5744->len,0);
-#line 10540 "ide/ide_methods.bas"
+qbs *_FUNC_APPLY_LAYOUT_INDENT_STRING_APPLY_LAYOUT_INDENT=NULL;
+#line 2 "utilities/format.bas"
+if (!_FUNC_APPLY_LAYOUT_INDENT_STRING_APPLY_LAYOUT_INDENT)_FUNC_APPLY_LAYOUT_INDENT_STRING_APPLY_LAYOUT_INDENT=qbs_new(0,0);
+#line 2 "utilities/format.bas"
+qbs*oldstr4526=NULL;
+#line 2 "utilities/format.bas"
+if(_FUNC_APPLY_LAYOUT_INDENT_STRING_ORIGINAL->tmp||_FUNC_APPLY_LAYOUT_INDENT_STRING_ORIGINAL->fixed||_FUNC_APPLY_LAYOUT_INDENT_STRING_ORIGINAL->readonly){
+#line 2 "utilities/format.bas"
+oldstr4526=_FUNC_APPLY_LAYOUT_INDENT_STRING_ORIGINAL;
+#line 2 "utilities/format.bas"
+if (oldstr4526->cmem_descriptor){
+#line 2 "utilities/format.bas"
+_FUNC_APPLY_LAYOUT_INDENT_STRING_ORIGINAL=qbs_new_cmem(oldstr4526->len,0);
+#line 2 "utilities/format.bas"
 }else{
-#line 10540 "ide/ide_methods.bas"
-_FUNC_FORMATRANGE_STRING___TEXT=qbs_new(oldstr5744->len,0);
-#line 10540 "ide/ide_methods.bas"
+#line 2 "utilities/format.bas"
+_FUNC_APPLY_LAYOUT_INDENT_STRING_ORIGINAL=qbs_new(oldstr4526->len,0);
+#line 2 "utilities/format.bas"
 }
-#line 10540 "ide/ide_methods.bas"
-memcpy(_FUNC_FORMATRANGE_STRING___TEXT->chr,oldstr5744->chr,oldstr5744->len);
-#line 10540 "ide/ide_methods.bas"
+#line 2 "utilities/format.bas"
+memcpy(_FUNC_APPLY_LAYOUT_INDENT_STRING_ORIGINAL->chr,oldstr4526->chr,oldstr4526->len);
+#line 2 "utilities/format.bas"
 }
-qbs *_FUNC_FORMATRANGE_STRING_TEMP=NULL;
-#line 10542 "ide/ide_methods.bas"
-if (!_FUNC_FORMATRANGE_STRING_TEMP)_FUNC_FORMATRANGE_STRING_TEMP=qbs_new(0,0);
-int32 *_FUNC_FORMATRANGE_LONG_V1=NULL;
-#line 10543 "ide/ide_methods.bas"
-if(_FUNC_FORMATRANGE_LONG_V1==NULL){
-#line 10543 "ide/ide_methods.bas"
-_FUNC_FORMATRANGE_LONG_V1=(int32*)mem_static_malloc(4);
-#line 10543 "ide/ide_methods.bas"
-*_FUNC_FORMATRANGE_LONG_V1=0;
-#line 10543 "ide/ide_methods.bas"
+qbs *_FUNC_APPLY_LAYOUT_INDENT_STRING_LAYOUT2=NULL;
+#line 3 "utilities/format.bas"
+if (!_FUNC_APPLY_LAYOUT_INDENT_STRING_LAYOUT2)_FUNC_APPLY_LAYOUT_INDENT_STRING_LAYOUT2=qbs_new(0,0);
+#line 6 "utilities/format.bas"
+byte_element_struct *byte_element_4527=NULL;
+#line 6 "utilities/format.bas"
+if (!byte_element_4527){
+#line 6 "utilities/format.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4527=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4527=(byte_element_struct*)mem_static_malloc(12);
+#line 6 "utilities/format.bas"
 }
-int32 *_FUNC_FORMATRANGE_LONG_V2=NULL;
-#line 10544 "ide/ide_methods.bas"
-if(_FUNC_FORMATRANGE_LONG_V2==NULL){
-#line 10544 "ide/ide_methods.bas"
-_FUNC_FORMATRANGE_LONG_V2=(int32*)mem_static_malloc(4);
-#line 10544 "ide/ide_methods.bas"
-*_FUNC_FORMATRANGE_LONG_V2=0;
-#line 10544 "ide/ide_methods.bas"
+int32 *_FUNC_APPLY_LAYOUT_INDENT_LONG_L=NULL;
+#line 9 "utilities/format.bas"
+if(_FUNC_APPLY_LAYOUT_INDENT_LONG_L==NULL){
+#line 9 "utilities/format.bas"
+_FUNC_APPLY_LAYOUT_INDENT_LONG_L=(int32*)mem_static_malloc(4);
+#line 9 "utilities/format.bas"
+*_FUNC_APPLY_LAYOUT_INDENT_LONG_L=0;
+#line 9 "utilities/format.bas"
 }
-int32 *_FUNC_FORMATRANGE_LONG_I=NULL;
-#line 10545 "ide/ide_methods.bas"
-if(_FUNC_FORMATRANGE_LONG_I==NULL){
-#line 10545 "ide/ide_methods.bas"
-_FUNC_FORMATRANGE_LONG_I=(int32*)mem_static_malloc(4);
-#line 10545 "ide/ide_methods.bas"
-*_FUNC_FORMATRANGE_LONG_I=0;
-#line 10545 "ide/ide_methods.bas"
+#line 9 "utilities/format.bas"
+byte_element_struct *byte_element_4528=NULL;
+#line 9 "utilities/format.bas"
+if (!byte_element_4528){
+#line 9 "utilities/format.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4528=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4528=(byte_element_struct*)mem_static_malloc(12);
+#line 9 "utilities/format.bas"
 }
-#line 10545 "ide/ide_methods.bas"
-int64 fornext_value5746;
-#line 10545 "ide/ide_methods.bas"
-int64 fornext_finalvalue5746;
-#line 10545 "ide/ide_methods.bas"
-int64 fornext_step5746;
-#line 10545 "ide/ide_methods.bas"
-uint8 fornext_step_negative5746;
-#line 10545 "ide/ide_methods.bas"
-byte_element_struct *byte_element_5747=NULL;
-#line 10545 "ide/ide_methods.bas"
-if (!byte_element_5747){
-#line 10545 "ide/ide_methods.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5747=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5747=(byte_element_struct*)mem_static_malloc(12);
-#line 10545 "ide/ide_methods.bas"
+int32 *_FUNC_APPLY_LAYOUT_INDENT_LONG_I=NULL;
+#line 10 "utilities/format.bas"
+if(_FUNC_APPLY_LAYOUT_INDENT_LONG_I==NULL){
+#line 10 "utilities/format.bas"
+_FUNC_APPLY_LAYOUT_INDENT_LONG_I=(int32*)mem_static_malloc(4);
+#line 10 "utilities/format.bas"
+*_FUNC_APPLY_LAYOUT_INDENT_LONG_I=0;
+#line 10 "utilities/format.bas"
 }
-int32 *_FUNC_FORMATRANGE_LONG_V=NULL;
-#line 10546 "ide/ide_methods.bas"
-if(_FUNC_FORMATRANGE_LONG_V==NULL){
-#line 10546 "ide/ide_methods.bas"
-_FUNC_FORMATRANGE_LONG_V=(int32*)mem_static_malloc(4);
-#line 10546 "ide/ide_methods.bas"
-*_FUNC_FORMATRANGE_LONG_V=0;
-#line 10546 "ide/ide_methods.bas"
+#line 10 "utilities/format.bas"
+int64 fornext_value4530;
+#line 10 "utilities/format.bas"
+int64 fornext_finalvalue4530;
+#line 10 "utilities/format.bas"
+int64 fornext_step4530;
+#line 10 "utilities/format.bas"
+uint8 fornext_step_negative4530;
+int32 *_FUNC_APPLY_LAYOUT_INDENT_LONG_INDENT=NULL;
+#line 13 "utilities/format.bas"
+if(_FUNC_APPLY_LAYOUT_INDENT_LONG_INDENT==NULL){
+#line 13 "utilities/format.bas"
+_FUNC_APPLY_LAYOUT_INDENT_LONG_INDENT=(int32*)mem_static_malloc(4);
+#line 13 "utilities/format.bas"
+*_FUNC_APPLY_LAYOUT_INDENT_LONG_INDENT=0;
+#line 13 "utilities/format.bas"
 }
-qbs *_FUNC_FORMATRANGE_STRING_A2=NULL;
-#line 10554 "ide/ide_methods.bas"
-if (!_FUNC_FORMATRANGE_STRING_A2)_FUNC_FORMATRANGE_STRING_A2=qbs_new(0,0);
+#line 16 "utilities/format.bas"
+byte_element_struct *byte_element_4531=NULL;
+#line 16 "utilities/format.bas"
+if (!byte_element_4531){
+#line 16 "utilities/format.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4531=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4531=(byte_element_struct*)mem_static_malloc(12);
+#line 16 "utilities/format.bas"
+}
+qbs *_FUNC_APPLY_LAYOUT_INDENT_STRING_LAYOUT3=NULL;
+#line 22 "utilities/format.bas"
+if (!_FUNC_APPLY_LAYOUT_INDENT_STRING_LAYOUT3)_FUNC_APPLY_LAYOUT_INDENT_STRING_LAYOUT3=qbs_new(0,0);
+int32 *_FUNC_APPLY_LAYOUT_INDENT_LONG_I2=NULL;
+#line 22 "utilities/format.bas"
+if(_FUNC_APPLY_LAYOUT_INDENT_LONG_I2==NULL){
+#line 22 "utilities/format.bas"
+_FUNC_APPLY_LAYOUT_INDENT_LONG_I2=(int32*)mem_static_malloc(4);
+#line 22 "utilities/format.bas"
+*_FUNC_APPLY_LAYOUT_INDENT_LONG_I2=0;
+#line 22 "utilities/format.bas"
+}
+int32 *_FUNC_APPLY_LAYOUT_INDENT_LONG_IGNORESP=NULL;
+#line 23 "utilities/format.bas"
+if(_FUNC_APPLY_LAYOUT_INDENT_LONG_IGNORESP==NULL){
+#line 23 "utilities/format.bas"
+_FUNC_APPLY_LAYOUT_INDENT_LONG_IGNORESP=(int32*)mem_static_malloc(4);
+#line 23 "utilities/format.bas"
+*_FUNC_APPLY_LAYOUT_INDENT_LONG_IGNORESP=0;
+#line 23 "utilities/format.bas"
+}
+#line 24 "utilities/format.bas"
+int64 fornext_value4533;
+#line 24 "utilities/format.bas"
+int64 fornext_finalvalue4533;
+#line 24 "utilities/format.bas"
+int64 fornext_step4533;
+#line 24 "utilities/format.bas"
+uint8 fornext_step_negative4533;
+#line 24 "utilities/format.bas"
+byte_element_struct *byte_element_4534=NULL;
+#line 24 "utilities/format.bas"
+if (!byte_element_4534){
+#line 24 "utilities/format.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4534=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4534=(byte_element_struct*)mem_static_malloc(12);
+#line 24 "utilities/format.bas"
+}
+int32 *_FUNC_APPLY_LAYOUT_INDENT_LONG_A=NULL;
+#line 25 "utilities/format.bas"
+if(_FUNC_APPLY_LAYOUT_INDENT_LONG_A==NULL){
+#line 25 "utilities/format.bas"
+_FUNC_APPLY_LAYOUT_INDENT_LONG_A=(int32*)mem_static_malloc(4);
+#line 25 "utilities/format.bas"
+*_FUNC_APPLY_LAYOUT_INDENT_LONG_A=0;
+#line 25 "utilities/format.bas"
+}
+#line 42 "utilities/format.bas"
+byte_element_struct *byte_element_4535=NULL;
+#line 42 "utilities/format.bas"
+if (!byte_element_4535){
+#line 42 "utilities/format.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4535=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4535=(byte_element_struct*)mem_static_malloc(12);
+#line 42 "utilities/format.bas"
+}
+#line 43 "utilities/format.bas"
+int64 fornext_value4537;
+#line 43 "utilities/format.bas"
+int64 fornext_finalvalue4537;
+#line 43 "utilities/format.bas"
+int64 fornext_step4537;
+#line 43 "utilities/format.bas"
+uint8 fornext_step_negative4537;
+qbs *_FUNC_APPLY_LAYOUT_INDENT_STRING_INDENT=NULL;
+#line 49 "utilities/format.bas"
+if (!_FUNC_APPLY_LAYOUT_INDENT_STRING_INDENT)_FUNC_APPLY_LAYOUT_INDENT_STRING_INDENT=qbs_new(0,0);
+qbs *_FUNC_APPLY_LAYOUT_INDENT_STRING_OLAY=NULL;
+#line 54 "utilities/format.bas"
+if (!_FUNC_APPLY_LAYOUT_INDENT_STRING_OLAY)_FUNC_APPLY_LAYOUT_INDENT_STRING_OLAY=qbs_new(0,0);
+#line 57 "utilities/format.bas"
+byte_element_struct *byte_element_4538=NULL;
+#line 57 "utilities/format.bas"
+if (!byte_element_4538){
+#line 57 "utilities/format.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4538=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4538=(byte_element_struct*)mem_static_malloc(12);
+#line 57 "utilities/format.bas"
+}
+#line 59 "utilities/format.bas"
+int64 fornext_value4540;
+#line 59 "utilities/format.bas"
+int64 fornext_finalvalue4540;
+#line 59 "utilities/format.bas"
+int64 fornext_step4540;
+#line 59 "utilities/format.bas"
+uint8 fornext_step_negative4540;
+int32 *_FUNC_APPLY_LAYOUT_INDENT_LONG_LCNT=NULL;
+#line 68 "utilities/format.bas"
+if(_FUNC_APPLY_LAYOUT_INDENT_LONG_LCNT==NULL){
+#line 68 "utilities/format.bas"
+_FUNC_APPLY_LAYOUT_INDENT_LONG_LCNT=(int32*)mem_static_malloc(4);
+#line 68 "utilities/format.bas"
+*_FUNC_APPLY_LAYOUT_INDENT_LONG_LCNT=0;
+#line 68 "utilities/format.bas"
+}
+int32 *_FUNC_APPLY_LAYOUT_INDENT_LONG_OCNT=NULL;
+#line 68 "utilities/format.bas"
+if(_FUNC_APPLY_LAYOUT_INDENT_LONG_OCNT==NULL){
+#line 68 "utilities/format.bas"
+_FUNC_APPLY_LAYOUT_INDENT_LONG_OCNT=(int32*)mem_static_malloc(4);
+#line 68 "utilities/format.bas"
+*_FUNC_APPLY_LAYOUT_INDENT_LONG_OCNT=0;
+#line 68 "utilities/format.bas"
+}
+#line 69 "utilities/format.bas"
+byte_element_struct *byte_element_4542=NULL;
+#line 69 "utilities/format.bas"
+if (!byte_element_4542){
+#line 69 "utilities/format.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4542=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4542=(byte_element_struct*)mem_static_malloc(12);
+#line 69 "utilities/format.bas"
+}
+qbs *_FUNC_APPLY_LAYOUT_INDENT_STRING_LCH=NULL;
+#line 72 "utilities/format.bas"
+if (!_FUNC_APPLY_LAYOUT_INDENT_STRING_LCH)_FUNC_APPLY_LAYOUT_INDENT_STRING_LCH=qbs_new(0,0);
+qbs *_FUNC_APPLY_LAYOUT_INDENT_STRING_LLCH=NULL;
+#line 72 "utilities/format.bas"
+if (!_FUNC_APPLY_LAYOUT_INDENT_STRING_LLCH)_FUNC_APPLY_LAYOUT_INDENT_STRING_LLCH=qbs_new(0,0);
+qbs *_FUNC_APPLY_LAYOUT_INDENT_STRING_OCH=NULL;
+#line 73 "utilities/format.bas"
+if (!_FUNC_APPLY_LAYOUT_INDENT_STRING_OCH)_FUNC_APPLY_LAYOUT_INDENT_STRING_OCH=qbs_new(0,0);
+qbs *_FUNC_APPLY_LAYOUT_INDENT_STRING_LOCH=NULL;
+#line 73 "utilities/format.bas"
+if (!_FUNC_APPLY_LAYOUT_INDENT_STRING_LOCH)_FUNC_APPLY_LAYOUT_INDENT_STRING_LOCH=qbs_new(0,0);
+#line 78 "utilities/format.bas"
+byte_element_struct *byte_element_4543=NULL;
+#line 78 "utilities/format.bas"
+if (!byte_element_4543){
+#line 78 "utilities/format.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4543=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4543=(byte_element_struct*)mem_static_malloc(12);
+#line 78 "utilities/format.bas"
+}
+#line 78 "utilities/format.bas"
+byte_element_struct *byte_element_4544=NULL;
+#line 78 "utilities/format.bas"
+if (!byte_element_4544){
+#line 78 "utilities/format.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4544=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4544=(byte_element_struct*)mem_static_malloc(12);
+#line 78 "utilities/format.bas"
+}
+#line 82 "utilities/format.bas"
+byte_element_struct *byte_element_4545=NULL;
+#line 82 "utilities/format.bas"
+if (!byte_element_4545){
+#line 82 "utilities/format.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4545=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4545=(byte_element_struct*)mem_static_malloc(12);
+#line 82 "utilities/format.bas"
+}
+#line 82 "utilities/format.bas"
+byte_element_struct *byte_element_4546=NULL;
+#line 82 "utilities/format.bas"
+if (!byte_element_4546){
+#line 82 "utilities/format.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4546=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4546=(byte_element_struct*)mem_static_malloc(12);
+#line 82 "utilities/format.bas"
+}
+qbs *_FUNC_APPLY_LAYOUT_INDENT_STRING_PS=NULL;
+#line 86 "utilities/format.bas"
+if (!_FUNC_APPLY_LAYOUT_INDENT_STRING_PS)_FUNC_APPLY_LAYOUT_INDENT_STRING_PS=qbs_new(0,0);
+qbs *_FUNC_APPLY_LAYOUT_INDENT_STRING_NLCH=NULL;
+#line 86 "utilities/format.bas"
+if (!_FUNC_APPLY_LAYOUT_INDENT_STRING_NLCH)_FUNC_APPLY_LAYOUT_INDENT_STRING_NLCH=qbs_new(0,0);
+#line 88 "utilities/format.bas"
+byte_element_struct *byte_element_4547=NULL;
+#line 88 "utilities/format.bas"
+if (!byte_element_4547){
+#line 88 "utilities/format.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4547=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4547=(byte_element_struct*)mem_static_malloc(12);
+#line 88 "utilities/format.bas"
+}
+#line 92 "utilities/format.bas"
+byte_element_struct *byte_element_4548=NULL;
+#line 92 "utilities/format.bas"
+if (!byte_element_4548){
+#line 92 "utilities/format.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4548=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4548=(byte_element_struct*)mem_static_malloc(12);
+#line 92 "utilities/format.bas"
+}
+int16 *_FUNC_APPLY_LAYOUT_INDENT_INTEGER_LAS=NULL;
+#line 95 "utilities/format.bas"
+if(_FUNC_APPLY_LAYOUT_INDENT_INTEGER_LAS==NULL){
+#line 95 "utilities/format.bas"
+_FUNC_APPLY_LAYOUT_INDENT_INTEGER_LAS=(int16*)mem_static_malloc(2);
+#line 95 "utilities/format.bas"
+*_FUNC_APPLY_LAYOUT_INDENT_INTEGER_LAS=0;
+#line 95 "utilities/format.bas"
+}
+#line 95 "utilities/format.bas"
+byte_element_struct *byte_element_4549=NULL;
+#line 95 "utilities/format.bas"
+if (!byte_element_4549){
+#line 95 "utilities/format.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4549=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4549=(byte_element_struct*)mem_static_malloc(12);
+#line 95 "utilities/format.bas"
+}
+int16 *_FUNC_APPLY_LAYOUT_INDENT_INTEGER_OAS=NULL;
+#line 95 "utilities/format.bas"
+if(_FUNC_APPLY_LAYOUT_INDENT_INTEGER_OAS==NULL){
+#line 95 "utilities/format.bas"
+_FUNC_APPLY_LAYOUT_INDENT_INTEGER_OAS=(int16*)mem_static_malloc(2);
+#line 95 "utilities/format.bas"
+*_FUNC_APPLY_LAYOUT_INDENT_INTEGER_OAS=0;
+#line 95 "utilities/format.bas"
+}
+#line 95 "utilities/format.bas"
+byte_element_struct *byte_element_4550=NULL;
+#line 95 "utilities/format.bas"
+if (!byte_element_4550){
+#line 95 "utilities/format.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4550=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4550=(byte_element_struct*)mem_static_malloc(12);
+#line 95 "utilities/format.bas"
+}
+#line 100 "utilities/format.bas"
+byte_element_struct *byte_element_4551=NULL;
+#line 100 "utilities/format.bas"
+if (!byte_element_4551){
+#line 100 "utilities/format.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4551=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4551=(byte_element_struct*)mem_static_malloc(12);
+#line 100 "utilities/format.bas"
+}

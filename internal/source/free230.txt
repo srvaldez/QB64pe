@@ -1,7 +1,4 @@
-if(oldstr3930){
-if(oldstr3930->fixed)qbs_set(oldstr3930,_FUNC_LOGICALIMP_STRING_EXP);
-qbs_free(_FUNC_LOGICALIMP_STRING_EXP);
+if(oldstr3998){
+if(oldstr3998->fixed)qbs_set(oldstr3998,_FUNC_SBUFNFIND_STRING_SBNAME);
+qbs_free(_FUNC_SBUFNFIND_STRING_SBNAME);
 }
-#line 259 "utilities/const_eval.bas"
-qbs_free(*(qbs**)(((char*)(_FUNC_LOGICALIMP_UDT_NUM))+((0+48))));
-qbs_free(_FUNC_LOGICALIMP_STRING_ELE);

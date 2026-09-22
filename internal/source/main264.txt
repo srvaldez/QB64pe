@@ -1,64 +1,54 @@
-#line 8 "utilities/statevars.bas"
-void SUB_CLEARRCSTATEVAR(void*_SUB_CLEARRCSTATEVAR_UDT_STVAR){
-#line 8 "utilities/statevars.bas"
+#line 782 "utilities/const_eval.bas"
+void SUB_PARSENUMSETS(void*_SUB_PARSENUMSETS_UDT_NUM,qbs*_SUB_PARSENUMSETS_STRING_S){
+#line 782 "utilities/const_eval.bas"
 qbs *tqbs;
-#line 8 "utilities/statevars.bas"
+#line 782 "utilities/const_eval.bas"
 ptrszint tmp_long;
-#line 8 "utilities/statevars.bas"
+#line 782 "utilities/const_eval.bas"
 int32 tmp_fileno;
-#line 8 "utilities/statevars.bas"
+#line 782 "utilities/const_eval.bas"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
-#line 8 "utilities/statevars.bas"
+#line 782 "utilities/const_eval.bas"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
-#line 8 "utilities/statevars.bas"
+#line 782 "utilities/const_eval.bas"
 uint32 tmp_cmem_sp=cmem_sp;
-#line 8 "utilities/statevars.bas"
+#line 782 "utilities/const_eval.bas"
 #include "data264.txt"
-#line 8 "utilities/statevars.bas"
+#line 782 "utilities/const_eval.bas"
 mem_lock *sf_mem_lock;
-#line 8 "utilities/statevars.bas"
+#line 782 "utilities/const_eval.bas"
 new_mem_lock();
-#line 8 "utilities/statevars.bas"
+#line 782 "utilities/const_eval.bas"
 sf_mem_lock=mem_lock_tmp;
-#line 8 "utilities/statevars.bas"
+#line 782 "utilities/const_eval.bas"
 sf_mem_lock->type=3;
-#line 8 "utilities/statevars.bas"
+#line 782 "utilities/const_eval.bas"
 libqb_check_stack();
-#line 8 "utilities/statevars.bas"
+#line 782 "utilities/const_eval.bas"
 if (is_error_pending()) goto exit_subfunc;
-#line 9 "utilities/statevars.bas"
+#line 783 "utilities/const_eval.bas"
 do{
-#line 9 "utilities/statevars.bas"
-*(int8*)(((char*)_SUB_CLEARRCSTATEVAR_UDT_STVAR)+((0+0)))= 0 ;
-#line 9 "utilities/statevars.bas"
-if(!qbevent)break;evnt(28620,9,"statevars.bas");}while(r);
-#line 9 "utilities/statevars.bas"
+#line 783 "utilities/const_eval.bas"
+qbs_set(*((qbs**)((char*)(_SUB_PARSENUMSETS_UDT_NUM)+((0+48)))),_SUB_PARSENUMSETS_STRING_S);
+#line 783 "utilities/const_eval.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 783 "utilities/const_eval.bas"
+if(!qbevent)break;evnt(28806,783,"const_eval.bas");}while(r);
+#line 784 "utilities/const_eval.bas"
 do{
-#line 9 "utilities/statevars.bas"
-*(int8*)(((char*)_SUB_CLEARRCSTATEVAR_UDT_STVAR)+((0+1)))= 0 ;
-#line 9 "utilities/statevars.bas"
-if(!qbevent)break;evnt(28620,9,"statevars.bas");}while(r);
-#line 10 "utilities/statevars.bas"
-do{
-#line 10 "utilities/statevars.bas"
-*(int8*)(((char*)_SUB_CLEARRCSTATEVAR_UDT_STVAR)+((0+2)))= 0 ;
-#line 10 "utilities/statevars.bas"
-if(!qbevent)break;evnt(28620,10,"statevars.bas");}while(r);
-#line 10 "utilities/statevars.bas"
-do{
-#line 10 "utilities/statevars.bas"
-*(int8*)(((char*)_SUB_CLEARRCSTATEVAR_UDT_STVAR)+((0+3)))= 0 ;
-#line 10 "utilities/statevars.bas"
-if(!qbevent)break;evnt(28620,10,"statevars.bas");}while(r);
-#line 11 "utilities/statevars.bas"
+#line 784 "utilities/const_eval.bas"
+*(int32*)(((char*)_SUB_PARSENUMSETS_UDT_NUM)+((0+56)))=*__LONG_STRINGTYPE;
+#line 784 "utilities/const_eval.bas"
+if(!qbevent)break;evnt(28806,784,"const_eval.bas");}while(r);
+#line 785 "utilities/const_eval.bas"
 exit_subfunc:;
-#line 11 "utilities/statevars.bas"
+#line 785 "utilities/const_eval.bas"
 free_mem_lock(sf_mem_lock);
-#line 11 "utilities/statevars.bas"
+#line 785 "utilities/const_eval.bas"
 #include "free264.txt"
-#line 11 "utilities/statevars.bas"
+#line 785 "utilities/const_eval.bas"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
-#line 11 "utilities/statevars.bas"
+#line 785 "utilities/const_eval.bas"
 cmem_sp=tmp_cmem_sp;
-#line 11 "utilities/statevars.bas"
+#line 785 "utilities/const_eval.bas"
 }

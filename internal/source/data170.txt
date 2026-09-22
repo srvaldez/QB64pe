@@ -1,63 +1,40 @@
-int32 *_SUB_GL_INCLUDE_CONTENT_LONG_D=NULL;
-#line 334 "subs_functions/extensions/opengl/opengl_methods.bas"
-if(_SUB_GL_INCLUDE_CONTENT_LONG_D==NULL){
-#line 334 "subs_functions/extensions/opengl/opengl_methods.bas"
-_SUB_GL_INCLUDE_CONTENT_LONG_D=(int32*)mem_static_malloc(4);
-#line 334 "subs_functions/extensions/opengl/opengl_methods.bas"
-*_SUB_GL_INCLUDE_CONTENT_LONG_D=0;
-#line 334 "subs_functions/extensions/opengl/opengl_methods.bas"
+#line 57 "utilities/elements.bas"
+qbs*oldstr3771=NULL;
+#line 57 "utilities/elements.bas"
+if(_SUB_PUSHELEMENT_STRING_A->tmp||_SUB_PUSHELEMENT_STRING_A->fixed||_SUB_PUSHELEMENT_STRING_A->readonly){
+#line 57 "utilities/elements.bas"
+oldstr3771=_SUB_PUSHELEMENT_STRING_A;
+#line 57 "utilities/elements.bas"
+if (oldstr3771->cmem_descriptor){
+#line 57 "utilities/elements.bas"
+_SUB_PUSHELEMENT_STRING_A=qbs_new_cmem(oldstr3771->len,0);
+#line 57 "utilities/elements.bas"
+}else{
+#line 57 "utilities/elements.bas"
+_SUB_PUSHELEMENT_STRING_A=qbs_new(oldstr3771->len,0);
+#line 57 "utilities/elements.bas"
 }
-#line 334 "subs_functions/extensions/opengl/opengl_methods.bas"
-int64 fornext_value3735;
-#line 334 "subs_functions/extensions/opengl/opengl_methods.bas"
-int64 fornext_finalvalue3735;
-#line 334 "subs_functions/extensions/opengl/opengl_methods.bas"
-int64 fornext_step3735;
-#line 334 "subs_functions/extensions/opengl/opengl_methods.bas"
-uint8 fornext_step_negative3735;
-int32 *_SUB_GL_INCLUDE_CONTENT_LONG_I=NULL;
-#line 352 "subs_functions/extensions/opengl/opengl_methods.bas"
-if(_SUB_GL_INCLUDE_CONTENT_LONG_I==NULL){
-#line 352 "subs_functions/extensions/opengl/opengl_methods.bas"
-_SUB_GL_INCLUDE_CONTENT_LONG_I=(int32*)mem_static_malloc(4);
-#line 352 "subs_functions/extensions/opengl/opengl_methods.bas"
-*_SUB_GL_INCLUDE_CONTENT_LONG_I=0;
-#line 352 "subs_functions/extensions/opengl/opengl_methods.bas"
+#line 57 "utilities/elements.bas"
+memcpy(_SUB_PUSHELEMENT_STRING_A->chr,oldstr3771->chr,oldstr3771->len);
+#line 57 "utilities/elements.bas"
 }
-#line 361 "subs_functions/extensions/opengl/opengl_methods.bas"
-int32 pass3736;
-int32 *_SUB_GL_INCLUDE_CONTENT_LONG_C=NULL;
-#line 366 "subs_functions/extensions/opengl/opengl_methods.bas"
-if(_SUB_GL_INCLUDE_CONTENT_LONG_C==NULL){
-#line 366 "subs_functions/extensions/opengl/opengl_methods.bas"
-_SUB_GL_INCLUDE_CONTENT_LONG_C=(int32*)mem_static_malloc(4);
-#line 366 "subs_functions/extensions/opengl/opengl_methods.bas"
-*_SUB_GL_INCLUDE_CONTENT_LONG_C=0;
-#line 366 "subs_functions/extensions/opengl/opengl_methods.bas"
+#line 57 "utilities/elements.bas"
+qbs*oldstr3772=NULL;
+#line 57 "utilities/elements.bas"
+if(_SUB_PUSHELEMENT_STRING_B->tmp||_SUB_PUSHELEMENT_STRING_B->fixed||_SUB_PUSHELEMENT_STRING_B->readonly){
+#line 57 "utilities/elements.bas"
+oldstr3772=_SUB_PUSHELEMENT_STRING_B;
+#line 57 "utilities/elements.bas"
+if (oldstr3772->cmem_descriptor){
+#line 57 "utilities/elements.bas"
+_SUB_PUSHELEMENT_STRING_B=qbs_new_cmem(oldstr3772->len,0);
+#line 57 "utilities/elements.bas"
+}else{
+#line 57 "utilities/elements.bas"
+_SUB_PUSHELEMENT_STRING_B=qbs_new(oldstr3772->len,0);
+#line 57 "utilities/elements.bas"
 }
-#line 366 "subs_functions/extensions/opengl/opengl_methods.bas"
-int64 fornext_value3738;
-#line 366 "subs_functions/extensions/opengl/opengl_methods.bas"
-int64 fornext_finalvalue3738;
-#line 366 "subs_functions/extensions/opengl/opengl_methods.bas"
-int64 fornext_step3738;
-#line 366 "subs_functions/extensions/opengl/opengl_methods.bas"
-uint8 fornext_step_negative3738;
-void *_SUB_GL_INCLUDE_CONTENT_UDT_G=NULL;
-#line 367 "subs_functions/extensions/opengl/opengl_methods.bas"
-if(_SUB_GL_INCLUDE_CONTENT_UDT_G==NULL){
-#line 367 "subs_functions/extensions/opengl/opengl_methods.bas"
-_SUB_GL_INCLUDE_CONTENT_UDT_G=(void*)mem_static_malloc(216);
-#line 367 "subs_functions/extensions/opengl/opengl_methods.bas"
-memset(_SUB_GL_INCLUDE_CONTENT_UDT_G,0,216);
-#line 367 "subs_functions/extensions/opengl/opengl_methods.bas"
-}
-int32 *_SUB_GL_INCLUDE_CONTENT_LONG_S=NULL;
-#line 382 "subs_functions/extensions/opengl/opengl_methods.bas"
-if(_SUB_GL_INCLUDE_CONTENT_LONG_S==NULL){
-#line 382 "subs_functions/extensions/opengl/opengl_methods.bas"
-_SUB_GL_INCLUDE_CONTENT_LONG_S=(int32*)mem_static_malloc(4);
-#line 382 "subs_functions/extensions/opengl/opengl_methods.bas"
-*_SUB_GL_INCLUDE_CONTENT_LONG_S=0;
-#line 382 "subs_functions/extensions/opengl/opengl_methods.bas"
+#line 57 "utilities/elements.bas"
+memcpy(_SUB_PUSHELEMENT_STRING_B->chr,oldstr3772->chr,oldstr3772->len);
+#line 57 "utilities/elements.bas"
 }

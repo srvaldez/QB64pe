@@ -1,8 +1,8 @@
-if(oldstr4379){
-if(oldstr4379->fixed)qbs_set(oldstr4379,_SUB_COPY_FULL_UDT_STRING_DST);
-qbs_free(_SUB_COPY_FULL_UDT_STRING_DST);
+if(oldstr4416){
+if(oldstr4416->fixed)qbs_set(oldstr4416,_SUB_APPENDDYNMEMBERERASETYPED_STRING_DESC_SLOT);
+qbs_free(_SUB_APPENDDYNMEMBERERASETYPED_STRING_DESC_SLOT);
 }
-if(oldstr4380){
-if(oldstr4380->fixed)qbs_set(oldstr4380,_SUB_COPY_FULL_UDT_STRING_SRC);
-qbs_free(_SUB_COPY_FULL_UDT_STRING_SRC);
+if(oldstr4417){
+if(oldstr4417->fixed)qbs_set(oldstr4417,_SUB_APPENDDYNMEMBERERASETYPED_STRING_ACC);
+qbs_free(_SUB_APPENDDYNMEMBERERASETYPED_STRING_ACC);
 }

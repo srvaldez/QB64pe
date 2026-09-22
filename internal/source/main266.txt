@@ -1,46 +1,180 @@
-#line 26 "utilities/statevars.bas"
-void SUB_FORCERCSTATEVAR(void*_SUB_FORCERCSTATEVAR_UDT_STVAR,int8*_SUB_FORCERCSTATEVAR_BYTE_FORCEVAL){
-#line 26 "utilities/statevars.bas"
+#line 791 "utilities/const_eval.bas"
+void SUB_PARSEEXPRESSION2(qbs*_SUB_PARSEEXPRESSION2_STRING_EXP){
+#line 791 "utilities/const_eval.bas"
 qbs *tqbs;
-#line 26 "utilities/statevars.bas"
+#line 791 "utilities/const_eval.bas"
 ptrszint tmp_long;
-#line 26 "utilities/statevars.bas"
+#line 791 "utilities/const_eval.bas"
 int32 tmp_fileno;
-#line 26 "utilities/statevars.bas"
+#line 791 "utilities/const_eval.bas"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
-#line 26 "utilities/statevars.bas"
+#line 791 "utilities/const_eval.bas"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
-#line 26 "utilities/statevars.bas"
+#line 791 "utilities/const_eval.bas"
 uint32 tmp_cmem_sp=cmem_sp;
-#line 26 "utilities/statevars.bas"
+#line 791 "utilities/const_eval.bas"
 #include "data266.txt"
-#line 26 "utilities/statevars.bas"
+#line 791 "utilities/const_eval.bas"
 mem_lock *sf_mem_lock;
-#line 26 "utilities/statevars.bas"
+#line 791 "utilities/const_eval.bas"
 new_mem_lock();
-#line 26 "utilities/statevars.bas"
+#line 791 "utilities/const_eval.bas"
 sf_mem_lock=mem_lock_tmp;
-#line 26 "utilities/statevars.bas"
+#line 791 "utilities/const_eval.bas"
 sf_mem_lock->type=3;
-#line 26 "utilities/statevars.bas"
+#line 791 "utilities/const_eval.bas"
 libqb_check_stack();
-#line 26 "utilities/statevars.bas"
+#line 791 "utilities/const_eval.bas"
 if (is_error_pending()) goto exit_subfunc;
-#line 27 "utilities/statevars.bas"
+#line 792 "utilities/const_eval.bas"
 do{
-#line 27 "utilities/statevars.bas"
-*(int8*)(((char*)_SUB_FORCERCSTATEVAR_UDT_STVAR)+((0+3)))=*_SUB_FORCERCSTATEVAR_BYTE_FORCEVAL;
-#line 27 "utilities/statevars.bas"
-if(!qbevent)break;evnt(28620,27,"statevars.bas");}while(r);
-#line 28 "utilities/statevars.bas"
+#line 792 "utilities/const_eval.bas"
+qbs_set(_SUB_PARSEEXPRESSION2_STRING_EXP,FUNC_DWD(_SUB_PARSEEXPRESSION2_STRING_EXP));
+#line 792 "utilities/const_eval.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 792 "utilities/const_eval.bas"
+if(!qbevent)break;evnt(28806,792,"const_eval.bas");}while(r);
+#line 794 "utilities/const_eval.bas"
+do{
+#line 794 "utilities/const_eval.bas"
+if(!qbevent)break;evnt(28806,794,"const_eval.bas");}while(r);
+#line 795 "utilities/const_eval.bas"
+do{
+#line 795 "utilities/const_eval.bas"
+*(int32*)(((char*)_SUB_PARSEEXPRESSION2_UDT_STATE)+((0+0)))= 0 ;
+#line 795 "utilities/const_eval.bas"
+if(!qbevent)break;evnt(28806,795,"const_eval.bas");}while(r);
+#line 796 "utilities/const_eval.bas"
+do{
+#line 796 "utilities/const_eval.bas"
+*(int32*)(((char*)_SUB_PARSEEXPRESSION2_UDT_STATE)+((0+4)))= 0 ;
+#line 796 "utilities/const_eval.bas"
+if(!qbevent)break;evnt(28806,796,"const_eval.bas");}while(r);
+#line 797 "utilities/const_eval.bas"
+do{
+#line 797 "utilities/const_eval.bas"
+*(long double*)(((char*)_SUB_PARSEEXPRESSION2_UDT_STATE)+((0+8)))= 0 ;
+#line 797 "utilities/const_eval.bas"
+if(!qbevent)break;evnt(28806,797,"const_eval.bas");}while(r);
+#line 798 "utilities/const_eval.bas"
+do{
+#line 798 "utilities/const_eval.bas"
+*(int64*)(((char*)_SUB_PARSEEXPRESSION2_UDT_STATE)+((0+40)))= 0 ;
+#line 798 "utilities/const_eval.bas"
+if(!qbevent)break;evnt(28806,798,"const_eval.bas");}while(r);
+#line 799 "utilities/const_eval.bas"
+do{
+#line 799 "utilities/const_eval.bas"
+*(int32*)(((char*)_SUB_PARSEEXPRESSION2_UDT_STATE)+((0+64)))= 0 ;
+#line 799 "utilities/const_eval.bas"
+if(!qbevent)break;evnt(28806,799,"const_eval.bas");}while(r);
+#line 800 "utilities/const_eval.bas"
+do{
+#line 800 "utilities/const_eval.bas"
+qbs_set(*((qbs**)((char*)(_SUB_PARSEEXPRESSION2_UDT_STATE)+((0+68)))),qbs_new_txt_len("",0));
+#line 800 "utilities/const_eval.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 800 "utilities/const_eval.bas"
+if(!qbevent)break;evnt(28806,800,"const_eval.bas");}while(r);
+#line 801 "utilities/const_eval.bas"
+do{
+#line 801 "utilities/const_eval.bas"
+qbs_set(*((qbs**)((char*)(_SUB_PARSEEXPRESSION2_UDT_STATE)+((0+76)))),qbs_new_txt_len("",0));
+#line 801 "utilities/const_eval.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 801 "utilities/const_eval.bas"
+if(!qbevent)break;evnt(28806,801,"const_eval.bas");}while(r);
+#line 803 "utilities/const_eval.bas"
+do{
+#line 803 "utilities/const_eval.bas"
+*_SUB_PARSEEXPRESSION2_LONG_RES=FUNC_COMMAEXPRESSION(_SUB_PARSEEXPRESSION2_STRING_EXP,(void*)( ((char*)(_SUB_PARSEEXPRESSION2_UDT_STATE)) + ((0+0)) ));
+#line 803 "utilities/const_eval.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 803 "utilities/const_eval.bas"
+if(!qbevent)break;evnt(28806,803,"const_eval.bas");}while(r);
+#line 804 "utilities/const_eval.bas"
+S_41314:;
+#line 804 "utilities/const_eval.bas"
+if (( 0ll )||is_error_pending()){
+#line 804 "utilities/const_eval.bas"
+if(qbevent){evnt(28806,804,"const_eval.bas");if(r)goto S_41314;}
+#line 804 "utilities/const_eval.bas"
+do{
+#line 804 "utilities/const_eval.bas"
+sub__echo(qbs_add(qbs_new_txt_len("res:",4),qbs_str((int32)(*_SUB_PARSEEXPRESSION2_LONG_RES))));
+#line 804 "utilities/const_eval.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 804 "utilities/const_eval.bas"
+if(!qbevent)break;evnt(28806,804,"const_eval.bas");}while(r);
+#line 804 "utilities/const_eval.bas"
+}
+#line 805 "utilities/const_eval.bas"
+S_41317:;
+#line 805 "utilities/const_eval.bas"
+if (( 0ll )||is_error_pending()){
+#line 805 "utilities/const_eval.bas"
+if(qbevent){evnt(28806,805,"const_eval.bas");if(r)goto S_41317;}
+#line 805 "utilities/const_eval.bas"
+do{
+#line 805 "utilities/const_eval.bas"
+sub__echo(qbs_add(qbs_new_txt_len("resulting string: ",18),*((qbs**)((char*)_SUB_PARSEEXPRESSION2_UDT_STATE+((0+76))))));
+#line 805 "utilities/const_eval.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 805 "utilities/const_eval.bas"
+if(!qbevent)break;evnt(28806,805,"const_eval.bas");}while(r);
+#line 805 "utilities/const_eval.bas"
+}
+#line 806 "utilities/const_eval.bas"
+S_41320:;
+#line 806 "utilities/const_eval.bas"
+if (( 0ll )||is_error_pending()){
+#line 806 "utilities/const_eval.bas"
+if(qbevent){evnt(28806,806,"const_eval.bas");if(r)goto S_41320;}
+#line 806 "utilities/const_eval.bas"
+do{
+#line 806 "utilities/const_eval.bas"
+sub__echo(qbs_add(qbs_new_txt_len("resulting err: ",15),*((qbs**)((char*)_SUB_PARSEEXPRESSION2_UDT_STATE+((0+68))))));
+#line 806 "utilities/const_eval.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 806 "utilities/const_eval.bas"
+if(!qbevent)break;evnt(28806,806,"const_eval.bas");}while(r);
+#line 806 "utilities/const_eval.bas"
+}
+#line 808 "utilities/const_eval.bas"
+S_41323:;
+#line 808 "utilities/const_eval.bas"
+if ((-(*_SUB_PARSEEXPRESSION2_LONG_RES== 0 ))||is_error_pending()){
+#line 808 "utilities/const_eval.bas"
+if(qbevent){evnt(28806,808,"const_eval.bas");if(r)goto S_41323;}
+#line 809 "utilities/const_eval.bas"
+do{
+#line 809 "utilities/const_eval.bas"
+qbs_set(_SUB_PARSEEXPRESSION2_STRING_EXP,*((qbs**)((char*)_SUB_PARSEEXPRESSION2_UDT_STATE+((0+68)))));
+#line 809 "utilities/const_eval.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 809 "utilities/const_eval.bas"
+if(!qbevent)break;evnt(28806,809,"const_eval.bas");}while(r);
+#line 810 "utilities/const_eval.bas"
+}else{
+#line 811 "utilities/const_eval.bas"
+do{
+#line 811 "utilities/const_eval.bas"
+qbs_set(_SUB_PARSEEXPRESSION2_STRING_EXP,*((qbs**)((char*)_SUB_PARSEEXPRESSION2_UDT_STATE+((0+76)))));
+#line 811 "utilities/const_eval.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 811 "utilities/const_eval.bas"
+if(!qbevent)break;evnt(28806,811,"const_eval.bas");}while(r);
+#line 812 "utilities/const_eval.bas"
+}
+#line 813 "utilities/const_eval.bas"
 exit_subfunc:;
-#line 28 "utilities/statevars.bas"
+#line 813 "utilities/const_eval.bas"
 free_mem_lock(sf_mem_lock);
-#line 28 "utilities/statevars.bas"
+#line 813 "utilities/const_eval.bas"
 #include "free266.txt"
-#line 28 "utilities/statevars.bas"
+#line 813 "utilities/const_eval.bas"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
-#line 28 "utilities/statevars.bas"
+#line 813 "utilities/const_eval.bas"
 cmem_sp=tmp_cmem_sp;
-#line 28 "utilities/statevars.bas"
+#line 813 "utilities/const_eval.bas"
 }

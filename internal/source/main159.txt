@@ -1,238 +1,130 @@
-#line 406 "utilities/elements.bas"
-qbs* FUNC_ELEUCASE(qbs*_FUNC_ELEUCASE_STRING_A){
-#line 406 "utilities/elements.bas"
+#line 86 "utilities/file.bas"
+qbs* FUNC_GETESCAPEDPATH(qbs*_FUNC_GETESCAPEDPATH_STRING_PATH_NAME){
+#line 86 "utilities/file.bas"
 qbs *tqbs;
-#line 406 "utilities/elements.bas"
+#line 86 "utilities/file.bas"
 ptrszint tmp_long;
-#line 406 "utilities/elements.bas"
+#line 86 "utilities/file.bas"
 int32 tmp_fileno;
-#line 406 "utilities/elements.bas"
+#line 86 "utilities/file.bas"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
-#line 406 "utilities/elements.bas"
+#line 86 "utilities/file.bas"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
-#line 406 "utilities/elements.bas"
+#line 86 "utilities/file.bas"
 uint32 tmp_cmem_sp=cmem_sp;
-#line 406 "utilities/elements.bas"
+#line 86 "utilities/file.bas"
 #include "data159.txt"
-#line 406 "utilities/elements.bas"
+#line 86 "utilities/file.bas"
 mem_lock *sf_mem_lock;
-#line 406 "utilities/elements.bas"
+#line 86 "utilities/file.bas"
 new_mem_lock();
-#line 406 "utilities/elements.bas"
+#line 86 "utilities/file.bas"
 sf_mem_lock=mem_lock_tmp;
-#line 406 "utilities/elements.bas"
+#line 86 "utilities/file.bas"
 sf_mem_lock->type=3;
-#line 406 "utilities/elements.bas"
+#line 86 "utilities/file.bas"
 libqb_check_stack();
-#line 406 "utilities/elements.bas"
+#line 86 "utilities/file.bas"
 if (is_error_pending()) goto exit_subfunc;
-#line 407 "utilities/elements.bas"
+#line 87 "utilities/file.bas"
 do{
-#line 407 "utilities/elements.bas"
-if(!qbevent)break;evnt(28614,407,"elements.bas");}while(r);
-#line 411 "utilities/elements.bas"
-S_37641:;
-#line 411 "utilities/elements.bas"
-if ((qbs_cleanup(qbs_tmp_base,-(_FUNC_ELEUCASE_STRING_A->len== 0 )))||is_error_pending()){
-#line 411 "utilities/elements.bas"
-if(qbevent){evnt(28614,411,"elements.bas");if(r)goto S_37641;}
-#line 411 "utilities/elements.bas"
-do{
-#line 411 "utilities/elements.bas"
-goto exit_subfunc;
-#line 411 "utilities/elements.bas"
-if(!qbevent)break;evnt(28614,411,"elements.bas");}while(r);
-#line 411 "utilities/elements.bas"
-}
-#line 412 "utilities/elements.bas"
-do{
-#line 412 "utilities/elements.bas"
-*_FUNC_ELEUCASE_LONG_I= 1 ;
-#line 412 "utilities/elements.bas"
-if(!qbevent)break;evnt(28614,412,"elements.bas");}while(r);
-#line 413 "utilities/elements.bas"
-S_37645:;
-#line 413 "utilities/elements.bas"
-if ((qbs_cleanup(qbs_tmp_base,-(qbs_asc(_FUNC_ELEUCASE_STRING_A)== 34 )))||is_error_pending()){
-#line 413 "utilities/elements.bas"
-if(qbevent){evnt(28614,413,"elements.bas");if(r)goto S_37645;}
-#line 414 "utilities/elements.bas"
-do{
-#line 414 "utilities/elements.bas"
-*_FUNC_ELEUCASE_LONG_I2=func_instr(NULL,_FUNC_ELEUCASE_STRING_A,__STRING1_SP,0);
-#line 414 "utilities/elements.bas"
+#line 87 "utilities/file.bas"
+if(!qbevent)break;evnt(28800,87,"file.bas");}while(r);
+#line 89 "utilities/file.bas"
+S_38364:;
+#line 89 "utilities/file.bas"
+fornext_value3742= 1 ;
+#line 89 "utilities/file.bas"
+fornext_finalvalue3742=_FUNC_GETESCAPEDPATH_STRING_PATH_NAME->len;
+#line 89 "utilities/file.bas"
+fornext_step3742= 1 ;
+#line 89 "utilities/file.bas"
+if (fornext_step3742<0) fornext_step_negative3742=1; else fornext_step_negative3742=0;
+#line 89 "utilities/file.bas"
+if (is_error_pending()) goto fornext_error3742;
+#line 89 "utilities/file.bas"
+goto fornext_entrylabel3742;
+#line 89 "utilities/file.bas"
+while(1){
+#line 89 "utilities/file.bas"
+fornext_value3742=fornext_step3742+(*_FUNC_GETESCAPEDPATH_ULONG_Z);
+#line 89 "utilities/file.bas"
+fornext_entrylabel3742:
+#line 89 "utilities/file.bas"
+*_FUNC_GETESCAPEDPATH_ULONG_Z=fornext_value3742;
+#line 89 "utilities/file.bas"
 qbs_cleanup(qbs_tmp_base,0);
-#line 414 "utilities/elements.bas"
-if(!qbevent)break;evnt(28614,414,"elements.bas");}while(r);
-#line 415 "utilities/elements.bas"
-S_37647:;
-#line 415 "utilities/elements.bas"
-if ((-(*_FUNC_ELEUCASE_LONG_I2== 0 ))||is_error_pending()){
-#line 415 "utilities/elements.bas"
-if(qbevent){evnt(28614,415,"elements.bas");if(r)goto S_37647;}
-#line 415 "utilities/elements.bas"
-do{
-#line 415 "utilities/elements.bas"
-qbs_set(_FUNC_ELEUCASE_STRING_ELEUCASE,_FUNC_ELEUCASE_STRING_A);
-#line 415 "utilities/elements.bas"
-qbs_cleanup(qbs_tmp_base,0);
-#line 415 "utilities/elements.bas"
-if(!qbevent)break;evnt(28614,415,"elements.bas");}while(r);
-#line 415 "utilities/elements.bas"
-do{
-#line 415 "utilities/elements.bas"
-goto exit_subfunc;
-#line 415 "utilities/elements.bas"
-if(!qbevent)break;evnt(28614,415,"elements.bas");}while(r);
-#line 415 "utilities/elements.bas"
-}
-#line 416 "utilities/elements.bas"
-do{
-#line 416 "utilities/elements.bas"
-qbs_set(_FUNC_ELEUCASE_STRING_A2,qbs_left(_FUNC_ELEUCASE_STRING_A,*_FUNC_ELEUCASE_LONG_I2- 1 ));
-#line 416 "utilities/elements.bas"
-qbs_cleanup(qbs_tmp_base,0);
-#line 416 "utilities/elements.bas"
-if(!qbevent)break;evnt(28614,416,"elements.bas");}while(r);
-#line 417 "utilities/elements.bas"
-do{
-#line 417 "utilities/elements.bas"
-*_FUNC_ELEUCASE_LONG_I=*_FUNC_ELEUCASE_LONG_I2;
-#line 417 "utilities/elements.bas"
-if(!qbevent)break;evnt(28614,417,"elements.bas");}while(r);
-#line 418 "utilities/elements.bas"
-}
-#line 420 "utilities/elements.bas"
-do{
-#line 420 "utilities/elements.bas"
-qbs_set(_FUNC_ELEUCASE_STRING_SP34,qbs_add(__STRING1_SP,func_chr( 34 )));
-#line 420 "utilities/elements.bas"
-qbs_cleanup(qbs_tmp_base,0);
-#line 420 "utilities/elements.bas"
-if(!qbevent)break;evnt(28614,420,"elements.bas");}while(r);
-#line 421 "utilities/elements.bas"
-S_37655:;
-#line 421 "utilities/elements.bas"
-if ((qbs_cleanup(qbs_tmp_base,-(*_FUNC_ELEUCASE_LONG_I<_FUNC_ELEUCASE_STRING_A->len)))||is_error_pending()){
-#line 421 "utilities/elements.bas"
-if(qbevent){evnt(28614,421,"elements.bas");if(r)goto S_37655;}
-#line 422 "utilities/elements.bas"
-S_37656:;
-#line 422 "utilities/elements.bas"
-while((qbs_cleanup(qbs_tmp_base,func_instr(*_FUNC_ELEUCASE_LONG_I,_FUNC_ELEUCASE_STRING_A,_FUNC_ELEUCASE_STRING_SP34,0|1)))||is_error_pending()){
-#line 422 "utilities/elements.bas"
-if(qbevent){evnt(28614,422,"elements.bas");if(r)goto S_37656;}
-#line 423 "utilities/elements.bas"
-do{
-#line 423 "utilities/elements.bas"
-*_FUNC_ELEUCASE_LONG_I2=func_instr(*_FUNC_ELEUCASE_LONG_I,_FUNC_ELEUCASE_STRING_A,_FUNC_ELEUCASE_STRING_SP34,0|1);
-#line 423 "utilities/elements.bas"
-qbs_cleanup(qbs_tmp_base,0);
-#line 423 "utilities/elements.bas"
-if(!qbevent)break;evnt(28614,423,"elements.bas");}while(r);
-#line 424 "utilities/elements.bas"
-do{
-#line 424 "utilities/elements.bas"
-qbs_set(_FUNC_ELEUCASE_STRING_A2,qbs_add(_FUNC_ELEUCASE_STRING_A2,qbs_ucase(func_mid(_FUNC_ELEUCASE_STRING_A,*_FUNC_ELEUCASE_LONG_I,*_FUNC_ELEUCASE_LONG_I2-*_FUNC_ELEUCASE_LONG_I+ 1 ,0|1))));
-#line 424 "utilities/elements.bas"
-qbs_cleanup(qbs_tmp_base,0);
-#line 424 "utilities/elements.bas"
-if(!qbevent)break;evnt(28614,424,"elements.bas");}while(r);
-#line 425 "utilities/elements.bas"
-do{
-#line 425 "utilities/elements.bas"
-*_FUNC_ELEUCASE_LONG_I3=func_instr(*_FUNC_ELEUCASE_LONG_I2+ 1 ,_FUNC_ELEUCASE_STRING_A,__STRING1_SP,0|1);
-#line 425 "utilities/elements.bas"
-qbs_cleanup(qbs_tmp_base,0);
-#line 425 "utilities/elements.bas"
-if(!qbevent)break;evnt(28614,425,"elements.bas");}while(r);
-#line 425 "utilities/elements.bas"
-S_37660:;
-#line 425 "utilities/elements.bas"
-if ((-(*_FUNC_ELEUCASE_LONG_I3== 0 ))||is_error_pending()){
-#line 425 "utilities/elements.bas"
-if(qbevent){evnt(28614,425,"elements.bas");if(r)goto S_37660;}
-#line 425 "utilities/elements.bas"
-do{
-#line 425 "utilities/elements.bas"
-*_FUNC_ELEUCASE_LONG_I3=_FUNC_ELEUCASE_STRING_A->len;
-#line 425 "utilities/elements.bas"
-qbs_cleanup(qbs_tmp_base,0);
-#line 425 "utilities/elements.bas"
-if(!qbevent)break;evnt(28614,425,"elements.bas");}while(r);
-#line 425 "utilities/elements.bas"
+#line 89 "utilities/file.bas"
+if (fornext_step_negative3742){
+#line 89 "utilities/file.bas"
+if (fornext_value3742<fornext_finalvalue3742) break;
+#line 89 "utilities/file.bas"
 }else{
-#line 425 "utilities/elements.bas"
-do{
-#line 425 "utilities/elements.bas"
-*_FUNC_ELEUCASE_LONG_I3=*_FUNC_ELEUCASE_LONG_I3- 1 ;
-#line 425 "utilities/elements.bas"
-if(!qbevent)break;evnt(28614,425,"elements.bas");}while(r);
-#line 425 "utilities/elements.bas"
+#line 89 "utilities/file.bas"
+if (fornext_value3742>fornext_finalvalue3742) break;
+#line 89 "utilities/file.bas"
 }
-#line 426 "utilities/elements.bas"
+#line 89 "utilities/file.bas"
+fornext_error3742:;
+#line 89 "utilities/file.bas"
+if(qbevent){evnt(28800,89,"file.bas");if(r)goto S_38364;}
+#line 90 "utilities/file.bas"
 do{
-#line 426 "utilities/elements.bas"
-qbs_set(_FUNC_ELEUCASE_STRING_A2,qbs_add(_FUNC_ELEUCASE_STRING_A2,func_mid(_FUNC_ELEUCASE_STRING_A,*_FUNC_ELEUCASE_LONG_I2+ 1 ,*_FUNC_ELEUCASE_LONG_I3-(*_FUNC_ELEUCASE_LONG_I2+ 1 )+ 1 ,0|1)));
-#line 426 "utilities/elements.bas"
+#line 90 "utilities/file.bas"
+*_FUNC_GETESCAPEDPATH_UBYTE_A=qbs_asc(_FUNC_GETESCAPEDPATH_STRING_PATH_NAME,*_FUNC_GETESCAPEDPATH_ULONG_Z);
+#line 90 "utilities/file.bas"
 qbs_cleanup(qbs_tmp_base,0);
-#line 426 "utilities/elements.bas"
-if(!qbevent)break;evnt(28614,426,"elements.bas");}while(r);
-#line 427 "utilities/elements.bas"
+#line 90 "utilities/file.bas"
+if(!qbevent)break;evnt(28800,90,"file.bas");}while(r);
+#line 91 "utilities/file.bas"
 do{
-#line 427 "utilities/elements.bas"
-*_FUNC_ELEUCASE_LONG_I=*_FUNC_ELEUCASE_LONG_I3+ 1 ;
-#line 427 "utilities/elements.bas"
-if(!qbevent)break;evnt(28614,427,"elements.bas");}while(r);
-#line 428 "utilities/elements.bas"
-S_37667:;
-#line 428 "utilities/elements.bas"
-if ((qbs_cleanup(qbs_tmp_base,-(*_FUNC_ELEUCASE_LONG_I>_FUNC_ELEUCASE_STRING_A->len)))||is_error_pending()){
-#line 428 "utilities/elements.bas"
-if(qbevent){evnt(28614,428,"elements.bas");if(r)goto S_37667;}
-#line 428 "utilities/elements.bas"
-do{
-#line 428 "utilities/elements.bas"
-goto dl_exit_3661;
-#line 428 "utilities/elements.bas"
-if(!qbevent)break;evnt(28614,428,"elements.bas");}while(r);
-#line 428 "utilities/elements.bas"
-}
-#line 429 "utilities/elements.bas"
-dl_continue_3661:;
-#line 429 "utilities/elements.bas"
-}
-#line 429 "utilities/elements.bas"
-dl_exit_3661:;
-#line 430 "utilities/elements.bas"
-}
-#line 431 "utilities/elements.bas"
-do{
-#line 431 "utilities/elements.bas"
-qbs_set(_FUNC_ELEUCASE_STRING_A2,qbs_add(_FUNC_ELEUCASE_STRING_A2,qbs_ucase(func_mid(_FUNC_ELEUCASE_STRING_A,*_FUNC_ELEUCASE_LONG_I,_FUNC_ELEUCASE_STRING_A->len-*_FUNC_ELEUCASE_LONG_I+ 1 ,0|1))));
-#line 431 "utilities/elements.bas"
+#line 91 "utilities/file.bas"
+qbs_set(_FUNC_GETESCAPEDPATH_STRING_BUF,qbs_add(_FUNC_GETESCAPEDPATH_STRING_BUF,func_chr(*_FUNC_GETESCAPEDPATH_UBYTE_A)));
+#line 91 "utilities/file.bas"
 qbs_cleanup(qbs_tmp_base,0);
-#line 431 "utilities/elements.bas"
-if(!qbevent)break;evnt(28614,431,"elements.bas");}while(r);
-#line 432 "utilities/elements.bas"
+#line 91 "utilities/file.bas"
+if(!qbevent)break;evnt(28800,91,"file.bas");}while(r);
+#line 92 "utilities/file.bas"
+S_38367:;
+#line 92 "utilities/file.bas"
+if ((-(*_FUNC_GETESCAPEDPATH_UBYTE_A== 92 ))||is_error_pending()){
+#line 92 "utilities/file.bas"
+if(qbevent){evnt(28800,92,"file.bas");if(r)goto S_38367;}
+#line 92 "utilities/file.bas"
 do{
-#line 432 "utilities/elements.bas"
-qbs_set(_FUNC_ELEUCASE_STRING_ELEUCASE,_FUNC_ELEUCASE_STRING_A2);
-#line 432 "utilities/elements.bas"
+#line 92 "utilities/file.bas"
+qbs_set(_FUNC_GETESCAPEDPATH_STRING_BUF,qbs_add(_FUNC_GETESCAPEDPATH_STRING_BUF,qbs_new_txt_len("\\",1)));
+#line 92 "utilities/file.bas"
 qbs_cleanup(qbs_tmp_base,0);
-#line 432 "utilities/elements.bas"
-if(!qbevent)break;evnt(28614,432,"elements.bas");}while(r);
-#line 433 "utilities/elements.bas"
+#line 92 "utilities/file.bas"
+if(!qbevent)break;evnt(28800,92,"file.bas");}while(r);
+#line 92 "utilities/file.bas"
+}
+#line 93 "utilities/file.bas"
+fornext_continue_3741:;
+#line 93 "utilities/file.bas"
+}
+#line 93 "utilities/file.bas"
+fornext_exit_3741:;
+#line 95 "utilities/file.bas"
+do{
+#line 95 "utilities/file.bas"
+qbs_set(_FUNC_GETESCAPEDPATH_STRING_GETESCAPEDPATH,_FUNC_GETESCAPEDPATH_STRING_BUF);
+#line 95 "utilities/file.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 95 "utilities/file.bas"
+if(!qbevent)break;evnt(28800,95,"file.bas");}while(r);
+#line 96 "utilities/file.bas"
 exit_subfunc:;
-#line 433 "utilities/elements.bas"
+#line 96 "utilities/file.bas"
 free_mem_lock(sf_mem_lock);
-#line 433 "utilities/elements.bas"
+#line 96 "utilities/file.bas"
 #include "free159.txt"
-#line 433 "utilities/elements.bas"
+#line 96 "utilities/file.bas"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
-#line 433 "utilities/elements.bas"
+#line 96 "utilities/file.bas"
 cmem_sp=tmp_cmem_sp;
-#line 433 "utilities/elements.bas"
-qbs_maketmp(_FUNC_ELEUCASE_STRING_ELEUCASE);return _FUNC_ELEUCASE_STRING_ELEUCASE;
-#line 433 "utilities/elements.bas"
+#line 96 "utilities/file.bas"
+qbs_maketmp(_FUNC_GETESCAPEDPATH_STRING_GETESCAPEDPATH);return _FUNC_GETESCAPEDPATH_STRING_GETESCAPEDPATH;
+#line 96 "utilities/file.bas"
 }

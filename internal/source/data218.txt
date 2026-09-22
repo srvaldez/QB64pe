@@ -1,45 +1,18 @@
-#line 94 "utilities/s-buffer/sb_qb64pe_extension.bm"
-qbs*oldstr3900=NULL;
-#line 94 "utilities/s-buffer/sb_qb64pe_extension.bm"
-if(_SUB_WRITEBUFFERS_STRING_SBNAME->tmp||_SUB_WRITEBUFFERS_STRING_SBNAME->fixed||_SUB_WRITEBUFFERS_STRING_SBNAME->readonly){
-#line 94 "utilities/s-buffer/sb_qb64pe_extension.bm"
-oldstr3900=_SUB_WRITEBUFFERS_STRING_SBNAME;
-#line 94 "utilities/s-buffer/sb_qb64pe_extension.bm"
-if (oldstr3900->cmem_descriptor){
-#line 94 "utilities/s-buffer/sb_qb64pe_extension.bm"
-_SUB_WRITEBUFFERS_STRING_SBNAME=qbs_new_cmem(oldstr3900->len,0);
-#line 94 "utilities/s-buffer/sb_qb64pe_extension.bm"
-}else{
-#line 94 "utilities/s-buffer/sb_qb64pe_extension.bm"
-_SUB_WRITEBUFFERS_STRING_SBNAME=qbs_new(oldstr3900->len,0);
-#line 94 "utilities/s-buffer/sb_qb64pe_extension.bm"
+int32 *_FUNC_GETBUFPOS_LONG_GETBUFPOS=NULL;
+#line 540 "utilities/s-buffer/simplebuffer.bm"
+if(_FUNC_GETBUFPOS_LONG_GETBUFPOS==NULL){
+#line 540 "utilities/s-buffer/simplebuffer.bm"
+_FUNC_GETBUFPOS_LONG_GETBUFPOS=(int32*)mem_static_malloc(4);
+#line 540 "utilities/s-buffer/simplebuffer.bm"
+*_FUNC_GETBUFPOS_LONG_GETBUFPOS=0;
+#line 540 "utilities/s-buffer/simplebuffer.bm"
 }
-#line 94 "utilities/s-buffer/sb_qb64pe_extension.bm"
-memcpy(_SUB_WRITEBUFFERS_STRING_SBNAME->chr,oldstr3900->chr,oldstr3900->len);
-#line 94 "utilities/s-buffer/sb_qb64pe_extension.bm"
+int32 *_FUNC_GETBUFPOS_LONG_BUF=NULL;
+#line 542 "utilities/s-buffer/simplebuffer.bm"
+if(_FUNC_GETBUFPOS_LONG_BUF==NULL){
+#line 542 "utilities/s-buffer/simplebuffer.bm"
+_FUNC_GETBUFPOS_LONG_BUF=(int32*)mem_static_malloc(4);
+#line 542 "utilities/s-buffer/simplebuffer.bm"
+*_FUNC_GETBUFPOS_LONG_BUF=0;
+#line 542 "utilities/s-buffer/simplebuffer.bm"
 }
-int16 *_SUB_WRITEBUFFERS_INTEGER_BUF=NULL;
-#line 96 "utilities/s-buffer/sb_qb64pe_extension.bm"
-if(_SUB_WRITEBUFFERS_INTEGER_BUF==NULL){
-#line 96 "utilities/s-buffer/sb_qb64pe_extension.bm"
-_SUB_WRITEBUFFERS_INTEGER_BUF=(int16*)mem_static_malloc(2);
-#line 96 "utilities/s-buffer/sb_qb64pe_extension.bm"
-*_SUB_WRITEBUFFERS_INTEGER_BUF=0;
-#line 96 "utilities/s-buffer/sb_qb64pe_extension.bm"
-}
-#line 99 "utilities/s-buffer/sb_qb64pe_extension.bm"
-int32 fornext_value3902;
-#line 99 "utilities/s-buffer/sb_qb64pe_extension.bm"
-int32 fornext_finalvalue3902;
-#line 99 "utilities/s-buffer/sb_qb64pe_extension.bm"
-int32 fornext_step3902;
-#line 99 "utilities/s-buffer/sb_qb64pe_extension.bm"
-uint8 fornext_step_negative3902;
-#line 105 "utilities/s-buffer/sb_qb64pe_extension.bm"
-int32 fornext_value3904;
-#line 105 "utilities/s-buffer/sb_qb64pe_extension.bm"
-int32 fornext_finalvalue3904;
-#line 105 "utilities/s-buffer/sb_qb64pe_extension.bm"
-int32 fornext_step3904;
-#line 105 "utilities/s-buffer/sb_qb64pe_extension.bm"
-uint8 fornext_step_negative3904;

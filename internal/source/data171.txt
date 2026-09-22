@@ -1,94 +1,40 @@
-#line 4 "utilities/ini-manager/ini.bm"
-qbs*oldstr3739=NULL;
-#line 4 "utilities/ini-manager/ini.bm"
-if(_SUB_INIDELETEKEY_STRING_FILE->tmp||_SUB_INIDELETEKEY_STRING_FILE->fixed||_SUB_INIDELETEKEY_STRING_FILE->readonly){
-#line 4 "utilities/ini-manager/ini.bm"
-oldstr3739=_SUB_INIDELETEKEY_STRING_FILE;
-#line 4 "utilities/ini-manager/ini.bm"
-if (oldstr3739->cmem_descriptor){
-#line 4 "utilities/ini-manager/ini.bm"
-_SUB_INIDELETEKEY_STRING_FILE=qbs_new_cmem(oldstr3739->len,0);
-#line 4 "utilities/ini-manager/ini.bm"
+qbs *_FUNC_GETPREVELEMENT_STRING_GETPREVELEMENT=NULL;
+#line 67 "utilities/elements.bas"
+if (!_FUNC_GETPREVELEMENT_STRING_GETPREVELEMENT)_FUNC_GETPREVELEMENT_STRING_GETPREVELEMENT=qbs_new(0,0);
+#line 67 "utilities/elements.bas"
+qbs*oldstr3773=NULL;
+#line 67 "utilities/elements.bas"
+if(_FUNC_GETPREVELEMENT_STRING_A->tmp||_FUNC_GETPREVELEMENT_STRING_A->fixed||_FUNC_GETPREVELEMENT_STRING_A->readonly){
+#line 67 "utilities/elements.bas"
+oldstr3773=_FUNC_GETPREVELEMENT_STRING_A;
+#line 67 "utilities/elements.bas"
+if (oldstr3773->cmem_descriptor){
+#line 67 "utilities/elements.bas"
+_FUNC_GETPREVELEMENT_STRING_A=qbs_new_cmem(oldstr3773->len,0);
+#line 67 "utilities/elements.bas"
 }else{
-#line 4 "utilities/ini-manager/ini.bm"
-_SUB_INIDELETEKEY_STRING_FILE=qbs_new(oldstr3739->len,0);
-#line 4 "utilities/ini-manager/ini.bm"
+#line 67 "utilities/elements.bas"
+_FUNC_GETPREVELEMENT_STRING_A=qbs_new(oldstr3773->len,0);
+#line 67 "utilities/elements.bas"
 }
-#line 4 "utilities/ini-manager/ini.bm"
-memcpy(_SUB_INIDELETEKEY_STRING_FILE->chr,oldstr3739->chr,oldstr3739->len);
-#line 4 "utilities/ini-manager/ini.bm"
+#line 67 "utilities/elements.bas"
+memcpy(_FUNC_GETPREVELEMENT_STRING_A->chr,oldstr3773->chr,oldstr3773->len);
+#line 67 "utilities/elements.bas"
 }
-#line 4 "utilities/ini-manager/ini.bm"
-qbs*oldstr3740=NULL;
-#line 4 "utilities/ini-manager/ini.bm"
-if(_SUB_INIDELETEKEY_STRING___SECTION->tmp||_SUB_INIDELETEKEY_STRING___SECTION->fixed||_SUB_INIDELETEKEY_STRING___SECTION->readonly){
-#line 4 "utilities/ini-manager/ini.bm"
-oldstr3740=_SUB_INIDELETEKEY_STRING___SECTION;
-#line 4 "utilities/ini-manager/ini.bm"
-if (oldstr3740->cmem_descriptor){
-#line 4 "utilities/ini-manager/ini.bm"
-_SUB_INIDELETEKEY_STRING___SECTION=qbs_new_cmem(oldstr3740->len,0);
-#line 4 "utilities/ini-manager/ini.bm"
-}else{
-#line 4 "utilities/ini-manager/ini.bm"
-_SUB_INIDELETEKEY_STRING___SECTION=qbs_new(oldstr3740->len,0);
-#line 4 "utilities/ini-manager/ini.bm"
+int32 *_FUNC_GETPREVELEMENT_LONG_I=NULL;
+#line 68 "utilities/elements.bas"
+if(_FUNC_GETPREVELEMENT_LONG_I==NULL){
+#line 68 "utilities/elements.bas"
+_FUNC_GETPREVELEMENT_LONG_I=(int32*)mem_static_malloc(4);
+#line 68 "utilities/elements.bas"
+*_FUNC_GETPREVELEMENT_LONG_I=0;
+#line 68 "utilities/elements.bas"
 }
-#line 4 "utilities/ini-manager/ini.bm"
-memcpy(_SUB_INIDELETEKEY_STRING___SECTION->chr,oldstr3740->chr,oldstr3740->len);
-#line 4 "utilities/ini-manager/ini.bm"
-}
-#line 4 "utilities/ini-manager/ini.bm"
-qbs*oldstr3741=NULL;
-#line 4 "utilities/ini-manager/ini.bm"
-if(_SUB_INIDELETEKEY_STRING___KEY->tmp||_SUB_INIDELETEKEY_STRING___KEY->fixed||_SUB_INIDELETEKEY_STRING___KEY->readonly){
-#line 4 "utilities/ini-manager/ini.bm"
-oldstr3741=_SUB_INIDELETEKEY_STRING___KEY;
-#line 4 "utilities/ini-manager/ini.bm"
-if (oldstr3741->cmem_descriptor){
-#line 4 "utilities/ini-manager/ini.bm"
-_SUB_INIDELETEKEY_STRING___KEY=qbs_new_cmem(oldstr3741->len,0);
-#line 4 "utilities/ini-manager/ini.bm"
-}else{
-#line 4 "utilities/ini-manager/ini.bm"
-_SUB_INIDELETEKEY_STRING___KEY=qbs_new(oldstr3741->len,0);
-#line 4 "utilities/ini-manager/ini.bm"
-}
-#line 4 "utilities/ini-manager/ini.bm"
-memcpy(_SUB_INIDELETEKEY_STRING___KEY->chr,oldstr3741->chr,oldstr3741->len);
-#line 4 "utilities/ini-manager/ini.bm"
-}
-qbs *_SUB_INIDELETEKEY_STRING_TEMPVALUE=NULL;
-#line 9 "utilities/ini-manager/ini.bm"
-if (!_SUB_INIDELETEKEY_STRING_TEMPVALUE)_SUB_INIDELETEKEY_STRING_TEMPVALUE=qbs_new(0,0);
-qbs *_SUB_INIDELETEKEY_STRING_SECTION=NULL;
-#line 10 "utilities/ini-manager/ini.bm"
-if (!_SUB_INIDELETEKEY_STRING_SECTION)_SUB_INIDELETEKEY_STRING_SECTION=qbs_new(0,0);
-qbs *_SUB_INIDELETEKEY_STRING_KEY=NULL;
-#line 10 "utilities/ini-manager/ini.bm"
-if (!_SUB_INIDELETEKEY_STRING_KEY)_SUB_INIDELETEKEY_STRING_KEY=qbs_new(0,0);
-uint32 *_SUB_INIDELETEKEY_ULONG_FOUNDLF=NULL;
-#line 11 "utilities/ini-manager/ini.bm"
-if(_SUB_INIDELETEKEY_ULONG_FOUNDLF==NULL){
-#line 11 "utilities/ini-manager/ini.bm"
-_SUB_INIDELETEKEY_ULONG_FOUNDLF=(uint32*)mem_static_malloc(4);
-#line 11 "utilities/ini-manager/ini.bm"
-*_SUB_INIDELETEKEY_ULONG_FOUNDLF=0;
-#line 11 "utilities/ini-manager/ini.bm"
-}
-#line 31 "utilities/ini-manager/ini.bm"
-byte_element_struct *byte_element_3742=NULL;
-#line 31 "utilities/ini-manager/ini.bm"
-if (!byte_element_3742){
-#line 31 "utilities/ini-manager/ini.bm"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3742=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3742=(byte_element_struct*)mem_static_malloc(12);
-#line 31 "utilities/ini-manager/ini.bm"
-}
-#line 33 "utilities/ini-manager/ini.bm"
-byte_element_struct *byte_element_3743=NULL;
-#line 33 "utilities/ini-manager/ini.bm"
-if (!byte_element_3743){
-#line 33 "utilities/ini-manager/ini.bm"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3743=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3743=(byte_element_struct*)mem_static_malloc(12);
-#line 33 "utilities/ini-manager/ini.bm"
+#line 70 "utilities/elements.bas"
+byte_element_struct *byte_element_3774=NULL;
+#line 70 "utilities/elements.bas"
+if (!byte_element_3774){
+#line 70 "utilities/elements.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3774=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3774=(byte_element_struct*)mem_static_malloc(12);
+#line 70 "utilities/elements.bas"
 }

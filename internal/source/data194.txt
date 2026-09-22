@@ -1,29 +1,94 @@
-int16 *_FUNC_SETBUFMARK_INTEGER_SETBUFMARK=NULL;
-#line 405 "utilities/s-buffer/simplebuffer.bm"
-if(_FUNC_SETBUFMARK_INTEGER_SETBUFMARK==NULL){
-#line 405 "utilities/s-buffer/simplebuffer.bm"
-_FUNC_SETBUFMARK_INTEGER_SETBUFMARK=(int16*)mem_static_malloc(2);
-#line 405 "utilities/s-buffer/simplebuffer.bm"
-*_FUNC_SETBUFMARK_INTEGER_SETBUFMARK=0;
-#line 405 "utilities/s-buffer/simplebuffer.bm"
+#line 4 "utilities/ini-manager/ini.bm"
+qbs*oldstr3891=NULL;
+#line 4 "utilities/ini-manager/ini.bm"
+if(_SUB_INIDELETEKEY_STRING_FILE->tmp||_SUB_INIDELETEKEY_STRING_FILE->fixed||_SUB_INIDELETEKEY_STRING_FILE->readonly){
+#line 4 "utilities/ini-manager/ini.bm"
+oldstr3891=_SUB_INIDELETEKEY_STRING_FILE;
+#line 4 "utilities/ini-manager/ini.bm"
+if (oldstr3891->cmem_descriptor){
+#line 4 "utilities/ini-manager/ini.bm"
+_SUB_INIDELETEKEY_STRING_FILE=qbs_new_cmem(oldstr3891->len,0);
+#line 4 "utilities/ini-manager/ini.bm"
+}else{
+#line 4 "utilities/ini-manager/ini.bm"
+_SUB_INIDELETEKEY_STRING_FILE=qbs_new(oldstr3891->len,0);
+#line 4 "utilities/ini-manager/ini.bm"
 }
-int32 *_FUNC_SETBUFMARK_LONG_BUF=NULL;
-#line 407 "utilities/s-buffer/simplebuffer.bm"
-if(_FUNC_SETBUFMARK_LONG_BUF==NULL){
-#line 407 "utilities/s-buffer/simplebuffer.bm"
-_FUNC_SETBUFMARK_LONG_BUF=(int32*)mem_static_malloc(4);
-#line 407 "utilities/s-buffer/simplebuffer.bm"
-*_FUNC_SETBUFMARK_LONG_BUF=0;
-#line 407 "utilities/s-buffer/simplebuffer.bm"
+#line 4 "utilities/ini-manager/ini.bm"
+memcpy(_SUB_INIDELETEKEY_STRING_FILE->chr,oldstr3891->chr,oldstr3891->len);
+#line 4 "utilities/ini-manager/ini.bm"
 }
-int16 *_FUNC_SETBUFMARK_INTEGER_FID=NULL;
-#line 407 "utilities/s-buffer/simplebuffer.bm"
-if(_FUNC_SETBUFMARK_INTEGER_FID==NULL){
-#line 407 "utilities/s-buffer/simplebuffer.bm"
-_FUNC_SETBUFMARK_INTEGER_FID=(int16*)mem_static_malloc(2);
-#line 407 "utilities/s-buffer/simplebuffer.bm"
-*_FUNC_SETBUFMARK_INTEGER_FID=0;
-#line 407 "utilities/s-buffer/simplebuffer.bm"
+#line 4 "utilities/ini-manager/ini.bm"
+qbs*oldstr3892=NULL;
+#line 4 "utilities/ini-manager/ini.bm"
+if(_SUB_INIDELETEKEY_STRING___SECTION->tmp||_SUB_INIDELETEKEY_STRING___SECTION->fixed||_SUB_INIDELETEKEY_STRING___SECTION->readonly){
+#line 4 "utilities/ini-manager/ini.bm"
+oldstr3892=_SUB_INIDELETEKEY_STRING___SECTION;
+#line 4 "utilities/ini-manager/ini.bm"
+if (oldstr3892->cmem_descriptor){
+#line 4 "utilities/ini-manager/ini.bm"
+_SUB_INIDELETEKEY_STRING___SECTION=qbs_new_cmem(oldstr3892->len,0);
+#line 4 "utilities/ini-manager/ini.bm"
+}else{
+#line 4 "utilities/ini-manager/ini.bm"
+_SUB_INIDELETEKEY_STRING___SECTION=qbs_new(oldstr3892->len,0);
+#line 4 "utilities/ini-manager/ini.bm"
 }
-#line 412 "utilities/s-buffer/simplebuffer.bm"
-int16 pass3821;
+#line 4 "utilities/ini-manager/ini.bm"
+memcpy(_SUB_INIDELETEKEY_STRING___SECTION->chr,oldstr3892->chr,oldstr3892->len);
+#line 4 "utilities/ini-manager/ini.bm"
+}
+#line 4 "utilities/ini-manager/ini.bm"
+qbs*oldstr3893=NULL;
+#line 4 "utilities/ini-manager/ini.bm"
+if(_SUB_INIDELETEKEY_STRING___KEY->tmp||_SUB_INIDELETEKEY_STRING___KEY->fixed||_SUB_INIDELETEKEY_STRING___KEY->readonly){
+#line 4 "utilities/ini-manager/ini.bm"
+oldstr3893=_SUB_INIDELETEKEY_STRING___KEY;
+#line 4 "utilities/ini-manager/ini.bm"
+if (oldstr3893->cmem_descriptor){
+#line 4 "utilities/ini-manager/ini.bm"
+_SUB_INIDELETEKEY_STRING___KEY=qbs_new_cmem(oldstr3893->len,0);
+#line 4 "utilities/ini-manager/ini.bm"
+}else{
+#line 4 "utilities/ini-manager/ini.bm"
+_SUB_INIDELETEKEY_STRING___KEY=qbs_new(oldstr3893->len,0);
+#line 4 "utilities/ini-manager/ini.bm"
+}
+#line 4 "utilities/ini-manager/ini.bm"
+memcpy(_SUB_INIDELETEKEY_STRING___KEY->chr,oldstr3893->chr,oldstr3893->len);
+#line 4 "utilities/ini-manager/ini.bm"
+}
+qbs *_SUB_INIDELETEKEY_STRING_TEMPVALUE=NULL;
+#line 9 "utilities/ini-manager/ini.bm"
+if (!_SUB_INIDELETEKEY_STRING_TEMPVALUE)_SUB_INIDELETEKEY_STRING_TEMPVALUE=qbs_new(0,0);
+qbs *_SUB_INIDELETEKEY_STRING_SECTION=NULL;
+#line 10 "utilities/ini-manager/ini.bm"
+if (!_SUB_INIDELETEKEY_STRING_SECTION)_SUB_INIDELETEKEY_STRING_SECTION=qbs_new(0,0);
+qbs *_SUB_INIDELETEKEY_STRING_KEY=NULL;
+#line 10 "utilities/ini-manager/ini.bm"
+if (!_SUB_INIDELETEKEY_STRING_KEY)_SUB_INIDELETEKEY_STRING_KEY=qbs_new(0,0);
+uint32 *_SUB_INIDELETEKEY_ULONG_FOUNDLF=NULL;
+#line 11 "utilities/ini-manager/ini.bm"
+if(_SUB_INIDELETEKEY_ULONG_FOUNDLF==NULL){
+#line 11 "utilities/ini-manager/ini.bm"
+_SUB_INIDELETEKEY_ULONG_FOUNDLF=(uint32*)mem_static_malloc(4);
+#line 11 "utilities/ini-manager/ini.bm"
+*_SUB_INIDELETEKEY_ULONG_FOUNDLF=0;
+#line 11 "utilities/ini-manager/ini.bm"
+}
+#line 31 "utilities/ini-manager/ini.bm"
+byte_element_struct *byte_element_3894=NULL;
+#line 31 "utilities/ini-manager/ini.bm"
+if (!byte_element_3894){
+#line 31 "utilities/ini-manager/ini.bm"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3894=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3894=(byte_element_struct*)mem_static_malloc(12);
+#line 31 "utilities/ini-manager/ini.bm"
+}
+#line 33 "utilities/ini-manager/ini.bm"
+byte_element_struct *byte_element_3895=NULL;
+#line 33 "utilities/ini-manager/ini.bm"
+if (!byte_element_3895){
+#line 33 "utilities/ini-manager/ini.bm"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3895=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3895=(byte_element_struct*)mem_static_malloc(12);
+#line 33 "utilities/ini-manager/ini.bm"
+}

@@ -1,144 +1,78 @@
-#line 181 "utilities/s-buffer/simplebuffer.bm"
-qbs* FUNC_READBUFLINE(int16*_FUNC_READBUFLINE_INTEGER_HANDLE){
-#line 181 "utilities/s-buffer/simplebuffer.bm"
+#line 621 "utilities/elements.bas"
+qbs* FUNC_CREATEELEMENTSTRING(qbs*_FUNC_CREATEELEMENTSTRING_STRING_S){
+#line 621 "utilities/elements.bas"
 qbs *tqbs;
-#line 181 "utilities/s-buffer/simplebuffer.bm"
+#line 621 "utilities/elements.bas"
 ptrszint tmp_long;
-#line 181 "utilities/s-buffer/simplebuffer.bm"
+#line 621 "utilities/elements.bas"
 int32 tmp_fileno;
-#line 181 "utilities/s-buffer/simplebuffer.bm"
+#line 621 "utilities/elements.bas"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
-#line 181 "utilities/s-buffer/simplebuffer.bm"
+#line 621 "utilities/elements.bas"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
-#line 181 "utilities/s-buffer/simplebuffer.bm"
+#line 621 "utilities/elements.bas"
 uint32 tmp_cmem_sp=cmem_sp;
-#line 181 "utilities/s-buffer/simplebuffer.bm"
+#line 621 "utilities/elements.bas"
 #include "data188.txt"
-#line 181 "utilities/s-buffer/simplebuffer.bm"
+#line 621 "utilities/elements.bas"
 mem_lock *sf_mem_lock;
-#line 181 "utilities/s-buffer/simplebuffer.bm"
+#line 621 "utilities/elements.bas"
 new_mem_lock();
-#line 181 "utilities/s-buffer/simplebuffer.bm"
+#line 621 "utilities/elements.bas"
 sf_mem_lock=mem_lock_tmp;
-#line 181 "utilities/s-buffer/simplebuffer.bm"
+#line 621 "utilities/elements.bas"
 sf_mem_lock->type=3;
-#line 181 "utilities/s-buffer/simplebuffer.bm"
+#line 621 "utilities/elements.bas"
 libqb_check_stack();
-#line 181 "utilities/s-buffer/simplebuffer.bm"
+#line 621 "utilities/elements.bas"
 if (is_error_pending()) goto exit_subfunc;
-#line 183 "utilities/s-buffer/simplebuffer.bm"
+#line 622 "utilities/elements.bas"
 do{
-#line 183 "utilities/s-buffer/simplebuffer.bm"
-if(!qbevent)break;evnt(28617,183,"simplebuffer.bm");}while(r);
-#line 185 "utilities/s-buffer/simplebuffer.bm"
-S_38828:;
-#line 185 "utilities/s-buffer/simplebuffer.bm"
-if ((~(FUNC_CHECKHANDLE(_FUNC_READBUFLINE_INTEGER_HANDLE)))||is_error_pending()){
-#line 185 "utilities/s-buffer/simplebuffer.bm"
-if(qbevent){evnt(28617,185,"simplebuffer.bm");if(r)goto S_38828;}
-#line 185 "utilities/s-buffer/simplebuffer.bm"
+#line 622 "utilities/elements.bas"
+if(!qbevent)break;evnt(28802,622,"elements.bas");}while(r);
+#line 623 "utilities/elements.bas"
 do{
-#line 185 "utilities/s-buffer/simplebuffer.bm"
-error( 258 );
-#line 185 "utilities/s-buffer/simplebuffer.bm"
-if(!qbevent)break;evnt(28617,185,"simplebuffer.bm");}while(r);
-#line 185 "utilities/s-buffer/simplebuffer.bm"
-do{
-#line 185 "utilities/s-buffer/simplebuffer.bm"
-close_program=1;
-#line 185 "utilities/s-buffer/simplebuffer.bm"
-end();
-#line 185 "utilities/s-buffer/simplebuffer.bm"
-if(!qbevent)break;evnt(28617,185,"simplebuffer.bm");}while(r);
-#line 185 "utilities/s-buffer/simplebuffer.bm"
-}
-#line 186 "utilities/s-buffer/simplebuffer.bm"
-do{
-#line 186 "utilities/s-buffer/simplebuffer.bm"
-*_FUNC_READBUFLINE_LONG_BUF=*_FUNC_READBUFLINE_INTEGER_HANDLE* 106 ;
-#line 186 "utilities/s-buffer/simplebuffer.bm"
-if(!qbevent)break;evnt(28617,186,"simplebuffer.bm");}while(r);
-#line 188 "utilities/s-buffer/simplebuffer.bm"
-do{
-#line 188 "utilities/s-buffer/simplebuffer.bm"
-*_FUNC_READBUFLINE_LONG_CUR=FUNC_GETBUFPOS(_FUNC_READBUFLINE_INTEGER_HANDLE);
-#line 188 "utilities/s-buffer/simplebuffer.bm"
-if(!qbevent)break;evnt(28617,188,"simplebuffer.bm");}while(r);
-#line 188 "utilities/s-buffer/simplebuffer.bm"
-do{
-#line 188 "utilities/s-buffer/simplebuffer.bm"
-*_FUNC_READBUFLINE_INTEGER64_CBL=FUNC_GETBUFLEN(_FUNC_READBUFLINE_INTEGER_HANDLE);
-#line 188 "utilities/s-buffer/simplebuffer.bm"
-if(!qbevent)break;evnt(28617,188,"simplebuffer.bm");}while(r);
-#line 189 "utilities/s-buffer/simplebuffer.bm"
-do{
-#line 189 "utilities/s-buffer/simplebuffer.bm"
-qbs_set(_FUNC_READBUFLINE_STRING_BRC,FUNC_BUFEOLSEQ(_FUNC_READBUFLINE_INTEGER_HANDLE));
-#line 189 "utilities/s-buffer/simplebuffer.bm"
+#line 623 "utilities/elements.bas"
+qbs_set(_FUNC_CREATEELEMENTSTRING_STRING_ELE,func_chr( 34 ));
+#line 623 "utilities/elements.bas"
 qbs_cleanup(qbs_tmp_base,0);
-#line 189 "utilities/s-buffer/simplebuffer.bm"
-if(!qbevent)break;evnt(28617,189,"simplebuffer.bm");}while(r);
-#line 189 "utilities/s-buffer/simplebuffer.bm"
+#line 623 "utilities/elements.bas"
+if(!qbevent)break;evnt(28802,623,"elements.bas");}while(r);
+#line 625 "utilities/elements.bas"
 do{
-#line 189 "utilities/s-buffer/simplebuffer.bm"
-*_FUNC_READBUFLINE_INTEGER_BRL=_FUNC_READBUFLINE_STRING_BRC->len;
-#line 189 "utilities/s-buffer/simplebuffer.bm"
+#line 625 "utilities/elements.bas"
+qbs_set(_FUNC_CREATEELEMENTSTRING_STRING_ELE,qbs_add(_FUNC_CREATEELEMENTSTRING_STRING_ELE,FUNC_ESCAPESTRING(_FUNC_CREATEELEMENTSTRING_STRING_S)));
+#line 625 "utilities/elements.bas"
 qbs_cleanup(qbs_tmp_base,0);
-#line 189 "utilities/s-buffer/simplebuffer.bm"
-if(!qbevent)break;evnt(28617,189,"simplebuffer.bm");}while(r);
-#line 191 "utilities/s-buffer/simplebuffer.bm"
+#line 625 "utilities/elements.bas"
+if(!qbevent)break;evnt(28802,625,"elements.bas");}while(r);
+#line 627 "utilities/elements.bas"
 do{
-#line 191 "utilities/s-buffer/simplebuffer.bm"
-*_FUNC_READBUFLINE_LONG_EOL=func_instr(*_FUNC_READBUFLINE_LONG_CUR,(((qbs**)(__ARRAY_STRING_SIMPLEBUFFER_ARRAY[0]))[array_check((*_FUNC_READBUFLINE_LONG_BUF+ 0 )-__ARRAY_STRING_SIMPLEBUFFER_ARRAY[4],__ARRAY_STRING_SIMPLEBUFFER_ARRAY[5])]),_FUNC_READBUFLINE_STRING_BRC,0|1);
-#line 191 "utilities/s-buffer/simplebuffer.bm"
+#line 627 "utilities/elements.bas"
+qbs_set(_FUNC_CREATEELEMENTSTRING_STRING_ELE,qbs_add(qbs_add(qbs_add(_FUNC_CREATEELEMENTSTRING_STRING_ELE,func_chr( 34 )),qbs_new_txt_len(",",1)),qbs__tostr((int32)(_FUNC_CREATEELEMENTSTRING_STRING_S->len),NULL,0)));
+#line 627 "utilities/elements.bas"
 qbs_cleanup(qbs_tmp_base,0);
-#line 191 "utilities/s-buffer/simplebuffer.bm"
-if(!qbevent)break;evnt(28617,191,"simplebuffer.bm");}while(r);
-#line 192 "utilities/s-buffer/simplebuffer.bm"
-S_38838:;
-#line 192 "utilities/s-buffer/simplebuffer.bm"
-if (((-(*_FUNC_READBUFLINE_LONG_EOL== 0 ))|(-(*_FUNC_READBUFLINE_LONG_EOL>*_FUNC_READBUFLINE_INTEGER64_CBL)))||is_error_pending()){
-#line 192 "utilities/s-buffer/simplebuffer.bm"
-if(qbevent){evnt(28617,192,"simplebuffer.bm");if(r)goto S_38838;}
-#line 192 "utilities/s-buffer/simplebuffer.bm"
+#line 627 "utilities/elements.bas"
+if(!qbevent)break;evnt(28802,627,"elements.bas");}while(r);
+#line 628 "utilities/elements.bas"
 do{
-#line 192 "utilities/s-buffer/simplebuffer.bm"
-*_FUNC_READBUFLINE_LONG_EOL=*_FUNC_READBUFLINE_INTEGER64_CBL+ 1 ;
-#line 192 "utilities/s-buffer/simplebuffer.bm"
-if(!qbevent)break;evnt(28617,192,"simplebuffer.bm");}while(r);
-#line 192 "utilities/s-buffer/simplebuffer.bm"
-do{
-#line 192 "utilities/s-buffer/simplebuffer.bm"
-*_FUNC_READBUFLINE_INTEGER_BRL= 0 ;
-#line 192 "utilities/s-buffer/simplebuffer.bm"
-if(!qbevent)break;evnt(28617,192,"simplebuffer.bm");}while(r);
-#line 192 "utilities/s-buffer/simplebuffer.bm"
-}
-#line 194 "utilities/s-buffer/simplebuffer.bm"
-do{
-#line 194 "utilities/s-buffer/simplebuffer.bm"
-qbs_set(_FUNC_READBUFLINE_STRING_READBUFLINE,func_mid((((qbs**)(__ARRAY_STRING_SIMPLEBUFFER_ARRAY[0]))[array_check((*_FUNC_READBUFLINE_LONG_BUF+ 0 )-__ARRAY_STRING_SIMPLEBUFFER_ARRAY[4],__ARRAY_STRING_SIMPLEBUFFER_ARRAY[5])]),*_FUNC_READBUFLINE_LONG_CUR,*_FUNC_READBUFLINE_LONG_EOL-*_FUNC_READBUFLINE_LONG_CUR,0|1));
-#line 194 "utilities/s-buffer/simplebuffer.bm"
+#line 628 "utilities/elements.bas"
+qbs_set(_FUNC_CREATEELEMENTSTRING_STRING_CREATEELEMENTSTRING,_FUNC_CREATEELEMENTSTRING_STRING_ELE);
+#line 628 "utilities/elements.bas"
 qbs_cleanup(qbs_tmp_base,0);
-#line 194 "utilities/s-buffer/simplebuffer.bm"
-if(!qbevent)break;evnt(28617,194,"simplebuffer.bm");}while(r);
-#line 195 "utilities/s-buffer/simplebuffer.bm"
-do{
-#line 195 "utilities/s-buffer/simplebuffer.bm"
-sub_mid((((qbs**)(__ARRAY_STRING_SIMPLEBUFFER_ARRAY[0]))[array_check((*_FUNC_READBUFLINE_LONG_BUF+ 1 )-__ARRAY_STRING_SIMPLEBUFFER_ARRAY[4],__ARRAY_STRING_SIMPLEBUFFER_ARRAY[5])]), 1 , 4 ,l2string(*_FUNC_READBUFLINE_LONG_EOL+*_FUNC_READBUFLINE_INTEGER_BRL),1);
-#line 195 "utilities/s-buffer/simplebuffer.bm"
-if(!qbevent)break;evnt(28617,195,"simplebuffer.bm");}while(r);
-#line 196 "utilities/s-buffer/simplebuffer.bm"
+#line 628 "utilities/elements.bas"
+if(!qbevent)break;evnt(28802,628,"elements.bas");}while(r);
+#line 629 "utilities/elements.bas"
 exit_subfunc:;
-#line 196 "utilities/s-buffer/simplebuffer.bm"
+#line 629 "utilities/elements.bas"
 free_mem_lock(sf_mem_lock);
-#line 196 "utilities/s-buffer/simplebuffer.bm"
+#line 629 "utilities/elements.bas"
 #include "free188.txt"
-#line 196 "utilities/s-buffer/simplebuffer.bm"
+#line 629 "utilities/elements.bas"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
-#line 196 "utilities/s-buffer/simplebuffer.bm"
+#line 629 "utilities/elements.bas"
 cmem_sp=tmp_cmem_sp;
-#line 196 "utilities/s-buffer/simplebuffer.bm"
-qbs_maketmp(_FUNC_READBUFLINE_STRING_READBUFLINE);return _FUNC_READBUFLINE_STRING_READBUFLINE;
-#line 196 "utilities/s-buffer/simplebuffer.bm"
+#line 629 "utilities/elements.bas"
+qbs_maketmp(_FUNC_CREATEELEMENTSTRING_STRING_CREATEELEMENTSTRING);return _FUNC_CREATEELEMENTSTRING_STRING_CREATEELEMENTSTRING;
+#line 629 "utilities/elements.bas"
 }

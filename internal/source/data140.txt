@@ -1,20 +1,192 @@
-#line 5 "utilities/build.bas"
-qbs*oldstr3612=NULL;
-#line 5 "utilities/build.bas"
-if(_SUB_PURGETEMPORARYBUILDFILES_STRING_OS->tmp||_SUB_PURGETEMPORARYBUILDFILES_STRING_OS->fixed||_SUB_PURGETEMPORARYBUILDFILES_STRING_OS->readonly){
-#line 5 "utilities/build.bas"
-oldstr3612=_SUB_PURGETEMPORARYBUILDFILES_STRING_OS;
-#line 5 "utilities/build.bas"
-if (oldstr3612->cmem_descriptor){
-#line 5 "utilities/build.bas"
-_SUB_PURGETEMPORARYBUILDFILES_STRING_OS=qbs_new_cmem(oldstr3612->len,0);
-#line 5 "utilities/build.bas"
+#line 964 "utilities/arrcpy.bm"
+qbs*oldstr3671=NULL;
+#line 964 "utilities/arrcpy.bm"
+if(_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_REF->tmp||_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_REF->fixed||_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_REF->readonly){
+#line 964 "utilities/arrcpy.bm"
+oldstr3671=_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_REF;
+#line 964 "utilities/arrcpy.bm"
+if (oldstr3671->cmem_descriptor){
+#line 964 "utilities/arrcpy.bm"
+_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_REF=qbs_new_cmem(oldstr3671->len,0);
+#line 964 "utilities/arrcpy.bm"
 }else{
-#line 5 "utilities/build.bas"
-_SUB_PURGETEMPORARYBUILDFILES_STRING_OS=qbs_new(oldstr3612->len,0);
-#line 5 "utilities/build.bas"
+#line 964 "utilities/arrcpy.bm"
+_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_REF=qbs_new(oldstr3671->len,0);
+#line 964 "utilities/arrcpy.bm"
 }
-#line 5 "utilities/build.bas"
-memcpy(_SUB_PURGETEMPORARYBUILDFILES_STRING_OS->chr,oldstr3612->chr,oldstr3612->len);
-#line 5 "utilities/build.bas"
+#line 964 "utilities/arrcpy.bm"
+memcpy(_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_REF->chr,oldstr3671->chr,oldstr3671->len);
+#line 964 "utilities/arrcpy.bm"
 }
+#line 964 "utilities/arrcpy.bm"
+qbs*oldstr3672=NULL;
+#line 964 "utilities/arrcpy.bm"
+if(_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_LOW_EXPR->tmp||_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_LOW_EXPR->fixed||_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_LOW_EXPR->readonly){
+#line 964 "utilities/arrcpy.bm"
+oldstr3672=_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_LOW_EXPR;
+#line 964 "utilities/arrcpy.bm"
+if (oldstr3672->cmem_descriptor){
+#line 964 "utilities/arrcpy.bm"
+_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_LOW_EXPR=qbs_new_cmem(oldstr3672->len,0);
+#line 964 "utilities/arrcpy.bm"
+}else{
+#line 964 "utilities/arrcpy.bm"
+_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_LOW_EXPR=qbs_new(oldstr3672->len,0);
+#line 964 "utilities/arrcpy.bm"
+}
+#line 964 "utilities/arrcpy.bm"
+memcpy(_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_LOW_EXPR->chr,oldstr3672->chr,oldstr3672->len);
+#line 964 "utilities/arrcpy.bm"
+}
+#line 964 "utilities/arrcpy.bm"
+qbs*oldstr3673=NULL;
+#line 964 "utilities/arrcpy.bm"
+if(_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_HIGH_EXPR->tmp||_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_HIGH_EXPR->fixed||_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_HIGH_EXPR->readonly){
+#line 964 "utilities/arrcpy.bm"
+oldstr3673=_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_HIGH_EXPR;
+#line 964 "utilities/arrcpy.bm"
+if (oldstr3673->cmem_descriptor){
+#line 964 "utilities/arrcpy.bm"
+_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_HIGH_EXPR=qbs_new_cmem(oldstr3673->len,0);
+#line 964 "utilities/arrcpy.bm"
+}else{
+#line 964 "utilities/arrcpy.bm"
+_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_HIGH_EXPR=qbs_new(oldstr3673->len,0);
+#line 964 "utilities/arrcpy.bm"
+}
+#line 964 "utilities/arrcpy.bm"
+memcpy(_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_HIGH_EXPR->chr,oldstr3673->chr,oldstr3673->len);
+#line 964 "utilities/arrcpy.bm"
+}
+#line 964 "utilities/arrcpy.bm"
+qbs*oldstr3674=NULL;
+#line 964 "utilities/arrcpy.bm"
+if(_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_DST_REF->tmp||_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_DST_REF->fixed||_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_DST_REF->readonly){
+#line 964 "utilities/arrcpy.bm"
+oldstr3674=_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_DST_REF;
+#line 964 "utilities/arrcpy.bm"
+if (oldstr3674->cmem_descriptor){
+#line 964 "utilities/arrcpy.bm"
+_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_DST_REF=qbs_new_cmem(oldstr3674->len,0);
+#line 964 "utilities/arrcpy.bm"
+}else{
+#line 964 "utilities/arrcpy.bm"
+_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_DST_REF=qbs_new(oldstr3674->len,0);
+#line 964 "utilities/arrcpy.bm"
+}
+#line 964 "utilities/arrcpy.bm"
+memcpy(_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_DST_REF->chr,oldstr3674->chr,oldstr3674->len);
+#line 964 "utilities/arrcpy.bm"
+}
+qbs *_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_DESC=NULL;
+#line 965 "utilities/arrcpy.bm"
+if (!_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_DESC)_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_DESC=qbs_new(0,0);
+qbs *_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_DST_DESC=NULL;
+#line 965 "utilities/arrcpy.bm"
+if (!_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_DST_DESC)_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_DST_DESC=qbs_new(0,0);
+qbs *_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_PREP=NULL;
+#line 965 "utilities/arrcpy.bm"
+if (!_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_PREP)_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_PREP=qbs_new(0,0);
+qbs *_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_DST_PREP=NULL;
+#line 965 "utilities/arrcpy.bm"
+if (!_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_DST_PREP)_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_DST_PREP=qbs_new(0,0);
+qbs *_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_LOW_CODE=NULL;
+#line 966 "utilities/arrcpy.bm"
+if (!_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_LOW_CODE)_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_LOW_CODE=qbs_new(0,0);
+qbs *_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_HIGH_CODE=NULL;
+#line 966 "utilities/arrcpy.bm"
+if (!_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_HIGH_CODE)_SUB_EMITARRAYCOPYRANGEWHOLE1D_STRING_SRC_HIGH_CODE=qbs_new(0,0);
+int32 *_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_SRC_TYPE=NULL;
+#line 967 "utilities/arrcpy.bm"
+if(_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_SRC_TYPE==NULL){
+#line 967 "utilities/arrcpy.bm"
+_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_SRC_TYPE=(int32*)mem_static_malloc(4);
+#line 967 "utilities/arrcpy.bm"
+*_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_SRC_TYPE=0;
+#line 967 "utilities/arrcpy.bm"
+}
+int32 *_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_DST_TYPE=NULL;
+#line 967 "utilities/arrcpy.bm"
+if(_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_DST_TYPE==NULL){
+#line 967 "utilities/arrcpy.bm"
+_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_DST_TYPE=(int32*)mem_static_malloc(4);
+#line 967 "utilities/arrcpy.bm"
+*_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_DST_TYPE=0;
+#line 967 "utilities/arrcpy.bm"
+}
+int32 *_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_SRC_SIZE=NULL;
+#line 967 "utilities/arrcpy.bm"
+if(_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_SRC_SIZE==NULL){
+#line 967 "utilities/arrcpy.bm"
+_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_SRC_SIZE=(int32*)mem_static_malloc(4);
+#line 967 "utilities/arrcpy.bm"
+*_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_SRC_SIZE=0;
+#line 967 "utilities/arrcpy.bm"
+}
+int32 *_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_DST_SIZE=NULL;
+#line 967 "utilities/arrcpy.bm"
+if(_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_DST_SIZE==NULL){
+#line 967 "utilities/arrcpy.bm"
+_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_DST_SIZE=(int32*)mem_static_malloc(4);
+#line 967 "utilities/arrcpy.bm"
+*_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_DST_SIZE=0;
+#line 967 "utilities/arrcpy.bm"
+}
+int32 *_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_SRC_DIMS=NULL;
+#line 967 "utilities/arrcpy.bm"
+if(_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_SRC_DIMS==NULL){
+#line 967 "utilities/arrcpy.bm"
+_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_SRC_DIMS=(int32*)mem_static_malloc(4);
+#line 967 "utilities/arrcpy.bm"
+*_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_SRC_DIMS=0;
+#line 967 "utilities/arrcpy.bm"
+}
+int32 *_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_DST_DIMS=NULL;
+#line 967 "utilities/arrcpy.bm"
+if(_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_DST_DIMS==NULL){
+#line 967 "utilities/arrcpy.bm"
+_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_DST_DIMS=(int32*)mem_static_malloc(4);
+#line 967 "utilities/arrcpy.bm"
+*_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_DST_DIMS=0;
+#line 967 "utilities/arrcpy.bm"
+}
+int32 *_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_ELEMENT_BYTES=NULL;
+#line 967 "utilities/arrcpy.bm"
+if(_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_ELEMENT_BYTES==NULL){
+#line 967 "utilities/arrcpy.bm"
+_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_ELEMENT_BYTES=(int32*)mem_static_malloc(4);
+#line 967 "utilities/arrcpy.bm"
+*_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_ELEMENT_BYTES=0;
+#line 967 "utilities/arrcpy.bm"
+}
+int32 *_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_VAR_STRING_COPY=NULL;
+#line 968 "utilities/arrcpy.bm"
+if(_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_VAR_STRING_COPY==NULL){
+#line 968 "utilities/arrcpy.bm"
+_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_VAR_STRING_COPY=(int32*)mem_static_malloc(4);
+#line 968 "utilities/arrcpy.bm"
+*_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_VAR_STRING_COPY=0;
+#line 968 "utilities/arrcpy.bm"
+}
+int32 *_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_SRC_STRING_SLOT_MODE=NULL;
+#line 969 "utilities/arrcpy.bm"
+if(_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_SRC_STRING_SLOT_MODE==NULL){
+#line 969 "utilities/arrcpy.bm"
+_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_SRC_STRING_SLOT_MODE=(int32*)mem_static_malloc(4);
+#line 969 "utilities/arrcpy.bm"
+*_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_SRC_STRING_SLOT_MODE=0;
+#line 969 "utilities/arrcpy.bm"
+}
+int32 *_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_DST_STRING_SLOT_MODE=NULL;
+#line 969 "utilities/arrcpy.bm"
+if(_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_DST_STRING_SLOT_MODE==NULL){
+#line 969 "utilities/arrcpy.bm"
+_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_DST_STRING_SLOT_MODE=(int32*)mem_static_malloc(4);
+#line 969 "utilities/arrcpy.bm"
+*_SUB_EMITARRAYCOPYRANGEWHOLE1D_LONG_DST_STRING_SLOT_MODE=0;
+#line 969 "utilities/arrcpy.bm"
+}
+#line 979 "utilities/arrcpy.bm"
+int16 pass3675;
+#line 980 "utilities/arrcpy.bm"
+int16 pass3676;

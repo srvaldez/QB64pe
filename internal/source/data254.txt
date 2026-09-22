@@ -1,90 +1,51 @@
-#line 1088 "utilities/const_eval.bas"
-qbs*oldstr4082=NULL;
-#line 1088 "utilities/const_eval.bas"
-if(_SUB_PREPARSE_STRING_E->tmp||_SUB_PREPARSE_STRING_E->fixed||_SUB_PREPARSE_STRING_E->readonly){
-#line 1088 "utilities/const_eval.bas"
-oldstr4082=_SUB_PREPARSE_STRING_E;
-#line 1088 "utilities/const_eval.bas"
-if (oldstr4082->cmem_descriptor){
-#line 1088 "utilities/const_eval.bas"
-_SUB_PREPARSE_STRING_E=qbs_new_cmem(oldstr4082->len,0);
-#line 1088 "utilities/const_eval.bas"
+int32 *_FUNC_PARSEMOD_LONG_PARSEMOD=NULL;
+#line 525 "utilities/const_eval.bas"
+if(_FUNC_PARSEMOD_LONG_PARSEMOD==NULL){
+#line 525 "utilities/const_eval.bas"
+_FUNC_PARSEMOD_LONG_PARSEMOD=(int32*)mem_static_malloc(4);
+#line 525 "utilities/const_eval.bas"
+*_FUNC_PARSEMOD_LONG_PARSEMOD=0;
+#line 525 "utilities/const_eval.bas"
+}
+#line 525 "utilities/const_eval.bas"
+qbs*oldstr4127=NULL;
+#line 525 "utilities/const_eval.bas"
+if(_FUNC_PARSEMOD_STRING_EXP->tmp||_FUNC_PARSEMOD_STRING_EXP->fixed||_FUNC_PARSEMOD_STRING_EXP->readonly){
+#line 525 "utilities/const_eval.bas"
+oldstr4127=_FUNC_PARSEMOD_STRING_EXP;
+#line 525 "utilities/const_eval.bas"
+if (oldstr4127->cmem_descriptor){
+#line 525 "utilities/const_eval.bas"
+_FUNC_PARSEMOD_STRING_EXP=qbs_new_cmem(oldstr4127->len,0);
+#line 525 "utilities/const_eval.bas"
 }else{
-#line 1088 "utilities/const_eval.bas"
-_SUB_PREPARSE_STRING_E=qbs_new(oldstr4082->len,0);
-#line 1088 "utilities/const_eval.bas"
+#line 525 "utilities/const_eval.bas"
+_FUNC_PARSEMOD_STRING_EXP=qbs_new(oldstr4127->len,0);
+#line 525 "utilities/const_eval.bas"
 }
-#line 1088 "utilities/const_eval.bas"
-memcpy(_SUB_PREPARSE_STRING_E->chr,oldstr4082->chr,oldstr4082->len);
-#line 1088 "utilities/const_eval.bas"
+#line 525 "utilities/const_eval.bas"
+memcpy(_FUNC_PARSEMOD_STRING_EXP->chr,oldstr4127->chr,oldstr4127->len);
+#line 525 "utilities/const_eval.bas"
 }
-qbs *_SUB_PREPARSE_STRING_T=NULL;
-#line 1089 "utilities/const_eval.bas"
-if (!_SUB_PREPARSE_STRING_T)_SUB_PREPARSE_STRING_T=qbs_new(0,0);
-int32 *_SUB_PREPARSE_LONG_COUNT=NULL;
-#line 1095 "utilities/const_eval.bas"
-if(_SUB_PREPARSE_LONG_COUNT==NULL){
-#line 1095 "utilities/const_eval.bas"
-_SUB_PREPARSE_LONG_COUNT=(int32*)mem_static_malloc(4);
-#line 1095 "utilities/const_eval.bas"
-*_SUB_PREPARSE_LONG_COUNT=0;
-#line 1095 "utilities/const_eval.bas"
+void *_FUNC_PARSEMOD_UDT_NUM=NULL;
+#line 529 "utilities/const_eval.bas"
+if(_FUNC_PARSEMOD_UDT_NUM==NULL){
+#line 529 "utilities/const_eval.bas"
+_FUNC_PARSEMOD_UDT_NUM=(void*)mem_static_malloc(60);
+#line 529 "utilities/const_eval.bas"
+memset(_FUNC_PARSEMOD_UDT_NUM,0,60);
+#line 529 "utilities/const_eval.bas"
+*(qbs**)(((char*)(_FUNC_PARSEMOD_UDT_NUM))+((0+48)))=qbs_new(0,0);
+#line 529 "utilities/const_eval.bas"
 }
-int32 *_SUB_PREPARSE_LONG_L=NULL;
-#line 1096 "utilities/const_eval.bas"
-if(_SUB_PREPARSE_LONG_L==NULL){
-#line 1096 "utilities/const_eval.bas"
-_SUB_PREPARSE_LONG_L=(int32*)mem_static_malloc(4);
-#line 1096 "utilities/const_eval.bas"
-*_SUB_PREPARSE_LONG_L=0;
-#line 1096 "utilities/const_eval.bas"
-}
-#line 1096 "utilities/const_eval.bas"
-int64 fornext_value4084;
-#line 1096 "utilities/const_eval.bas"
-int64 fornext_finalvalue4084;
-#line 1096 "utilities/const_eval.bas"
-int64 fornext_step4084;
-#line 1096 "utilities/const_eval.bas"
-uint8 fornext_step_negative4084;
-qbs *_SUB_PREPARSE_STRING_ELE=NULL;
-#line 1097 "utilities/const_eval.bas"
-if (!_SUB_PREPARSE_STRING_ELE)_SUB_PREPARSE_STRING_ELE=qbs_new(0,0);
-int32 *_SUB_PREPARSE_LONG_C=NULL;
-#line 1098 "utilities/const_eval.bas"
-if(_SUB_PREPARSE_LONG_C==NULL){
-#line 1098 "utilities/const_eval.bas"
-_SUB_PREPARSE_LONG_C=(int32*)mem_static_malloc(4);
-#line 1098 "utilities/const_eval.bas"
-*_SUB_PREPARSE_LONG_C=0;
-#line 1098 "utilities/const_eval.bas"
-}
-#line 1106 "utilities/const_eval.bas"
-int64 fornext_value4086;
-#line 1106 "utilities/const_eval.bas"
-int64 fornext_finalvalue4086;
-#line 1106 "utilities/const_eval.bas"
-int64 fornext_step4086;
-#line 1106 "utilities/const_eval.bas"
-uint8 fornext_step_negative4086;
-int32 *_SUB_PREPARSE_LONG_L2=NULL;
-#line 1109 "utilities/const_eval.bas"
-if(_SUB_PREPARSE_LONG_L2==NULL){
-#line 1109 "utilities/const_eval.bas"
-_SUB_PREPARSE_LONG_L2=(int32*)mem_static_malloc(4);
-#line 1109 "utilities/const_eval.bas"
-*_SUB_PREPARSE_LONG_L2=0;
-#line 1109 "utilities/const_eval.bas"
-}
-#line 1109 "utilities/const_eval.bas"
-int64 fornext_value4088;
-#line 1109 "utilities/const_eval.bas"
-int64 fornext_finalvalue4088;
-#line 1109 "utilities/const_eval.bas"
-int64 fornext_step4088;
-#line 1109 "utilities/const_eval.bas"
-uint8 fornext_step_negative4088;
-#line 1116 "utilities/const_eval.bas"
-int32 pass4089;
-#line 1117 "utilities/const_eval.bas"
-int32 pass4090;
+qbs *_FUNC_PARSEMOD_STRING_ELE=NULL;
+#line 533 "utilities/const_eval.bas"
+if (!_FUNC_PARSEMOD_STRING_ELE)_FUNC_PARSEMOD_STRING_ELE=qbs_new(0,0);
+#line 539 "utilities/const_eval.bas"
+int32 pass4129;
+#line 539 "utilities/const_eval.bas"
+uint64 pass4130;
+#line 541 "utilities/const_eval.bas"
+int32 pass4131;
+#line 541 "utilities/const_eval.bas"
+int64 pass4132;

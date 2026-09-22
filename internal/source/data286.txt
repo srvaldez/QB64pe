@@ -1,29 +1,66 @@
-int16 *_FUNC_UDTDYNMEMBERSOK_INTEGER_UDTDYNMEMBERSOK=NULL;
-#line 909 "utilities/type.bas"
-if(_FUNC_UDTDYNMEMBERSOK_INTEGER_UDTDYNMEMBERSOK==NULL){
-#line 909 "utilities/type.bas"
-_FUNC_UDTDYNMEMBERSOK_INTEGER_UDTDYNMEMBERSOK=(int16*)mem_static_malloc(2);
-#line 909 "utilities/type.bas"
-*_FUNC_UDTDYNMEMBERSOK_INTEGER_UDTDYNMEMBERSOK=0;
-#line 909 "utilities/type.bas"
+int32 *_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_PARSENEXTUDTARRAYDESCRIPTORDIM=NULL;
+#line 152 "utilities/type.bas"
+if(_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_PARSENEXTUDTARRAYDESCRIPTORDIM==NULL){
+#line 152 "utilities/type.bas"
+_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_PARSENEXTUDTARRAYDESCRIPTORDIM=(int32*)mem_static_malloc(4);
+#line 152 "utilities/type.bas"
+*_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_PARSENEXTUDTARRAYDESCRIPTORDIM=0;
+#line 152 "utilities/type.bas"
 }
-int32 *_FUNC_UDTDYNMEMBERSOK_LONG_MEMBER_ID=NULL;
-#line 910 "utilities/type.bas"
-if(_FUNC_UDTDYNMEMBERSOK_LONG_MEMBER_ID==NULL){
-#line 910 "utilities/type.bas"
-_FUNC_UDTDYNMEMBERSOK_LONG_MEMBER_ID=(int32*)mem_static_malloc(4);
-#line 910 "utilities/type.bas"
-*_FUNC_UDTDYNMEMBERSOK_LONG_MEMBER_ID=0;
-#line 910 "utilities/type.bas"
+#line 152 "utilities/type.bas"
+qbs*oldstr4235=NULL;
+#line 152 "utilities/type.bas"
+if(_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_DESCRIPTOR->tmp||_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_DESCRIPTOR->fixed||_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_DESCRIPTOR->readonly){
+#line 152 "utilities/type.bas"
+oldstr4235=_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_DESCRIPTOR;
+#line 152 "utilities/type.bas"
+if (oldstr4235->cmem_descriptor){
+#line 152 "utilities/type.bas"
+_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_DESCRIPTOR=qbs_new_cmem(oldstr4235->len,0);
+#line 152 "utilities/type.bas"
+}else{
+#line 152 "utilities/type.bas"
+_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_DESCRIPTOR=qbs_new(oldstr4235->len,0);
+#line 152 "utilities/type.bas"
 }
-int32 *_FUNC_UDTDYNMEMBERSOK_LONG_NESTED_UDT=NULL;
-#line 911 "utilities/type.bas"
-if(_FUNC_UDTDYNMEMBERSOK_LONG_NESTED_UDT==NULL){
-#line 911 "utilities/type.bas"
-_FUNC_UDTDYNMEMBERSOK_LONG_NESTED_UDT=(int32*)mem_static_malloc(4);
-#line 911 "utilities/type.bas"
-*_FUNC_UDTDYNMEMBERSOK_LONG_NESTED_UDT=0;
-#line 911 "utilities/type.bas"
+#line 152 "utilities/type.bas"
+memcpy(_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_DESCRIPTOR->chr,oldstr4235->chr,oldstr4235->len);
+#line 152 "utilities/type.bas"
 }
-#line 962 "utilities/type.bas"
-int32 pass4182;
+#line 154 "utilities/type.bas"
+byte_element_struct *byte_element_4236=NULL;
+#line 154 "utilities/type.bas"
+if (!byte_element_4236){
+#line 154 "utilities/type.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4236=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4236=(byte_element_struct*)mem_static_malloc(12);
+#line 154 "utilities/type.bas"
+}
+int32 *_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_NEXT_SEPARATOR=NULL;
+#line 156 "utilities/type.bas"
+if(_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_NEXT_SEPARATOR==NULL){
+#line 156 "utilities/type.bas"
+_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_NEXT_SEPARATOR=(int32*)mem_static_malloc(4);
+#line 156 "utilities/type.bas"
+*_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_NEXT_SEPARATOR=0;
+#line 156 "utilities/type.bas"
+}
+qbs *_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_PAIR=NULL;
+#line 158 "utilities/type.bas"
+if (!_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_PAIR)_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_PAIR=qbs_new(0,0);
+#line 162 "utilities/type.bas"
+byte_element_struct *byte_element_4237=NULL;
+#line 162 "utilities/type.bas"
+if (!byte_element_4237){
+#line 162 "utilities/type.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4237=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4237=(byte_element_struct*)mem_static_malloc(12);
+#line 162 "utilities/type.bas"
+}
+int32 *_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_COMMA_POS=NULL;
+#line 165 "utilities/type.bas"
+if(_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_COMMA_POS==NULL){
+#line 165 "utilities/type.bas"
+_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_COMMA_POS=(int32*)mem_static_malloc(4);
+#line 165 "utilities/type.bas"
+*_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_COMMA_POS=0;
+#line 165 "utilities/type.bas"
+}

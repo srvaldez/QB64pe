@@ -1,6 +1,0 @@
-if(oldstr6370){
-if(oldstr6370->fixed)qbs_set(oldstr6370,_FUNC_IDEZTAKEPATH_STRING_F);
-qbs_free(_FUNC_IDEZTAKEPATH_STRING_F);
-}
-qbs_free(_FUNC_IDEZTAKEPATH_STRING_P);
-qbs_free(_FUNC_IDEZTAKEPATH_STRING_A);

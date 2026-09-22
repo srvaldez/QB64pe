@@ -1,33 +1,56 @@
-qbs *_FUNC_ID2SHORTTYPENAME_STRING_ID2SHORTTYPENAME=NULL;
-#line 248 "utilities/type.bas"
-if (!_FUNC_ID2SHORTTYPENAME_STRING_ID2SHORTTYPENAME)_FUNC_ID2SHORTTYPENAME_STRING_ID2SHORTTYPENAME=qbs_new(0,0);
-int32 *_FUNC_ID2SHORTTYPENAME_LONG_T=NULL;
-#line 249 "utilities/type.bas"
-if(_FUNC_ID2SHORTTYPENAME_LONG_T==NULL){
-#line 249 "utilities/type.bas"
-_FUNC_ID2SHORTTYPENAME_LONG_T=(int32*)mem_static_malloc(4);
-#line 249 "utilities/type.bas"
-*_FUNC_ID2SHORTTYPENAME_LONG_T=0;
-#line 249 "utilities/type.bas"
+#line 42 "utilities/hash.bas"
+qbs*oldstr4208=NULL;
+#line 42 "utilities/hash.bas"
+if(_SUB_HASHADD_STRING_A->tmp||_SUB_HASHADD_STRING_A->fixed||_SUB_HASHADD_STRING_A->readonly){
+#line 42 "utilities/hash.bas"
+oldstr4208=_SUB_HASHADD_STRING_A;
+#line 42 "utilities/hash.bas"
+if (oldstr4208->cmem_descriptor){
+#line 42 "utilities/hash.bas"
+_SUB_HASHADD_STRING_A=qbs_new_cmem(oldstr4208->len,0);
+#line 42 "utilities/hash.bas"
+}else{
+#line 42 "utilities/hash.bas"
+_SUB_HASHADD_STRING_A=qbs_new(oldstr4208->len,0);
+#line 42 "utilities/hash.bas"
 }
-int32 *_FUNC_ID2SHORTTYPENAME_LONG_SIZE=NULL;
-#line 251 "utilities/type.bas"
-if(_FUNC_ID2SHORTTYPENAME_LONG_SIZE==NULL){
-#line 251 "utilities/type.bas"
-_FUNC_ID2SHORTTYPENAME_LONG_SIZE=(int32*)mem_static_malloc(4);
-#line 251 "utilities/type.bas"
-*_FUNC_ID2SHORTTYPENAME_LONG_SIZE=0;
-#line 251 "utilities/type.bas"
+#line 42 "utilities/hash.bas"
+memcpy(_SUB_HASHADD_STRING_A->chr,oldstr4208->chr,oldstr4208->len);
+#line 42 "utilities/hash.bas"
 }
-int32 *_FUNC_ID2SHORTTYPENAME_LONG_BITS=NULL;
-#line 252 "utilities/type.bas"
-if(_FUNC_ID2SHORTTYPENAME_LONG_BITS==NULL){
-#line 252 "utilities/type.bas"
-_FUNC_ID2SHORTTYPENAME_LONG_BITS=(int32*)mem_static_malloc(4);
-#line 252 "utilities/type.bas"
-*_FUNC_ID2SHORTTYPENAME_LONG_BITS=0;
-#line 252 "utilities/type.bas"
+int32 *_SUB_HASHADD_LONG_I=NULL;
+#line 47 "utilities/hash.bas"
+if(_SUB_HASHADD_LONG_I==NULL){
+#line 47 "utilities/hash.bas"
+_SUB_HASHADD_LONG_I=(int32*)mem_static_malloc(4);
+#line 47 "utilities/hash.bas"
+*_SUB_HASHADD_LONG_I=0;
+#line 47 "utilities/hash.bas"
 }
-qbs *_FUNC_ID2SHORTTYPENAME_STRING_A=NULL;
-#line 254 "utilities/type.bas"
-if (!_FUNC_ID2SHORTTYPENAME_STRING_A)_FUNC_ID2SHORTTYPENAME_STRING_A=qbs_new(0,0);
+int32 *_SUB_HASHADD_LONG_X=NULL;
+#line 61 "utilities/hash.bas"
+if(_SUB_HASHADD_LONG_X==NULL){
+#line 61 "utilities/hash.bas"
+_SUB_HASHADD_LONG_X=(int32*)mem_static_malloc(4);
+#line 61 "utilities/hash.bas"
+*_SUB_HASHADD_LONG_X=0;
+#line 61 "utilities/hash.bas"
+}
+int32 *_SUB_HASHADD_LONG_I2=NULL;
+#line 62 "utilities/hash.bas"
+if(_SUB_HASHADD_LONG_I2==NULL){
+#line 62 "utilities/hash.bas"
+_SUB_HASHADD_LONG_I2=(int32*)mem_static_malloc(4);
+#line 62 "utilities/hash.bas"
+*_SUB_HASHADD_LONG_I2=0;
+#line 62 "utilities/hash.bas"
+}
+int32 *_SUB_HASHADD_LONG_I3=NULL;
+#line 64 "utilities/hash.bas"
+if(_SUB_HASHADD_LONG_I3==NULL){
+#line 64 "utilities/hash.bas"
+_SUB_HASHADD_LONG_I3=(int32*)mem_static_malloc(4);
+#line 64 "utilities/hash.bas"
+*_SUB_HASHADD_LONG_I3=0;
+#line 64 "utilities/hash.bas"
+}

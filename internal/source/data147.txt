@@ -1,40 +1,32 @@
-#line 57 "utilities/elements.bas"
-qbs*oldstr3622=NULL;
-#line 57 "utilities/elements.bas"
-if(_SUB_PUSHELEMENT_STRING_A->tmp||_SUB_PUSHELEMENT_STRING_A->fixed||_SUB_PUSHELEMENT_STRING_A->readonly){
-#line 57 "utilities/elements.bas"
-oldstr3622=_SUB_PUSHELEMENT_STRING_A;
-#line 57 "utilities/elements.bas"
-if (oldstr3622->cmem_descriptor){
-#line 57 "utilities/elements.bas"
-_SUB_PUSHELEMENT_STRING_A=qbs_new_cmem(oldstr3622->len,0);
-#line 57 "utilities/elements.bas"
+int16 *_FUNC_TFSTRINGTOBOOL_INTEGER_TFSTRINGTOBOOL=NULL;
+#line 71 "utilities/strings.bas"
+if(_FUNC_TFSTRINGTOBOOL_INTEGER_TFSTRINGTOBOOL==NULL){
+#line 71 "utilities/strings.bas"
+_FUNC_TFSTRINGTOBOOL_INTEGER_TFSTRINGTOBOOL=(int16*)mem_static_malloc(2);
+#line 71 "utilities/strings.bas"
+*_FUNC_TFSTRINGTOBOOL_INTEGER_TFSTRINGTOBOOL=0;
+#line 71 "utilities/strings.bas"
+}
+#line 71 "utilities/strings.bas"
+qbs*oldstr3699=NULL;
+#line 71 "utilities/strings.bas"
+if(_FUNC_TFSTRINGTOBOOL_STRING_S->tmp||_FUNC_TFSTRINGTOBOOL_STRING_S->fixed||_FUNC_TFSTRINGTOBOOL_STRING_S->readonly){
+#line 71 "utilities/strings.bas"
+oldstr3699=_FUNC_TFSTRINGTOBOOL_STRING_S;
+#line 71 "utilities/strings.bas"
+if (oldstr3699->cmem_descriptor){
+#line 71 "utilities/strings.bas"
+_FUNC_TFSTRINGTOBOOL_STRING_S=qbs_new_cmem(oldstr3699->len,0);
+#line 71 "utilities/strings.bas"
 }else{
-#line 57 "utilities/elements.bas"
-_SUB_PUSHELEMENT_STRING_A=qbs_new(oldstr3622->len,0);
-#line 57 "utilities/elements.bas"
+#line 71 "utilities/strings.bas"
+_FUNC_TFSTRINGTOBOOL_STRING_S=qbs_new(oldstr3699->len,0);
+#line 71 "utilities/strings.bas"
 }
-#line 57 "utilities/elements.bas"
-memcpy(_SUB_PUSHELEMENT_STRING_A->chr,oldstr3622->chr,oldstr3622->len);
-#line 57 "utilities/elements.bas"
+#line 71 "utilities/strings.bas"
+memcpy(_FUNC_TFSTRINGTOBOOL_STRING_S->chr,oldstr3699->chr,oldstr3699->len);
+#line 71 "utilities/strings.bas"
 }
-#line 57 "utilities/elements.bas"
-qbs*oldstr3623=NULL;
-#line 57 "utilities/elements.bas"
-if(_SUB_PUSHELEMENT_STRING_B->tmp||_SUB_PUSHELEMENT_STRING_B->fixed||_SUB_PUSHELEMENT_STRING_B->readonly){
-#line 57 "utilities/elements.bas"
-oldstr3623=_SUB_PUSHELEMENT_STRING_B;
-#line 57 "utilities/elements.bas"
-if (oldstr3623->cmem_descriptor){
-#line 57 "utilities/elements.bas"
-_SUB_PUSHELEMENT_STRING_B=qbs_new_cmem(oldstr3623->len,0);
-#line 57 "utilities/elements.bas"
-}else{
-#line 57 "utilities/elements.bas"
-_SUB_PUSHELEMENT_STRING_B=qbs_new(oldstr3623->len,0);
-#line 57 "utilities/elements.bas"
-}
-#line 57 "utilities/elements.bas"
-memcpy(_SUB_PUSHELEMENT_STRING_B->chr,oldstr3623->chr,oldstr3623->len);
-#line 57 "utilities/elements.bas"
-}
+qbs *_FUNC_TFSTRINGTOBOOL_STRING_S2=NULL;
+#line 72 "utilities/strings.bas"
+if (!_FUNC_TFSTRINGTOBOOL_STRING_S2)_FUNC_TFSTRINGTOBOOL_STRING_S2=qbs_new(0,0);

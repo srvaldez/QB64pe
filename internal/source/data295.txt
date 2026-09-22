@@ -1,84 +1,255 @@
-#line 1125 "utilities/type.bas"
-qbs*oldstr4201=NULL;
-#line 1125 "utilities/type.bas"
-if(_SUB_APPENDDYNUDTOWNFREEAT_STRING_BASE_EXPR->tmp||_SUB_APPENDDYNUDTOWNFREEAT_STRING_BASE_EXPR->fixed||_SUB_APPENDDYNUDTOWNFREEAT_STRING_BASE_EXPR->readonly){
-#line 1125 "utilities/type.bas"
-oldstr4201=_SUB_APPENDDYNUDTOWNFREEAT_STRING_BASE_EXPR;
-#line 1125 "utilities/type.bas"
-if (oldstr4201->cmem_descriptor){
-#line 1125 "utilities/type.bas"
-_SUB_APPENDDYNUDTOWNFREEAT_STRING_BASE_EXPR=qbs_new_cmem(oldstr4201->len,0);
-#line 1125 "utilities/type.bas"
+int32 *_FUNC_TYPNAME2TYP_LONG_TYPNAME2TYP=NULL;
+#line 559 "utilities/type.bas"
+if(_FUNC_TYPNAME2TYP_LONG_TYPNAME2TYP==NULL){
+#line 559 "utilities/type.bas"
+_FUNC_TYPNAME2TYP_LONG_TYPNAME2TYP=(int32*)mem_static_malloc(4);
+#line 559 "utilities/type.bas"
+*_FUNC_TYPNAME2TYP_LONG_TYPNAME2TYP=0;
+#line 559 "utilities/type.bas"
+}
+#line 559 "utilities/type.bas"
+qbs*oldstr4268=NULL;
+#line 559 "utilities/type.bas"
+if(_FUNC_TYPNAME2TYP_STRING_T2->tmp||_FUNC_TYPNAME2TYP_STRING_T2->fixed||_FUNC_TYPNAME2TYP_STRING_T2->readonly){
+#line 559 "utilities/type.bas"
+oldstr4268=_FUNC_TYPNAME2TYP_STRING_T2;
+#line 559 "utilities/type.bas"
+if (oldstr4268->cmem_descriptor){
+#line 559 "utilities/type.bas"
+_FUNC_TYPNAME2TYP_STRING_T2=qbs_new_cmem(oldstr4268->len,0);
+#line 559 "utilities/type.bas"
 }else{
-#line 1125 "utilities/type.bas"
-_SUB_APPENDDYNUDTOWNFREEAT_STRING_BASE_EXPR=qbs_new(oldstr4201->len,0);
-#line 1125 "utilities/type.bas"
+#line 559 "utilities/type.bas"
+_FUNC_TYPNAME2TYP_STRING_T2=qbs_new(oldstr4268->len,0);
+#line 559 "utilities/type.bas"
 }
-#line 1125 "utilities/type.bas"
-memcpy(_SUB_APPENDDYNUDTOWNFREEAT_STRING_BASE_EXPR->chr,oldstr4201->chr,oldstr4201->len);
-#line 1125 "utilities/type.bas"
+#line 559 "utilities/type.bas"
+memcpy(_FUNC_TYPNAME2TYP_STRING_T2->chr,oldstr4268->chr,oldstr4268->len);
+#line 559 "utilities/type.bas"
 }
-#line 1125 "utilities/type.bas"
-qbs*oldstr4202=NULL;
-#line 1125 "utilities/type.bas"
-if(_SUB_APPENDDYNUDTOWNFREEAT_STRING_ELEM_BYTES->tmp||_SUB_APPENDDYNUDTOWNFREEAT_STRING_ELEM_BYTES->fixed||_SUB_APPENDDYNUDTOWNFREEAT_STRING_ELEM_BYTES->readonly){
-#line 1125 "utilities/type.bas"
-oldstr4202=_SUB_APPENDDYNUDTOWNFREEAT_STRING_ELEM_BYTES;
-#line 1125 "utilities/type.bas"
-if (oldstr4202->cmem_descriptor){
-#line 1125 "utilities/type.bas"
-_SUB_APPENDDYNUDTOWNFREEAT_STRING_ELEM_BYTES=qbs_new_cmem(oldstr4202->len,0);
-#line 1125 "utilities/type.bas"
-}else{
-#line 1125 "utilities/type.bas"
-_SUB_APPENDDYNUDTOWNFREEAT_STRING_ELEM_BYTES=qbs_new(oldstr4202->len,0);
-#line 1125 "utilities/type.bas"
+qbs *_FUNC_TYPNAME2TYP_STRING_T=NULL;
+#line 562 "utilities/type.bas"
+if (!_FUNC_TYPNAME2TYP_STRING_T)_FUNC_TYPNAME2TYP_STRING_T=qbs_new(0,0);
+qbs *_FUNC_TYPNAME2TYP_STRING_TS=NULL;
+#line 565 "utilities/type.bas"
+if (!_FUNC_TYPNAME2TYP_STRING_TS)_FUNC_TYPNAME2TYP_STRING_TS=qbs_new(0,0);
+qbs *_FUNC_TYPNAME2TYP_STRING_N=NULL;
+#line 573 "utilities/type.bas"
+if (!_FUNC_TYPNAME2TYP_STRING_N)_FUNC_TYPNAME2TYP_STRING_N=qbs_new(0,0);
+#line 573 "utilities/type.bas"
+byte_element_struct *byte_element_4269=NULL;
+#line 573 "utilities/type.bas"
+if (!byte_element_4269){
+#line 573 "utilities/type.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4269=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4269=(byte_element_struct*)mem_static_malloc(12);
+#line 573 "utilities/type.bas"
 }
-#line 1125 "utilities/type.bas"
-memcpy(_SUB_APPENDDYNUDTOWNFREEAT_STRING_ELEM_BYTES->chr,oldstr4202->chr,oldstr4202->len);
-#line 1125 "utilities/type.bas"
+int32 *_FUNC_TYPNAME2TYP_LONG_B=NULL;
+#line 575 "utilities/type.bas"
+if(_FUNC_TYPNAME2TYP_LONG_B==NULL){
+#line 575 "utilities/type.bas"
+_FUNC_TYPNAME2TYP_LONG_B=(int32*)mem_static_malloc(4);
+#line 575 "utilities/type.bas"
+*_FUNC_TYPNAME2TYP_LONG_B=0;
+#line 575 "utilities/type.bas"
 }
-#line 1125 "utilities/type.bas"
-qbs*oldstr4203=NULL;
-#line 1125 "utilities/type.bas"
-if(_SUB_APPENDDYNUDTOWNFREEAT_STRING_INDEX_EXPR->tmp||_SUB_APPENDDYNUDTOWNFREEAT_STRING_INDEX_EXPR->fixed||_SUB_APPENDDYNUDTOWNFREEAT_STRING_INDEX_EXPR->readonly){
-#line 1125 "utilities/type.bas"
-oldstr4203=_SUB_APPENDDYNUDTOWNFREEAT_STRING_INDEX_EXPR;
-#line 1125 "utilities/type.bas"
-if (oldstr4203->cmem_descriptor){
-#line 1125 "utilities/type.bas"
-_SUB_APPENDDYNUDTOWNFREEAT_STRING_INDEX_EXPR=qbs_new_cmem(oldstr4203->len,0);
-#line 1125 "utilities/type.bas"
-}else{
-#line 1125 "utilities/type.bas"
-_SUB_APPENDDYNUDTOWNFREEAT_STRING_INDEX_EXPR=qbs_new(oldstr4203->len,0);
-#line 1125 "utilities/type.bas"
+int32 *_FUNC_TYPNAME2TYP_LONG_UNSGN=NULL;
+#line 583 "utilities/type.bas"
+if(_FUNC_TYPNAME2TYP_LONG_UNSGN==NULL){
+#line 583 "utilities/type.bas"
+_FUNC_TYPNAME2TYP_LONG_UNSGN=(int32*)mem_static_malloc(4);
+#line 583 "utilities/type.bas"
+*_FUNC_TYPNAME2TYP_LONG_UNSGN=0;
+#line 583 "utilities/type.bas"
 }
-#line 1125 "utilities/type.bas"
-memcpy(_SUB_APPENDDYNUDTOWNFREEAT_STRING_INDEX_EXPR->chr,oldstr4203->chr,oldstr4203->len);
-#line 1125 "utilities/type.bas"
+#line 583 "utilities/type.bas"
+byte_element_struct *byte_element_4270=NULL;
+#line 583 "utilities/type.bas"
+if (!byte_element_4270){
+#line 583 "utilities/type.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4270=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4270=(byte_element_struct*)mem_static_malloc(12);
+#line 583 "utilities/type.bas"
 }
-#line 1125 "utilities/type.bas"
-qbs*oldstr4204=NULL;
-#line 1125 "utilities/type.bas"
-if(_SUB_APPENDDYNUDTOWNFREEAT_STRING_ACC->tmp||_SUB_APPENDDYNUDTOWNFREEAT_STRING_ACC->fixed||_SUB_APPENDDYNUDTOWNFREEAT_STRING_ACC->readonly){
-#line 1125 "utilities/type.bas"
-oldstr4204=_SUB_APPENDDYNUDTOWNFREEAT_STRING_ACC;
-#line 1125 "utilities/type.bas"
-if (oldstr4204->cmem_descriptor){
-#line 1125 "utilities/type.bas"
-_SUB_APPENDDYNUDTOWNFREEAT_STRING_ACC=qbs_new_cmem(oldstr4204->len,0);
-#line 1125 "utilities/type.bas"
-}else{
-#line 1125 "utilities/type.bas"
-_SUB_APPENDDYNUDTOWNFREEAT_STRING_ACC=qbs_new(oldstr4204->len,0);
-#line 1125 "utilities/type.bas"
+#line 587 "utilities/type.bas"
+byte_element_struct *byte_element_4271=NULL;
+#line 587 "utilities/type.bas"
+if (!byte_element_4271){
+#line 587 "utilities/type.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4271=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4271=(byte_element_struct*)mem_static_malloc(12);
+#line 587 "utilities/type.bas"
 }
-#line 1125 "utilities/type.bas"
-memcpy(_SUB_APPENDDYNUDTOWNFREEAT_STRING_ACC->chr,oldstr4204->chr,oldstr4204->len);
-#line 1125 "utilities/type.bas"
+int32 *_FUNC_TYPNAME2TYP_LONG_T=NULL;
+#line 598 "utilities/type.bas"
+if(_FUNC_TYPNAME2TYP_LONG_T==NULL){
+#line 598 "utilities/type.bas"
+_FUNC_TYPNAME2TYP_LONG_T=(int32*)mem_static_malloc(4);
+#line 598 "utilities/type.bas"
+*_FUNC_TYPNAME2TYP_LONG_T=0;
+#line 598 "utilities/type.bas"
 }
-#line 1126 "utilities/type.bas"
-int32 pass4205;
-#line 1126 "utilities/type.bas"
-int32 pass4206;
+int32 *_FUNC_TYPNAME2TYP_LONG_I=NULL;
+#line 612 "utilities/type.bas"
+if(_FUNC_TYPNAME2TYP_LONG_I==NULL){
+#line 612 "utilities/type.bas"
+_FUNC_TYPNAME2TYP_LONG_I=(int32*)mem_static_malloc(4);
+#line 612 "utilities/type.bas"
+*_FUNC_TYPNAME2TYP_LONG_I=0;
+#line 612 "utilities/type.bas"
+}
+#line 612 "utilities/type.bas"
+int64 fornext_value4273;
+#line 612 "utilities/type.bas"
+int64 fornext_finalvalue4273;
+#line 612 "utilities/type.bas"
+int64 fornext_step4273;
+#line 612 "utilities/type.bas"
+uint8 fornext_step_negative4273;
+#line 612 "utilities/type.bas"
+byte_element_struct *byte_element_4274=NULL;
+#line 612 "utilities/type.bas"
+if (!byte_element_4274){
+#line 612 "utilities/type.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4274=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4274=(byte_element_struct*)mem_static_malloc(12);
+#line 612 "utilities/type.bas"
+}
+#line 619 "utilities/type.bas"
+byte_element_struct *byte_element_4275=NULL;
+#line 619 "utilities/type.bas"
+if (!byte_element_4275){
+#line 619 "utilities/type.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4275=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4275=(byte_element_struct*)mem_static_malloc(12);
+#line 619 "utilities/type.bas"
+}
+int32 *_FUNC_TYPNAME2TYP_LONG_HASHFOUND=NULL;
+#line 622 "utilities/type.bas"
+if(_FUNC_TYPNAME2TYP_LONG_HASHFOUND==NULL){
+#line 622 "utilities/type.bas"
+_FUNC_TYPNAME2TYP_LONG_HASHFOUND=(int32*)mem_static_malloc(4);
+#line 622 "utilities/type.bas"
+*_FUNC_TYPNAME2TYP_LONG_HASHFOUND=0;
+#line 622 "utilities/type.bas"
+}
+qbs *_FUNC_TYPNAME2TYP_STRING_HASHNAME=NULL;
+#line 623 "utilities/type.bas"
+if (!_FUNC_TYPNAME2TYP_STRING_HASHNAME)_FUNC_TYPNAME2TYP_STRING_HASHNAME=qbs_new(0,0);
+int32 *_FUNC_TYPNAME2TYP_LONG_HASHCHKFLAGS=NULL;
+#line 624 "utilities/type.bas"
+if(_FUNC_TYPNAME2TYP_LONG_HASHCHKFLAGS==NULL){
+#line 624 "utilities/type.bas"
+_FUNC_TYPNAME2TYP_LONG_HASHCHKFLAGS=(int32*)mem_static_malloc(4);
+#line 624 "utilities/type.bas"
+*_FUNC_TYPNAME2TYP_LONG_HASHCHKFLAGS=0;
+#line 624 "utilities/type.bas"
+}
+int32 *_FUNC_TYPNAME2TYP_LONG_HASHRES=NULL;
+#line 625 "utilities/type.bas"
+if(_FUNC_TYPNAME2TYP_LONG_HASHRES==NULL){
+#line 625 "utilities/type.bas"
+_FUNC_TYPNAME2TYP_LONG_HASHRES=(int32*)mem_static_malloc(4);
+#line 625 "utilities/type.bas"
+*_FUNC_TYPNAME2TYP_LONG_HASHRES=0;
+#line 625 "utilities/type.bas"
+}
+int32 *_FUNC_TYPNAME2TYP_LONG_HASHRESFLAGS=NULL;
+#line 625 "utilities/type.bas"
+if(_FUNC_TYPNAME2TYP_LONG_HASHRESFLAGS==NULL){
+#line 625 "utilities/type.bas"
+_FUNC_TYPNAME2TYP_LONG_HASHRESFLAGS=(int32*)mem_static_malloc(4);
+#line 625 "utilities/type.bas"
+*_FUNC_TYPNAME2TYP_LONG_HASHRESFLAGS=0;
+#line 625 "utilities/type.bas"
+}
+int32 *_FUNC_TYPNAME2TYP_LONG_HASHRESREF=NULL;
+#line 625 "utilities/type.bas"
+if(_FUNC_TYPNAME2TYP_LONG_HASHRESREF==NULL){
+#line 625 "utilities/type.bas"
+_FUNC_TYPNAME2TYP_LONG_HASHRESREF=(int32*)mem_static_malloc(4);
+#line 625 "utilities/type.bas"
+*_FUNC_TYPNAME2TYP_LONG_HASHRESREF=0;
+#line 625 "utilities/type.bas"
+}
+int32 *_FUNC_TYPNAME2TYP_LONG_I2=NULL;
+#line 636 "utilities/type.bas"
+if(_FUNC_TYPNAME2TYP_LONG_I2==NULL){
+#line 636 "utilities/type.bas"
+_FUNC_TYPNAME2TYP_LONG_I2=(int32*)mem_static_malloc(4);
+#line 636 "utilities/type.bas"
+*_FUNC_TYPNAME2TYP_LONG_I2=0;
+#line 636 "utilities/type.bas"
+}
+long double *_FUNC_TYPNAME2TYP_FLOAT_V=NULL;
+#line 641 "utilities/type.bas"
+if(_FUNC_TYPNAME2TYP_FLOAT_V==NULL){
+#line 641 "utilities/type.bas"
+_FUNC_TYPNAME2TYP_FLOAT_V=(long double*)mem_static_malloc(32);
+#line 641 "utilities/type.bas"
+*_FUNC_TYPNAME2TYP_FLOAT_V=0;
+#line 641 "utilities/type.bas"
+}
+int64 *_FUNC_TYPNAME2TYP_INTEGER64_V=NULL;
+#line 642 "utilities/type.bas"
+if(_FUNC_TYPNAME2TYP_INTEGER64_V==NULL){
+#line 642 "utilities/type.bas"
+_FUNC_TYPNAME2TYP_INTEGER64_V=(int64*)mem_static_malloc(8);
+#line 642 "utilities/type.bas"
+*_FUNC_TYPNAME2TYP_INTEGER64_V=0;
+#line 642 "utilities/type.bas"
+}
+uint64 *_FUNC_TYPNAME2TYP_UINTEGER64_V=NULL;
+#line 643 "utilities/type.bas"
+if(_FUNC_TYPNAME2TYP_UINTEGER64_V==NULL){
+#line 643 "utilities/type.bas"
+_FUNC_TYPNAME2TYP_UINTEGER64_V=(uint64*)mem_static_malloc(8);
+#line 643 "utilities/type.bas"
+*_FUNC_TYPNAME2TYP_UINTEGER64_V=0;
+#line 643 "utilities/type.bas"
+}
+#line 660 "utilities/type.bas"
+byte_element_struct *byte_element_4277=NULL;
+#line 660 "utilities/type.bas"
+if (!byte_element_4277){
+#line 660 "utilities/type.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4277=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4277=(byte_element_struct*)mem_static_malloc(12);
+#line 660 "utilities/type.bas"
+}
+#line 662 "utilities/type.bas"
+byte_element_struct *byte_element_4278=NULL;
+#line 662 "utilities/type.bas"
+if (!byte_element_4278){
+#line 662 "utilities/type.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4278=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4278=(byte_element_struct*)mem_static_malloc(12);
+#line 662 "utilities/type.bas"
+}
+int32 *_FUNC_TYPNAME2TYP_LONG_U=NULL;
+#line 673 "utilities/type.bas"
+if(_FUNC_TYPNAME2TYP_LONG_U==NULL){
+#line 673 "utilities/type.bas"
+_FUNC_TYPNAME2TYP_LONG_U=(int32*)mem_static_malloc(4);
+#line 673 "utilities/type.bas"
+*_FUNC_TYPNAME2TYP_LONG_U=0;
+#line 673 "utilities/type.bas"
+}
+#line 685 "utilities/type.bas"
+byte_element_struct *byte_element_4279=NULL;
+#line 685 "utilities/type.bas"
+if (!byte_element_4279){
+#line 685 "utilities/type.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4279=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4279=(byte_element_struct*)mem_static_malloc(12);
+#line 685 "utilities/type.bas"
+}
+#line 687 "utilities/type.bas"
+byte_element_struct *byte_element_4280=NULL;
+#line 687 "utilities/type.bas"
+if (!byte_element_4280){
+#line 687 "utilities/type.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4280=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4280=(byte_element_struct*)mem_static_malloc(12);
+#line 687 "utilities/type.bas"
+}
+#line 712 "utilities/type.bas"
+int64 fornext_value4282;
+#line 712 "utilities/type.bas"
+int64 fornext_finalvalue4282;
+#line 712 "utilities/type.bas"
+int64 fornext_step4282;
+#line 712 "utilities/type.bas"
+uint8 fornext_step_negative4282;

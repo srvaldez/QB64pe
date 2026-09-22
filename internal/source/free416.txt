@@ -1,10 +1,6 @@
-if(oldstr6375){
-if(oldstr6375->fixed)qbs_set(oldstr6375,_FUNC_IDEZGETFILEPATH_STRING_ROOT);
-qbs_free(_FUNC_IDEZGETFILEPATH_STRING_ROOT);
+if(oldstr6144){
+if(oldstr6144->fixed)qbs_set(oldstr6144,_SUB_IDESAVE_STRING_F);
+qbs_free(_SUB_IDESAVE_STRING_F);
 }
-if(oldstr6376){
-if(oldstr6376->fixed)qbs_set(oldstr6376,_FUNC_IDEZGETFILEPATH_STRING_F);
-qbs_free(_FUNC_IDEZGETFILEPATH_STRING_F);
-}
-qbs_free(_FUNC_IDEZGETFILEPATH_STRING_P);
-qbs_free(_FUNC_IDEZGETFILEPATH_STRING_P2);
+qbs_free(_SUB_IDESAVE_STRING_LINEENDING);
+qbs_free(_SUB_IDESAVE_STRING_OUTFILE);

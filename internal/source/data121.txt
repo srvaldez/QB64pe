@@ -1,51 +1,170 @@
-qbs *_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_REMOVESTRINGENCLOSINGPAIR=NULL;
-#line 43 "utilities/strings.bas"
-if (!_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_REMOVESTRINGENCLOSINGPAIR)_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_REMOVESTRINGENCLOSINGPAIR=qbs_new(0,0);
-#line 43 "utilities/strings.bas"
-qbs*oldstr3547=NULL;
-#line 43 "utilities/strings.bas"
-if(_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_TEXT->tmp||_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_TEXT->fixed||_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_TEXT->readonly){
-#line 43 "utilities/strings.bas"
-oldstr3547=_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_TEXT;
-#line 43 "utilities/strings.bas"
-if (oldstr3547->cmem_descriptor){
-#line 43 "utilities/strings.bas"
-_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_TEXT=qbs_new_cmem(oldstr3547->len,0);
-#line 43 "utilities/strings.bas"
+#line 226 "utilities/arrcpy.bm"
+qbs*oldstr3584=NULL;
+#line 226 "utilities/arrcpy.bm"
+if(_SUB_RESOLVEARRAYCOPYREFEX_STRING_WHOLE_REF->tmp||_SUB_RESOLVEARRAYCOPYREFEX_STRING_WHOLE_REF->fixed||_SUB_RESOLVEARRAYCOPYREFEX_STRING_WHOLE_REF->readonly){
+#line 226 "utilities/arrcpy.bm"
+oldstr3584=_SUB_RESOLVEARRAYCOPYREFEX_STRING_WHOLE_REF;
+#line 226 "utilities/arrcpy.bm"
+if (oldstr3584->cmem_descriptor){
+#line 226 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREFEX_STRING_WHOLE_REF=qbs_new_cmem(oldstr3584->len,0);
+#line 226 "utilities/arrcpy.bm"
 }else{
-#line 43 "utilities/strings.bas"
-_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_TEXT=qbs_new(oldstr3547->len,0);
-#line 43 "utilities/strings.bas"
+#line 226 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREFEX_STRING_WHOLE_REF=qbs_new(oldstr3584->len,0);
+#line 226 "utilities/arrcpy.bm"
 }
-#line 43 "utilities/strings.bas"
-memcpy(_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_TEXT->chr,oldstr3547->chr,oldstr3547->len);
-#line 43 "utilities/strings.bas"
+#line 226 "utilities/arrcpy.bm"
+memcpy(_SUB_RESOLVEARRAYCOPYREFEX_STRING_WHOLE_REF->chr,oldstr3584->chr,oldstr3584->len);
+#line 226 "utilities/arrcpy.bm"
 }
-#line 43 "utilities/strings.bas"
-qbs*oldstr3548=NULL;
-#line 43 "utilities/strings.bas"
-if(_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_PAIR->tmp||_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_PAIR->fixed||_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_PAIR->readonly){
-#line 43 "utilities/strings.bas"
-oldstr3548=_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_PAIR;
-#line 43 "utilities/strings.bas"
-if (oldstr3548->cmem_descriptor){
-#line 43 "utilities/strings.bas"
-_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_PAIR=qbs_new_cmem(oldstr3548->len,0);
-#line 43 "utilities/strings.bas"
+#line 226 "utilities/arrcpy.bm"
+qbs*oldstr3585=NULL;
+#line 226 "utilities/arrcpy.bm"
+if(_SUB_RESOLVEARRAYCOPYREFEX_STRING_ROLE_TEXT->tmp||_SUB_RESOLVEARRAYCOPYREFEX_STRING_ROLE_TEXT->fixed||_SUB_RESOLVEARRAYCOPYREFEX_STRING_ROLE_TEXT->readonly){
+#line 226 "utilities/arrcpy.bm"
+oldstr3585=_SUB_RESOLVEARRAYCOPYREFEX_STRING_ROLE_TEXT;
+#line 226 "utilities/arrcpy.bm"
+if (oldstr3585->cmem_descriptor){
+#line 226 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREFEX_STRING_ROLE_TEXT=qbs_new_cmem(oldstr3585->len,0);
+#line 226 "utilities/arrcpy.bm"
 }else{
-#line 43 "utilities/strings.bas"
-_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_PAIR=qbs_new(oldstr3548->len,0);
-#line 43 "utilities/strings.bas"
+#line 226 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREFEX_STRING_ROLE_TEXT=qbs_new(oldstr3585->len,0);
+#line 226 "utilities/arrcpy.bm"
 }
-#line 43 "utilities/strings.bas"
-memcpy(_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_PAIR->chr,oldstr3548->chr,oldstr3548->len);
-#line 43 "utilities/strings.bas"
+#line 226 "utilities/arrcpy.bm"
+memcpy(_SUB_RESOLVEARRAYCOPYREFEX_STRING_ROLE_TEXT->chr,oldstr3585->chr,oldstr3585->len);
+#line 226 "utilities/arrcpy.bm"
 }
-#line 45 "utilities/strings.bas"
-byte_element_struct *byte_element_3549=NULL;
-#line 45 "utilities/strings.bas"
-if (!byte_element_3549){
-#line 45 "utilities/strings.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3549=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3549=(byte_element_struct*)mem_static_malloc(12);
-#line 45 "utilities/strings.bas"
+#line 226 "utilities/arrcpy.bm"
+qbs*oldstr3586=NULL;
+#line 226 "utilities/arrcpy.bm"
+if(_SUB_RESOLVEARRAYCOPYREFEX_STRING_DESC_TEXT->tmp||_SUB_RESOLVEARRAYCOPYREFEX_STRING_DESC_TEXT->fixed||_SUB_RESOLVEARRAYCOPYREFEX_STRING_DESC_TEXT->readonly){
+#line 226 "utilities/arrcpy.bm"
+oldstr3586=_SUB_RESOLVEARRAYCOPYREFEX_STRING_DESC_TEXT;
+#line 226 "utilities/arrcpy.bm"
+if (oldstr3586->cmem_descriptor){
+#line 226 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREFEX_STRING_DESC_TEXT=qbs_new_cmem(oldstr3586->len,0);
+#line 226 "utilities/arrcpy.bm"
+}else{
+#line 226 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREFEX_STRING_DESC_TEXT=qbs_new(oldstr3586->len,0);
+#line 226 "utilities/arrcpy.bm"
 }
+#line 226 "utilities/arrcpy.bm"
+memcpy(_SUB_RESOLVEARRAYCOPYREFEX_STRING_DESC_TEXT->chr,oldstr3586->chr,oldstr3586->len);
+#line 226 "utilities/arrcpy.bm"
+}
+#line 226 "utilities/arrcpy.bm"
+qbs*oldstr3587=NULL;
+#line 226 "utilities/arrcpy.bm"
+if(_SUB_RESOLVEARRAYCOPYREFEX_STRING_PREP_TEXT->tmp||_SUB_RESOLVEARRAYCOPYREFEX_STRING_PREP_TEXT->fixed||_SUB_RESOLVEARRAYCOPYREFEX_STRING_PREP_TEXT->readonly){
+#line 226 "utilities/arrcpy.bm"
+oldstr3587=_SUB_RESOLVEARRAYCOPYREFEX_STRING_PREP_TEXT;
+#line 226 "utilities/arrcpy.bm"
+if (oldstr3587->cmem_descriptor){
+#line 226 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREFEX_STRING_PREP_TEXT=qbs_new_cmem(oldstr3587->len,0);
+#line 226 "utilities/arrcpy.bm"
+}else{
+#line 226 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREFEX_STRING_PREP_TEXT=qbs_new(oldstr3587->len,0);
+#line 226 "utilities/arrcpy.bm"
+}
+#line 226 "utilities/arrcpy.bm"
+memcpy(_SUB_RESOLVEARRAYCOPYREFEX_STRING_PREP_TEXT->chr,oldstr3587->chr,oldstr3587->len);
+#line 226 "utilities/arrcpy.bm"
+}
+qbs *_SUB_RESOLVEARRAYCOPYREFEX_STRING_FINAL_NAME=NULL;
+#line 227 "utilities/arrcpy.bm"
+if (!_SUB_RESOLVEARRAYCOPYREFEX_STRING_FINAL_NAME)_SUB_RESOLVEARRAYCOPYREFEX_STRING_FINAL_NAME=qbs_new(0,0);
+qbs *_SUB_RESOLVEARRAYCOPYREFEX_STRING_ROOT_NAME=NULL;
+#line 227 "utilities/arrcpy.bm"
+if (!_SUB_RESOLVEARRAYCOPYREFEX_STRING_ROOT_NAME)_SUB_RESOLVEARRAYCOPYREFEX_STRING_ROOT_NAME=qbs_new(0,0);
+qbs *_SUB_RESOLVEARRAYCOPYREFEX_STRING_MEMBER_REF=NULL;
+#line 227 "utilities/arrcpy.bm"
+if (!_SUB_RESOLVEARRAYCOPYREFEX_STRING_MEMBER_REF)_SUB_RESOLVEARRAYCOPYREFEX_STRING_MEMBER_REF=qbs_new(0,0);
+qbs *_SUB_RESOLVEARRAYCOPYREFEX_STRING_RESOLVER_REF=NULL;
+#line 227 "utilities/arrcpy.bm"
+if (!_SUB_RESOLVEARRAYCOPYREFEX_STRING_RESOLVER_REF)_SUB_RESOLVEARRAYCOPYREFEX_STRING_RESOLVER_REF=qbs_new(0,0);
+int32 *_SUB_RESOLVEARRAYCOPYREFEX_LONG_SYNTAX_KIND=NULL;
+#line 228 "utilities/arrcpy.bm"
+if(_SUB_RESOLVEARRAYCOPYREFEX_LONG_SYNTAX_KIND==NULL){
+#line 228 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREFEX_LONG_SYNTAX_KIND=(int32*)mem_static_malloc(4);
+#line 228 "utilities/arrcpy.bm"
+*_SUB_RESOLVEARRAYCOPYREFEX_LONG_SYNTAX_KIND=0;
+#line 228 "utilities/arrcpy.bm"
+}
+int32 *_SUB_RESOLVEARRAYCOPYREFEX_LONG_HAS_MEMBER=NULL;
+#line 228 "utilities/arrcpy.bm"
+if(_SUB_RESOLVEARRAYCOPYREFEX_LONG_HAS_MEMBER==NULL){
+#line 228 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREFEX_LONG_HAS_MEMBER=(int32*)mem_static_malloc(4);
+#line 228 "utilities/arrcpy.bm"
+*_SUB_RESOLVEARRAYCOPYREFEX_LONG_HAS_MEMBER=0;
+#line 228 "utilities/arrcpy.bm"
+}
+int32 *_SUB_RESOLVEARRAYCOPYREFEX_LONG_REF_OK=NULL;
+#line 228 "utilities/arrcpy.bm"
+if(_SUB_RESOLVEARRAYCOPYREFEX_LONG_REF_OK==NULL){
+#line 228 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREFEX_LONG_REF_OK=(int32*)mem_static_malloc(4);
+#line 228 "utilities/arrcpy.bm"
+*_SUB_RESOLVEARRAYCOPYREFEX_LONG_REF_OK=0;
+#line 228 "utilities/arrcpy.bm"
+}
+int32 *_SUB_RESOLVEARRAYCOPYREFEX_LONG_REF_TYPE=NULL;
+#line 228 "utilities/arrcpy.bm"
+if(_SUB_RESOLVEARRAYCOPYREFEX_LONG_REF_TYPE==NULL){
+#line 228 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREFEX_LONG_REF_TYPE=(int32*)mem_static_malloc(4);
+#line 228 "utilities/arrcpy.bm"
+*_SUB_RESOLVEARRAYCOPYREFEX_LONG_REF_TYPE=0;
+#line 228 "utilities/arrcpy.bm"
+}
+int32 *_SUB_RESOLVEARRAYCOPYREFEX_LONG_ID_NUMBER=NULL;
+#line 229 "utilities/arrcpy.bm"
+if(_SUB_RESOLVEARRAYCOPYREFEX_LONG_ID_NUMBER==NULL){
+#line 229 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREFEX_LONG_ID_NUMBER=(int32*)mem_static_malloc(4);
+#line 229 "utilities/arrcpy.bm"
+*_SUB_RESOLVEARRAYCOPYREFEX_LONG_ID_NUMBER=0;
+#line 229 "utilities/arrcpy.bm"
+}
+int32 *_SUB_RESOLVEARRAYCOPYREFEX_LONG_MEMBER_ID=NULL;
+#line 229 "utilities/arrcpy.bm"
+if(_SUB_RESOLVEARRAYCOPYREFEX_LONG_MEMBER_ID==NULL){
+#line 229 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREFEX_LONG_MEMBER_ID=(int32*)mem_static_malloc(4);
+#line 229 "utilities/arrcpy.bm"
+*_SUB_RESOLVEARRAYCOPYREFEX_LONG_MEMBER_ID=0;
+#line 229 "utilities/arrcpy.bm"
+}
+int32 *_SUB_RESOLVEARRAYCOPYREFEX_LONG_REF_TOKENS=NULL;
+#line 229 "utilities/arrcpy.bm"
+if(_SUB_RESOLVEARRAYCOPYREFEX_LONG_REF_TOKENS==NULL){
+#line 229 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREFEX_LONG_REF_TOKENS=(int32*)mem_static_malloc(4);
+#line 229 "utilities/arrcpy.bm"
+*_SUB_RESOLVEARRAYCOPYREFEX_LONG_REF_TOKENS=0;
+#line 229 "utilities/arrcpy.bm"
+}
+int32 *_SUB_RESOLVEARRAYCOPYREFEX_LONG_MEMBER_CANDIDATE=NULL;
+#line 229 "utilities/arrcpy.bm"
+if(_SUB_RESOLVEARRAYCOPYREFEX_LONG_MEMBER_CANDIDATE==NULL){
+#line 229 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREFEX_LONG_MEMBER_CANDIDATE=(int32*)mem_static_malloc(4);
+#line 229 "utilities/arrcpy.bm"
+*_SUB_RESOLVEARRAYCOPYREFEX_LONG_MEMBER_CANDIDATE=0;
+#line 229 "utilities/arrcpy.bm"
+}
+#line 245 "utilities/arrcpy.bm"
+int32 pass3588;
+#line 256 "utilities/arrcpy.bm"
+int32 pass3589;
+#line 256 "utilities/arrcpy.bm"
+int32 pass3590;

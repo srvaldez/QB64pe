@@ -1,66 +1,90 @@
-int32 *_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_PARSENEXTUDTARRAYDESCRIPTORDIM=NULL;
-#line 152 "utilities/type.bas"
-if(_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_PARSENEXTUDTARRAYDESCRIPTORDIM==NULL){
-#line 152 "utilities/type.bas"
-_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_PARSENEXTUDTARRAYDESCRIPTORDIM=(int32*)mem_static_malloc(4);
-#line 152 "utilities/type.bas"
-*_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_PARSENEXTUDTARRAYDESCRIPTORDIM=0;
-#line 152 "utilities/type.bas"
-}
-#line 152 "utilities/type.bas"
-qbs*oldstr4125=NULL;
-#line 152 "utilities/type.bas"
-if(_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_DESCRIPTOR->tmp||_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_DESCRIPTOR->fixed||_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_DESCRIPTOR->readonly){
-#line 152 "utilities/type.bas"
-oldstr4125=_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_DESCRIPTOR;
-#line 152 "utilities/type.bas"
-if (oldstr4125->cmem_descriptor){
-#line 152 "utilities/type.bas"
-_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_DESCRIPTOR=qbs_new_cmem(oldstr4125->len,0);
-#line 152 "utilities/type.bas"
+#line 1088 "utilities/const_eval.bas"
+qbs*oldstr4192=NULL;
+#line 1088 "utilities/const_eval.bas"
+if(_SUB_PREPARSE_STRING_E->tmp||_SUB_PREPARSE_STRING_E->fixed||_SUB_PREPARSE_STRING_E->readonly){
+#line 1088 "utilities/const_eval.bas"
+oldstr4192=_SUB_PREPARSE_STRING_E;
+#line 1088 "utilities/const_eval.bas"
+if (oldstr4192->cmem_descriptor){
+#line 1088 "utilities/const_eval.bas"
+_SUB_PREPARSE_STRING_E=qbs_new_cmem(oldstr4192->len,0);
+#line 1088 "utilities/const_eval.bas"
 }else{
-#line 152 "utilities/type.bas"
-_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_DESCRIPTOR=qbs_new(oldstr4125->len,0);
-#line 152 "utilities/type.bas"
+#line 1088 "utilities/const_eval.bas"
+_SUB_PREPARSE_STRING_E=qbs_new(oldstr4192->len,0);
+#line 1088 "utilities/const_eval.bas"
 }
-#line 152 "utilities/type.bas"
-memcpy(_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_DESCRIPTOR->chr,oldstr4125->chr,oldstr4125->len);
-#line 152 "utilities/type.bas"
+#line 1088 "utilities/const_eval.bas"
+memcpy(_SUB_PREPARSE_STRING_E->chr,oldstr4192->chr,oldstr4192->len);
+#line 1088 "utilities/const_eval.bas"
 }
-#line 154 "utilities/type.bas"
-byte_element_struct *byte_element_4126=NULL;
-#line 154 "utilities/type.bas"
-if (!byte_element_4126){
-#line 154 "utilities/type.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4126=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4126=(byte_element_struct*)mem_static_malloc(12);
-#line 154 "utilities/type.bas"
+qbs *_SUB_PREPARSE_STRING_T=NULL;
+#line 1089 "utilities/const_eval.bas"
+if (!_SUB_PREPARSE_STRING_T)_SUB_PREPARSE_STRING_T=qbs_new(0,0);
+int32 *_SUB_PREPARSE_LONG_COUNT=NULL;
+#line 1095 "utilities/const_eval.bas"
+if(_SUB_PREPARSE_LONG_COUNT==NULL){
+#line 1095 "utilities/const_eval.bas"
+_SUB_PREPARSE_LONG_COUNT=(int32*)mem_static_malloc(4);
+#line 1095 "utilities/const_eval.bas"
+*_SUB_PREPARSE_LONG_COUNT=0;
+#line 1095 "utilities/const_eval.bas"
 }
-int32 *_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_NEXT_SEPARATOR=NULL;
-#line 156 "utilities/type.bas"
-if(_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_NEXT_SEPARATOR==NULL){
-#line 156 "utilities/type.bas"
-_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_NEXT_SEPARATOR=(int32*)mem_static_malloc(4);
-#line 156 "utilities/type.bas"
-*_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_NEXT_SEPARATOR=0;
-#line 156 "utilities/type.bas"
+int32 *_SUB_PREPARSE_LONG_L=NULL;
+#line 1096 "utilities/const_eval.bas"
+if(_SUB_PREPARSE_LONG_L==NULL){
+#line 1096 "utilities/const_eval.bas"
+_SUB_PREPARSE_LONG_L=(int32*)mem_static_malloc(4);
+#line 1096 "utilities/const_eval.bas"
+*_SUB_PREPARSE_LONG_L=0;
+#line 1096 "utilities/const_eval.bas"
 }
-qbs *_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_PAIR=NULL;
-#line 158 "utilities/type.bas"
-if (!_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_PAIR)_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_STRING_PAIR=qbs_new(0,0);
-#line 162 "utilities/type.bas"
-byte_element_struct *byte_element_4127=NULL;
-#line 162 "utilities/type.bas"
-if (!byte_element_4127){
-#line 162 "utilities/type.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4127=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4127=(byte_element_struct*)mem_static_malloc(12);
-#line 162 "utilities/type.bas"
+#line 1096 "utilities/const_eval.bas"
+int64 fornext_value4194;
+#line 1096 "utilities/const_eval.bas"
+int64 fornext_finalvalue4194;
+#line 1096 "utilities/const_eval.bas"
+int64 fornext_step4194;
+#line 1096 "utilities/const_eval.bas"
+uint8 fornext_step_negative4194;
+qbs *_SUB_PREPARSE_STRING_ELE=NULL;
+#line 1097 "utilities/const_eval.bas"
+if (!_SUB_PREPARSE_STRING_ELE)_SUB_PREPARSE_STRING_ELE=qbs_new(0,0);
+int32 *_SUB_PREPARSE_LONG_C=NULL;
+#line 1098 "utilities/const_eval.bas"
+if(_SUB_PREPARSE_LONG_C==NULL){
+#line 1098 "utilities/const_eval.bas"
+_SUB_PREPARSE_LONG_C=(int32*)mem_static_malloc(4);
+#line 1098 "utilities/const_eval.bas"
+*_SUB_PREPARSE_LONG_C=0;
+#line 1098 "utilities/const_eval.bas"
 }
-int32 *_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_COMMA_POS=NULL;
-#line 165 "utilities/type.bas"
-if(_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_COMMA_POS==NULL){
-#line 165 "utilities/type.bas"
-_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_COMMA_POS=(int32*)mem_static_malloc(4);
-#line 165 "utilities/type.bas"
-*_FUNC_PARSENEXTUDTARRAYDESCRIPTORDIM_LONG_COMMA_POS=0;
-#line 165 "utilities/type.bas"
+#line 1106 "utilities/const_eval.bas"
+int64 fornext_value4196;
+#line 1106 "utilities/const_eval.bas"
+int64 fornext_finalvalue4196;
+#line 1106 "utilities/const_eval.bas"
+int64 fornext_step4196;
+#line 1106 "utilities/const_eval.bas"
+uint8 fornext_step_negative4196;
+int32 *_SUB_PREPARSE_LONG_L2=NULL;
+#line 1109 "utilities/const_eval.bas"
+if(_SUB_PREPARSE_LONG_L2==NULL){
+#line 1109 "utilities/const_eval.bas"
+_SUB_PREPARSE_LONG_L2=(int32*)mem_static_malloc(4);
+#line 1109 "utilities/const_eval.bas"
+*_SUB_PREPARSE_LONG_L2=0;
+#line 1109 "utilities/const_eval.bas"
 }
+#line 1109 "utilities/const_eval.bas"
+int64 fornext_value4198;
+#line 1109 "utilities/const_eval.bas"
+int64 fornext_finalvalue4198;
+#line 1109 "utilities/const_eval.bas"
+int64 fornext_step4198;
+#line 1109 "utilities/const_eval.bas"
+uint8 fornext_step_negative4198;
+#line 1116 "utilities/const_eval.bas"
+int32 pass4199;
+#line 1117 "utilities/const_eval.bas"
+int32 pass4200;

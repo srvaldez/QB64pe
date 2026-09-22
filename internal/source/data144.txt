@@ -1,58 +1,51 @@
-qbs *_FUNC_GETELEMENT_STRING_GETELEMENT=NULL;
-#line 2 "utilities/elements.bas"
-if (!_FUNC_GETELEMENT_STRING_GETELEMENT)_FUNC_GETELEMENT_STRING_GETELEMENT=qbs_new(0,0);
-#line 2 "utilities/elements.bas"
-qbs*oldstr3614=NULL;
-#line 2 "utilities/elements.bas"
-if(_FUNC_GETELEMENT_STRING_A->tmp||_FUNC_GETELEMENT_STRING_A->fixed||_FUNC_GETELEMENT_STRING_A->readonly){
-#line 2 "utilities/elements.bas"
-oldstr3614=_FUNC_GETELEMENT_STRING_A;
-#line 2 "utilities/elements.bas"
-if (oldstr3614->cmem_descriptor){
-#line 2 "utilities/elements.bas"
-_FUNC_GETELEMENT_STRING_A=qbs_new_cmem(oldstr3614->len,0);
-#line 2 "utilities/elements.bas"
+qbs *_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_REMOVESTRINGENCLOSINGPAIR=NULL;
+#line 43 "utilities/strings.bas"
+if (!_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_REMOVESTRINGENCLOSINGPAIR)_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_REMOVESTRINGENCLOSINGPAIR=qbs_new(0,0);
+#line 43 "utilities/strings.bas"
+qbs*oldstr3695=NULL;
+#line 43 "utilities/strings.bas"
+if(_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_TEXT->tmp||_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_TEXT->fixed||_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_TEXT->readonly){
+#line 43 "utilities/strings.bas"
+oldstr3695=_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_TEXT;
+#line 43 "utilities/strings.bas"
+if (oldstr3695->cmem_descriptor){
+#line 43 "utilities/strings.bas"
+_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_TEXT=qbs_new_cmem(oldstr3695->len,0);
+#line 43 "utilities/strings.bas"
 }else{
-#line 2 "utilities/elements.bas"
-_FUNC_GETELEMENT_STRING_A=qbs_new(oldstr3614->len,0);
-#line 2 "utilities/elements.bas"
+#line 43 "utilities/strings.bas"
+_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_TEXT=qbs_new(oldstr3695->len,0);
+#line 43 "utilities/strings.bas"
 }
-#line 2 "utilities/elements.bas"
-memcpy(_FUNC_GETELEMENT_STRING_A->chr,oldstr3614->chr,oldstr3614->len);
-#line 2 "utilities/elements.bas"
+#line 43 "utilities/strings.bas"
+memcpy(_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_TEXT->chr,oldstr3695->chr,oldstr3695->len);
+#line 43 "utilities/strings.bas"
 }
-int32 *_FUNC_GETELEMENT_LONG_P=NULL;
-#line 3 "utilities/elements.bas"
-if(_FUNC_GETELEMENT_LONG_P==NULL){
-#line 3 "utilities/elements.bas"
-_FUNC_GETELEMENT_LONG_P=(int32*)mem_static_malloc(4);
-#line 3 "utilities/elements.bas"
-*_FUNC_GETELEMENT_LONG_P=0;
-#line 3 "utilities/elements.bas"
+#line 43 "utilities/strings.bas"
+qbs*oldstr3696=NULL;
+#line 43 "utilities/strings.bas"
+if(_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_PAIR->tmp||_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_PAIR->fixed||_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_PAIR->readonly){
+#line 43 "utilities/strings.bas"
+oldstr3696=_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_PAIR;
+#line 43 "utilities/strings.bas"
+if (oldstr3696->cmem_descriptor){
+#line 43 "utilities/strings.bas"
+_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_PAIR=qbs_new_cmem(oldstr3696->len,0);
+#line 43 "utilities/strings.bas"
+}else{
+#line 43 "utilities/strings.bas"
+_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_PAIR=qbs_new(oldstr3696->len,0);
+#line 43 "utilities/strings.bas"
 }
-int32 *_FUNC_GETELEMENT_LONG_N=NULL;
-#line 3 "utilities/elements.bas"
-if(_FUNC_GETELEMENT_LONG_N==NULL){
-#line 3 "utilities/elements.bas"
-_FUNC_GETELEMENT_LONG_N=(int32*)mem_static_malloc(4);
-#line 3 "utilities/elements.bas"
-*_FUNC_GETELEMENT_LONG_N=0;
-#line 3 "utilities/elements.bas"
+#line 43 "utilities/strings.bas"
+memcpy(_FUNC_REMOVESTRINGENCLOSINGPAIR_STRING_PAIR->chr,oldstr3696->chr,oldstr3696->len);
+#line 43 "utilities/strings.bas"
 }
-int32 *_FUNC_GETELEMENT_LONG_I=NULL;
-#line 3 "utilities/elements.bas"
-if(_FUNC_GETELEMENT_LONG_I==NULL){
-#line 3 "utilities/elements.bas"
-_FUNC_GETELEMENT_LONG_I=(int32*)mem_static_malloc(4);
-#line 3 "utilities/elements.bas"
-*_FUNC_GETELEMENT_LONG_I=0;
-#line 3 "utilities/elements.bas"
-}
-#line 16 "utilities/elements.bas"
-byte_element_struct *byte_element_3615=NULL;
-#line 16 "utilities/elements.bas"
-if (!byte_element_3615){
-#line 16 "utilities/elements.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3615=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3615=(byte_element_struct*)mem_static_malloc(12);
-#line 16 "utilities/elements.bas"
+#line 45 "utilities/strings.bas"
+byte_element_struct *byte_element_3697=NULL;
+#line 45 "utilities/strings.bas"
+if (!byte_element_3697){
+#line 45 "utilities/strings.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3697=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3697=(byte_element_struct*)mem_static_malloc(12);
+#line 45 "utilities/strings.bas"
 }

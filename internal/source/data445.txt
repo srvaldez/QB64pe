@@ -1,35 +1,9 @@
-qbs *_FUNC_ASKCLEARHISTORY_STRING_ASKCLEARHISTORY=NULL;
-#line 19934 "ide/ide_methods.bas"
-if (!_FUNC_ASKCLEARHISTORY_STRING_ASKCLEARHISTORY)_FUNC_ASKCLEARHISTORY_STRING_ASKCLEARHISTORY=qbs_new(0,0);
-#line 19934 "ide/ide_methods.bas"
-qbs*oldstr6783=NULL;
-#line 19934 "ide/ide_methods.bas"
-if(_FUNC_ASKCLEARHISTORY_STRING_WHICH->tmp||_FUNC_ASKCLEARHISTORY_STRING_WHICH->fixed||_FUNC_ASKCLEARHISTORY_STRING_WHICH->readonly){
-#line 19934 "ide/ide_methods.bas"
-oldstr6783=_FUNC_ASKCLEARHISTORY_STRING_WHICH;
-#line 19934 "ide/ide_methods.bas"
-if (oldstr6783->cmem_descriptor){
-#line 19934 "ide/ide_methods.bas"
-_FUNC_ASKCLEARHISTORY_STRING_WHICH=qbs_new_cmem(oldstr6783->len,0);
-#line 19934 "ide/ide_methods.bas"
-}else{
-#line 19934 "ide/ide_methods.bas"
-_FUNC_ASKCLEARHISTORY_STRING_WHICH=qbs_new(oldstr6783->len,0);
-#line 19934 "ide/ide_methods.bas"
-}
-#line 19934 "ide/ide_methods.bas"
-memcpy(_FUNC_ASKCLEARHISTORY_STRING_WHICH->chr,oldstr6783->chr,oldstr6783->len);
-#line 19934 "ide/ide_methods.bas"
-}
-qbs *_FUNC_ASKCLEARHISTORY_STRING_T=NULL;
-#line 19936 "ide/ide_methods.bas"
-if (!_FUNC_ASKCLEARHISTORY_STRING_T)_FUNC_ASKCLEARHISTORY_STRING_T=qbs_new(0,0);
-int32 *_FUNC_ASKCLEARHISTORY_LONG_RESULT=NULL;
-#line 19939 "ide/ide_methods.bas"
-if(_FUNC_ASKCLEARHISTORY_LONG_RESULT==NULL){
-#line 19939 "ide/ide_methods.bas"
-_FUNC_ASKCLEARHISTORY_LONG_RESULT=(int32*)mem_static_malloc(4);
-#line 19939 "ide/ide_methods.bas"
-*_FUNC_ASKCLEARHISTORY_LONG_RESULT=0;
-#line 19939 "ide/ide_methods.bas"
+uint32 *_FUNC_GETCURRENTCOLOR_ULONG_GETCURRENTCOLOR=NULL;
+#line 18292 "ide/ide_methods.bas"
+if(_FUNC_GETCURRENTCOLOR_ULONG_GETCURRENTCOLOR==NULL){
+#line 18292 "ide/ide_methods.bas"
+_FUNC_GETCURRENTCOLOR_ULONG_GETCURRENTCOLOR=(uint32*)mem_static_malloc(4);
+#line 18292 "ide/ide_methods.bas"
+*_FUNC_GETCURRENTCOLOR_ULONG_GETCURRENTCOLOR=0;
+#line 18292 "ide/ide_methods.bas"
 }

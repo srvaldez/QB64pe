@@ -1,51 +1,17 @@
-int32 *_FUNC_LOGICALEQV_LONG_LOGICALEQV=NULL;
-#line 281 "utilities/const_eval.bas"
-if(_FUNC_LOGICALEQV_LONG_LOGICALEQV==NULL){
-#line 281 "utilities/const_eval.bas"
-_FUNC_LOGICALEQV_LONG_LOGICALEQV=(int32*)mem_static_malloc(4);
-#line 281 "utilities/const_eval.bas"
-*_FUNC_LOGICALEQV_LONG_LOGICALEQV=0;
-#line 281 "utilities/const_eval.bas"
+int32 *_SUB_SBUFNINDEX_LONG_H=NULL;
+#line 110 "utilities/s-buffer/sb_qb64pe_extension.bm"
+if(_SUB_SBUFNINDEX_LONG_H==NULL){
+#line 110 "utilities/s-buffer/sb_qb64pe_extension.bm"
+_SUB_SBUFNINDEX_LONG_H=(int32*)mem_static_malloc(4);
+#line 110 "utilities/s-buffer/sb_qb64pe_extension.bm"
+*_SUB_SBUFNINDEX_LONG_H=0;
+#line 110 "utilities/s-buffer/sb_qb64pe_extension.bm"
 }
-#line 281 "utilities/const_eval.bas"
-qbs*oldstr3936=NULL;
-#line 281 "utilities/const_eval.bas"
-if(_FUNC_LOGICALEQV_STRING_EXP->tmp||_FUNC_LOGICALEQV_STRING_EXP->fixed||_FUNC_LOGICALEQV_STRING_EXP->readonly){
-#line 281 "utilities/const_eval.bas"
-oldstr3936=_FUNC_LOGICALEQV_STRING_EXP;
-#line 281 "utilities/const_eval.bas"
-if (oldstr3936->cmem_descriptor){
-#line 281 "utilities/const_eval.bas"
-_FUNC_LOGICALEQV_STRING_EXP=qbs_new_cmem(oldstr3936->len,0);
-#line 281 "utilities/const_eval.bas"
-}else{
-#line 281 "utilities/const_eval.bas"
-_FUNC_LOGICALEQV_STRING_EXP=qbs_new(oldstr3936->len,0);
-#line 281 "utilities/const_eval.bas"
+#line 111 "utilities/s-buffer/sb_qb64pe_extension.bm"
+byte_element_struct *byte_element_4001=NULL;
+#line 111 "utilities/s-buffer/sb_qb64pe_extension.bm"
+if (!byte_element_4001){
+#line 111 "utilities/s-buffer/sb_qb64pe_extension.bm"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4001=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4001=(byte_element_struct*)mem_static_malloc(12);
+#line 111 "utilities/s-buffer/sb_qb64pe_extension.bm"
 }
-#line 281 "utilities/const_eval.bas"
-memcpy(_FUNC_LOGICALEQV_STRING_EXP->chr,oldstr3936->chr,oldstr3936->len);
-#line 281 "utilities/const_eval.bas"
-}
-void *_FUNC_LOGICALEQV_UDT_NUM=NULL;
-#line 285 "utilities/const_eval.bas"
-if(_FUNC_LOGICALEQV_UDT_NUM==NULL){
-#line 285 "utilities/const_eval.bas"
-_FUNC_LOGICALEQV_UDT_NUM=(void*)mem_static_malloc(60);
-#line 285 "utilities/const_eval.bas"
-memset(_FUNC_LOGICALEQV_UDT_NUM,0,60);
-#line 285 "utilities/const_eval.bas"
-*(qbs**)(((char*)(_FUNC_LOGICALEQV_UDT_NUM))+((0+48)))=qbs_new(0,0);
-#line 285 "utilities/const_eval.bas"
-}
-qbs *_FUNC_LOGICALEQV_STRING_ELE=NULL;
-#line 289 "utilities/const_eval.bas"
-if (!_FUNC_LOGICALEQV_STRING_ELE)_FUNC_LOGICALEQV_STRING_ELE=qbs_new(0,0);
-#line 295 "utilities/const_eval.bas"
-int32 pass3938;
-#line 295 "utilities/const_eval.bas"
-uint64 pass3939;
-#line 297 "utilities/const_eval.bas"
-int32 pass3940;
-#line 297 "utilities/const_eval.bas"
-int64 pass3941;

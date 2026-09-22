@@ -1,70 +1,90 @@
-int32 *_FUNC_READWRITELONGSETTINGVALUE_LONG_READWRITELONGSETTINGVALUE=NULL;
-#line 135 "utilities/strings.bas"
-if(_FUNC_READWRITELONGSETTINGVALUE_LONG_READWRITELONGSETTINGVALUE==NULL){
-#line 135 "utilities/strings.bas"
-_FUNC_READWRITELONGSETTINGVALUE_LONG_READWRITELONGSETTINGVALUE=(int32*)mem_static_malloc(4);
-#line 135 "utilities/strings.bas"
-*_FUNC_READWRITELONGSETTINGVALUE_LONG_READWRITELONGSETTINGVALUE=0;
-#line 135 "utilities/strings.bas"
-}
-#line 135 "utilities/strings.bas"
-qbs*oldstr3565=NULL;
-#line 135 "utilities/strings.bas"
-if(_FUNC_READWRITELONGSETTINGVALUE_STRING_SECTION->tmp||_FUNC_READWRITELONGSETTINGVALUE_STRING_SECTION->fixed||_FUNC_READWRITELONGSETTINGVALUE_STRING_SECTION->readonly){
-#line 135 "utilities/strings.bas"
-oldstr3565=_FUNC_READWRITELONGSETTINGVALUE_STRING_SECTION;
-#line 135 "utilities/strings.bas"
-if (oldstr3565->cmem_descriptor){
-#line 135 "utilities/strings.bas"
-_FUNC_READWRITELONGSETTINGVALUE_STRING_SECTION=qbs_new_cmem(oldstr3565->len,0);
-#line 135 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+qbs*oldstr3604=NULL;
+#line 442 "utilities/arrcpy.bm"
+if(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_EXPR->tmp||_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_EXPR->fixed||_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_EXPR->readonly){
+#line 442 "utilities/arrcpy.bm"
+oldstr3604=_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_EXPR;
+#line 442 "utilities/arrcpy.bm"
+if (oldstr3604->cmem_descriptor){
+#line 442 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_EXPR=qbs_new_cmem(oldstr3604->len,0);
+#line 442 "utilities/arrcpy.bm"
 }else{
-#line 135 "utilities/strings.bas"
-_FUNC_READWRITELONGSETTINGVALUE_STRING_SECTION=qbs_new(oldstr3565->len,0);
-#line 135 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_EXPR=qbs_new(oldstr3604->len,0);
+#line 442 "utilities/arrcpy.bm"
 }
-#line 135 "utilities/strings.bas"
-memcpy(_FUNC_READWRITELONGSETTINGVALUE_STRING_SECTION->chr,oldstr3565->chr,oldstr3565->len);
-#line 135 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+memcpy(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_EXPR->chr,oldstr3604->chr,oldstr3604->len);
+#line 442 "utilities/arrcpy.bm"
 }
-#line 135 "utilities/strings.bas"
-qbs*oldstr3566=NULL;
-#line 135 "utilities/strings.bas"
-if(_FUNC_READWRITELONGSETTINGVALUE_STRING_SETTING->tmp||_FUNC_READWRITELONGSETTINGVALUE_STRING_SETTING->fixed||_FUNC_READWRITELONGSETTINGVALUE_STRING_SETTING->readonly){
-#line 135 "utilities/strings.bas"
-oldstr3566=_FUNC_READWRITELONGSETTINGVALUE_STRING_SETTING;
-#line 135 "utilities/strings.bas"
-if (oldstr3566->cmem_descriptor){
-#line 135 "utilities/strings.bas"
-_FUNC_READWRITELONGSETTINGVALUE_STRING_SETTING=qbs_new_cmem(oldstr3566->len,0);
-#line 135 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+qbs*oldstr3605=NULL;
+#line 442 "utilities/arrcpy.bm"
+if(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_EXPR->tmp||_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_EXPR->fixed||_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_EXPR->readonly){
+#line 442 "utilities/arrcpy.bm"
+oldstr3605=_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_EXPR;
+#line 442 "utilities/arrcpy.bm"
+if (oldstr3605->cmem_descriptor){
+#line 442 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_EXPR=qbs_new_cmem(oldstr3605->len,0);
+#line 442 "utilities/arrcpy.bm"
 }else{
-#line 135 "utilities/strings.bas"
-_FUNC_READWRITELONGSETTINGVALUE_STRING_SETTING=qbs_new(oldstr3566->len,0);
-#line 135 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_EXPR=qbs_new(oldstr3605->len,0);
+#line 442 "utilities/arrcpy.bm"
 }
-#line 135 "utilities/strings.bas"
-memcpy(_FUNC_READWRITELONGSETTINGVALUE_STRING_SETTING->chr,oldstr3566->chr,oldstr3566->len);
-#line 135 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+memcpy(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_EXPR->chr,oldstr3605->chr,oldstr3605->len);
+#line 442 "utilities/arrcpy.bm"
 }
-qbs *_FUNC_READWRITELONGSETTINGVALUE_STRING_VALUE=NULL;
-#line 136 "utilities/strings.bas"
-if (!_FUNC_READWRITELONGSETTINGVALUE_STRING_VALUE)_FUNC_READWRITELONGSETTINGVALUE_STRING_VALUE=qbs_new(0,0);
-int16 *_FUNC_READWRITELONGSETTINGVALUE_INTEGER_RESULT=NULL;
-#line 137 "utilities/strings.bas"
-if(_FUNC_READWRITELONGSETTINGVALUE_INTEGER_RESULT==NULL){
-#line 137 "utilities/strings.bas"
-_FUNC_READWRITELONGSETTINGVALUE_INTEGER_RESULT=(int16*)mem_static_malloc(2);
-#line 137 "utilities/strings.bas"
-*_FUNC_READWRITELONGSETTINGVALUE_INTEGER_RESULT=0;
-#line 137 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+qbs*oldstr3606=NULL;
+#line 442 "utilities/arrcpy.bm"
+if(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_CODE->tmp||_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_CODE->fixed||_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_CODE->readonly){
+#line 442 "utilities/arrcpy.bm"
+oldstr3606=_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_CODE;
+#line 442 "utilities/arrcpy.bm"
+if (oldstr3606->cmem_descriptor){
+#line 442 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_CODE=qbs_new_cmem(oldstr3606->len,0);
+#line 442 "utilities/arrcpy.bm"
+}else{
+#line 442 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_CODE=qbs_new(oldstr3606->len,0);
+#line 442 "utilities/arrcpy.bm"
 }
-int32 *_FUNC_READWRITELONGSETTINGVALUE_LONG_CHECKRESULT=NULL;
-#line 138 "utilities/strings.bas"
-if(_FUNC_READWRITELONGSETTINGVALUE_LONG_CHECKRESULT==NULL){
-#line 138 "utilities/strings.bas"
-_FUNC_READWRITELONGSETTINGVALUE_LONG_CHECKRESULT=(int32*)mem_static_malloc(4);
-#line 138 "utilities/strings.bas"
-*_FUNC_READWRITELONGSETTINGVALUE_LONG_CHECKRESULT=0;
-#line 138 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+memcpy(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_CODE->chr,oldstr3606->chr,oldstr3606->len);
+#line 442 "utilities/arrcpy.bm"
 }
+#line 442 "utilities/arrcpy.bm"
+qbs*oldstr3607=NULL;
+#line 442 "utilities/arrcpy.bm"
+if(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_CODE->tmp||_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_CODE->fixed||_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_CODE->readonly){
+#line 442 "utilities/arrcpy.bm"
+oldstr3607=_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_CODE;
+#line 442 "utilities/arrcpy.bm"
+if (oldstr3607->cmem_descriptor){
+#line 442 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_CODE=qbs_new_cmem(oldstr3607->len,0);
+#line 442 "utilities/arrcpy.bm"
+}else{
+#line 442 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_CODE=qbs_new(oldstr3607->len,0);
+#line 442 "utilities/arrcpy.bm"
+}
+#line 442 "utilities/arrcpy.bm"
+memcpy(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_CODE->chr,oldstr3607->chr,oldstr3607->len);
+#line 442 "utilities/arrcpy.bm"
+}
+qbs *_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_WORK=NULL;
+#line 443 "utilities/arrcpy.bm"
+if (!_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_WORK)_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_WORK=qbs_new(0,0);
+qbs *_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_WORK=NULL;
+#line 443 "utilities/arrcpy.bm"
+if (!_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_WORK)_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_WORK=qbs_new(0,0);
+#line 447 "utilities/arrcpy.bm"
+int32 pass3608;
+#line 452 "utilities/arrcpy.bm"
+int32 pass3609;

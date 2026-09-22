@@ -1,38 +1,9 @@
-qbs *_SUB_UPDATETITLEOFMAINWINDOW_STRING_SFNAME=NULL;
-#line 6963 "ide/ide_methods.bas"
-if (!_SUB_UPDATETITLEOFMAINWINDOW_STRING_SFNAME)_SUB_UPDATETITLEOFMAINWINDOW_STRING_SFNAME=qbs_new(0,0);
-#line 6966 "ide/ide_methods.bas"
-byte_element_struct *byte_element_5200=NULL;
-#line 6966 "ide/ide_methods.bas"
-if (!byte_element_5200){
-#line 6966 "ide/ide_methods.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5200=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5200=(byte_element_struct*)mem_static_malloc(12);
-#line 6966 "ide/ide_methods.bas"
-}
-qbs *_SUB_UPDATETITLEOFMAINWINDOW_STRING_A=NULL;
-#line 6966 "ide/ide_methods.bas"
-if (!_SUB_UPDATETITLEOFMAINWINDOW_STRING_A)_SUB_UPDATETITLEOFMAINWINDOW_STRING_A=qbs_new(0,0);
-#line 6969 "ide/ide_methods.bas"
-byte_element_struct *byte_element_5201=NULL;
-#line 6969 "ide/ide_methods.bas"
-if (!byte_element_5201){
-#line 6969 "ide/ide_methods.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5201=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5201=(byte_element_struct*)mem_static_malloc(12);
-#line 6969 "ide/ide_methods.bas"
-}
-#line 6971 "ide/ide_methods.bas"
-byte_element_struct *byte_element_5202=NULL;
-#line 6971 "ide/ide_methods.bas"
-if (!byte_element_5202){
-#line 6971 "ide/ide_methods.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5202=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5202=(byte_element_struct*)mem_static_malloc(12);
-#line 6971 "ide/ide_methods.bas"
-}
-#line 6973 "ide/ide_methods.bas"
-byte_element_struct *byte_element_5203=NULL;
-#line 6973 "ide/ide_methods.bas"
-if (!byte_element_5203){
-#line 6973 "ide/ide_methods.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_5203=(byte_element_struct*)(mem_static_pointer-12); else byte_element_5203=(byte_element_struct*)mem_static_malloc(12);
-#line 6973 "ide/ide_methods.bas"
+int8 *_FUNC_TYPE_ISARRAYCONTAINER_BYTE_TYPE_ISARRAYCONTAINER=NULL;
+#line 2303 "utilities/type.bas"
+if(_FUNC_TYPE_ISARRAYCONTAINER_BYTE_TYPE_ISARRAYCONTAINER==NULL){
+#line 2303 "utilities/type.bas"
+_FUNC_TYPE_ISARRAYCONTAINER_BYTE_TYPE_ISARRAYCONTAINER=(int8*)mem_static_malloc(1);
+#line 2303 "utilities/type.bas"
+*_FUNC_TYPE_ISARRAYCONTAINER_BYTE_TYPE_ISARRAYCONTAINER=0;
+#line 2303 "utilities/type.bas"
 }

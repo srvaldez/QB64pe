@@ -1,159 +1,43 @@
-#line 1141 "utilities/type.bas"
-qbs*oldstr4207=NULL;
-#line 1141 "utilities/type.bas"
-if(_SUB_APPENDDYNUDTOWNLIFEEX_STRING_BASE_EXPR->tmp||_SUB_APPENDDYNUDTOWNLIFEEX_STRING_BASE_EXPR->fixed||_SUB_APPENDDYNUDTOWNLIFEEX_STRING_BASE_EXPR->readonly){
-#line 1141 "utilities/type.bas"
-oldstr4207=_SUB_APPENDDYNUDTOWNLIFEEX_STRING_BASE_EXPR;
-#line 1141 "utilities/type.bas"
-if (oldstr4207->cmem_descriptor){
-#line 1141 "utilities/type.bas"
-_SUB_APPENDDYNUDTOWNLIFEEX_STRING_BASE_EXPR=qbs_new_cmem(oldstr4207->len,0);
-#line 1141 "utilities/type.bas"
+qbs *_FUNC_REMOVESYMBOL_STRING_REMOVESYMBOL=NULL;
+#line 722 "utilities/type.bas"
+if (!_FUNC_REMOVESYMBOL_STRING_REMOVESYMBOL)_FUNC_REMOVESYMBOL_STRING_REMOVESYMBOL=qbs_new(0,0);
+#line 722 "utilities/type.bas"
+qbs*oldstr4283=NULL;
+#line 722 "utilities/type.bas"
+if(_FUNC_REMOVESYMBOL_STRING_VARNAME->tmp||_FUNC_REMOVESYMBOL_STRING_VARNAME->fixed||_FUNC_REMOVESYMBOL_STRING_VARNAME->readonly){
+#line 722 "utilities/type.bas"
+oldstr4283=_FUNC_REMOVESYMBOL_STRING_VARNAME;
+#line 722 "utilities/type.bas"
+if (oldstr4283->cmem_descriptor){
+#line 722 "utilities/type.bas"
+_FUNC_REMOVESYMBOL_STRING_VARNAME=qbs_new_cmem(oldstr4283->len,0);
+#line 722 "utilities/type.bas"
 }else{
-#line 1141 "utilities/type.bas"
-_SUB_APPENDDYNUDTOWNLIFEEX_STRING_BASE_EXPR=qbs_new(oldstr4207->len,0);
-#line 1141 "utilities/type.bas"
+#line 722 "utilities/type.bas"
+_FUNC_REMOVESYMBOL_STRING_VARNAME=qbs_new(oldstr4283->len,0);
+#line 722 "utilities/type.bas"
 }
-#line 1141 "utilities/type.bas"
-memcpy(_SUB_APPENDDYNUDTOWNLIFEEX_STRING_BASE_EXPR->chr,oldstr4207->chr,oldstr4207->len);
-#line 1141 "utilities/type.bas"
+#line 722 "utilities/type.bas"
+memcpy(_FUNC_REMOVESYMBOL_STRING_VARNAME->chr,oldstr4283->chr,oldstr4283->len);
+#line 722 "utilities/type.bas"
 }
-#line 1141 "utilities/type.bas"
-qbs*oldstr4208=NULL;
-#line 1141 "utilities/type.bas"
-if(_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ROOT_EXPR->tmp||_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ROOT_EXPR->fixed||_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ROOT_EXPR->readonly){
-#line 1141 "utilities/type.bas"
-oldstr4208=_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ROOT_EXPR;
-#line 1141 "utilities/type.bas"
-if (oldstr4208->cmem_descriptor){
-#line 1141 "utilities/type.bas"
-_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ROOT_EXPR=qbs_new_cmem(oldstr4208->len,0);
-#line 1141 "utilities/type.bas"
-}else{
-#line 1141 "utilities/type.bas"
-_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ROOT_EXPR=qbs_new(oldstr4208->len,0);
-#line 1141 "utilities/type.bas"
+int32 *_FUNC_REMOVESYMBOL_LONG_I=NULL;
+#line 723 "utilities/type.bas"
+if(_FUNC_REMOVESYMBOL_LONG_I==NULL){
+#line 723 "utilities/type.bas"
+_FUNC_REMOVESYMBOL_LONG_I=(int32*)mem_static_malloc(4);
+#line 723 "utilities/type.bas"
+*_FUNC_REMOVESYMBOL_LONG_I=0;
+#line 723 "utilities/type.bas"
 }
-#line 1141 "utilities/type.bas"
-memcpy(_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ROOT_EXPR->chr,oldstr4208->chr,oldstr4208->len);
-#line 1141 "utilities/type.bas"
+qbs *_FUNC_REMOVESYMBOL_STRING_SYMBOL=NULL;
+#line 733 "utilities/type.bas"
+if (!_FUNC_REMOVESYMBOL_STRING_SYMBOL)_FUNC_REMOVESYMBOL_STRING_SYMBOL=qbs_new(0,0);
+#line 733 "utilities/type.bas"
+byte_element_struct *byte_element_4284=NULL;
+#line 733 "utilities/type.bas"
+if (!byte_element_4284){
+#line 733 "utilities/type.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4284=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4284=(byte_element_struct*)mem_static_malloc(12);
+#line 733 "utilities/type.bas"
 }
-#line 1141 "utilities/type.bas"
-qbs*oldstr4209=NULL;
-#line 1141 "utilities/type.bas"
-if(_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ELEM_BYTES->tmp||_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ELEM_BYTES->fixed||_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ELEM_BYTES->readonly){
-#line 1141 "utilities/type.bas"
-oldstr4209=_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ELEM_BYTES;
-#line 1141 "utilities/type.bas"
-if (oldstr4209->cmem_descriptor){
-#line 1141 "utilities/type.bas"
-_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ELEM_BYTES=qbs_new_cmem(oldstr4209->len,0);
-#line 1141 "utilities/type.bas"
-}else{
-#line 1141 "utilities/type.bas"
-_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ELEM_BYTES=qbs_new(oldstr4209->len,0);
-#line 1141 "utilities/type.bas"
-}
-#line 1141 "utilities/type.bas"
-memcpy(_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ELEM_BYTES->chr,oldstr4209->chr,oldstr4209->len);
-#line 1141 "utilities/type.bas"
-}
-#line 1141 "utilities/type.bas"
-qbs*oldstr4210=NULL;
-#line 1141 "utilities/type.bas"
-if(_SUB_APPENDDYNUDTOWNLIFEEX_STRING_INDEX_EXPR->tmp||_SUB_APPENDDYNUDTOWNLIFEEX_STRING_INDEX_EXPR->fixed||_SUB_APPENDDYNUDTOWNLIFEEX_STRING_INDEX_EXPR->readonly){
-#line 1141 "utilities/type.bas"
-oldstr4210=_SUB_APPENDDYNUDTOWNLIFEEX_STRING_INDEX_EXPR;
-#line 1141 "utilities/type.bas"
-if (oldstr4210->cmem_descriptor){
-#line 1141 "utilities/type.bas"
-_SUB_APPENDDYNUDTOWNLIFEEX_STRING_INDEX_EXPR=qbs_new_cmem(oldstr4210->len,0);
-#line 1141 "utilities/type.bas"
-}else{
-#line 1141 "utilities/type.bas"
-_SUB_APPENDDYNUDTOWNLIFEEX_STRING_INDEX_EXPR=qbs_new(oldstr4210->len,0);
-#line 1141 "utilities/type.bas"
-}
-#line 1141 "utilities/type.bas"
-memcpy(_SUB_APPENDDYNUDTOWNLIFEEX_STRING_INDEX_EXPR->chr,oldstr4210->chr,oldstr4210->len);
-#line 1141 "utilities/type.bas"
-}
-#line 1141 "utilities/type.bas"
-qbs*oldstr4211=NULL;
-#line 1141 "utilities/type.bas"
-if(_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ACC->tmp||_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ACC->fixed||_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ACC->readonly){
-#line 1141 "utilities/type.bas"
-oldstr4211=_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ACC;
-#line 1141 "utilities/type.bas"
-if (oldstr4211->cmem_descriptor){
-#line 1141 "utilities/type.bas"
-_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ACC=qbs_new_cmem(oldstr4211->len,0);
-#line 1141 "utilities/type.bas"
-}else{
-#line 1141 "utilities/type.bas"
-_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ACC=qbs_new(oldstr4211->len,0);
-#line 1141 "utilities/type.bas"
-}
-#line 1141 "utilities/type.bas"
-memcpy(_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ACC->chr,oldstr4211->chr,oldstr4211->len);
-#line 1141 "utilities/type.bas"
-}
-int32 *_SUB_APPENDDYNUDTOWNLIFEEX_LONG_MEMBER_ID=NULL;
-#line 1142 "utilities/type.bas"
-if(_SUB_APPENDDYNUDTOWNLIFEEX_LONG_MEMBER_ID==NULL){
-#line 1142 "utilities/type.bas"
-_SUB_APPENDDYNUDTOWNLIFEEX_LONG_MEMBER_ID=(int32*)mem_static_malloc(4);
-#line 1142 "utilities/type.bas"
-*_SUB_APPENDDYNUDTOWNLIFEEX_LONG_MEMBER_ID=0;
-#line 1142 "utilities/type.bas"
-}
-int32 *_SUB_APPENDDYNUDTOWNLIFEEX_LONG_ELEM_STEP=NULL;
-#line 1143 "utilities/type.bas"
-if(_SUB_APPENDDYNUDTOWNLIFEEX_LONG_ELEM_STEP==NULL){
-#line 1143 "utilities/type.bas"
-_SUB_APPENDDYNUDTOWNLIFEEX_LONG_ELEM_STEP=(int32*)mem_static_malloc(4);
-#line 1143 "utilities/type.bas"
-*_SUB_APPENDDYNUDTOWNLIFEEX_LONG_ELEM_STEP=0;
-#line 1143 "utilities/type.bas"
-}
-int32 *_SUB_APPENDDYNUDTOWNLIFEEX_LONG_NESTED_UDT=NULL;
-#line 1144 "utilities/type.bas"
-if(_SUB_APPENDDYNUDTOWNLIFEEX_LONG_NESTED_UDT==NULL){
-#line 1144 "utilities/type.bas"
-_SUB_APPENDDYNUDTOWNLIFEEX_LONG_NESTED_UDT=(int32*)mem_static_malloc(4);
-#line 1144 "utilities/type.bas"
-*_SUB_APPENDDYNUDTOWNLIFEEX_LONG_NESTED_UDT=0;
-#line 1144 "utilities/type.bas"
-}
-int32 *_SUB_APPENDDYNUDTOWNLIFEEX_LONG_DESC_DONE=NULL;
-#line 1145 "utilities/type.bas"
-if(_SUB_APPENDDYNUDTOWNLIFEEX_LONG_DESC_DONE==NULL){
-#line 1145 "utilities/type.bas"
-_SUB_APPENDDYNUDTOWNLIFEEX_LONG_DESC_DONE=(int32*)mem_static_malloc(4);
-#line 1145 "utilities/type.bas"
-*_SUB_APPENDDYNUDTOWNLIFEEX_LONG_DESC_DONE=0;
-#line 1145 "utilities/type.bas"
-}
-qbs *_SUB_APPENDDYNUDTOWNLIFEEX_STRING_CR=NULL;
-#line 1146 "utilities/type.bas"
-if (!_SUB_APPENDDYNUDTOWNLIFEEX_STRING_CR)_SUB_APPENDDYNUDTOWNLIFEEX_STRING_CR=qbs_new(0,0);
-qbs *_SUB_APPENDDYNUDTOWNLIFEEX_STRING_MEMBER_EXPR=NULL;
-#line 1147 "utilities/type.bas"
-if (!_SUB_APPENDDYNUDTOWNLIFEEX_STRING_MEMBER_EXPR)_SUB_APPENDDYNUDTOWNLIFEEX_STRING_MEMBER_EXPR=qbs_new(0,0);
-qbs *_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ITEM_EXPR=NULL;
-#line 1148 "utilities/type.bas"
-if (!_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ITEM_EXPR)_SUB_APPENDDYNUDTOWNLIFEEX_STRING_ITEM_EXPR=qbs_new(0,0);
-qbs *_SUB_APPENDDYNUDTOWNLIFEEX_STRING_LOOP_NAME=NULL;
-#line 1149 "utilities/type.bas"
-if (!_SUB_APPENDDYNUDTOWNLIFEEX_STRING_LOOP_NAME)_SUB_APPENDDYNUDTOWNLIFEEX_STRING_LOOP_NAME=qbs_new(0,0);
-qbs *_SUB_APPENDDYNUDTOWNLIFEEX_STRING_COUNT_TEXT=NULL;
-#line 1150 "utilities/type.bas"
-if (!_SUB_APPENDDYNUDTOWNLIFEEX_STRING_COUNT_TEXT)_SUB_APPENDDYNUDTOWNLIFEEX_STRING_COUNT_TEXT=qbs_new(0,0);
-qbs *_SUB_APPENDDYNUDTOWNLIFEEX_STRING_STRIDE_TEXT=NULL;
-#line 1151 "utilities/type.bas"
-if (!_SUB_APPENDDYNUDTOWNLIFEEX_STRING_STRIDE_TEXT)_SUB_APPENDDYNUDTOWNLIFEEX_STRING_STRIDE_TEXT=qbs_new(0,0);
-qbs *_SUB_APPENDDYNUDTOWNLIFEEX_STRING_SLOT_EXPR=NULL;
-#line 1152 "utilities/type.bas"
-if (!_SUB_APPENDDYNUDTOWNLIFEEX_STRING_SLOT_EXPR)_SUB_APPENDDYNUDTOWNLIFEEX_STRING_SLOT_EXPR=qbs_new(0,0);
-#line 1199 "utilities/type.bas"
-int32 pass4215;

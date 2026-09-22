@@ -1,6 +1,4 @@
-if(oldstr3518){
-if(oldstr3518->fixed)qbs_set(oldstr3518,_FUNC_SCASE2_STRING_T);
-qbs_free(_FUNC_SCASE2_STRING_T);
+if(oldstr3532){
+if(oldstr3532->fixed)qbs_set(oldstr3532,_FUNC_SCASE_STRING_T);
+qbs_free(_FUNC_SCASE_STRING_T);
 }
-qbs_free(_FUNC_SCASE2_STRING_TEMP);
-qbs_free(_FUNC_SCASE2_STRING_S);

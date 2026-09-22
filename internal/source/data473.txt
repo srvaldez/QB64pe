@@ -1,23 +1,27 @@
-qbs *_FUNC_BACK2BACKNAME_STRING_BACK2BACKNAME=NULL;
-#line 1 "ide/wiki/wiki_methods.bas"
-if (!_FUNC_BACK2BACKNAME_STRING_BACK2BACKNAME)_FUNC_BACK2BACKNAME_STRING_BACK2BACKNAME=qbs_new(0,0);
-#line 1 "ide/wiki/wiki_methods.bas"
-qbs*oldstr6940=NULL;
-#line 1 "ide/wiki/wiki_methods.bas"
-if(_FUNC_BACK2BACKNAME_STRING_A->tmp||_FUNC_BACK2BACKNAME_STRING_A->fixed||_FUNC_BACK2BACKNAME_STRING_A->readonly){
-#line 1 "ide/wiki/wiki_methods.bas"
-oldstr6940=_FUNC_BACK2BACKNAME_STRING_A;
-#line 1 "ide/wiki/wiki_methods.bas"
-if (oldstr6940->cmem_descriptor){
-#line 1 "ide/wiki/wiki_methods.bas"
-_FUNC_BACK2BACKNAME_STRING_A=qbs_new_cmem(oldstr6940->len,0);
-#line 1 "ide/wiki/wiki_methods.bas"
-}else{
-#line 1 "ide/wiki/wiki_methods.bas"
-_FUNC_BACK2BACKNAME_STRING_A=qbs_new(oldstr6940->len,0);
-#line 1 "ide/wiki/wiki_methods.bas"
+int32 *_SUB_HIDEBRACKETHIGHLIGHT_LONG_OLDBRACKETHIGHLIGHTSETTING=NULL;
+#line 20865 "ide/ide_methods.bas"
+if(_SUB_HIDEBRACKETHIGHLIGHT_LONG_OLDBRACKETHIGHLIGHTSETTING==NULL){
+#line 20865 "ide/ide_methods.bas"
+_SUB_HIDEBRACKETHIGHLIGHT_LONG_OLDBRACKETHIGHLIGHTSETTING=(int32*)mem_static_malloc(4);
+#line 20865 "ide/ide_methods.bas"
+*_SUB_HIDEBRACKETHIGHLIGHT_LONG_OLDBRACKETHIGHLIGHTSETTING=0;
+#line 20865 "ide/ide_methods.bas"
 }
-#line 1 "ide/wiki/wiki_methods.bas"
-memcpy(_FUNC_BACK2BACKNAME_STRING_A->chr,oldstr6940->chr,oldstr6940->len);
-#line 1 "ide/wiki/wiki_methods.bas"
+int32 *_SUB_HIDEBRACKETHIGHLIGHT_LONG_OLDMULTIHIGHLIGHTSETTING=NULL;
+#line 20866 "ide/ide_methods.bas"
+if(_SUB_HIDEBRACKETHIGHLIGHT_LONG_OLDMULTIHIGHLIGHTSETTING==NULL){
+#line 20866 "ide/ide_methods.bas"
+_SUB_HIDEBRACKETHIGHLIGHT_LONG_OLDMULTIHIGHLIGHTSETTING=(int32*)mem_static_malloc(4);
+#line 20866 "ide/ide_methods.bas"
+*_SUB_HIDEBRACKETHIGHLIGHT_LONG_OLDMULTIHIGHLIGHTSETTING=0;
+#line 20866 "ide/ide_methods.bas"
+}
+int32 *_SUB_HIDEBRACKETHIGHLIGHT_LONG_OLDSHOWLINENUMBERSUSEBG=NULL;
+#line 20867 "ide/ide_methods.bas"
+if(_SUB_HIDEBRACKETHIGHLIGHT_LONG_OLDSHOWLINENUMBERSUSEBG==NULL){
+#line 20867 "ide/ide_methods.bas"
+_SUB_HIDEBRACKETHIGHLIGHT_LONG_OLDSHOWLINENUMBERSUSEBG=(int32*)mem_static_malloc(4);
+#line 20867 "ide/ide_methods.bas"
+*_SUB_HIDEBRACKETHIGHLIGHT_LONG_OLDSHOWLINENUMBERSUSEBG=0;
+#line 20867 "ide/ide_methods.bas"
 }

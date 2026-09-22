@@ -1,70 +1,82 @@
-#line 794 "utilities/type.bas"
-void SUB_BUILDUDTDYNLAYOUT(int32*_SUB_BUILDUDTDYNLAYOUT_LONG_UDT_INDEX){
-#line 794 "utilities/type.bas"
+#line 32 "utilities/statevars.bas"
+void SUB_EXECUTERCSTATEVAR(void*_SUB_EXECUTERCSTATEVAR_UDT_STVAR){
+#line 32 "utilities/statevars.bas"
 qbs *tqbs;
-#line 794 "utilities/type.bas"
+#line 32 "utilities/statevars.bas"
 ptrszint tmp_long;
-#line 794 "utilities/type.bas"
+#line 32 "utilities/statevars.bas"
 int32 tmp_fileno;
-#line 794 "utilities/type.bas"
+#line 32 "utilities/statevars.bas"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
-#line 794 "utilities/type.bas"
+#line 32 "utilities/statevars.bas"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
-#line 794 "utilities/type.bas"
+#line 32 "utilities/statevars.bas"
 uint32 tmp_cmem_sp=cmem_sp;
-#line 794 "utilities/type.bas"
+#line 32 "utilities/statevars.bas"
 #include "data283.txt"
-#line 794 "utilities/type.bas"
+#line 32 "utilities/statevars.bas"
 mem_lock *sf_mem_lock;
-#line 794 "utilities/type.bas"
+#line 32 "utilities/statevars.bas"
 new_mem_lock();
-#line 794 "utilities/type.bas"
+#line 32 "utilities/statevars.bas"
 sf_mem_lock=mem_lock_tmp;
-#line 794 "utilities/type.bas"
+#line 32 "utilities/statevars.bas"
 sf_mem_lock->type=3;
-#line 794 "utilities/type.bas"
+#line 32 "utilities/statevars.bas"
 libqb_check_stack();
-#line 794 "utilities/type.bas"
+#line 32 "utilities/statevars.bas"
 if (is_error_pending()) goto exit_subfunc;
-#line 795 "utilities/type.bas"
+#line 33 "utilities/statevars.bas"
+S_42028:;
+#line 33 "utilities/statevars.bas"
+if ((-(*(int8*)(((char*)_SUB_EXECUTERCSTATEVAR_UDT_STVAR)+((0+2)))== 0ll ))||is_error_pending()){
+#line 33 "utilities/statevars.bas"
+if(qbevent){evnt(28808,33,"statevars.bas");if(r)goto S_42028;}
+#line 34 "utilities/statevars.bas"
 do{
-#line 795 "utilities/type.bas"
-SUB_BUILDUDTDYNLAYOUTM(_SUB_BUILDUDTDYNLAYOUT_LONG_UDT_INDEX,&(pass4177= 1 ));
-#line 795 "utilities/type.bas"
-if(!qbevent)break;evnt(28621,795,"type.bas");}while(r);
-#line 797 "utilities/type.bas"
+#line 34 "utilities/statevars.bas"
+*(int8*)(((char*)_SUB_EXECUTERCSTATEVAR_UDT_STVAR)+((0+1)))=*(int8*)(((char*)_SUB_EXECUTERCSTATEVAR_UDT_STVAR)+((0+0)));
+#line 34 "utilities/statevars.bas"
+if(!qbevent)break;evnt(28808,34,"statevars.bas");}while(r);
+#line 35 "utilities/statevars.bas"
+S_42030:;
+#line 35 "utilities/statevars.bas"
+if ((-(*(int8*)(((char*)_SUB_EXECUTERCSTATEVAR_UDT_STVAR)+((0+1)))!= 0 ))||is_error_pending()){
+#line 35 "utilities/statevars.bas"
+if(qbevent){evnt(28808,35,"statevars.bas");if(r)goto S_42030;}
+#line 35 "utilities/statevars.bas"
 do{
-#line 797 "utilities/type.bas"
-tmp_long=array_check((*_SUB_BUILDUDTDYNLAYOUT_LONG_UDT_INDEX)-__ARRAY_INTEGER_UDTXCANONMODE[4],__ARRAY_INTEGER_UDTXCANONMODE[5]);
-#line 797 "utilities/type.bas"
-if (!is_error_pending()) ((int16*)(__ARRAY_INTEGER_UDTXCANONMODE[0]))[tmp_long]= 0 ;
-#line 797 "utilities/type.bas"
-if(!qbevent)break;evnt(28621,797,"type.bas");}while(r);
-#line 798 "utilities/type.bas"
-S_42300:;
-#line 798 "utilities/type.bas"
-if ((FUNC_UDTDYNHASMEMBERARRAYS(_SUB_BUILDUDTDYNLAYOUT_LONG_UDT_INDEX,&(pass4178= 1 )))||is_error_pending()){
-#line 798 "utilities/type.bas"
-if(qbevent){evnt(28621,798,"type.bas");if(r)goto S_42300;}
-#line 798 "utilities/type.bas"
-do{
-#line 798 "utilities/type.bas"
-tmp_long=array_check((*_SUB_BUILDUDTDYNLAYOUT_LONG_UDT_INDEX)-__ARRAY_INTEGER_UDTXCANONMODE[4],__ARRAY_INTEGER_UDTXCANONMODE[5]);
-#line 798 "utilities/type.bas"
-if (!is_error_pending()) ((int16*)(__ARRAY_INTEGER_UDTXCANONMODE[0]))[tmp_long]= 1 ;
-#line 798 "utilities/type.bas"
-if(!qbevent)break;evnt(28621,798,"type.bas");}while(r);
-#line 798 "utilities/type.bas"
+#line 35 "utilities/statevars.bas"
+*(int8*)(((char*)_SUB_EXECUTERCSTATEVAR_UDT_STVAR)+((0+2)))= -1ll ;
+#line 35 "utilities/statevars.bas"
+if(!qbevent)break;evnt(28808,35,"statevars.bas");}while(r);
+#line 35 "utilities/statevars.bas"
 }
-#line 799 "utilities/type.bas"
+#line 36 "utilities/statevars.bas"
+}
+#line 37 "utilities/statevars.bas"
+S_42034:;
+#line 37 "utilities/statevars.bas"
+if ((-(*(int8*)(((char*)_SUB_EXECUTERCSTATEVAR_UDT_STVAR)+((0+3)))!= 0 ))||is_error_pending()){
+#line 37 "utilities/statevars.bas"
+if(qbevent){evnt(28808,37,"statevars.bas");if(r)goto S_42034;}
+#line 37 "utilities/statevars.bas"
+do{
+#line 37 "utilities/statevars.bas"
+*(int8*)(((char*)_SUB_EXECUTERCSTATEVAR_UDT_STVAR)+((0+1)))=*(int8*)(((char*)_SUB_EXECUTERCSTATEVAR_UDT_STVAR)+((0+3)));
+#line 37 "utilities/statevars.bas"
+if(!qbevent)break;evnt(28808,37,"statevars.bas");}while(r);
+#line 37 "utilities/statevars.bas"
+}
+#line 38 "utilities/statevars.bas"
 exit_subfunc:;
-#line 799 "utilities/type.bas"
+#line 38 "utilities/statevars.bas"
 free_mem_lock(sf_mem_lock);
-#line 799 "utilities/type.bas"
+#line 38 "utilities/statevars.bas"
 #include "free283.txt"
-#line 799 "utilities/type.bas"
+#line 38 "utilities/statevars.bas"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
-#line 799 "utilities/type.bas"
+#line 38 "utilities/statevars.bas"
 cmem_sp=tmp_cmem_sp;
-#line 799 "utilities/type.bas"
+#line 38 "utilities/statevars.bas"
 }
