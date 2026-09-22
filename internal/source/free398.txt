@@ -1,4 +1,5 @@
-if(oldstr6032){
-if(oldstr6032->fixed)qbs_set(oldstr6032,_SUB_IDEPAR_STRING_TITLE);
-qbs_free(_SUB_IDEPAR_STRING_TITLE);
+if(oldstr6007){
+if(oldstr6007->fixed)qbs_set(oldstr6007,_FUNC_IDEFILEEXISTS_STRING_F);
+qbs_free(_FUNC_IDEFILEEXISTS_STRING_F);
 }
+qbs_free(_FUNC_IDEFILEEXISTS_STRING_M);

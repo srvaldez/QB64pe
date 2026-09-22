@@ -1,49 +1,11 @@
-int32 *_FUNC_LOGICALNOT_LONG_LOGICALNOT=NULL;
-#line 385 "utilities/const_eval.bas"
-if(_FUNC_LOGICALNOT_LONG_LOGICALNOT==NULL){
-#line 385 "utilities/const_eval.bas"
-_FUNC_LOGICALNOT_LONG_LOGICALNOT=(int32*)mem_static_malloc(4);
-#line 385 "utilities/const_eval.bas"
-*_FUNC_LOGICALNOT_LONG_LOGICALNOT=0;
-#line 385 "utilities/const_eval.bas"
+qbs *_FUNC_DEBUGPATHBASE_STRING_DEBUGPATHBASE=NULL;
+#line 198 "utilities/s-buffer/sb_qb64pe_extension.bm"
+if (!_FUNC_DEBUGPATHBASE_STRING_DEBUGPATHBASE)_FUNC_DEBUGPATHBASE_STRING_DEBUGPATHBASE=qbs_new(0,0);
+#line 199 "utilities/s-buffer/sb_qb64pe_extension.bm"
+byte_element_struct *byte_element_4014=NULL;
+#line 199 "utilities/s-buffer/sb_qb64pe_extension.bm"
+if (!byte_element_4014){
+#line 199 "utilities/s-buffer/sb_qb64pe_extension.bm"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4014=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4014=(byte_element_struct*)mem_static_malloc(12);
+#line 199 "utilities/s-buffer/sb_qb64pe_extension.bm"
 }
-#line 385 "utilities/const_eval.bas"
-qbs*oldstr3960=NULL;
-#line 385 "utilities/const_eval.bas"
-if(_FUNC_LOGICALNOT_STRING_EXP->tmp||_FUNC_LOGICALNOT_STRING_EXP->fixed||_FUNC_LOGICALNOT_STRING_EXP->readonly){
-#line 385 "utilities/const_eval.bas"
-oldstr3960=_FUNC_LOGICALNOT_STRING_EXP;
-#line 385 "utilities/const_eval.bas"
-if (oldstr3960->cmem_descriptor){
-#line 385 "utilities/const_eval.bas"
-_FUNC_LOGICALNOT_STRING_EXP=qbs_new_cmem(oldstr3960->len,0);
-#line 385 "utilities/const_eval.bas"
-}else{
-#line 385 "utilities/const_eval.bas"
-_FUNC_LOGICALNOT_STRING_EXP=qbs_new(oldstr3960->len,0);
-#line 385 "utilities/const_eval.bas"
-}
-#line 385 "utilities/const_eval.bas"
-memcpy(_FUNC_LOGICALNOT_STRING_EXP->chr,oldstr3960->chr,oldstr3960->len);
-#line 385 "utilities/const_eval.bas"
-}
-qbs *_FUNC_LOGICALNOT_STRING_ELE=NULL;
-#line 387 "utilities/const_eval.bas"
-if (!_FUNC_LOGICALNOT_STRING_ELE)_FUNC_LOGICALNOT_STRING_ELE=qbs_new(0,0);
-int32 *_FUNC_LOGICALNOT_LONG_NUM__ASCII_CHR_046__TYP=NULL;
-#line 393 "utilities/const_eval.bas"
-if(_FUNC_LOGICALNOT_LONG_NUM__ASCII_CHR_046__TYP==NULL){
-#line 393 "utilities/const_eval.bas"
-_FUNC_LOGICALNOT_LONG_NUM__ASCII_CHR_046__TYP=(int32*)mem_static_malloc(4);
-#line 393 "utilities/const_eval.bas"
-*_FUNC_LOGICALNOT_LONG_NUM__ASCII_CHR_046__TYP=0;
-#line 393 "utilities/const_eval.bas"
-}
-#line 394 "utilities/const_eval.bas"
-int32 pass3961;
-#line 394 "utilities/const_eval.bas"
-uint64 pass3962;
-#line 396 "utilities/const_eval.bas"
-int32 pass3963;
-#line 396 "utilities/const_eval.bas"
-int64 pass3964;

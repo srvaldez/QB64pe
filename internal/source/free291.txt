@@ -1,13 +1,4 @@
-if(oldstr4185){
-if(oldstr4185->fixed)qbs_set(oldstr4185,_SUB_APPENDDYNSTRINIT_STRING_BASE_EXPR);
-qbs_free(_SUB_APPENDDYNSTRINIT_STRING_BASE_EXPR);
+if(oldstr4247){
+if(oldstr4247->fixed)qbs_set(oldstr4247,_FUNC_SYMBOLTYPE_STRING_S);
+qbs_free(_FUNC_SYMBOLTYPE_STRING_S);
 }
-if(oldstr4186){
-if(oldstr4186->fixed)qbs_set(oldstr4186,_SUB_APPENDDYNSTRINIT_STRING_TOTAL_EXPR);
-qbs_free(_SUB_APPENDDYNSTRINIT_STRING_TOTAL_EXPR);
-}
-if(oldstr4187){
-if(oldstr4187->fixed)qbs_set(oldstr4187,_SUB_APPENDDYNSTRINIT_STRING_ACC);
-qbs_free(_SUB_APPENDDYNSTRINIT_STRING_ACC);
-}
-qbs_free(_SUB_APPENDDYNSTRINIT_STRING_CR);

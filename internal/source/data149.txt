@@ -1,67 +1,77 @@
-qbs *_FUNC_GETELEMENTS_STRING_GETELEMENTS=NULL;
-#line 92 "utilities/elements.bas"
-if (!_FUNC_GETELEMENTS_STRING_GETELEMENTS)_FUNC_GETELEMENTS_STRING_GETELEMENTS=qbs_new(0,0);
-#line 92 "utilities/elements.bas"
-qbs*oldstr3626=NULL;
-#line 92 "utilities/elements.bas"
-if(_FUNC_GETELEMENTS_STRING_A->tmp||_FUNC_GETELEMENTS_STRING_A->fixed||_FUNC_GETELEMENTS_STRING_A->readonly){
-#line 92 "utilities/elements.bas"
-oldstr3626=_FUNC_GETELEMENTS_STRING_A;
-#line 92 "utilities/elements.bas"
-if (oldstr3626->cmem_descriptor){
-#line 92 "utilities/elements.bas"
-_FUNC_GETELEMENTS_STRING_A=qbs_new_cmem(oldstr3626->len,0);
-#line 92 "utilities/elements.bas"
+int32 *_FUNC_READCONFIGSETTING_LONG_READCONFIGSETTING=NULL;
+#line 88 "utilities/strings.bas"
+if(_FUNC_READCONFIGSETTING_LONG_READCONFIGSETTING==NULL){
+#line 88 "utilities/strings.bas"
+_FUNC_READCONFIGSETTING_LONG_READCONFIGSETTING=(int32*)mem_static_malloc(4);
+#line 88 "utilities/strings.bas"
+*_FUNC_READCONFIGSETTING_LONG_READCONFIGSETTING=0;
+#line 88 "utilities/strings.bas"
+}
+#line 88 "utilities/strings.bas"
+qbs*oldstr3703=NULL;
+#line 88 "utilities/strings.bas"
+if(_FUNC_READCONFIGSETTING_STRING_SECTION->tmp||_FUNC_READCONFIGSETTING_STRING_SECTION->fixed||_FUNC_READCONFIGSETTING_STRING_SECTION->readonly){
+#line 88 "utilities/strings.bas"
+oldstr3703=_FUNC_READCONFIGSETTING_STRING_SECTION;
+#line 88 "utilities/strings.bas"
+if (oldstr3703->cmem_descriptor){
+#line 88 "utilities/strings.bas"
+_FUNC_READCONFIGSETTING_STRING_SECTION=qbs_new_cmem(oldstr3703->len,0);
+#line 88 "utilities/strings.bas"
 }else{
-#line 92 "utilities/elements.bas"
-_FUNC_GETELEMENTS_STRING_A=qbs_new(oldstr3626->len,0);
-#line 92 "utilities/elements.bas"
+#line 88 "utilities/strings.bas"
+_FUNC_READCONFIGSETTING_STRING_SECTION=qbs_new(oldstr3703->len,0);
+#line 88 "utilities/strings.bas"
 }
-#line 92 "utilities/elements.bas"
-memcpy(_FUNC_GETELEMENTS_STRING_A->chr,oldstr3626->chr,oldstr3626->len);
-#line 92 "utilities/elements.bas"
+#line 88 "utilities/strings.bas"
+memcpy(_FUNC_READCONFIGSETTING_STRING_SECTION->chr,oldstr3703->chr,oldstr3703->len);
+#line 88 "utilities/strings.bas"
 }
-int32 *_FUNC_GETELEMENTS_LONG_P=NULL;
-#line 93 "utilities/elements.bas"
-if(_FUNC_GETELEMENTS_LONG_P==NULL){
-#line 93 "utilities/elements.bas"
-_FUNC_GETELEMENTS_LONG_P=(int32*)mem_static_malloc(4);
-#line 93 "utilities/elements.bas"
-*_FUNC_GETELEMENTS_LONG_P=0;
-#line 93 "utilities/elements.bas"
+#line 88 "utilities/strings.bas"
+qbs*oldstr3704=NULL;
+#line 88 "utilities/strings.bas"
+if(_FUNC_READCONFIGSETTING_STRING_ITEM->tmp||_FUNC_READCONFIGSETTING_STRING_ITEM->fixed||_FUNC_READCONFIGSETTING_STRING_ITEM->readonly){
+#line 88 "utilities/strings.bas"
+oldstr3704=_FUNC_READCONFIGSETTING_STRING_ITEM;
+#line 88 "utilities/strings.bas"
+if (oldstr3704->cmem_descriptor){
+#line 88 "utilities/strings.bas"
+_FUNC_READCONFIGSETTING_STRING_ITEM=qbs_new_cmem(oldstr3704->len,0);
+#line 88 "utilities/strings.bas"
+}else{
+#line 88 "utilities/strings.bas"
+_FUNC_READCONFIGSETTING_STRING_ITEM=qbs_new(oldstr3704->len,0);
+#line 88 "utilities/strings.bas"
 }
-int32 *_FUNC_GETELEMENTS_LONG_N=NULL;
-#line 93 "utilities/elements.bas"
-if(_FUNC_GETELEMENTS_LONG_N==NULL){
-#line 93 "utilities/elements.bas"
-_FUNC_GETELEMENTS_LONG_N=(int32*)mem_static_malloc(4);
-#line 93 "utilities/elements.bas"
-*_FUNC_GETELEMENTS_LONG_N=0;
-#line 93 "utilities/elements.bas"
+#line 88 "utilities/strings.bas"
+memcpy(_FUNC_READCONFIGSETTING_STRING_ITEM->chr,oldstr3704->chr,oldstr3704->len);
+#line 88 "utilities/strings.bas"
 }
-int32 *_FUNC_GETELEMENTS_LONG_I=NULL;
-#line 93 "utilities/elements.bas"
-if(_FUNC_GETELEMENTS_LONG_I==NULL){
-#line 93 "utilities/elements.bas"
-_FUNC_GETELEMENTS_LONG_I=(int32*)mem_static_malloc(4);
-#line 93 "utilities/elements.bas"
-*_FUNC_GETELEMENTS_LONG_I=0;
-#line 93 "utilities/elements.bas"
+#line 88 "utilities/strings.bas"
+qbs*oldstr3705=NULL;
+#line 88 "utilities/strings.bas"
+if(_FUNC_READCONFIGSETTING_STRING_VALUE->tmp||_FUNC_READCONFIGSETTING_STRING_VALUE->fixed||_FUNC_READCONFIGSETTING_STRING_VALUE->readonly){
+#line 88 "utilities/strings.bas"
+oldstr3705=_FUNC_READCONFIGSETTING_STRING_VALUE;
+#line 88 "utilities/strings.bas"
+if (oldstr3705->cmem_descriptor){
+#line 88 "utilities/strings.bas"
+_FUNC_READCONFIGSETTING_STRING_VALUE=qbs_new_cmem(oldstr3705->len,0);
+#line 88 "utilities/strings.bas"
+}else{
+#line 88 "utilities/strings.bas"
+_FUNC_READCONFIGSETTING_STRING_VALUE=qbs_new(oldstr3705->len,0);
+#line 88 "utilities/strings.bas"
 }
-int32 *_FUNC_GETELEMENTS_LONG_I1POS=NULL;
-#line 93 "utilities/elements.bas"
-if(_FUNC_GETELEMENTS_LONG_I1POS==NULL){
-#line 93 "utilities/elements.bas"
-_FUNC_GETELEMENTS_LONG_I1POS=(int32*)mem_static_malloc(4);
-#line 93 "utilities/elements.bas"
-*_FUNC_GETELEMENTS_LONG_I1POS=0;
-#line 93 "utilities/elements.bas"
+#line 88 "utilities/strings.bas"
+memcpy(_FUNC_READCONFIGSETTING_STRING_VALUE->chr,oldstr3705->chr,oldstr3705->len);
+#line 88 "utilities/strings.bas"
 }
-#line 107 "utilities/elements.bas"
-byte_element_struct *byte_element_3627=NULL;
-#line 107 "utilities/elements.bas"
-if (!byte_element_3627){
-#line 107 "utilities/elements.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3627=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3627=(byte_element_struct*)mem_static_malloc(12);
-#line 107 "utilities/elements.bas"
+#line 90 "utilities/strings.bas"
+byte_element_struct *byte_element_3706=NULL;
+#line 90 "utilities/strings.bas"
+if (!byte_element_3706){
+#line 90 "utilities/strings.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3706=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3706=(byte_element_struct*)mem_static_malloc(12);
+#line 90 "utilities/strings.bas"
 }

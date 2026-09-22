@@ -1,49 +1,64 @@
-#line 113 "utilities/s-buffer/simplebuffer.bm"
-qbs*oldstr3800=NULL;
-#line 113 "utilities/s-buffer/simplebuffer.bm"
-if(_SUB_BUFTOFILE_STRING_FILESPEC->tmp||_SUB_BUFTOFILE_STRING_FILESPEC->fixed||_SUB_BUFTOFILE_STRING_FILESPEC->readonly){
-#line 113 "utilities/s-buffer/simplebuffer.bm"
-oldstr3800=_SUB_BUFTOFILE_STRING_FILESPEC;
-#line 113 "utilities/s-buffer/simplebuffer.bm"
-if (oldstr3800->cmem_descriptor){
-#line 113 "utilities/s-buffer/simplebuffer.bm"
-_SUB_BUFTOFILE_STRING_FILESPEC=qbs_new_cmem(oldstr3800->len,0);
-#line 113 "utilities/s-buffer/simplebuffer.bm"
+int32 *_FUNC_ELEMENTGETSTRINGVALUE_LONG_ELEMENTGETSTRINGVALUE=NULL;
+#line 564 "utilities/elements.bas"
+if(_FUNC_ELEMENTGETSTRINGVALUE_LONG_ELEMENTGETSTRINGVALUE==NULL){
+#line 564 "utilities/elements.bas"
+_FUNC_ELEMENTGETSTRINGVALUE_LONG_ELEMENTGETSTRINGVALUE=(int32*)mem_static_malloc(4);
+#line 564 "utilities/elements.bas"
+*_FUNC_ELEMENTGETSTRINGVALUE_LONG_ELEMENTGETSTRINGVALUE=0;
+#line 564 "utilities/elements.bas"
+}
+#line 564 "utilities/elements.bas"
+qbs*oldstr3825=NULL;
+#line 564 "utilities/elements.bas"
+if(_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE->tmp||_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE->fixed||_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE->readonly){
+#line 564 "utilities/elements.bas"
+oldstr3825=_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE;
+#line 564 "utilities/elements.bas"
+if (oldstr3825->cmem_descriptor){
+#line 564 "utilities/elements.bas"
+_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE=qbs_new_cmem(oldstr3825->len,0);
+#line 564 "utilities/elements.bas"
 }else{
-#line 113 "utilities/s-buffer/simplebuffer.bm"
-_SUB_BUFTOFILE_STRING_FILESPEC=qbs_new(oldstr3800->len,0);
-#line 113 "utilities/s-buffer/simplebuffer.bm"
+#line 564 "utilities/elements.bas"
+_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE=qbs_new(oldstr3825->len,0);
+#line 564 "utilities/elements.bas"
 }
-#line 113 "utilities/s-buffer/simplebuffer.bm"
-memcpy(_SUB_BUFTOFILE_STRING_FILESPEC->chr,oldstr3800->chr,oldstr3800->len);
-#line 113 "utilities/s-buffer/simplebuffer.bm"
+#line 564 "utilities/elements.bas"
+memcpy(_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE->chr,oldstr3825->chr,oldstr3825->len);
+#line 564 "utilities/elements.bas"
 }
-int32 *_SUB_BUFTOFILE_LONG_BUF=NULL;
-#line 115 "utilities/s-buffer/simplebuffer.bm"
-if(_SUB_BUFTOFILE_LONG_BUF==NULL){
-#line 115 "utilities/s-buffer/simplebuffer.bm"
-_SUB_BUFTOFILE_LONG_BUF=(int32*)mem_static_malloc(4);
-#line 115 "utilities/s-buffer/simplebuffer.bm"
-*_SUB_BUFTOFILE_LONG_BUF=0;
-#line 115 "utilities/s-buffer/simplebuffer.bm"
+#line 564 "utilities/elements.bas"
+qbs*oldstr3826=NULL;
+#line 564 "utilities/elements.bas"
+if(_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE->tmp||_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE->fixed||_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE->readonly){
+#line 564 "utilities/elements.bas"
+oldstr3826=_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE;
+#line 564 "utilities/elements.bas"
+if (oldstr3826->cmem_descriptor){
+#line 564 "utilities/elements.bas"
+_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE=qbs_new_cmem(oldstr3826->len,0);
+#line 564 "utilities/elements.bas"
+}else{
+#line 564 "utilities/elements.bas"
+_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE=qbs_new(oldstr3826->len,0);
+#line 564 "utilities/elements.bas"
 }
-int16 *_SUB_BUFTOFILE_INTEGER_FF=NULL;
-#line 115 "utilities/s-buffer/simplebuffer.bm"
-if(_SUB_BUFTOFILE_INTEGER_FF==NULL){
-#line 115 "utilities/s-buffer/simplebuffer.bm"
-_SUB_BUFTOFILE_INTEGER_FF=(int16*)mem_static_malloc(2);
-#line 115 "utilities/s-buffer/simplebuffer.bm"
-*_SUB_BUFTOFILE_INTEGER_FF=0;
-#line 115 "utilities/s-buffer/simplebuffer.bm"
+#line 564 "utilities/elements.bas"
+memcpy(_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE->chr,oldstr3826->chr,oldstr3826->len);
+#line 564 "utilities/elements.bas"
 }
-qbs *_SUB_BUFTOFILE_STRING_DAT=NULL;
-#line 115 "utilities/s-buffer/simplebuffer.bm"
-if (!_SUB_BUFTOFILE_STRING_DAT)_SUB_BUFTOFILE_STRING_DAT=qbs_new(0,0);
-#line 123 "utilities/s-buffer/simplebuffer.bm"
-byte_element_struct *byte_element_3801=NULL;
-#line 123 "utilities/s-buffer/simplebuffer.bm"
-if (!byte_element_3801){
-#line 123 "utilities/s-buffer/simplebuffer.bm"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3801=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3801=(byte_element_struct*)mem_static_malloc(12);
-#line 123 "utilities/s-buffer/simplebuffer.bm"
+qbs *_FUNC_ELEMENTGETSTRINGVALUE_STRING_RAWSTRING=NULL;
+#line 565 "utilities/elements.bas"
+if (!_FUNC_ELEMENTGETSTRINGVALUE_STRING_RAWSTRING)_FUNC_ELEMENTGETSTRINGVALUE_STRING_RAWSTRING=qbs_new(0,0);
+qbs *_FUNC_ELEMENTGETSTRINGVALUE_STRING_RES=NULL;
+#line 565 "utilities/elements.bas"
+if (!_FUNC_ELEMENTGETSTRINGVALUE_STRING_RES)_FUNC_ELEMENTGETSTRINGVALUE_STRING_RES=qbs_new(0,0);
+int32 *_FUNC_ELEMENTGETSTRINGVALUE_LONG_I=NULL;
+#line 565 "utilities/elements.bas"
+if(_FUNC_ELEMENTGETSTRINGVALUE_LONG_I==NULL){
+#line 565 "utilities/elements.bas"
+_FUNC_ELEMENTGETSTRINGVALUE_LONG_I=(int32*)mem_static_malloc(4);
+#line 565 "utilities/elements.bas"
+*_FUNC_ELEMENTGETSTRINGVALUE_LONG_I=0;
+#line 565 "utilities/elements.bas"
 }

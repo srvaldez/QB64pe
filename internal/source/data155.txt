@@ -1,22 +1,63 @@
-#line 200 "utilities/elements.bas"
-qbs*oldstr3641=NULL;
-#line 200 "utilities/elements.bas"
-if(_SUB_REMOVEELEMENT_STRING_A->tmp||_SUB_REMOVEELEMENT_STRING_A->fixed||_SUB_REMOVEELEMENT_STRING_A->readonly){
-#line 200 "utilities/elements.bas"
-oldstr3641=_SUB_REMOVEELEMENT_STRING_A;
-#line 200 "utilities/elements.bas"
-if (oldstr3641->cmem_descriptor){
-#line 200 "utilities/elements.bas"
-_SUB_REMOVEELEMENT_STRING_A=qbs_new_cmem(oldstr3641->len,0);
-#line 200 "utilities/elements.bas"
+int32 *_FUNC_FILEHASEXTENSION_LONG_FILEHASEXTENSION=NULL;
+#line 35 "utilities/file.bas"
+if(_FUNC_FILEHASEXTENSION_LONG_FILEHASEXTENSION==NULL){
+#line 35 "utilities/file.bas"
+_FUNC_FILEHASEXTENSION_LONG_FILEHASEXTENSION=(int32*)mem_static_malloc(4);
+#line 35 "utilities/file.bas"
+*_FUNC_FILEHASEXTENSION_LONG_FILEHASEXTENSION=0;
+#line 35 "utilities/file.bas"
+}
+#line 35 "utilities/file.bas"
+qbs*oldstr3721=NULL;
+#line 35 "utilities/file.bas"
+if(_FUNC_FILEHASEXTENSION_STRING_F->tmp||_FUNC_FILEHASEXTENSION_STRING_F->fixed||_FUNC_FILEHASEXTENSION_STRING_F->readonly){
+#line 35 "utilities/file.bas"
+oldstr3721=_FUNC_FILEHASEXTENSION_STRING_F;
+#line 35 "utilities/file.bas"
+if (oldstr3721->cmem_descriptor){
+#line 35 "utilities/file.bas"
+_FUNC_FILEHASEXTENSION_STRING_F=qbs_new_cmem(oldstr3721->len,0);
+#line 35 "utilities/file.bas"
 }else{
-#line 200 "utilities/elements.bas"
-_SUB_REMOVEELEMENT_STRING_A=qbs_new(oldstr3641->len,0);
-#line 200 "utilities/elements.bas"
+#line 35 "utilities/file.bas"
+_FUNC_FILEHASEXTENSION_STRING_F=qbs_new(oldstr3721->len,0);
+#line 35 "utilities/file.bas"
 }
-#line 200 "utilities/elements.bas"
-memcpy(_SUB_REMOVEELEMENT_STRING_A->chr,oldstr3641->chr,oldstr3641->len);
-#line 200 "utilities/elements.bas"
+#line 35 "utilities/file.bas"
+memcpy(_FUNC_FILEHASEXTENSION_STRING_F->chr,oldstr3721->chr,oldstr3721->len);
+#line 35 "utilities/file.bas"
 }
-#line 201 "utilities/elements.bas"
-int32 pass3642;
+int32 *_FUNC_FILEHASEXTENSION_LONG_I=NULL;
+#line 36 "utilities/file.bas"
+if(_FUNC_FILEHASEXTENSION_LONG_I==NULL){
+#line 36 "utilities/file.bas"
+_FUNC_FILEHASEXTENSION_LONG_I=(int32*)mem_static_malloc(4);
+#line 36 "utilities/file.bas"
+*_FUNC_FILEHASEXTENSION_LONG_I=0;
+#line 36 "utilities/file.bas"
+}
+#line 36 "utilities/file.bas"
+int64 fornext_value3723;
+#line 36 "utilities/file.bas"
+int64 fornext_finalvalue3723;
+#line 36 "utilities/file.bas"
+int64 fornext_step3723;
+#line 36 "utilities/file.bas"
+uint8 fornext_step_negative3723;
+#line 36 "utilities/file.bas"
+byte_element_struct *byte_element_3724=NULL;
+#line 36 "utilities/file.bas"
+if (!byte_element_3724){
+#line 36 "utilities/file.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3724=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3724=(byte_element_struct*)mem_static_malloc(12);
+#line 36 "utilities/file.bas"
+}
+int32 *_FUNC_FILEHASEXTENSION_LONG_A=NULL;
+#line 37 "utilities/file.bas"
+if(_FUNC_FILEHASEXTENSION_LONG_A==NULL){
+#line 37 "utilities/file.bas"
+_FUNC_FILEHASEXTENSION_LONG_A=(int32*)mem_static_malloc(4);
+#line 37 "utilities/file.bas"
+*_FUNC_FILEHASEXTENSION_LONG_A=0;
+#line 37 "utilities/file.bas"
+}

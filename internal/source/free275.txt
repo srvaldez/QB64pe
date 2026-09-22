@@ -1,4 +1,5 @@
-if(oldstr4137){
-if(oldstr4137->fixed)qbs_set(oldstr4137,_FUNC_SYMBOLTYPE_STRING_S);
-qbs_free(_FUNC_SYMBOLTYPE_STRING_S);
+if(oldstr4211){
+if(oldstr4211->fixed)qbs_set(oldstr4211,_FUNC_HASHFINDREV_STRING_A);
+qbs_free(_FUNC_HASHFINDREV_STRING_A);
 }
+qbs_free(_FUNC_HASHFINDREV_STRING_UA);

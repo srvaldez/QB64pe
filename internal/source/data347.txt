@@ -1,9 +1,34 @@
-int8 *_FUNC_TYPE_ISUDTMEMBER_BYTE_TYPE_ISUDTMEMBER=NULL;
-#line 2317 "utilities/type.bas"
-if(_FUNC_TYPE_ISUDTMEMBER_BYTE_TYPE_ISUDTMEMBER==NULL){
-#line 2317 "utilities/type.bas"
-_FUNC_TYPE_ISUDTMEMBER_BYTE_TYPE_ISUDTMEMBER=(int8*)mem_static_malloc(1);
-#line 2317 "utilities/type.bas"
-*_FUNC_TYPE_ISUDTMEMBER_BYTE_TYPE_ISUDTMEMBER=0;
-#line 2317 "utilities/type.bas"
+int32 *_SUB_DUMP_UDTS_LONG_FH=NULL;
+#line 2151 "utilities/type.bas"
+if(_SUB_DUMP_UDTS_LONG_FH==NULL){
+#line 2151 "utilities/type.bas"
+_SUB_DUMP_UDTS_LONG_FH=(int32*)mem_static_malloc(4);
+#line 2151 "utilities/type.bas"
+*_SUB_DUMP_UDTS_LONG_FH=0;
+#line 2151 "utilities/type.bas"
 }
+int32 *_SUB_DUMP_UDTS_LONG_I=NULL;
+#line 2154 "utilities/type.bas"
+if(_SUB_DUMP_UDTS_LONG_I==NULL){
+#line 2154 "utilities/type.bas"
+_SUB_DUMP_UDTS_LONG_I=(int32*)mem_static_malloc(4);
+#line 2154 "utilities/type.bas"
+*_SUB_DUMP_UDTS_LONG_I=0;
+#line 2154 "utilities/type.bas"
+}
+#line 2154 "utilities/type.bas"
+int64 fornext_value4509;
+#line 2154 "utilities/type.bas"
+int64 fornext_finalvalue4509;
+#line 2154 "utilities/type.bas"
+int64 fornext_step4509;
+#line 2154 "utilities/type.bas"
+uint8 fornext_step_negative4509;
+#line 2158 "utilities/type.bas"
+int64 fornext_value4513;
+#line 2158 "utilities/type.bas"
+int64 fornext_finalvalue4513;
+#line 2158 "utilities/type.bas"
+int64 fornext_step4513;
+#line 2158 "utilities/type.bas"
+uint8 fornext_step_negative4513;

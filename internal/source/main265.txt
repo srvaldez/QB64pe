@@ -1,60 +1,56 @@
-#line 16 "utilities/statevars.bas"
-void SUB_SETRCSTATEVAR(void*_SUB_SETRCSTATEVAR_UDT_STVAR,int8*_SUB_SETRCSTATEVAR_BYTE_SETVAL){
-#line 16 "utilities/statevars.bas"
+#line 787 "utilities/const_eval.bas"
+void SUB_FIXUPERRORMESSAGE(void*_SUB_FIXUPERRORMESSAGE_UDT_STATE,qbs*_SUB_FIXUPERRORMESSAGE_STRING_OP){
+#line 787 "utilities/const_eval.bas"
 qbs *tqbs;
-#line 16 "utilities/statevars.bas"
+#line 787 "utilities/const_eval.bas"
 ptrszint tmp_long;
-#line 16 "utilities/statevars.bas"
+#line 787 "utilities/const_eval.bas"
 int32 tmp_fileno;
-#line 16 "utilities/statevars.bas"
+#line 787 "utilities/const_eval.bas"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
-#line 16 "utilities/statevars.bas"
+#line 787 "utilities/const_eval.bas"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
-#line 16 "utilities/statevars.bas"
+#line 787 "utilities/const_eval.bas"
 uint32 tmp_cmem_sp=cmem_sp;
-#line 16 "utilities/statevars.bas"
+#line 787 "utilities/const_eval.bas"
 #include "data265.txt"
-#line 16 "utilities/statevars.bas"
+#line 787 "utilities/const_eval.bas"
 mem_lock *sf_mem_lock;
-#line 16 "utilities/statevars.bas"
+#line 787 "utilities/const_eval.bas"
 new_mem_lock();
-#line 16 "utilities/statevars.bas"
+#line 787 "utilities/const_eval.bas"
 sf_mem_lock=mem_lock_tmp;
-#line 16 "utilities/statevars.bas"
+#line 787 "utilities/const_eval.bas"
 sf_mem_lock->type=3;
-#line 16 "utilities/statevars.bas"
+#line 787 "utilities/const_eval.bas"
 libqb_check_stack();
-#line 16 "utilities/statevars.bas"
+#line 787 "utilities/const_eval.bas"
 if (is_error_pending()) goto exit_subfunc;
-#line 17 "utilities/statevars.bas"
+#line 788 "utilities/const_eval.bas"
+S_41301:;
+#line 788 "utilities/const_eval.bas"
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(*((qbs**)((char*)_SUB_FIXUPERRORMESSAGE_UDT_STATE+((0+56)))),qbs_new_txt_len("",0))))||is_error_pending()){
+#line 788 "utilities/const_eval.bas"
+if(qbevent){evnt(28806,788,"const_eval.bas");if(r)goto S_41301;}
+#line 788 "utilities/const_eval.bas"
 do{
-#line 17 "utilities/statevars.bas"
-*(int8*)(((char*)_SUB_SETRCSTATEVAR_UDT_STVAR)+((0+0)))=*_SUB_SETRCSTATEVAR_BYTE_SETVAL;
-#line 17 "utilities/statevars.bas"
-if(!qbevent)break;evnt(28620,17,"statevars.bas");}while(r);
-#line 18 "utilities/statevars.bas"
-S_41101:;
-#line 18 "utilities/statevars.bas"
-if (((-(*(int8*)(((char*)_SUB_SETRCSTATEVAR_UDT_STVAR)+((0+1)))!=*(int8*)(((char*)_SUB_SETRCSTATEVAR_UDT_STVAR)+((0+0)))))&(-(*(int8*)(((char*)_SUB_SETRCSTATEVAR_UDT_STVAR)+((0+2)))== 0ll )))||is_error_pending()){
-#line 18 "utilities/statevars.bas"
-if(qbevent){evnt(28620,18,"statevars.bas");if(r)goto S_41101;}
-#line 19 "utilities/statevars.bas"
-do{
-#line 19 "utilities/statevars.bas"
-*__INTEGER_RECOMPILE= 1 ;
-#line 19 "utilities/statevars.bas"
-if(!qbevent)break;evnt(28620,19,"statevars.bas");}while(r);
-#line 20 "utilities/statevars.bas"
+#line 788 "utilities/const_eval.bas"
+qbs_set(*((qbs**)((char*)(_SUB_FIXUPERRORMESSAGE_UDT_STATE)+((0+68)))),qbs_add(qbs_add(qbs_new_txt_len("ERROR - Expected variable/value after '",39),_SUB_FIXUPERRORMESSAGE_STRING_OP),qbs_new_txt_len("'",1)));
+#line 788 "utilities/const_eval.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 788 "utilities/const_eval.bas"
+if(!qbevent)break;evnt(28806,788,"const_eval.bas");}while(r);
+#line 788 "utilities/const_eval.bas"
 }
-#line 21 "utilities/statevars.bas"
+#line 789 "utilities/const_eval.bas"
 exit_subfunc:;
-#line 21 "utilities/statevars.bas"
+#line 789 "utilities/const_eval.bas"
 free_mem_lock(sf_mem_lock);
-#line 21 "utilities/statevars.bas"
+#line 789 "utilities/const_eval.bas"
 #include "free265.txt"
-#line 21 "utilities/statevars.bas"
+#line 789 "utilities/const_eval.bas"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
-#line 21 "utilities/statevars.bas"
+#line 789 "utilities/const_eval.bas"
 cmem_sp=tmp_cmem_sp;
-#line 21 "utilities/statevars.bas"
+#line 789 "utilities/const_eval.bas"
 }

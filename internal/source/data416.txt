@@ -1,57 +1,51 @@
-qbs *_FUNC_IDEZGETFILEPATH_STRING_IDEZGETFILEPATH=NULL;
-#line 15744 "ide/ide_methods.bas"
-if (!_FUNC_IDEZGETFILEPATH_STRING_IDEZGETFILEPATH)_FUNC_IDEZGETFILEPATH_STRING_IDEZGETFILEPATH=qbs_new(0,0);
-#line 15744 "ide/ide_methods.bas"
-qbs*oldstr6375=NULL;
-#line 15744 "ide/ide_methods.bas"
-if(_FUNC_IDEZGETFILEPATH_STRING_ROOT->tmp||_FUNC_IDEZGETFILEPATH_STRING_ROOT->fixed||_FUNC_IDEZGETFILEPATH_STRING_ROOT->readonly){
-#line 15744 "ide/ide_methods.bas"
-oldstr6375=_FUNC_IDEZGETFILEPATH_STRING_ROOT;
-#line 15744 "ide/ide_methods.bas"
-if (oldstr6375->cmem_descriptor){
-#line 15744 "ide/ide_methods.bas"
-_FUNC_IDEZGETFILEPATH_STRING_ROOT=qbs_new_cmem(oldstr6375->len,0);
-#line 15744 "ide/ide_methods.bas"
+#line 12961 "ide/ide_methods.bas"
+qbs*oldstr6144=NULL;
+#line 12961 "ide/ide_methods.bas"
+if(_SUB_IDESAVE_STRING_F->tmp||_SUB_IDESAVE_STRING_F->fixed||_SUB_IDESAVE_STRING_F->readonly){
+#line 12961 "ide/ide_methods.bas"
+oldstr6144=_SUB_IDESAVE_STRING_F;
+#line 12961 "ide/ide_methods.bas"
+if (oldstr6144->cmem_descriptor){
+#line 12961 "ide/ide_methods.bas"
+_SUB_IDESAVE_STRING_F=qbs_new_cmem(oldstr6144->len,0);
+#line 12961 "ide/ide_methods.bas"
 }else{
-#line 15744 "ide/ide_methods.bas"
-_FUNC_IDEZGETFILEPATH_STRING_ROOT=qbs_new(oldstr6375->len,0);
-#line 15744 "ide/ide_methods.bas"
+#line 12961 "ide/ide_methods.bas"
+_SUB_IDESAVE_STRING_F=qbs_new(oldstr6144->len,0);
+#line 12961 "ide/ide_methods.bas"
 }
-#line 15744 "ide/ide_methods.bas"
-memcpy(_FUNC_IDEZGETFILEPATH_STRING_ROOT->chr,oldstr6375->chr,oldstr6375->len);
-#line 15744 "ide/ide_methods.bas"
+#line 12961 "ide/ide_methods.bas"
+memcpy(_SUB_IDESAVE_STRING_F->chr,oldstr6144->chr,oldstr6144->len);
+#line 12961 "ide/ide_methods.bas"
 }
-#line 15744 "ide/ide_methods.bas"
-qbs*oldstr6376=NULL;
-#line 15744 "ide/ide_methods.bas"
-if(_FUNC_IDEZGETFILEPATH_STRING_F->tmp||_FUNC_IDEZGETFILEPATH_STRING_F->fixed||_FUNC_IDEZGETFILEPATH_STRING_F->readonly){
-#line 15744 "ide/ide_methods.bas"
-oldstr6376=_FUNC_IDEZGETFILEPATH_STRING_F;
-#line 15744 "ide/ide_methods.bas"
-if (oldstr6376->cmem_descriptor){
-#line 15744 "ide/ide_methods.bas"
-_FUNC_IDEZGETFILEPATH_STRING_F=qbs_new_cmem(oldstr6376->len,0);
-#line 15744 "ide/ide_methods.bas"
-}else{
-#line 15744 "ide/ide_methods.bas"
-_FUNC_IDEZGETFILEPATH_STRING_F=qbs_new(oldstr6376->len,0);
-#line 15744 "ide/ide_methods.bas"
+qbs *_SUB_IDESAVE_STRING_LINEENDING=NULL;
+#line 12966 "ide/ide_methods.bas"
+if (!_SUB_IDESAVE_STRING_LINEENDING)_SUB_IDESAVE_STRING_LINEENDING=qbs_new(0,0);
+int32 *_SUB_IDESAVE_LONG_I=NULL;
+#line 12967 "ide/ide_methods.bas"
+if(_SUB_IDESAVE_LONG_I==NULL){
+#line 12967 "ide/ide_methods.bas"
+_SUB_IDESAVE_LONG_I=(int32*)mem_static_malloc(4);
+#line 12967 "ide/ide_methods.bas"
+*_SUB_IDESAVE_LONG_I=0;
+#line 12967 "ide/ide_methods.bas"
 }
-#line 15744 "ide/ide_methods.bas"
-memcpy(_FUNC_IDEZGETFILEPATH_STRING_F->chr,oldstr6376->chr,oldstr6376->len);
-#line 15744 "ide/ide_methods.bas"
+#line 12967 "ide/ide_methods.bas"
+int64 fornext_value6146;
+#line 12967 "ide/ide_methods.bas"
+int64 fornext_finalvalue6146;
+#line 12967 "ide/ide_methods.bas"
+int64 fornext_step6146;
+#line 12967 "ide/ide_methods.bas"
+uint8 fornext_step_negative6146;
+qbs *_SUB_IDESAVE_STRING_OUTFILE=NULL;
+#line 12968 "ide/ide_methods.bas"
+if (!_SUB_IDESAVE_STRING_OUTFILE)_SUB_IDESAVE_STRING_OUTFILE=qbs_new(0,0);
+#line 12969 "ide/ide_methods.bas"
+byte_element_struct *byte_element_6147=NULL;
+#line 12969 "ide/ide_methods.bas"
+if (!byte_element_6147){
+#line 12969 "ide/ide_methods.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6147=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6147=(byte_element_struct*)mem_static_malloc(12);
+#line 12969 "ide/ide_methods.bas"
 }
-qbs *_FUNC_IDEZGETFILEPATH_STRING_P=NULL;
-#line 15746 "ide/ide_methods.bas"
-if (!_FUNC_IDEZGETFILEPATH_STRING_P)_FUNC_IDEZGETFILEPATH_STRING_P=qbs_new(0,0);
-#line 15749 "ide/ide_methods.bas"
-byte_element_struct *byte_element_6377=NULL;
-#line 15749 "ide/ide_methods.bas"
-if (!byte_element_6377){
-#line 15749 "ide/ide_methods.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6377=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6377=(byte_element_struct*)mem_static_malloc(12);
-#line 15749 "ide/ide_methods.bas"
-}
-qbs *_FUNC_IDEZGETFILEPATH_STRING_P2=NULL;
-#line 15757 "ide/ide_methods.bas"
-if (!_FUNC_IDEZGETFILEPATH_STRING_P2)_FUNC_IDEZGETFILEPATH_STRING_P2=qbs_new(0,0);

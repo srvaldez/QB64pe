@@ -1,4 +1,7 @@
-if(oldstr4059){
-if(oldstr4059->fixed)qbs_set(oldstr4059,_SUB_PARSENUMSETS_STRING_S);
-qbs_free(_SUB_PARSENUMSETS_STRING_S);
+if(oldstr4052){
+if(oldstr4052->fixed)qbs_set(oldstr4052,_FUNC_LOGICALXOR_STRING_EXP);
+qbs_free(_FUNC_LOGICALXOR_STRING_EXP);
 }
+#line 311 "utilities/const_eval.bas"
+qbs_free(*(qbs**)(((char*)(_FUNC_LOGICALXOR_UDT_NUM))+((0+48))));
+qbs_free(_FUNC_LOGICALXOR_STRING_ELE);

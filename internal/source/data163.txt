@@ -1,64 +1,20 @@
-int32 *_FUNC_ELEMENTGETSTRINGVALUE_LONG_ELEMENTGETSTRINGVALUE=NULL;
-#line 552 "utilities/elements.bas"
-if(_FUNC_ELEMENTGETSTRINGVALUE_LONG_ELEMENTGETSTRINGVALUE==NULL){
-#line 552 "utilities/elements.bas"
-_FUNC_ELEMENTGETSTRINGVALUE_LONG_ELEMENTGETSTRINGVALUE=(int32*)mem_static_malloc(4);
-#line 552 "utilities/elements.bas"
-*_FUNC_ELEMENTGETSTRINGVALUE_LONG_ELEMENTGETSTRINGVALUE=0;
-#line 552 "utilities/elements.bas"
-}
-#line 552 "utilities/elements.bas"
-qbs*oldstr3673=NULL;
-#line 552 "utilities/elements.bas"
-if(_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE->tmp||_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE->fixed||_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE->readonly){
-#line 552 "utilities/elements.bas"
-oldstr3673=_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE;
-#line 552 "utilities/elements.bas"
-if (oldstr3673->cmem_descriptor){
-#line 552 "utilities/elements.bas"
-_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE=qbs_new_cmem(oldstr3673->len,0);
-#line 552 "utilities/elements.bas"
+#line 5 "utilities/build.bas"
+qbs*oldstr3760=NULL;
+#line 5 "utilities/build.bas"
+if(_SUB_PURGETEMPORARYBUILDFILES_STRING_OS->tmp||_SUB_PURGETEMPORARYBUILDFILES_STRING_OS->fixed||_SUB_PURGETEMPORARYBUILDFILES_STRING_OS->readonly){
+#line 5 "utilities/build.bas"
+oldstr3760=_SUB_PURGETEMPORARYBUILDFILES_STRING_OS;
+#line 5 "utilities/build.bas"
+if (oldstr3760->cmem_descriptor){
+#line 5 "utilities/build.bas"
+_SUB_PURGETEMPORARYBUILDFILES_STRING_OS=qbs_new_cmem(oldstr3760->len,0);
+#line 5 "utilities/build.bas"
 }else{
-#line 552 "utilities/elements.bas"
-_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE=qbs_new(oldstr3673->len,0);
-#line 552 "utilities/elements.bas"
+#line 5 "utilities/build.bas"
+_SUB_PURGETEMPORARYBUILDFILES_STRING_OS=qbs_new(oldstr3760->len,0);
+#line 5 "utilities/build.bas"
 }
-#line 552 "utilities/elements.bas"
-memcpy(_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE->chr,oldstr3673->chr,oldstr3673->len);
-#line 552 "utilities/elements.bas"
-}
-#line 552 "utilities/elements.bas"
-qbs*oldstr3674=NULL;
-#line 552 "utilities/elements.bas"
-if(_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE->tmp||_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE->fixed||_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE->readonly){
-#line 552 "utilities/elements.bas"
-oldstr3674=_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE;
-#line 552 "utilities/elements.bas"
-if (oldstr3674->cmem_descriptor){
-#line 552 "utilities/elements.bas"
-_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE=qbs_new_cmem(oldstr3674->len,0);
-#line 552 "utilities/elements.bas"
-}else{
-#line 552 "utilities/elements.bas"
-_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE=qbs_new(oldstr3674->len,0);
-#line 552 "utilities/elements.bas"
-}
-#line 552 "utilities/elements.bas"
-memcpy(_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE->chr,oldstr3674->chr,oldstr3674->len);
-#line 552 "utilities/elements.bas"
-}
-qbs *_FUNC_ELEMENTGETSTRINGVALUE_STRING_RAWSTRING=NULL;
-#line 553 "utilities/elements.bas"
-if (!_FUNC_ELEMENTGETSTRINGVALUE_STRING_RAWSTRING)_FUNC_ELEMENTGETSTRINGVALUE_STRING_RAWSTRING=qbs_new(0,0);
-qbs *_FUNC_ELEMENTGETSTRINGVALUE_STRING_RES=NULL;
-#line 553 "utilities/elements.bas"
-if (!_FUNC_ELEMENTGETSTRINGVALUE_STRING_RES)_FUNC_ELEMENTGETSTRINGVALUE_STRING_RES=qbs_new(0,0);
-int32 *_FUNC_ELEMENTGETSTRINGVALUE_LONG_I=NULL;
-#line 553 "utilities/elements.bas"
-if(_FUNC_ELEMENTGETSTRINGVALUE_LONG_I==NULL){
-#line 553 "utilities/elements.bas"
-_FUNC_ELEMENTGETSTRINGVALUE_LONG_I=(int32*)mem_static_malloc(4);
-#line 553 "utilities/elements.bas"
-*_FUNC_ELEMENTGETSTRINGVALUE_LONG_I=0;
-#line 553 "utilities/elements.bas"
+#line 5 "utilities/build.bas"
+memcpy(_SUB_PURGETEMPORARYBUILDFILES_STRING_OS->chr,oldstr3760->chr,oldstr3760->len);
+#line 5 "utilities/build.bas"
 }

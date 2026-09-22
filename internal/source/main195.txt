@@ -1,106 +1,160 @@
-#line 420 "utilities/s-buffer/simplebuffer.bm"
-int16 FUNC_REMOVEBUFMARK(int16*_FUNC_REMOVEBUFMARK_INTEGER_HANDLE,int16*_FUNC_REMOVEBUFMARK_INTEGER_MARKID){
-#line 420 "utilities/s-buffer/simplebuffer.bm"
+#line 39 "utilities/ini-manager/ini.bm"
+void SUB_INICOMMIT(){
+#line 39 "utilities/ini-manager/ini.bm"
 qbs *tqbs;
-#line 420 "utilities/s-buffer/simplebuffer.bm"
+#line 39 "utilities/ini-manager/ini.bm"
 ptrszint tmp_long;
-#line 420 "utilities/s-buffer/simplebuffer.bm"
+#line 39 "utilities/ini-manager/ini.bm"
 int32 tmp_fileno;
-#line 420 "utilities/s-buffer/simplebuffer.bm"
+#line 39 "utilities/ini-manager/ini.bm"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
-#line 420 "utilities/s-buffer/simplebuffer.bm"
+#line 39 "utilities/ini-manager/ini.bm"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
-#line 420 "utilities/s-buffer/simplebuffer.bm"
+#line 39 "utilities/ini-manager/ini.bm"
 uint32 tmp_cmem_sp=cmem_sp;
-#line 420 "utilities/s-buffer/simplebuffer.bm"
+#line 39 "utilities/ini-manager/ini.bm"
 #include "data195.txt"
-#line 420 "utilities/s-buffer/simplebuffer.bm"
+#line 39 "utilities/ini-manager/ini.bm"
 mem_lock *sf_mem_lock;
-#line 420 "utilities/s-buffer/simplebuffer.bm"
+#line 39 "utilities/ini-manager/ini.bm"
 new_mem_lock();
-#line 420 "utilities/s-buffer/simplebuffer.bm"
+#line 39 "utilities/ini-manager/ini.bm"
 sf_mem_lock=mem_lock_tmp;
-#line 420 "utilities/s-buffer/simplebuffer.bm"
+#line 39 "utilities/ini-manager/ini.bm"
 sf_mem_lock->type=3;
-#line 420 "utilities/s-buffer/simplebuffer.bm"
+#line 39 "utilities/ini-manager/ini.bm"
 libqb_check_stack();
-#line 420 "utilities/s-buffer/simplebuffer.bm"
+#line 39 "utilities/ini-manager/ini.bm"
 if (is_error_pending()) goto exit_subfunc;
-#line 422 "utilities/s-buffer/simplebuffer.bm"
+#line 40 "utilities/ini-manager/ini.bm"
 do{
-#line 422 "utilities/s-buffer/simplebuffer.bm"
-if(!qbevent)break;evnt(28617,422,"simplebuffer.bm");}while(r);
-#line 424 "utilities/s-buffer/simplebuffer.bm"
-S_38988:;
-#line 424 "utilities/s-buffer/simplebuffer.bm"
-if ((~(FUNC_CHECKHANDLE(_FUNC_REMOVEBUFMARK_INTEGER_HANDLE)))||is_error_pending()){
-#line 424 "utilities/s-buffer/simplebuffer.bm"
-if(qbevent){evnt(28617,424,"simplebuffer.bm");if(r)goto S_38988;}
-#line 424 "utilities/s-buffer/simplebuffer.bm"
+#line 40 "utilities/ini-manager/ini.bm"
+if(!qbevent)break;evnt(28804,40,"ini.bm");}while(r);
+#line 41 "utilities/ini-manager/ini.bm"
 do{
-#line 424 "utilities/s-buffer/simplebuffer.bm"
-error( 258 );
-#line 424 "utilities/s-buffer/simplebuffer.bm"
-if(!qbevent)break;evnt(28617,424,"simplebuffer.bm");}while(r);
-#line 424 "utilities/s-buffer/simplebuffer.bm"
+#line 41 "utilities/ini-manager/ini.bm"
+if(!qbevent)break;evnt(28804,41,"ini.bm");}while(r);
+#line 43 "utilities/ini-manager/ini.bm"
+S_39397:;
+#line 43 "utilities/ini-manager/ini.bm"
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_CURRENTINIFILENAME,qbs_new_txt_len("",0))))||is_error_pending()){
+#line 43 "utilities/ini-manager/ini.bm"
+if(qbevent){evnt(28804,43,"ini.bm");if(r)goto S_39397;}
+#line 43 "utilities/ini-manager/ini.bm"
 do{
-#line 424 "utilities/s-buffer/simplebuffer.bm"
-close_program=1;
-#line 424 "utilities/s-buffer/simplebuffer.bm"
-end();
-#line 424 "utilities/s-buffer/simplebuffer.bm"
-if(!qbevent)break;evnt(28617,424,"simplebuffer.bm");}while(r);
-#line 424 "utilities/s-buffer/simplebuffer.bm"
-}
-#line 425 "utilities/s-buffer/simplebuffer.bm"
+#line 43 "utilities/ini-manager/ini.bm"
+*__LONG_INICODE= 18 ;
+#line 43 "utilities/ini-manager/ini.bm"
+if(!qbevent)break;evnt(28804,43,"ini.bm");}while(r);
+#line 43 "utilities/ini-manager/ini.bm"
 do{
-#line 425 "utilities/s-buffer/simplebuffer.bm"
-*_FUNC_REMOVEBUFMARK_LONG_BUF=*_FUNC_REMOVEBUFMARK_INTEGER_HANDLE* 106 ;
-#line 425 "utilities/s-buffer/simplebuffer.bm"
-if(!qbevent)break;evnt(28617,425,"simplebuffer.bm");}while(r);
-#line 427 "utilities/s-buffer/simplebuffer.bm"
-do{
-#line 427 "utilities/s-buffer/simplebuffer.bm"
-*_FUNC_REMOVEBUFMARK_INTEGER_REMOVEBUFMARK= -13ll ;
-#line 427 "utilities/s-buffer/simplebuffer.bm"
-if(!qbevent)break;evnt(28617,427,"simplebuffer.bm");}while(r);
-#line 428 "utilities/s-buffer/simplebuffer.bm"
-S_38994:;
-#line 428 "utilities/s-buffer/simplebuffer.bm"
-if ((qbs_cleanup(qbs_tmp_base,((-(*_FUNC_REMOVEBUFMARK_INTEGER_MARKID< 1 ))|(-(*_FUNC_REMOVEBUFMARK_INTEGER_MARKID> 100 )))&(-((((qbs**)(__ARRAY_STRING_SIMPLEBUFFER_ARRAY[0]))[array_check((*_FUNC_REMOVEBUFMARK_LONG_BUF+ 1 )-__ARRAY_STRING_SIMPLEBUFFER_ARRAY[4],__ARRAY_STRING_SIMPLEBUFFER_ARRAY[5])])->len== 16 ))))||is_error_pending()){
-#line 428 "utilities/s-buffer/simplebuffer.bm"
-if(qbevent){evnt(28617,428,"simplebuffer.bm");if(r)goto S_38994;}
-#line 428 "utilities/s-buffer/simplebuffer.bm"
-do{
-#line 428 "utilities/s-buffer/simplebuffer.bm"
+#line 43 "utilities/ini-manager/ini.bm"
 goto exit_subfunc;
-#line 428 "utilities/s-buffer/simplebuffer.bm"
-if(!qbevent)break;evnt(28617,428,"simplebuffer.bm");}while(r);
-#line 428 "utilities/s-buffer/simplebuffer.bm"
+#line 43 "utilities/ini-manager/ini.bm"
+if(!qbevent)break;evnt(28804,43,"ini.bm");}while(r);
+#line 43 "utilities/ini-manager/ini.bm"
 }
-#line 430 "utilities/s-buffer/simplebuffer.bm"
+#line 45 "utilities/ini-manager/ini.bm"
 do{
-#line 430 "utilities/s-buffer/simplebuffer.bm"
-sub_mid((((qbs**)(__ARRAY_STRING_SIMPLEBUFFER_ARRAY[0]))[array_check((*_FUNC_REMOVEBUFMARK_LONG_BUF+ 2 )-__ARRAY_STRING_SIMPLEBUFFER_ARRAY[4],__ARRAY_STRING_SIMPLEBUFFER_ARRAY[5])]),*_FUNC_REMOVEBUFMARK_INTEGER_MARKID* 4 , 4 ,l2string( -889275714 ),1);
-#line 430 "utilities/s-buffer/simplebuffer.bm"
-if(!qbevent)break;evnt(28617,430,"simplebuffer.bm");}while(r);
-#line 431 "utilities/s-buffer/simplebuffer.bm"
+#line 45 "utilities/ini-manager/ini.bm"
+qbs_set(__STRING_INIWHOLEFILE,__STRING_ININEWFILE);
+#line 45 "utilities/ini-manager/ini.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 45 "utilities/ini-manager/ini.bm"
+if(!qbevent)break;evnt(28804,45,"ini.bm");}while(r);
+#line 46 "utilities/ini-manager/ini.bm"
 do{
-#line 431 "utilities/s-buffer/simplebuffer.bm"
-*_FUNC_REMOVEBUFMARK_INTEGER_REMOVEBUFMARK= 0 ;
-#line 431 "utilities/s-buffer/simplebuffer.bm"
-if(!qbevent)break;evnt(28617,431,"simplebuffer.bm");}while(r);
-#line 432 "utilities/s-buffer/simplebuffer.bm"
+#line 46 "utilities/ini-manager/ini.bm"
+*__ULONG_CURRENTINIFILELOF=__STRING_ININEWFILE->len;
+#line 46 "utilities/ini-manager/ini.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 46 "utilities/ini-manager/ini.bm"
+if(!qbevent)break;evnt(28804,46,"ini.bm");}while(r);
+#line 48 "utilities/ini-manager/ini.bm"
+S_39403:;
+#line 48 "utilities/ini-manager/ini.bm"
+if ((~(*__LONG_INIDISABLEAUTOCOMMIT))||is_error_pending()){
+#line 48 "utilities/ini-manager/ini.bm"
+if(qbevent){evnt(28804,48,"ini.bm");if(r)goto S_39403;}
+#line 49 "utilities/ini-manager/ini.bm"
+do{
+#line 49 "utilities/ini-manager/ini.bm"
+if(!qbevent)break;evnt(28804,49,"ini.bm");}while(r);
+#line 51 "utilities/ini-manager/ini.bm"
+do{
+#line 51 "utilities/ini-manager/ini.bm"
+*_SUB_INICOMMIT_INTEGER_FILENUM=func_freefile();
+#line 51 "utilities/ini-manager/ini.bm"
+if(!qbevent)break;evnt(28804,51,"ini.bm");}while(r);
+#line 52 "utilities/ini-manager/ini.bm"
+do{
+#line 52 "utilities/ini-manager/ini.bm"
+sub_open(__STRING_CURRENTINIFILENAME, 2 ,NULL,NULL,*_SUB_INICOMMIT_INTEGER_FILENUM,NULL,0);
+#line 52 "utilities/ini-manager/ini.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 52 "utilities/ini-manager/ini.bm"
+if(!qbevent)break;evnt(28804,52,"ini.bm");}while(r);
+#line 54 "utilities/ini-manager/ini.bm"
+S_39407:;
+#line 54 "utilities/ini-manager/ini.bm"
+if ((qbs_cleanup(qbs_tmp_base,-(__STRING_INIWHOLEFILE->len<func_lof(*_SUB_INICOMMIT_INTEGER_FILENUM))))||is_error_pending()){
+#line 54 "utilities/ini-manager/ini.bm"
+if(qbevent){evnt(28804,54,"ini.bm");if(r)goto S_39407;}
+#line 55 "utilities/ini-manager/ini.bm"
+do{
+#line 55 "utilities/ini-manager/ini.bm"
+sub_close(*_SUB_INICOMMIT_INTEGER_FILENUM,1);
+#line 55 "utilities/ini-manager/ini.bm"
+if(!qbevent)break;evnt(28804,55,"ini.bm");}while(r);
+#line 56 "utilities/ini-manager/ini.bm"
+do{
+#line 56 "utilities/ini-manager/ini.bm"
+sub_open(__STRING_CURRENTINIFILENAME, 4 ,NULL,NULL,*_SUB_INICOMMIT_INTEGER_FILENUM,NULL,0);
+#line 56 "utilities/ini-manager/ini.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 56 "utilities/ini-manager/ini.bm"
+if(!qbevent)break;evnt(28804,56,"ini.bm");}while(r);
+#line 56 "utilities/ini-manager/ini.bm"
+do{
+#line 56 "utilities/ini-manager/ini.bm"
+sub_close(*_SUB_INICOMMIT_INTEGER_FILENUM,1);
+#line 56 "utilities/ini-manager/ini.bm"
+if(!qbevent)break;evnt(28804,56,"ini.bm");}while(r);
+#line 57 "utilities/ini-manager/ini.bm"
+do{
+#line 57 "utilities/ini-manager/ini.bm"
+sub_open(__STRING_CURRENTINIFILENAME, 2 ,NULL,NULL,*_SUB_INICOMMIT_INTEGER_FILENUM,NULL,0);
+#line 57 "utilities/ini-manager/ini.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 57 "utilities/ini-manager/ini.bm"
+if(!qbevent)break;evnt(28804,57,"ini.bm");}while(r);
+#line 58 "utilities/ini-manager/ini.bm"
+}
+#line 60 "utilities/ini-manager/ini.bm"
+do{
+#line 60 "utilities/ini-manager/ini.bm"
+sub_put2(*_SUB_INICOMMIT_INTEGER_FILENUM, 1 ,byte_element((uint64)__STRING_ININEWFILE->chr,__STRING_ININEWFILE->len,byte_element_3898),1);
+#line 60 "utilities/ini-manager/ini.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 60 "utilities/ini-manager/ini.bm"
+if(!qbevent)break;evnt(28804,60,"ini.bm");}while(r);
+#line 61 "utilities/ini-manager/ini.bm"
+do{
+#line 61 "utilities/ini-manager/ini.bm"
+sub_close(*_SUB_INICOMMIT_INTEGER_FILENUM,1);
+#line 61 "utilities/ini-manager/ini.bm"
+if(!qbevent)break;evnt(28804,61,"ini.bm");}while(r);
+#line 62 "utilities/ini-manager/ini.bm"
+}
+#line 63 "utilities/ini-manager/ini.bm"
 exit_subfunc:;
-#line 432 "utilities/s-buffer/simplebuffer.bm"
+#line 63 "utilities/ini-manager/ini.bm"
 free_mem_lock(sf_mem_lock);
-#line 432 "utilities/s-buffer/simplebuffer.bm"
+#line 63 "utilities/ini-manager/ini.bm"
 #include "free195.txt"
-#line 432 "utilities/s-buffer/simplebuffer.bm"
+#line 63 "utilities/ini-manager/ini.bm"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
-#line 432 "utilities/s-buffer/simplebuffer.bm"
+#line 63 "utilities/ini-manager/ini.bm"
 cmem_sp=tmp_cmem_sp;
-#line 432 "utilities/s-buffer/simplebuffer.bm"
-return *_FUNC_REMOVEBUFMARK_INTEGER_REMOVEBUFMARK;
-#line 432 "utilities/s-buffer/simplebuffer.bm"
+#line 63 "utilities/ini-manager/ini.bm"
 }

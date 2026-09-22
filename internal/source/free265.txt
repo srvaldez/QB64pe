@@ -1,0 +1,4 @@
+if(oldstr4170){
+if(oldstr4170->fixed)qbs_set(oldstr4170,_SUB_FIXUPERRORMESSAGE_STRING_OP);
+qbs_free(_SUB_FIXUPERRORMESSAGE_STRING_OP);
+}

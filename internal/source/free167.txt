@@ -1,13 +1,4 @@
-if(oldstr3690){
-if(oldstr3690->fixed)qbs_set(oldstr3690,_FUNC_GL2QB_TYPE_CONVERT_STRING_A);
-qbs_free(_FUNC_GL2QB_TYPE_CONVERT_STRING_A);
+if(oldstr3762){
+if(oldstr3762->fixed)qbs_set(oldstr3762,_FUNC_GETELEMENT_STRING_A);
+qbs_free(_FUNC_GETELEMENT_STRING_A);
 }
-if(oldstr3691){
-if(oldstr3691->fixed)qbs_set(oldstr3691,_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL);
-qbs_free(_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL);
-}
-if(oldstr3692){
-if(oldstr3692->fixed)qbs_set(oldstr3692,_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP);
-qbs_free(_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP);
-}
-qbs_free(_FUNC_GL2QB_TYPE_CONVERT_STRING_B);

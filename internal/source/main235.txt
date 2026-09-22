@@ -1,140 +1,68 @@
-#line 385 "utilities/const_eval.bas"
-int32 FUNC_LOGICALNOT(qbs*_FUNC_LOGICALNOT_STRING_EXP,void*_FUNC_LOGICALNOT_UDT_STATE){
-#line 385 "utilities/const_eval.bas"
+#line 198 "utilities/s-buffer/sb_qb64pe_extension.bm"
+qbs* FUNC_DEBUGPATHBASE(){
+#line 198 "utilities/s-buffer/sb_qb64pe_extension.bm"
 qbs *tqbs;
-#line 385 "utilities/const_eval.bas"
+#line 198 "utilities/s-buffer/sb_qb64pe_extension.bm"
 ptrszint tmp_long;
-#line 385 "utilities/const_eval.bas"
+#line 198 "utilities/s-buffer/sb_qb64pe_extension.bm"
 int32 tmp_fileno;
-#line 385 "utilities/const_eval.bas"
+#line 198 "utilities/s-buffer/sb_qb64pe_extension.bm"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
-#line 385 "utilities/const_eval.bas"
+#line 198 "utilities/s-buffer/sb_qb64pe_extension.bm"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
-#line 385 "utilities/const_eval.bas"
+#line 198 "utilities/s-buffer/sb_qb64pe_extension.bm"
 uint32 tmp_cmem_sp=cmem_sp;
-#line 385 "utilities/const_eval.bas"
+#line 198 "utilities/s-buffer/sb_qb64pe_extension.bm"
 #include "data235.txt"
-#line 385 "utilities/const_eval.bas"
+#line 198 "utilities/s-buffer/sb_qb64pe_extension.bm"
 mem_lock *sf_mem_lock;
-#line 385 "utilities/const_eval.bas"
+#line 198 "utilities/s-buffer/sb_qb64pe_extension.bm"
 new_mem_lock();
-#line 385 "utilities/const_eval.bas"
+#line 198 "utilities/s-buffer/sb_qb64pe_extension.bm"
 sf_mem_lock=mem_lock_tmp;
-#line 385 "utilities/const_eval.bas"
+#line 198 "utilities/s-buffer/sb_qb64pe_extension.bm"
 sf_mem_lock->type=3;
-#line 385 "utilities/const_eval.bas"
+#line 198 "utilities/s-buffer/sb_qb64pe_extension.bm"
 libqb_check_stack();
-#line 385 "utilities/const_eval.bas"
+#line 198 "utilities/s-buffer/sb_qb64pe_extension.bm"
 if (is_error_pending()) goto exit_subfunc;
-#line 386 "utilities/const_eval.bas"
-S_39950:;
-#line 386 "utilities/const_eval.bas"
-if (( 0ll )||is_error_pending()){
-#line 386 "utilities/const_eval.bas"
-if(qbevent){evnt(28618,386,"const_eval.bas");if(r)goto S_39950;}
-#line 386 "utilities/const_eval.bas"
+#line 199 "utilities/s-buffer/sb_qb64pe_extension.bm"
+S_40508:;
+#line 199 "utilities/s-buffer/sb_qb64pe_extension.bm"
+if ((qbs_cleanup(qbs_tmp_base,__STRING_PATH__ASCII_CHR_046__SOURCE->len))||is_error_pending()){
+#line 199 "utilities/s-buffer/sb_qb64pe_extension.bm"
+if(qbevent){evnt(28805,199,"sb_qb64pe_extension.bm");if(r)goto S_40508;}
+#line 200 "utilities/s-buffer/sb_qb64pe_extension.bm"
 do{
-#line 386 "utilities/const_eval.bas"
-sub__echo(qbs_new_txt_len("LogicalNot",10));
-#line 386 "utilities/const_eval.bas"
+#line 200 "utilities/s-buffer/sb_qb64pe_extension.bm"
+qbs_set(_FUNC_DEBUGPATHBASE_STRING_DEBUGPATHBASE,__STRING_PATH__ASCII_CHR_046__SOURCE);
+#line 200 "utilities/s-buffer/sb_qb64pe_extension.bm"
 qbs_cleanup(qbs_tmp_base,0);
-#line 386 "utilities/const_eval.bas"
-if(!qbevent)break;evnt(28618,386,"const_eval.bas");}while(r);
-#line 386 "utilities/const_eval.bas"
-}
-#line 387 "utilities/const_eval.bas"
-do{
-#line 387 "utilities/const_eval.bas"
-qbs_set(_FUNC_LOGICALNOT_STRING_ELE,FUNC_PEEKNEXTELEMENT(_FUNC_LOGICALNOT_STRING_EXP,(int32*)(void*)( ((char*)(_FUNC_LOGICALNOT_UDT_STATE)) + ((0+0)) ),(int32*)(void*)( ((char*)(_FUNC_LOGICALNOT_UDT_STATE)) + ((0+4)) )));
-#line 387 "utilities/const_eval.bas"
-qbs_cleanup(qbs_tmp_base,0);
-#line 387 "utilities/const_eval.bas"
-if(!qbevent)break;evnt(28618,387,"const_eval.bas");}while(r);
-#line 388 "utilities/const_eval.bas"
-S_39954:;
-#line 388 "utilities/const_eval.bas"
-if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_LOGICALNOT_STRING_ELE,qbs_new_txt_len("NOT",3))))||is_error_pending()){
-#line 388 "utilities/const_eval.bas"
-if(qbevent){evnt(28618,388,"const_eval.bas");if(r)goto S_39954;}
-#line 388 "utilities/const_eval.bas"
-do{
-#line 388 "utilities/const_eval.bas"
-qbs_set(_FUNC_LOGICALNOT_STRING_ELE,FUNC_GETNEXTELEMENT(_FUNC_LOGICALNOT_STRING_EXP,(int32*)(void*)( ((char*)(_FUNC_LOGICALNOT_UDT_STATE)) + ((0+0)) ),(int32*)(void*)( ((char*)(_FUNC_LOGICALNOT_UDT_STATE)) + ((0+4)) )));
-#line 388 "utilities/const_eval.bas"
-qbs_cleanup(qbs_tmp_base,0);
-#line 388 "utilities/const_eval.bas"
-if(!qbevent)break;evnt(28618,388,"const_eval.bas");}while(r);
-#line 388 "utilities/const_eval.bas"
-}
-#line 390 "utilities/const_eval.bas"
-S_39957:;
-#line 390 "utilities/const_eval.bas"
-if ((qbs_cleanup(qbs_tmp_base,-(FUNC_RELATION(_FUNC_LOGICALNOT_STRING_EXP,(void*)( ((char*)(_FUNC_LOGICALNOT_UDT_STATE)) + ((0+0)) ))== 0 )))||is_error_pending()){
-#line 390 "utilities/const_eval.bas"
-if(qbevent){evnt(28618,390,"const_eval.bas");if(r)goto S_39957;}
-#line 390 "utilities/const_eval.bas"
-do{
-#line 390 "utilities/const_eval.bas"
-SUB_FIXUPERRORMESSAGE((void*)( ((char*)(_FUNC_LOGICALNOT_UDT_STATE)) + ((0+0)) ),qbs_new_txt_len("NOT",3));
-#line 390 "utilities/const_eval.bas"
-qbs_cleanup(qbs_tmp_base,0);
-#line 390 "utilities/const_eval.bas"
-if(!qbevent)break;evnt(28618,390,"const_eval.bas");}while(r);
-#line 390 "utilities/const_eval.bas"
-do{
-#line 390 "utilities/const_eval.bas"
-goto exit_subfunc;
-#line 390 "utilities/const_eval.bas"
-if(!qbevent)break;evnt(28618,390,"const_eval.bas");}while(r);
-#line 390 "utilities/const_eval.bas"
-}
-#line 392 "utilities/const_eval.bas"
-S_39961:;
-#line 392 "utilities/const_eval.bas"
-if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_FUNC_LOGICALNOT_STRING_ELE,qbs_new_txt_len("NOT",3))))||is_error_pending()){
-#line 392 "utilities/const_eval.bas"
-if(qbevent){evnt(28618,392,"const_eval.bas");if(r)goto S_39961;}
-#line 393 "utilities/const_eval.bas"
-S_39962:;
-#line 393 "utilities/const_eval.bas"
-if (((*_FUNC_LOGICALNOT_LONG_NUM__ASCII_CHR_046__TYP&*__LONG_ISUNSIGNED)|(*(int32*)(((char*)_FUNC_LOGICALNOT_UDT_STATE)+((0+64)))&*__LONG_ISUNSIGNED))||is_error_pending()){
-#line 393 "utilities/const_eval.bas"
-if(qbevent){evnt(28618,393,"const_eval.bas");if(r)goto S_39962;}
-#line 394 "utilities/const_eval.bas"
-do{
-#line 394 "utilities/const_eval.bas"
-SUB_PARSENUMSETUI((void*)( ((char*)(_FUNC_LOGICALNOT_UDT_STATE)) + ((0+8)) ),&(pass3961=*__LONG_UINTEGER64TYPE-*__LONG_ISPOINTER),&(pass3962=~(*(uint64*)(((char*)_FUNC_LOGICALNOT_UDT_STATE)+((0+48))))));
-#line 394 "utilities/const_eval.bas"
-if(!qbevent)break;evnt(28618,394,"const_eval.bas");}while(r);
-#line 395 "utilities/const_eval.bas"
+#line 200 "utilities/s-buffer/sb_qb64pe_extension.bm"
+if(!qbevent)break;evnt(28805,200,"sb_qb64pe_extension.bm");}while(r);
+#line 201 "utilities/s-buffer/sb_qb64pe_extension.bm"
 }else{
-#line 396 "utilities/const_eval.bas"
+#line 203 "utilities/s-buffer/sb_qb64pe_extension.bm"
 do{
-#line 396 "utilities/const_eval.bas"
-SUB_PARSENUMSETI((void*)( ((char*)(_FUNC_LOGICALNOT_UDT_STATE)) + ((0+8)) ),&(pass3963=*__LONG_INTEGER64TYPE-*__LONG_ISPOINTER),&(pass3964=~(*(int64*)(((char*)_FUNC_LOGICALNOT_UDT_STATE)+((0+40))))));
-#line 396 "utilities/const_eval.bas"
-if(!qbevent)break;evnt(28618,396,"const_eval.bas");}while(r);
-#line 397 "utilities/const_eval.bas"
+#line 203 "utilities/s-buffer/sb_qb64pe_extension.bm"
+qbs_set(_FUNC_DEBUGPATHBASE_STRING_DEBUGPATHBASE,FUNC_GETFILEPATH(func__fullpath(__STRING_SOURCEFILE)));
+#line 203 "utilities/s-buffer/sb_qb64pe_extension.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 203 "utilities/s-buffer/sb_qb64pe_extension.bm"
+if(!qbevent)break;evnt(28805,203,"sb_qb64pe_extension.bm");}while(r);
+#line 204 "utilities/s-buffer/sb_qb64pe_extension.bm"
 }
-#line 398 "utilities/const_eval.bas"
-}
-#line 400 "utilities/const_eval.bas"
-do{
-#line 400 "utilities/const_eval.bas"
-*_FUNC_LOGICALNOT_LONG_LOGICALNOT= -1 ;
-#line 400 "utilities/const_eval.bas"
-if(!qbevent)break;evnt(28618,400,"const_eval.bas");}while(r);
-#line 401 "utilities/const_eval.bas"
+#line 205 "utilities/s-buffer/sb_qb64pe_extension.bm"
 exit_subfunc:;
-#line 401 "utilities/const_eval.bas"
+#line 205 "utilities/s-buffer/sb_qb64pe_extension.bm"
 free_mem_lock(sf_mem_lock);
-#line 401 "utilities/const_eval.bas"
+#line 205 "utilities/s-buffer/sb_qb64pe_extension.bm"
 #include "free235.txt"
-#line 401 "utilities/const_eval.bas"
+#line 205 "utilities/s-buffer/sb_qb64pe_extension.bm"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
-#line 401 "utilities/const_eval.bas"
+#line 205 "utilities/s-buffer/sb_qb64pe_extension.bm"
 cmem_sp=tmp_cmem_sp;
-#line 401 "utilities/const_eval.bas"
-return *_FUNC_LOGICALNOT_LONG_LOGICALNOT;
-#line 401 "utilities/const_eval.bas"
+#line 205 "utilities/s-buffer/sb_qb64pe_extension.bm"
+qbs_maketmp(_FUNC_DEBUGPATHBASE_STRING_DEBUGPATHBASE);return _FUNC_DEBUGPATHBASE_STRING_DEBUGPATHBASE;
+#line 205 "utilities/s-buffer/sb_qb64pe_extension.bm"
 }

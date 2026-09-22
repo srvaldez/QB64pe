@@ -1,20 +1,51 @@
-#line 787 "utilities/const_eval.bas"
-qbs*oldstr4060=NULL;
-#line 787 "utilities/const_eval.bas"
-if(_SUB_FIXUPERRORMESSAGE_STRING_OP->tmp||_SUB_FIXUPERRORMESSAGE_STRING_OP->fixed||_SUB_FIXUPERRORMESSAGE_STRING_OP->readonly){
-#line 787 "utilities/const_eval.bas"
-oldstr4060=_SUB_FIXUPERRORMESSAGE_STRING_OP;
-#line 787 "utilities/const_eval.bas"
-if (oldstr4060->cmem_descriptor){
-#line 787 "utilities/const_eval.bas"
-_SUB_FIXUPERRORMESSAGE_STRING_OP=qbs_new_cmem(oldstr4060->len,0);
-#line 787 "utilities/const_eval.bas"
+int32 *_FUNC_LOGICALOR_LONG_LOGICALOR=NULL;
+#line 333 "utilities/const_eval.bas"
+if(_FUNC_LOGICALOR_LONG_LOGICALOR==NULL){
+#line 333 "utilities/const_eval.bas"
+_FUNC_LOGICALOR_LONG_LOGICALOR=(int32*)mem_static_malloc(4);
+#line 333 "utilities/const_eval.bas"
+*_FUNC_LOGICALOR_LONG_LOGICALOR=0;
+#line 333 "utilities/const_eval.bas"
+}
+#line 333 "utilities/const_eval.bas"
+qbs*oldstr4058=NULL;
+#line 333 "utilities/const_eval.bas"
+if(_FUNC_LOGICALOR_STRING_EXP->tmp||_FUNC_LOGICALOR_STRING_EXP->fixed||_FUNC_LOGICALOR_STRING_EXP->readonly){
+#line 333 "utilities/const_eval.bas"
+oldstr4058=_FUNC_LOGICALOR_STRING_EXP;
+#line 333 "utilities/const_eval.bas"
+if (oldstr4058->cmem_descriptor){
+#line 333 "utilities/const_eval.bas"
+_FUNC_LOGICALOR_STRING_EXP=qbs_new_cmem(oldstr4058->len,0);
+#line 333 "utilities/const_eval.bas"
 }else{
-#line 787 "utilities/const_eval.bas"
-_SUB_FIXUPERRORMESSAGE_STRING_OP=qbs_new(oldstr4060->len,0);
-#line 787 "utilities/const_eval.bas"
+#line 333 "utilities/const_eval.bas"
+_FUNC_LOGICALOR_STRING_EXP=qbs_new(oldstr4058->len,0);
+#line 333 "utilities/const_eval.bas"
 }
-#line 787 "utilities/const_eval.bas"
-memcpy(_SUB_FIXUPERRORMESSAGE_STRING_OP->chr,oldstr4060->chr,oldstr4060->len);
-#line 787 "utilities/const_eval.bas"
+#line 333 "utilities/const_eval.bas"
+memcpy(_FUNC_LOGICALOR_STRING_EXP->chr,oldstr4058->chr,oldstr4058->len);
+#line 333 "utilities/const_eval.bas"
 }
+void *_FUNC_LOGICALOR_UDT_NUM=NULL;
+#line 337 "utilities/const_eval.bas"
+if(_FUNC_LOGICALOR_UDT_NUM==NULL){
+#line 337 "utilities/const_eval.bas"
+_FUNC_LOGICALOR_UDT_NUM=(void*)mem_static_malloc(60);
+#line 337 "utilities/const_eval.bas"
+memset(_FUNC_LOGICALOR_UDT_NUM,0,60);
+#line 337 "utilities/const_eval.bas"
+*(qbs**)(((char*)(_FUNC_LOGICALOR_UDT_NUM))+((0+48)))=qbs_new(0,0);
+#line 337 "utilities/const_eval.bas"
+}
+qbs *_FUNC_LOGICALOR_STRING_ELE=NULL;
+#line 341 "utilities/const_eval.bas"
+if (!_FUNC_LOGICALOR_STRING_ELE)_FUNC_LOGICALOR_STRING_ELE=qbs_new(0,0);
+#line 347 "utilities/const_eval.bas"
+int32 pass4060;
+#line 347 "utilities/const_eval.bas"
+uint64 pass4061;
+#line 349 "utilities/const_eval.bas"
+int32 pass4062;
+#line 349 "utilities/const_eval.bas"
+int64 pass4063;

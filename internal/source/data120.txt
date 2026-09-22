@@ -1,73 +1,176 @@
-int8 *_FUNC_HASSTRINGENCLOSINGPAIR_BYTE_HASSTRINGENCLOSINGPAIR=NULL;
-#line 35 "utilities/strings.bas"
-if(_FUNC_HASSTRINGENCLOSINGPAIR_BYTE_HASSTRINGENCLOSINGPAIR==NULL){
-#line 35 "utilities/strings.bas"
-_FUNC_HASSTRINGENCLOSINGPAIR_BYTE_HASSTRINGENCLOSINGPAIR=(int8*)mem_static_malloc(1);
-#line 35 "utilities/strings.bas"
-*_FUNC_HASSTRINGENCLOSINGPAIR_BYTE_HASSTRINGENCLOSINGPAIR=0;
-#line 35 "utilities/strings.bas"
-}
-#line 35 "utilities/strings.bas"
-qbs*oldstr3542=NULL;
-#line 35 "utilities/strings.bas"
-if(_FUNC_HASSTRINGENCLOSINGPAIR_STRING_TEXT->tmp||_FUNC_HASSTRINGENCLOSINGPAIR_STRING_TEXT->fixed||_FUNC_HASSTRINGENCLOSINGPAIR_STRING_TEXT->readonly){
-#line 35 "utilities/strings.bas"
-oldstr3542=_FUNC_HASSTRINGENCLOSINGPAIR_STRING_TEXT;
-#line 35 "utilities/strings.bas"
-if (oldstr3542->cmem_descriptor){
-#line 35 "utilities/strings.bas"
-_FUNC_HASSTRINGENCLOSINGPAIR_STRING_TEXT=qbs_new_cmem(oldstr3542->len,0);
-#line 35 "utilities/strings.bas"
+#line 137 "utilities/arrcpy.bm"
+qbs*oldstr3566=NULL;
+#line 137 "utilities/arrcpy.bm"
+if(_SUB_PARSEARRAYCOPYREF_STRING_EXPR->tmp||_SUB_PARSEARRAYCOPYREF_STRING_EXPR->fixed||_SUB_PARSEARRAYCOPYREF_STRING_EXPR->readonly){
+#line 137 "utilities/arrcpy.bm"
+oldstr3566=_SUB_PARSEARRAYCOPYREF_STRING_EXPR;
+#line 137 "utilities/arrcpy.bm"
+if (oldstr3566->cmem_descriptor){
+#line 137 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYREF_STRING_EXPR=qbs_new_cmem(oldstr3566->len,0);
+#line 137 "utilities/arrcpy.bm"
 }else{
-#line 35 "utilities/strings.bas"
-_FUNC_HASSTRINGENCLOSINGPAIR_STRING_TEXT=qbs_new(oldstr3542->len,0);
-#line 35 "utilities/strings.bas"
+#line 137 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYREF_STRING_EXPR=qbs_new(oldstr3566->len,0);
+#line 137 "utilities/arrcpy.bm"
 }
-#line 35 "utilities/strings.bas"
-memcpy(_FUNC_HASSTRINGENCLOSINGPAIR_STRING_TEXT->chr,oldstr3542->chr,oldstr3542->len);
-#line 35 "utilities/strings.bas"
+#line 137 "utilities/arrcpy.bm"
+memcpy(_SUB_PARSEARRAYCOPYREF_STRING_EXPR->chr,oldstr3566->chr,oldstr3566->len);
+#line 137 "utilities/arrcpy.bm"
 }
-#line 35 "utilities/strings.bas"
-qbs*oldstr3543=NULL;
-#line 35 "utilities/strings.bas"
-if(_FUNC_HASSTRINGENCLOSINGPAIR_STRING_PAIR->tmp||_FUNC_HASSTRINGENCLOSINGPAIR_STRING_PAIR->fixed||_FUNC_HASSTRINGENCLOSINGPAIR_STRING_PAIR->readonly){
-#line 35 "utilities/strings.bas"
-oldstr3543=_FUNC_HASSTRINGENCLOSINGPAIR_STRING_PAIR;
-#line 35 "utilities/strings.bas"
-if (oldstr3543->cmem_descriptor){
-#line 35 "utilities/strings.bas"
-_FUNC_HASSTRINGENCLOSINGPAIR_STRING_PAIR=qbs_new_cmem(oldstr3543->len,0);
-#line 35 "utilities/strings.bas"
+#line 137 "utilities/arrcpy.bm"
+qbs*oldstr3567=NULL;
+#line 137 "utilities/arrcpy.bm"
+if(_SUB_PARSEARRAYCOPYREF_STRING_ARR_REF->tmp||_SUB_PARSEARRAYCOPYREF_STRING_ARR_REF->fixed||_SUB_PARSEARRAYCOPYREF_STRING_ARR_REF->readonly){
+#line 137 "utilities/arrcpy.bm"
+oldstr3567=_SUB_PARSEARRAYCOPYREF_STRING_ARR_REF;
+#line 137 "utilities/arrcpy.bm"
+if (oldstr3567->cmem_descriptor){
+#line 137 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYREF_STRING_ARR_REF=qbs_new_cmem(oldstr3567->len,0);
+#line 137 "utilities/arrcpy.bm"
 }else{
-#line 35 "utilities/strings.bas"
-_FUNC_HASSTRINGENCLOSINGPAIR_STRING_PAIR=qbs_new(oldstr3543->len,0);
-#line 35 "utilities/strings.bas"
+#line 137 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYREF_STRING_ARR_REF=qbs_new(oldstr3567->len,0);
+#line 137 "utilities/arrcpy.bm"
 }
-#line 35 "utilities/strings.bas"
-memcpy(_FUNC_HASSTRINGENCLOSINGPAIR_STRING_PAIR->chr,oldstr3543->chr,oldstr3543->len);
-#line 35 "utilities/strings.bas"
+#line 137 "utilities/arrcpy.bm"
+memcpy(_SUB_PARSEARRAYCOPYREF_STRING_ARR_REF->chr,oldstr3567->chr,oldstr3567->len);
+#line 137 "utilities/arrcpy.bm"
 }
-#line 36 "utilities/strings.bas"
-byte_element_struct *byte_element_3544=NULL;
-#line 36 "utilities/strings.bas"
-if (!byte_element_3544){
-#line 36 "utilities/strings.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3544=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3544=(byte_element_struct*)mem_static_malloc(12);
-#line 36 "utilities/strings.bas"
+#line 137 "utilities/arrcpy.bm"
+qbs*oldstr3568=NULL;
+#line 137 "utilities/arrcpy.bm"
+if(_SUB_PARSEARRAYCOPYREF_STRING_FIRST_EXPR->tmp||_SUB_PARSEARRAYCOPYREF_STRING_FIRST_EXPR->fixed||_SUB_PARSEARRAYCOPYREF_STRING_FIRST_EXPR->readonly){
+#line 137 "utilities/arrcpy.bm"
+oldstr3568=_SUB_PARSEARRAYCOPYREF_STRING_FIRST_EXPR;
+#line 137 "utilities/arrcpy.bm"
+if (oldstr3568->cmem_descriptor){
+#line 137 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYREF_STRING_FIRST_EXPR=qbs_new_cmem(oldstr3568->len,0);
+#line 137 "utilities/arrcpy.bm"
+}else{
+#line 137 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYREF_STRING_FIRST_EXPR=qbs_new(oldstr3568->len,0);
+#line 137 "utilities/arrcpy.bm"
 }
-#line 36 "utilities/strings.bas"
-byte_element_struct *byte_element_3545=NULL;
-#line 36 "utilities/strings.bas"
-if (!byte_element_3545){
-#line 36 "utilities/strings.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3545=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3545=(byte_element_struct*)mem_static_malloc(12);
-#line 36 "utilities/strings.bas"
+#line 137 "utilities/arrcpy.bm"
+memcpy(_SUB_PARSEARRAYCOPYREF_STRING_FIRST_EXPR->chr,oldstr3568->chr,oldstr3568->len);
+#line 137 "utilities/arrcpy.bm"
 }
-#line 37 "utilities/strings.bas"
-byte_element_struct *byte_element_3546=NULL;
-#line 37 "utilities/strings.bas"
-if (!byte_element_3546){
-#line 37 "utilities/strings.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3546=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3546=(byte_element_struct*)mem_static_malloc(12);
-#line 37 "utilities/strings.bas"
+#line 137 "utilities/arrcpy.bm"
+qbs*oldstr3569=NULL;
+#line 137 "utilities/arrcpy.bm"
+if(_SUB_PARSEARRAYCOPYREF_STRING_SECOND_EXPR->tmp||_SUB_PARSEARRAYCOPYREF_STRING_SECOND_EXPR->fixed||_SUB_PARSEARRAYCOPYREF_STRING_SECOND_EXPR->readonly){
+#line 137 "utilities/arrcpy.bm"
+oldstr3569=_SUB_PARSEARRAYCOPYREF_STRING_SECOND_EXPR;
+#line 137 "utilities/arrcpy.bm"
+if (oldstr3569->cmem_descriptor){
+#line 137 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYREF_STRING_SECOND_EXPR=qbs_new_cmem(oldstr3569->len,0);
+#line 137 "utilities/arrcpy.bm"
+}else{
+#line 137 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYREF_STRING_SECOND_EXPR=qbs_new(oldstr3569->len,0);
+#line 137 "utilities/arrcpy.bm"
 }
+#line 137 "utilities/arrcpy.bm"
+memcpy(_SUB_PARSEARRAYCOPYREF_STRING_SECOND_EXPR->chr,oldstr3569->chr,oldstr3569->len);
+#line 137 "utilities/arrcpy.bm"
+}
+qbs *_SUB_PARSEARRAYCOPYREF_STRING_TOKEN_TEXT=NULL;
+#line 138 "utilities/arrcpy.bm"
+if (!_SUB_PARSEARRAYCOPYREF_STRING_TOKEN_TEXT)_SUB_PARSEARRAYCOPYREF_STRING_TOKEN_TEXT=qbs_new(0,0);
+qbs *_SUB_PARSEARRAYCOPYREF_STRING_WHOLE_REF=NULL;
+#line 138 "utilities/arrcpy.bm"
+if (!_SUB_PARSEARRAYCOPYREF_STRING_WHOLE_REF)_SUB_PARSEARRAYCOPYREF_STRING_WHOLE_REF=qbs_new(0,0);
+int32 *_SUB_PARSEARRAYCOPYREF_LONG_TOKEN_COUNT=NULL;
+#line 139 "utilities/arrcpy.bm"
+if(_SUB_PARSEARRAYCOPYREF_LONG_TOKEN_COUNT==NULL){
+#line 139 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYREF_LONG_TOKEN_COUNT=(int32*)mem_static_malloc(4);
+#line 139 "utilities/arrcpy.bm"
+*_SUB_PARSEARRAYCOPYREF_LONG_TOKEN_COUNT=0;
+#line 139 "utilities/arrcpy.bm"
+}
+int32 *_SUB_PARSEARRAYCOPYREF_LONG_SCAN_AT=NULL;
+#line 139 "utilities/arrcpy.bm"
+if(_SUB_PARSEARRAYCOPYREF_LONG_SCAN_AT==NULL){
+#line 139 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYREF_LONG_SCAN_AT=(int32*)mem_static_malloc(4);
+#line 139 "utilities/arrcpy.bm"
+*_SUB_PARSEARRAYCOPYREF_LONG_SCAN_AT=0;
+#line 139 "utilities/arrcpy.bm"
+}
+int32 *_SUB_PARSEARRAYCOPYREF_LONG_DEPTH_COUNT=NULL;
+#line 139 "utilities/arrcpy.bm"
+if(_SUB_PARSEARRAYCOPYREF_LONG_DEPTH_COUNT==NULL){
+#line 139 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYREF_LONG_DEPTH_COUNT=(int32*)mem_static_malloc(4);
+#line 139 "utilities/arrcpy.bm"
+*_SUB_PARSEARRAYCOPYREF_LONG_DEPTH_COUNT=0;
+#line 139 "utilities/arrcpy.bm"
+}
+int32 *_SUB_PARSEARRAYCOPYREF_LONG_OPEN_AT=NULL;
+#line 139 "utilities/arrcpy.bm"
+if(_SUB_PARSEARRAYCOPYREF_LONG_OPEN_AT==NULL){
+#line 139 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYREF_LONG_OPEN_AT=(int32*)mem_static_malloc(4);
+#line 139 "utilities/arrcpy.bm"
+*_SUB_PARSEARRAYCOPYREF_LONG_OPEN_AT=0;
+#line 139 "utilities/arrcpy.bm"
+}
+int32 *_SUB_PARSEARRAYCOPYREF_LONG_SPLIT_AT=NULL;
+#line 139 "utilities/arrcpy.bm"
+if(_SUB_PARSEARRAYCOPYREF_LONG_SPLIT_AT==NULL){
+#line 139 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYREF_LONG_SPLIT_AT=(int32*)mem_static_malloc(4);
+#line 139 "utilities/arrcpy.bm"
+*_SUB_PARSEARRAYCOPYREF_LONG_SPLIT_AT=0;
+#line 139 "utilities/arrcpy.bm"
+}
+int32 *_SUB_PARSEARRAYCOPYREF_LONG_COMMA_COUNT=NULL;
+#line 139 "utilities/arrcpy.bm"
+if(_SUB_PARSEARRAYCOPYREF_LONG_COMMA_COUNT==NULL){
+#line 139 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYREF_LONG_COMMA_COUNT=(int32*)mem_static_malloc(4);
+#line 139 "utilities/arrcpy.bm"
+*_SUB_PARSEARRAYCOPYREF_LONG_COMMA_COUNT=0;
+#line 139 "utilities/arrcpy.bm"
+}
+#line 154 "utilities/arrcpy.bm"
+int64 fornext_value3571;
+#line 154 "utilities/arrcpy.bm"
+int64 fornext_finalvalue3571;
+#line 154 "utilities/arrcpy.bm"
+int64 fornext_step3571;
+#line 154 "utilities/arrcpy.bm"
+uint8 fornext_step_negative3571;
+#line 165 "utilities/arrcpy.bm"
+int32 pass3572;
+#line 165 "utilities/arrcpy.bm"
+int32 pass3573;
+#line 178 "utilities/arrcpy.bm"
+int64 fornext_value3575;
+#line 178 "utilities/arrcpy.bm"
+int64 fornext_finalvalue3575;
+#line 178 "utilities/arrcpy.bm"
+int64 fornext_step3575;
+#line 178 "utilities/arrcpy.bm"
+uint8 fornext_step_negative3575;
+#line 205 "utilities/arrcpy.bm"
+int32 pass3576;
+#line 205 "utilities/arrcpy.bm"
+int32 pass3577;
+#line 206 "utilities/arrcpy.bm"
+int32 pass3578;
+#line 206 "utilities/arrcpy.bm"
+int32 pass3579;
+#line 209 "utilities/arrcpy.bm"
+int32 pass3580;
+#line 209 "utilities/arrcpy.bm"
+int32 pass3581;
+#line 212 "utilities/arrcpy.bm"
+int32 pass3582;
+#line 212 "utilities/arrcpy.bm"
+int32 pass3583;

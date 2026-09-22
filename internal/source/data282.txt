@@ -1,9 +1,0 @@
-int32 *_SUB_INCREASEUDTARRAYS_LONG_X=NULL;
-#line 762 "utilities/type.bas"
-if(_SUB_INCREASEUDTARRAYS_LONG_X==NULL){
-#line 762 "utilities/type.bas"
-_SUB_INCREASEUDTARRAYS_LONG_X=(int32*)mem_static_malloc(4);
-#line 762 "utilities/type.bas"
-*_SUB_INCREASEUDTARRAYS_LONG_X=0;
-#line 762 "utilities/type.bas"
-}

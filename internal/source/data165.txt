@@ -1,34 +1,3 @@
-qbs *_FUNC_CREATEELEMENTSTRING_STRING_CREATEELEMENTSTRING=NULL;
-#line 609 "utilities/elements.bas"
-if (!_FUNC_CREATEELEMENTSTRING_STRING_CREATEELEMENTSTRING)_FUNC_CREATEELEMENTSTRING_STRING_CREATEELEMENTSTRING=qbs_new(0,0);
-#line 609 "utilities/elements.bas"
-qbs*oldstr3682=NULL;
-#line 609 "utilities/elements.bas"
-if(_FUNC_CREATEELEMENTSTRING_STRING_S->tmp||_FUNC_CREATEELEMENTSTRING_STRING_S->fixed||_FUNC_CREATEELEMENTSTRING_STRING_S->readonly){
-#line 609 "utilities/elements.bas"
-oldstr3682=_FUNC_CREATEELEMENTSTRING_STRING_S;
-#line 609 "utilities/elements.bas"
-if (oldstr3682->cmem_descriptor){
-#line 609 "utilities/elements.bas"
-_FUNC_CREATEELEMENTSTRING_STRING_S=qbs_new_cmem(oldstr3682->len,0);
-#line 609 "utilities/elements.bas"
-}else{
-#line 609 "utilities/elements.bas"
-_FUNC_CREATEELEMENTSTRING_STRING_S=qbs_new(oldstr3682->len,0);
-#line 609 "utilities/elements.bas"
-}
-#line 609 "utilities/elements.bas"
-memcpy(_FUNC_CREATEELEMENTSTRING_STRING_S->chr,oldstr3682->chr,oldstr3682->len);
-#line 609 "utilities/elements.bas"
-}
-qbs *_FUNC_CREATEELEMENTSTRING_STRING_ELE=NULL;
-#line 610 "utilities/elements.bas"
-if (!_FUNC_CREATEELEMENTSTRING_STRING_ELE)_FUNC_CREATEELEMENTSTRING_STRING_ELE=qbs_new(0,0);
-#line 615 "utilities/elements.bas"
-byte_element_struct *byte_element_3683=NULL;
-#line 615 "utilities/elements.bas"
-if (!byte_element_3683){
-#line 615 "utilities/elements.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3683=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3683=(byte_element_struct*)mem_static_malloc(12);
-#line 615 "utilities/elements.bas"
-}
+qbs *_FUNC_GETCOMPILERPATH_STRING_GETCOMPILERPATH=NULL;
+#line 28 "utilities/build.bas"
+if (!_FUNC_GETCOMPILERPATH_STRING_GETCOMPILERPATH)_FUNC_GETCOMPILERPATH_STRING_GETCOMPILERPATH=qbs_new(0,0);

@@ -1,53 +1,40 @@
-int32 *_FUNC_IDEVBAR_LONG_IDEVBAR=NULL;
-#line 15444 "ide/ide_methods.bas"
-if(_FUNC_IDEVBAR_LONG_IDEVBAR==NULL){
-#line 15444 "ide/ide_methods.bas"
-_FUNC_IDEVBAR_LONG_IDEVBAR=(int32*)mem_static_malloc(4);
-#line 15444 "ide/ide_methods.bas"
-*_FUNC_IDEVBAR_LONG_IDEVBAR=0;
-#line 15444 "ide/ide_methods.bas"
+qbs *_FUNC_IDENEWFOLDER_STRING_IDENEWFOLDER=NULL;
+#line 12477 "ide/ide_methods.bas"
+if (!_FUNC_IDENEWFOLDER_STRING_IDENEWFOLDER)_FUNC_IDENEWFOLDER_STRING_IDENEWFOLDER=qbs_new(0,0);
+#line 12477 "ide/ide_methods.bas"
+qbs*oldstr6102=NULL;
+#line 12477 "ide/ide_methods.bas"
+if(_FUNC_IDENEWFOLDER_STRING_THISPATH->tmp||_FUNC_IDENEWFOLDER_STRING_THISPATH->fixed||_FUNC_IDENEWFOLDER_STRING_THISPATH->readonly){
+#line 12477 "ide/ide_methods.bas"
+oldstr6102=_FUNC_IDENEWFOLDER_STRING_THISPATH;
+#line 12477 "ide/ide_methods.bas"
+if (oldstr6102->cmem_descriptor){
+#line 12477 "ide/ide_methods.bas"
+_FUNC_IDENEWFOLDER_STRING_THISPATH=qbs_new_cmem(oldstr6102->len,0);
+#line 12477 "ide/ide_methods.bas"
+}else{
+#line 12477 "ide/ide_methods.bas"
+_FUNC_IDENEWFOLDER_STRING_THISPATH=qbs_new(oldstr6102->len,0);
+#line 12477 "ide/ide_methods.bas"
 }
-int32 *_FUNC_IDEVBAR_LONG_I=NULL;
-#line 15445 "ide/ide_methods.bas"
-if(_FUNC_IDEVBAR_LONG_I==NULL){
-#line 15445 "ide/ide_methods.bas"
-_FUNC_IDEVBAR_LONG_I=(int32*)mem_static_malloc(4);
-#line 15445 "ide/ide_methods.bas"
-*_FUNC_IDEVBAR_LONG_I=0;
-#line 15445 "ide/ide_methods.bas"
+#line 12477 "ide/ide_methods.bas"
+memcpy(_FUNC_IDENEWFOLDER_STRING_THISPATH->chr,oldstr6102->chr,oldstr6102->len);
+#line 12477 "ide/ide_methods.bas"
 }
-int32 *_FUNC_IDEVBAR_LONG_N=NULL;
-#line 15445 "ide/ide_methods.bas"
-if(_FUNC_IDEVBAR_LONG_N==NULL){
-#line 15445 "ide/ide_methods.bas"
-_FUNC_IDEVBAR_LONG_N=(int32*)mem_static_malloc(4);
-#line 15445 "ide/ide_methods.bas"
-*_FUNC_IDEVBAR_LONG_N=0;
-#line 15445 "ide/ide_methods.bas"
-}
-int32 *_FUNC_IDEVBAR_LONG_Y2=NULL;
-#line 15453 "ide/ide_methods.bas"
-if(_FUNC_IDEVBAR_LONG_Y2==NULL){
-#line 15453 "ide/ide_methods.bas"
-_FUNC_IDEVBAR_LONG_Y2=(int32*)mem_static_malloc(4);
-#line 15453 "ide/ide_methods.bas"
-*_FUNC_IDEVBAR_LONG_Y2=0;
-#line 15453 "ide/ide_methods.bas"
-}
-#line 15453 "ide/ide_methods.bas"
-int64 fornext_value6325;
-#line 15453 "ide/ide_methods.bas"
-int64 fornext_finalvalue6325;
-#line 15453 "ide/ide_methods.bas"
-int64 fornext_step6325;
-#line 15453 "ide/ide_methods.bas"
-uint8 fornext_step_negative6325;
-float *_FUNC_IDEVBAR_SINGLE_P=NULL;
-#line 15481 "ide/ide_methods.bas"
-if(_FUNC_IDEVBAR_SINGLE_P==NULL){
-#line 15481 "ide/ide_methods.bas"
-_FUNC_IDEVBAR_SINGLE_P=(float*)mem_static_malloc(4);
-#line 15481 "ide/ide_methods.bas"
-*_FUNC_IDEVBAR_SINGLE_P=0;
-#line 15481 "ide/ide_methods.bas"
+qbs *_FUNC_IDENEWFOLDER_STRING_NEWFOLDER=NULL;
+#line 12478 "ide/ide_methods.bas"
+if (!_FUNC_IDENEWFOLDER_STRING_NEWFOLDER)_FUNC_IDENEWFOLDER_STRING_NEWFOLDER=qbs_new(0,0);
+#line 12478 "ide/ide_methods.bas"
+int32 pass6103;
+#line 12478 "ide/ide_methods.bas"
+int32 pass6104;
+#line 12478 "ide/ide_methods.bas"
+int32 pass6105;
+#line 12480 "ide/ide_methods.bas"
+byte_element_struct *byte_element_6106=NULL;
+#line 12480 "ide/ide_methods.bas"
+if (!byte_element_6106){
+#line 12480 "ide/ide_methods.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_6106=(byte_element_struct*)(mem_static_pointer-12); else byte_element_6106=(byte_element_struct*)mem_static_malloc(12);
+#line 12480 "ide/ide_methods.bas"
 }

@@ -1,8 +1,8 @@
-if(oldstr2276){
-if(oldstr2276->fixed)qbs_set(oldstr2276,_SUB_EVALASGRHS_STRING_EXPR);
+if(oldstr2290){
+if(oldstr2290->fixed)qbs_set(oldstr2290,_SUB_EVALASGRHS_STRING_EXPR);
 qbs_free(_SUB_EVALASGRHS_STRING_EXPR);
 }
-if(oldstr2277){
-if(oldstr2277->fixed)qbs_set(oldstr2277,_SUB_EVALASGRHS_STRING_REF_TEXT);
+if(oldstr2291){
+if(oldstr2291->fixed)qbs_set(oldstr2291,_SUB_EVALASGRHS_STRING_REF_TEXT);
 qbs_free(_SUB_EVALASGRHS_STRING_REF_TEXT);
 }

@@ -1,4 +1,4 @@
-if(oldstr3929){
-if(oldstr3929->fixed)qbs_set(oldstr3929,_FUNC_NUMERICEXPRESSION_STRING_EXP);
-qbs_free(_FUNC_NUMERICEXPRESSION_STRING_EXP);
+if(oldstr3990){
+if(oldstr3990->fixed)qbs_set(oldstr3990,_FUNC_SBUFNHASH_STRING_SBNAME);
+qbs_free(_FUNC_SBUFNHASH_STRING_SBNAME);
 }

@@ -1,72 +1,67 @@
-int32 *_FUNC_SYMBOLTYPE_LONG_SYMBOLTYPE=NULL;
-#line 343 "utilities/type.bas"
-if(_FUNC_SYMBOLTYPE_LONG_SYMBOLTYPE==NULL){
-#line 343 "utilities/type.bas"
-_FUNC_SYMBOLTYPE_LONG_SYMBOLTYPE=(int32*)mem_static_malloc(4);
-#line 343 "utilities/type.bas"
-*_FUNC_SYMBOLTYPE_LONG_SYMBOLTYPE=0;
-#line 343 "utilities/type.bas"
+int32 *_FUNC_HASHFINDREV_LONG_HASHFINDREV=NULL;
+#line 117 "utilities/hash.bas"
+if(_FUNC_HASHFINDREV_LONG_HASHFINDREV==NULL){
+#line 117 "utilities/hash.bas"
+_FUNC_HASHFINDREV_LONG_HASHFINDREV=(int32*)mem_static_malloc(4);
+#line 117 "utilities/hash.bas"
+*_FUNC_HASHFINDREV_LONG_HASHFINDREV=0;
+#line 117 "utilities/hash.bas"
 }
-#line 343 "utilities/type.bas"
-qbs*oldstr4137=NULL;
-#line 343 "utilities/type.bas"
-if(_FUNC_SYMBOLTYPE_STRING_S->tmp||_FUNC_SYMBOLTYPE_STRING_S->fixed||_FUNC_SYMBOLTYPE_STRING_S->readonly){
-#line 343 "utilities/type.bas"
-oldstr4137=_FUNC_SYMBOLTYPE_STRING_S;
-#line 343 "utilities/type.bas"
-if (oldstr4137->cmem_descriptor){
-#line 343 "utilities/type.bas"
-_FUNC_SYMBOLTYPE_STRING_S=qbs_new_cmem(oldstr4137->len,0);
-#line 343 "utilities/type.bas"
+#line 117 "utilities/hash.bas"
+qbs*oldstr4211=NULL;
+#line 117 "utilities/hash.bas"
+if(_FUNC_HASHFINDREV_STRING_A->tmp||_FUNC_HASHFINDREV_STRING_A->fixed||_FUNC_HASHFINDREV_STRING_A->readonly){
+#line 117 "utilities/hash.bas"
+oldstr4211=_FUNC_HASHFINDREV_STRING_A;
+#line 117 "utilities/hash.bas"
+if (oldstr4211->cmem_descriptor){
+#line 117 "utilities/hash.bas"
+_FUNC_HASHFINDREV_STRING_A=qbs_new_cmem(oldstr4211->len,0);
+#line 117 "utilities/hash.bas"
 }else{
-#line 343 "utilities/type.bas"
-_FUNC_SYMBOLTYPE_STRING_S=qbs_new(oldstr4137->len,0);
-#line 343 "utilities/type.bas"
+#line 117 "utilities/hash.bas"
+_FUNC_HASHFINDREV_STRING_A=qbs_new(oldstr4211->len,0);
+#line 117 "utilities/hash.bas"
 }
-#line 343 "utilities/type.bas"
-memcpy(_FUNC_SYMBOLTYPE_STRING_S->chr,oldstr4137->chr,oldstr4137->len);
-#line 343 "utilities/type.bas"
+#line 117 "utilities/hash.bas"
+memcpy(_FUNC_HASHFINDREV_STRING_A->chr,oldstr4211->chr,oldstr4211->len);
+#line 117 "utilities/hash.bas"
 }
-#line 346 "utilities/type.bas"
-byte_element_struct *byte_element_4138=NULL;
-#line 346 "utilities/type.bas"
-if (!byte_element_4138){
-#line 346 "utilities/type.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4138=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4138=(byte_element_struct*)mem_static_malloc(12);
-#line 346 "utilities/type.bas"
+int32 *_FUNC_HASHFINDREV_LONG_I=NULL;
+#line 122 "utilities/hash.bas"
+if(_FUNC_HASHFINDREV_LONG_I==NULL){
+#line 122 "utilities/hash.bas"
+_FUNC_HASHFINDREV_LONG_I=(int32*)mem_static_malloc(4);
+#line 122 "utilities/hash.bas"
+*_FUNC_HASHFINDREV_LONG_I=0;
+#line 122 "utilities/hash.bas"
 }
-int32 *_FUNC_SYMBOLTYPE_LONG_A=NULL;
-#line 348 "utilities/type.bas"
-if(_FUNC_SYMBOLTYPE_LONG_A==NULL){
-#line 348 "utilities/type.bas"
-_FUNC_SYMBOLTYPE_LONG_A=(int32*)mem_static_malloc(4);
-#line 348 "utilities/type.bas"
-*_FUNC_SYMBOLTYPE_LONG_A=0;
-#line 348 "utilities/type.bas"
+qbs *_FUNC_HASHFINDREV_STRING_UA=NULL;
+#line 125 "utilities/hash.bas"
+if (!_FUNC_HASHFINDREV_STRING_UA)_FUNC_HASHFINDREV_STRING_UA=qbs_new(0,0);
+#line 125 "utilities/hash.bas"
+byte_element_struct *byte_element_4212=NULL;
+#line 125 "utilities/hash.bas"
+if (!byte_element_4212){
+#line 125 "utilities/hash.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4212=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4212=(byte_element_struct*)mem_static_malloc(12);
+#line 125 "utilities/hash.bas"
 }
-int32 *_FUNC_SYMBOLTYPE_LONG_L=NULL;
-#line 349 "utilities/type.bas"
-if(_FUNC_SYMBOLTYPE_LONG_L==NULL){
-#line 349 "utilities/type.bas"
-_FUNC_SYMBOLTYPE_LONG_L=(int32*)mem_static_malloc(4);
-#line 349 "utilities/type.bas"
-*_FUNC_SYMBOLTYPE_LONG_L=0;
-#line 349 "utilities/type.bas"
+int32 *_FUNC_HASHFINDREV_LONG_F=NULL;
+#line 127 "utilities/hash.bas"
+if(_FUNC_HASHFINDREV_LONG_F==NULL){
+#line 127 "utilities/hash.bas"
+_FUNC_HASHFINDREV_LONG_F=(int32*)mem_static_malloc(4);
+#line 127 "utilities/hash.bas"
+*_FUNC_HASHFINDREV_LONG_F=0;
+#line 127 "utilities/hash.bas"
 }
-#line 349 "utilities/type.bas"
-byte_element_struct *byte_element_4139=NULL;
-#line 349 "utilities/type.bas"
-if (!byte_element_4139){
-#line 349 "utilities/type.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4139=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4139=(byte_element_struct*)mem_static_malloc(12);
-#line 349 "utilities/type.bas"
-}
-int32 *_FUNC_SYMBOLTYPE_LONG_N=NULL;
-#line 390 "utilities/type.bas"
-if(_FUNC_SYMBOLTYPE_LONG_N==NULL){
-#line 390 "utilities/type.bas"
-_FUNC_SYMBOLTYPE_LONG_N=(int32*)mem_static_malloc(4);
-#line 390 "utilities/type.bas"
-*_FUNC_SYMBOLTYPE_LONG_N=0;
-#line 390 "utilities/type.bas"
+int32 *_FUNC_HASHFINDREV_LONG_I2=NULL;
+#line 132 "utilities/hash.bas"
+if(_FUNC_HASHFINDREV_LONG_I2==NULL){
+#line 132 "utilities/hash.bas"
+_FUNC_HASHFINDREV_LONG_I2=(int32*)mem_static_malloc(4);
+#line 132 "utilities/hash.bas"
+*_FUNC_HASHFINDREV_LONG_I2=0;
+#line 132 "utilities/hash.bas"
 }

@@ -1,96 +1,60 @@
-qbs *_FUNC_ELEUCASE_STRING_ELEUCASE=NULL;
-#line 406 "utilities/elements.bas"
-if (!_FUNC_ELEUCASE_STRING_ELEUCASE)_FUNC_ELEUCASE_STRING_ELEUCASE=qbs_new(0,0);
-#line 406 "utilities/elements.bas"
-qbs*oldstr3658=NULL;
-#line 406 "utilities/elements.bas"
-if(_FUNC_ELEUCASE_STRING_A->tmp||_FUNC_ELEUCASE_STRING_A->fixed||_FUNC_ELEUCASE_STRING_A->readonly){
-#line 406 "utilities/elements.bas"
-oldstr3658=_FUNC_ELEUCASE_STRING_A;
-#line 406 "utilities/elements.bas"
-if (oldstr3658->cmem_descriptor){
-#line 406 "utilities/elements.bas"
-_FUNC_ELEUCASE_STRING_A=qbs_new_cmem(oldstr3658->len,0);
-#line 406 "utilities/elements.bas"
+qbs *_FUNC_GETESCAPEDPATH_STRING_GETESCAPEDPATH=NULL;
+#line 86 "utilities/file.bas"
+if (!_FUNC_GETESCAPEDPATH_STRING_GETESCAPEDPATH)_FUNC_GETESCAPEDPATH_STRING_GETESCAPEDPATH=qbs_new(0,0);
+#line 86 "utilities/file.bas"
+qbs*oldstr3740=NULL;
+#line 86 "utilities/file.bas"
+if(_FUNC_GETESCAPEDPATH_STRING_PATH_NAME->tmp||_FUNC_GETESCAPEDPATH_STRING_PATH_NAME->fixed||_FUNC_GETESCAPEDPATH_STRING_PATH_NAME->readonly){
+#line 86 "utilities/file.bas"
+oldstr3740=_FUNC_GETESCAPEDPATH_STRING_PATH_NAME;
+#line 86 "utilities/file.bas"
+if (oldstr3740->cmem_descriptor){
+#line 86 "utilities/file.bas"
+_FUNC_GETESCAPEDPATH_STRING_PATH_NAME=qbs_new_cmem(oldstr3740->len,0);
+#line 86 "utilities/file.bas"
 }else{
-#line 406 "utilities/elements.bas"
-_FUNC_ELEUCASE_STRING_A=qbs_new(oldstr3658->len,0);
-#line 406 "utilities/elements.bas"
+#line 86 "utilities/file.bas"
+_FUNC_GETESCAPEDPATH_STRING_PATH_NAME=qbs_new(oldstr3740->len,0);
+#line 86 "utilities/file.bas"
 }
-#line 406 "utilities/elements.bas"
-memcpy(_FUNC_ELEUCASE_STRING_A->chr,oldstr3658->chr,oldstr3658->len);
-#line 406 "utilities/elements.bas"
+#line 86 "utilities/file.bas"
+memcpy(_FUNC_GETESCAPEDPATH_STRING_PATH_NAME->chr,oldstr3740->chr,oldstr3740->len);
+#line 86 "utilities/file.bas"
 }
-int32 *_FUNC_ELEUCASE_LONG_I=NULL;
-#line 407 "utilities/elements.bas"
-if(_FUNC_ELEUCASE_LONG_I==NULL){
-#line 407 "utilities/elements.bas"
-_FUNC_ELEUCASE_LONG_I=(int32*)mem_static_malloc(4);
-#line 407 "utilities/elements.bas"
-*_FUNC_ELEUCASE_LONG_I=0;
-#line 407 "utilities/elements.bas"
+qbs *_FUNC_GETESCAPEDPATH_STRING_BUF=NULL;
+#line 87 "utilities/file.bas"
+if (!_FUNC_GETESCAPEDPATH_STRING_BUF)_FUNC_GETESCAPEDPATH_STRING_BUF=qbs_new(0,0);
+uint32 *_FUNC_GETESCAPEDPATH_ULONG_Z=NULL;
+#line 87 "utilities/file.bas"
+if(_FUNC_GETESCAPEDPATH_ULONG_Z==NULL){
+#line 87 "utilities/file.bas"
+_FUNC_GETESCAPEDPATH_ULONG_Z=(uint32*)mem_static_malloc(4);
+#line 87 "utilities/file.bas"
+*_FUNC_GETESCAPEDPATH_ULONG_Z=0;
+#line 87 "utilities/file.bas"
 }
-int32 *_FUNC_ELEUCASE_LONG_I2=NULL;
-#line 407 "utilities/elements.bas"
-if(_FUNC_ELEUCASE_LONG_I2==NULL){
-#line 407 "utilities/elements.bas"
-_FUNC_ELEUCASE_LONG_I2=(int32*)mem_static_malloc(4);
-#line 407 "utilities/elements.bas"
-*_FUNC_ELEUCASE_LONG_I2=0;
-#line 407 "utilities/elements.bas"
+uint8 *_FUNC_GETESCAPEDPATH_UBYTE_A=NULL;
+#line 87 "utilities/file.bas"
+if(_FUNC_GETESCAPEDPATH_UBYTE_A==NULL){
+#line 87 "utilities/file.bas"
+_FUNC_GETESCAPEDPATH_UBYTE_A=(uint8*)mem_static_malloc(1);
+#line 87 "utilities/file.bas"
+*_FUNC_GETESCAPEDPATH_UBYTE_A=0;
+#line 87 "utilities/file.bas"
 }
-qbs *_FUNC_ELEUCASE_STRING_A2=NULL;
-#line 407 "utilities/elements.bas"
-if (!_FUNC_ELEUCASE_STRING_A2)_FUNC_ELEUCASE_STRING_A2=qbs_new(0,0);
-qbs *_FUNC_ELEUCASE_STRING_SP34=NULL;
-#line 407 "utilities/elements.bas"
-if (!_FUNC_ELEUCASE_STRING_SP34)_FUNC_ELEUCASE_STRING_SP34=qbs_new(0,0);
-int32 *_FUNC_ELEUCASE_LONG_I3=NULL;
-#line 407 "utilities/elements.bas"
-if(_FUNC_ELEUCASE_LONG_I3==NULL){
-#line 407 "utilities/elements.bas"
-_FUNC_ELEUCASE_LONG_I3=(int32*)mem_static_malloc(4);
-#line 407 "utilities/elements.bas"
-*_FUNC_ELEUCASE_LONG_I3=0;
-#line 407 "utilities/elements.bas"
-}
-#line 411 "utilities/elements.bas"
-byte_element_struct *byte_element_3659=NULL;
-#line 411 "utilities/elements.bas"
-if (!byte_element_3659){
-#line 411 "utilities/elements.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3659=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3659=(byte_element_struct*)mem_static_malloc(12);
-#line 411 "utilities/elements.bas"
-}
-#line 421 "utilities/elements.bas"
-byte_element_struct *byte_element_3660=NULL;
-#line 421 "utilities/elements.bas"
-if (!byte_element_3660){
-#line 421 "utilities/elements.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3660=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3660=(byte_element_struct*)mem_static_malloc(12);
-#line 421 "utilities/elements.bas"
-}
-#line 425 "utilities/elements.bas"
-byte_element_struct *byte_element_3662=NULL;
-#line 425 "utilities/elements.bas"
-if (!byte_element_3662){
-#line 425 "utilities/elements.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3662=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3662=(byte_element_struct*)mem_static_malloc(12);
-#line 425 "utilities/elements.bas"
-}
-#line 428 "utilities/elements.bas"
-byte_element_struct *byte_element_3663=NULL;
-#line 428 "utilities/elements.bas"
-if (!byte_element_3663){
-#line 428 "utilities/elements.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3663=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3663=(byte_element_struct*)mem_static_malloc(12);
-#line 428 "utilities/elements.bas"
-}
-#line 431 "utilities/elements.bas"
-byte_element_struct *byte_element_3664=NULL;
-#line 431 "utilities/elements.bas"
-if (!byte_element_3664){
-#line 431 "utilities/elements.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3664=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3664=(byte_element_struct*)mem_static_malloc(12);
-#line 431 "utilities/elements.bas"
+#line 89 "utilities/file.bas"
+int64 fornext_value3742;
+#line 89 "utilities/file.bas"
+int64 fornext_finalvalue3742;
+#line 89 "utilities/file.bas"
+int64 fornext_step3742;
+#line 89 "utilities/file.bas"
+uint8 fornext_step_negative3742;
+#line 89 "utilities/file.bas"
+byte_element_struct *byte_element_3743=NULL;
+#line 89 "utilities/file.bas"
+if (!byte_element_3743){
+#line 89 "utilities/file.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_3743=(byte_element_struct*)(mem_static_pointer-12); else byte_element_3743=(byte_element_struct*)mem_static_malloc(12);
+#line 89 "utilities/file.bas"
 }

@@ -1,15 +1,24 @@
-qbs *_FUNC_TYPE_GETCPPARITHMETICTYPE_STRING_TYPE_GETCPPARITHMETICTYPE=NULL;
-#line 2237 "utilities/type.bas"
-if (!_FUNC_TYPE_GETCPPARITHMETICTYPE_STRING_TYPE_GETCPPARITHMETICTYPE)_FUNC_TYPE_GETCPPARITHMETICTYPE_STRING_TYPE_GETCPPARITHMETICTYPE=qbs_new(0,0);
-uint32 *_FUNC_TYPE_GETCPPARITHMETICTYPE_ULONG_SIZEINBITS=NULL;
-#line 2238 "utilities/type.bas"
-if(_FUNC_TYPE_GETCPPARITHMETICTYPE_ULONG_SIZEINBITS==NULL){
-#line 2238 "utilities/type.bas"
-_FUNC_TYPE_GETCPPARITHMETICTYPE_ULONG_SIZEINBITS=(uint32*)mem_static_malloc(4);
-#line 2238 "utilities/type.bas"
-*_FUNC_TYPE_GETCPPARITHMETICTYPE_ULONG_SIZEINBITS=0;
-#line 2238 "utilities/type.bas"
+#line 1862 "utilities/type.bas"
+qbs*oldstr4450=NULL;
+#line 1862 "utilities/type.bas"
+if(_SUB_FREE_UDT_VARSTRINGS_STRING_N->tmp||_SUB_FREE_UDT_VARSTRINGS_STRING_N->fixed||_SUB_FREE_UDT_VARSTRINGS_STRING_N->readonly){
+#line 1862 "utilities/type.bas"
+oldstr4450=_SUB_FREE_UDT_VARSTRINGS_STRING_N;
+#line 1862 "utilities/type.bas"
+if (oldstr4450->cmem_descriptor){
+#line 1862 "utilities/type.bas"
+_SUB_FREE_UDT_VARSTRINGS_STRING_N=qbs_new_cmem(oldstr4450->len,0);
+#line 1862 "utilities/type.bas"
+}else{
+#line 1862 "utilities/type.bas"
+_SUB_FREE_UDT_VARSTRINGS_STRING_N=qbs_new(oldstr4450->len,0);
+#line 1862 "utilities/type.bas"
 }
-qbs *_FUNC_TYPE_GETCPPARITHMETICTYPE_STRING_CTYPE=NULL;
-#line 2239 "utilities/type.bas"
-if (!_FUNC_TYPE_GETCPPARITHMETICTYPE_STRING_CTYPE)_FUNC_TYPE_GETCPPARITHMETICTYPE_STRING_CTYPE=qbs_new(0,0);
+#line 1862 "utilities/type.bas"
+memcpy(_SUB_FREE_UDT_VARSTRINGS_STRING_N->chr,oldstr4450->chr,oldstr4450->len);
+#line 1862 "utilities/type.bas"
+}
+#line 1864 "utilities/type.bas"
+int32 pass4451;
+#line 1864 "utilities/type.bas"
+int32 pass4452;

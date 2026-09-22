@@ -1,100 +1,132 @@
-#line 135 "utilities/strings.bas"
-int32 FUNC_READWRITELONGSETTINGVALUE(qbs*_FUNC_READWRITELONGSETTINGVALUE_STRING_SECTION,qbs*_FUNC_READWRITELONGSETTINGVALUE_STRING_SETTING,int32*_FUNC_READWRITELONGSETTINGVALUE_LONG_DEFAULT){
-#line 135 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+void SUB_PARSEARRAYCOPYSOURCERANGE1D(qbs*_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_EXPR,qbs*_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_EXPR,qbs*_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_CODE,qbs*_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_CODE){
+#line 442 "utilities/arrcpy.bm"
 qbs *tqbs;
-#line 135 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
 ptrszint tmp_long;
-#line 135 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
 int32 tmp_fileno;
-#line 135 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
-#line 135 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
-#line 135 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
 uint32 tmp_cmem_sp=cmem_sp;
-#line 135 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
 #include "data129.txt"
-#line 135 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
 mem_lock *sf_mem_lock;
-#line 135 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
 new_mem_lock();
-#line 135 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
 sf_mem_lock=mem_lock_tmp;
-#line 135 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
 sf_mem_lock->type=3;
-#line 135 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
 libqb_check_stack();
-#line 135 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
 if (is_error_pending()) goto exit_subfunc;
-#line 136 "utilities/strings.bas"
+#line 443 "utilities/arrcpy.bm"
 do{
-#line 136 "utilities/strings.bas"
-if(!qbevent)break;evnt(28611,136,"strings.bas");}while(r);
-#line 137 "utilities/strings.bas"
+#line 443 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(28798,443,"arrcpy.bm");}while(r);
+#line 445 "utilities/arrcpy.bm"
 do{
-#line 137 "utilities/strings.bas"
-if(!qbevent)break;evnt(28611,137,"strings.bas");}while(r);
-#line 138 "utilities/strings.bas"
-do{
-#line 138 "utilities/strings.bas"
-if(!qbevent)break;evnt(28611,138,"strings.bas");}while(r);
-#line 140 "utilities/strings.bas"
-do{
-#line 140 "utilities/strings.bas"
-*_FUNC_READWRITELONGSETTINGVALUE_INTEGER_RESULT=FUNC_READCONFIGSETTING(_FUNC_READWRITELONGSETTINGVALUE_STRING_SECTION,_FUNC_READWRITELONGSETTINGVALUE_STRING_SETTING,_FUNC_READWRITELONGSETTINGVALUE_STRING_VALUE);
-#line 140 "utilities/strings.bas"
+#line 445 "utilities/arrcpy.bm"
+qbs_set(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_WORK,FUNC_FIXOPERATIONORDER(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_EXPR));
+#line 445 "utilities/arrcpy.bm"
 qbs_cleanup(qbs_tmp_base,0);
-#line 140 "utilities/strings.bas"
-if(!qbevent)break;evnt(28611,140,"strings.bas");}while(r);
-#line 142 "utilities/strings.bas"
+#line 445 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(28798,445,"arrcpy.bm");}while(r);
+#line 446 "utilities/arrcpy.bm"
+S_37665:;
+#line 446 "utilities/arrcpy.bm"
+if ((*__LONG_ERROR_HAPPENED)||is_error_pending()){
+#line 446 "utilities/arrcpy.bm"
+if(qbevent){evnt(28798,446,"arrcpy.bm");if(r)goto S_37665;}
+#line 446 "utilities/arrcpy.bm"
 do{
-#line 142 "utilities/strings.bas"
-*_FUNC_READWRITELONGSETTINGVALUE_LONG_CHECKRESULT=qbr(qbs_val<long double>(_FUNC_READWRITELONGSETTINGVALUE_STRING_VALUE));
-#line 142 "utilities/strings.bas"
-qbs_cleanup(qbs_tmp_base,0);
-#line 142 "utilities/strings.bas"
-if(!qbevent)break;evnt(28611,142,"strings.bas");}while(r);
-#line 144 "utilities/strings.bas"
-S_37182:;
-#line 144 "utilities/strings.bas"
-if (((-(*_FUNC_READWRITELONGSETTINGVALUE_INTEGER_RESULT== 0 ))|(-(*_FUNC_READWRITELONGSETTINGVALUE_LONG_CHECKRESULT<= 0 )))||is_error_pending()){
-#line 144 "utilities/strings.bas"
-if(qbevent){evnt(28611,144,"strings.bas");if(r)goto S_37182;}
-#line 145 "utilities/strings.bas"
-do{
-#line 145 "utilities/strings.bas"
-SUB_WRITECONFIGSETTING(_FUNC_READWRITELONGSETTINGVALUE_STRING_SECTION,_FUNC_READWRITELONGSETTINGVALUE_STRING_SETTING,qbs__tostr((int32)(*_FUNC_READWRITELONGSETTINGVALUE_LONG_DEFAULT),NULL,0));
-#line 145 "utilities/strings.bas"
-qbs_cleanup(qbs_tmp_base,0);
-#line 145 "utilities/strings.bas"
-if(!qbevent)break;evnt(28611,145,"strings.bas");}while(r);
-#line 146 "utilities/strings.bas"
-do{
-#line 146 "utilities/strings.bas"
-*_FUNC_READWRITELONGSETTINGVALUE_LONG_READWRITELONGSETTINGVALUE=*_FUNC_READWRITELONGSETTINGVALUE_LONG_DEFAULT;
-#line 146 "utilities/strings.bas"
-if(!qbevent)break;evnt(28611,146,"strings.bas");}while(r);
-#line 147 "utilities/strings.bas"
-}else{
-#line 148 "utilities/strings.bas"
-do{
-#line 148 "utilities/strings.bas"
-*_FUNC_READWRITELONGSETTINGVALUE_LONG_READWRITELONGSETTINGVALUE=*_FUNC_READWRITELONGSETTINGVALUE_LONG_CHECKRESULT;
-#line 148 "utilities/strings.bas"
-if(!qbevent)break;evnt(28611,148,"strings.bas");}while(r);
-#line 149 "utilities/strings.bas"
+#line 446 "utilities/arrcpy.bm"
+goto exit_subfunc;
+#line 446 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(28798,446,"arrcpy.bm");}while(r);
+#line 446 "utilities/arrcpy.bm"
 }
-#line 150 "utilities/strings.bas"
+#line 447 "utilities/arrcpy.bm"
+do{
+#line 447 "utilities/arrcpy.bm"
+qbs_set(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_CODE,FUNC_EVALUATETOTYP(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_WORK,&(pass3608= 64 )));
+#line 447 "utilities/arrcpy.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 447 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(28798,447,"arrcpy.bm");}while(r);
+#line 448 "utilities/arrcpy.bm"
+S_37669:;
+#line 448 "utilities/arrcpy.bm"
+if ((*__LONG_ERROR_HAPPENED)||is_error_pending()){
+#line 448 "utilities/arrcpy.bm"
+if(qbevent){evnt(28798,448,"arrcpy.bm");if(r)goto S_37669;}
+#line 448 "utilities/arrcpy.bm"
+do{
+#line 448 "utilities/arrcpy.bm"
+goto exit_subfunc;
+#line 448 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(28798,448,"arrcpy.bm");}while(r);
+#line 448 "utilities/arrcpy.bm"
+}
+#line 450 "utilities/arrcpy.bm"
+do{
+#line 450 "utilities/arrcpy.bm"
+qbs_set(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_WORK,FUNC_FIXOPERATIONORDER(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_EXPR));
+#line 450 "utilities/arrcpy.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 450 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(28798,450,"arrcpy.bm");}while(r);
+#line 451 "utilities/arrcpy.bm"
+S_37673:;
+#line 451 "utilities/arrcpy.bm"
+if ((*__LONG_ERROR_HAPPENED)||is_error_pending()){
+#line 451 "utilities/arrcpy.bm"
+if(qbevent){evnt(28798,451,"arrcpy.bm");if(r)goto S_37673;}
+#line 451 "utilities/arrcpy.bm"
+do{
+#line 451 "utilities/arrcpy.bm"
+goto exit_subfunc;
+#line 451 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(28798,451,"arrcpy.bm");}while(r);
+#line 451 "utilities/arrcpy.bm"
+}
+#line 452 "utilities/arrcpy.bm"
+do{
+#line 452 "utilities/arrcpy.bm"
+qbs_set(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_CODE,FUNC_EVALUATETOTYP(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_WORK,&(pass3609= 64 )));
+#line 452 "utilities/arrcpy.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 452 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(28798,452,"arrcpy.bm");}while(r);
+#line 453 "utilities/arrcpy.bm"
+S_37677:;
+#line 453 "utilities/arrcpy.bm"
+if ((*__LONG_ERROR_HAPPENED)||is_error_pending()){
+#line 453 "utilities/arrcpy.bm"
+if(qbevent){evnt(28798,453,"arrcpy.bm");if(r)goto S_37677;}
+#line 453 "utilities/arrcpy.bm"
+do{
+#line 453 "utilities/arrcpy.bm"
+goto exit_subfunc;
+#line 453 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(28798,453,"arrcpy.bm");}while(r);
+#line 453 "utilities/arrcpy.bm"
+}
+#line 454 "utilities/arrcpy.bm"
 exit_subfunc:;
-#line 150 "utilities/strings.bas"
+#line 454 "utilities/arrcpy.bm"
 free_mem_lock(sf_mem_lock);
-#line 150 "utilities/strings.bas"
+#line 454 "utilities/arrcpy.bm"
 #include "free129.txt"
-#line 150 "utilities/strings.bas"
+#line 454 "utilities/arrcpy.bm"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
-#line 150 "utilities/strings.bas"
+#line 454 "utilities/arrcpy.bm"
 cmem_sp=tmp_cmem_sp;
-#line 150 "utilities/strings.bas"
-return *_FUNC_READWRITELONGSETTINGVALUE_LONG_READWRITELONGSETTINGVALUE;
-#line 150 "utilities/strings.bas"
+#line 454 "utilities/arrcpy.bm"
 }
