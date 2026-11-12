@@ -235,6 +235,8 @@ FUNCTION ide2 (ignore)
             END IF
         END IF
 
+        _WINDOWSIZELIMIT (80, 25)
+
         m = 1: i = 0
         IdeMakeFileMenu 0
 
@@ -397,11 +399,11 @@ FUNCTION ide2 (ignore)
         IF PasteCursorAtEnd THEN
             menu$(OptionsMenuID, OptionsMenuPasteCursor) = CHR$(7) + menu$(OptionsMenuID, OptionsMenuPasteCursor)
         END IF
-        OptionsMenuAutoCloseBrackets = i
-        menu$(m, i) = "Auto-Close #Brackets": i = i + 1
-        menuDesc$(m, i - 1) = "Toggles auto-closing of brackets and quotes while typing"
-        IF AutoCloseBrackets THEN
-            menu$(OptionsMenuID, OptionsMenuAutoCloseBrackets) = CHR$(7) + menu$(OptionsMenuID, OptionsMenuAutoCloseBrackets)
+        OptionsMenuInlineHints = i
+        menu$(m, i) = "#Inline Hints": i = i + 1
+        menuDesc$(m, i - 1) = "Toggles inline syntax hints and closing brackets/quotes suggestions (TAB accepts)"
+        IF InlineHints THEN
+            menu$(OptionsMenuID, OptionsMenuInlineHints) = CHR$(7) + menu$(OptionsMenuID, OptionsMenuInlineHints)
         END IF
         OptionsMenuShowErrorsImmediately = i
         menu$(m, i) = "Auto-Ch#eck Syntax": i = i + 1
@@ -420,6 +422,12 @@ FUNCTION ide2 (ignore)
         menuDesc$(m, i - 1) = "Toggles the use of native GUI-based File Dialog Windows"
         IF UseGuiDialogs THEN
             menu$(OptionsMenuID, OptionsMenuGuiDialogs) = CHR$(7) + menu$(OptionsMenuID, OptionsMenuGuiDialogs)
+        END IF
+        OptionsMenuWriteWhileTranslating = i
+        menu$(m, i) = "Write Files While #Translating": i = i + 1
+        menuDesc$(m, i - 1) = "Toggles whether the generated C++ is immediately written to disk, this saves memory but writes to disk more often."
+        IF WriteFilesWhileTranslating THEN
+            menu$(OptionsMenuID, OptionsMenuWriteWhileTranslating) = CHR$(7) + menu$(OptionsMenuID, OptionsMenuWriteWhileTranslating)
         END IF
         menusize(m) = i - 1
 
@@ -4361,7 +4369,14 @@ FUNCTION ide2 (ignore)
                 END IF
             ELSE
                 SkipBlockIndent:
-                IF KSHIFT = 0 THEN
+                ghostClosers$ = ""
+                IF KSHIFT = 0 AND InlineHints AND ideselect = 0 THEN
+                    a$ = idegetline(idecy)
+                    IF idecx > LEN(a$) THEN IdeInlineHint a$ + SPACE$(idecx - 1 - LEN(a$)), ghostHint$, ghostClosers$
+                END IF
+                IF LEN(ghostClosers$) THEN
+                    K$ = ghostClosers$ 'accept the suggested closing brackets/quote
+                ELSEIF KSHIFT = 0 THEN
                     x = 4
                     IF IDEAutoIndentSize <> 0 THEN x = IDEAutoIndentSize
                     K$ = SPACE$(x - ((idecx - 1) MOD x))
@@ -4402,58 +4417,15 @@ FUNCTION ide2 (ignore)
         IF LEN(a$) < idecx - 1 THEN a$ = a$ + SPACE$(idecx - 1 - LEN(a$))
 
 
-        IF AutoCloseBrackets THEN 'enable new behavior if autoclosebrackets is in use
-            skipInsert = 0
-            IF ideinsert = 0 THEN 'Insert mode
-                nextChar$ = MID$(a$, idecx, 1)
-                IF (K$ = ")" AND nextChar$ = ")") OR _
-                   (K$ = "]" AND nextChar$ = "]") OR _
-                   (K$ = "}" AND nextChar$ = "}") OR _
-                   (K$ = CHR$(34) AND nextChar$ = CHR$(34)) THEN
-                    skipInsert = 1
-                END IF
-            END IF
-
-            IF skipInsert = 0 THEN
-                IF ideinsert THEN
-                    a2$ = RIGHT$(a$, LEN(a$) - idecx + 1)
-                    IF LEN(a2$) THEN a2$ = RIGHT$(a$, LEN(a$) - idecx)
-                    a$ = LEFT$(a$, idecx - 1) + K$ + a2$
-                ELSE
-                    extraChar$ = ""
-                    IF AutoCloseBrackets THEN
-                        IF K$ = "(" THEN extraChar$ = ")"
-                        IF K$ = "[" THEN extraChar$ = "]"
-                        IF K$ = "{" THEN extraChar$ = "}"
-                        IF K$ = CHR$(34) THEN
-                            'Check if we are inside a string (odd number of quotes before cursor)
-                            quoteCount = 0
-                            tempStr$ = LEFT$(a$, idecx - 1)
-                            FOR i = 1 TO LEN(tempStr$)
-                                IF MID$(tempStr$, i, 1) = CHR$(34) THEN quoteCount = quoteCount + 1
-                            NEXT
-                            IF (quoteCount MOD 2) = 0 THEN extraChar$ = CHR$(34)
-                        END IF
-                    END IF
-
-                    a$ = LEFT$(a$, idecx - 1) + K$ + extraChar$ + RIGHT$(a$, LEN(a$) - idecx + 1)
-                END IF
-                idesetline idecy, a$
-            END IF
-        ELSE 'otherwise go back to the old behavior
-            'Replace old code back
-
-            IF ideinsert THEN
-                a2$ = RIGHT$(a$, LEN(a$) - idecx + 1)
-                IF LEN(a2$) THEN a2$ = RIGHT$(a$, LEN(a$) - idecx)
-                a$ = LEFT$(a$, idecx - 1) + K$ + a2$
-            ELSE
-                a$ = LEFT$(a$, idecx - 1) + K$ + RIGHT$(a$, LEN(a$) - idecx + 1)
-            END IF
-
-            idesetline idecy, a$
-            'end of old code
+        IF ideinsert THEN
+            a2$ = RIGHT$(a$, LEN(a$) - idecx + 1)
+            IF LEN(a2$) THEN a2$ = RIGHT$(a$, LEN(a$) - idecx)
+            a$ = LEFT$(a$, idecx - 1) + K$ + a2$
+        ELSE
+            a$ = LEFT$(a$, idecx - 1) + K$ + RIGHT$(a$, LEN(a$) - idecx + 1)
         END IF
+
+        idesetline idecy, a$
 
         idecx = idecx + LEN(K$)
         specialchar:
@@ -5196,6 +5168,7 @@ FUNCTION ide2 (ignore)
                         ELSE
                             IF IDEUseFont8 THEN _FONT 8 ELSE _FONT 16
                         END IF
+                        _WINDOWSIZELIMIT (80, 25)
                         skipdisplay = _FALSE
                         GOSUB redrawItAll
                     END IF
@@ -5274,15 +5247,15 @@ FUNCTION ide2 (ignore)
                 GOTO ideloop
             END IF
 
-            IF RIGHT$(menu$(m, s), 20) = "Auto-Close #Brackets" THEN
+            IF RIGHT$(menu$(m, s), 13) = "#Inline Hints" THEN
                 PCOPY 2, 0
-                AutoCloseBrackets = NOT AutoCloseBrackets
-                IF AutoCloseBrackets THEN
-                    WriteConfigSetting generalSettingsSection$, "AutoCloseBrackets", "True"
-                    menu$(OptionsMenuID, OptionsMenuAutoCloseBrackets) = CHR$(7) + "Auto-Close #Brackets"
+                InlineHints = NOT InlineHints
+                IF InlineHints THEN
+                    WriteConfigSetting generalSettingsSection$, "InlineHints", "True"
+                    menu$(OptionsMenuID, OptionsMenuInlineHints) = CHR$(7) + "#Inline Hints"
                 ELSE
-                    WriteConfigSetting generalSettingsSection$, "AutoCloseBrackets", "False"
-                    menu$(OptionsMenuID, OptionsMenuAutoCloseBrackets) = "Auto-Close #Brackets"
+                    WriteConfigSetting generalSettingsSection$, "InlineHints", "False"
+                    menu$(OptionsMenuID, OptionsMenuInlineHints) = "#Inline Hints"
                 END IF
                 PCOPY 3, 0: SCREEN , , 3, 0
                 GOTO ideloop
@@ -5330,6 +5303,19 @@ FUNCTION ide2 (ignore)
                     menu$(OptionsMenuID, OptionsMenuGuiDialogs) = CHR$(7) + "#GUI Dialogs"
                 ELSE
                     menu$(OptionsMenuID, OptionsMenuGuiDialogs) = "#GUI Dialogs"
+                END IF
+                PCOPY 3, 0: SCREEN , , 3, 0
+                GOTO ideloop
+            END IF
+
+            IF RIGHT$(menu$(m, s), 30) = "Write Files While #Translating" THEN
+                PCOPY 2, 0
+                WriteFilesWhileTranslating = NOT WriteFilesWhileTranslating
+                WriteConfigSetting compilerSettingsSection$, "WriteFilesWhileTranslating", BoolToTFString$(WriteFilesWhileTranslating)
+                IF WriteFilesWhileTranslating THEN
+                    menu$(OptionsMenuID, OptionsMenuWriteWhileTranslating) = CHR$(7) + "Write Files While #Translating"
+                ELSE
+                    menu$(OptionsMenuID, OptionsMenuWriteWhileTranslating) = "Write Files While #Translating"
                 END IF
                 PCOPY 3, 0: SCREEN , , 3, 0
                 GOTO ideloop
@@ -13208,6 +13194,7 @@ SUB ideshowtext
                 a$ = idegetline(l)
                 link_idecx = 0
                 shiftEnter_idecx = 0
+                ghost_idecx = 0: ghost_idecx2 = 0
                 IF l = idecy THEN
                     IF idecx <= LEN(a$) AND idecx >= 1 THEN
                         cc = ASC(a$, idecx)
@@ -13278,14 +13265,13 @@ SUB ideshowtext
                     'an _RGB(, _RGB32(, _RGBA( or _RGBA32(, we'll offer the RGB
                     'color mixer.
                     a2$ = UCASE$(a$)
-                    'IF IdeAutoComplete AND idecx = LEN(a$) + 1 AND idecx_comment + idecx_quote = 0 THEN
+                    rgbMixerHint = 0
                     IF idecx = LEN(a$) + 1 AND idecx_comment + idecx_quote = 0 THEN
                         IF (RIGHT$(a2$, 5) = "_RGB(" OR _
                            RIGHT$(a2$, 7) = "_RGB32(" OR _
                            RIGHT$(a2$, 6) = "_RGBA(" OR _
                            RIGHT$(a2$, 8) = "_RGBA32(") THEN
-                            shiftEnter_idecx = LEN(a$)
-                            a$ = a$ + " --> Shift+ENTER to open the RGB mixer"
+                            rgbMixerHint = -1
                             EnteringRGB = -1
                         END IF
                     ELSEIF idecx_comment + idecx_quote = 0 THEN
@@ -13295,6 +13281,26 @@ SUB ideshowtext
                            MID$(a2$, idecx - 8, 8) = "_RGBA32(") THEN
                             IF INSTR("0123456789", MID$(a2$, idecx, 1)) = 0 THEN EnteringRGB = -1
                         END IF
+                    END IF
+
+                    'Inline hints: dimmed syntax hint + missing closing brackets/quote after the cursor
+                    IF InlineHints AND IdeSystem = 1 AND ideselect = 0 AND idecx > LEN(a$) AND idecx_comment = 0 THEN
+                        IdeInlineHint a$ + SPACE$(idecx - 1 - LEN(a$)), ghostHint$, ghostClosers$
+                        IF LEN(ghostHint$ + ghostClosers$) THEN
+                            a$ = a$ + SPACE$(idecx - 1 - LEN(a$))
+                            ghost_idecx = LEN(a$)
+                            a$ = a$ + ghostHint$ + ghostClosers$
+                            ghost_idecx2 = LEN(a$)
+                            IF LEN(ghostClosers$) THEN
+                                shiftEnter_idecx = LEN(a$)
+                                a$ = a$ + " <-- TAB to close"
+                            END IF
+                        END IF
+                    END IF
+
+                    IF rgbMixerHint THEN
+                        IF shiftEnter_idecx = 0 THEN shiftEnter_idecx = LEN(a$)
+                        a$ = a$ + " --> Shift+ENTER to open the RGB mixer"
                     END IF
 
                     FindInclude = _INSTRREV(a2$, "$INCLUDE")
@@ -13479,6 +13485,7 @@ SUB ideshowtext
 
                 IF l = idecy AND (link_idecx > 0 AND m > link_idecx) THEN COLOR 10
                 IF (shiftEnter_idecx > 0 AND m > shiftEnter_idecx) THEN COLOR 10
+                IF l = idecy AND ghost_idecx > 0 AND m > ghost_idecx AND m <= ghost_idecx2 THEN COLOR 11 'inline hints use the comment color
 
                 IF l = idecy AND (m = bracket1 OR m = bracket2) THEN
                     COLOR , 5
@@ -16319,7 +16326,7 @@ FUNCTION ideCompilerSettingsBox
 
     '-------- init dialog box & objects --------
     i = 0
-    idepar p, 48, _IIF(os$ = "WIN", 17, 16), "Compiler Settings"
+    idepar p, 48, _IIF(os$ = "WIN", 18, 17), "Compiler Settings"
 
     i = i + 1: ocpChk = i
     o(i).typ = 4 'check box
@@ -16341,43 +16348,48 @@ FUNCTION ideCompilerSettingsBox
     o(i).y = 5
     o(i).nam = idenewtxt("Use a#bsolute source paths in debug info")
     o(i).sel = ABS(AbsoluteDebugPaths)
+    i = i + 1: sofChk = i
+    o(i).typ = 4 'check box
+    o(i).y = 6
+    o(i).nam = idenewtxt("Compile C++ as multiple ob#ject files")
+    o(i).sel = ABS(SplitObjectFiles)
 
     i = i + 1: ecfBox = i
     o(i).typ = 1 'text box
-    o(i).y = 7
+    o(i).y = 8
     o(i).nam = idenewtxt("C++ Compiler #Flags"): a2$ = ExtraCppFlags$
     o(i).txt = idenewtxt(a2$): o(i).v1 = LEN(a2$)
     i = i + 1: elfBox = i
     o(i).typ = 1 'text box
-    o(i).y = 10
+    o(i).y = 11
     o(i).nam = idenewtxt("C++ #Linker Flags"): a2$ = ExtraLinkerFlags$
     o(i).txt = idenewtxt(a2$): o(i).v1 = LEN(a2$)
 
     i = i + 1: mppBox = i
     o(i).typ = 1 'text box
-    o(i).y = 13
+    o(i).y = 14
     o(i).nam = idenewtxt("#Max C++ Compiler Processes"): a2$ = _TOSTR$(MaxParallelProcesses)
     o(i).txt = idenewtxt(a2$): o(i).v1 = LEN(a2$): o(i).blk = 6
     i = i + 1: mppSymUp = i
     o(i).typ = 5 'symbol button
-    o(i).x = 41: o(i).y = 13
+    o(i).x = 41: o(i).y = 14
     o(i).txt = idenewtxt(CHR$(30)): o(i).rpt = 10
     i = i + 1: mppSymDn = i
     o(i).typ = 5 'symbol button
-    o(i).x = 44: o(i).y = 13
+    o(i).x = 44: o(i).y = 14
     o(i).txt = idenewtxt(CHR$(31)): o(i).rpt = 10
 
     IF os$ = "WIN" THEN
         i = i + 1: uscChk = i
         o(i).typ = 4 'check box
-        o(i).y = 15
+        o(i).y = 16
         o(i).nam = idenewtxt("#Use system C++ compiler")
         o(i).sel = ABS(UseSystemMinGW)
     END IF
 
     i = i + 1: okBut = i: caBut = i + 1
     o(i).typ = 3 'action buttons
-    o(i).y = _IIF(os$ = "WIN", 17, 16)
+    o(i).y = _IIF(os$ = "WIN", 18, 17)
     o(i).txt = idenewtxt("#OK" + sep + "#Cancel"): o(i).dft = 1
     '-------- end of init dialog box & objects --------
 
@@ -16497,6 +16509,8 @@ FUNCTION ideCompilerSettingsBox
             IF IncludeDebugInfo <> v% THEN IncludeDebugInfo = v%: optChg% = _TRUE
             v% = o(adpChk).sel: IF v% <> 0 THEN v% = _TRUE
             IF AbsoluteDebugPaths <> v% THEN AbsoluteDebugPaths = v%: optChg% = _TRUE
+            v% = o(sofChk).sel: IF v% <> 0 THEN v% = _TRUE
+            IF SplitObjectFiles <> v% THEN SplitObjectFiles = v%: optChg% = _TRUE
 
             v$ = idetxt(o(ecfBox).txt)
             IF ExtraCppFlags$ <> v$ THEN ExtraCppFlags$ = v$: optChg% = _TRUE
@@ -16517,6 +16531,7 @@ FUNCTION ideCompilerSettingsBox
                 WriteConfigSetting compilerSettingsSection$, "StripDebugSymbols", BoolToTFString$(StripDebugSymbols)
                 WriteConfigSetting compilerSettingsSection$, "IncludeDebugInfo", BoolToTFString$(IncludeDebugInfo)
                 WriteConfigSetting compilerSettingsSection$, "AbsoluteDebugPaths", BoolToTFString$(AbsoluteDebugPaths)
+                WriteConfigSetting compilerSettingsSection$, "SplitObjectFiles", BoolToTFString$(SplitObjectFiles)
 
                 WriteConfigSetting compilerSettingsSection$, "ExtraCppFlags", ExtraCppFlags$
                 WriteConfigSetting compilerSettingsSection$, "ExtraLinkerFlags", ExtraLinkerFlags$

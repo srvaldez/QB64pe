@@ -1,4 +1,2 @@
-if(oldstr5593){
-if(oldstr5593->fixed)qbs_set(oldstr5593,_FUNC_IDENEWTXT_STRING_A);
-qbs_free(_FUNC_IDENEWTXT_STRING_A);
-}
+qbs_free(_FUNC_IDE_STRING_INDENTED);
+qbs_free(_FUNC_IDE_STRING_STATUS__ASCII_CHR_046__PROGRESS);

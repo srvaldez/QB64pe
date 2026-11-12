@@ -1,15 +1,15 @@
-if(oldstr1899){
-if(oldstr1899->fixed)qbs_set(oldstr1899,_SUB_EMITASSIGNWHOLE_STRING_LREF);
+if(oldstr40_1){
+if(oldstr40_1->fixed)qbs_set(oldstr40_1,_SUB_EMITASSIGNWHOLE_STRING_LREF);
 qbs_free(_SUB_EMITASSIGNWHOLE_STRING_LREF);
 }
-if(oldstr1900){
-if(oldstr1900->fixed)qbs_set(oldstr1900,_SUB_EMITASSIGNWHOLE_STRING_RREF);
+if(oldstr40_2){
+if(oldstr40_2->fixed)qbs_set(oldstr40_2,_SUB_EMITASSIGNWHOLE_STRING_RREF);
 qbs_free(_SUB_EMITASSIGNWHOLE_STRING_RREF);
 }
-#line 16676 "qb64pe.bas"
-qbs_free(*(qbs**)(((char*)(_SUB_EMITASSIGNWHOLE_UDT_LID))+((0+2965))));
-#line 16677 "qb64pe.bas"
-qbs_free(*(qbs**)(((char*)(_SUB_EMITASSIGNWHOLE_UDT_RID))+((0+2965))));
+#line 16662 "qb64pe.bas"
+qbs_free(*(qbs**)(((char*)(_SUB_EMITASSIGNWHOLE_UDT_LID))+((0+2966))));
+#line 16663 "qb64pe.bas"
+qbs_free(*(qbs**)(((char*)(_SUB_EMITASSIGNWHOLE_UDT_RID))+((0+2966))));
 qbs_free(_SUB_EMITASSIGNWHOLE_STRING_LDESC);
 qbs_free(_SUB_EMITASSIGNWHOLE_STRING_RDESC);
 qbs_free(_SUB_EMITASSIGNWHOLE_STRING_LPREP);

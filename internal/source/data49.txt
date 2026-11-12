@@ -1,71 +1,71 @@
-#line 17272 "qb64pe.bas"
-qbs*oldstr1945=NULL;
-#line 17272 "qb64pe.bas"
+#line 17258 "qb64pe.bas"
+qbs*oldstr49_1=NULL;
+#line 17258 "qb64pe.bas"
 if(_SUB_APPENDWHOLEARRAYASSIGN_STRING_DSTARR->tmp||_SUB_APPENDWHOLEARRAYASSIGN_STRING_DSTARR->fixed||_SUB_APPENDWHOLEARRAYASSIGN_STRING_DSTARR->readonly){
-#line 17272 "qb64pe.bas"
-oldstr1945=_SUB_APPENDWHOLEARRAYASSIGN_STRING_DSTARR;
-#line 17272 "qb64pe.bas"
-if (oldstr1945->cmem_descriptor){
-#line 17272 "qb64pe.bas"
-_SUB_APPENDWHOLEARRAYASSIGN_STRING_DSTARR=qbs_new_cmem(oldstr1945->len,0);
-#line 17272 "qb64pe.bas"
+#line 17258 "qb64pe.bas"
+oldstr49_1=_SUB_APPENDWHOLEARRAYASSIGN_STRING_DSTARR;
+#line 17258 "qb64pe.bas"
+if (oldstr49_1->cmem_descriptor){
+#line 17258 "qb64pe.bas"
+_SUB_APPENDWHOLEARRAYASSIGN_STRING_DSTARR=qbs_new_cmem(oldstr49_1->len,0);
+#line 17258 "qb64pe.bas"
 }else{
-#line 17272 "qb64pe.bas"
-_SUB_APPENDWHOLEARRAYASSIGN_STRING_DSTARR=qbs_new(oldstr1945->len,0);
-#line 17272 "qb64pe.bas"
+#line 17258 "qb64pe.bas"
+_SUB_APPENDWHOLEARRAYASSIGN_STRING_DSTARR=qbs_new(oldstr49_1->len,0);
+#line 17258 "qb64pe.bas"
 }
-#line 17272 "qb64pe.bas"
-memcpy(_SUB_APPENDWHOLEARRAYASSIGN_STRING_DSTARR->chr,oldstr1945->chr,oldstr1945->len);
-#line 17272 "qb64pe.bas"
+#line 17258 "qb64pe.bas"
+memcpy(_SUB_APPENDWHOLEARRAYASSIGN_STRING_DSTARR->chr,oldstr49_1->chr,oldstr49_1->len);
+#line 17258 "qb64pe.bas"
 }
-#line 17272 "qb64pe.bas"
-qbs*oldstr1946=NULL;
-#line 17272 "qb64pe.bas"
+#line 17258 "qb64pe.bas"
+qbs*oldstr49_2=NULL;
+#line 17258 "qb64pe.bas"
 if(_SUB_APPENDWHOLEARRAYASSIGN_STRING_SRCARR->tmp||_SUB_APPENDWHOLEARRAYASSIGN_STRING_SRCARR->fixed||_SUB_APPENDWHOLEARRAYASSIGN_STRING_SRCARR->readonly){
-#line 17272 "qb64pe.bas"
-oldstr1946=_SUB_APPENDWHOLEARRAYASSIGN_STRING_SRCARR;
-#line 17272 "qb64pe.bas"
-if (oldstr1946->cmem_descriptor){
-#line 17272 "qb64pe.bas"
-_SUB_APPENDWHOLEARRAYASSIGN_STRING_SRCARR=qbs_new_cmem(oldstr1946->len,0);
-#line 17272 "qb64pe.bas"
+#line 17258 "qb64pe.bas"
+oldstr49_2=_SUB_APPENDWHOLEARRAYASSIGN_STRING_SRCARR;
+#line 17258 "qb64pe.bas"
+if (oldstr49_2->cmem_descriptor){
+#line 17258 "qb64pe.bas"
+_SUB_APPENDWHOLEARRAYASSIGN_STRING_SRCARR=qbs_new_cmem(oldstr49_2->len,0);
+#line 17258 "qb64pe.bas"
 }else{
-#line 17272 "qb64pe.bas"
-_SUB_APPENDWHOLEARRAYASSIGN_STRING_SRCARR=qbs_new(oldstr1946->len,0);
-#line 17272 "qb64pe.bas"
+#line 17258 "qb64pe.bas"
+_SUB_APPENDWHOLEARRAYASSIGN_STRING_SRCARR=qbs_new(oldstr49_2->len,0);
+#line 17258 "qb64pe.bas"
 }
-#line 17272 "qb64pe.bas"
-memcpy(_SUB_APPENDWHOLEARRAYASSIGN_STRING_SRCARR->chr,oldstr1946->chr,oldstr1946->len);
-#line 17272 "qb64pe.bas"
+#line 17258 "qb64pe.bas"
+memcpy(_SUB_APPENDWHOLEARRAYASSIGN_STRING_SRCARR->chr,oldstr49_2->chr,oldstr49_2->len);
+#line 17258 "qb64pe.bas"
 }
 qbs *_SUB_APPENDWHOLEARRAYASSIGN_STRING_ELEMTEXT=NULL;
-#line 17273 "qb64pe.bas"
+#line 17259 "qb64pe.bas"
 if (!_SUB_APPENDWHOLEARRAYASSIGN_STRING_ELEMTEXT)_SUB_APPENDWHOLEARRAYASSIGN_STRING_ELEMTEXT=qbs_new(0,0);
 qbs *_SUB_APPENDWHOLEARRAYASSIGN_STRING_DSTEXPR=NULL;
-#line 17274 "qb64pe.bas"
+#line 17260 "qb64pe.bas"
 if (!_SUB_APPENDWHOLEARRAYASSIGN_STRING_DSTEXPR)_SUB_APPENDWHOLEARRAYASSIGN_STRING_DSTEXPR=qbs_new(0,0);
 qbs *_SUB_APPENDWHOLEARRAYASSIGN_STRING_SRCEXPR=NULL;
-#line 17275 "qb64pe.bas"
+#line 17261 "qb64pe.bas"
 if (!_SUB_APPENDWHOLEARRAYASSIGN_STRING_SRCEXPR)_SUB_APPENDWHOLEARRAYASSIGN_STRING_SRCEXPR=qbs_new(0,0);
 int32 *_SUB_APPENDWHOLEARRAYASSIGN_LONG_ARRUDT=NULL;
-#line 17276 "qb64pe.bas"
+#line 17262 "qb64pe.bas"
 if(_SUB_APPENDWHOLEARRAYASSIGN_LONG_ARRUDT==NULL){
-#line 17276 "qb64pe.bas"
+#line 17262 "qb64pe.bas"
 _SUB_APPENDWHOLEARRAYASSIGN_LONG_ARRUDT=(int32*)mem_static_malloc(4);
-#line 17276 "qb64pe.bas"
+#line 17262 "qb64pe.bas"
 *_SUB_APPENDWHOLEARRAYASSIGN_LONG_ARRUDT=0;
-#line 17276 "qb64pe.bas"
+#line 17262 "qb64pe.bas"
 }
 int32 *_SUB_APPENDWHOLEARRAYASSIGN_LONG_BITS=NULL;
-#line 17277 "qb64pe.bas"
+#line 17263 "qb64pe.bas"
 if(_SUB_APPENDWHOLEARRAYASSIGN_LONG_BITS==NULL){
-#line 17277 "qb64pe.bas"
+#line 17263 "qb64pe.bas"
 _SUB_APPENDWHOLEARRAYASSIGN_LONG_BITS=(int32*)mem_static_malloc(4);
-#line 17277 "qb64pe.bas"
+#line 17263 "qb64pe.bas"
 *_SUB_APPENDWHOLEARRAYASSIGN_LONG_BITS=0;
-#line 17277 "qb64pe.bas"
+#line 17263 "qb64pe.bas"
 }
-#line 17309 "qb64pe.bas"
-int32 pass1947;
-#line 17311 "qb64pe.bas"
-int32 pass1948;
+#line 17295 "qb64pe.bas"
+int32 pass49_3;
+#line 17297 "qb64pe.bas"
+int32 pass49_4;
