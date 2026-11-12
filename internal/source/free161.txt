@@ -1,4 +1,4 @@
-if(oldstr3252){
-if(oldstr3252->fixed)qbs_set(oldstr3252,_FUNC_FIXDIRECTORYNAME_STRING_DIR_NAME);
-qbs_free(_FUNC_FIXDIRECTORYNAME_STRING_DIR_NAME);
+if(oldstr161_1){
+if(oldstr161_1->fixed)qbs_set(oldstr161_1,_FUNC_GETFILEEXTENSION_STRING_F);
+qbs_free(_FUNC_GETFILEEXTENSION_STRING_F);
 }

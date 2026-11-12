@@ -1,0 +1,5 @@
+if(oldstr529_1){
+if(oldstr529_1->fixed)qbs_set(oldstr529_1,_SUB_HELP_ADDTXT_STRING_T);
+qbs_free(_SUB_HELP_ADDTXT_STRING_T);
+}
+qbs_free(_SUB_HELP_ADDTXT_STRING_B);

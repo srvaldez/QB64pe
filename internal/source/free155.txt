@@ -1,4 +1,4 @@
-if(oldstr3226){
-if(oldstr3226->fixed)qbs_set(oldstr3226,_FUNC_FILEHASEXTENSION_STRING_F);
-qbs_free(_FUNC_FILEHASEXTENSION_STRING_F);
+if(oldstr155_1){
+if(oldstr155_1->fixed)qbs_set(oldstr155_1,_FUNC_FILELENGTH_STRING_FILESPEC);
+qbs_free(_FUNC_FILELENGTH_STRING_FILESPEC);
 }

@@ -1,0 +1,5 @@
+if(oldstr524_1){
+if(oldstr524_1->fixed)qbs_set(oldstr524_1,_FUNC_GETBYTES_STRING___VALUE);
+qbs_free(_FUNC_GETBYTES_STRING___VALUE);
+}
+qbs_free(_FUNC_GETBYTES_STRING_VALUE);

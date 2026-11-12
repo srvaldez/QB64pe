@@ -1,0 +1,4 @@
+if(oldstr509_1){
+if(oldstr509_1->fixed)qbs_set(oldstr509_1,_SUB_UPDATEMENUHELPLINE_STRING_A);
+qbs_free(_SUB_UPDATEMENUHELPLINE_STRING_A);
+}

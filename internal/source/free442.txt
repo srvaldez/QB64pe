@@ -1,8 +1,4 @@
-if(oldstr6098){
-if(oldstr6098->fixed)qbs_set(oldstr6098,_FUNC_IDEYESNOBOX_STRING_TITLESTR);
-qbs_free(_FUNC_IDEYESNOBOX_STRING_TITLESTR);
-}
-if(oldstr6099){
-if(oldstr6099->fixed)qbs_set(oldstr6099,_FUNC_IDEYESNOBOX_STRING_MESSAGESTR);
-qbs_free(_FUNC_IDEYESNOBOX_STRING_MESSAGESTR);
+if(oldstr442_1){
+if(oldstr442_1->fixed)qbs_set(oldstr442_1,_FUNC_IDEHLEN_STRING_A);
+qbs_free(_FUNC_IDEHLEN_STRING_A);
 }

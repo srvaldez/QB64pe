@@ -1,124 +1,91 @@
-#line 315 "utilities/arrcpy.bm"
-qbs*oldstr3119=NULL;
-#line 315 "utilities/arrcpy.bm"
-if(_SUB_RESOLVEARRAYCOPYPAIREX_STRING_SRC_REF->tmp||_SUB_RESOLVEARRAYCOPYPAIREX_STRING_SRC_REF->fixed||_SUB_RESOLVEARRAYCOPYPAIREX_STRING_SRC_REF->readonly){
-#line 315 "utilities/arrcpy.bm"
-oldstr3119=_SUB_RESOLVEARRAYCOPYPAIREX_STRING_SRC_REF;
-#line 315 "utilities/arrcpy.bm"
-if (oldstr3119->cmem_descriptor){
-#line 315 "utilities/arrcpy.bm"
-_SUB_RESOLVEARRAYCOPYPAIREX_STRING_SRC_REF=qbs_new_cmem(oldstr3119->len,0);
-#line 315 "utilities/arrcpy.bm"
+#line 302 "utilities/arrcpy.bm"
+qbs*oldstr123_1=NULL;
+#line 302 "utilities/arrcpy.bm"
+if(_SUB_RESOLVEARRAYCOPYREF_STRING_WHOLE_REF->tmp||_SUB_RESOLVEARRAYCOPYREF_STRING_WHOLE_REF->fixed||_SUB_RESOLVEARRAYCOPYREF_STRING_WHOLE_REF->readonly){
+#line 302 "utilities/arrcpy.bm"
+oldstr123_1=_SUB_RESOLVEARRAYCOPYREF_STRING_WHOLE_REF;
+#line 302 "utilities/arrcpy.bm"
+if (oldstr123_1->cmem_descriptor){
+#line 302 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREF_STRING_WHOLE_REF=qbs_new_cmem(oldstr123_1->len,0);
+#line 302 "utilities/arrcpy.bm"
 }else{
-#line 315 "utilities/arrcpy.bm"
-_SUB_RESOLVEARRAYCOPYPAIREX_STRING_SRC_REF=qbs_new(oldstr3119->len,0);
-#line 315 "utilities/arrcpy.bm"
+#line 302 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREF_STRING_WHOLE_REF=qbs_new(oldstr123_1->len,0);
+#line 302 "utilities/arrcpy.bm"
 }
-#line 315 "utilities/arrcpy.bm"
-memcpy(_SUB_RESOLVEARRAYCOPYPAIREX_STRING_SRC_REF->chr,oldstr3119->chr,oldstr3119->len);
-#line 315 "utilities/arrcpy.bm"
+#line 302 "utilities/arrcpy.bm"
+memcpy(_SUB_RESOLVEARRAYCOPYREF_STRING_WHOLE_REF->chr,oldstr123_1->chr,oldstr123_1->len);
+#line 302 "utilities/arrcpy.bm"
 }
-#line 315 "utilities/arrcpy.bm"
-qbs*oldstr3120=NULL;
-#line 315 "utilities/arrcpy.bm"
-if(_SUB_RESOLVEARRAYCOPYPAIREX_STRING_DST_REF->tmp||_SUB_RESOLVEARRAYCOPYPAIREX_STRING_DST_REF->fixed||_SUB_RESOLVEARRAYCOPYPAIREX_STRING_DST_REF->readonly){
-#line 315 "utilities/arrcpy.bm"
-oldstr3120=_SUB_RESOLVEARRAYCOPYPAIREX_STRING_DST_REF;
-#line 315 "utilities/arrcpy.bm"
-if (oldstr3120->cmem_descriptor){
-#line 315 "utilities/arrcpy.bm"
-_SUB_RESOLVEARRAYCOPYPAIREX_STRING_DST_REF=qbs_new_cmem(oldstr3120->len,0);
-#line 315 "utilities/arrcpy.bm"
+#line 302 "utilities/arrcpy.bm"
+qbs*oldstr123_2=NULL;
+#line 302 "utilities/arrcpy.bm"
+if(_SUB_RESOLVEARRAYCOPYREF_STRING_ROLE_TEXT->tmp||_SUB_RESOLVEARRAYCOPYREF_STRING_ROLE_TEXT->fixed||_SUB_RESOLVEARRAYCOPYREF_STRING_ROLE_TEXT->readonly){
+#line 302 "utilities/arrcpy.bm"
+oldstr123_2=_SUB_RESOLVEARRAYCOPYREF_STRING_ROLE_TEXT;
+#line 302 "utilities/arrcpy.bm"
+if (oldstr123_2->cmem_descriptor){
+#line 302 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREF_STRING_ROLE_TEXT=qbs_new_cmem(oldstr123_2->len,0);
+#line 302 "utilities/arrcpy.bm"
 }else{
-#line 315 "utilities/arrcpy.bm"
-_SUB_RESOLVEARRAYCOPYPAIREX_STRING_DST_REF=qbs_new(oldstr3120->len,0);
-#line 315 "utilities/arrcpy.bm"
+#line 302 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREF_STRING_ROLE_TEXT=qbs_new(oldstr123_2->len,0);
+#line 302 "utilities/arrcpy.bm"
 }
-#line 315 "utilities/arrcpy.bm"
-memcpy(_SUB_RESOLVEARRAYCOPYPAIREX_STRING_DST_REF->chr,oldstr3120->chr,oldstr3120->len);
-#line 315 "utilities/arrcpy.bm"
+#line 302 "utilities/arrcpy.bm"
+memcpy(_SUB_RESOLVEARRAYCOPYREF_STRING_ROLE_TEXT->chr,oldstr123_2->chr,oldstr123_2->len);
+#line 302 "utilities/arrcpy.bm"
 }
-#line 315 "utilities/arrcpy.bm"
-qbs*oldstr3121=NULL;
-#line 315 "utilities/arrcpy.bm"
-if(_SUB_RESOLVEARRAYCOPYPAIREX_STRING_SRC_DESC->tmp||_SUB_RESOLVEARRAYCOPYPAIREX_STRING_SRC_DESC->fixed||_SUB_RESOLVEARRAYCOPYPAIREX_STRING_SRC_DESC->readonly){
-#line 315 "utilities/arrcpy.bm"
-oldstr3121=_SUB_RESOLVEARRAYCOPYPAIREX_STRING_SRC_DESC;
-#line 315 "utilities/arrcpy.bm"
-if (oldstr3121->cmem_descriptor){
-#line 315 "utilities/arrcpy.bm"
-_SUB_RESOLVEARRAYCOPYPAIREX_STRING_SRC_DESC=qbs_new_cmem(oldstr3121->len,0);
-#line 315 "utilities/arrcpy.bm"
+#line 302 "utilities/arrcpy.bm"
+qbs*oldstr123_3=NULL;
+#line 302 "utilities/arrcpy.bm"
+if(_SUB_RESOLVEARRAYCOPYREF_STRING_DESC_TEXT->tmp||_SUB_RESOLVEARRAYCOPYREF_STRING_DESC_TEXT->fixed||_SUB_RESOLVEARRAYCOPYREF_STRING_DESC_TEXT->readonly){
+#line 302 "utilities/arrcpy.bm"
+oldstr123_3=_SUB_RESOLVEARRAYCOPYREF_STRING_DESC_TEXT;
+#line 302 "utilities/arrcpy.bm"
+if (oldstr123_3->cmem_descriptor){
+#line 302 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREF_STRING_DESC_TEXT=qbs_new_cmem(oldstr123_3->len,0);
+#line 302 "utilities/arrcpy.bm"
 }else{
-#line 315 "utilities/arrcpy.bm"
-_SUB_RESOLVEARRAYCOPYPAIREX_STRING_SRC_DESC=qbs_new(oldstr3121->len,0);
-#line 315 "utilities/arrcpy.bm"
+#line 302 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREF_STRING_DESC_TEXT=qbs_new(oldstr123_3->len,0);
+#line 302 "utilities/arrcpy.bm"
 }
-#line 315 "utilities/arrcpy.bm"
-memcpy(_SUB_RESOLVEARRAYCOPYPAIREX_STRING_SRC_DESC->chr,oldstr3121->chr,oldstr3121->len);
-#line 315 "utilities/arrcpy.bm"
+#line 302 "utilities/arrcpy.bm"
+memcpy(_SUB_RESOLVEARRAYCOPYREF_STRING_DESC_TEXT->chr,oldstr123_3->chr,oldstr123_3->len);
+#line 302 "utilities/arrcpy.bm"
 }
-#line 315 "utilities/arrcpy.bm"
-qbs*oldstr3122=NULL;
-#line 315 "utilities/arrcpy.bm"
-if(_SUB_RESOLVEARRAYCOPYPAIREX_STRING_SRC_PREP->tmp||_SUB_RESOLVEARRAYCOPYPAIREX_STRING_SRC_PREP->fixed||_SUB_RESOLVEARRAYCOPYPAIREX_STRING_SRC_PREP->readonly){
-#line 315 "utilities/arrcpy.bm"
-oldstr3122=_SUB_RESOLVEARRAYCOPYPAIREX_STRING_SRC_PREP;
-#line 315 "utilities/arrcpy.bm"
-if (oldstr3122->cmem_descriptor){
-#line 315 "utilities/arrcpy.bm"
-_SUB_RESOLVEARRAYCOPYPAIREX_STRING_SRC_PREP=qbs_new_cmem(oldstr3122->len,0);
-#line 315 "utilities/arrcpy.bm"
+#line 302 "utilities/arrcpy.bm"
+qbs*oldstr123_4=NULL;
+#line 302 "utilities/arrcpy.bm"
+if(_SUB_RESOLVEARRAYCOPYREF_STRING_PREP_TEXT->tmp||_SUB_RESOLVEARRAYCOPYREF_STRING_PREP_TEXT->fixed||_SUB_RESOLVEARRAYCOPYREF_STRING_PREP_TEXT->readonly){
+#line 302 "utilities/arrcpy.bm"
+oldstr123_4=_SUB_RESOLVEARRAYCOPYREF_STRING_PREP_TEXT;
+#line 302 "utilities/arrcpy.bm"
+if (oldstr123_4->cmem_descriptor){
+#line 302 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREF_STRING_PREP_TEXT=qbs_new_cmem(oldstr123_4->len,0);
+#line 302 "utilities/arrcpy.bm"
 }else{
-#line 315 "utilities/arrcpy.bm"
-_SUB_RESOLVEARRAYCOPYPAIREX_STRING_SRC_PREP=qbs_new(oldstr3122->len,0);
-#line 315 "utilities/arrcpy.bm"
+#line 302 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREF_STRING_PREP_TEXT=qbs_new(oldstr123_4->len,0);
+#line 302 "utilities/arrcpy.bm"
 }
-#line 315 "utilities/arrcpy.bm"
-memcpy(_SUB_RESOLVEARRAYCOPYPAIREX_STRING_SRC_PREP->chr,oldstr3122->chr,oldstr3122->len);
-#line 315 "utilities/arrcpy.bm"
+#line 302 "utilities/arrcpy.bm"
+memcpy(_SUB_RESOLVEARRAYCOPYREF_STRING_PREP_TEXT->chr,oldstr123_4->chr,oldstr123_4->len);
+#line 302 "utilities/arrcpy.bm"
 }
-#line 315 "utilities/arrcpy.bm"
-qbs*oldstr3123=NULL;
-#line 315 "utilities/arrcpy.bm"
-if(_SUB_RESOLVEARRAYCOPYPAIREX_STRING_DST_DESC->tmp||_SUB_RESOLVEARRAYCOPYPAIREX_STRING_DST_DESC->fixed||_SUB_RESOLVEARRAYCOPYPAIREX_STRING_DST_DESC->readonly){
-#line 315 "utilities/arrcpy.bm"
-oldstr3123=_SUB_RESOLVEARRAYCOPYPAIREX_STRING_DST_DESC;
-#line 315 "utilities/arrcpy.bm"
-if (oldstr3123->cmem_descriptor){
-#line 315 "utilities/arrcpy.bm"
-_SUB_RESOLVEARRAYCOPYPAIREX_STRING_DST_DESC=qbs_new_cmem(oldstr3123->len,0);
-#line 315 "utilities/arrcpy.bm"
-}else{
-#line 315 "utilities/arrcpy.bm"
-_SUB_RESOLVEARRAYCOPYPAIREX_STRING_DST_DESC=qbs_new(oldstr3123->len,0);
-#line 315 "utilities/arrcpy.bm"
+int32 *_SUB_RESOLVEARRAYCOPYREF_LONG_STRING_SLOT_MODE=NULL;
+#line 303 "utilities/arrcpy.bm"
+if(_SUB_RESOLVEARRAYCOPYREF_LONG_STRING_SLOT_MODE==NULL){
+#line 303 "utilities/arrcpy.bm"
+_SUB_RESOLVEARRAYCOPYREF_LONG_STRING_SLOT_MODE=(int32*)mem_static_malloc(4);
+#line 303 "utilities/arrcpy.bm"
+*_SUB_RESOLVEARRAYCOPYREF_LONG_STRING_SLOT_MODE=0;
+#line 303 "utilities/arrcpy.bm"
 }
-#line 315 "utilities/arrcpy.bm"
-memcpy(_SUB_RESOLVEARRAYCOPYPAIREX_STRING_DST_DESC->chr,oldstr3123->chr,oldstr3123->len);
-#line 315 "utilities/arrcpy.bm"
-}
-#line 315 "utilities/arrcpy.bm"
-qbs*oldstr3124=NULL;
-#line 315 "utilities/arrcpy.bm"
-if(_SUB_RESOLVEARRAYCOPYPAIREX_STRING_DST_PREP->tmp||_SUB_RESOLVEARRAYCOPYPAIREX_STRING_DST_PREP->fixed||_SUB_RESOLVEARRAYCOPYPAIREX_STRING_DST_PREP->readonly){
-#line 315 "utilities/arrcpy.bm"
-oldstr3124=_SUB_RESOLVEARRAYCOPYPAIREX_STRING_DST_PREP;
-#line 315 "utilities/arrcpy.bm"
-if (oldstr3124->cmem_descriptor){
-#line 315 "utilities/arrcpy.bm"
-_SUB_RESOLVEARRAYCOPYPAIREX_STRING_DST_PREP=qbs_new_cmem(oldstr3124->len,0);
-#line 315 "utilities/arrcpy.bm"
-}else{
-#line 315 "utilities/arrcpy.bm"
-_SUB_RESOLVEARRAYCOPYPAIREX_STRING_DST_PREP=qbs_new(oldstr3124->len,0);
-#line 315 "utilities/arrcpy.bm"
-}
-#line 315 "utilities/arrcpy.bm"
-memcpy(_SUB_RESOLVEARRAYCOPYPAIREX_STRING_DST_PREP->chr,oldstr3124->chr,oldstr3124->len);
-#line 315 "utilities/arrcpy.bm"
-}
-#line 316 "utilities/arrcpy.bm"
-int32 pass3125;
-#line 319 "utilities/arrcpy.bm"
-int32 pass3126;
+#line 305 "utilities/arrcpy.bm"
+int32 pass123_5;

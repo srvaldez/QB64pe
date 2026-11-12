@@ -14,7 +14,7 @@ DIM SHARED IDEUseFont8 AS _BYTE, IDECustomFont AS _BYTE
 DIM SHARED IDECustomFontFile$, IDECustomFontHeight AS _BYTE, IDECustomFontHandle AS LONG
 DIM SHARED MouseButtonSwapped AS _BYTE
 DIM SHARED PasteCursorAtEnd AS _BYTE
-DIM SHARED AutoCloseBrackets AS _BYTE
+DIM SHARED InlineHints AS _BYTE
 DIM SHARED DefaultExeSaveFolder$, SaveExeWithSource AS LONG, EnableQuickNav AS _BYTE
 DIM SHARED IDEShowErrorsImmediately AS _BYTE
 DIM SHARED ShowLineNumbers AS _BYTE, ShowLineNumbersSeparator AS _BYTE, ShowLineNumbersUseBG AS _BYTE
@@ -34,6 +34,8 @@ DIM SHARED MaxParallelProcesses AS LONG
 DIM SHARED ExtraCppFlags$, ExtraLinkerFlags$
 DIM SHARED StripDebugSymbols AS LONG
 DIM SHARED OptimizeCppProgram AS LONG
+DIM SHARED SplitObjectFiles AS LONG
+DIM SHARED WriteFilesWhileTranslating AS LONG
 DIM SHARED IncludeDebugInfo AS LONG
 DIM SHARED AbsoluteDebugPaths AS LONG
 DIM SHARED UseSystemMinGW AS LONG
