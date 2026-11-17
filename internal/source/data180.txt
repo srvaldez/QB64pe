@@ -1,95 +1,20 @@
-#line 139 "utilities/elements.bas"
+#line 5 "utilities/build.bas"
 qbs*oldstr180_1=NULL;
-#line 139 "utilities/elements.bas"
-if(_SUB_INSERTELEMENTS_STRING_A->tmp||_SUB_INSERTELEMENTS_STRING_A->fixed||_SUB_INSERTELEMENTS_STRING_A->readonly){
-#line 139 "utilities/elements.bas"
-oldstr180_1=_SUB_INSERTELEMENTS_STRING_A;
-#line 139 "utilities/elements.bas"
+#line 5 "utilities/build.bas"
+if(_SUB_PURGETEMPORARYBUILDFILES_STRING_OS->tmp||_SUB_PURGETEMPORARYBUILDFILES_STRING_OS->fixed||_SUB_PURGETEMPORARYBUILDFILES_STRING_OS->readonly){
+#line 5 "utilities/build.bas"
+oldstr180_1=_SUB_PURGETEMPORARYBUILDFILES_STRING_OS;
+#line 5 "utilities/build.bas"
 if (oldstr180_1->cmem_descriptor){
-#line 139 "utilities/elements.bas"
-_SUB_INSERTELEMENTS_STRING_A=qbs_new_cmem(oldstr180_1->len,0);
-#line 139 "utilities/elements.bas"
+#line 5 "utilities/build.bas"
+_SUB_PURGETEMPORARYBUILDFILES_STRING_OS=qbs_new_cmem(oldstr180_1->len,0);
+#line 5 "utilities/build.bas"
 }else{
-#line 139 "utilities/elements.bas"
-_SUB_INSERTELEMENTS_STRING_A=qbs_new(oldstr180_1->len,0);
-#line 139 "utilities/elements.bas"
+#line 5 "utilities/build.bas"
+_SUB_PURGETEMPORARYBUILDFILES_STRING_OS=qbs_new(oldstr180_1->len,0);
+#line 5 "utilities/build.bas"
 }
-#line 139 "utilities/elements.bas"
-memcpy(_SUB_INSERTELEMENTS_STRING_A->chr,oldstr180_1->chr,oldstr180_1->len);
-#line 139 "utilities/elements.bas"
-}
-#line 139 "utilities/elements.bas"
-qbs*oldstr180_2=NULL;
-#line 139 "utilities/elements.bas"
-if(_SUB_INSERTELEMENTS_STRING_ELEMENTS->tmp||_SUB_INSERTELEMENTS_STRING_ELEMENTS->fixed||_SUB_INSERTELEMENTS_STRING_ELEMENTS->readonly){
-#line 139 "utilities/elements.bas"
-oldstr180_2=_SUB_INSERTELEMENTS_STRING_ELEMENTS;
-#line 139 "utilities/elements.bas"
-if (oldstr180_2->cmem_descriptor){
-#line 139 "utilities/elements.bas"
-_SUB_INSERTELEMENTS_STRING_ELEMENTS=qbs_new_cmem(oldstr180_2->len,0);
-#line 139 "utilities/elements.bas"
-}else{
-#line 139 "utilities/elements.bas"
-_SUB_INSERTELEMENTS_STRING_ELEMENTS=qbs_new(oldstr180_2->len,0);
-#line 139 "utilities/elements.bas"
-}
-#line 139 "utilities/elements.bas"
-memcpy(_SUB_INSERTELEMENTS_STRING_ELEMENTS->chr,oldstr180_2->chr,oldstr180_2->len);
-#line 139 "utilities/elements.bas"
-}
-qbs *_SUB_INSERTELEMENTS_STRING_A2=NULL;
-#line 140 "utilities/elements.bas"
-if (!_SUB_INSERTELEMENTS_STRING_A2)_SUB_INSERTELEMENTS_STRING_A2=qbs_new(0,0);
-int32 *_SUB_INSERTELEMENTS_LONG_N=NULL;
-#line 140 "utilities/elements.bas"
-if(_SUB_INSERTELEMENTS_LONG_N==NULL){
-#line 140 "utilities/elements.bas"
-_SUB_INSERTELEMENTS_LONG_N=(int32*)mem_static_malloc(4);
-#line 140 "utilities/elements.bas"
-*_SUB_INSERTELEMENTS_LONG_N=0;
-#line 140 "utilities/elements.bas"
-}
-int32 *_SUB_INSERTELEMENTS_LONG_I2=NULL;
-#line 140 "utilities/elements.bas"
-if(_SUB_INSERTELEMENTS_LONG_I2==NULL){
-#line 140 "utilities/elements.bas"
-_SUB_INSERTELEMENTS_LONG_I2=(int32*)mem_static_malloc(4);
-#line 140 "utilities/elements.bas"
-*_SUB_INSERTELEMENTS_LONG_I2=0;
-#line 140 "utilities/elements.bas"
-}
-int32 *_SUB_INSERTELEMENTS_LONG_P=NULL;
-#line 140 "utilities/elements.bas"
-if(_SUB_INSERTELEMENTS_LONG_P==NULL){
-#line 140 "utilities/elements.bas"
-_SUB_INSERTELEMENTS_LONG_P=(int32*)mem_static_malloc(4);
-#line 140 "utilities/elements.bas"
-*_SUB_INSERTELEMENTS_LONG_P=0;
-#line 140 "utilities/elements.bas"
-}
-int32 *_SUB_INSERTELEMENTS_LONG_Q=NULL;
-#line 140 "utilities/elements.bas"
-if(_SUB_INSERTELEMENTS_LONG_Q==NULL){
-#line 140 "utilities/elements.bas"
-_SUB_INSERTELEMENTS_LONG_Q=(int32*)mem_static_malloc(4);
-#line 140 "utilities/elements.bas"
-*_SUB_INSERTELEMENTS_LONG_Q=0;
-#line 140 "utilities/elements.bas"
-}
-#line 155 "utilities/elements.bas"
-int64 fornext_value180_4;
-#line 155 "utilities/elements.bas"
-int64 fornext_finalvalue180_4;
-#line 155 "utilities/elements.bas"
-int64 fornext_step180_4;
-#line 155 "utilities/elements.bas"
-uint8 fornext_step_negative180_4;
-#line 157 "utilities/elements.bas"
-byte_element_struct *byte_element_180_5=NULL;
-#line 157 "utilities/elements.bas"
-if (!byte_element_180_5){
-#line 157 "utilities/elements.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_180_5=(byte_element_struct*)(mem_static_pointer-12); else byte_element_180_5=(byte_element_struct*)mem_static_malloc(12);
-#line 157 "utilities/elements.bas"
+#line 5 "utilities/build.bas"
+memcpy(_SUB_PURGETEMPORARYBUILDFILES_STRING_OS->chr,oldstr180_1->chr,oldstr180_1->len);
+#line 5 "utilities/build.bas"
 }

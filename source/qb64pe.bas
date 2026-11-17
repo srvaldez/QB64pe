@@ -654,6 +654,7 @@ DIM SHARED subfuncid AS LONG
 
 DIM SHARED defdatahandle AS LONG
 DIM SHARED dimsfarray AS INTEGER
+DIM SHARED dimudtreturn AS INTEGER
 DIM SHARED dimshared AS INTEGER
 
 'Allows passing of known elements to recompilation
@@ -687,6 +688,10 @@ DIM SHARED scopeuniqueouter AS LONG
 
 
 DIM SHARED udt_allow_bare_array AS INTEGER
+
+' One-shot diagnostic context for the first argument of LBOUND/UBOUND.
+' evaluate$ consumes it before evaluating any nested calls or subscripts.
+DIM SHARED udt_bound_result_kind AS LONG
 
 
 'Assignment syntax guard state. These values are set only by assign() while the
@@ -1142,14 +1147,14 @@ bitsmarkerfile$ = "internal/c/.qb64_target_bits"
 lastbuiltbits$ = ""
 IF _FILEEXISTS(bitsmarkerfile$) THEN
     lastbuiltbits$ = _READFILE$(bitsmarkerfile$)
-    _LogInfo "Last built bits: " + lastbuiltbits$ + ", val: " + _ToStr$(val(lastbuiltbits$))
+    _LOGINFO "Last built bits: " + lastbuiltbits$ + ", val: " + _TOSTR$(VAL(lastbuiltbits$))
 END IF
 ' No marker will typically mean it was built with the OS_BITs, since it likely
 ' is from before cross-compilation was introduced.
 IF LEN(lastbuiltbits$) = 0 THEN lastbuiltbits$ = _TOSTR$(OS_BITS)
 IF VAL(lastbuiltbits$) <> TARGET_BITS THEN
     PurgeTemporaryBuildFiles (os$), (MacOSX)
-    _WRITEFILE bitsmarkerfile$, _ToStr$(TARGET_BITS)
+    _WRITEFILE bitsmarkerfile$, _TOSTR$(TARGET_BITS)
 END IF
 
 FOR i = 1 TO UBOUND(DEPENDENCY): DEPENDENCY(i) = 0: NEXT
@@ -1398,6 +1403,8 @@ REDIM SHARED udtxfdynsize(1000) AS LONG 'TYPE size for its canonical descriptor-
 REDIM SHARED udtxcanonmode(1000) AS INTEGER '0 inline-only, 1 canonical descriptor-aware layout
 REDIM SHARED udtxnext(1000) AS LONG
 REDIM SHARED udtxvariable(1000) AS INTEGER 'true if the udt contains variable length elements
+REDIM SHARED UDTFuncRetLifeHelperDone(1000) AS INTEGER 'per-compilation cache for emitted UDT FUNCTION return lifecycle helpers
+REDIM SHARED UDTFuncRetCopyHelperDone(1000) AS INTEGER 'per-compilation bitmask: inline=1, descriptor=2
 
 'TYPE element metadata tables.
 '
@@ -2119,6 +2126,8 @@ DO
                     IF LEN(a$) THEN
                         IF Debug THEN PRINT #9, "PP[" + a$ + "]"
                         n = numelements(a$)
+                        NormalizeProcStaticHeader a$, ca$, n, procStaticPosition
+                        IF Error_Happened THEN GOTO errmes
                         firstelement$ = getelement(a$, 1)
                         secondelement$ = getelement(a$, 2)
                         thirdelement$ = getelement(a$, 3)
@@ -2762,9 +2771,6 @@ DO
                             IF Error_Happened THEN GOTO errmes
                             IF sf = 2 AND symbol$ <> "" THEN a$ = "Type symbols after a SUB name are invalid": GOTO errmes
 
-                            'remove STATIC (which is ignored)
-                            e$ = getelement$(a$, n): IF e$ = "STATIC" THEN a$ = LEFT$(a$, LEN(a$) - 7): ca$ = LEFT$(ca$, LEN(ca$) - 7): n = n - 1
-
                             'check for ALIAS
                             aliasname$ = n$ 'use given name by default
                             IF n > 2 THEN
@@ -2806,6 +2812,27 @@ DO
                                     aliasname$ = n$ 'override the alias name
                                 END IF
                             END IF
+
+                            ' A FUNCTION return type written after the parameter list is
+                            ' normalized before the existing parameter parser runs.  The
+                            ' parser and code generator therefore continue to use the same
+                            ' canonical type symbol/id path as legacy suffix declarations.
+                            hasfuncret = 0
+                            funcrettyp = 0
+                            funcretsize = 0
+                            funcrettext$ = ""
+                            funcretsymbol$ = ""
+                            IF sf = 1 THEN
+                                ParseFunctionReturnClause a$, ca$, n, hasfuncret, funcrettyp, funcretsize, funcrettext$, funcretsymbol$, declaringlibrary
+                                IF Error_Happened THEN GOTO errmes
+                                IF hasfuncret AND symbol$ <> "" THEN a$ = "FUNCTION return type specified twice": GOTO errmes
+                            END IF
+
+                            ' STATIC precedes an explicit AS return clause.  The
+                            ' shared return-clause parser removes AS type first,
+                            ' leaving the legacy terminal STATIC token for the
+                            ' existing header parser to discard here.
+                            e$ = getelement$(a$, n): IF e$ = "STATIC" THEN a$ = LEFT$(a$, LEN(a$) - 7): ca$ = LEFT$(ca$, LEN(ca$) - 7): n = n - 1
 
                             params = 0
                             params$ = ""
@@ -2951,7 +2978,9 @@ DO
                                 id.nele = nele$
                                 id.nelereq = nelereq$
                                 id.dynudtargmode = dynudtargmode$
-                                IF symbol$ <> "" THEN
+                                IF hasfuncret THEN
+                                    id.ret = funcrettyp
+                                ELSEIF symbol$ <> "" THEN
                                     id.ret = typname2typ(symbol$)
                                     IF Error_Happened THEN GOTO errmes
                                 ELSE
@@ -2971,12 +3000,16 @@ DO
 
                                 END IF
 
-                                s$ = LEFT$(symbol$, 1)
-                                IF s$ <> "~" AND s$ <> "`" AND s$ <> "%" AND s$ <> "&" AND s$ <> "!" AND s$ <> "#" AND s$ <> "$" THEN
-                                    symbol$ = type2symbol$(symbol$)
-                                    IF Error_Happened THEN GOTO errmes
+                                IF hasfuncret THEN
+                                    id.mayhave = funcretsymbol$
+                                ELSE
+                                    s$ = LEFT$(symbol$, 1)
+                                    IF s$ <> "~" AND s$ <> "`" AND s$ <> "%" AND s$ <> "&" AND s$ <> "!" AND s$ <> "#" AND s$ <> "$" THEN
+                                        symbol$ = type2symbol$(symbol$)
+                                        IF Error_Happened THEN GOTO errmes
+                                    END IF
+                                    id.mayhave = symbol$
                                 END IF
-                                id.mayhave = symbol$
                                 IF id.ret AND ISPOINTER THEN
                                     IF (id.ret AND ISSTRING) = 0 THEN id.ret = id.ret - ISPOINTER
                                 END IF
@@ -2992,6 +3025,17 @@ DO
                                     cpo% = _INSTRREV(apo%, pwl$, ")")
                                     pwl$ = n$ + symbol$ + StrReplace$(RTRIM$(LEFT$(pwl$, cpo%)), "_", "")
                                     pwl$ = StrReplace$(pwl$, " ()", "()")
+                                    IF hasfuncret THEN
+                                        IF funcrettyp AND ISUDT THEN
+                                            ' Keep the parser/type-resolution spelling in funcrettext$ untouched.
+                                            ' UDT lookup uses the normalized internal name, while IDE layout must
+                                            ' reproduce the exact capitalization from the TYPE declaration.
+                                            funcretlayout$ = RTRIM$(udtxcname(funcrettyp AND UDTMASK))
+                                        ELSE
+                                            funcretlayout$ = SCase2$(UCASE$(funcrettext$))
+                                        END IF
+                                        pwl$ = pwl$ + " " + SCase$("As") + " " + StrReplace$(funcretlayout$, sp, " ")
+                                    END IF
                                     id.hr_syntax = pwl$
                                 END IF
 
@@ -4181,6 +4225,8 @@ DO
     IF Debug THEN PRINT #9, a$
     n = numelements(a$)
     IF n = 0 THEN GOTO finishednonexec
+    NormalizeProcStaticHeader a$, ca$, n, procStaticPosition
+    IF Error_Happened THEN GOTO errmes
 
     'convert non-UDT dimensioned periods to _046_
     IF INSTR(ca$, sp + "." + sp) THEN
@@ -4200,15 +4246,18 @@ DO
                     GOTO udtperiod
                 END IF
 
-                'find an ID of that type
-                try = findid(UCASE$(a3$))
+                'A dotted name may already have been fused (My.Make).
+                'Check the entire prefix before treating .x as another name segment.
+                udtPeriodName$ = a3$
+                IF lastfuse = x - 2 THEN udtPeriodName$ = getelement$(aa$, numelements(aa$) - 1)
+                try = findid(UCASE$(udtPeriodName$))
                 IF Error_Happened THEN GOTO errmes
                 DO WHILE try
-                    IF ((id.t AND ISUDT) <> 0) OR ((id.arraytype AND ISUDT) <> 0) THEN
+                    IF ((id.t AND ISUDT) <> 0) OR ((id.arraytype AND ISUDT) <> 0) OR (id.subfunc = 1 AND id.internal_subfunc = 0 AND id.ccall = 0 AND (id.ret AND ISUDT) <> 0) THEN
                         except = 1
                         GOTO udtperiod
                     END IF
-                    IF try = 2 THEN findanotherid = 1: try = findid(UCASE$(a3$)) ELSE try = 0
+                    IF try = 2 THEN findanotherid = 1: try = findid(UCASE$(udtPeriodName$)) ELSE try = 0
                     IF Error_Happened THEN GOTO errmes
                 LOOP
                 'not a udt; fuse lhs & rhs with _046_
@@ -5384,6 +5433,36 @@ DO
                 END IF
             END IF
 
+            hasfuncret = 0
+            funcrettyp = 0
+            funcretsize = 0
+            funcrettext$ = ""
+            funcretsymbol$ = ""
+            IF sf = 1 THEN
+                ParseFunctionReturnClause a$, ca$, n, hasfuncret, funcrettyp, funcretsize, funcrettext$, funcretsymbol$, declaringlibrary
+                IF Error_Happened THEN GOTO errmes
+                IF hasfuncret AND symbol$ <> "" THEN a$ = "FUNCTION return type specified twice": GOTO errmes
+                IF hasfuncret THEN
+                    IF funcrettyp <> id.ret THEN a$ = "FUNCTION return type does not match its registered type": GOTO errmes
+                END IF
+            END IF
+
+            ' STATIC belongs to the FUNCTION/SUB header and precedes an
+            ' explicit AS return clause.  ParseFunctionReturnClause removes
+            ' AS type while retaining STATIC, so both legacy FUNCTION ...
+            ' STATIC and FUNCTION ... STATIC AS type reach this one path.
+            addstatic2layout = 0
+            staticsf = 0
+            funcrettail$ = getelement$(a$, n)
+            IF funcrettail$ = "STATIC" THEN
+                IF declaringlibrary THEN a$ = "STATIC cannot be used in a library declaration": GOTO errmes
+                addstatic2layout = 1
+                staticsf = 2
+                a$ = LEFT$(a$, LEN(a$) - 7)
+                ca$ = LEFT$(ca$, LEN(ca$) - 7)
+                n = n - 1
+            END IF
+
             IF declaringlibrary THEN GOTO declibjmp1
 
             'check for open controls (copy #2)
@@ -5480,6 +5559,13 @@ DO
                 IF Error_Happened THEN GOTO errmes
                 IF t$ = "qbs" THEN t$ = "qbs*"
 
+                ' UDT FUNCTIONs receive one hidden caller-owned result pointer
+                ' and return that same address at the C++ ABI level.  This keeps
+                ' ownership out of the host structure-return ABI while making
+                ' the call expression itself a pointer to the completed UDT,
+                ' which leaves room for future direct member access.
+                IF rettyp AND ISUDT THEN t$ = "void*"
+
                 IF declaringlibrary THEN
                     IF rettyp AND ISSTRING THEN
                         t$ = "char*"
@@ -5501,29 +5587,60 @@ DO
                 IF declaringlibrary THEN GOTO declibjmp2
                 WriteBufRawDataCpp MainTxtBuf, t$ + " " + removecast$(RTRIM$(id.callname)) + "("
 
-                'create variable to return result
-                'if type wasn't specified, define it
-                IF symbol$ = "" THEN
+                'Create the BASIC-visible result variable from the explicit
+                'type text or from the established suffix/default type path.
+                'Keeping the explicit text preserves widths such as _BIT * n
+                'and STRING * n without inventing a second type conversion.
+                funcretvartype$ = symbol$
+                IF hasfuncret THEN funcretvartype$ = funcrettext$
+                IF funcretvartype$ = "" THEN
                     a = ASC(UCASE$(e$)): IF a = 95 THEN a = 91
                     a = a - 64 'so A=1, Z=27 and _=28
-                    symbol$ = defineextaz(a)
+                    funcretvartype$ = defineextaz(a)
                 END IF
                 reginternalvariable = 1
-                ignore = dim2(e$, symbol$, 0, "")
+                IF rettyp AND ISUDT THEN
+                    ' Register the BASIC-visible result name as a scalar UDT
+                    ' backed by the hidden pointer, without allocating a second
+                    ' local object or attaching FUNCTION-argument metadata.
+                    dimudtreturn = 1
+                    sf_udt_dynmode = 0
+                    ignore = dim2(e$, funcretvartype$, 0, "")
+                    sf_udt_dynmode = 0
+                    dimudtreturn = 0
+                ELSE
+                    ignore = dim2(e$, funcretvartype$, 0, "")
+                END IF
                 IF Error_Happened THEN GOTO errmes
                 reginternalvariable = 0
-                'the following line stops the return variable from being free'd before being returned
-                FreeTxtBuf = OpenBuffer&("O", tmpdir$ + "free" + _TOSTR$(subfuncn) + ".txt")
-                'create return
-                IF (rettyp AND ISSTRING) THEN
+
+                IF rettyp AND ISUDT THEN
+                    ' Use the normal internal UDT reference name for the hidden
+                    ' parameter so all established member/reference paths write
+                    ' directly into the caller-owned result object.
                     r$ = refer$(_TOSTR$(currentid), id.t, 1)
                     IF Error_Happened THEN GOTO errmes
-                    subfuncret$ = subfuncret$ + "qbs_maketmp(" + r$ + ");"
-                    subfuncret$ = subfuncret$ + "return " + r$ + ";"
-                ELSE
-                    r$ = refer$(_TOSTR$(currentid), id.t, 0)
-                    IF Error_Happened THEN GOTO errmes
+                    WriteBufRawData RegTxtBuf, "void*" + r$
+                    WriteBufRawDataCpp MainTxtBuf, "void*" + r$
+                    IF id2.args > 0 THEN
+                        WriteBufRawData RegTxtBuf, ","
+                        WriteBufRawDataCpp MainTxtBuf, ","
+                    END IF
                     subfuncret$ = "return " + r$ + ";"
+                ELSE
+                    ' Keep ordinary result storage alive until the return has
+                    ' been emitted, preserving the established scalar path.
+                    FreeTxtBuf = OpenBuffer&("O", tmpdir$ + "free" + _TOSTR$(subfuncn) + ".txt")
+                    IF (rettyp AND ISSTRING) THEN
+                        r$ = refer$(_TOSTR$(currentid), id.t, 1)
+                        IF Error_Happened THEN GOTO errmes
+                        subfuncret$ = subfuncret$ + "qbs_maketmp(" + r$ + ");"
+                        subfuncret$ = subfuncret$ + "return " + r$ + ";"
+                    ELSE
+                        r$ = refer$(_TOSTR$(currentid), id.t, 0)
+                        IF Error_Happened THEN GOTO errmes
+                        subfuncret$ = "return " + r$ + ";"
+                    END IF
                 END IF
             ELSE
 
@@ -5543,16 +5660,6 @@ DO
                 WriteBufRawDataCpp MainTxtBuf, "void " + removecast$(RTRIM$(id.callname)) + "("
             END IF
             declibjmp2:
-
-            addstatic2layout = 0
-            staticsf = 0
-            e$ = getelement$(a$, n)
-            IF e$ = "STATIC" THEN
-                IF declaringlibrary THEN a$ = "STATIC cannot be used in a library declaration": GOTO errmes
-                addstatic2layout = 1
-                staticsf = 2
-                a$ = LEFT$(a$, LEN(a$) - 7): n = n - 1 'remove STATIC
-            END IF
 
             'check items to pass
             params = 0
@@ -5791,7 +5898,24 @@ DO
             END IF 'n>2
             AllowLocalName = 0
 
-            IF addstatic2layout THEN l$ = l$ + sp + SCase$("Static")
+            ' Preserve the source position of STATIC independently of the
+            ' canonical header used by both compiler passes.
+            IF addstatic2layout AND procStaticPosition = 0 THEN l$ = l$ + sp + SCase$("Static")
+            IF hasfuncret THEN
+                IF funcrettyp AND ISUDT THEN
+                    ' Formatting is intentionally separate from semantic type text.
+                    ' Match DIM/REDIM/parameter formatting by taking the preserved
+                    ' spelling directly from the registered TYPE declaration.
+                    funcretlayout$ = RTRIM$(udtxcname(funcrettyp AND UDTMASK))
+                ELSE
+                    funcretlayout$ = SCase2$(UCASE$(funcrettext$))
+                END IF
+                l$ = l$ + sp + SCase$("As") + sp + funcretlayout$
+            END IF
+            IF addstatic2layout THEN
+                IF procStaticPosition = 1 THEN l$ = SCase$("Static") + sp + l$
+                IF procStaticPosition = 2 THEN l$ = l$ + sp + SCase$("Static")
+            END IF
             layoutdone = 1: IF LEN(layout$) THEN layout$ = layout$ + sp + l$ ELSE layout$ = l$
 
             WriteBufLine RegTxtBuf, ");"
@@ -7269,6 +7393,26 @@ DO
             IF secondelement$ = "USING" THEN
                 l$ = SCase$("Palette" + sp + "Using" + sp)
                 IF n < 3 THEN a$ = "Expected PALETTE USING array-name": GOTO errmes
+
+                ' PALETTE USING accepts a whole array with or without empty parentheses.
+                e$ = getelements$(ca$, 3, n)
+                IF INSTR(e$, sp + "." + sp) THEN
+                    e$ = fixoperationorder$(e$)
+                    IF Error_Happened THEN GOTO errmes
+                    byteMemberRef$ = WholeMemberBufferRef$(e$, byteMemberTyp, -1)
+                    IF Error_Happened THEN GOTO errmes
+                    IF byteMemberRef$ <> "" THEN
+                        bits = byteMemberTyp AND UDTMASK
+                        IF (bits <> 16 AND bits <> 32) OR (byteMemberTyp AND (ISFLOAT OR ISOFFSETINBITS OR ISSTRING OR ISUDT OR ISUNSIGNED)) THEN
+                            a$ = "Array must be of type INTEGER or LONG": GOTO errmes
+                        END IF
+                        l$ = l$ + tlayout$
+                        e$ = WholeMemberByteView$(byteMemberRef$)
+                        IF Error_Happened THEN GOTO errmes
+                        GOTO pu_emit
+                    END IF
+                END IF
+
                 'check array
                 e$ = getelement$(ca$, 3)
                 IF FindArray(e$) THEN
@@ -7300,6 +7444,7 @@ DO
                 l$ = l$ + tlayout$
                 e$ = evaluatetotyp(e$, -2)
                 IF Error_Happened THEN GOTO errmes
+                pu_emit:
                 WriteBufLineCpp MainTxtBuf, "sub_paletteusing(" + e$ + "," + _TOSTR$(bits) + ");"
                 layoutdone = 1: IF LEN(layout$) THEN layout$ = layout$ + sp + l$ ELSE layout$ = l$
                 GOTO finishedline
@@ -8926,10 +9071,27 @@ DO
                             ' misdiagnosed as "Expected variable/value before ')'".
                             redimTargetEval$ = fixoperationorder$(redimTargetExpr$)
                             IF Error_Happened THEN GOTO errmes
-                            udt_allow_bare_array = -1
-                            redimTargetRef$ = evaluate(redimTargetEval$, redimTargetTyp)
-                            udt_allow_bare_array = 0
-                            IF Error_Happened THEN GOTO errmes
+
+                            ' Inside a UDT FUNCTION, FunctionName.member is the local
+                            ' caller-backed result object, not a recursive FUNCTION call.
+                            ' Reuse the same LHS resolver as member assignment so REDIM
+                            ' can resize its _Dynamic member arrays without changing the
+                            ' existing descriptor ownership/reallocation code below.
+                            redimRetOK = 0
+                            GetAsgRefSyntax redimTargetEval$, redimRefKind, redimRefName$, redimHasMember, redimRoot$
+                            IF redimHasMember AND redimRefKind = 1 THEN
+                                udt_allow_bare_array = -1
+                                ResolveUDTFuncRetLHS redimTargetEval$, redimRoot$, redimRetOK, redimTargetRef$, redimTargetTyp
+                                udt_allow_bare_array = 0
+                                IF Error_Happened THEN GOTO errmes
+                            END IF
+
+                            IF redimRetOK = 0 THEN
+                                udt_allow_bare_array = -1
+                                redimTargetRef$ = evaluate(redimTargetEval$, redimTargetTyp)
+                                udt_allow_bare_array = 0
+                                IF Error_Happened THEN GOTO errmes
+                            END IF
                             IF (redimTargetTyp AND ISREFERENCE) = 0 OR (redimTargetTyp AND ISARRAY) = 0 THEN
                                 a$ = "Expected array-name": GOTO errmes
                             END IF
@@ -11096,8 +11258,17 @@ DO
                                     e$ = fixoperationorder$(a3$)
                                     IF Error_Happened THEN GOTO errmes
                                     l$ = l$ + sp2 + "," + sp + tlayout$
-                                    e$ = evaluate(e$, t)
+                                    IF lineinput THEN
+                                        e$ = evaluate(e$, t)
+                                    ELSE
+                                        EvalFileTextItem e$, e$, t, inputWholeKind
+                                    END IF
                                     IF Error_Happened THEN GOTO errmes
+                                    IF lineinput = 0 AND inputWholeKind THEN
+                                        EmitFileTextArray e$, t, inputWholeKind, 3, "", 0, 0, "skip" + u$
+                                        IF Error_Happened THEN GOTO errmes
+                                        GOTO fileinputitemdone
+                                    END IF
                                     IF (t AND ISREFERENCE) = 0 THEN a$ = "Expected variable-name": GOTO errmes
                                     IF (t AND ISSTRING) THEN
                                         e$ = refer(e$, t, 0)
@@ -11135,6 +11306,7 @@ DO
                                         WriteBufLineCpp MainTxtBuf, "if (is_error_pending()) goto skip" + u$ + ";"
 
                                     END IF
+                                    fileinputitemdone:
                                     IF i = n THEN EXIT FOR
                                     IF lineinput THEN a$ = "Too many variables": GOTO errmes
                                     a3$ = "": a2$ = ""
@@ -11837,47 +12009,46 @@ DO
 
 
 
-                        ' Special handling: _WAVE
-                        IF firstelement$ = "_WAVE" THEN
-                            e2$ = e$ 'backup
+                        ' Resolve an explicit whole member before the legacy array/slice path.
+                        ' Audio accepts an indexed start as well as the whole array.
+                        ' Resolve the member once, keeping the final indices separate.
+                        byteMemberRef$ = WholeMemberBufferRef$(e$, byteMemberTyp, 0)
+                        IF Error_Happened THEN GOTO errmes
+                        audioIndexes$ = ""
 
-                            e$ = evaluate(e$, sourcetyp)
-                            IF Error_Happened THEN GOTO errmes
-
-                            ' It must be an array
-                            IF (sourcetyp AND ISREFERENCE) = 0 OR (sourcetyp AND ISARRAY) = 0 THEN
-                                a$ = "Expected _BYTE array name": GOTO errmes
+                        IF firstelement$ = "_WAVE" OR firstelement$ = "_SNDRAWBATCH" THEN
+                            IF byteMemberRef$ = "" THEN
+                                audioWholeExpr$ = FinalMemberArrayWholeExpr$(e$, audioIndexes$)
+                                IF audioWholeExpr$ <> "" THEN
+                                    byteMemberRef$ = WholeMemberBufferRef$(audioWholeExpr$, byteMemberTyp, 0)
+                                    IF Error_Happened THEN GOTO errmes
+                                END IF
+                            END IF
+                            IF byteMemberRef$ <> "" THEN
+                                sourcetyp = byteMemberTyp
+                            ELSE
+                                byteArrayCheck$ = evaluate(e$, sourcetyp)
+                                IF Error_Happened THEN GOTO errmes
                             END IF
 
-                            ' Only _BYTE array is allowed
-                            IF (sourcetyp AND ISSTRING) OR (sourcetyp AND ISFLOAT) OR (sourcetyp AND ISOFFSET) OR (sourcetyp AND ISUDT) OR (sourcetyp AND ISUNSIGNED) OR (sourcetyp AND UDTMASK) <> 8 THEN
-                                a$ = "Expected _BYTE array name": GOTO errmes
+                            IF firstelement$ = "_WAVE" THEN
+                                IF (sourcetyp AND ISREFERENCE) = 0 OR (sourcetyp AND ISARRAY) = 0 THEN a$ = "Expected _BYTE array name": GOTO errmes
+                                IF (sourcetyp AND (ISSTRING OR ISFLOAT OR ISOFFSET OR ISUDT OR ISUNSIGNED)) OR (sourcetyp AND UDTMASK) <> 8 THEN a$ = "Expected _BYTE array name": GOTO errmes
+                            ELSE
+                                IF (sourcetyp AND ISREFERENCE) = 0 OR (sourcetyp AND ISARRAY) = 0 THEN a$ = "Expected SINGLE array name": GOTO errmes
+                                IF (sourcetyp AND ISFLOAT) = 0 OR (sourcetyp AND UDTMASK) <> 32 THEN a$ = "Expected SINGLE array name": GOTO errmes
                             END IF
-
-                            e$ = e2$ 'restore
                         END IF
 
-                        ' Special handling: _SNDRAWBATCH
-                        IF firstelement$ = "_SNDRAWBATCH" THEN
-                            e2$ = e$ 'backup
-
-                            e$ = evaluate(e$, sourcetyp)
+                        IF byteMemberRef$ <> "" THEN
+                            IF audioIndexes$ = "" THEN
+                                e$ = WholeMemberByteView$(byteMemberRef$)
+                            ELSE
+                                e$ = MemberAudioSliceView$(byteMemberRef$, audioIndexes$)
+                            END IF
                             IF Error_Happened THEN GOTO errmes
-
-                            ' It must be an array
-                            IF (sourcetyp AND ISREFERENCE) = 0 OR (sourcetyp AND ISARRAY) = 0 THEN
-                                a$ = "Expected SINGLE array name": GOTO errmes
-                            END IF
-
-                            ' Only 32-bit floating-point array is allowed
-                            IF (sourcetyp AND ISFLOAT) = 0 OR (sourcetyp AND UDTMASK) <> 32 THEN
-                                a$ = "Expected SINGLE array name": GOTO errmes
-                            END IF
-
-                            e$ = e2$ 'restore
+                            GOTO sete
                         END IF
-
-
 
                         e$ = evaluatetotyp(e$, -2)
                         IF Error_Happened THEN GOTO errmes
@@ -11910,6 +12081,14 @@ DO
 
                         'GET/PUT RANDOM-ACCESS override
                         IF firstelement$ = "GET" OR firstelement$ = "PUT" THEN
+                            byteMemberRef$ = WholeMemberBufferRef$(e$, byteMemberTyp, 0)
+                            IF Error_Happened THEN GOTO errmes
+                            IF byteMemberRef$ <> "" THEN
+                                e$ = WholeMemberByteView$(byteMemberRef$)
+                                IF Error_Happened THEN GOTO errmes
+                                GOTO sete
+                            END IF
+
                             e2$ = e$ 'backup
 
                             'Whole UDT array references like dynArr() are normally evaluated via
@@ -12046,6 +12225,17 @@ DO
                         END IF
 
                         IF LEFT$(separgs2(i), 2) = "(" + sp THEN dereference = 1 ELSE dereference = 0
+
+                        ' A UDT FUNCTION return already evaluates to a pointer to its caller-owned
+                        ' result. Pass that pointer directly to a matching scalar UDT parameter;
+                        ' unlike a variable reference, it has no encoded identifier for refer().
+                        IF (targettyp AND ISPOINTER) <> 0 AND (targettyp AND ISUDT) <> 0 AND (targettyp AND ISARRAY) = 0 THEN
+                            IF (sourcetyp AND ISPOINTER) <> 0 AND (sourcetyp AND ISUDT) <> 0 THEN
+                                IF (sourcetyp AND ISREFERENCE) = 0 AND (sourcetyp AND ISARRAY) = 0 THEN
+                                    IF (targettyp AND UDTMASK) = (sourcetyp AND UDTMASK) THEN GOTO sete
+                                END IF
+                            END IF
+                        END IF
 
                         'pass by reference
                         IF (targettyp AND ISPOINTER) THEN
@@ -14714,6 +14904,159 @@ FUNCTION ParseStringSetting& (token$, setting AS STRING)
     ParseStringSetting& = -1
 END FUNCTION
 
+' Normalize alternative STATIC placements in procedure definitions before
+' registration and code generation. The existing compiler expects STATIC just
+' before AS type, or at the end of a header with no AS return clause.
+' Do not touch ordinary STATIC variable declarations or DECLARE LIBRARY.
+SUB NormalizeProcStaticHeader (header_upper AS STRING, header_case AS STRING, token_count AS LONG, source_position AS LONG)
+    ' 0 = canonical, 1 = leading, 2 = trailing in the source header.
+    source_position = 0
+    IF token_count < 3 THEN EXIT SUB
+
+    prefix_static = 0
+    suffix_static = 0
+    header_first$ = getelement$(header_upper, 1)
+    IF header_first$ = "STATIC" THEN
+        header_second$ = getelement$(header_upper, 2)
+        IF header_second$ = "FUNCTION" OR header_second$ = "SUB" THEN
+            prefix_static = -1
+            header_upper = getelements$(header_upper, 2, token_count)
+            header_case = getelements$(header_case, 2, token_count)
+            token_count = token_count - 1
+            header_first$ = header_second$
+        END IF
+    END IF
+
+    IF header_first$ <> "FUNCTION" AND header_first$ <> "SUB" THEN EXIT SUB
+
+    IF getelement$(header_upper, token_count) = "STATIC" THEN
+        suffix_static = -1
+        header_upper = getelements$(header_upper, 1, token_count - 1)
+        header_case = getelements$(header_case, 1, token_count - 1)
+        token_count = token_count - 1
+    END IF
+
+    IF prefix_static = 0 AND suffix_static = 0 THEN EXIT SUB
+    IF prefix_static AND suffix_static THEN Give_Error "STATIC specified twice": EXIT SUB
+    IF prefix_static THEN source_position = 1 ELSE source_position = 2
+
+    ' Find AS outside the parameter parentheses. Parameter types also contain
+    ' AS, but they must not be mistaken for the FUNCTION return clause.
+    return_as_pos = 0
+    paren_depth = 0
+    IF header_first$ = "FUNCTION" THEN
+        FOR header_token_pos = 3 TO token_count
+            header_token$ = getelement$(header_upper, header_token_pos)
+            IF header_token$ = "(" THEN paren_depth = paren_depth + 1
+            IF header_token$ = ")" THEN paren_depth = paren_depth - 1
+            IF header_token$ = "AS" AND paren_depth = 0 THEN
+                return_as_pos = header_token_pos
+                EXIT FOR
+            END IF
+        NEXT header_token_pos
+    END IF
+
+    IF return_as_pos THEN
+        IF getelement$(header_upper, return_as_pos - 1) = "STATIC" THEN
+            Give_Error "STATIC specified twice": EXIT SUB
+        END IF
+        header_upper = getelements$(header_upper, 1, return_as_pos - 1) + sp + "STATIC" + sp + getelements$(header_upper, return_as_pos, token_count)
+        header_case = getelements$(header_case, 1, return_as_pos - 1) + sp + "STATIC" + sp + getelements$(header_case, return_as_pos, token_count)
+    ELSE
+        IF getelement$(header_upper, token_count) = "STATIC" THEN
+            Give_Error "STATIC specified twice": EXIT SUB
+        END IF
+        header_upper = header_upper + sp + "STATIC"
+        header_case = header_case + sp + "STATIC"
+    END IF
+    token_count = token_count + 1
+END SUB
+
+' Extracts an explicit FUNCTION return clause and removes it from the header.
+' Both compiler passes call this routine, so registration, formatting and C
+' code generation all resolve FUNCTION name(...) AS type through one path.
+' UDT result eligibility is intentionally not duplicated here: ordinary TYPE
+' registration plus the canonical layout/codegen validation own those rules.
+SUB ParseFunctionReturnClause (header_upper AS STRING, header_case AS STRING, token_count AS LONG, has_clause AS LONG, result_type AS LONG, result_size AS LONG, result_text AS STRING, result_symbol AS STRING, library_mode)
+    has_clause = 0
+    result_type = 0
+    result_size = 0
+    result_text = ""
+    result_symbol = ""
+
+    IF token_count < 3 THEN EXIT SUB
+
+    clause_pos = 0
+    clause_scan_pos = 0
+    first_header_token$ = getelement$(header_upper, 3)
+
+    IF first_header_token$ = "(" THEN
+        bracket_depth = 0
+        closing_pos = 0
+        FOR token_pos = 3 TO token_count
+            header_token$ = getelement$(header_upper, token_pos)
+            IF header_token$ = "(" THEN bracket_depth = bracket_depth + 1
+            IF header_token$ = ")" THEN
+                bracket_depth = bracket_depth - 1
+                IF bracket_depth = 0 THEN closing_pos = token_pos: EXIT FOR
+            END IF
+        NEXT token_pos
+
+        IF closing_pos > 0 AND closing_pos < token_count THEN clause_scan_pos = closing_pos + 1
+    ELSE
+        clause_scan_pos = 3
+    END IF
+
+    ' STATIC is part of the FUNCTION header rather than the return type, and
+    ' its canonical position is immediately before AS.  Leave it in the
+    ' normalized header so the established STATIC path can process it after
+    ' this routine removes the return clause.
+    IF clause_scan_pos > 0 AND clause_scan_pos <= token_count THEN
+        IF getelement$(header_upper, clause_scan_pos) = "STATIC" THEN clause_scan_pos = clause_scan_pos + 1
+        IF clause_scan_pos <= token_count THEN
+            IF getelement$(header_upper, clause_scan_pos) = "AS" THEN clause_pos = clause_scan_pos
+        END IF
+    END IF
+
+    IF clause_pos = 0 THEN EXIT SUB
+
+    has_clause = -1
+    IF clause_pos = token_count THEN Give_Error "Expected AS type": EXIT SUB
+
+    result_text = getelements$(header_upper, clause_pos + 1, token_count)
+    result_type = typname2typ(result_text)
+    result_size = typname2typsize
+    IF Error_Happened THEN EXIT SUB
+    IF result_type = 0 THEN Give_Error "Invalid FUNCTION return type": EXIT SUB
+
+    IF result_type AND ISUDT THEN
+        ' External library declarations still have no hidden caller-owned UDT
+        ' result ABI. Ordinary BASIC FUNCTION returns are validated later by the
+        ' same canonical UDT layout/codegen path used by normal UDT values.
+        IF library_mode THEN Give_Error "UDT FUNCTION return types are not supported in DECLARE LIBRARY": EXIT SUB
+    END IF
+
+    ' FUNCTION return ids store numeric _OFFSET types as values rather than as
+    ' variable/reference types.  Match the legacy suffix normalization before
+    ' either compiler pass compares or stores this type.
+    IF result_type AND ISPOINTER THEN
+        IF (result_type AND ISSTRING) = 0 THEN result_type = result_type - ISPOINTER
+    END IF
+
+    ' Named UDTs have no BASIC suffix.  Primitive AS types still publish the
+    ' same suffix metadata used by legacy FUNCTION call resolution.
+    IF result_type AND ISUDT THEN
+        result_symbol = ""
+    ELSE
+        result_symbol = type2symbol$(result_text)
+        IF Error_Happened THEN EXIT SUB
+    END IF
+
+    header_upper = getelements$(header_upper, 1, clause_pos - 1)
+    header_case = getelements$(header_case, 1, clause_pos - 1)
+    token_count = clause_pos - 1
+END SUB
+
 FUNCTION Type2MemTypeValue (t1)
     t = 0
     IF t1 AND ISARRAY THEN t = t + 65536
@@ -14756,6 +15099,95 @@ FUNCTION GetUDTCanonMode& (udt AS LONG)
     GetUDTCanonMode& = udtxcanonmode(udt)
 END FUNCTION
 
+
+'Emit one shared init/free helper pair for a UDT FUNCTION return layout.
+'The helper body is generated once per TYPE per compilation; each call site then emits
+'only a short helper call instead of duplicating the complete ownership traversal.
+SUB EnsureUDTFuncRetLifeHelpers (udt_index AS LONG, layout_mode AS LONG, elem_bytes AS LONG, init_name AS STRING, free_name AS STRING)
+    DIM init_code AS STRING
+    DIM free_code AS STRING
+
+    IF udt_index < 1 OR udt_index > lasttype THEN
+        Give_Error "Internal compiler error: invalid UDT FUNCTION return lifecycle type index"
+        EXIT SUB
+    END IF
+
+    init_name = "qb_udt_func_ret_init_" + _TOSTR$(udt_index)
+    free_name = "qb_udt_func_ret_free_" + _TOSTR$(udt_index)
+
+    ' The UDT metadata tables can grow beyond 1000 entries. Keep the lifecycle
+    ' cache large enough without changing the established TYPE table allocator.
+    IF udt_index > UBOUND(UDTFuncRetLifeHelperDone) THEN REDIM _PRESERVE UDTFuncRetLifeHelperDone(udt_index + 1000) AS INTEGER
+    IF UDTFuncRetLifeHelperDone(udt_index) THEN EXIT SUB
+
+    init_code = ""
+    free_code = ""
+    IF layout_mode > 0 THEN
+        IF udtxvariable(udt_index) THEN
+            AppendDynUDTOwnInitAt "((char*)qb_p)", udt_index, 0, _TOSTR$(elem_bytes), "0", init_code, layout_mode
+            AppendDynUDTOwnFreeAt "((char*)qb_p)", udt_index, 0, _TOSTR$(elem_bytes), "0", free_code, layout_mode
+        ELSE
+            AppendDynUDTDescInitAt "((char*)qb_p)", udt_index, 0, _TOSTR$(elem_bytes), "0", init_code, layout_mode
+            AppendDynUDTDescFreeAt "((char*)qb_p)", udt_index, 0, _TOSTR$(elem_bytes), "0", free_code, layout_mode
+        END IF
+    ELSE
+        AppendLegacyInlineUDTVarOp "((char*)qb_p)", udt_index, "0", init_code, 0, 1, "udt_ret_i", 0
+        AppendLegacyInlineUDTVarOp "((char*)qb_p)", udt_index, "0", free_code, 0, 2, "udt_ret_i", 0
+    END IF
+    IF Error_Happened THEN EXIT SUB
+
+    WriteBufLine GlobTxtBuf, "static void " + init_name + "(void *qb_p){"
+    IF init_code <> "" THEN WriteBufLine GlobTxtBuf, init_code
+    WriteBufLine GlobTxtBuf, "}"
+    WriteBufLine GlobTxtBuf, "static void " + free_name + "(void *qb_p){"
+    IF free_code <> "" THEN WriteBufLine GlobTxtBuf, free_code
+    WriteBufLine GlobTxtBuf, "}"
+
+    UDTFuncRetLifeHelperDone(udt_index) = -1
+END SUB
+
+
+'Emit one copy helper per named TYPE and physical layout, but only when a
+'FUNCTION return value needs ownership-aware assignment. The existing TYPE
+'copy emitters remain authoritative: this helper merely moves their generated
+'C++ body from every assignment site into global.txt once per compilation.
+'
+'Unlike a raw memcpy, owner copies preserve qbs deep-copy and descriptor
+'clone/erase semantics. The dynamic emitter also retains its self-assignment
+'guard. Only the evaluated source pointer is passed into this helper, so the
+'BASIC FUNCTION is never evaluated more than once.
+SUB EnsureUDTFuncRetCopyHelper (udt_index AS LONG, layout_mode AS LONG, helper_name AS STRING)
+    DIM cache_flag AS INTEGER
+
+    IF udt_index < 1 OR udt_index > lasttype THEN
+        Give_Error "Internal compiler error: invalid UDT FUNCTION return copy type index"
+        EXIT SUB
+    END IF
+    IF layout_mode < 0 OR layout_mode > 1 THEN
+        Give_Error "Internal compiler error: invalid UDT FUNCTION return copy layout mode"
+        EXIT SUB
+    END IF
+
+    cache_flag = 1
+    IF layout_mode > 0 THEN cache_flag = 2
+    helper_name = "qb_udt_func_ret_copy_" + _TOSTR$(udt_index) + "_m" + _TOSTR$(layout_mode)
+
+    ' Both caches are indexed by TYPE id, which grows beyond the initial 1000.
+    ' Retain separate cache bits for inline and descriptor physical layouts.
+    IF udt_index > UBOUND(UDTFuncRetCopyHelperDone) THEN REDIM _PRESERVE UDTFuncRetCopyHelperDone(udt_index + 1000) AS INTEGER
+    IF UDTFuncRetCopyHelperDone(udt_index) AND cache_flag THEN EXIT SUB
+
+    WriteBufLine GlobTxtBuf, "static void " + helper_name + "(void *qb_dst, void *qb_src){"
+    IF layout_mode > 0 THEN
+        copy_full_udt_dyn "((char*)qb_dst)", "((char*)qb_src)", GlobTxtBuf, 0, udt_index, layout_mode
+    ELSE
+        copy_full_udt "((char*)qb_dst)", "((char*)qb_src)", GlobTxtBuf, 0, udt_index
+    END IF
+    IF Error_Happened THEN EXIT SUB
+    WriteBufLine GlobTxtBuf, "}"
+
+    UDTFuncRetCopyHelperDone(udt_index) = UDTFuncRetCopyHelperDone(udt_index) OR cache_flag
+END SUB
 
 
 'Emit the coordinate-intersection traversal shared by REDIM _RETAIN copy paths.
@@ -16604,6 +17036,88 @@ SUB GetAsgRefSyntax (expr AS STRING, ref_kind AS LONG, final_name AS STRING, has
     LOOP
 END SUB
 
+'Resolve a direct member assignment rooted at the current UDT FUNCTION result.
+'The outermost FUNCTION name on the left side denotes the hidden caller-owned
+'result object; expressions inside member-array indexes remain ordinary RHS
+'expressions, so the same FUNCTION name there still denotes a recursive call.
+SUB ResolveUDTFuncRetLHS (expr AS STRING, root_name AS STRING, ref_ok AS LONG, ref_text AS STRING, ref_typ AS LONG)
+    DIM work AS STRING
+    DIM root_token AS STRING
+    DIM member_path AS STRING
+    DIM token_text AS STRING
+    DIM token_count AS LONG
+    DIM scan_at AS LONG
+    DIM depth_count AS LONG
+    DIM full_wrap AS LONG
+    DIM find_try AS LONG
+
+    ref_ok = 0
+    ref_text = ""
+    ref_typ = 0
+
+    IF subfuncn = 0 THEN EXIT SUB
+    IF subfuncid < 1 OR subfuncid > idn THEN EXIT SUB
+    IF ids(subfuncid).subfunc <> 1 THEN EXIT SUB
+    IF (ids(subfuncid).ret AND ISUDT) = 0 THEN EXIT SUB
+    IF UCASE$(RTRIM$(root_name)) <> UCASE$(RTRIM$(ids(subfuncid).n)) THEN EXIT SUB
+
+    work = expr
+    token_count = numelements(work)
+    IF token_count < 3 THEN EXIT SUB
+
+    'Match GetAsgRefSyntax's allowance for complete outer parentheses.
+    DO WHILE token_count >= 2
+        IF getelement$(work, 1) <> "(" OR getelement$(work, token_count) <> ")" THEN EXIT DO
+        depth_count = 0
+        full_wrap = -1
+        FOR scan_at = 1 TO token_count
+            token_text = getelement$(work, scan_at)
+            IF token_text = "(" THEN depth_count = depth_count + 1
+            IF token_text = ")" THEN
+                depth_count = depth_count - 1
+                IF depth_count = 0 AND scan_at <> token_count THEN full_wrap = 0: EXIT FOR
+            END IF
+        NEXT
+        IF full_wrap = 0 OR depth_count <> 0 THEN EXIT DO
+        work = getelements$(work, 2, token_count - 1)
+        token_count = numelements(work)
+        IF token_count < 3 THEN EXIT SUB
+    LOOP
+
+    root_token = getelement$(work, 1)
+    IF UCASE$(RTRIM$(root_token)) <> UCASE$(RTRIM$(root_name)) THEN EXIT SUB
+    IF getelement$(work, 2) <> "." THEN EXIT SUB
+
+    'Find the BASIC-visible local result object, not the callable declaration.
+    find_try = findid(root_token)
+    IF Error_Happened THEN EXIT SUB
+    DO WHILE find_try
+        IF id.t THEN
+            IF id.insubfuncn = subfuncn THEN
+                IF (id.t AND ISUDT) THEN
+                    IF (id.t AND UDTMASK) = (ids(subfuncid).ret AND UDTMASK) THEN
+                        IF UCASE$(RTRIM$(id.n)) = UCASE$(RTRIM$(ids(subfuncid).n)) THEN
+                            member_path = getelements$(work, 2, token_count)
+                            ref_text = udtreference$("0", member_path, ref_typ)
+                            IF Error_Happened THEN EXIT SUB
+                            ref_ok = -1
+                            EXIT SUB
+                        END IF
+                    END IF
+                END IF
+            END IF
+        END IF
+        IF find_try = 2 THEN
+            findanotherid = 1
+            find_try = findid(root_token)
+        ELSE
+            find_try = 0
+        END IF
+        IF Error_Happened THEN EXIT SUB
+    LOOP
+END SUB
+
+
 'Resolve an explicit whole-array reference. Top-level name() uses the existing
 'FindArray resolver. TYPE member arrays are resolved by the normal UDT evaluator
 'with its established whole-member mode enabled.
@@ -17349,6 +17863,9 @@ SUB assign (a$, n)
     DIM rmember AS LONG
     DIM lhsstate AS LONG
     DIM saved_bare AS INTEGER
+    DIM lhs_udt_ok AS LONG
+    DIM lhs_udt_ref AS STRING
+    DIM lhs_udt_typ AS LONG
 
     FOR i = 1 TO n
         c = ASC(getelement$(a$, i))
@@ -17397,11 +17914,45 @@ SUB assign (a$, n)
                                 makeidrefer a2$, typ
                                 GOTO assignlhsready
                             END IF
+
+                            ' A UDT FUNCTION result is a local scalar with the
+                            ' same BASIC name as its callable declaration.  A
+                            ' bare assignment such as MakePair = temp must bind
+                            ' to that result object instead of being parsed as a
+                            ' zero-argument recursive FUNCTION call.
+                            IF subfuncn <> 0 AND subfuncid >= 1 AND subfuncid <= idn THEN
+                                IF ids(subfuncid).subfunc = 1 AND (ids(subfuncid).ret AND ISUDT) THEN
+                                    IF UCASE$(RTRIM$(id.n)) = UCASE$(RTRIM$(ids(subfuncid).n)) THEN
+                                        ' Whole-UDT references include the root
+                                        ' UDT index, member id and byte offset.
+                                        ' Member zero denotes the whole object,
+                                        ' allowing setrefer() to use its normal
+                                        ' ownership-aware whole-UDT copy path.
+                                        a2$ = _TOSTR$(currentid) + sp3 + _TOSTR$(id.t AND UDTMASK) + sp3 + "0" + sp3 + "0"
+                                        typ = id.t + ISREFERENCE
+                                        GOTO assignlhsready
+                                    END IF
+                                END IF
+                            END IF
                         END IF
                     END IF
                     IF try = 2 THEN findanotherid = 1: try = findid(a2$) ELSE try = 0
                     IF Error_Happened THEN EXIT SUB
                 LOOP
+            END IF
+
+            'On the left side only, FunctionName.member refers to the current
+            'UDT FUNCTION result object. Indexed member expressions are resolved
+            'by udtreference$(), whose index evaluator keeps FunctionName.member
+            'on the normal RHS/recursive-call path.
+            IF lhasmember AND (lkind = 1 OR lkind = 3) THEN
+                ResolveUDTFuncRetLHS lsrc, lroot, lhs_udt_ok, lhs_udt_ref, lhs_udt_typ
+                IF Error_Happened THEN EXIT SUB
+                IF lhs_udt_ok THEN
+                    a2$ = lhs_udt_ref
+                    typ = lhs_udt_typ
+                    GOTO assignlhsready
+                END IF
             END IF
 
             saved_bare = udt_allow_bare_array
@@ -17618,6 +18169,11 @@ FUNCTION dim2 (varname$, typ2$, method, elements$)
     '                    Sets arrayelements=-1 'unknown' (if elements$="?") otherwise val(elements$)
     '                    ***Does not refer to arrayelementslist()***
     '
+    '(shared)dimudtreturn: Creates a scalar UDT ID only (no C++ allocation) for a
+    '                     FUNCTION result whose storage is provided by a hidden
+    '                     caller parameter.  It intentionally does not set
+    '                     sfid/sfarg because a result object is not an argument.
+    '
     '(argument)method: 0 being created by a DIM name AS type
     '                  1 being created by a DIM name+symbol
     '                  or automatically without the use of DIM
@@ -17636,7 +18192,7 @@ FUNCTION dim2 (varname$, typ2$, method, elements$)
     l$ = cvarname$
     varname$ = UCASE$(varname$)
 
-    IF dimsfarray = 1 THEN f = 0 ELSE f = 1
+    IF dimsfarray = 1 OR dimudtreturn = 1 THEN f = 0 ELSE f = 1
 
     IF dimstatic <> 0 AND dimshared = 0 THEN
         'name will have include the sub/func name in its scope
@@ -17750,7 +18306,10 @@ FUNCTION dim2 (varname$, typ2$, method, elements$)
             scalar_dyn_mode = 0
             dynparammode = 0
             scalar_dyn_mode = GetUDTCanonMode&(i)
-            IF dimsfarray THEN
+            IF dimsfarray OR dimudtreturn THEN
+                ' Scalar UDT arguments and hidden FUNCTION result objects are
+                ' both externally backed.  Validate their declaration-derived
+                ' layout mode without giving result objects argument links.
                 dynparammode = sf_udt_dynmode
                 IF dynparammode < 0 OR dynparammode > 1 THEN dynparammode = 0
                 IF dynparammode > 0 AND dynparammode <> scalar_dyn_mode THEN
@@ -19059,7 +19618,7 @@ FUNCTION HasIndexedFinalMemberArray% (expr$)
     NEXT
 END FUNCTION
 
-FUNCTION FinalMemberArrayWholeExpr$ (expr AS STRING)
+FUNCTION FinalMemberArrayWholeExpr$ (expr AS STRING, indexes AS STRING)
     DIM work AS STRING
     DIM leading_wraps AS STRING
     DIM trailing_wraps AS STRING
@@ -19070,6 +19629,7 @@ FUNCTION FinalMemberArrayWholeExpr$ (expr AS STRING)
     DIM token AS STRING
     DIM open_index AS LONG
 
+    indexes = ""
     work = expr
     tok_count = numelements(work)
     IF tok_count = 0 THEN EXIT FUNCTION
@@ -19090,8 +19650,8 @@ FUNCTION FinalMemberArrayWholeExpr$ (expr AS STRING)
         IF wrapped = 0 OR depth <> 0 THEN EXIT DO
 
         work = getelements$(work, 2, tok_count - 1)
-        leading_wraps = leading_wraps + "("
-        trailing_wraps = trailing_wraps + ")"
+        leading_wraps = leading_wraps + "(" + sp
+        trailing_wraps = trailing_wraps + sp + ")"
         tok_count = numelements(work)
         IF tok_count = 0 THEN EXIT FUNCTION
     LOOP
@@ -19116,7 +19676,8 @@ FUNCTION FinalMemberArrayWholeExpr$ (expr AS STRING)
     IF open_index < 3 THEN EXIT FUNCTION
     IF getelement$(work, open_index - 2) <> "." THEN EXIT FUNCTION
 
-    FinalMemberArrayWholeExpr$ = leading_wraps + getelements$(work, 1, open_index) + ")" + trailing_wraps
+    indexes = getelements$(work, open_index + 1, tok_count - 1)
+    FinalMemberArrayWholeExpr$ = leading_wraps + getelements$(work, 1, open_index) + sp + ")" + trailing_wraps
 END FUNCTION
 
 FUNCTION udtreference$ (o$, a$, typ AS LONG)
@@ -19345,7 +19906,206 @@ FUNCTION udtreference$ (o$, a$, typ AS LONG)
 
 END FUNCTION
 
+'Resolve a member path whose root is the pointer returned directly by a UDT
+'FUNCTION call. Unlike udtreference$(), this path has no variable ID: call_ptr
+'already addresses one live result object in its declaration-driven physical
+'layout. The caller snapshots the call expression once before using the C++
+'expression returned here, so descriptor guards and member reads cannot invoke
+'the BASIC FUNCTION more than once.
+FUNCTION ResolveUDTCallMember$ (call_ptr AS STRING, member_path AS STRING, root_udt AS LONG, result_typ AS LONG, bound_kind AS LONG)
+    DIM layout_mode AS LONG
+    DIM current_udt AS LONG
+    DIM path_count AS LONG
+    DIM path_index AS LONG
+    DIM search_member AS LONG
+    DIM found_member AS LONG
+    DIM relative_bits AS LONG
+    DIM member_bits AS LONG
+    DIM member_byte_off AS LONG
+    DIM close_index AS LONG
+    DIM paren_depth AS LONG
+    DIM scan_index AS LONG
+    DIM actual_dims AS LONG
+    DIM element_bytes AS LONG
+    DIM final_typ AS LONG
+    DIM numeric_typ AS LONG
+    DIM symbol_typ AS LONG
+    DIM symbol_size AS LONG
+    DIM current_ptr AS STRING
+    DIM member_ptr AS STRING
+    DIM member_token AS STRING
+    DIM member_symbol AS STRING
+    DIM index_text AS STRING
+    DIM desc_text AS STRING
+    DIM array_index_text AS STRING
+    DIM type_text AS STRING
+    DIM scan_token AS STRING
+
+    result_typ = 0
+    IF root_udt < 1 OR root_udt > lasttype THEN Give_Error "Invalid UDT FUNCTION result type": EXIT FUNCTION
+
+    layout_mode = GetUDTCanonMode&(root_udt)
+    current_udt = root_udt
+    current_ptr = call_ptr
+    path_count = numelements(member_path)
+    path_index = 1
+
+    DO
+        IF path_index > path_count THEN Give_Error "Expected .elementname": EXIT FUNCTION
+        IF getelement$(member_path, path_index) <> "." THEN Give_Error "Expected .": EXIT FUNCTION
+        path_index = path_index + 1
+        IF path_index > path_count THEN Give_Error "Expected .elementname": EXIT FUNCTION
+
+        member_token = UCASE$(getelement$(member_path, path_index))
+        member_symbol = removesymbol$(member_token)
+        IF Error_Happened THEN EXIT FUNCTION
+        IF member_token = "" THEN Give_Error "Expected .elementname": EXIT FUNCTION
+
+        search_member = udtxnext(current_udt)
+        found_member = 0
+        relative_bits = 0
+        DO WHILE search_member
+            IF member_token = RTRIM$(udtename(search_member)) THEN
+                found_member = search_member
+                EXIT DO
+            END IF
+            IF layout_mode = 0 THEN relative_bits = relative_bits + udtesize(search_member)
+            search_member = udtenext(search_member)
+        LOOP
+        IF found_member = 0 THEN Give_Error "Element not defined": EXIT FUNCTION
+
+        IF member_symbol <> "" THEN
+            IF udtetype(found_member) AND ISUDT THEN Give_Error "Invalid symbol after user defined type": EXIT FUNCTION
+            symbol_typ = typname2typ(member_symbol)
+            symbol_size = typname2typsize
+            IF Error_Happened THEN EXIT FUNCTION
+            IF symbol_typ <> udtetype(found_member) OR symbol_size <> udtetypesize(found_member) THEN
+                IF member_symbol <> "$" OR (udtetype(found_member) AND ISFIXEDLENGTH) = 0 THEN
+                    Give_Error "Incorrect symbol after element name": EXIT FUNCTION
+                END IF
+            END IF
+        END IF
+
+        IF layout_mode THEN
+            member_bits = UDTDynMemberOffset&(found_member)
+        ELSE
+            member_bits = relative_bits
+        END IF
+        IF member_bits MOD 8 THEN Give_Error "Non-byte aligned user defined type": EXIT FUNCTION
+        member_byte_off = member_bits \ 8
+        member_ptr = "((char*)(" + current_ptr + ")+" + _TOSTR$(member_byte_off) + ")"
+        path_index = path_index + 1
+
+        IF path_index <= path_count THEN
+            IF getelement$(member_path, path_index) = "(" THEN
+                close_index = 0
+                paren_depth = 1
+                FOR scan_index = path_index + 1 TO path_count
+                    scan_token$ = getelement$(member_path, scan_index)
+                    IF scan_token$ = "(" THEN paren_depth = paren_depth + 1
+                    IF scan_token$ = ")" THEN
+                        paren_depth = paren_depth - 1
+                        IF paren_depth = 0 THEN close_index = scan_index: EXIT FOR
+                    END IF
+                NEXT
+                IF close_index = 0 THEN Give_Error "Expected )": EXIT FUNCTION
+                IF udtearrayelements(found_member) = 0 THEN Give_Error "Element is not an array": EXIT FUNCTION
+                IF close_index = path_index + 1 THEN
+                    IF bound_kind AND close_index = path_count THEN
+                        Give_Error UDTResultBoundError$(bound_kind)
+                    ELSE
+                        Give_Error "Array index missing"
+                    END IF
+                    EXIT FUNCTION
+                END IF
+
+                index_text = getelements$(member_path, path_index + 1, close_index - 1)
+                IF layout_mode AND UDTMemberDynDesc%(found_member) THEN
+                    desc_text = "(*((ptrszint**)(" + member_ptr + ")))"
+                    actual_dims = DynMemberIndexDims%(index_text)
+                    IF actual_dims <= 0 THEN Give_Error "Array index missing": EXIT FUNCTION
+                    desc_text = UDTDynArrayDescGuard$(desc_text, actual_dims)
+                    IF Error_Happened THEN EXIT FUNCTION
+                    array_index_text = UDTDynArrayIndexExpr$(index_text, actual_dims, desc_text)
+                    IF Error_Happened THEN EXIT FUNCTION
+                    element_bytes = udt_dyn_array_elem_bytes(found_member)
+                    dynmemlockexpr = "(mem_lock*)(" + desc_text + "[" + desc_text + "[3]*4+4])"
+                    member_ptr = "((char*)" + desc_text + "[0]+(" + array_index_text + ")*" + _TOSTR$(element_bytes) + ")"
+                ELSE
+                    array_index_text = UDTArrayIndexExpr$(index_text, udtearraydims(found_member), udtearraydesc(found_member))
+                    IF Error_Happened THEN EXIT FUNCTION
+                    IF layout_mode THEN
+                        element_bytes = UDTDynInlineElemBytes&(found_member, layout_mode)
+                    ELSE
+                        element_bytes = (udtesize(found_member) \ 8) \ udtearrayelements(found_member)
+                    END IF
+                    member_ptr = "(" + member_ptr + "+(" + array_index_text + ")*" + _TOSTR$(element_bytes) + ")"
+                END IF
+                path_index = close_index + 1
+            ELSEIF udtearrayelements(found_member) THEN
+                Give_Error "Expected array index": EXIT FUNCTION
+            END IF
+        ELSEIF udtearrayelements(found_member) THEN
+            IF bound_kind THEN
+                Give_Error UDTResultBoundError$(bound_kind)
+            ELSE
+                Give_Error "Expected array index"
+            END IF
+            EXIT FUNCTION
+        END IF
+
+        IF path_index <= path_count THEN
+            IF (udtetype(found_member) AND ISUDT) = 0 THEN Give_Error "Expected user defined type": EXIT FUNCTION
+            current_udt = udtetype(found_member) AND UDTMASK
+            current_ptr = member_ptr
+        ELSE
+            EXIT DO
+        END IF
+    LOOP
+
+    final_typ = udtetype(found_member)
+    IF final_typ AND ISUDT THEN
+        result_typ = (final_typ AND UDTMASK) + ISUDT + ISPOINTER
+        ResolveUDTCallMember$ = "((void*)(" + member_ptr + "))"
+        EXIT FUNCTION
+    END IF
+
+    IF final_typ AND ISSTRING THEN
+        IF final_typ AND ISFIXEDLENGTH THEN
+            result_typ = STRINGTYPE + ISFIXEDLENGTH
+            ResolveUDTCallMember$ = "qbs_new_fixed((uint8*)(" + member_ptr + ")," + _TOSTR$(udtetypesize(found_member)) + ",1)"
+        ELSE
+            result_typ = STRINGTYPE
+            ResolveUDTCallMember$ = "*((qbs**)(" + member_ptr + "))"
+        END IF
+        EXIT FUNCTION
+    END IF
+
+    numeric_typ = final_typ
+    IF numeric_typ AND ISREFERENCE THEN numeric_typ = numeric_typ - ISREFERENCE
+    IF numeric_typ AND ISPOINTER THEN numeric_typ = numeric_typ - ISPOINTER
+    IF numeric_typ AND ISARRAY THEN numeric_typ = numeric_typ - ISARRAY
+    type_text = typ2ctyp$(numeric_typ, "")
+    IF Error_Happened THEN EXIT FUNCTION
+    result_typ = numeric_typ
+    ResolveUDTCallMember$ = "*(" + type_text + "*)(" + member_ptr + ")"
+END FUNCTION
+
 FUNCTION evaluate$ (a2$, typ AS LONG)
+    DIM call_member_tmp AS STRING
+    DIM call_member_path AS STRING
+    DIM call_member_expr AS STRING
+    DIM call_member_end AS LONG
+    DIM call_root_start AS LONG
+    DIM call_member_depth AS LONG
+    DIM call_member_scan AS LONG
+    DIM call_member_token AS STRING
+    DIM bound_kind AS LONG
+    DIM call_member_bound_kind AS LONG
+
+    bound_kind = udt_bound_result_kind
+    udt_bound_result_kind = 0
+
     'typ IS A RETURN VALUE
     '''DIM cli(15) AS INTEGER
     a$ = a2$
@@ -19534,6 +20294,12 @@ FUNCTION evaluate$ (a2$, typ AS LONG)
 
                     'is l$ a function?
                     IF id.subfunc = 1 THEN
+                        call_root_start = i
+                        ' A FUNCTION name on the right-hand side always denotes
+                        ' a call, including inside that FUNCTION's own body.
+                        ' Do not reinterpret FunctionName.member as access to
+                        ' hidden result storage; that spelling must remain free
+                        ' for future member access on a real UDT call result.
                         constequation = 0
                         IF getelement(a$, i + 1) = "(" THEN
                             i2 = i + 2
@@ -19561,6 +20327,34 @@ FUNCTION evaluate$ (a2$, typ AS LONG)
                             IF Error_Happened THEN EXIT FUNCTION
                         END IF
                         evalednextele:
+                        IF (typ2 AND ISUDT) <> 0 AND (typ2 AND ISPOINTER) <> 0 THEN
+                            IF i < n THEN
+                                IF getelement$(a$, i + 1) = "." THEN
+                                    call_member_end = n
+                                    call_member_depth = 0
+                                    FOR call_member_scan = i + 1 TO n
+                                        call_member_token$ = getelement$(a$, call_member_scan)
+                                        IF call_member_token$ = ")" THEN
+                                            IF call_member_depth = 0 THEN call_member_end = call_member_scan - 1: EXIT FOR
+                                            call_member_depth = call_member_depth - 1
+                                        ELSEIF call_member_token$ = "(" THEN
+                                            call_member_depth = call_member_depth + 1
+                                        ELSEIF call_member_depth = 0 AND isoperator(call_member_token$) THEN
+                                            call_member_end = call_member_scan - 1
+                                            EXIT FOR
+                                        END IF
+                                    NEXT
+                                    call_member_path = getelements$(a$, i + 1, call_member_end)
+                                    call_member_tmp = "udt_call_member_" + _TOSTR$(uniquenumber)
+                                    call_member_bound_kind = 0
+                                    IF call_root_start = 1 AND call_member_end = n THEN call_member_bound_kind = bound_kind
+                                    call_member_expr = ResolveUDTCallMember$(call_member_tmp, call_member_path, typ2 AND UDTMASK, typ2, call_member_bound_kind)
+                                    IF Error_Happened THEN EXIT FUNCTION
+                                    c$ = "([&](){void *" + call_member_tmp + "=(void*)(" + c$ + ");return " + call_member_expr + ";})()"
+                                    i = call_member_end
+                                END IF
+                            END IF
+                        END IF
                         blockn = blockn + 1
                         block(blockn) = c$
                         evaledblock(blockn) = 2
@@ -19657,6 +20451,7 @@ FUNCTION evaluate$ (a2$, typ AS LONG)
         IF l$ = ")" THEN
             b = b - 1
             IF b = 0 THEN
+                IF i1 = 2 AND i = n THEN udt_bound_result_kind = bound_kind
                 c$ = evaluate(getelements$(a$, i1, i - 1), typ2)
                 IF Error_Happened THEN EXIT FUNCTION
                 IF (typ2 AND ISSTRING) THEN stringprocessinghappened = 1
@@ -19925,6 +20720,11 @@ FUNCTION evaluate$ (a2$, typ AS LONG)
 
                 oldtyp = typ
                 newtyp = blocktype(i + 1)
+
+                ' A UDT value (including a FUNCTION result) cannot be an operator operand.
+                IF (oldtyp AND ISUDT) <> 0 OR (newtyp AND ISUDT) <> 0 THEN
+                    Give_Error "User defined types in expressions are invalid": EXIT FUNCTION
+                END IF
 
                 'IF block(i - 1) = "6" THEN
                 'PRINT o$
@@ -20204,6 +21004,14 @@ END FUNCTION
 
 
 
+FUNCTION UDTResultBoundError$ (bound_kind AS LONG)
+    DIM bound_name AS STRING
+    DIM diagnostic AS STRING
+    IF bound_kind = 1 THEN bound_name = "UBOUND" ELSE bound_name = "LBOUND"
+    diagnostic = "Assign the UDT function result to a variable before using " + bound_name + " on its array member."
+    UDTResultBoundError$ = diagnostic
+END FUNCTION
+
 FUNCTION evaluatefunc$ (a2$, args AS LONG, typ AS LONG)
     a$ = a2$
 
@@ -20216,6 +21024,15 @@ FUNCTION evaluatefunc$ (a2$, args AS LONG, typ AS LONG)
     DIM ulboundoffset AS STRING
     DIM ulboundbase AS STRING
     DIM ulbounddesc AS STRING
+    DIM ulbound_result_kind AS LONG
+    DIM udtretindex AS LONG
+    DIM udtretsize AS LONG
+    DIM udtrettmp AS STRING
+    DIM udtretcall AS INTEGER
+    DIM udtretowned AS INTEGER
+    DIM udtretdynmode AS LONG
+    DIM udtretinit AS STRING
+    DIM udtretfree AS STRING
 
 
     IF Debug THEN PRINT #9, "evaluatingfunction:" + RTRIM$(id.n) + ":" + a$
@@ -20224,7 +21041,23 @@ FUNCTION evaluatefunc$ (a2$, args AS LONG, typ AS LONG)
 
     id2 = id
     n$ = RTRIM$(id2.n)
+
+    ' Only a user-written BASIC FUNCTION can use the hidden UDT-result ABI.
+    ' Internal functions may carry placeholder return metadata until their
+    ' special handlers determine the real type, so testing ISUDT alone can
+    ' misclassify intrinsics and index arbitrary TYPE metadata.
+    udtretcall = 0
+    IF id2.subfunc = 1 AND id2.internal_subfunc = 0 AND id2.ccall = 0 THEN
+        IF id2.ret AND ISUDT THEN udtretcall = -1
+    END IF
+
     typ = id2.ret
+    IF udtretcall THEN
+        ' The expression contains an address to caller-owned result storage.
+        ' Keep declaration metadata as the plain BASIC UDT and add ISPOINTER
+        ' only to this temporary expression type.
+        typ = typ OR ISPOINTER
+    END IF
     targetid = currentid
 
     IF RTRIM$(id2.callname) = "func_stub" THEN Give_Error "Command not implemented": EXIT FUNCTION
@@ -20311,6 +21144,50 @@ FUNCTION evaluatefunc$ (a2$, args AS LONG, typ AS LONG)
     IF id2.ccall AND subfuncn <> 0 THEN NoteCcallFromSubFunc targetid
     r$ = RTRIM$(id2.callname) + "("
     funcargprep$ = ""
+
+    IF udtretcall THEN
+        ' Reserve one pointer per call site in the caller.  Allocation remains
+        ' lazy, loops reuse their site, and recursive caller frames receive an
+        ' independent pointer.  Step 2A1 clears the fixed-layout object before
+        ' each invocation so partially assigned results cannot expose old data.
+        udtretindex = id2.ret AND UDTMASK
+        IF udtretindex < 1 OR udtretindex > lasttype THEN
+            Give_Error "Internal compiler error: invalid UDT FUNCTION return type index": EXIT FUNCTION
+        END IF
+        udtretdynmode = GetUDTCanonMode&(udtretindex)
+        IF udtretdynmode > 0 THEN
+            IF UDTDynMembersOK%(udtretindex, udtretdynmode) = 0 THEN EXIT FUNCTION
+            udtretsize = UDTDynLayoutSize&(udtretindex) \ 8
+            IF UDTDynLayoutSize&(udtretindex) MOD 8 THEN udtretsize = udtretsize + 1
+        ELSE
+            udtretsize = udtxsize(udtretindex) \ 8
+            IF udtxsize(udtretindex) MOD 8 THEN udtretsize = udtretsize + 1
+        END IF
+        udtrettmp = "udt_func_ret_" + _TOSTR$(uniquenumber)
+        WriteBufLine defdatahandle, "void *" + udtrettmp + "=NULL;"
+
+        ' A reused caller-owned result slot needs lifecycle handling whenever it
+        ' contains qbs owners or descriptor-backed _Dynamic members. Descriptor
+        ' layout uses the canonical size and the same init/free walkers as normal
+        ' scalar UDT storage, so stale descriptors are never memset or overwritten.
+        udtretowned = 0
+        udtretinit = ""
+        udtretfree = ""
+        IF udtretdynmode > 0 OR udtxvariable(udtretindex) THEN
+            udtretowned = -1
+            EnsureUDTFuncRetLifeHelpers udtretindex, udtretdynmode, udtretsize, udtretinit, udtretfree
+            IF Error_Happened THEN EXIT FUNCTION
+        END IF
+
+        IF udtretowned THEN
+            ' The raw mem_static block follows the caller frame lifetime, but its
+            ' qbs objects and descriptor payloads are independent owners.
+            WriteBufLine FreeTxtBuf, "if(" + udtrettmp + "!=NULL){" + udtretfree + "(" + udtrettmp + ");}"
+        END IF
+
+        r$ = r$ + udtrettmp
+        IF id2.args <> 0 THEN r$ = r$ + ","
+    END IF
 
 
     IF id2.args <> 0 THEN
@@ -20512,9 +21389,14 @@ FUNCTION evaluatefunc$ (a2$, args AS LONG, typ AS LONG)
                         '   Items(0).Grid()
                         ' which then raises "Expected array index".
                         IF INSTR(original_e$, ".") THEN
+                            IF n$ = "UBOUND" THEN ulbound_result_kind = 1 ELSE ulbound_result_kind = 2
+                            udt_bound_result_kind = ulbound_result_kind
                             udt_allow_bare_array = -1
                             e$ = evaluate(original_e$, sourcetyp)
                             udt_allow_bare_array = 0
+                            IF Error_Happened THEN
+                                IF Error_Message = UDTResultBoundError$(ulbound_result_kind) THEN EXIT FUNCTION
+                            END IF
 
                             IF Error_Happened = 0 THEN
                                 IF ((sourcetyp AND ISREFERENCE) <> 0) AND ((sourcetyp AND ISARRAY) <> 0) THEN
@@ -20644,6 +21526,30 @@ FUNCTION evaluatefunc$ (a2$, args AS LONG, typ AS LONG)
 
                 '------------------------------------------------------------------------------------------------------------
                 e2$ = e$
+
+                IF n$ = "_UCHARPOS" AND curarg = 2 THEN
+                    byte_member_ref$ = WholeMemberBufferRef$(e2$, sourcetyp, 0)
+                    IF Error_Happened THEN EXIT FUNCTION
+                    IF byte_member_ref$ = "" THEN
+                        e$ = evaluate(e2$, sourcetyp)
+                        IF Error_Happened THEN EXIT FUNCTION
+                    END IF
+
+                    IF (sourcetyp AND ISREFERENCE) = 0 OR (sourcetyp AND ISARRAY) = 0 THEN
+                        Give_Error "Expected LONG array-name": EXIT FUNCTION
+                    END IF
+                    IF (sourcetyp AND (ISSTRING OR ISFLOAT OR ISOFFSET OR ISUDT)) OR (sourcetyp AND UDTMASK) <> 32 THEN
+                        Give_Error "Expected LONG array-name": EXIT FUNCTION
+                    END IF
+
+                    IF byte_member_ref$ <> "" THEN
+                        e$ = WholeMemberByteView$(byte_member_ref$)
+                    ELSE
+                        e$ = evaluatetotyp(e2$, -2)
+                    END IF
+                    IF Error_Happened THEN EXIT FUNCTION
+                    GOTO dontevaluate
+                END IF
 
                 allow_bare_member_array = 0
                 member_array_arg_source$ = ""
@@ -20899,27 +21805,6 @@ FUNCTION evaluatefunc$ (a2$, args AS LONG, typ AS LONG)
                         r$ = r$ + e$ + ")"
 
                         GOTO evalfuncspecial ' evaluate now that we have everything
-                    END IF
-                END IF
-
-                ' UCHARPOS special case for arg 2
-                IF n$ = "_UCHARPOS" THEN
-                    IF curarg = 2 THEN
-                        ' It must be an array
-                        IF (sourcetyp AND ISREFERENCE) = 0 OR (sourcetyp AND ISARRAY) = 0 THEN
-                            Give_Error "Expected LONG array-name"
-                            EXIT FUNCTION
-                        END IF
-
-                        ' Cannot be one of these
-                        IF (sourcetyp AND ISSTRING) OR (sourcetyp AND ISFLOAT) OR (sourcetyp AND ISOFFSET) OR (sourcetyp AND ISUDT) OR (sourcetyp AND UDTMASK) <> 32 THEN
-                            Give_Error "Expected LONG array-name"
-                            EXIT FUNCTION
-                        END IF
-
-                        e$ = evaluatetotyp(e2$, -2) ' get byte_element_struct
-
-                        GOTO dontevaluate
                     END IF
                 END IF
 
@@ -21612,6 +22497,17 @@ FUNCTION evaluatefunc$ (a2$, args AS LONG, typ AS LONG)
                     IF (targettyp AND ISPOINTER) THEN targettyp = targettyp - ISPOINTER
                 END IF
 
+                ' A UDT FUNCTION return already evaluates to a pointer to its caller-owned
+                ' result. Pass that pointer directly to a matching scalar UDT parameter;
+                ' unlike a variable reference, it has no encoded identifier for refer().
+                IF (targettyp AND ISPOINTER) <> 0 AND (targettyp AND ISUDT) <> 0 AND (targettyp AND ISARRAY) = 0 THEN
+                    IF (sourcetyp AND ISPOINTER) <> 0 AND (sourcetyp AND ISUDT) <> 0 THEN
+                        IF (sourcetyp AND ISREFERENCE) = 0 AND (sourcetyp AND ISARRAY) = 0 THEN
+                            IF (targettyp AND UDTMASK) = (sourcetyp AND UDTMASK) THEN GOTO dontevaluate
+                        END IF
+                    END IF
+                END IF
+
                 'pointer?
                 IF (targettyp AND ISPOINTER) THEN
                     IF dereference = 0 THEN 'check dereferencing wasn't used
@@ -22064,6 +22960,21 @@ FUNCTION evaluatefunc$ (a2$, args AS LONG, typ AS LONG)
         END IF
     END IF
     r$ = r$ + ")"
+    IF udtretcall THEN
+        IF udtretowned THEN
+            ' Sequence slot preparation in the call expression so an owned UDT
+            ' return does not keep a separate lambda frame alive during recursion.
+            ' Allocate on first use; on reuse, release the old qbs/descriptor graph
+            ' before clearing and initializing the record. Both conditional branches
+            ' are void, and the final comma operand invokes the callee exactly once
+            ' and yields the same caller-owned address as the hidden first argument.
+            r$ = "((" + udtrettmp + "==NULL?(void)(" + udtrettmp + "=(void*)mem_static_malloc(" + _TOSTR$(udtretsize) + ")):" + udtretfree + "(" + udtrettmp + ")),memset(" + udtrettmp + ",0," + _TOSTR$(udtretsize) + ")," + udtretinit + "(" + udtrettmp + ")," + r$ + ")"
+        ELSE
+            ' Fixed-layout results retain the compact Step 2A path, with the
+            ' final comma operand now being the callee's returned pointer.
+            r$ = "((" + udtrettmp + "==NULL?(" + udtrettmp + "=(void*)mem_static_malloc(" + _TOSTR$(udtretsize) + ")):" + udtrettmp + "),memset(" + udtrettmp + ",0," + _TOSTR$(udtretsize) + ")," + r$ + ")"
+        END IF
+    END IF
     IF funcargprep$ <> "" THEN r$ = "([&](){" + funcargprep$ + "return " + r$ + ";})()"
 
     evalfuncspecial:
@@ -22084,7 +22995,7 @@ FUNCTION evaluatefunc$ (a2$, args AS LONG, typ AS LONG)
         END IF
     END IF
 
-    IF id2.ret = ISUDT + (1) THEN
+    If id2.ret = ISUDT + (1) And udtretcall = 0 Then
         '***special case***
         v$ = "func" + scopeunique$
         DeclareGlobalData "mem_block " + v$ + ";"
@@ -22141,11 +23052,215 @@ END FUNCTION
 
 
 
+'Resolve a direct whole member array. Only consumers that permit an omitted
+'pair of parentheses enable accept_bare. Leave indexed operands on their existing path.
+FUNCTION WholeMemberBufferRef$ (expr AS STRING, value_type AS LONG, accept_bare AS LONG)
+    DIM AS LONG ref_kind, has_member
+    DIM AS LONG token_pos, token_count
+    DIM AS STRING final_name, root_name, resolved, syntax_expr
+    DIM AS STRING token_text, unsuffixed, type_suffix
+    DIM saved_bare AS INTEGER
+
+    IF INSTR(expr, sp + "." + sp) = 0 THEN EXIT FUNCTION
+    IF accept_bare = 0 THEN
+        IF HasFinalEmptyArrayBrackets%(expr) = 0 THEN EXIT FUNCTION
+    END IF
+    GetAsgRefSyntax expr, ref_kind, final_name, has_member, root_name
+    IF ref_kind = 0 THEN
+        ' The syntax classifier expects bare names. Strip a valid type suffix
+        ' after a dot only in the classifier's copy, not in the real operand.
+        syntax_expr = expr
+        token_count = numelements(expr)
+        FOR token_pos = 3 TO token_count
+            IF getelement$(expr, token_pos - 1) = "." THEN
+                token_text = getelement$(expr, token_pos)
+                unsuffixed = token_text
+                type_suffix = tryRemoveSymbol$(unsuffixed)
+                IF type_suffix <> "" THEN
+                    removeelements syntax_expr, token_pos, token_pos, 0
+                    insertelements syntax_expr, token_pos - 1, unsuffixed
+                END IF
+            END IF
+        NEXT token_pos
+        IF syntax_expr = expr THEN EXIT FUNCTION
+        GetAsgRefSyntax syntax_expr, ref_kind, final_name, has_member, root_name
+    END IF
+    IF has_member = 0 THEN EXIT FUNCTION
+    IF ref_kind <> 2 AND (accept_bare = 0 OR ref_kind <> 1) THEN EXIT FUNCTION
+
+    saved_bare = udt_allow_bare_array
+    udt_allow_bare_array = -1
+    resolved = evaluate(expr, value_type)
+    udt_allow_bare_array = saved_bare
+    IF Error_Happened THEN EXIT FUNCTION
+
+    IF IsWholeMemberArrayRef%(resolved, value_type) THEN WholeMemberBufferRef$ = resolved
+END FUNCTION
+
+'Resolve an encoded whole member to its inline storage or descriptor slot.
+FUNCTION WholeMemberStorage$ (ref_text AS STRING, member_id AS LONG, parent_mode AS LONG, uses_descriptor AS LONG)
+    DIM AS LONG sep_one, sep_two, sep_three
+    DIM AS STRING root_expr, root_desc
+
+    sep_one = INSTR(ref_text, sp3)
+    sep_two = INSTR(sep_one + LEN(sp3), ref_text, sp3)
+    sep_three = INSTR(sep_two + LEN(sp3), ref_text, sp3)
+    member_id = VAL(MID$(ref_text, sep_two + LEN(sp3), sep_three - sep_two - LEN(sp3)))
+    getid VAL(LEFT$(ref_text, sep_one - 1))
+    IF Error_Happened THEN EXIT FUNCTION
+    parent_mode = 0
+    uses_descriptor = 0
+    IF id.dynudt THEN
+        parent_mode = id.dynudtmode
+        uses_descriptor = UDTMemberDynDesc%(member_id)
+    END IF
+
+    root_expr = scope$ + "UDT_" + RTRIM$(id.n)
+    IF id.arraytype THEN
+        root_desc = scope$ + "ARRAY_UDT_" + RTRIM$(id.n)
+        root_expr = UDTRootDataGuard$(root_desc, id.arraytype AND UDTMASK, parent_mode)
+        IF Error_Happened THEN EXIT FUNCTION
+    END IF
+    WholeMemberStorage$ = "(((char*)" + root_expr + ")+(" + MID$(ref_text, sep_three + LEN(sp3)) + "))"
+END FUNCTION
+
+'Build the byte_element used by raw buffer consumers. The member reference
+'addresses inline storage or a descriptor slot, never descriptor payload bytes.
+FUNCTION WholeMemberByteView$ (ref_text AS STRING)
+    DIM AS LONG member_id, member_type, item_udt, elem_bytes, parent_mode, uses_descriptor
+    DIM AS STRING addr_expr, desc_expr, helper_name, elem_text
+
+    addr_expr = WholeMemberStorage$(ref_text, member_id, parent_mode, uses_descriptor)
+    IF Error_Happened THEN EXIT FUNCTION
+    member_type = udtetype(member_id)
+    IF member_type AND ISOFFSETINBITS THEN Give_Error "Variable/element cannot be _BIT aligned": EXIT FUNCTION
+    IF member_type AND ISSTRING THEN
+        IF (member_type AND ISFIXEDLENGTH) = 0 THEN Give_Error "Cannot pass array of variable-length strings": EXIT FUNCTION
+    END IF
+
+    IF member_type AND ISUDT THEN
+        item_udt = member_type AND UDTMASK
+        IF udtxvariable(item_udt) THEN Give_Error "UDT must have fixed size": EXIT FUNCTION
+        IF UDTDynHasMemberArrays%(item_udt, parent_mode) THEN Give_Error "Raw buffer cannot contain UDT elements with _Dynamic member arrays": EXIT FUNCTION
+    END IF
+
+    IF uses_descriptor THEN
+        elem_bytes = udt_dyn_array_elem_bytes(member_id)
+        IF elem_bytes <= 0 THEN Give_Error "Cannot process the declared bounds of this TYPE member array": EXIT FUNCTION
+        desc_expr = "(*((ptrszint**)" + addr_expr + "))"
+        helper_name = "udt_member_byte_view_" + _TOSTR$(uniquenumber)
+        elem_text = _TOSTR$(elem_bytes)
+
+        ' Evaluate the member address once. Use live rank and bounds after REDIM
+        ' and check the length before narrowing to byte_element's signed int32.
+        DeclareGlobalFunc "void *" + helper_name + "(ptrszint *d, byte_element_struct *be){"
+        WriteBufLine GlobTxtBuf, "if (is_error_pending()) return byte_element(0,0,be);"
+        WriteBufLine GlobTxtBuf, "if (!d || !(d[2]&1) || d[3]<=0 || !d[0] || d[0]==(ptrszint)nothingvalue){error(9); return byte_element(0,0,be);}"
+        WriteBufLine GlobTxtBuf, "uint64 bytes=" + elem_text + ";"
+        WriteBufLine GlobTxtBuf, "for (ptrszint dim=0; dim<d[3]; ++dim){"
+        WriteBufLine GlobTxtBuf, "ptrszint count=d[dim*4+5];"
+        WriteBufLine GlobTxtBuf, "if (count<0){error(9); return byte_element(0,0,be);}"
+        WriteBufLine GlobTxtBuf, "if (count && bytes>2147483647ull/(uint64)count){error(6); return byte_element(0,0,be);}"
+        WriteBufLine GlobTxtBuf, "bytes*=(uint64)count;"
+        WriteBufLine GlobTxtBuf, "}"
+        WriteBufLine GlobTxtBuf, "return byte_element((uint64)d[0],(int32)bytes,be);"
+        WriteBufLine GlobTxtBuf, "}"
+        WholeMemberByteView$ = helper_name + "(" + desc_expr + "," + NewByteElement$ + ")"
+    ELSE
+        WholeMemberByteView$ = "byte_element((uint64)" + addr_expr + "," + _TOSTR$(udtesize(member_id) \ 8) + "," + NewByteElement$ + ")"
+    END IF
+END FUNCTION
+
+'Audio slices start at one indexed member element and extend to the end of
+'that member, not the end of the parent UDT. Resolve the parent and each start
+'coordinate once. For _Dynamic members both rank and bounds come from REDIM.
+FUNCTION MemberAudioSliceView$ (ref_text AS STRING, indexes AS STRING)
+    DIM AS LONG member_id, parent_mode, uses_descriptor, elem_bytes
+    DIM AS LONG rank_count, axis, token_at, token_count, first_token, depth, desc_pos
+    DIM AS LONG lower_bound, extent, slot_at
+    DIM AS STRING storage, helper_name, signature, args, token, index_expr, axis_text
+    DIM AS STRING lo_expr, count_expr, limit_text
+
+    storage = WholeMemberStorage$(ref_text, member_id, parent_mode, uses_descriptor)
+    IF Error_Happened THEN EXIT FUNCTION
+    rank_count = DynMemberIndexDims%(indexes)
+    IF rank_count <= 0 THEN Give_Error "Array index missing": EXIT FUNCTION
+    IF uses_descriptor = 0 THEN
+        IF rank_count <> udtearraydims(member_id) THEN Give_Error "Cannot change the number of elements an array has!": EXIT FUNCTION
+    END IF
+    elem_bytes = (udtetype(member_id) AND UDTMASK) \ 8
+    limit_text = _TOSTR$(2147483647 \ elem_bytes)
+
+    helper_name = "udt_member_audio_slice_" + _TOSTR$(uniquenumber)
+    IF uses_descriptor THEN
+        signature = "ptrszint *d"
+        args = "(*((ptrszint**)" + storage + "))"
+    ELSE
+        signature = "uint8 *data"
+        args = "(uint8*)" + storage
+    END IF
+
+    token_count = numelements(indexes)
+    first_token = 1
+    FOR token_at = 1 TO token_count
+        token = getelement$(indexes, token_at)
+        IF token = "(" THEN depth = depth + 1
+        IF token = ")" THEN depth = depth - 1
+        IF (token = "," AND depth = 0) OR token_at = token_count THEN
+            IF token = "," THEN
+                index_expr = getelements$(indexes, first_token, token_at - 1)
+            ELSE
+                index_expr = getelements$(indexes, first_token, token_at)
+            END IF
+            IF index_expr = "" THEN Give_Error "Array index missing": EXIT FUNCTION
+            index_expr = evaluatetotyp$(index_expr, 64&)
+            IF Error_Happened THEN EXIT FUNCTION
+            axis = axis + 1
+            signature = signature + ",int64 i" + _TOSTR$(axis)
+            args = args + "," + index_expr
+            first_token = token_at + 1
+        END IF
+    NEXT
+    IF axis <> rank_count THEN Give_Error "Array index missing": EXIT FUNCTION
+
+    DeclareGlobalFunc "void *" + helper_name + "(" + signature + ",byte_element_struct *be){"
+    WriteBufLine GlobTxtBuf, "if (is_error_pending()) return byte_element(0,0,be);"
+    IF uses_descriptor THEN
+        WriteBufLine GlobTxtBuf, "if (!d || !(d[2]&1) || !d[0] || d[0]==(ptrszint)nothingvalue || d[3]!=" + _TOSTR$(rank_count) + "){error(9); return byte_element(0,0,be);}"
+        WriteBufLine GlobTxtBuf, "uint8 *data=(uint8*)d[0];"
+    END IF
+    WriteBufLine GlobTxtBuf, "uint64 total=1, start=0;"
+    desc_pos = 1
+    FOR axis = 1 TO rank_count
+        IF uses_descriptor THEN
+            slot_at = (rank_count - axis) * 4 + 4
+            lo_expr = "d[" + _TOSTR$(slot_at) + "]"
+            count_expr = "d[" + _TOSTR$(slot_at + 1) + "]"
+        ELSE
+            IF ParseNextUDTArrayDescriptorDim(udtearraydesc(member_id), desc_pos, lower_bound, extent) = 0 THEN
+                Give_Error "Cannot process the declared bounds of this TYPE member array": EXIT FUNCTION
+            END IF
+            lo_expr = _TOSTR$(lower_bound)
+            count_expr = _TOSTR$(extent)
+        END IF
+        axis_text = "i" + _TOSTR$(axis)
+        WriteBufLine GlobTxtBuf, "{const int64 lo=" + lo_expr + ", count=" + count_expr + ";"
+        ' Unsigned subtraction cannot overflow when the BASIC index is extreme.
+        WriteBufLine GlobTxtBuf, "const uint64 delta=(uint64)" + axis_text + "-(uint64)lo;"
+        WriteBufLine GlobTxtBuf, "if (count<=0 || " + axis_text + "<lo || delta>=(uint64)count){error(9); return byte_element(0,0,be);}"
+        WriteBufLine GlobTxtBuf, "if (total>" + limit_text + "ull/(uint64)count){error(6); return byte_element(0,0,be);}"
+        WriteBufLine GlobTxtBuf, "start+=delta*total; total*=(uint64)count;}"
+    NEXT
+    WriteBufLine GlobTxtBuf, "return byte_element((uint64)(data+start*" + _TOSTR$(elem_bytes) + "),(int32)((total-start)*" + _TOSTR$(elem_bytes) + "),be);"
+    WriteBufLine GlobTxtBuf, "}"
+    MemberAudioSliceView$ = helper_name + "(" + args + "," + NewByteElement$ + ")"
+END FUNCTION
+
 FUNCTION evaluatetotyp$ (a2$, targettyp AS LONG)
     'note: 'evaluatetotyp' no longer performs 'fixoperationorder' on a2$ (in many cases, this has already been done)
 
     DIM AS LONG member_element_id, final_member_array_indexed, elem_typ 'member_element_id indexes TYPE member-array metadata
-    DIM AS STRING desc_expr
+    DIM AS STRING desc_expr, member_check_expr
     DIM udtElem AS LONG
 
     a$ = a2$
@@ -23042,6 +24157,16 @@ FUNCTION evaluatetotyp$ (a2$, targettyp AS LONG)
 
 
     IF targettyp = -2 THEN '? -> byte_element(offset,max possible bytes)
+        ' CALL INTERRUPT[X] and other byte-buffer consumers can arrive here with
+        ' an already resolved whole member. Do not use its inline offset and
+        ' declared size for a _Dynamic member, or treat an indexed element as the whole array.
+        IF IsWholeMemberArrayRef%(e$, sourcetyp) THEN
+            member_check_expr = a2$
+            IF HasIndexedFinalMemberArray%(member_check_expr) = 0 THEN
+                evaluatetotyp$ = WholeMemberByteView$(e$)
+                EXIT FUNCTION
+            END IF
+        END IF
         method2useall:
         ' print "CI: eval2typ detected target type of -2 for ["+a2$+"] evaluated as ["+e$+"]":sleep 1
 
@@ -23237,7 +24362,7 @@ FUNCTION evaluatetotyp$ (a2$, targettyp AS LONG)
     END IF
     'check if successful
     IF (sourcetyp AND ISPOINTER) THEN
-        Give_Error "evaluatetotyp couldn't convert pointer type!": EXIT FUNCTION
+        Give_Error "Type mismatch": EXIT FUNCTION
     END IF
 
     'round to integer if required
@@ -23691,7 +24816,7 @@ FUNCTION fixoperationorder_rec$ (savea$, bare_arrays)
             IF b = 0 THEN
                 IF b1 THEN
                     IF isoperator(a2$) THEN
-                        IF a2$ <> "^" AND a2$ <> CHR$(241) AND UCASE$(a2$) <> "NOT" THEN  'solve issue #23
+                        IF a2$ <> "^" AND a2$ <> CHR$(241) AND UCASE$(a2$) <> "NOT" THEN 'solve issue #23
                             insertelements a$, i - 1, "}"
                             insertelements a$, b1, "{"
                             n = n + 2
@@ -26821,6 +27946,8 @@ END FUNCTION
 SUB setrefer (a2$, typ2 AS LONG, e2$, method AS LONG)
     DIM udtElem AS LONG
     DIM asg_eval_text AS STRING
+    DIM udt_src_once AS STRING
+    DIM udt_ret_copy_helper AS STRING
     a$ = a2$: typ = typ2: e$ = e2$
     IF method <> 1 THEN e$ = fixoperationorder$(e$)
     IF Error_Happened THEN EXIT SUB
@@ -26874,8 +28001,20 @@ SUB setrefer (a2$, typ2 AS LONG, e2$, method AS LONG)
             rhsdynmode% = 0
             IF (t2 AND ISREFERENCE) = 0 THEN
                 IF t2 AND ISPOINTER THEN
-                    src$ = "((char*)" + e$ + ")"
+                    ' A UDT FUNCTION result is an expression with observable
+                    ' call-side effects. Ownership-aware copy walkers may read
+                    ' several disjoint members, so evaluate the expression once
+                    ' and let every emitted copy step use the same returned UDT.
+                    udt_src_once = "udt_assign_src_" + _TOSTR$(uniquenumber)
+                    WriteBufLineCpp MainTxtBuf, "void *" + udt_src_once + "=(void*)(" + e$ + ");"
+                    src$ = "((char*)" + udt_src_once + ")"
                     e2 = 0: u2 = t2 AND UDTMASK
+                    ' UDT FUNCTION expressions are transported as raw pointers.
+                    ' Recover the named TYPE's declaration-driven physical layout
+                    ' so descriptor-backed results use deep descriptor assignment
+                    ' instead of being mistaken for legacy inline storage.
+                    rhsdynmode% = GetUDTCanonMode&(u2)
+                    IF rhsdynmode% > 0 THEN rhsdynudt% = -1
                 ELSE
                     src$ = "((char*)&" + e$ + ")"
                     e2 = 0: u2 = t2 AND UDTMASK
@@ -26906,9 +28045,21 @@ SUB setrefer (a2$, typ2 AS LONG, e2$, method AS LONG)
             IF (UDTDynHasMemberArrays%(u, lhsdynmode%) OR udtxvariable(u)) AND (lhsdynudt% OR rhsdynudt%) THEN
                 IF lhsdynudt% = 0 OR rhsdynudt% = 0 THEN Give_Error "Cannot assign these TYPE values because their nested-array storage layouts are incompatible": EXIT SUB
                 IF lhsdynmode% <> rhsdynmode% THEN Give_Error "Cannot assign these TYPE values because their nested-array storage layouts are incompatible": EXIT SUB
-                copy_full_udt_dyn dst$, src$, MainTxtBuf, 0, u, lhsdynmode%
+                IF udt_src_once <> "" THEN
+                    EnsureUDTFuncRetCopyHelper u, lhsdynmode%, udt_ret_copy_helper
+                    IF Error_Happened THEN EXIT SUB
+                    WriteBufLineCpp MainTxtBuf, udt_ret_copy_helper + "((void*)(" + dst$ + "),(void*)(" + src$ + "));"
+                ELSE
+                    copy_full_udt_dyn dst$, src$, MainTxtBuf, 0, u, lhsdynmode%
+                END IF
             ELSE
-                copy_full_udt dst$, src$, MainTxtBuf, 0, u
+                IF udt_src_once <> "" AND udtxvariable(u) THEN
+                    EnsureUDTFuncRetCopyHelper u, 0, udt_ret_copy_helper
+                    IF Error_Happened THEN EXIT SUB
+                    WriteBufLineCpp MainTxtBuf, udt_ret_copy_helper + "((void*)(" + dst$ + "),(void*)(" + src$ + "));"
+                ELSE
+                    copy_full_udt dst$, src$, MainTxtBuf, 0, u
+                END IF
             END IF
 
             'print "setFULLUDTrefer!"
@@ -27279,7 +28430,165 @@ SUB xend
     WriteBufLineCpp MainTxtBuf, "sub_end();"
 END SUB
 
+'Classify a single file text I/O item, not array references inside scalar expressions.
+'whole_kind: 0 = scalar, 1 = top-level array, 2 = TYPE member array.
+SUB EvalFileTextItem (expr AS STRING, output_ref AS STRING, output_type AS LONG, whole_kind AS LONG)
+    DIM AS LONG explicit_array
+    DIM whole_ref AS STRING
+    whole_kind = 0
+    explicit_array = HasFinalEmptyArrayBrackets%(expr)
+    IF explicit_array THEN
+        whole_ref = WholeMemberBufferRef$(expr, output_type, 0)
+        IF Error_Happened THEN EXIT SUB
+        IF whole_ref <> "" THEN output_ref = whole_ref: whole_kind = 2: EXIT SUB
+    END IF
+    output_ref = evaluate(expr, output_type)
+    IF Error_Happened THEN EXIT SUB
+    IF explicit_array THEN
+        IF (output_type AND (ISREFERENCE OR ISARRAY)) = (ISREFERENCE OR ISARRAY) THEN whole_kind = 1
+    END IF
+END SUB
+
+'Emit one typed runtime loop in QB array order (the first subscript varies fastest).
+'PRINT uses the statement's separator between elements, or ; at end of line.
+'WRITE supplies commas between values. USING carries the same format position as scalar items.
+'INPUT uses the scalar file readers and commits each element only after it is read.
+SUB EmitFileTextArray (array_ref AS STRING, array_type AS LONG, whole_kind AS LONG, text_mode AS LONG, format_ref AS STRING, tab_after AS LONG, line_after AS LONG, skip_ref AS STRING)
+    DIM AS LONG member_id, parent_mode, uses_descriptor, rank_count, string_size
+    DIM AS LONG is_string, is_fixed, type_bits
+    DIM AS STRING storage, descriptor, rank_expr, data_expr, item_expr, c_type, text_expr
+    DIM AS STRING qmark, tab_expr, newline_expr, format_call
+
+    IF array_type AND ISUDT THEN Give_Error "User defined types in expressions are invalid": EXIT SUB
+    is_string = (array_type AND ISSTRING) <> 0
+    is_fixed = (array_type AND ISFIXEDLENGTH) <> 0
+    type_bits = array_type AND UDTMASK
+
+    IF whole_kind = 2 THEN
+        storage = WholeMemberStorage$(array_ref, member_id, parent_mode, uses_descriptor)
+        IF Error_Happened THEN EXIT SUB
+        IF uses_descriptor THEN
+            descriptor = "(*((ptrszint**)" + storage + "))"
+            rank_expr = "qb_text_desc[3]"
+        END IF
+        string_size = udtetypesize(member_id)
+    ELSE
+        getid VAL(array_ref)
+        IF Error_Happened THEN EXIT SUB
+        descriptor = RTRIM$(id.callname)
+        rank_count = id.arrayelements
+        IF rank_count <= 0 THEN rank_count = arrayelementslist(currentid)
+        IF rank_count <= 0 THEN rank_count = 1
+        rank_expr = _TOSTR$(rank_count)
+        string_size = id.tsize
+    END IF
+
+    data_expr = "qb_text_data"
+    IF is_string THEN
+        IF is_fixed THEN
+            item_expr = "qbs_new_fixed(" + data_expr + "+qb_text_i*" + _TOSTR$(string_size) + "," + _TOSTR$(string_size) + ",1)"
+        ELSE
+            'Use the native qbs* slots used by the array's scalar element path.
+            item_expr = "((qbs**)" + data_expr + ")[qb_text_i]"
+        END IF
+    ELSEIF array_type AND ISOFFSETINBITS THEN
+        IF array_type AND ISUNSIGNED THEN c_type = "getubits" ELSE c_type = "getbits"
+        item_expr = c_type + "(" + _TOSTR$(type_bits) + "," + data_expr + ",qb_text_i)"
+    ELSE
+        c_type = typ2ctyp$(array_type AND NOT ISARRAY, "")
+        IF Error_Happened THEN EXIT SUB
+        IF c_type = "" THEN Give_Error "Cannot find C type to return array data": EXIT SUB
+        item_expr = "((" + c_type + "*)" + data_expr + ")[qb_text_i]"
+    END IF
+
+    WriteBufLineCpp MainTxtBuf, "{"
+    IF descriptor <> "" THEN
+        WriteBufLineCpp MainTxtBuf, "ptrszint *qb_text_desc=" + descriptor + ";"
+        WriteBufLineCpp MainTxtBuf, "if (is_error_pending()) goto " + skip_ref + ";"
+        WriteBufLineCpp MainTxtBuf, "if (!qb_text_desc || !(qb_text_desc[2]&1) || !qb_text_desc[0] || qb_text_desc[0]==(ptrszint)nothingvalue){error(9); goto " + skip_ref + ";}"
+        WriteBufLineCpp MainTxtBuf, "const ptrszint qb_text_rank=" + rank_expr + ";"
+        WriteBufLineCpp MainTxtBuf, "if (qb_text_rank<=0){error(9); goto " + skip_ref + ";}"
+        WriteBufLineCpp MainTxtBuf, "uint8 *qb_text_data=(uint8*)qb_text_desc[0];"
+        WriteBufLineCpp MainTxtBuf, "ptrszint qb_text_count=1;"
+        WriteBufLineCpp MainTxtBuf, "for (ptrszint qb_dim=0; qb_dim<qb_text_rank; ++qb_dim){"
+        WriteBufLineCpp MainTxtBuf, "const ptrszint qb_extent=qb_text_desc[qb_dim*4+5];"
+        WriteBufLineCpp MainTxtBuf, "if (qb_extent<=0){error(9); goto " + skip_ref + ";}"
+        WriteBufLineCpp MainTxtBuf, "if (qb_text_count>INTPTR_MAX/qb_extent){error(6); goto " + skip_ref + ";}"
+        WriteBufLineCpp MainTxtBuf, "qb_text_count*=qb_extent;"
+        WriteBufLineCpp MainTxtBuf, "}"
+    ELSE
+        WriteBufLineCpp MainTxtBuf, "uint8 *qb_text_data=(uint8*)" + storage + ";"
+        WriteBufLineCpp MainTxtBuf, "if (is_error_pending()) goto " + skip_ref + ";"
+        WriteBufLineCpp MainTxtBuf, "const ptrszint qb_text_count=" + _TOSTR$(udtearrayelements(member_id)) + ";"
+    END IF
+    WriteBufLineCpp MainTxtBuf, "for (ptrszint qb_text_i=0; qb_text_i<qb_text_count; ++qb_text_i){"
+    WriteBufLineCpp MainTxtBuf, "const uint32 qb_text_tmp=qbs_tmp_list_nexti;"
+
+    IF text_mode = 3 THEN
+        IF is_string THEN
+            WriteBufLineCpp MainTxtBuf, "qbs *qb_text_value=qbs_new(0,1);"
+            WriteBufLineCpp MainTxtBuf, "sub_file_input_string(tmp_fileno,qb_text_value);"
+            WriteBufLineCpp MainTxtBuf, "if (!is_error_pending()) qbs_set(" + item_expr + ",qb_text_value);"
+        ELSE
+            IF (array_type AND ISFLOAT) OR type_bits <> 64 THEN
+                text_expr = "func_file_input_float(tmp_fileno," + _TOSTR$(array_type) + ")"
+            ELSEIF array_type AND ISUNSIGNED THEN
+                text_expr = "func_file_input_uint64(tmp_fileno)"
+            ELSE
+                text_expr = "func_file_input_int64(tmp_fileno)"
+            END IF
+            WriteBufLineCpp MainTxtBuf, "const auto qb_text_value=" + text_expr + ";"
+            IF array_type AND ISOFFSETINBITS THEN
+                WriteBufLineCpp MainTxtBuf, "if (!is_error_pending()) setbits(" + _TOSTR$(type_bits) + ",qb_text_data,qb_text_i,(int64)qb_text_value);"
+            ELSE
+                WriteBufLineCpp MainTxtBuf, "if (!is_error_pending()) " + item_expr + "=qb_text_value;"
+            END IF
+        END IF
+    ELSEIF text_mode = 2 THEN
+        IF is_string THEN
+            format_call = "print_using(" + format_ref + ",tmp_long,tqbs," + item_expr + ")"
+        ELSE
+            IF array_type AND ISFLOAT THEN
+                IF type_bits = 32 THEN c_type = "single"
+                IF type_bits = 64 THEN c_type = "double"
+                IF type_bits > 64 THEN c_type = "float"
+            ELSE
+                c_type = "integer64"
+                IF (type_bits = 64) AND (array_type AND ISUNSIGNED) THEN c_type = "uinteger64"
+            END IF
+            format_call = "print_using_" + c_type + "(" + format_ref + "," + item_expr + ",tmp_long,tqbs)"
+        END IF
+        WriteBufLineCpp MainTxtBuf, "tmp_long=" + format_call + ";"
+    ELSE
+        newline_expr = "0"
+        IF line_after THEN newline_expr = "(qb_text_i+1==qb_text_count)"
+        IF text_mode = 1 THEN
+            IF is_string THEN
+                qmark = "qbs_new_txt_len(" + CHR$(34) + "\042" + CHR$(34) + ",1)"
+                text_expr = "qbs_add(qbs_add(" + qmark + "," + item_expr + ")," + qmark + ")"
+            ELSE
+                text_expr = "qbs_ltrim(qbs_str(" + item_expr + "))"
+            END IF
+            WriteBufLineCpp MainTxtBuf, "qbs *qb_text_value=" + text_expr + ";"
+            IF line_after THEN
+                WriteBufLineCpp MainTxtBuf, "if (qb_text_i+1<qb_text_count) "
+            END IF
+            WriteBufLineCpp MainTxtBuf, "qb_text_value=qbs_add(qb_text_value,qbs_new_txt_len(" + CHR$(34) + "," + CHR$(34) + ",1));"
+            WriteBufLineCpp MainTxtBuf, "sub_file_print(tmp_fileno,qb_text_value,0,0," + newline_expr + ");"
+        ELSE
+            tab_expr = _TOSTR$(tab_after)
+            IF is_string THEN text_expr = item_expr ELSE text_expr = "qbs_str(" + item_expr + ")"
+            WriteBufLineCpp MainTxtBuf, "sub_file_print(tmp_fileno," + text_expr + "," + _TOSTR$(1 + is_string) + "," + tab_expr + "," + newline_expr + ");"
+        END IF
+    END IF
+    WriteBufLineCpp MainTxtBuf, "qbs_cleanup(qb_text_tmp,0);"
+    WriteBufLineCpp MainTxtBuf, "if (is_error_pending()) goto " + skip_ref + ";"
+    WriteBufLineCpp MainTxtBuf, "}"
+    WriteBufLineCpp MainTxtBuf, "}"
+END SUB
+
 SUB xfileprint (a$, ca$, n)
+    DIM whole_kind AS LONG
     u$ = scopeunique$
     WriteBufLineCpp MainTxtBuf, "tab_spc_cr_size=2;"
     IF n = 2 THEN Give_Error "Expected # ... , ...": EXIT SUB
@@ -27363,8 +28672,15 @@ SUB xfileprint (a$, ca$, n)
                         e$ = fixoperationorder$(e$)
                         IF Error_Happened THEN EXIT SUB
                         IF last THEN l$ = l$ + sp + tlayout$ ELSE l$ = l$ + sp + tlayout$ + sp2 + a2$
-                        e$ = evaluate(e$, typ)
+                        EvalFileTextItem e$, e$, typ, whole_kind
                         IF Error_Happened THEN EXIT SUB
+                        IF whole_kind THEN
+                            EmitFileTextArray e$, typ, whole_kind, 2, puf$, 0, 0, "skip_pu" + u$
+                            IF Error_Happened THEN EXIT SUB
+                            e$ = ""
+                            IF last THEN EXIT FOR
+                            GOTO fprintunext
+                        END IF
                         IF (typ AND ISREFERENCE) THEN e$ = refer(e$, typ, 0)
                         IF Error_Happened THEN EXIT SUB
                         IF typ AND ISSTRING THEN
@@ -27469,8 +28785,18 @@ SUB xfileprint (a$, ca$, n)
                             l$ = l$ + sp + tlayout$ + sp2 + a2$
                         END IF
                     END IF
-                    e$ = evaluate(e$, typ)
-                    IF Error_Happened THEN EXIT SUB
+                    IF pnrtnum = 0 THEN
+                        EvalFileTextItem e$, e$, typ, whole_kind
+                        IF Error_Happened THEN EXIT SUB
+                        IF whole_kind THEN
+                            EmitFileTextArray e$, typ, whole_kind, 0, "", usetab, newline, "skip" + u$
+                            IF Error_Happened THEN EXIT SUB
+                            GOTO printfileitemdone
+                        END IF
+                    ELSE
+                        e$ = evaluate(e$, typ)
+                        IF Error_Happened THEN EXIT SUB
+                    END IF
                     IF (typ AND ISSTRING) = 0 THEN
                         e$ = "STR$" + sp + "(" + sp + ebak$ + sp + ")"
                         extraspace = 1
@@ -27488,6 +28814,7 @@ SUB xfileprint (a$, ca$, n)
                     END IF
                     IF usetab THEN WriteBufLineCpp MainTxtBuf, "sub_file_print(tmp_fileno,nothingstring,0,1,0);"
                 END IF 'len(e$)
+                printfileitemdone:
                 WriteBufLineCpp MainTxtBuf, "if (is_error_pending()) goto skip" + u$ + ";"
 
                 e$ = ""
@@ -27508,6 +28835,7 @@ SUB xfileprint (a$, ca$, n)
 END SUB
 
 SUB xfilewrite (ca$, n)
+    DIM whole_kind AS LONG
     l$ = SCase$("Write") + sp + "#"
     u$ = scopeunique$
     WriteBufLineCpp MainTxtBuf, "tab_spc_cr_size=2;"
@@ -27558,8 +28886,18 @@ SUB xfilewrite (ca$, n)
                     l$ = l$ + sp + tlayout$
                     IF last = 0 THEN l$ = l$ + sp2 + ","
                 END IF
-                e$ = evaluate(e$, typ)
-                IF Error_Happened THEN EXIT SUB
+                IF reevaled = 0 THEN
+                    EvalFileTextItem e$, e$, typ, whole_kind
+                    IF Error_Happened THEN EXIT SUB
+                    IF whole_kind THEN
+                        EmitFileTextArray e$, typ, whole_kind, 1, "", 0, newline, "skip" + u$
+                        IF Error_Happened THEN EXIT SUB
+                        GOTO writefileitemdone
+                    END IF
+                ELSE
+                    e$ = evaluate(e$, typ)
+                    IF Error_Happened THEN EXIT SUB
+                END IF
                 IF reevaled = 0 THEN
                     IF (typ AND ISSTRING) = 0 THEN
                         e$ = "LTRIM$" + sp + "(" + sp + "STR$" + sp + "(" + sp + ebak$ + sp + ")" + sp + ")"
@@ -27577,6 +28915,7 @@ SUB xfilewrite (ca$, n)
                 IF Error_Happened THEN EXIT SUB
                 'format: string, (1/0) extraspace, (1/0) tab, (1/0)begin a new line
                 WriteBufLineCpp MainTxtBuf, "sub_file_print(tmp_fileno," + e$ + ",0,0," + STR$(newline) + ");"
+                writefileitemdone:
                 WriteBufLineCpp MainTxtBuf, "if (is_error_pending()) goto skip" + u$ + ";"
                 e$ = ""
                 IF last THEN EXIT FOR

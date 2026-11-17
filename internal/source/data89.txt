@@ -1,3 +1,49 @@
-qbs *_FUNC_SCOPEUNIQUE_STRING_SCOPEUNIQUE=NULL;
-#line 27135 "qb64pe.bas"
-if (!_FUNC_SCOPEUNIQUE_STRING_SCOPEUNIQUE)_FUNC_SCOPEUNIQUE_STRING_SCOPEUNIQUE=qbs_new(0,0);
+int32 *_FUNC_OPERATORUSAGE_LONG_OPERATORUSAGE=NULL;
+#line 26691 "qb64pe.bas"
+if(_FUNC_OPERATORUSAGE_LONG_OPERATORUSAGE==NULL){
+#line 26691 "qb64pe.bas"
+_FUNC_OPERATORUSAGE_LONG_OPERATORUSAGE=(int32*)mem_static_malloc(4);
+#line 26691 "qb64pe.bas"
+*_FUNC_OPERATORUSAGE_LONG_OPERATORUSAGE=0;
+#line 26691 "qb64pe.bas"
+}
+#line 26691 "qb64pe.bas"
+qbs*oldstr89_1=NULL;
+#line 26691 "qb64pe.bas"
+if(_FUNC_OPERATORUSAGE_STRING_OPERATOR->tmp||_FUNC_OPERATORUSAGE_STRING_OPERATOR->fixed||_FUNC_OPERATORUSAGE_STRING_OPERATOR->readonly){
+#line 26691 "qb64pe.bas"
+oldstr89_1=_FUNC_OPERATORUSAGE_STRING_OPERATOR;
+#line 26691 "qb64pe.bas"
+if (oldstr89_1->cmem_descriptor){
+#line 26691 "qb64pe.bas"
+_FUNC_OPERATORUSAGE_STRING_OPERATOR=qbs_new_cmem(oldstr89_1->len,0);
+#line 26691 "qb64pe.bas"
+}else{
+#line 26691 "qb64pe.bas"
+_FUNC_OPERATORUSAGE_STRING_OPERATOR=qbs_new(oldstr89_1->len,0);
+#line 26691 "qb64pe.bas"
+}
+#line 26691 "qb64pe.bas"
+memcpy(_FUNC_OPERATORUSAGE_STRING_OPERATOR->chr,oldstr89_1->chr,oldstr89_1->len);
+#line 26691 "qb64pe.bas"
+}
+#line 26691 "qb64pe.bas"
+qbs*oldstr89_2=NULL;
+#line 26691 "qb64pe.bas"
+if(_FUNC_OPERATORUSAGE_STRING_INFO->tmp||_FUNC_OPERATORUSAGE_STRING_INFO->fixed||_FUNC_OPERATORUSAGE_STRING_INFO->readonly){
+#line 26691 "qb64pe.bas"
+oldstr89_2=_FUNC_OPERATORUSAGE_STRING_INFO;
+#line 26691 "qb64pe.bas"
+if (oldstr89_2->cmem_descriptor){
+#line 26691 "qb64pe.bas"
+_FUNC_OPERATORUSAGE_STRING_INFO=qbs_new_cmem(oldstr89_2->len,0);
+#line 26691 "qb64pe.bas"
+}else{
+#line 26691 "qb64pe.bas"
+_FUNC_OPERATORUSAGE_STRING_INFO=qbs_new(oldstr89_2->len,0);
+#line 26691 "qb64pe.bas"
+}
+#line 26691 "qb64pe.bas"
+memcpy(_FUNC_OPERATORUSAGE_STRING_INFO->chr,oldstr89_2->chr,oldstr89_2->len);
+#line 26691 "qb64pe.bas"
+}

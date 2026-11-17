@@ -1,210 +1,164 @@
-int16 *_FUNC_BINARYFORMATCHECK_INTEGER_BINARYFORMATCHECK=NULL;
-#line 2 "ide/ide_converters.bas"
-if(_FUNC_BINARYFORMATCHECK_INTEGER_BINARYFORMATCHECK==NULL){
-#line 2 "ide/ide_converters.bas"
-_FUNC_BINARYFORMATCHECK_INTEGER_BINARYFORMATCHECK=(int16*)mem_static_malloc(2);
-#line 2 "ide/ide_converters.bas"
-*_FUNC_BINARYFORMATCHECK_INTEGER_BINARYFORMATCHECK=0;
-#line 2 "ide/ide_converters.bas"
-}
-#line 2 "ide/ide_converters.bas"
+qbs *_FUNC_OPENFILE_STRING_OPENFILE=NULL;
+#line 21388 "ide/ide_methods.bas"
+if (!_FUNC_OPENFILE_STRING_OPENFILE)_FUNC_OPENFILE_STRING_OPENFILE=qbs_new(0,0);
+#line 21388 "ide/ide_methods.bas"
 qbs*oldstr540_1=NULL;
-#line 2 "ide/ide_converters.bas"
-if(_FUNC_BINARYFORMATCHECK_STRING_PATHTOCHECK->tmp||_FUNC_BINARYFORMATCHECK_STRING_PATHTOCHECK->fixed||_FUNC_BINARYFORMATCHECK_STRING_PATHTOCHECK->readonly){
-#line 2 "ide/ide_converters.bas"
-oldstr540_1=_FUNC_BINARYFORMATCHECK_STRING_PATHTOCHECK;
-#line 2 "ide/ide_converters.bas"
+#line 21388 "ide/ide_methods.bas"
+if(_FUNC_OPENFILE_STRING_IDEOPENFILE->tmp||_FUNC_OPENFILE_STRING_IDEOPENFILE->fixed||_FUNC_OPENFILE_STRING_IDEOPENFILE->readonly){
+#line 21388 "ide/ide_methods.bas"
+oldstr540_1=_FUNC_OPENFILE_STRING_IDEOPENFILE;
+#line 21388 "ide/ide_methods.bas"
 if (oldstr540_1->cmem_descriptor){
-#line 2 "ide/ide_converters.bas"
-_FUNC_BINARYFORMATCHECK_STRING_PATHTOCHECK=qbs_new_cmem(oldstr540_1->len,0);
-#line 2 "ide/ide_converters.bas"
+#line 21388 "ide/ide_methods.bas"
+_FUNC_OPENFILE_STRING_IDEOPENFILE=qbs_new_cmem(oldstr540_1->len,0);
+#line 21388 "ide/ide_methods.bas"
 }else{
-#line 2 "ide/ide_converters.bas"
-_FUNC_BINARYFORMATCHECK_STRING_PATHTOCHECK=qbs_new(oldstr540_1->len,0);
-#line 2 "ide/ide_converters.bas"
+#line 21388 "ide/ide_methods.bas"
+_FUNC_OPENFILE_STRING_IDEOPENFILE=qbs_new(oldstr540_1->len,0);
+#line 21388 "ide/ide_methods.bas"
 }
-#line 2 "ide/ide_converters.bas"
-memcpy(_FUNC_BINARYFORMATCHECK_STRING_PATHTOCHECK->chr,oldstr540_1->chr,oldstr540_1->len);
-#line 2 "ide/ide_converters.bas"
+#line 21388 "ide/ide_methods.bas"
+memcpy(_FUNC_OPENFILE_STRING_IDEOPENFILE->chr,oldstr540_1->chr,oldstr540_1->len);
+#line 21388 "ide/ide_methods.bas"
 }
-#line 2 "ide/ide_converters.bas"
-qbs*oldstr540_2=NULL;
-#line 2 "ide/ide_converters.bas"
-if(_FUNC_BINARYFORMATCHECK_STRING_PATHSEPTOCHECK->tmp||_FUNC_BINARYFORMATCHECK_STRING_PATHSEPTOCHECK->fixed||_FUNC_BINARYFORMATCHECK_STRING_PATHSEPTOCHECK->readonly){
-#line 2 "ide/ide_converters.bas"
-oldstr540_2=_FUNC_BINARYFORMATCHECK_STRING_PATHSEPTOCHECK;
-#line 2 "ide/ide_converters.bas"
-if (oldstr540_2->cmem_descriptor){
-#line 2 "ide/ide_converters.bas"
-_FUNC_BINARYFORMATCHECK_STRING_PATHSEPTOCHECK=qbs_new_cmem(oldstr540_2->len,0);
-#line 2 "ide/ide_converters.bas"
-}else{
-#line 2 "ide/ide_converters.bas"
-_FUNC_BINARYFORMATCHECK_STRING_PATHSEPTOCHECK=qbs_new(oldstr540_2->len,0);
-#line 2 "ide/ide_converters.bas"
+qbs *_FUNC_OPENFILE_STRING_F=NULL;
+#line 21397 "ide/ide_methods.bas"
+if (!_FUNC_OPENFILE_STRING_F)_FUNC_OPENFILE_STRING_F=qbs_new(0,0);
+qbs *_FUNC_OPENFILE_STRING_PATH=NULL;
+#line 21399 "ide/ide_methods.bas"
+if (!_FUNC_OPENFILE_STRING_PATH)_FUNC_OPENFILE_STRING_PATH=qbs_new(0,0);
+int32 *_FUNC_OPENFILE_LONG_ALLFILES=NULL;
+#line 21406 "ide/ide_methods.bas"
+if(_FUNC_OPENFILE_LONG_ALLFILES==NULL){
+#line 21406 "ide/ide_methods.bas"
+_FUNC_OPENFILE_LONG_ALLFILES=(int32*)mem_static_malloc(4);
+#line 21406 "ide/ide_methods.bas"
+*_FUNC_OPENFILE_LONG_ALLFILES=0;
+#line 21406 "ide/ide_methods.bas"
 }
-#line 2 "ide/ide_converters.bas"
-memcpy(_FUNC_BINARYFORMATCHECK_STRING_PATHSEPTOCHECK->chr,oldstr540_2->chr,oldstr540_2->len);
-#line 2 "ide/ide_converters.bas"
+#line 21416 "ide/ide_methods.bas"
+byte_element_struct *byte_element_540_2=NULL;
+#line 21416 "ide/ide_methods.bas"
+if (!byte_element_540_2){
+#line 21416 "ide/ide_methods.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_540_2=(byte_element_struct*)(mem_static_pointer-12); else byte_element_540_2=(byte_element_struct*)mem_static_malloc(12);
+#line 21416 "ide/ide_methods.bas"
 }
-#line 2 "ide/ide_converters.bas"
-qbs*oldstr540_3=NULL;
-#line 2 "ide/ide_converters.bas"
-if(_FUNC_BINARYFORMATCHECK_STRING_FILETOCHECK->tmp||_FUNC_BINARYFORMATCHECK_STRING_FILETOCHECK->fixed||_FUNC_BINARYFORMATCHECK_STRING_FILETOCHECK->readonly){
-#line 2 "ide/ide_converters.bas"
-oldstr540_3=_FUNC_BINARYFORMATCHECK_STRING_FILETOCHECK;
-#line 2 "ide/ide_converters.bas"
-if (oldstr540_3->cmem_descriptor){
-#line 2 "ide/ide_converters.bas"
-_FUNC_BINARYFORMATCHECK_STRING_FILETOCHECK=qbs_new_cmem(oldstr540_3->len,0);
-#line 2 "ide/ide_converters.bas"
-}else{
-#line 2 "ide/ide_converters.bas"
-_FUNC_BINARYFORMATCHECK_STRING_FILETOCHECK=qbs_new(oldstr540_3->len,0);
-#line 2 "ide/ide_converters.bas"
+int32 *_FUNC_OPENFILE_LONG_INFO=NULL;
+#line 21420 "ide/ide_methods.bas"
+if(_FUNC_OPENFILE_LONG_INFO==NULL){
+#line 21420 "ide/ide_methods.bas"
+_FUNC_OPENFILE_LONG_INFO=(int32*)mem_static_malloc(4);
+#line 21420 "ide/ide_methods.bas"
+*_FUNC_OPENFILE_LONG_INFO=0;
+#line 21420 "ide/ide_methods.bas"
 }
-#line 2 "ide/ide_converters.bas"
-memcpy(_FUNC_BINARYFORMATCHECK_STRING_FILETOCHECK->chr,oldstr540_3->chr,oldstr540_3->len);
-#line 2 "ide/ide_converters.bas"
+#line 21434 "ide/ide_methods.bas"
+byte_element_struct *byte_element_540_3=NULL;
+#line 21434 "ide/ide_methods.bas"
+if (!byte_element_540_3){
+#line 21434 "ide/ide_methods.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_540_3=(byte_element_struct*)(mem_static_pointer-12); else byte_element_540_3=(byte_element_struct*)mem_static_malloc(12);
+#line 21434 "ide/ide_methods.bas"
 }
-int32 *_FUNC_BINARYFORMATCHECK_LONG_FH=NULL;
-#line 6 "ide/ide_converters.bas"
-if(_FUNC_BINARYFORMATCHECK_LONG_FH==NULL){
-#line 6 "ide/ide_converters.bas"
-_FUNC_BINARYFORMATCHECK_LONG_FH=(int32*)mem_static_malloc(4);
-#line 6 "ide/ide_converters.bas"
-*_FUNC_BINARYFORMATCHECK_LONG_FH=0;
-#line 6 "ide/ide_converters.bas"
+int32 *_FUNC_OPENFILE_LONG_I2=NULL;
+#line 21435 "ide/ide_methods.bas"
+if(_FUNC_OPENFILE_LONG_I2==NULL){
+#line 21435 "ide/ide_methods.bas"
+_FUNC_OPENFILE_LONG_I2=(int32*)mem_static_malloc(4);
+#line 21435 "ide/ide_methods.bas"
+*_FUNC_OPENFILE_LONG_I2=0;
+#line 21435 "ide/ide_methods.bas"
 }
-qbs *_FUNC_BINARYFORMATCHECK_STRING_A=NULL;
-#line 8 "ide/ide_converters.bas"
-if (!_FUNC_BINARYFORMATCHECK_STRING_A)_FUNC_BINARYFORMATCHECK_STRING_A=qbs_new(0,0);
-int16 *_FUNC_BINARYFORMATCHECK_INTEGER_FORMAT=NULL;
-#line 12 "ide/ide_converters.bas"
-if(_FUNC_BINARYFORMATCHECK_INTEGER_FORMAT==NULL){
-#line 12 "ide/ide_converters.bas"
-_FUNC_BINARYFORMATCHECK_INTEGER_FORMAT=(int16*)mem_static_malloc(2);
-#line 12 "ide/ide_converters.bas"
-*_FUNC_BINARYFORMATCHECK_INTEGER_FORMAT=0;
-#line 12 "ide/ide_converters.bas"
+int32 *_FUNC_OPENFILE_LONG_N=NULL;
+#line 21436 "ide/ide_methods.bas"
+if(_FUNC_OPENFILE_LONG_N==NULL){
+#line 21436 "ide/ide_methods.bas"
+_FUNC_OPENFILE_LONG_N=(int32*)mem_static_malloc(4);
+#line 21436 "ide/ide_methods.bas"
+*_FUNC_OPENFILE_LONG_N=0;
+#line 21436 "ide/ide_methods.bas"
 }
-#line 12 "ide/ide_converters.bas"
-byte_element_struct *byte_element_540_4=NULL;
-#line 12 "ide/ide_converters.bas"
-if (!byte_element_540_4){
-#line 12 "ide/ide_converters.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_540_4=(byte_element_struct*)(mem_static_pointer-12); else byte_element_540_4=(byte_element_struct*)mem_static_malloc(12);
-#line 12 "ide/ide_converters.bas"
+qbs *_FUNC_OPENFILE_STRING_CHRTAB=NULL;
+#line 21437 "ide/ide_methods.bas"
+if (!_FUNC_OPENFILE_STRING_CHRTAB)_FUNC_OPENFILE_STRING_CHRTAB=qbs_new(0,0);
+qbs *_FUNC_OPENFILE_STRING_SPACE1=NULL;
+#line 21438 "ide/ide_methods.bas"
+if (!_FUNC_OPENFILE_STRING_SPACE1)_FUNC_OPENFILE_STRING_SPACE1=qbs_new(0,0);
+qbs *_FUNC_OPENFILE_STRING_SPACE2=NULL;
+#line 21438 "ide/ide_methods.bas"
+if (!_FUNC_OPENFILE_STRING_SPACE2)_FUNC_OPENFILE_STRING_SPACE2=qbs_new(0,0);
+qbs *_FUNC_OPENFILE_STRING_SPACE3=NULL;
+#line 21438 "ide/ide_methods.bas"
+if (!_FUNC_OPENFILE_STRING_SPACE3)_FUNC_OPENFILE_STRING_SPACE3=qbs_new(0,0);
+qbs *_FUNC_OPENFILE_STRING_SPACE4=NULL;
+#line 21438 "ide/ide_methods.bas"
+if (!_FUNC_OPENFILE_STRING_SPACE4)_FUNC_OPENFILE_STRING_SPACE4=qbs_new(0,0);
+qbs *_FUNC_OPENFILE_STRING_CHR7=NULL;
+#line 21439 "ide/ide_methods.bas"
+if (!_FUNC_OPENFILE_STRING_CHR7)_FUNC_OPENFILE_STRING_CHR7=qbs_new(0,0);
+qbs *_FUNC_OPENFILE_STRING_CHR11=NULL;
+#line 21439 "ide/ide_methods.bas"
+if (!_FUNC_OPENFILE_STRING_CHR11)_FUNC_OPENFILE_STRING_CHR11=qbs_new(0,0);
+qbs *_FUNC_OPENFILE_STRING_CHR12=NULL;
+#line 21439 "ide/ide_methods.bas"
+if (!_FUNC_OPENFILE_STRING_CHR12)_FUNC_OPENFILE_STRING_CHR12=qbs_new(0,0);
+qbs *_FUNC_OPENFILE_STRING_CHR28=NULL;
+#line 21439 "ide/ide_methods.bas"
+if (!_FUNC_OPENFILE_STRING_CHR28)_FUNC_OPENFILE_STRING_CHR28=qbs_new(0,0);
+qbs *_FUNC_OPENFILE_STRING_CHR29=NULL;
+#line 21439 "ide/ide_methods.bas"
+if (!_FUNC_OPENFILE_STRING_CHR29)_FUNC_OPENFILE_STRING_CHR29=qbs_new(0,0);
+qbs *_FUNC_OPENFILE_STRING_CHR30=NULL;
+#line 21439 "ide/ide_methods.bas"
+if (!_FUNC_OPENFILE_STRING_CHR30)_FUNC_OPENFILE_STRING_CHR30=qbs_new(0,0);
+qbs *_FUNC_OPENFILE_STRING_CHR31=NULL;
+#line 21439 "ide/ide_methods.bas"
+if (!_FUNC_OPENFILE_STRING_CHR31)_FUNC_OPENFILE_STRING_CHR31=qbs_new(0,0);
+qbs *_FUNC_OPENFILE_STRING_A=NULL;
+#line 21441 "ide/ide_methods.bas"
+if (!_FUNC_OPENFILE_STRING_A)_FUNC_OPENFILE_STRING_A=qbs_new(0,0);
+int32 *_FUNC_OPENFILE_LONG_L=NULL;
+#line 21442 "ide/ide_methods.bas"
+if(_FUNC_OPENFILE_LONG_L==NULL){
+#line 21442 "ide/ide_methods.bas"
+_FUNC_OPENFILE_LONG_L=(int32*)mem_static_malloc(4);
+#line 21442 "ide/ide_methods.bas"
+*_FUNC_OPENFILE_LONG_L=0;
+#line 21442 "ide/ide_methods.bas"
 }
-int16 *_FUNC_BINARYFORMATCHECK_INTEGER_VERSION=NULL;
-#line 13 "ide/ide_converters.bas"
-if(_FUNC_BINARYFORMATCHECK_INTEGER_VERSION==NULL){
-#line 13 "ide/ide_converters.bas"
-_FUNC_BINARYFORMATCHECK_INTEGER_VERSION=(int16*)mem_static_malloc(2);
-#line 13 "ide/ide_converters.bas"
-*_FUNC_BINARYFORMATCHECK_INTEGER_VERSION=0;
-#line 13 "ide/ide_converters.bas"
-}
-#line 13 "ide/ide_converters.bas"
+#line 21442 "ide/ide_methods.bas"
 byte_element_struct *byte_element_540_5=NULL;
-#line 13 "ide/ide_converters.bas"
+#line 21442 "ide/ide_methods.bas"
 if (!byte_element_540_5){
-#line 13 "ide/ide_converters.bas"
+#line 21442 "ide/ide_methods.bas"
 if ((mem_static_pointer+=12)<mem_static_limit) byte_element_540_5=(byte_element_struct*)(mem_static_pointer-12); else byte_element_540_5=(byte_element_struct*)mem_static_malloc(12);
-#line 13 "ide/ide_converters.bas"
+#line 21442 "ide/ide_methods.bas"
 }
-int32 *_FUNC_BINARYFORMATCHECK_LONG_RESULT=NULL;
-#line 18 "ide/ide_converters.bas"
-if(_FUNC_BINARYFORMATCHECK_LONG_RESULT==NULL){
-#line 18 "ide/ide_converters.bas"
-_FUNC_BINARYFORMATCHECK_LONG_RESULT=(int32*)mem_static_malloc(4);
-#line 18 "ide/ide_converters.bas"
-*_FUNC_BINARYFORMATCHECK_LONG_RESULT=0;
-#line 18 "ide/ide_converters.bas"
+int32 *_FUNC_OPENFILE_LONG_ASCA=NULL;
+#line 21443 "ide/ide_methods.bas"
+if(_FUNC_OPENFILE_LONG_ASCA==NULL){
+#line 21443 "ide/ide_methods.bas"
+_FUNC_OPENFILE_LONG_ASCA=(int32*)mem_static_malloc(4);
+#line 21443 "ide/ide_methods.bas"
+*_FUNC_OPENFILE_LONG_ASCA=0;
+#line 21443 "ide/ide_methods.bas"
 }
-qbs *_FUNC_BINARYFORMATCHECK_STRING_CONVERTUTILITY=NULL;
-#line 25 "ide/ide_converters.bas"
-if (!_FUNC_BINARYFORMATCHECK_STRING_CONVERTUTILITY)_FUNC_BINARYFORMATCHECK_STRING_CONVERTUTILITY=qbs_new(0,0);
-qbs *_FUNC_BINARYFORMATCHECK_STRING_WHAT=NULL;
-#line 30 "ide/ide_converters.bas"
-if (!_FUNC_BINARYFORMATCHECK_STRING_WHAT)_FUNC_BINARYFORMATCHECK_STRING_WHAT=qbs_new(0,0);
-int32 *_FUNC_BINARYFORMATCHECK_LONG_I=NULL;
-#line 34 "ide/ide_converters.bas"
-if(_FUNC_BINARYFORMATCHECK_LONG_I==NULL){
-#line 34 "ide/ide_converters.bas"
-_FUNC_BINARYFORMATCHECK_LONG_I=(int32*)mem_static_malloc(4);
-#line 34 "ide/ide_converters.bas"
-*_FUNC_BINARYFORMATCHECK_LONG_I=0;
-#line 34 "ide/ide_converters.bas"
+int32 *_FUNC_OPENFILE_LONG_X=NULL;
+#line 21448 "ide/ide_methods.bas"
+if(_FUNC_OPENFILE_LONG_X==NULL){
+#line 21448 "ide/ide_methods.bas"
+_FUNC_OPENFILE_LONG_X=(int32*)mem_static_malloc(4);
+#line 21448 "ide/ide_methods.bas"
+*_FUNC_OPENFILE_LONG_X=0;
+#line 21448 "ide/ide_methods.bas"
 }
-#line 34 "ide/ide_converters.bas"
-int64 fornext_value540_8;
-#line 34 "ide/ide_converters.bas"
-int64 fornext_finalvalue540_8;
-#line 34 "ide/ide_converters.bas"
-int64 fornext_step540_8;
-#line 34 "ide/ide_converters.bas"
-uint8 fornext_step_negative540_8;
-#line 34 "ide/ide_converters.bas"
-byte_element_struct *byte_element_540_9=NULL;
-#line 34 "ide/ide_converters.bas"
-if (!byte_element_540_9){
-#line 34 "ide/ide_converters.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_540_9=(byte_element_struct*)(mem_static_pointer-12); else byte_element_540_9=(byte_element_struct*)mem_static_malloc(12);
-#line 34 "ide/ide_converters.bas"
+int32 *_FUNC_OPENFILE_LONG_X2=NULL;
+#line 21450 "ide/ide_methods.bas"
+if(_FUNC_OPENFILE_LONG_X2==NULL){
+#line 21450 "ide/ide_methods.bas"
+_FUNC_OPENFILE_LONG_X2=(int32*)mem_static_malloc(4);
+#line 21450 "ide/ide_methods.bas"
+*_FUNC_OPENFILE_LONG_X2=0;
+#line 21450 "ide/ide_methods.bas"
 }
-qbs *_FUNC_BINARYFORMATCHECK_STRING_OFILE=NULL;
-#line 37 "ide/ide_converters.bas"
-if (!_FUNC_BINARYFORMATCHECK_STRING_OFILE)_FUNC_BINARYFORMATCHECK_STRING_OFILE=qbs_new(0,0);
-int32 *_FUNC_BINARYFORMATCHECK_LONG_DUMMY=NULL;
-#line 46 "ide/ide_converters.bas"
-if(_FUNC_BINARYFORMATCHECK_LONG_DUMMY==NULL){
-#line 46 "ide/ide_converters.bas"
-_FUNC_BINARYFORMATCHECK_LONG_DUMMY=(int32*)mem_static_malloc(4);
-#line 46 "ide/ide_converters.bas"
-*_FUNC_BINARYFORMATCHECK_LONG_DUMMY=0;
-#line 46 "ide/ide_converters.bas"
-}
-#line 46 "ide/ide_converters.bas"
-int8 pass540_10;
-#line 47 "ide/ide_converters.bas"
-int32 pass540_11;
-qbs *_FUNC_BINARYFORMATCHECK_STRING_CONVERTLINE=NULL;
-#line 52 "ide/ide_converters.bas"
-if (!_FUNC_BINARYFORMATCHECK_STRING_CONVERTLINE)_FUNC_BINARYFORMATCHECK_STRING_CONVERTLINE=qbs_new(0,0);
-#line 55 "ide/ide_converters.bas"
-int32 pass540_12;
-#line 56 "ide/ide_converters.bas"
-int8 pass540_13;
-#line 64 "ide/ide_converters.bas"
-byte_element_struct *byte_element_540_14=NULL;
-#line 64 "ide/ide_converters.bas"
-if (!byte_element_540_14){
-#line 64 "ide/ide_converters.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_540_14=(byte_element_struct*)(mem_static_pointer-12); else byte_element_540_14=(byte_element_struct*)mem_static_malloc(12);
-#line 64 "ide/ide_converters.bas"
-}
-#line 65 "ide/ide_converters.bas"
-byte_element_struct *byte_element_540_15=NULL;
-#line 65 "ide/ide_converters.bas"
-if (!byte_element_540_15){
-#line 65 "ide/ide_converters.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_540_15=(byte_element_struct*)(mem_static_pointer-12); else byte_element_540_15=(byte_element_struct*)mem_static_malloc(12);
-#line 65 "ide/ide_converters.bas"
-}
-#line 66 "ide/ide_converters.bas"
-byte_element_struct *byte_element_540_16=NULL;
-#line 66 "ide/ide_converters.bas"
-if (!byte_element_540_16){
-#line 66 "ide/ide_converters.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_540_16=(byte_element_struct*)(mem_static_pointer-12); else byte_element_540_16=(byte_element_struct*)mem_static_malloc(12);
-#line 66 "ide/ide_converters.bas"
-}
-#line 86 "ide/ide_converters.bas"
-int8 pass540_17;
-#line 87 "ide/ide_converters.bas"
-int32 pass540_18;
-#line 97 "ide/ide_converters.bas"
-int32 pass540_19;
-#line 98 "ide/ide_converters.bas"
-int8 pass540_20;

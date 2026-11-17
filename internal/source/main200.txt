@@ -1,160 +1,238 @@
-#line 39 "utilities/ini-manager/ini.bm"
-void SUB_INICOMMIT(){
-#line 39 "utilities/ini-manager/ini.bm"
+#line 418 "utilities/elements.bas"
+qbs* FUNC_ELEUCASE(qbs*_FUNC_ELEUCASE_STRING_A){
+#line 418 "utilities/elements.bas"
 qbs *tqbs;
-#line 39 "utilities/ini-manager/ini.bm"
+#line 418 "utilities/elements.bas"
 ptrszint tmp_long;
-#line 39 "utilities/ini-manager/ini.bm"
+#line 418 "utilities/elements.bas"
 int32 tmp_fileno;
-#line 39 "utilities/ini-manager/ini.bm"
+#line 418 "utilities/elements.bas"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
-#line 39 "utilities/ini-manager/ini.bm"
+#line 418 "utilities/elements.bas"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
-#line 39 "utilities/ini-manager/ini.bm"
+#line 418 "utilities/elements.bas"
 uint32 tmp_cmem_sp=cmem_sp;
-#line 39 "utilities/ini-manager/ini.bm"
+#line 418 "utilities/elements.bas"
 #include "data200.txt"
-#line 39 "utilities/ini-manager/ini.bm"
+#line 418 "utilities/elements.bas"
 mem_lock *sf_mem_lock;
-#line 39 "utilities/ini-manager/ini.bm"
+#line 418 "utilities/elements.bas"
 new_mem_lock();
-#line 39 "utilities/ini-manager/ini.bm"
+#line 418 "utilities/elements.bas"
 sf_mem_lock=mem_lock_tmp;
-#line 39 "utilities/ini-manager/ini.bm"
+#line 418 "utilities/elements.bas"
 sf_mem_lock->type=3;
-#line 39 "utilities/ini-manager/ini.bm"
+#line 418 "utilities/elements.bas"
 libqb_check_stack();
-#line 39 "utilities/ini-manager/ini.bm"
+#line 418 "utilities/elements.bas"
 if (is_error_pending()) goto exit_subfunc;
-#line 40 "utilities/ini-manager/ini.bm"
+#line 419 "utilities/elements.bas"
 do{
-#line 40 "utilities/ini-manager/ini.bm"
-if(!qbevent)break;evnt(28743,40,"ini.bm");}while(r);
-#line 41 "utilities/ini-manager/ini.bm"
+#line 419 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,419,"elements.bas");}while(r);
+#line 423 "utilities/elements.bas"
+S_200_2:;
+#line 423 "utilities/elements.bas"
+if ((qbs_cleanup(qbs_tmp_base,-(_FUNC_ELEUCASE_STRING_A->len== 0 )))||is_error_pending()){
+#line 423 "utilities/elements.bas"
+if(qbevent){evnt(30080,423,"elements.bas");if(r)goto S_200_2;}
+#line 423 "utilities/elements.bas"
 do{
-#line 41 "utilities/ini-manager/ini.bm"
-if(!qbevent)break;evnt(28743,41,"ini.bm");}while(r);
-#line 43 "utilities/ini-manager/ini.bm"
-S_200_3:;
-#line 43 "utilities/ini-manager/ini.bm"
-if ((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_CURRENTINIFILENAME,qbs_new_txt_len("",0))))||is_error_pending()){
-#line 43 "utilities/ini-manager/ini.bm"
-if(qbevent){evnt(28743,43,"ini.bm");if(r)goto S_200_3;}
-#line 43 "utilities/ini-manager/ini.bm"
-do{
-#line 43 "utilities/ini-manager/ini.bm"
-*__LONG_INICODE= 18 ;
-#line 43 "utilities/ini-manager/ini.bm"
-if(!qbevent)break;evnt(28743,43,"ini.bm");}while(r);
-#line 43 "utilities/ini-manager/ini.bm"
-do{
-#line 43 "utilities/ini-manager/ini.bm"
+#line 423 "utilities/elements.bas"
 goto exit_subfunc;
-#line 43 "utilities/ini-manager/ini.bm"
-if(!qbevent)break;evnt(28743,43,"ini.bm");}while(r);
-#line 43 "utilities/ini-manager/ini.bm"
+#line 423 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,423,"elements.bas");}while(r);
+#line 423 "utilities/elements.bas"
 }
-#line 45 "utilities/ini-manager/ini.bm"
+#line 424 "utilities/elements.bas"
 do{
-#line 45 "utilities/ini-manager/ini.bm"
-qbs_set(__STRING_INIWHOLEFILE,__STRING_ININEWFILE);
-#line 45 "utilities/ini-manager/ini.bm"
+#line 424 "utilities/elements.bas"
+*_FUNC_ELEUCASE_LONG_I= 1 ;
+#line 424 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,424,"elements.bas");}while(r);
+#line 425 "utilities/elements.bas"
+S_200_6:;
+#line 425 "utilities/elements.bas"
+if ((qbs_cleanup(qbs_tmp_base,-(qbs_asc(_FUNC_ELEUCASE_STRING_A)== 34 )))||is_error_pending()){
+#line 425 "utilities/elements.bas"
+if(qbevent){evnt(30080,425,"elements.bas");if(r)goto S_200_6;}
+#line 426 "utilities/elements.bas"
+do{
+#line 426 "utilities/elements.bas"
+*_FUNC_ELEUCASE_LONG_I2=func_instr(NULL,_FUNC_ELEUCASE_STRING_A,__STRING1_SP,0);
+#line 426 "utilities/elements.bas"
 qbs_cleanup(qbs_tmp_base,0);
-#line 45 "utilities/ini-manager/ini.bm"
-if(!qbevent)break;evnt(28743,45,"ini.bm");}while(r);
-#line 46 "utilities/ini-manager/ini.bm"
+#line 426 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,426,"elements.bas");}while(r);
+#line 427 "utilities/elements.bas"
+S_200_8:;
+#line 427 "utilities/elements.bas"
+if ((-(*_FUNC_ELEUCASE_LONG_I2== 0 ))||is_error_pending()){
+#line 427 "utilities/elements.bas"
+if(qbevent){evnt(30080,427,"elements.bas");if(r)goto S_200_8;}
+#line 427 "utilities/elements.bas"
 do{
-#line 46 "utilities/ini-manager/ini.bm"
-*__ULONG_CURRENTINIFILELOF=__STRING_ININEWFILE->len;
-#line 46 "utilities/ini-manager/ini.bm"
+#line 427 "utilities/elements.bas"
+qbs_set(_FUNC_ELEUCASE_STRING_ELEUCASE,_FUNC_ELEUCASE_STRING_A);
+#line 427 "utilities/elements.bas"
 qbs_cleanup(qbs_tmp_base,0);
-#line 46 "utilities/ini-manager/ini.bm"
-if(!qbevent)break;evnt(28743,46,"ini.bm");}while(r);
-#line 48 "utilities/ini-manager/ini.bm"
-S_200_9:;
-#line 48 "utilities/ini-manager/ini.bm"
-if ((~(*__LONG_INIDISABLEAUTOCOMMIT))||is_error_pending()){
-#line 48 "utilities/ini-manager/ini.bm"
-if(qbevent){evnt(28743,48,"ini.bm");if(r)goto S_200_9;}
-#line 49 "utilities/ini-manager/ini.bm"
+#line 427 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,427,"elements.bas");}while(r);
+#line 427 "utilities/elements.bas"
 do{
-#line 49 "utilities/ini-manager/ini.bm"
-if(!qbevent)break;evnt(28743,49,"ini.bm");}while(r);
-#line 51 "utilities/ini-manager/ini.bm"
-do{
-#line 51 "utilities/ini-manager/ini.bm"
-*_SUB_INICOMMIT_INTEGER_FILENUM=func_freefile();
-#line 51 "utilities/ini-manager/ini.bm"
-if(!qbevent)break;evnt(28743,51,"ini.bm");}while(r);
-#line 52 "utilities/ini-manager/ini.bm"
-do{
-#line 52 "utilities/ini-manager/ini.bm"
-sub_open(__STRING_CURRENTINIFILENAME, 2 ,NULL,NULL,*_SUB_INICOMMIT_INTEGER_FILENUM,NULL,0);
-#line 52 "utilities/ini-manager/ini.bm"
-qbs_cleanup(qbs_tmp_base,0);
-#line 52 "utilities/ini-manager/ini.bm"
-if(!qbevent)break;evnt(28743,52,"ini.bm");}while(r);
-#line 54 "utilities/ini-manager/ini.bm"
-S_200_13:;
-#line 54 "utilities/ini-manager/ini.bm"
-if ((qbs_cleanup(qbs_tmp_base,-(__STRING_INIWHOLEFILE->len<func_lof(*_SUB_INICOMMIT_INTEGER_FILENUM))))||is_error_pending()){
-#line 54 "utilities/ini-manager/ini.bm"
-if(qbevent){evnt(28743,54,"ini.bm");if(r)goto S_200_13;}
-#line 55 "utilities/ini-manager/ini.bm"
-do{
-#line 55 "utilities/ini-manager/ini.bm"
-sub_close(*_SUB_INICOMMIT_INTEGER_FILENUM,1);
-#line 55 "utilities/ini-manager/ini.bm"
-if(!qbevent)break;evnt(28743,55,"ini.bm");}while(r);
-#line 56 "utilities/ini-manager/ini.bm"
-do{
-#line 56 "utilities/ini-manager/ini.bm"
-sub_open(__STRING_CURRENTINIFILENAME, 4 ,NULL,NULL,*_SUB_INICOMMIT_INTEGER_FILENUM,NULL,0);
-#line 56 "utilities/ini-manager/ini.bm"
-qbs_cleanup(qbs_tmp_base,0);
-#line 56 "utilities/ini-manager/ini.bm"
-if(!qbevent)break;evnt(28743,56,"ini.bm");}while(r);
-#line 56 "utilities/ini-manager/ini.bm"
-do{
-#line 56 "utilities/ini-manager/ini.bm"
-sub_close(*_SUB_INICOMMIT_INTEGER_FILENUM,1);
-#line 56 "utilities/ini-manager/ini.bm"
-if(!qbevent)break;evnt(28743,56,"ini.bm");}while(r);
-#line 57 "utilities/ini-manager/ini.bm"
-do{
-#line 57 "utilities/ini-manager/ini.bm"
-sub_open(__STRING_CURRENTINIFILENAME, 2 ,NULL,NULL,*_SUB_INICOMMIT_INTEGER_FILENUM,NULL,0);
-#line 57 "utilities/ini-manager/ini.bm"
-qbs_cleanup(qbs_tmp_base,0);
-#line 57 "utilities/ini-manager/ini.bm"
-if(!qbevent)break;evnt(28743,57,"ini.bm");}while(r);
-#line 58 "utilities/ini-manager/ini.bm"
+#line 427 "utilities/elements.bas"
+goto exit_subfunc;
+#line 427 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,427,"elements.bas");}while(r);
+#line 427 "utilities/elements.bas"
 }
-#line 60 "utilities/ini-manager/ini.bm"
+#line 428 "utilities/elements.bas"
 do{
-#line 60 "utilities/ini-manager/ini.bm"
-sub_put2(*_SUB_INICOMMIT_INTEGER_FILENUM, 1 ,byte_element((uint64)__STRING_ININEWFILE->chr,__STRING_ININEWFILE->len,byte_element_200_3),1);
-#line 60 "utilities/ini-manager/ini.bm"
+#line 428 "utilities/elements.bas"
+qbs_set(_FUNC_ELEUCASE_STRING_A2,qbs_left(_FUNC_ELEUCASE_STRING_A,*_FUNC_ELEUCASE_LONG_I2- 1 ));
+#line 428 "utilities/elements.bas"
 qbs_cleanup(qbs_tmp_base,0);
-#line 60 "utilities/ini-manager/ini.bm"
-if(!qbevent)break;evnt(28743,60,"ini.bm");}while(r);
-#line 61 "utilities/ini-manager/ini.bm"
+#line 428 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,428,"elements.bas");}while(r);
+#line 429 "utilities/elements.bas"
 do{
-#line 61 "utilities/ini-manager/ini.bm"
-sub_close(*_SUB_INICOMMIT_INTEGER_FILENUM,1);
-#line 61 "utilities/ini-manager/ini.bm"
-if(!qbevent)break;evnt(28743,61,"ini.bm");}while(r);
-#line 62 "utilities/ini-manager/ini.bm"
+#line 429 "utilities/elements.bas"
+*_FUNC_ELEUCASE_LONG_I=*_FUNC_ELEUCASE_LONG_I2;
+#line 429 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,429,"elements.bas");}while(r);
+#line 430 "utilities/elements.bas"
 }
-#line 63 "utilities/ini-manager/ini.bm"
+#line 432 "utilities/elements.bas"
+do{
+#line 432 "utilities/elements.bas"
+qbs_set(_FUNC_ELEUCASE_STRING_SP34,qbs_add(__STRING1_SP,func_chr( 34 )));
+#line 432 "utilities/elements.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 432 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,432,"elements.bas");}while(r);
+#line 433 "utilities/elements.bas"
+S_200_16:;
+#line 433 "utilities/elements.bas"
+if ((qbs_cleanup(qbs_tmp_base,-(*_FUNC_ELEUCASE_LONG_I<_FUNC_ELEUCASE_STRING_A->len)))||is_error_pending()){
+#line 433 "utilities/elements.bas"
+if(qbevent){evnt(30080,433,"elements.bas");if(r)goto S_200_16;}
+#line 434 "utilities/elements.bas"
+S_200_17:;
+#line 434 "utilities/elements.bas"
+while((qbs_cleanup(qbs_tmp_base,func_instr(*_FUNC_ELEUCASE_LONG_I,_FUNC_ELEUCASE_STRING_A,_FUNC_ELEUCASE_STRING_SP34,0|1)))||is_error_pending()){
+#line 434 "utilities/elements.bas"
+if(qbevent){evnt(30080,434,"elements.bas");if(r)goto S_200_17;}
+#line 435 "utilities/elements.bas"
+do{
+#line 435 "utilities/elements.bas"
+*_FUNC_ELEUCASE_LONG_I2=func_instr(*_FUNC_ELEUCASE_LONG_I,_FUNC_ELEUCASE_STRING_A,_FUNC_ELEUCASE_STRING_SP34,0|1);
+#line 435 "utilities/elements.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 435 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,435,"elements.bas");}while(r);
+#line 436 "utilities/elements.bas"
+do{
+#line 436 "utilities/elements.bas"
+qbs_set(_FUNC_ELEUCASE_STRING_A2,qbs_add(_FUNC_ELEUCASE_STRING_A2,qbs_ucase(func_mid(_FUNC_ELEUCASE_STRING_A,*_FUNC_ELEUCASE_LONG_I,*_FUNC_ELEUCASE_LONG_I2-*_FUNC_ELEUCASE_LONG_I+ 1 ,0|1))));
+#line 436 "utilities/elements.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 436 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,436,"elements.bas");}while(r);
+#line 437 "utilities/elements.bas"
+do{
+#line 437 "utilities/elements.bas"
+*_FUNC_ELEUCASE_LONG_I3=func_instr(*_FUNC_ELEUCASE_LONG_I2+ 1 ,_FUNC_ELEUCASE_STRING_A,__STRING1_SP,0|1);
+#line 437 "utilities/elements.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 437 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,437,"elements.bas");}while(r);
+#line 437 "utilities/elements.bas"
+S_200_21:;
+#line 437 "utilities/elements.bas"
+if ((-(*_FUNC_ELEUCASE_LONG_I3== 0 ))||is_error_pending()){
+#line 437 "utilities/elements.bas"
+if(qbevent){evnt(30080,437,"elements.bas");if(r)goto S_200_21;}
+#line 437 "utilities/elements.bas"
+do{
+#line 437 "utilities/elements.bas"
+*_FUNC_ELEUCASE_LONG_I3=_FUNC_ELEUCASE_STRING_A->len;
+#line 437 "utilities/elements.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 437 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,437,"elements.bas");}while(r);
+#line 437 "utilities/elements.bas"
+}else{
+#line 437 "utilities/elements.bas"
+do{
+#line 437 "utilities/elements.bas"
+*_FUNC_ELEUCASE_LONG_I3=*_FUNC_ELEUCASE_LONG_I3- 1 ;
+#line 437 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,437,"elements.bas");}while(r);
+#line 437 "utilities/elements.bas"
+}
+#line 438 "utilities/elements.bas"
+do{
+#line 438 "utilities/elements.bas"
+qbs_set(_FUNC_ELEUCASE_STRING_A2,qbs_add(_FUNC_ELEUCASE_STRING_A2,func_mid(_FUNC_ELEUCASE_STRING_A,*_FUNC_ELEUCASE_LONG_I2+ 1 ,*_FUNC_ELEUCASE_LONG_I3-(*_FUNC_ELEUCASE_LONG_I2+ 1 )+ 1 ,0|1)));
+#line 438 "utilities/elements.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 438 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,438,"elements.bas");}while(r);
+#line 439 "utilities/elements.bas"
+do{
+#line 439 "utilities/elements.bas"
+*_FUNC_ELEUCASE_LONG_I=*_FUNC_ELEUCASE_LONG_I3+ 1 ;
+#line 439 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,439,"elements.bas");}while(r);
+#line 440 "utilities/elements.bas"
+S_200_28:;
+#line 440 "utilities/elements.bas"
+if ((qbs_cleanup(qbs_tmp_base,-(*_FUNC_ELEUCASE_LONG_I>_FUNC_ELEUCASE_STRING_A->len)))||is_error_pending()){
+#line 440 "utilities/elements.bas"
+if(qbevent){evnt(30080,440,"elements.bas");if(r)goto S_200_28;}
+#line 440 "utilities/elements.bas"
+do{
+#line 440 "utilities/elements.bas"
+goto dl_exit_200_4;
+#line 440 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,440,"elements.bas");}while(r);
+#line 440 "utilities/elements.bas"
+}
+#line 441 "utilities/elements.bas"
+dl_continue_200_4:;
+#line 441 "utilities/elements.bas"
+}
+#line 441 "utilities/elements.bas"
+dl_exit_200_4:;
+#line 442 "utilities/elements.bas"
+}
+#line 443 "utilities/elements.bas"
+do{
+#line 443 "utilities/elements.bas"
+qbs_set(_FUNC_ELEUCASE_STRING_A2,qbs_add(_FUNC_ELEUCASE_STRING_A2,qbs_ucase(func_mid(_FUNC_ELEUCASE_STRING_A,*_FUNC_ELEUCASE_LONG_I,_FUNC_ELEUCASE_STRING_A->len-*_FUNC_ELEUCASE_LONG_I+ 1 ,0|1))));
+#line 443 "utilities/elements.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 443 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,443,"elements.bas");}while(r);
+#line 444 "utilities/elements.bas"
+do{
+#line 444 "utilities/elements.bas"
+qbs_set(_FUNC_ELEUCASE_STRING_ELEUCASE,_FUNC_ELEUCASE_STRING_A2);
+#line 444 "utilities/elements.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 444 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,444,"elements.bas");}while(r);
+#line 445 "utilities/elements.bas"
 exit_subfunc:;
-#line 63 "utilities/ini-manager/ini.bm"
+#line 445 "utilities/elements.bas"
 free_mem_lock(sf_mem_lock);
-#line 63 "utilities/ini-manager/ini.bm"
+#line 445 "utilities/elements.bas"
 #include "free200.txt"
-#line 63 "utilities/ini-manager/ini.bm"
+#line 445 "utilities/elements.bas"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
-#line 63 "utilities/ini-manager/ini.bm"
+#line 445 "utilities/elements.bas"
 cmem_sp=tmp_cmem_sp;
-#line 63 "utilities/ini-manager/ini.bm"
+#line 445 "utilities/elements.bas"
+qbs_maketmp(_FUNC_ELEUCASE_STRING_ELEUCASE);return _FUNC_ELEUCASE_STRING_ELEUCASE;
+#line 445 "utilities/elements.bas"
 }

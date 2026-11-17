@@ -1,126 +1,122 @@
-#line 251 "ide/wiki/wiki_methods.bas"
-int32 FUNC_HELP_COL(){
-#line 251 "ide/wiki/wiki_methods.bas"
+#line 21143 "ide/ide_methods.bas"
+void SUB_INSERTATCURSOR(qbs*_SUB_INSERTATCURSOR_STRING_TEMPK){
+#line 21143 "ide/ide_methods.bas"
 qbs *tqbs;
-#line 251 "ide/wiki/wiki_methods.bas"
+#line 21143 "ide/ide_methods.bas"
 ptrszint tmp_long;
-#line 251 "ide/wiki/wiki_methods.bas"
+#line 21143 "ide/ide_methods.bas"
 int32 tmp_fileno;
-#line 251 "ide/wiki/wiki_methods.bas"
+#line 21143 "ide/ide_methods.bas"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
-#line 251 "ide/wiki/wiki_methods.bas"
+#line 21143 "ide/ide_methods.bas"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
-#line 251 "ide/wiki/wiki_methods.bas"
+#line 21143 "ide/ide_methods.bas"
 uint32 tmp_cmem_sp=cmem_sp;
-#line 251 "ide/wiki/wiki_methods.bas"
+#line 21143 "ide/ide_methods.bas"
 #include "data534.txt"
-#line 251 "ide/wiki/wiki_methods.bas"
+#line 21143 "ide/ide_methods.bas"
 mem_lock *sf_mem_lock;
-#line 251 "ide/wiki/wiki_methods.bas"
+#line 21143 "ide/ide_methods.bas"
 new_mem_lock();
-#line 251 "ide/wiki/wiki_methods.bas"
+#line 21143 "ide/ide_methods.bas"
 sf_mem_lock=mem_lock_tmp;
-#line 251 "ide/wiki/wiki_methods.bas"
+#line 21143 "ide/ide_methods.bas"
 sf_mem_lock->type=3;
-#line 251 "ide/wiki/wiki_methods.bas"
+#line 21143 "ide/ide_methods.bas"
 libqb_check_stack();
-#line 251 "ide/wiki/wiki_methods.bas"
+#line 21143 "ide/ide_methods.bas"
 if (is_error_pending()) goto exit_subfunc;
-#line 252 "ide/wiki/wiki_methods.bas"
+#line 21145 "ide/ide_methods.bas"
+S_534_1:;
+#line 21145 "ide/ide_methods.bas"
+if ((*__LONG_IDESELECT)||is_error_pending()){
+#line 21145 "ide/ide_methods.bas"
+if(qbevent){evnt(30100,21145,"ide_methods.bas");if(r)goto S_534_1;}
+#line 21145 "ide/ide_methods.bas"
 do{
-#line 252 "ide/wiki/wiki_methods.bas"
-*_FUNC_HELP_COL_LONG_COL=*__LONG_HELP_COL_NORMAL;
-#line 252 "ide/wiki/wiki_methods.bas"
-if(!qbevent)break;evnt(28761,252,"wiki_methods.bas");}while(r);
-#line 253 "ide/wiki/wiki_methods.bas"
-S_534_2:;
-#line 253 "ide/wiki/wiki_methods.bas"
-if ((*__LONG_HELP_ITALIC)||is_error_pending()){
-#line 253 "ide/wiki/wiki_methods.bas"
-if(qbevent){evnt(28761,253,"wiki_methods.bas");if(r)goto S_534_2;}
-#line 253 "ide/wiki/wiki_methods.bas"
-do{
-#line 253 "ide/wiki/wiki_methods.bas"
-*_FUNC_HELP_COL_LONG_COL=*__LONG_HELP_COL_ITALIC;
-#line 253 "ide/wiki/wiki_methods.bas"
-if(!qbevent)break;evnt(28761,253,"wiki_methods.bas");}while(r);
-#line 253 "ide/wiki/wiki_methods.bas"
+#line 21145 "ide/ide_methods.bas"
+SUB_DELSELECT();
+#line 21145 "ide/ide_methods.bas"
+if(!qbevent)break;evnt(30100,21145,"ide_methods.bas");}while(r);
+#line 21145 "ide/ide_methods.bas"
 }
-#line 254 "ide/wiki/wiki_methods.bas"
+#line 21146 "ide/ide_methods.bas"
+do{
+#line 21146 "ide/ide_methods.bas"
+qbs_set(_SUB_INSERTATCURSOR_STRING_A,FUNC_IDEGETLINE(__LONG_IDECY));
+#line 21146 "ide/ide_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 21146 "ide/ide_methods.bas"
+if(!qbevent)break;evnt(30100,21146,"ide_methods.bas");}while(r);
+#line 21147 "ide/ide_methods.bas"
 S_534_5:;
-#line 254 "ide/wiki/wiki_methods.bas"
-if ((*__LONG_HELP_BOLD)||is_error_pending()){
-#line 254 "ide/wiki/wiki_methods.bas"
-if(qbevent){evnt(28761,254,"wiki_methods.bas");if(r)goto S_534_5;}
-#line 254 "ide/wiki/wiki_methods.bas"
+#line 21147 "ide/ide_methods.bas"
+if ((qbs_cleanup(qbs_tmp_base,-((_SUB_INSERTATCURSOR_STRING_A->len)<(*__LONG_IDECX- 1 ))))||is_error_pending()){
+#line 21147 "ide/ide_methods.bas"
+if(qbevent){evnt(30100,21147,"ide_methods.bas");if(r)goto S_534_5;}
+#line 21147 "ide/ide_methods.bas"
 do{
-#line 254 "ide/wiki/wiki_methods.bas"
-*_FUNC_HELP_COL_LONG_COL=*__LONG_HELP_COL_BOLD;
-#line 254 "ide/wiki/wiki_methods.bas"
-if(!qbevent)break;evnt(28761,254,"wiki_methods.bas");}while(r);
-#line 254 "ide/wiki/wiki_methods.bas"
+#line 21147 "ide/ide_methods.bas"
+qbs_set(_SUB_INSERTATCURSOR_STRING_A,qbs_add(_SUB_INSERTATCURSOR_STRING_A,func_space(*__LONG_IDECX- 1 -_SUB_INSERTATCURSOR_STRING_A->len)));
+#line 21147 "ide/ide_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 21147 "ide/ide_methods.bas"
+if(!qbevent)break;evnt(30100,21147,"ide_methods.bas");}while(r);
+#line 21147 "ide/ide_methods.bas"
 }
-#line 255 "ide/wiki/wiki_methods.bas"
-S_534_8:;
-#line 255 "ide/wiki/wiki_methods.bas"
-if ((*__LONG_HELP_HEADING)||is_error_pending()){
-#line 255 "ide/wiki/wiki_methods.bas"
-if(qbevent){evnt(28761,255,"wiki_methods.bas");if(r)goto S_534_8;}
-#line 255 "ide/wiki/wiki_methods.bas"
+#line 21148 "ide/ide_methods.bas"
 do{
-#line 255 "ide/wiki/wiki_methods.bas"
-*_FUNC_HELP_COL_LONG_COL=*__LONG_HELP_COL_SECTION;
-#line 255 "ide/wiki/wiki_methods.bas"
-if(!qbevent)break;evnt(28761,255,"wiki_methods.bas");}while(r);
-#line 255 "ide/wiki/wiki_methods.bas"
+#line 21148 "ide/ide_methods.bas"
+qbs_set(_SUB_INSERTATCURSOR_STRING_A,qbs_add(qbs_add(qbs_left(_SUB_INSERTATCURSOR_STRING_A,*__LONG_IDECX- 1 ),_SUB_INSERTATCURSOR_STRING_TEMPK),qbs_right(_SUB_INSERTATCURSOR_STRING_A,_SUB_INSERTATCURSOR_STRING_A->len-*__LONG_IDECX+ 1 )));
+#line 21148 "ide/ide_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 21148 "ide/ide_methods.bas"
+if(!qbevent)break;evnt(30100,21148,"ide_methods.bas");}while(r);
+#line 21149 "ide/ide_methods.bas"
+do{
+#line 21149 "ide/ide_methods.bas"
+SUB_IDESETLINE(__LONG_IDECY,FUNC_CONVERTTABS(_SUB_INSERTATCURSOR_STRING_A));
+#line 21149 "ide/ide_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 21149 "ide/ide_methods.bas"
+if(!qbevent)break;evnt(30100,21149,"ide_methods.bas");}while(r);
+#line 21151 "ide/ide_methods.bas"
+S_534_10:;
+#line 21151 "ide/ide_methods.bas"
+if ((*__BYTE_PASTECURSORATEND)||is_error_pending()){
+#line 21151 "ide/ide_methods.bas"
+if(qbevent){evnt(30100,21151,"ide_methods.bas");if(r)goto S_534_10;}
+#line 21153 "ide/ide_methods.bas"
+do{
+#line 21153 "ide/ide_methods.bas"
+*__LONG_IDECX=*__LONG_IDECX+_SUB_INSERTATCURSOR_STRING_TEMPK->len;
+#line 21153 "ide/ide_methods.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 21153 "ide/ide_methods.bas"
+if(!qbevent)break;evnt(30100,21153,"ide_methods.bas");}while(r);
+#line 21154 "ide/ide_methods.bas"
 }
-#line 256 "ide/wiki/wiki_methods.bas"
-S_534_11:;
-#line 256 "ide/wiki/wiki_methods.bas"
-if ((*__LONG_HELP_LINKTXT)||is_error_pending()){
-#line 256 "ide/wiki/wiki_methods.bas"
-if(qbevent){evnt(28761,256,"wiki_methods.bas");if(r)goto S_534_11;}
-#line 258 "ide/wiki/wiki_methods.bas"
-S_534_12:;
-#line 258 "ide/wiki/wiki_methods.bas"
-if ((-(*__LONG_HELP_LOCKPARSE== 0 ))||is_error_pending()){
-#line 258 "ide/wiki/wiki_methods.bas"
-if(qbevent){evnt(28761,258,"wiki_methods.bas");if(r)goto S_534_12;}
-#line 258 "ide/wiki/wiki_methods.bas"
+#line 21156 "ide/ide_methods.bas"
 do{
-#line 258 "ide/wiki/wiki_methods.bas"
-*_FUNC_HELP_COL_LONG_COL=*__LONG_HELP_COL_LINK;
-#line 258 "ide/wiki/wiki_methods.bas"
-if(!qbevent)break;evnt(28761,258,"wiki_methods.bas");}while(r);
-#line 258 "ide/wiki/wiki_methods.bas"
-}else{
-#line 258 "ide/wiki/wiki_methods.bas"
+#line 21156 "ide/ide_methods.bas"
+*__INTEGER_IDECHANGEMADE= 1 ;
+#line 21156 "ide/ide_methods.bas"
+if(!qbevent)break;evnt(30100,21156,"ide_methods.bas");}while(r);
+#line 21157 "ide/ide_methods.bas"
 do{
-#line 258 "ide/wiki/wiki_methods.bas"
-*_FUNC_HELP_COL_LONG_COL=*__LONG_HELP_COL_ITALIC;
-#line 258 "ide/wiki/wiki_methods.bas"
-if(!qbevent)break;evnt(28761,258,"wiki_methods.bas");}while(r);
-#line 258 "ide/wiki/wiki_methods.bas"
-}
-#line 259 "ide/wiki/wiki_methods.bas"
-}
-#line 260 "ide/wiki/wiki_methods.bas"
-do{
-#line 260 "ide/wiki/wiki_methods.bas"
-*_FUNC_HELP_COL_LONG_HELP_COL=*_FUNC_HELP_COL_LONG_COL;
-#line 260 "ide/wiki/wiki_methods.bas"
-if(!qbevent)break;evnt(28761,260,"wiki_methods.bas");}while(r);
-#line 261 "ide/wiki/wiki_methods.bas"
+#line 21157 "ide/ide_methods.bas"
+*__BYTE_STARTPAUSEDPENDING= 0 ;
+#line 21157 "ide/ide_methods.bas"
+if(!qbevent)break;evnt(30100,21157,"ide_methods.bas");}while(r);
+#line 21158 "ide/ide_methods.bas"
 exit_subfunc:;
-#line 261 "ide/wiki/wiki_methods.bas"
+#line 21158 "ide/ide_methods.bas"
 free_mem_lock(sf_mem_lock);
-#line 261 "ide/wiki/wiki_methods.bas"
+#line 21158 "ide/ide_methods.bas"
 #include "free534.txt"
-#line 261 "ide/wiki/wiki_methods.bas"
+#line 21158 "ide/ide_methods.bas"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
-#line 261 "ide/wiki/wiki_methods.bas"
+#line 21158 "ide/ide_methods.bas"
 cmem_sp=tmp_cmem_sp;
-#line 261 "ide/wiki/wiki_methods.bas"
-return *_FUNC_HELP_COL_LONG_HELP_COL;
-#line 261 "ide/wiki/wiki_methods.bas"
+#line 21158 "ide/ide_methods.bas"
 }

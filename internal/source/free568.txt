@@ -1,0 +1,4 @@
+if(oldstr568_1){
+if(oldstr568_1->fixed)qbs_set(oldstr568_1,_FUNC_IDEHINTREADWORD_STRING_A);
+qbs_free(_FUNC_IDEHINTREADWORD_STRING_A);
+}

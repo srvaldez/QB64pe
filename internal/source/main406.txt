@@ -1,192 +1,64 @@
-#line 355 "emit/split_units.bas"
-int16 FUNC_SPLITUNITFILENAME(qbs*_FUNC_SPLITUNITFILENAME_STRING_N){
-#line 355 "emit/split_units.bas"
+#line 11 "emit/globals.bas"
+void SUB_DECLAREGLOBALDATA(qbs*_SUB_DECLAREGLOBALDATA_STRING_DECL){
+#line 11 "emit/globals.bas"
 qbs *tqbs;
-#line 355 "emit/split_units.bas"
+#line 11 "emit/globals.bas"
 ptrszint tmp_long;
-#line 355 "emit/split_units.bas"
+#line 11 "emit/globals.bas"
 int32 tmp_fileno;
-#line 355 "emit/split_units.bas"
+#line 11 "emit/globals.bas"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
-#line 355 "emit/split_units.bas"
+#line 11 "emit/globals.bas"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
-#line 355 "emit/split_units.bas"
+#line 11 "emit/globals.bas"
 uint32 tmp_cmem_sp=cmem_sp;
-#line 355 "emit/split_units.bas"
+#line 11 "emit/globals.bas"
 #include "data406.txt"
-#line 355 "emit/split_units.bas"
+#line 11 "emit/globals.bas"
 mem_lock *sf_mem_lock;
-#line 355 "emit/split_units.bas"
+#line 11 "emit/globals.bas"
 new_mem_lock();
-#line 355 "emit/split_units.bas"
+#line 11 "emit/globals.bas"
 sf_mem_lock=mem_lock_tmp;
-#line 355 "emit/split_units.bas"
+#line 11 "emit/globals.bas"
 sf_mem_lock->type=3;
-#line 355 "emit/split_units.bas"
+#line 11 "emit/globals.bas"
 libqb_check_stack();
-#line 355 "emit/split_units.bas"
+#line 11 "emit/globals.bas"
 if (is_error_pending()) goto exit_subfunc;
-#line 356 "emit/split_units.bas"
-S_406_1:;
-#line 356 "emit/split_units.bas"
-if ((qbs_cleanup(qbs_tmp_base,qbs_notequal(qbs_left(_FUNC_SPLITUNITFILENAME_STRING_N, 3 ),qbs_new_txt_len("tu_",3))))||is_error_pending()){
-#line 356 "emit/split_units.bas"
-if(qbevent){evnt(28755,356,"split_units.bas");if(r)goto S_406_1;}
-#line 356 "emit/split_units.bas"
+#line 12 "emit/globals.bas"
 do{
-#line 356 "emit/split_units.bas"
-goto exit_subfunc;
-#line 356 "emit/split_units.bas"
-if(!qbevent)break;evnt(28755,356,"split_units.bas");}while(r);
-#line 356 "emit/split_units.bas"
-}
-#line 357 "emit/split_units.bas"
-S_406_4:;
-#line 357 "emit/split_units.bas"
-if ((qbs_cleanup(qbs_tmp_base,qbs_notequal(qbs_right(_FUNC_SPLITUNITFILENAME_STRING_N, 4 ),qbs_new_txt_len(".cpp",4))))||is_error_pending()){
-#line 357 "emit/split_units.bas"
-if(qbevent){evnt(28755,357,"split_units.bas");if(r)goto S_406_4;}
-#line 357 "emit/split_units.bas"
-do{
-#line 357 "emit/split_units.bas"
-goto exit_subfunc;
-#line 357 "emit/split_units.bas"
-if(!qbevent)break;evnt(28755,357,"split_units.bas");}while(r);
-#line 357 "emit/split_units.bas"
-}
-#line 359 "emit/split_units.bas"
-do{
-#line 359 "emit/split_units.bas"
-qbs_set(_FUNC_SPLITUNITFILENAME_STRING_B,func_mid(_FUNC_SPLITUNITFILENAME_STRING_N, 4 ,_FUNC_SPLITUNITFILENAME_STRING_N->len- 7 ,0|1));
-#line 359 "emit/split_units.bas"
+#line 12 "emit/globals.bas"
+SUB_WRITEBUFLINE(__LONG_DEFDATAHANDLE,_SUB_DECLAREGLOBALDATA_STRING_DECL);
+#line 12 "emit/globals.bas"
 qbs_cleanup(qbs_tmp_base,0);
-#line 359 "emit/split_units.bas"
-if(!qbevent)break;evnt(28755,359,"split_units.bas");}while(r);
-#line 360 "emit/split_units.bas"
-S_406_8:;
-#line 360 "emit/split_units.bas"
-if ((qbs_cleanup(qbs_tmp_base,-(_FUNC_SPLITUNITFILENAME_STRING_B->len< 9 )))||is_error_pending()){
-#line 360 "emit/split_units.bas"
-if(qbevent){evnt(28755,360,"split_units.bas");if(r)goto S_406_8;}
-#line 360 "emit/split_units.bas"
+#line 12 "emit/globals.bas"
+if(!qbevent)break;evnt(30093,12,"globals.bas");}while(r);
+#line 13 "emit/globals.bas"
+S_406_2:;
+#line 13 "emit/globals.bas"
+if ((-(*__LONG_DEFDATAHANDLE==*__LONG_GLOBTXTBUF))||is_error_pending()){
+#line 13 "emit/globals.bas"
+if(qbevent){evnt(30093,13,"globals.bas");if(r)goto S_406_2;}
+#line 13 "emit/globals.bas"
 do{
-#line 360 "emit/split_units.bas"
-goto exit_subfunc;
-#line 360 "emit/split_units.bas"
-if(!qbevent)break;evnt(28755,360,"split_units.bas");}while(r);
-#line 360 "emit/split_units.bas"
-}
-#line 361 "emit/split_units.bas"
-S_406_11:;
-#line 361 "emit/split_units.bas"
-if ((qbs_cleanup(qbs_tmp_base,qbs_notequal(func_mid(_FUNC_SPLITUNITFILENAME_STRING_B, 9 , 1 ,0|1),qbs_new_txt_len("_",1))))||is_error_pending()){
-#line 361 "emit/split_units.bas"
-if(qbevent){evnt(28755,361,"split_units.bas");if(r)goto S_406_11;}
-#line 361 "emit/split_units.bas"
-do{
-#line 361 "emit/split_units.bas"
-goto exit_subfunc;
-#line 361 "emit/split_units.bas"
-if(!qbevent)break;evnt(28755,361,"split_units.bas");}while(r);
-#line 361 "emit/split_units.bas"
-}
-#line 362 "emit/split_units.bas"
-S_406_14:;
-#line 362 "emit/split_units.bas"
-fornext_value406_5= 1 ;
-#line 362 "emit/split_units.bas"
-fornext_finalvalue406_5= 8 ;
-#line 362 "emit/split_units.bas"
-fornext_step406_5= 1 ;
-#line 362 "emit/split_units.bas"
-if (fornext_step406_5<0) fornext_step_negative406_5=1; else fornext_step_negative406_5=0;
-#line 362 "emit/split_units.bas"
-if (is_error_pending()) goto fornext_error406_5;
-#line 362 "emit/split_units.bas"
-goto fornext_entrylabel406_5;
-#line 362 "emit/split_units.bas"
-while(1){
-#line 362 "emit/split_units.bas"
-fornext_value406_5=fornext_step406_5+(*_FUNC_SPLITUNITFILENAME_LONG_I);
-#line 362 "emit/split_units.bas"
-fornext_entrylabel406_5:
-#line 362 "emit/split_units.bas"
-*_FUNC_SPLITUNITFILENAME_LONG_I=fornext_value406_5;
-#line 362 "emit/split_units.bas"
-if (fornext_step_negative406_5){
-#line 362 "emit/split_units.bas"
-if (fornext_value406_5<fornext_finalvalue406_5) break;
-#line 362 "emit/split_units.bas"
-}else{
-#line 362 "emit/split_units.bas"
-if (fornext_value406_5>fornext_finalvalue406_5) break;
-#line 362 "emit/split_units.bas"
-}
-#line 362 "emit/split_units.bas"
-fornext_error406_5:;
-#line 362 "emit/split_units.bas"
-if(qbevent){evnt(28755,362,"split_units.bas");if(r)goto S_406_14;}
-#line 363 "emit/split_units.bas"
-S_406_15:;
-#line 363 "emit/split_units.bas"
-if ((qbs_cleanup(qbs_tmp_base,-(func_instr(NULL,qbs_new_txt_len("0123456789abcdef",16),func_mid(_FUNC_SPLITUNITFILENAME_STRING_B,*_FUNC_SPLITUNITFILENAME_LONG_I, 1 ,0|1),0)== 0 )))||is_error_pending()){
-#line 363 "emit/split_units.bas"
-if(qbevent){evnt(28755,363,"split_units.bas");if(r)goto S_406_15;}
-#line 363 "emit/split_units.bas"
-do{
-#line 363 "emit/split_units.bas"
-goto exit_subfunc;
-#line 363 "emit/split_units.bas"
-if(!qbevent)break;evnt(28755,363,"split_units.bas");}while(r);
-#line 363 "emit/split_units.bas"
-}
-#line 364 "emit/split_units.bas"
-fornext_continue_406_4:;
-#line 364 "emit/split_units.bas"
-}
-#line 364 "emit/split_units.bas"
-fornext_exit_406_4:;
-#line 366 "emit/split_units.bas"
-do{
-#line 366 "emit/split_units.bas"
-*_FUNC_SPLITUNITFILENAME_LONG_X=func__instrrev(NULL,_FUNC_SPLITUNITFILENAME_STRING_B,qbs_new_txt_len("_c",2),0);
-#line 366 "emit/split_units.bas"
+#line 13 "emit/globals.bas"
+SUB_WRITEBUFLINE(__LONG_GLOBDECLBUF,qbs_add(qbs_new_txt_len("extern ",7),FUNC_DECLWITHOUTINITIALIZER(_SUB_DECLAREGLOBALDATA_STRING_DECL)));
+#line 13 "emit/globals.bas"
 qbs_cleanup(qbs_tmp_base,0);
-#line 366 "emit/split_units.bas"
-if(!qbevent)break;evnt(28755,366,"split_units.bas");}while(r);
-#line 367 "emit/split_units.bas"
-S_406_20:;
-#line 367 "emit/split_units.bas"
-if ((-(*_FUNC_SPLITUNITFILENAME_LONG_X<= 9 ))||is_error_pending()){
-#line 367 "emit/split_units.bas"
-if(qbevent){evnt(28755,367,"split_units.bas");if(r)goto S_406_20;}
-#line 367 "emit/split_units.bas"
-do{
-#line 367 "emit/split_units.bas"
-goto exit_subfunc;
-#line 367 "emit/split_units.bas"
-if(!qbevent)break;evnt(28755,367,"split_units.bas");}while(r);
-#line 367 "emit/split_units.bas"
+#line 13 "emit/globals.bas"
+if(!qbevent)break;evnt(30093,13,"globals.bas");}while(r);
+#line 13 "emit/globals.bas"
 }
-#line 368 "emit/split_units.bas"
-do{
-#line 368 "emit/split_units.bas"
-*_FUNC_SPLITUNITFILENAME_INTEGER_SPLITUNITFILENAME=FUNC_NUMBEREDGENERATEDFILE(func_mid(_FUNC_SPLITUNITFILENAME_STRING_B,*_FUNC_SPLITUNITFILENAME_LONG_X+ 1 ,NULL,0),qbs_new_txt_len("c",1));
-#line 368 "emit/split_units.bas"
-qbs_cleanup(qbs_tmp_base,0);
-#line 368 "emit/split_units.bas"
-if(!qbevent)break;evnt(28755,368,"split_units.bas");}while(r);
-#line 369 "emit/split_units.bas"
+#line 14 "emit/globals.bas"
 exit_subfunc:;
-#line 369 "emit/split_units.bas"
+#line 14 "emit/globals.bas"
 free_mem_lock(sf_mem_lock);
-#line 369 "emit/split_units.bas"
+#line 14 "emit/globals.bas"
 #include "free406.txt"
-#line 369 "emit/split_units.bas"
+#line 14 "emit/globals.bas"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
-#line 369 "emit/split_units.bas"
+#line 14 "emit/globals.bas"
 cmem_sp=tmp_cmem_sp;
-#line 369 "emit/split_units.bas"
-return *_FUNC_SPLITUNITFILENAME_INTEGER_SPLITUNITFILENAME;
-#line 369 "emit/split_units.bas"
+#line 14 "emit/globals.bas"
 }

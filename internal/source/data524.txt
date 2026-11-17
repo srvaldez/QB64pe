@@ -1,26 +1,108 @@
-qbs *_FUNC_GETBYTES_STRING_GETBYTES=NULL;
-#line 21322 "ide/ide_methods.bas"
-if (!_FUNC_GETBYTES_STRING_GETBYTES)_FUNC_GETBYTES_STRING_GETBYTES=qbs_new(0,0);
-#line 21322 "ide/ide_methods.bas"
-qbs*oldstr524_1=NULL;
-#line 21322 "ide/ide_methods.bas"
-if(_FUNC_GETBYTES_STRING___VALUE->tmp||_FUNC_GETBYTES_STRING___VALUE->fixed||_FUNC_GETBYTES_STRING___VALUE->readonly){
-#line 21322 "ide/ide_methods.bas"
-oldstr524_1=_FUNC_GETBYTES_STRING___VALUE;
-#line 21322 "ide/ide_methods.bas"
-if (oldstr524_1->cmem_descriptor){
-#line 21322 "ide/ide_methods.bas"
-_FUNC_GETBYTES_STRING___VALUE=qbs_new_cmem(oldstr524_1->len,0);
-#line 21322 "ide/ide_methods.bas"
-}else{
-#line 21322 "ide/ide_methods.bas"
-_FUNC_GETBYTES_STRING___VALUE=qbs_new(oldstr524_1->len,0);
-#line 21322 "ide/ide_methods.bas"
+int32 *_FUNC_DARKENFGBG_LONG_DARKENFGBG=NULL;
+#line 20875 "ide/ide_methods.bas"
+if(_FUNC_DARKENFGBG_LONG_DARKENFGBG==NULL){
+#line 20875 "ide/ide_methods.bas"
+_FUNC_DARKENFGBG_LONG_DARKENFGBG=(int32*)mem_static_malloc(4);
+#line 20875 "ide/ide_methods.bas"
+*_FUNC_DARKENFGBG_LONG_DARKENFGBG=0;
+#line 20875 "ide/ide_methods.bas"
 }
-#line 21322 "ide/ide_methods.bas"
-memcpy(_FUNC_GETBYTES_STRING___VALUE->chr,oldstr524_1->chr,oldstr524_1->len);
-#line 21322 "ide/ide_methods.bas"
+uint32 *_FUNC_DARKENFGBG_ULONG_TEMPDARKERBGCOLOR=NULL;
+#line 20879 "ide/ide_methods.bas"
+if(_FUNC_DARKENFGBG_ULONG_TEMPDARKERBGCOLOR==NULL){
+#line 20879 "ide/ide_methods.bas"
+_FUNC_DARKENFGBG_ULONG_TEMPDARKERBGCOLOR=(uint32*)mem_static_malloc(4);
+#line 20879 "ide/ide_methods.bas"
+*_FUNC_DARKENFGBG_ULONG_TEMPDARKERBGCOLOR=0;
+#line 20879 "ide/ide_methods.bas"
 }
-qbs *_FUNC_GETBYTES_STRING_VALUE=NULL;
-#line 21325 "ide/ide_methods.bas"
-if (!_FUNC_GETBYTES_STRING_VALUE)_FUNC_GETBYTES_STRING_VALUE=qbs_new(0,0);
+uint32 *_FUNC_DARKENFGBG_ULONG_TEMPDARKERBG2COLOR=NULL;
+#line 20880 "ide/ide_methods.bas"
+if(_FUNC_DARKENFGBG_ULONG_TEMPDARKERBG2COLOR==NULL){
+#line 20880 "ide/ide_methods.bas"
+_FUNC_DARKENFGBG_ULONG_TEMPDARKERBG2COLOR=(uint32*)mem_static_malloc(4);
+#line 20880 "ide/ide_methods.bas"
+*_FUNC_DARKENFGBG_ULONG_TEMPDARKERBG2COLOR=0;
+#line 20880 "ide/ide_methods.bas"
+}
+uint32 *_FUNC_DARKENFGBG_ULONG_TEMPDARKERFGCOLOR=NULL;
+#line 20881 "ide/ide_methods.bas"
+if(_FUNC_DARKENFGBG_ULONG_TEMPDARKERFGCOLOR==NULL){
+#line 20881 "ide/ide_methods.bas"
+_FUNC_DARKENFGBG_ULONG_TEMPDARKERFGCOLOR=(uint32*)mem_static_malloc(4);
+#line 20881 "ide/ide_methods.bas"
+*_FUNC_DARKENFGBG_ULONG_TEMPDARKERFGCOLOR=0;
+#line 20881 "ide/ide_methods.bas"
+}
+uint32 *_FUNC_DARKENFGBG_ULONG_TEMPDARKERKWCOLOR=NULL;
+#line 20882 "ide/ide_methods.bas"
+if(_FUNC_DARKENFGBG_ULONG_TEMPDARKERKWCOLOR==NULL){
+#line 20882 "ide/ide_methods.bas"
+_FUNC_DARKENFGBG_ULONG_TEMPDARKERKWCOLOR=(uint32*)mem_static_malloc(4);
+#line 20882 "ide/ide_methods.bas"
+*_FUNC_DARKENFGBG_ULONG_TEMPDARKERKWCOLOR=0;
+#line 20882 "ide/ide_methods.bas"
+}
+uint32 *_FUNC_DARKENFGBG_ULONG_TEMPDARKERNUMCOLOR=NULL;
+#line 20883 "ide/ide_methods.bas"
+if(_FUNC_DARKENFGBG_ULONG_TEMPDARKERNUMCOLOR==NULL){
+#line 20883 "ide/ide_methods.bas"
+_FUNC_DARKENFGBG_ULONG_TEMPDARKERNUMCOLOR=(uint32*)mem_static_malloc(4);
+#line 20883 "ide/ide_methods.bas"
+*_FUNC_DARKENFGBG_ULONG_TEMPDARKERNUMCOLOR=0;
+#line 20883 "ide/ide_methods.bas"
+}
+uint32 *_FUNC_DARKENFGBG_ULONG_TEMPDARKERCOMMENTCOLOR=NULL;
+#line 20884 "ide/ide_methods.bas"
+if(_FUNC_DARKENFGBG_ULONG_TEMPDARKERCOMMENTCOLOR==NULL){
+#line 20884 "ide/ide_methods.bas"
+_FUNC_DARKENFGBG_ULONG_TEMPDARKERCOMMENTCOLOR=(uint32*)mem_static_malloc(4);
+#line 20884 "ide/ide_methods.bas"
+*_FUNC_DARKENFGBG_ULONG_TEMPDARKERCOMMENTCOLOR=0;
+#line 20884 "ide/ide_methods.bas"
+}
+uint32 *_FUNC_DARKENFGBG_ULONG_TEMPDARKERIDECHROMACOLOR=NULL;
+#line 20885 "ide/ide_methods.bas"
+if(_FUNC_DARKENFGBG_ULONG_TEMPDARKERIDECHROMACOLOR==NULL){
+#line 20885 "ide/ide_methods.bas"
+_FUNC_DARKENFGBG_ULONG_TEMPDARKERIDECHROMACOLOR=(uint32*)mem_static_malloc(4);
+#line 20885 "ide/ide_methods.bas"
+*_FUNC_DARKENFGBG_ULONG_TEMPDARKERIDECHROMACOLOR=0;
+#line 20885 "ide/ide_methods.bas"
+}
+uint32 *_FUNC_DARKENFGBG_ULONG_TEMPDARKERMETACOLOR=NULL;
+#line 20886 "ide/ide_methods.bas"
+if(_FUNC_DARKENFGBG_ULONG_TEMPDARKERMETACOLOR==NULL){
+#line 20886 "ide/ide_methods.bas"
+_FUNC_DARKENFGBG_ULONG_TEMPDARKERMETACOLOR=(uint32*)mem_static_malloc(4);
+#line 20886 "ide/ide_methods.bas"
+*_FUNC_DARKENFGBG_ULONG_TEMPDARKERMETACOLOR=0;
+#line 20886 "ide/ide_methods.bas"
+}
+uint32 *_FUNC_DARKENFGBG_ULONG_TEMPDARKERQUOTECOLOR=NULL;
+#line 20887 "ide/ide_methods.bas"
+if(_FUNC_DARKENFGBG_ULONG_TEMPDARKERQUOTECOLOR==NULL){
+#line 20887 "ide/ide_methods.bas"
+_FUNC_DARKENFGBG_ULONG_TEMPDARKERQUOTECOLOR=(uint32*)mem_static_malloc(4);
+#line 20887 "ide/ide_methods.bas"
+*_FUNC_DARKENFGBG_ULONG_TEMPDARKERQUOTECOLOR=0;
+#line 20887 "ide/ide_methods.bas"
+}
+uint32 *_FUNC_DARKENFGBG_ULONG_TEMPDARKERERRORCOLOR=NULL;
+#line 20888 "ide/ide_methods.bas"
+if(_FUNC_DARKENFGBG_ULONG_TEMPDARKERERRORCOLOR==NULL){
+#line 20888 "ide/ide_methods.bas"
+_FUNC_DARKENFGBG_ULONG_TEMPDARKERERRORCOLOR=(uint32*)mem_static_malloc(4);
+#line 20888 "ide/ide_methods.bas"
+*_FUNC_DARKENFGBG_ULONG_TEMPDARKERERRORCOLOR=0;
+#line 20888 "ide/ide_methods.bas"
+}
+int32 *_FUNC_DARKENFGBG_LONG_IDEERRROCOLOR=NULL;
+#line 20888 "ide/ide_methods.bas"
+if(_FUNC_DARKENFGBG_LONG_IDEERRROCOLOR==NULL){
+#line 20888 "ide/ide_methods.bas"
+_FUNC_DARKENFGBG_LONG_IDEERRROCOLOR=(int32*)mem_static_malloc(4);
+#line 20888 "ide/ide_methods.bas"
+*_FUNC_DARKENFGBG_LONG_IDEERRROCOLOR=0;
+#line 20888 "ide/ide_methods.bas"
+}

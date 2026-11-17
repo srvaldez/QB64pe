@@ -1,50 +1,54 @@
-#line 27126 "qb64pe.bas"
-qbs* FUNC_STATEMENTLABEL(){
-#line 27126 "qb64pe.bas"
+#line 26686 "qb64pe.bas"
+void SUB_MAKEIDREFER(qbs*_SUB_MAKEIDREFER_STRING_REF,int32*_SUB_MAKEIDREFER_LONG_TYP){
+#line 26686 "qb64pe.bas"
 qbs *tqbs;
-#line 27126 "qb64pe.bas"
+#line 26686 "qb64pe.bas"
 ptrszint tmp_long;
-#line 27126 "qb64pe.bas"
+#line 26686 "qb64pe.bas"
 int32 tmp_fileno;
-#line 27126 "qb64pe.bas"
+#line 26686 "qb64pe.bas"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
-#line 27126 "qb64pe.bas"
+#line 26686 "qb64pe.bas"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
-#line 27126 "qb64pe.bas"
+#line 26686 "qb64pe.bas"
 uint32 tmp_cmem_sp=cmem_sp;
-#line 27126 "qb64pe.bas"
+#line 26686 "qb64pe.bas"
 #include "data88.txt"
-#line 27126 "qb64pe.bas"
+#line 26686 "qb64pe.bas"
 mem_lock *sf_mem_lock;
-#line 27126 "qb64pe.bas"
+#line 26686 "qb64pe.bas"
 new_mem_lock();
-#line 27126 "qb64pe.bas"
+#line 26686 "qb64pe.bas"
 sf_mem_lock=mem_lock_tmp;
-#line 27126 "qb64pe.bas"
+#line 26686 "qb64pe.bas"
 sf_mem_lock->type=3;
-#line 27126 "qb64pe.bas"
+#line 26686 "qb64pe.bas"
 libqb_check_stack();
-#line 27126 "qb64pe.bas"
+#line 26686 "qb64pe.bas"
 if (is_error_pending()) goto exit_subfunc;
-#line 27127 "qb64pe.bas"
+#line 26687 "qb64pe.bas"
 do{
-#line 27127 "qb64pe.bas"
-qbs_set(_FUNC_STATEMENTLABEL_STRING_STATEMENTLABEL,qbs_add(qbs_add(qbs_add(qbs_new_txt_len("S_",2),qbs__tostr((int32)(*__LONG_SUBFUNCN),NULL,0)),qbs_new_txt_len("_",1)),qbs__tostr((int32)(*__LONG_STATEMENTN),NULL,0)));
-#line 27127 "qb64pe.bas"
+#line 26687 "qb64pe.bas"
+qbs_set(_SUB_MAKEIDREFER_STRING_REF,qbs__tostr((int32)(*__LONG_CURRENTID),NULL,0));
+#line 26687 "qb64pe.bas"
 qbs_cleanup(qbs_tmp_base,0);
-#line 27127 "qb64pe.bas"
-if(!qbevent)break;evnt(27127);}while(r);
-#line 27128 "qb64pe.bas"
+#line 26687 "qb64pe.bas"
+if(!qbevent)break;evnt(26687);}while(r);
+#line 26688 "qb64pe.bas"
+do{
+#line 26688 "qb64pe.bas"
+*_SUB_MAKEIDREFER_LONG_TYP=*(int32*)(((char*)__UDT_ID)+((0+540)))+*__LONG_ISREFERENCE;
+#line 26688 "qb64pe.bas"
+if(!qbevent)break;evnt(26688);}while(r);
+#line 26689 "qb64pe.bas"
 exit_subfunc:;
-#line 27128 "qb64pe.bas"
+#line 26689 "qb64pe.bas"
 free_mem_lock(sf_mem_lock);
-#line 27128 "qb64pe.bas"
+#line 26689 "qb64pe.bas"
 #include "free88.txt"
-#line 27128 "qb64pe.bas"
+#line 26689 "qb64pe.bas"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
-#line 27128 "qb64pe.bas"
+#line 26689 "qb64pe.bas"
 cmem_sp=tmp_cmem_sp;
-#line 27128 "qb64pe.bas"
-qbs_maketmp(_FUNC_STATEMENTLABEL_STRING_STATEMENTLABEL);return _FUNC_STATEMENTLABEL_STRING_STATEMENTLABEL;
-#line 27128 "qb64pe.bas"
+#line 26689 "qb64pe.bas"
 }

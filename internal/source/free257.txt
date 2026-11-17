@@ -1,7 +1,5 @@
 if(oldstr257_1){
-if(oldstr257_1->fixed)qbs_set(oldstr257_1,_FUNC_LOGICALEQV_STRING_EXP);
-qbs_free(_FUNC_LOGICALEQV_STRING_EXP);
+if(oldstr257_1->fixed)qbs_set(oldstr257_1,_FUNC_BUFMATCHESFILE_STRING_FILESPEC);
+qbs_free(_FUNC_BUFMATCHESFILE_STRING_FILESPEC);
 }
-#line 285 "utilities/const_eval.bas"
-qbs_free(*(qbs**)(((char*)(_FUNC_LOGICALEQV_UDT_NUM))+((0+48))));
-qbs_free(_FUNC_LOGICALEQV_STRING_ELE);
+qbs_free(_FUNC_BUFMATCHESFILE_STRING_DAT);

@@ -1,46 +1,64 @@
-qbs *_FUNC_INICURRENTSECTION_STRING_INICURRENTSECTION=NULL;
-#line 259 "utilities/ini-manager/ini.bm"
-if (!_FUNC_INICURRENTSECTION_STRING_INICURRENTSECTION)_FUNC_INICURRENTSECTION_STRING_INICURRENTSECTION=qbs_new(0,0);
-uint32 *_FUNC_INICURRENTSECTION_ULONG_GLOBALPOSITION=NULL;
-#line 262 "utilities/ini-manager/ini.bm"
-if(_FUNC_INICURRENTSECTION_ULONG_GLOBALPOSITION==NULL){
-#line 262 "utilities/ini-manager/ini.bm"
-_FUNC_INICURRENTSECTION_ULONG_GLOBALPOSITION=(uint32*)mem_static_malloc(4);
-#line 262 "utilities/ini-manager/ini.bm"
-*_FUNC_INICURRENTSECTION_ULONG_GLOBALPOSITION=0;
-#line 262 "utilities/ini-manager/ini.bm"
+int32 *_FUNC_ELEMENTGETSTRINGVALUE_LONG_ELEMENTGETSTRINGVALUE=NULL;
+#line 564 "utilities/elements.bas"
+if(_FUNC_ELEMENTGETSTRINGVALUE_LONG_ELEMENTGETSTRINGVALUE==NULL){
+#line 564 "utilities/elements.bas"
+_FUNC_ELEMENTGETSTRINGVALUE_LONG_ELEMENTGETSTRINGVALUE=(int32*)mem_static_malloc(4);
+#line 564 "utilities/elements.bas"
+*_FUNC_ELEMENTGETSTRINGVALUE_LONG_ELEMENTGETSTRINGVALUE=0;
+#line 564 "utilities/elements.bas"
 }
-uint32 *_FUNC_INICURRENTSECTION_ULONG_I=NULL;
-#line 262 "utilities/ini-manager/ini.bm"
-if(_FUNC_INICURRENTSECTION_ULONG_I==NULL){
-#line 262 "utilities/ini-manager/ini.bm"
-_FUNC_INICURRENTSECTION_ULONG_I=(uint32*)mem_static_malloc(4);
-#line 262 "utilities/ini-manager/ini.bm"
-*_FUNC_INICURRENTSECTION_ULONG_I=0;
-#line 262 "utilities/ini-manager/ini.bm"
+#line 564 "utilities/elements.bas"
+qbs*oldstr204_1=NULL;
+#line 564 "utilities/elements.bas"
+if(_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE->tmp||_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE->fixed||_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE->readonly){
+#line 564 "utilities/elements.bas"
+oldstr204_1=_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE;
+#line 564 "utilities/elements.bas"
+if (oldstr204_1->cmem_descriptor){
+#line 564 "utilities/elements.bas"
+_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE=qbs_new_cmem(oldstr204_1->len,0);
+#line 564 "utilities/elements.bas"
+}else{
+#line 564 "utilities/elements.bas"
+_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE=qbs_new(oldstr204_1->len,0);
+#line 564 "utilities/elements.bas"
 }
-uint32 *_FUNC_INICURRENTSECTION_ULONG_CLOSINGBRACKET=NULL;
-#line 263 "utilities/ini-manager/ini.bm"
-if(_FUNC_INICURRENTSECTION_ULONG_CLOSINGBRACKET==NULL){
-#line 263 "utilities/ini-manager/ini.bm"
-_FUNC_INICURRENTSECTION_ULONG_CLOSINGBRACKET=(uint32*)mem_static_malloc(4);
-#line 263 "utilities/ini-manager/ini.bm"
-*_FUNC_INICURRENTSECTION_ULONG_CLOSINGBRACKET=0;
-#line 263 "utilities/ini-manager/ini.bm"
+#line 564 "utilities/elements.bas"
+memcpy(_FUNC_ELEMENTGETSTRINGVALUE_STRING_ELE->chr,oldstr204_1->chr,oldstr204_1->len);
+#line 564 "utilities/elements.bas"
 }
-#line 268 "utilities/ini-manager/ini.bm"
-int64 fornext_value204_2;
-#line 268 "utilities/ini-manager/ini.bm"
-int64 fornext_finalvalue204_2;
-#line 268 "utilities/ini-manager/ini.bm"
-int64 fornext_step204_2;
-#line 268 "utilities/ini-manager/ini.bm"
-uint8 fornext_step_negative204_2;
-#line 277 "utilities/ini-manager/ini.bm"
-int64 fornext_value204_4;
-#line 277 "utilities/ini-manager/ini.bm"
-int64 fornext_finalvalue204_4;
-#line 277 "utilities/ini-manager/ini.bm"
-int64 fornext_step204_4;
-#line 277 "utilities/ini-manager/ini.bm"
-uint8 fornext_step_negative204_4;
+#line 564 "utilities/elements.bas"
+qbs*oldstr204_2=NULL;
+#line 564 "utilities/elements.bas"
+if(_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE->tmp||_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE->fixed||_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE->readonly){
+#line 564 "utilities/elements.bas"
+oldstr204_2=_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE;
+#line 564 "utilities/elements.bas"
+if (oldstr204_2->cmem_descriptor){
+#line 564 "utilities/elements.bas"
+_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE=qbs_new_cmem(oldstr204_2->len,0);
+#line 564 "utilities/elements.bas"
+}else{
+#line 564 "utilities/elements.bas"
+_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE=qbs_new(oldstr204_2->len,0);
+#line 564 "utilities/elements.bas"
+}
+#line 564 "utilities/elements.bas"
+memcpy(_FUNC_ELEMENTGETSTRINGVALUE_STRING_VALUE->chr,oldstr204_2->chr,oldstr204_2->len);
+#line 564 "utilities/elements.bas"
+}
+qbs *_FUNC_ELEMENTGETSTRINGVALUE_STRING_RAWSTRING=NULL;
+#line 565 "utilities/elements.bas"
+if (!_FUNC_ELEMENTGETSTRINGVALUE_STRING_RAWSTRING)_FUNC_ELEMENTGETSTRINGVALUE_STRING_RAWSTRING=qbs_new(0,0);
+qbs *_FUNC_ELEMENTGETSTRINGVALUE_STRING_RES=NULL;
+#line 565 "utilities/elements.bas"
+if (!_FUNC_ELEMENTGETSTRINGVALUE_STRING_RES)_FUNC_ELEMENTGETSTRINGVALUE_STRING_RES=qbs_new(0,0);
+int32 *_FUNC_ELEMENTGETSTRINGVALUE_LONG_I=NULL;
+#line 565 "utilities/elements.bas"
+if(_FUNC_ELEMENTGETSTRINGVALUE_LONG_I==NULL){
+#line 565 "utilities/elements.bas"
+_FUNC_ELEMENTGETSTRINGVALUE_LONG_I=(int32*)mem_static_malloc(4);
+#line 565 "utilities/elements.bas"
+*_FUNC_ELEMENTGETSTRINGVALUE_LONG_I=0;
+#line 565 "utilities/elements.bas"
+}

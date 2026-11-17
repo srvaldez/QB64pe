@@ -1,3 +1,38 @@
-qbs *_FUNC_GETMAKEEXECUTABLE_STRING_GETMAKEEXECUTABLE=NULL;
-#line 20 "utilities/build.bas"
-if (!_FUNC_GETMAKEEXECUTABLE_STRING_GETMAKEEXECUTABLE)_FUNC_GETMAKEEXECUTABLE_STRING_GETMAKEEXECUTABLE=qbs_new(0,0);
+int64 *_FUNC_FILELENGTH_INTEGER64_FILELENGTH=NULL;
+#line 19 "utilities/file.bas"
+if(_FUNC_FILELENGTH_INTEGER64_FILELENGTH==NULL){
+#line 19 "utilities/file.bas"
+_FUNC_FILELENGTH_INTEGER64_FILELENGTH=(int64*)mem_static_malloc(8);
+#line 19 "utilities/file.bas"
+*_FUNC_FILELENGTH_INTEGER64_FILELENGTH=0;
+#line 19 "utilities/file.bas"
+}
+#line 19 "utilities/file.bas"
+qbs*oldstr168_1=NULL;
+#line 19 "utilities/file.bas"
+if(_FUNC_FILELENGTH_STRING_FILESPEC->tmp||_FUNC_FILELENGTH_STRING_FILESPEC->fixed||_FUNC_FILELENGTH_STRING_FILESPEC->readonly){
+#line 19 "utilities/file.bas"
+oldstr168_1=_FUNC_FILELENGTH_STRING_FILESPEC;
+#line 19 "utilities/file.bas"
+if (oldstr168_1->cmem_descriptor){
+#line 19 "utilities/file.bas"
+_FUNC_FILELENGTH_STRING_FILESPEC=qbs_new_cmem(oldstr168_1->len,0);
+#line 19 "utilities/file.bas"
+}else{
+#line 19 "utilities/file.bas"
+_FUNC_FILELENGTH_STRING_FILESPEC=qbs_new(oldstr168_1->len,0);
+#line 19 "utilities/file.bas"
+}
+#line 19 "utilities/file.bas"
+memcpy(_FUNC_FILELENGTH_STRING_FILESPEC->chr,oldstr168_1->chr,oldstr168_1->len);
+#line 19 "utilities/file.bas"
+}
+int16 *_FUNC_FILELENGTH_INTEGER_FF=NULL;
+#line 20 "utilities/file.bas"
+if(_FUNC_FILELENGTH_INTEGER_FF==NULL){
+#line 20 "utilities/file.bas"
+_FUNC_FILELENGTH_INTEGER_FF=(int16*)mem_static_malloc(2);
+#line 20 "utilities/file.bas"
+*_FUNC_FILELENGTH_INTEGER_FF=0;
+#line 20 "utilities/file.bas"
+}

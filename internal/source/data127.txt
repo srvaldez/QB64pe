@@ -1,0 +1,72 @@
+int32 *_FUNC_VARLISTHASHVALUE_LONG_VARLISTHASHVALUE=NULL;
+#line 29816 "qb64pe.bas"
+if(_FUNC_VARLISTHASHVALUE_LONG_VARLISTHASHVALUE==NULL){
+#line 29816 "qb64pe.bas"
+_FUNC_VARLISTHASHVALUE_LONG_VARLISTHASHVALUE=(int32*)mem_static_malloc(4);
+#line 29816 "qb64pe.bas"
+*_FUNC_VARLISTHASHVALUE_LONG_VARLISTHASHVALUE=0;
+#line 29816 "qb64pe.bas"
+}
+#line 29816 "qb64pe.bas"
+qbs*oldstr127_1=NULL;
+#line 29816 "qb64pe.bas"
+if(_FUNC_VARLISTHASHVALUE_STRING_A->tmp||_FUNC_VARLISTHASHVALUE_STRING_A->fixed||_FUNC_VARLISTHASHVALUE_STRING_A->readonly){
+#line 29816 "qb64pe.bas"
+oldstr127_1=_FUNC_VARLISTHASHVALUE_STRING_A;
+#line 29816 "qb64pe.bas"
+if (oldstr127_1->cmem_descriptor){
+#line 29816 "qb64pe.bas"
+_FUNC_VARLISTHASHVALUE_STRING_A=qbs_new_cmem(oldstr127_1->len,0);
+#line 29816 "qb64pe.bas"
+}else{
+#line 29816 "qb64pe.bas"
+_FUNC_VARLISTHASHVALUE_STRING_A=qbs_new(oldstr127_1->len,0);
+#line 29816 "qb64pe.bas"
+}
+#line 29816 "qb64pe.bas"
+memcpy(_FUNC_VARLISTHASHVALUE_STRING_A->chr,oldstr127_1->chr,oldstr127_1->len);
+#line 29816 "qb64pe.bas"
+}
+uint32 *_FUNC_VARLISTHASHVALUE_ULONG_H=NULL;
+#line 29817 "qb64pe.bas"
+if(_FUNC_VARLISTHASHVALUE_ULONG_H==NULL){
+#line 29817 "qb64pe.bas"
+_FUNC_VARLISTHASHVALUE_ULONG_H=(uint32*)mem_static_malloc(4);
+#line 29817 "qb64pe.bas"
+*_FUNC_VARLISTHASHVALUE_ULONG_H=0;
+#line 29817 "qb64pe.bas"
+}
+int32 *_FUNC_VARLISTHASHVALUE_LONG_I=NULL;
+#line 29817 "qb64pe.bas"
+if(_FUNC_VARLISTHASHVALUE_LONG_I==NULL){
+#line 29817 "qb64pe.bas"
+_FUNC_VARLISTHASHVALUE_LONG_I=(int32*)mem_static_malloc(4);
+#line 29817 "qb64pe.bas"
+*_FUNC_VARLISTHASHVALUE_LONG_I=0;
+#line 29817 "qb64pe.bas"
+}
+int32 *_FUNC_VARLISTHASHVALUE_LONG_L=NULL;
+#line 29817 "qb64pe.bas"
+if(_FUNC_VARLISTHASHVALUE_LONG_L==NULL){
+#line 29817 "qb64pe.bas"
+_FUNC_VARLISTHASHVALUE_LONG_L=(int32*)mem_static_malloc(4);
+#line 29817 "qb64pe.bas"
+*_FUNC_VARLISTHASHVALUE_LONG_L=0;
+#line 29817 "qb64pe.bas"
+}
+#line 29819 "qb64pe.bas"
+byte_element_struct *byte_element_127_2=NULL;
+#line 29819 "qb64pe.bas"
+if (!byte_element_127_2){
+#line 29819 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_127_2=(byte_element_struct*)(mem_static_pointer-12); else byte_element_127_2=(byte_element_struct*)mem_static_malloc(12);
+#line 29819 "qb64pe.bas"
+}
+#line 29821 "qb64pe.bas"
+int64 fornext_value127_4;
+#line 29821 "qb64pe.bas"
+int64 fornext_finalvalue127_4;
+#line 29821 "qb64pe.bas"
+int64 fornext_step127_4;
+#line 29821 "qb64pe.bas"
+uint8 fornext_step_negative127_4;

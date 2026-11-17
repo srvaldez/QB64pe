@@ -1,18 +1,55 @@
-int32 *_FUNC_HELP_COL_LONG_HELP_COL=NULL;
-#line 251 "ide/wiki/wiki_methods.bas"
-if(_FUNC_HELP_COL_LONG_HELP_COL==NULL){
-#line 251 "ide/wiki/wiki_methods.bas"
-_FUNC_HELP_COL_LONG_HELP_COL=(int32*)mem_static_malloc(4);
-#line 251 "ide/wiki/wiki_methods.bas"
-*_FUNC_HELP_COL_LONG_HELP_COL=0;
-#line 251 "ide/wiki/wiki_methods.bas"
+#line 21143 "ide/ide_methods.bas"
+qbs*oldstr534_1=NULL;
+#line 21143 "ide/ide_methods.bas"
+if(_SUB_INSERTATCURSOR_STRING_TEMPK->tmp||_SUB_INSERTATCURSOR_STRING_TEMPK->fixed||_SUB_INSERTATCURSOR_STRING_TEMPK->readonly){
+#line 21143 "ide/ide_methods.bas"
+oldstr534_1=_SUB_INSERTATCURSOR_STRING_TEMPK;
+#line 21143 "ide/ide_methods.bas"
+if (oldstr534_1->cmem_descriptor){
+#line 21143 "ide/ide_methods.bas"
+_SUB_INSERTATCURSOR_STRING_TEMPK=qbs_new_cmem(oldstr534_1->len,0);
+#line 21143 "ide/ide_methods.bas"
+}else{
+#line 21143 "ide/ide_methods.bas"
+_SUB_INSERTATCURSOR_STRING_TEMPK=qbs_new(oldstr534_1->len,0);
+#line 21143 "ide/ide_methods.bas"
 }
-int32 *_FUNC_HELP_COL_LONG_COL=NULL;
-#line 252 "ide/wiki/wiki_methods.bas"
-if(_FUNC_HELP_COL_LONG_COL==NULL){
-#line 252 "ide/wiki/wiki_methods.bas"
-_FUNC_HELP_COL_LONG_COL=(int32*)mem_static_malloc(4);
-#line 252 "ide/wiki/wiki_methods.bas"
-*_FUNC_HELP_COL_LONG_COL=0;
-#line 252 "ide/wiki/wiki_methods.bas"
+#line 21143 "ide/ide_methods.bas"
+memcpy(_SUB_INSERTATCURSOR_STRING_TEMPK->chr,oldstr534_1->chr,oldstr534_1->len);
+#line 21143 "ide/ide_methods.bas"
+}
+qbs *_SUB_INSERTATCURSOR_STRING_A=NULL;
+#line 21146 "ide/ide_methods.bas"
+if (!_SUB_INSERTATCURSOR_STRING_A)_SUB_INSERTATCURSOR_STRING_A=qbs_new(0,0);
+#line 21147 "ide/ide_methods.bas"
+byte_element_struct *byte_element_534_2=NULL;
+#line 21147 "ide/ide_methods.bas"
+if (!byte_element_534_2){
+#line 21147 "ide/ide_methods.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_534_2=(byte_element_struct*)(mem_static_pointer-12); else byte_element_534_2=(byte_element_struct*)mem_static_malloc(12);
+#line 21147 "ide/ide_methods.bas"
+}
+#line 21147 "ide/ide_methods.bas"
+byte_element_struct *byte_element_534_3=NULL;
+#line 21147 "ide/ide_methods.bas"
+if (!byte_element_534_3){
+#line 21147 "ide/ide_methods.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_534_3=(byte_element_struct*)(mem_static_pointer-12); else byte_element_534_3=(byte_element_struct*)mem_static_malloc(12);
+#line 21147 "ide/ide_methods.bas"
+}
+#line 21148 "ide/ide_methods.bas"
+byte_element_struct *byte_element_534_4=NULL;
+#line 21148 "ide/ide_methods.bas"
+if (!byte_element_534_4){
+#line 21148 "ide/ide_methods.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_534_4=(byte_element_struct*)(mem_static_pointer-12); else byte_element_534_4=(byte_element_struct*)mem_static_malloc(12);
+#line 21148 "ide/ide_methods.bas"
+}
+#line 21153 "ide/ide_methods.bas"
+byte_element_struct *byte_element_534_5=NULL;
+#line 21153 "ide/ide_methods.bas"
+if (!byte_element_534_5){
+#line 21153 "ide/ide_methods.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_534_5=(byte_element_struct*)(mem_static_pointer-12); else byte_element_534_5=(byte_element_struct*)mem_static_malloc(12);
+#line 21153 "ide/ide_methods.bas"
 }

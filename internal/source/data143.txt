@@ -1,119 +1,90 @@
-qbs *_FUNC_STRREPLACE_STRING_STRREPLACE=NULL;
-#line 18 "utilities/strings.bas"
-if (!_FUNC_STRREPLACE_STRING_STRREPLACE)_FUNC_STRREPLACE_STRING_STRREPLACE=qbs_new(0,0);
-#line 18 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
 qbs*oldstr143_1=NULL;
-#line 18 "utilities/strings.bas"
-if(_FUNC_STRREPLACE_STRING_MYSTRING->tmp||_FUNC_STRREPLACE_STRING_MYSTRING->fixed||_FUNC_STRREPLACE_STRING_MYSTRING->readonly){
-#line 18 "utilities/strings.bas"
-oldstr143_1=_FUNC_STRREPLACE_STRING_MYSTRING;
-#line 18 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+if(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_EXPR->tmp||_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_EXPR->fixed||_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_EXPR->readonly){
+#line 442 "utilities/arrcpy.bm"
+oldstr143_1=_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_EXPR;
+#line 442 "utilities/arrcpy.bm"
 if (oldstr143_1->cmem_descriptor){
-#line 18 "utilities/strings.bas"
-_FUNC_STRREPLACE_STRING_MYSTRING=qbs_new_cmem(oldstr143_1->len,0);
-#line 18 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_EXPR=qbs_new_cmem(oldstr143_1->len,0);
+#line 442 "utilities/arrcpy.bm"
 }else{
-#line 18 "utilities/strings.bas"
-_FUNC_STRREPLACE_STRING_MYSTRING=qbs_new(oldstr143_1->len,0);
-#line 18 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_EXPR=qbs_new(oldstr143_1->len,0);
+#line 442 "utilities/arrcpy.bm"
 }
-#line 18 "utilities/strings.bas"
-memcpy(_FUNC_STRREPLACE_STRING_MYSTRING->chr,oldstr143_1->chr,oldstr143_1->len);
-#line 18 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+memcpy(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_EXPR->chr,oldstr143_1->chr,oldstr143_1->len);
+#line 442 "utilities/arrcpy.bm"
 }
-#line 18 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
 qbs*oldstr143_2=NULL;
-#line 18 "utilities/strings.bas"
-if(_FUNC_STRREPLACE_STRING_FIND->tmp||_FUNC_STRREPLACE_STRING_FIND->fixed||_FUNC_STRREPLACE_STRING_FIND->readonly){
-#line 18 "utilities/strings.bas"
-oldstr143_2=_FUNC_STRREPLACE_STRING_FIND;
-#line 18 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+if(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_EXPR->tmp||_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_EXPR->fixed||_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_EXPR->readonly){
+#line 442 "utilities/arrcpy.bm"
+oldstr143_2=_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_EXPR;
+#line 442 "utilities/arrcpy.bm"
 if (oldstr143_2->cmem_descriptor){
-#line 18 "utilities/strings.bas"
-_FUNC_STRREPLACE_STRING_FIND=qbs_new_cmem(oldstr143_2->len,0);
-#line 18 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_EXPR=qbs_new_cmem(oldstr143_2->len,0);
+#line 442 "utilities/arrcpy.bm"
 }else{
-#line 18 "utilities/strings.bas"
-_FUNC_STRREPLACE_STRING_FIND=qbs_new(oldstr143_2->len,0);
-#line 18 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_EXPR=qbs_new(oldstr143_2->len,0);
+#line 442 "utilities/arrcpy.bm"
 }
-#line 18 "utilities/strings.bas"
-memcpy(_FUNC_STRREPLACE_STRING_FIND->chr,oldstr143_2->chr,oldstr143_2->len);
-#line 18 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+memcpy(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_EXPR->chr,oldstr143_2->chr,oldstr143_2->len);
+#line 442 "utilities/arrcpy.bm"
 }
-#line 18 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
 qbs*oldstr143_3=NULL;
-#line 18 "utilities/strings.bas"
-if(_FUNC_STRREPLACE_STRING_REPLACEWITH->tmp||_FUNC_STRREPLACE_STRING_REPLACEWITH->fixed||_FUNC_STRREPLACE_STRING_REPLACEWITH->readonly){
-#line 18 "utilities/strings.bas"
-oldstr143_3=_FUNC_STRREPLACE_STRING_REPLACEWITH;
-#line 18 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+if(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_CODE->tmp||_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_CODE->fixed||_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_CODE->readonly){
+#line 442 "utilities/arrcpy.bm"
+oldstr143_3=_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_CODE;
+#line 442 "utilities/arrcpy.bm"
 if (oldstr143_3->cmem_descriptor){
-#line 18 "utilities/strings.bas"
-_FUNC_STRREPLACE_STRING_REPLACEWITH=qbs_new_cmem(oldstr143_3->len,0);
-#line 18 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_CODE=qbs_new_cmem(oldstr143_3->len,0);
+#line 442 "utilities/arrcpy.bm"
 }else{
-#line 18 "utilities/strings.bas"
-_FUNC_STRREPLACE_STRING_REPLACEWITH=qbs_new(oldstr143_3->len,0);
-#line 18 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_CODE=qbs_new(oldstr143_3->len,0);
+#line 442 "utilities/arrcpy.bm"
 }
-#line 18 "utilities/strings.bas"
-memcpy(_FUNC_STRREPLACE_STRING_REPLACEWITH->chr,oldstr143_3->chr,oldstr143_3->len);
-#line 18 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+memcpy(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_CODE->chr,oldstr143_3->chr,oldstr143_3->len);
+#line 442 "utilities/arrcpy.bm"
 }
-qbs *_FUNC_STRREPLACE_STRING_A=NULL;
-#line 19 "utilities/strings.bas"
-if (!_FUNC_STRREPLACE_STRING_A)_FUNC_STRREPLACE_STRING_A=qbs_new(0,0);
-qbs *_FUNC_STRREPLACE_STRING_B=NULL;
-#line 19 "utilities/strings.bas"
-if (!_FUNC_STRREPLACE_STRING_B)_FUNC_STRREPLACE_STRING_B=qbs_new(0,0);
-int32 *_FUNC_STRREPLACE_LONG_BASEI=NULL;
-#line 20 "utilities/strings.bas"
-if(_FUNC_STRREPLACE_LONG_BASEI==NULL){
-#line 20 "utilities/strings.bas"
-_FUNC_STRREPLACE_LONG_BASEI=(int32*)mem_static_malloc(4);
-#line 20 "utilities/strings.bas"
-*_FUNC_STRREPLACE_LONG_BASEI=0;
-#line 20 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+qbs*oldstr143_4=NULL;
+#line 442 "utilities/arrcpy.bm"
+if(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_CODE->tmp||_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_CODE->fixed||_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_CODE->readonly){
+#line 442 "utilities/arrcpy.bm"
+oldstr143_4=_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_CODE;
+#line 442 "utilities/arrcpy.bm"
+if (oldstr143_4->cmem_descriptor){
+#line 442 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_CODE=qbs_new_cmem(oldstr143_4->len,0);
+#line 442 "utilities/arrcpy.bm"
+}else{
+#line 442 "utilities/arrcpy.bm"
+_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_CODE=qbs_new(oldstr143_4->len,0);
+#line 442 "utilities/arrcpy.bm"
 }
-int32 *_FUNC_STRREPLACE_LONG_I=NULL;
-#line 20 "utilities/strings.bas"
-if(_FUNC_STRREPLACE_LONG_I==NULL){
-#line 20 "utilities/strings.bas"
-_FUNC_STRREPLACE_LONG_I=(int32*)mem_static_malloc(4);
-#line 20 "utilities/strings.bas"
-*_FUNC_STRREPLACE_LONG_I=0;
-#line 20 "utilities/strings.bas"
+#line 442 "utilities/arrcpy.bm"
+memcpy(_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_CODE->chr,oldstr143_4->chr,oldstr143_4->len);
+#line 442 "utilities/arrcpy.bm"
 }
-#line 21 "utilities/strings.bas"
-byte_element_struct *byte_element_143_4=NULL;
-#line 21 "utilities/strings.bas"
-if (!byte_element_143_4){
-#line 21 "utilities/strings.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_143_4=(byte_element_struct*)(mem_static_pointer-12); else byte_element_143_4=(byte_element_struct*)mem_static_malloc(12);
-#line 21 "utilities/strings.bas"
-}
-#line 27 "utilities/strings.bas"
-byte_element_struct *byte_element_143_6=NULL;
-#line 27 "utilities/strings.bas"
-if (!byte_element_143_6){
-#line 27 "utilities/strings.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_143_6=(byte_element_struct*)(mem_static_pointer-12); else byte_element_143_6=(byte_element_struct*)mem_static_malloc(12);
-#line 27 "utilities/strings.bas"
-}
-#line 27 "utilities/strings.bas"
-byte_element_struct *byte_element_143_7=NULL;
-#line 27 "utilities/strings.bas"
-if (!byte_element_143_7){
-#line 27 "utilities/strings.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_143_7=(byte_element_struct*)(mem_static_pointer-12); else byte_element_143_7=(byte_element_struct*)mem_static_malloc(12);
-#line 27 "utilities/strings.bas"
-}
-#line 28 "utilities/strings.bas"
-byte_element_struct *byte_element_143_8=NULL;
-#line 28 "utilities/strings.bas"
-if (!byte_element_143_8){
-#line 28 "utilities/strings.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_143_8=(byte_element_struct*)(mem_static_pointer-12); else byte_element_143_8=(byte_element_struct*)mem_static_malloc(12);
-#line 28 "utilities/strings.bas"
-}
+qbs *_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_WORK=NULL;
+#line 443 "utilities/arrcpy.bm"
+if (!_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_WORK)_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_LOW_WORK=qbs_new(0,0);
+qbs *_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_WORK=NULL;
+#line 443 "utilities/arrcpy.bm"
+if (!_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_WORK)_SUB_PARSEARRAYCOPYSOURCERANGE1D_STRING_SRC_HIGH_WORK=qbs_new(0,0);
+#line 447 "utilities/arrcpy.bm"
+int32 pass143_5;
+#line 452 "utilities/arrcpy.bm"
+int32 pass143_6;

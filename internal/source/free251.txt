@@ -1,5 +1,4 @@
 if(oldstr251_1){
-if(oldstr251_1->fixed)qbs_set(oldstr251_1,_SUB_FINDINNERPARENS_STRING_EXP);
-qbs_free(_SUB_FINDINNERPARENS_STRING_EXP);
+if(oldstr251_1->fixed)qbs_set(oldstr251_1,_SUB_CLEARBUFFERS_STRING_SBNAME);
+qbs_free(_SUB_CLEARBUFFERS_STRING_SBNAME);
 }
-qbs_free(_SUB_FINDINNERPARENS_STRING_ELE);

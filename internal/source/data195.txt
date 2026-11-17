@@ -1,66 +1,83 @@
-qbs *_FUNC_GL2QB_TYPE_CONVERT_STRING_GL2QB_TYPE_CONVERT=NULL;
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
-if (!_FUNC_GL2QB_TYPE_CONVERT_STRING_GL2QB_TYPE_CONVERT)_FUNC_GL2QB_TYPE_CONVERT_STRING_GL2QB_TYPE_CONVERT=qbs_new(0,0);
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
+#line 184 "utilities/elements.bas"
 qbs*oldstr195_1=NULL;
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
-if(_FUNC_GL2QB_TYPE_CONVERT_STRING_A->tmp||_FUNC_GL2QB_TYPE_CONVERT_STRING_A->fixed||_FUNC_GL2QB_TYPE_CONVERT_STRING_A->readonly){
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
-oldstr195_1=_FUNC_GL2QB_TYPE_CONVERT_STRING_A;
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
+#line 184 "utilities/elements.bas"
+if(_SUB_REMOVEELEMENTS_STRING_A->tmp||_SUB_REMOVEELEMENTS_STRING_A->fixed||_SUB_REMOVEELEMENTS_STRING_A->readonly){
+#line 184 "utilities/elements.bas"
+oldstr195_1=_SUB_REMOVEELEMENTS_STRING_A;
+#line 184 "utilities/elements.bas"
 if (oldstr195_1->cmem_descriptor){
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
-_FUNC_GL2QB_TYPE_CONVERT_STRING_A=qbs_new_cmem(oldstr195_1->len,0);
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
+#line 184 "utilities/elements.bas"
+_SUB_REMOVEELEMENTS_STRING_A=qbs_new_cmem(oldstr195_1->len,0);
+#line 184 "utilities/elements.bas"
 }else{
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
-_FUNC_GL2QB_TYPE_CONVERT_STRING_A=qbs_new(oldstr195_1->len,0);
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
+#line 184 "utilities/elements.bas"
+_SUB_REMOVEELEMENTS_STRING_A=qbs_new(oldstr195_1->len,0);
+#line 184 "utilities/elements.bas"
 }
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
-memcpy(_FUNC_GL2QB_TYPE_CONVERT_STRING_A->chr,oldstr195_1->chr,oldstr195_1->len);
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
+#line 184 "utilities/elements.bas"
+memcpy(_SUB_REMOVEELEMENTS_STRING_A->chr,oldstr195_1->chr,oldstr195_1->len);
+#line 184 "utilities/elements.bas"
 }
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
-qbs*oldstr195_2=NULL;
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
-if(_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL->tmp||_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL->fixed||_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL->readonly){
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
-oldstr195_2=_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL;
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
-if (oldstr195_2->cmem_descriptor){
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
-_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL=qbs_new_cmem(oldstr195_2->len,0);
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
-}else{
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
-_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL=qbs_new(oldstr195_2->len,0);
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
+int32 *_SUB_REMOVEELEMENTS_LONG_N=NULL;
+#line 185 "utilities/elements.bas"
+if(_SUB_REMOVEELEMENTS_LONG_N==NULL){
+#line 185 "utilities/elements.bas"
+_SUB_REMOVEELEMENTS_LONG_N=(int32*)mem_static_malloc(4);
+#line 185 "utilities/elements.bas"
+*_SUB_REMOVEELEMENTS_LONG_N=0;
+#line 185 "utilities/elements.bas"
 }
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
-memcpy(_FUNC_GL2QB_TYPE_CONVERT_STRING_SYMBOL->chr,oldstr195_2->chr,oldstr195_2->len);
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
+int32 *_SUB_REMOVEELEMENTS_LONG_I=NULL;
+#line 185 "utilities/elements.bas"
+if(_SUB_REMOVEELEMENTS_LONG_I==NULL){
+#line 185 "utilities/elements.bas"
+_SUB_REMOVEELEMENTS_LONG_I=(int32*)mem_static_malloc(4);
+#line 185 "utilities/elements.bas"
+*_SUB_REMOVEELEMENTS_LONG_I=0;
+#line 185 "utilities/elements.bas"
 }
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
-qbs*oldstr195_3=NULL;
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
-if(_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP->tmp||_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP->fixed||_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP->readonly){
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
-oldstr195_3=_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP;
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
-if (oldstr195_3->cmem_descriptor){
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
-_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP=qbs_new_cmem(oldstr195_3->len,0);
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
-}else{
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
-_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP=qbs_new(oldstr195_3->len,0);
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
+qbs *_SUB_REMOVEELEMENTS_STRING_A2=NULL;
+#line 185 "utilities/elements.bas"
+if (!_SUB_REMOVEELEMENTS_STRING_A2)_SUB_REMOVEELEMENTS_STRING_A2=qbs_new(0,0);
+int32 *_SUB_REMOVEELEMENTS_LONG_P=NULL;
+#line 185 "utilities/elements.bas"
+if(_SUB_REMOVEELEMENTS_LONG_P==NULL){
+#line 185 "utilities/elements.bas"
+_SUB_REMOVEELEMENTS_LONG_P=(int32*)mem_static_malloc(4);
+#line 185 "utilities/elements.bas"
+*_SUB_REMOVEELEMENTS_LONG_P=0;
+#line 185 "utilities/elements.bas"
 }
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
-memcpy(_FUNC_GL2QB_TYPE_CONVERT_STRING_CTYP->chr,oldstr195_3->chr,oldstr195_3->len);
-#line 1 "subs_functions/extensions/opengl/opengl_methods.bas"
+int32 *_SUB_REMOVEELEMENTS_LONG_Q=NULL;
+#line 185 "utilities/elements.bas"
+if(_SUB_REMOVEELEMENTS_LONG_Q==NULL){
+#line 185 "utilities/elements.bas"
+_SUB_REMOVEELEMENTS_LONG_Q=(int32*)mem_static_malloc(4);
+#line 185 "utilities/elements.bas"
+*_SUB_REMOVEELEMENTS_LONG_Q=0;
+#line 185 "utilities/elements.bas"
 }
-qbs *_FUNC_GL2QB_TYPE_CONVERT_STRING_B=NULL;
-#line 5 "subs_functions/extensions/opengl/opengl_methods.bas"
-if (!_FUNC_GL2QB_TYPE_CONVERT_STRING_B)_FUNC_GL2QB_TYPE_CONVERT_STRING_B=qbs_new(0,0);
+#line 194 "utilities/elements.bas"
+int64 fornext_value195_3;
+#line 194 "utilities/elements.bas"
+int64 fornext_finalvalue195_3;
+#line 194 "utilities/elements.bas"
+int64 fornext_step195_3;
+#line 194 "utilities/elements.bas"
+uint8 fornext_step_negative195_3;
+#line 196 "utilities/elements.bas"
+byte_element_struct *byte_element_195_4=NULL;
+#line 196 "utilities/elements.bas"
+if (!byte_element_195_4){
+#line 196 "utilities/elements.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_195_4=(byte_element_struct*)(mem_static_pointer-12); else byte_element_195_4=(byte_element_struct*)mem_static_malloc(12);
+#line 196 "utilities/elements.bas"
+}
+#line 206 "utilities/elements.bas"
+byte_element_struct *byte_element_195_5=NULL;
+#line 206 "utilities/elements.bas"
+if (!byte_element_195_5){
+#line 206 "utilities/elements.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_195_5=(byte_element_struct*)(mem_static_pointer-12); else byte_element_195_5=(byte_element_struct*)mem_static_malloc(12);
+#line 206 "utilities/elements.bas"
+}

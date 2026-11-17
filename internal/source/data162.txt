@@ -1,61 +1,60 @@
-#line 116 "utilities/file.bas"
+#line 84 "utilities/strings.bas"
 qbs*oldstr162_1=NULL;
-#line 116 "utilities/file.bas"
-if(_SUB_PATH_SLASH_CORRECT_STRING_A->tmp||_SUB_PATH_SLASH_CORRECT_STRING_A->fixed||_SUB_PATH_SLASH_CORRECT_STRING_A->readonly){
-#line 116 "utilities/file.bas"
-oldstr162_1=_SUB_PATH_SLASH_CORRECT_STRING_A;
-#line 116 "utilities/file.bas"
+#line 84 "utilities/strings.bas"
+if(_SUB_WRITECONFIGSETTING_STRING_SECTION->tmp||_SUB_WRITECONFIGSETTING_STRING_SECTION->fixed||_SUB_WRITECONFIGSETTING_STRING_SECTION->readonly){
+#line 84 "utilities/strings.bas"
+oldstr162_1=_SUB_WRITECONFIGSETTING_STRING_SECTION;
+#line 84 "utilities/strings.bas"
 if (oldstr162_1->cmem_descriptor){
-#line 116 "utilities/file.bas"
-_SUB_PATH_SLASH_CORRECT_STRING_A=qbs_new_cmem(oldstr162_1->len,0);
-#line 116 "utilities/file.bas"
+#line 84 "utilities/strings.bas"
+_SUB_WRITECONFIGSETTING_STRING_SECTION=qbs_new_cmem(oldstr162_1->len,0);
+#line 84 "utilities/strings.bas"
 }else{
-#line 116 "utilities/file.bas"
-_SUB_PATH_SLASH_CORRECT_STRING_A=qbs_new(oldstr162_1->len,0);
-#line 116 "utilities/file.bas"
+#line 84 "utilities/strings.bas"
+_SUB_WRITECONFIGSETTING_STRING_SECTION=qbs_new(oldstr162_1->len,0);
+#line 84 "utilities/strings.bas"
 }
-#line 116 "utilities/file.bas"
-memcpy(_SUB_PATH_SLASH_CORRECT_STRING_A->chr,oldstr162_1->chr,oldstr162_1->len);
-#line 116 "utilities/file.bas"
+#line 84 "utilities/strings.bas"
+memcpy(_SUB_WRITECONFIGSETTING_STRING_SECTION->chr,oldstr162_1->chr,oldstr162_1->len);
+#line 84 "utilities/strings.bas"
 }
-int32 *_SUB_PATH_SLASH_CORRECT_LONG_X=NULL;
-#line 118 "utilities/file.bas"
-if(_SUB_PATH_SLASH_CORRECT_LONG_X==NULL){
-#line 118 "utilities/file.bas"
-_SUB_PATH_SLASH_CORRECT_LONG_X=(int32*)mem_static_malloc(4);
-#line 118 "utilities/file.bas"
-*_SUB_PATH_SLASH_CORRECT_LONG_X=0;
-#line 118 "utilities/file.bas"
+#line 84 "utilities/strings.bas"
+qbs*oldstr162_2=NULL;
+#line 84 "utilities/strings.bas"
+if(_SUB_WRITECONFIGSETTING_STRING_ITEM->tmp||_SUB_WRITECONFIGSETTING_STRING_ITEM->fixed||_SUB_WRITECONFIGSETTING_STRING_ITEM->readonly){
+#line 84 "utilities/strings.bas"
+oldstr162_2=_SUB_WRITECONFIGSETTING_STRING_ITEM;
+#line 84 "utilities/strings.bas"
+if (oldstr162_2->cmem_descriptor){
+#line 84 "utilities/strings.bas"
+_SUB_WRITECONFIGSETTING_STRING_ITEM=qbs_new_cmem(oldstr162_2->len,0);
+#line 84 "utilities/strings.bas"
+}else{
+#line 84 "utilities/strings.bas"
+_SUB_WRITECONFIGSETTING_STRING_ITEM=qbs_new(oldstr162_2->len,0);
+#line 84 "utilities/strings.bas"
 }
-#line 118 "utilities/file.bas"
-int64 fornext_value162_3;
-#line 118 "utilities/file.bas"
-int64 fornext_finalvalue162_3;
-#line 118 "utilities/file.bas"
-int64 fornext_step162_3;
-#line 118 "utilities/file.bas"
-uint8 fornext_step_negative162_3;
-#line 118 "utilities/file.bas"
-byte_element_struct *byte_element_162_4=NULL;
-#line 118 "utilities/file.bas"
-if (!byte_element_162_4){
-#line 118 "utilities/file.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_162_4=(byte_element_struct*)(mem_static_pointer-12); else byte_element_162_4=(byte_element_struct*)mem_static_malloc(12);
-#line 118 "utilities/file.bas"
+#line 84 "utilities/strings.bas"
+memcpy(_SUB_WRITECONFIGSETTING_STRING_ITEM->chr,oldstr162_2->chr,oldstr162_2->len);
+#line 84 "utilities/strings.bas"
 }
-#line 122 "utilities/file.bas"
-int64 fornext_value162_6;
-#line 122 "utilities/file.bas"
-int64 fornext_finalvalue162_6;
-#line 122 "utilities/file.bas"
-int64 fornext_step162_6;
-#line 122 "utilities/file.bas"
-uint8 fornext_step_negative162_6;
-#line 122 "utilities/file.bas"
-byte_element_struct *byte_element_162_7=NULL;
-#line 122 "utilities/file.bas"
-if (!byte_element_162_7){
-#line 122 "utilities/file.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_162_7=(byte_element_struct*)(mem_static_pointer-12); else byte_element_162_7=(byte_element_struct*)mem_static_malloc(12);
-#line 122 "utilities/file.bas"
+#line 84 "utilities/strings.bas"
+qbs*oldstr162_3=NULL;
+#line 84 "utilities/strings.bas"
+if(_SUB_WRITECONFIGSETTING_STRING_VALUE->tmp||_SUB_WRITECONFIGSETTING_STRING_VALUE->fixed||_SUB_WRITECONFIGSETTING_STRING_VALUE->readonly){
+#line 84 "utilities/strings.bas"
+oldstr162_3=_SUB_WRITECONFIGSETTING_STRING_VALUE;
+#line 84 "utilities/strings.bas"
+if (oldstr162_3->cmem_descriptor){
+#line 84 "utilities/strings.bas"
+_SUB_WRITECONFIGSETTING_STRING_VALUE=qbs_new_cmem(oldstr162_3->len,0);
+#line 84 "utilities/strings.bas"
+}else{
+#line 84 "utilities/strings.bas"
+_SUB_WRITECONFIGSETTING_STRING_VALUE=qbs_new(oldstr162_3->len,0);
+#line 84 "utilities/strings.bas"
+}
+#line 84 "utilities/strings.bas"
+memcpy(_SUB_WRITECONFIGSETTING_STRING_VALUE->chr,oldstr162_3->chr,oldstr162_3->len);
+#line 84 "utilities/strings.bas"
 }

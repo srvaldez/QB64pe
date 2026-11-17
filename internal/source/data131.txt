@@ -1,45 +1,65 @@
-#line 460 "utilities/arrcpy.bm"
+qbs *_FUNC_SCASE2_STRING_SCASE2=NULL;
+#line 30011 "qb64pe.bas"
+if (!_FUNC_SCASE2_STRING_SCASE2)_FUNC_SCASE2_STRING_SCASE2=qbs_new(0,0);
+#line 30011 "qb64pe.bas"
 qbs*oldstr131_1=NULL;
-#line 460 "utilities/arrcpy.bm"
-if(_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_EXPR->tmp||_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_EXPR->fixed||_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_EXPR->readonly){
-#line 460 "utilities/arrcpy.bm"
-oldstr131_1=_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_EXPR;
-#line 460 "utilities/arrcpy.bm"
+#line 30011 "qb64pe.bas"
+if(_FUNC_SCASE2_STRING_T->tmp||_FUNC_SCASE2_STRING_T->fixed||_FUNC_SCASE2_STRING_T->readonly){
+#line 30011 "qb64pe.bas"
+oldstr131_1=_FUNC_SCASE2_STRING_T;
+#line 30011 "qb64pe.bas"
 if (oldstr131_1->cmem_descriptor){
-#line 460 "utilities/arrcpy.bm"
-_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_EXPR=qbs_new_cmem(oldstr131_1->len,0);
-#line 460 "utilities/arrcpy.bm"
+#line 30011 "qb64pe.bas"
+_FUNC_SCASE2_STRING_T=qbs_new_cmem(oldstr131_1->len,0);
+#line 30011 "qb64pe.bas"
 }else{
-#line 460 "utilities/arrcpy.bm"
-_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_EXPR=qbs_new(oldstr131_1->len,0);
-#line 460 "utilities/arrcpy.bm"
+#line 30011 "qb64pe.bas"
+_FUNC_SCASE2_STRING_T=qbs_new(oldstr131_1->len,0);
+#line 30011 "qb64pe.bas"
 }
-#line 460 "utilities/arrcpy.bm"
-memcpy(_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_EXPR->chr,oldstr131_1->chr,oldstr131_1->len);
-#line 460 "utilities/arrcpy.bm"
+#line 30011 "qb64pe.bas"
+memcpy(_FUNC_SCASE2_STRING_T->chr,oldstr131_1->chr,oldstr131_1->len);
+#line 30011 "qb64pe.bas"
 }
-#line 460 "utilities/arrcpy.bm"
-qbs*oldstr131_2=NULL;
-#line 460 "utilities/arrcpy.bm"
-if(_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_CODE->tmp||_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_CODE->fixed||_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_CODE->readonly){
-#line 460 "utilities/arrcpy.bm"
-oldstr131_2=_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_CODE;
-#line 460 "utilities/arrcpy.bm"
-if (oldstr131_2->cmem_descriptor){
-#line 460 "utilities/arrcpy.bm"
-_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_CODE=qbs_new_cmem(oldstr131_2->len,0);
-#line 460 "utilities/arrcpy.bm"
-}else{
-#line 460 "utilities/arrcpy.bm"
-_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_CODE=qbs_new(oldstr131_2->len,0);
-#line 460 "utilities/arrcpy.bm"
+#line 30017 "qb64pe.bas"
+static qbs *sc_131_3=qbs_new(0,0);
+int32 *_FUNC_SCASE2_LONG_NEWWORD=NULL;
+#line 30023 "qb64pe.bas"
+if(_FUNC_SCASE2_LONG_NEWWORD==NULL){
+#line 30023 "qb64pe.bas"
+_FUNC_SCASE2_LONG_NEWWORD=(int32*)mem_static_malloc(4);
+#line 30023 "qb64pe.bas"
+*_FUNC_SCASE2_LONG_NEWWORD=0;
+#line 30023 "qb64pe.bas"
 }
-#line 460 "utilities/arrcpy.bm"
-memcpy(_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_CODE->chr,oldstr131_2->chr,oldstr131_2->len);
-#line 460 "utilities/arrcpy.bm"
+qbs *_FUNC_SCASE2_STRING_TEMP=NULL;
+#line 30024 "qb64pe.bas"
+if (!_FUNC_SCASE2_STRING_TEMP)_FUNC_SCASE2_STRING_TEMP=qbs_new(0,0);
+int32 *_FUNC_SCASE2_LONG_I=NULL;
+#line 30025 "qb64pe.bas"
+if(_FUNC_SCASE2_LONG_I==NULL){
+#line 30025 "qb64pe.bas"
+_FUNC_SCASE2_LONG_I=(int32*)mem_static_malloc(4);
+#line 30025 "qb64pe.bas"
+*_FUNC_SCASE2_LONG_I=0;
+#line 30025 "qb64pe.bas"
 }
-qbs *_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_WORK=NULL;
-#line 461 "utilities/arrcpy.bm"
-if (!_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_WORK)_SUB_PARSEARRAYCOPYDESTINATIONSTART1D_STRING_DST_START_WORK=qbs_new(0,0);
-#line 465 "utilities/arrcpy.bm"
-int32 pass131_3;
+#line 30025 "qb64pe.bas"
+int64 fornext_value131_5;
+#line 30025 "qb64pe.bas"
+int64 fornext_finalvalue131_5;
+#line 30025 "qb64pe.bas"
+int64 fornext_step131_5;
+#line 30025 "qb64pe.bas"
+uint8 fornext_step_negative131_5;
+#line 30025 "qb64pe.bas"
+byte_element_struct *byte_element_131_6=NULL;
+#line 30025 "qb64pe.bas"
+if (!byte_element_131_6){
+#line 30025 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_131_6=(byte_element_struct*)(mem_static_pointer-12); else byte_element_131_6=(byte_element_struct*)mem_static_malloc(12);
+#line 30025 "qb64pe.bas"
+}
+qbs *_FUNC_SCASE2_STRING_S=NULL;
+#line 30026 "qb64pe.bas"
+if (!_FUNC_SCASE2_STRING_S)_FUNC_SCASE2_STRING_S=qbs_new(0,0);

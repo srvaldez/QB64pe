@@ -1,150 +1,162 @@
-#line 1635 "utilities/type.bas"
+#line 1249 "utilities/type.bas"
 qbs*oldstr339_1=NULL;
-#line 1635 "utilities/type.bas"
-if(_SUB_APPENDDYNMEMBERREDIM_STRING_PREP_PREFIX->tmp||_SUB_APPENDDYNMEMBERREDIM_STRING_PREP_PREFIX->fixed||_SUB_APPENDDYNMEMBERREDIM_STRING_PREP_PREFIX->readonly){
-#line 1635 "utilities/type.bas"
-oldstr339_1=_SUB_APPENDDYNMEMBERREDIM_STRING_PREP_PREFIX;
-#line 1635 "utilities/type.bas"
+#line 1249 "utilities/type.bas"
+if(_SUB_APPENDDYNUDTOWNCLONEEX_STRING_DST_EXPR->tmp||_SUB_APPENDDYNUDTOWNCLONEEX_STRING_DST_EXPR->fixed||_SUB_APPENDDYNUDTOWNCLONEEX_STRING_DST_EXPR->readonly){
+#line 1249 "utilities/type.bas"
+oldstr339_1=_SUB_APPENDDYNUDTOWNCLONEEX_STRING_DST_EXPR;
+#line 1249 "utilities/type.bas"
 if (oldstr339_1->cmem_descriptor){
-#line 1635 "utilities/type.bas"
-_SUB_APPENDDYNMEMBERREDIM_STRING_PREP_PREFIX=qbs_new_cmem(oldstr339_1->len,0);
-#line 1635 "utilities/type.bas"
+#line 1249 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNCLONEEX_STRING_DST_EXPR=qbs_new_cmem(oldstr339_1->len,0);
+#line 1249 "utilities/type.bas"
 }else{
-#line 1635 "utilities/type.bas"
-_SUB_APPENDDYNMEMBERREDIM_STRING_PREP_PREFIX=qbs_new(oldstr339_1->len,0);
-#line 1635 "utilities/type.bas"
+#line 1249 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNCLONEEX_STRING_DST_EXPR=qbs_new(oldstr339_1->len,0);
+#line 1249 "utilities/type.bas"
 }
-#line 1635 "utilities/type.bas"
-memcpy(_SUB_APPENDDYNMEMBERREDIM_STRING_PREP_PREFIX->chr,oldstr339_1->chr,oldstr339_1->len);
-#line 1635 "utilities/type.bas"
+#line 1249 "utilities/type.bas"
+memcpy(_SUB_APPENDDYNUDTOWNCLONEEX_STRING_DST_EXPR->chr,oldstr339_1->chr,oldstr339_1->len);
+#line 1249 "utilities/type.bas"
 }
-#line 1635 "utilities/type.bas"
+#line 1249 "utilities/type.bas"
 qbs*oldstr339_2=NULL;
-#line 1635 "utilities/type.bas"
-if(_SUB_APPENDDYNMEMBERREDIM_STRING_DESC_SLOT->tmp||_SUB_APPENDDYNMEMBERREDIM_STRING_DESC_SLOT->fixed||_SUB_APPENDDYNMEMBERREDIM_STRING_DESC_SLOT->readonly){
-#line 1635 "utilities/type.bas"
-oldstr339_2=_SUB_APPENDDYNMEMBERREDIM_STRING_DESC_SLOT;
-#line 1635 "utilities/type.bas"
+#line 1249 "utilities/type.bas"
+if(_SUB_APPENDDYNUDTOWNCLONEEX_STRING_SRC_EXPR->tmp||_SUB_APPENDDYNUDTOWNCLONEEX_STRING_SRC_EXPR->fixed||_SUB_APPENDDYNUDTOWNCLONEEX_STRING_SRC_EXPR->readonly){
+#line 1249 "utilities/type.bas"
+oldstr339_2=_SUB_APPENDDYNUDTOWNCLONEEX_STRING_SRC_EXPR;
+#line 1249 "utilities/type.bas"
 if (oldstr339_2->cmem_descriptor){
-#line 1635 "utilities/type.bas"
-_SUB_APPENDDYNMEMBERREDIM_STRING_DESC_SLOT=qbs_new_cmem(oldstr339_2->len,0);
-#line 1635 "utilities/type.bas"
+#line 1249 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNCLONEEX_STRING_SRC_EXPR=qbs_new_cmem(oldstr339_2->len,0);
+#line 1249 "utilities/type.bas"
 }else{
-#line 1635 "utilities/type.bas"
-_SUB_APPENDDYNMEMBERREDIM_STRING_DESC_SLOT=qbs_new(oldstr339_2->len,0);
-#line 1635 "utilities/type.bas"
+#line 1249 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNCLONEEX_STRING_SRC_EXPR=qbs_new(oldstr339_2->len,0);
+#line 1249 "utilities/type.bas"
 }
-#line 1635 "utilities/type.bas"
-memcpy(_SUB_APPENDDYNMEMBERREDIM_STRING_DESC_SLOT->chr,oldstr339_2->chr,oldstr339_2->len);
-#line 1635 "utilities/type.bas"
+#line 1249 "utilities/type.bas"
+memcpy(_SUB_APPENDDYNUDTOWNCLONEEX_STRING_SRC_EXPR->chr,oldstr339_2->chr,oldstr339_2->len);
+#line 1249 "utilities/type.bas"
 }
-#line 1635 "utilities/type.bas"
+#line 1249 "utilities/type.bas"
 qbs*oldstr339_3=NULL;
-#line 1635 "utilities/type.bas"
-if(_SUB_APPENDDYNMEMBERREDIM_STRING_ACC->tmp||_SUB_APPENDDYNMEMBERREDIM_STRING_ACC->fixed||_SUB_APPENDDYNMEMBERREDIM_STRING_ACC->readonly){
-#line 1635 "utilities/type.bas"
-oldstr339_3=_SUB_APPENDDYNMEMBERREDIM_STRING_ACC;
-#line 1635 "utilities/type.bas"
+#line 1249 "utilities/type.bas"
+if(_SUB_APPENDDYNUDTOWNCLONEEX_STRING_DST_ROOT_EXPR->tmp||_SUB_APPENDDYNUDTOWNCLONEEX_STRING_DST_ROOT_EXPR->fixed||_SUB_APPENDDYNUDTOWNCLONEEX_STRING_DST_ROOT_EXPR->readonly){
+#line 1249 "utilities/type.bas"
+oldstr339_3=_SUB_APPENDDYNUDTOWNCLONEEX_STRING_DST_ROOT_EXPR;
+#line 1249 "utilities/type.bas"
 if (oldstr339_3->cmem_descriptor){
-#line 1635 "utilities/type.bas"
-_SUB_APPENDDYNMEMBERREDIM_STRING_ACC=qbs_new_cmem(oldstr339_3->len,0);
-#line 1635 "utilities/type.bas"
+#line 1249 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNCLONEEX_STRING_DST_ROOT_EXPR=qbs_new_cmem(oldstr339_3->len,0);
+#line 1249 "utilities/type.bas"
 }else{
-#line 1635 "utilities/type.bas"
-_SUB_APPENDDYNMEMBERREDIM_STRING_ACC=qbs_new(oldstr339_3->len,0);
-#line 1635 "utilities/type.bas"
+#line 1249 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNCLONEEX_STRING_DST_ROOT_EXPR=qbs_new(oldstr339_3->len,0);
+#line 1249 "utilities/type.bas"
 }
-#line 1635 "utilities/type.bas"
-memcpy(_SUB_APPENDDYNMEMBERREDIM_STRING_ACC->chr,oldstr339_3->chr,oldstr339_3->len);
-#line 1635 "utilities/type.bas"
+#line 1249 "utilities/type.bas"
+memcpy(_SUB_APPENDDYNUDTOWNCLONEEX_STRING_DST_ROOT_EXPR->chr,oldstr339_3->chr,oldstr339_3->len);
+#line 1249 "utilities/type.bas"
 }
-qbs *_SUB_APPENDDYNMEMBERREDIM_STRING_CR=NULL;
-#line 1643 "utilities/type.bas"
-if (!_SUB_APPENDDYNMEMBERREDIM_STRING_CR)_SUB_APPENDDYNMEMBERREDIM_STRING_CR=qbs_new(0,0);
-qbs *_SUB_APPENDDYNMEMBERREDIM_STRING_DESC_NAME=NULL;
-#line 1644 "utilities/type.bas"
-if (!_SUB_APPENDDYNMEMBERREDIM_STRING_DESC_NAME)_SUB_APPENDDYNMEMBERREDIM_STRING_DESC_NAME=qbs_new(0,0);
-int32 *_SUB_APPENDDYNMEMBERREDIM_LONG_DESC_SLOTS=NULL;
-#line 1645 "utilities/type.bas"
-if(_SUB_APPENDDYNMEMBERREDIM_LONG_DESC_SLOTS==NULL){
-#line 1645 "utilities/type.bas"
-_SUB_APPENDDYNMEMBERREDIM_LONG_DESC_SLOTS=(int32*)mem_static_malloc(4);
-#line 1645 "utilities/type.bas"
-*_SUB_APPENDDYNMEMBERREDIM_LONG_DESC_SLOTS=0;
-#line 1645 "utilities/type.bas"
+#line 1249 "utilities/type.bas"
+qbs*oldstr339_4=NULL;
+#line 1249 "utilities/type.bas"
+if(_SUB_APPENDDYNUDTOWNCLONEEX_STRING_SRC_ROOT_EXPR->tmp||_SUB_APPENDDYNUDTOWNCLONEEX_STRING_SRC_ROOT_EXPR->fixed||_SUB_APPENDDYNUDTOWNCLONEEX_STRING_SRC_ROOT_EXPR->readonly){
+#line 1249 "utilities/type.bas"
+oldstr339_4=_SUB_APPENDDYNUDTOWNCLONEEX_STRING_SRC_ROOT_EXPR;
+#line 1249 "utilities/type.bas"
+if (oldstr339_4->cmem_descriptor){
+#line 1249 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNCLONEEX_STRING_SRC_ROOT_EXPR=qbs_new_cmem(oldstr339_4->len,0);
+#line 1249 "utilities/type.bas"
+}else{
+#line 1249 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNCLONEEX_STRING_SRC_ROOT_EXPR=qbs_new(oldstr339_4->len,0);
+#line 1249 "utilities/type.bas"
 }
-int32 *_SUB_APPENDDYNMEMBERREDIM_LONG_DESC_INDEX=NULL;
-#line 1646 "utilities/type.bas"
-if(_SUB_APPENDDYNMEMBERREDIM_LONG_DESC_INDEX==NULL){
-#line 1646 "utilities/type.bas"
-_SUB_APPENDDYNMEMBERREDIM_LONG_DESC_INDEX=(int32*)mem_static_malloc(4);
-#line 1646 "utilities/type.bas"
-*_SUB_APPENDDYNMEMBERREDIM_LONG_DESC_INDEX=0;
-#line 1646 "utilities/type.bas"
+#line 1249 "utilities/type.bas"
+memcpy(_SUB_APPENDDYNUDTOWNCLONEEX_STRING_SRC_ROOT_EXPR->chr,oldstr339_4->chr,oldstr339_4->len);
+#line 1249 "utilities/type.bas"
 }
-int32 *_SUB_APPENDDYNMEMBERREDIM_LONG_DIM_INDEX=NULL;
-#line 1647 "utilities/type.bas"
-if(_SUB_APPENDDYNMEMBERREDIM_LONG_DIM_INDEX==NULL){
-#line 1647 "utilities/type.bas"
-_SUB_APPENDDYNMEMBERREDIM_LONG_DIM_INDEX=(int32*)mem_static_malloc(4);
-#line 1647 "utilities/type.bas"
-*_SUB_APPENDDYNMEMBERREDIM_LONG_DIM_INDEX=0;
-#line 1647 "utilities/type.bas"
+#line 1249 "utilities/type.bas"
+qbs*oldstr339_5=NULL;
+#line 1249 "utilities/type.bas"
+if(_SUB_APPENDDYNUDTOWNCLONEEX_STRING_ELEM_BYTES->tmp||_SUB_APPENDDYNUDTOWNCLONEEX_STRING_ELEM_BYTES->fixed||_SUB_APPENDDYNUDTOWNCLONEEX_STRING_ELEM_BYTES->readonly){
+#line 1249 "utilities/type.bas"
+oldstr339_5=_SUB_APPENDDYNUDTOWNCLONEEX_STRING_ELEM_BYTES;
+#line 1249 "utilities/type.bas"
+if (oldstr339_5->cmem_descriptor){
+#line 1249 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNCLONEEX_STRING_ELEM_BYTES=qbs_new_cmem(oldstr339_5->len,0);
+#line 1249 "utilities/type.bas"
+}else{
+#line 1249 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNCLONEEX_STRING_ELEM_BYTES=qbs_new(oldstr339_5->len,0);
+#line 1249 "utilities/type.bas"
 }
-int32 *_SUB_APPENDDYNMEMBERREDIM_LONG_RETAIN_DIM=NULL;
-#line 1648 "utilities/type.bas"
-if(_SUB_APPENDDYNMEMBERREDIM_LONG_RETAIN_DIM==NULL){
-#line 1648 "utilities/type.bas"
-_SUB_APPENDDYNMEMBERREDIM_LONG_RETAIN_DIM=(int32*)mem_static_malloc(4);
-#line 1648 "utilities/type.bas"
-*_SUB_APPENDDYNMEMBERREDIM_LONG_RETAIN_DIM=0;
-#line 1648 "utilities/type.bas"
+#line 1249 "utilities/type.bas"
+memcpy(_SUB_APPENDDYNUDTOWNCLONEEX_STRING_ELEM_BYTES->chr,oldstr339_5->chr,oldstr339_5->len);
+#line 1249 "utilities/type.bas"
 }
-#line 1669 "utilities/type.bas"
-int64 fornext_value339_5;
-#line 1669 "utilities/type.bas"
-int64 fornext_finalvalue339_5;
-#line 1669 "utilities/type.bas"
-int64 fornext_step339_5;
-#line 1669 "utilities/type.bas"
-uint8 fornext_step_negative339_5;
-#line 1689 "utilities/type.bas"
-int32 pass339_6;
-#line 1705 "utilities/type.bas"
-int32 pass339_7;
-#line 1705 "utilities/type.bas"
-int32 pass339_8;
-#line 1715 "utilities/type.bas"
+#line 1249 "utilities/type.bas"
+qbs*oldstr339_6=NULL;
+#line 1249 "utilities/type.bas"
+if(_SUB_APPENDDYNUDTOWNCLONEEX_STRING_DST_INDEX->tmp||_SUB_APPENDDYNUDTOWNCLONEEX_STRING_DST_INDEX->fixed||_SUB_APPENDDYNUDTOWNCLONEEX_STRING_DST_INDEX->readonly){
+#line 1249 "utilities/type.bas"
+oldstr339_6=_SUB_APPENDDYNUDTOWNCLONEEX_STRING_DST_INDEX;
+#line 1249 "utilities/type.bas"
+if (oldstr339_6->cmem_descriptor){
+#line 1249 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNCLONEEX_STRING_DST_INDEX=qbs_new_cmem(oldstr339_6->len,0);
+#line 1249 "utilities/type.bas"
+}else{
+#line 1249 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNCLONEEX_STRING_DST_INDEX=qbs_new(oldstr339_6->len,0);
+#line 1249 "utilities/type.bas"
+}
+#line 1249 "utilities/type.bas"
+memcpy(_SUB_APPENDDYNUDTOWNCLONEEX_STRING_DST_INDEX->chr,oldstr339_6->chr,oldstr339_6->len);
+#line 1249 "utilities/type.bas"
+}
+#line 1249 "utilities/type.bas"
+qbs*oldstr339_7=NULL;
+#line 1249 "utilities/type.bas"
+if(_SUB_APPENDDYNUDTOWNCLONEEX_STRING_SRC_INDEX->tmp||_SUB_APPENDDYNUDTOWNCLONEEX_STRING_SRC_INDEX->fixed||_SUB_APPENDDYNUDTOWNCLONEEX_STRING_SRC_INDEX->readonly){
+#line 1249 "utilities/type.bas"
+oldstr339_7=_SUB_APPENDDYNUDTOWNCLONEEX_STRING_SRC_INDEX;
+#line 1249 "utilities/type.bas"
+if (oldstr339_7->cmem_descriptor){
+#line 1249 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNCLONEEX_STRING_SRC_INDEX=qbs_new_cmem(oldstr339_7->len,0);
+#line 1249 "utilities/type.bas"
+}else{
+#line 1249 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNCLONEEX_STRING_SRC_INDEX=qbs_new(oldstr339_7->len,0);
+#line 1249 "utilities/type.bas"
+}
+#line 1249 "utilities/type.bas"
+memcpy(_SUB_APPENDDYNUDTOWNCLONEEX_STRING_SRC_INDEX->chr,oldstr339_7->chr,oldstr339_7->len);
+#line 1249 "utilities/type.bas"
+}
+#line 1249 "utilities/type.bas"
+qbs*oldstr339_8=NULL;
+#line 1249 "utilities/type.bas"
+if(_SUB_APPENDDYNUDTOWNCLONEEX_STRING_ACC->tmp||_SUB_APPENDDYNUDTOWNCLONEEX_STRING_ACC->fixed||_SUB_APPENDDYNUDTOWNCLONEEX_STRING_ACC->readonly){
+#line 1249 "utilities/type.bas"
+oldstr339_8=_SUB_APPENDDYNUDTOWNCLONEEX_STRING_ACC;
+#line 1249 "utilities/type.bas"
+if (oldstr339_8->cmem_descriptor){
+#line 1249 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNCLONEEX_STRING_ACC=qbs_new_cmem(oldstr339_8->len,0);
+#line 1249 "utilities/type.bas"
+}else{
+#line 1249 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNCLONEEX_STRING_ACC=qbs_new(oldstr339_8->len,0);
+#line 1249 "utilities/type.bas"
+}
+#line 1249 "utilities/type.bas"
+memcpy(_SUB_APPENDDYNUDTOWNCLONEEX_STRING_ACC->chr,oldstr339_8->chr,oldstr339_8->len);
+#line 1249 "utilities/type.bas"
+}
+#line 1250 "utilities/type.bas"
 int32 pass339_9;
-#line 1740 "utilities/type.bas"
-int64 fornext_value339_11;
-#line 1740 "utilities/type.bas"
-int64 fornext_finalvalue339_11;
-#line 1740 "utilities/type.bas"
-int64 fornext_step339_11;
-#line 1740 "utilities/type.bas"
-uint8 fornext_step_negative339_11;
-#line 1749 "utilities/type.bas"
-int64 fornext_value339_13;
-#line 1749 "utilities/type.bas"
-int64 fornext_finalvalue339_13;
-#line 1749 "utilities/type.bas"
-int64 fornext_step339_13;
-#line 1749 "utilities/type.bas"
-uint8 fornext_step_negative339_13;
-#line 1756 "utilities/type.bas"
-int64 fornext_value339_15;
-#line 1756 "utilities/type.bas"
-int64 fornext_finalvalue339_15;
-#line 1756 "utilities/type.bas"
-int64 fornext_step339_15;
-#line 1756 "utilities/type.bas"
-uint8 fornext_step_negative339_15;
-#line 1762 "utilities/type.bas"
-int32 pass339_16;
-#line 1762 "utilities/type.bas"
-int32 pass339_17;
-#line 1767 "utilities/type.bas"
-int32 pass339_18;
-#line 1799 "utilities/type.bas"
-int32 pass339_19;

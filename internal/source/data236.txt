@@ -1,17 +1,18 @@
-int32 *_SUB_SBUFNINDEX_LONG_H=NULL;
-#line 130 "utilities/s-buffer/sb_qb64pe_extension.bm"
-if(_SUB_SBUFNINDEX_LONG_H==NULL){
-#line 130 "utilities/s-buffer/sb_qb64pe_extension.bm"
-_SUB_SBUFNINDEX_LONG_H=(int32*)mem_static_malloc(4);
-#line 130 "utilities/s-buffer/sb_qb64pe_extension.bm"
-*_SUB_SBUFNINDEX_LONG_H=0;
-#line 130 "utilities/s-buffer/sb_qb64pe_extension.bm"
+int32 *_FUNC_GETBUFPOS_LONG_GETBUFPOS=NULL;
+#line 540 "utilities/s-buffer/simplebuffer.bm"
+if(_FUNC_GETBUFPOS_LONG_GETBUFPOS==NULL){
+#line 540 "utilities/s-buffer/simplebuffer.bm"
+_FUNC_GETBUFPOS_LONG_GETBUFPOS=(int32*)mem_static_malloc(4);
+#line 540 "utilities/s-buffer/simplebuffer.bm"
+*_FUNC_GETBUFPOS_LONG_GETBUFPOS=0;
+#line 540 "utilities/s-buffer/simplebuffer.bm"
 }
-#line 131 "utilities/s-buffer/sb_qb64pe_extension.bm"
-byte_element_struct *byte_element_236_1=NULL;
-#line 131 "utilities/s-buffer/sb_qb64pe_extension.bm"
-if (!byte_element_236_1){
-#line 131 "utilities/s-buffer/sb_qb64pe_extension.bm"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_236_1=(byte_element_struct*)(mem_static_pointer-12); else byte_element_236_1=(byte_element_struct*)mem_static_malloc(12);
-#line 131 "utilities/s-buffer/sb_qb64pe_extension.bm"
+int32 *_FUNC_GETBUFPOS_LONG_BUF=NULL;
+#line 542 "utilities/s-buffer/simplebuffer.bm"
+if(_FUNC_GETBUFPOS_LONG_BUF==NULL){
+#line 542 "utilities/s-buffer/simplebuffer.bm"
+_FUNC_GETBUFPOS_LONG_BUF=(int32*)mem_static_malloc(4);
+#line 542 "utilities/s-buffer/simplebuffer.bm"
+*_FUNC_GETBUFPOS_LONG_BUF=0;
+#line 542 "utilities/s-buffer/simplebuffer.bm"
 }

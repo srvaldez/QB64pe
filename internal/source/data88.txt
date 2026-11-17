@@ -1,3 +1,20 @@
-qbs *_FUNC_STATEMENTLABEL_STRING_STATEMENTLABEL=NULL;
-#line 27126 "qb64pe.bas"
-if (!_FUNC_STATEMENTLABEL_STRING_STATEMENTLABEL)_FUNC_STATEMENTLABEL_STRING_STATEMENTLABEL=qbs_new(0,0);
+#line 26686 "qb64pe.bas"
+qbs*oldstr88_1=NULL;
+#line 26686 "qb64pe.bas"
+if(_SUB_MAKEIDREFER_STRING_REF->tmp||_SUB_MAKEIDREFER_STRING_REF->fixed||_SUB_MAKEIDREFER_STRING_REF->readonly){
+#line 26686 "qb64pe.bas"
+oldstr88_1=_SUB_MAKEIDREFER_STRING_REF;
+#line 26686 "qb64pe.bas"
+if (oldstr88_1->cmem_descriptor){
+#line 26686 "qb64pe.bas"
+_SUB_MAKEIDREFER_STRING_REF=qbs_new_cmem(oldstr88_1->len,0);
+#line 26686 "qb64pe.bas"
+}else{
+#line 26686 "qb64pe.bas"
+_SUB_MAKEIDREFER_STRING_REF=qbs_new(oldstr88_1->len,0);
+#line 26686 "qb64pe.bas"
+}
+#line 26686 "qb64pe.bas"
+memcpy(_SUB_MAKEIDREFER_STRING_REF->chr,oldstr88_1->chr,oldstr88_1->len);
+#line 26686 "qb64pe.bas"
+}

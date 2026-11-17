@@ -1,6 +1,4 @@
 if(oldstr468_1){
-if(oldstr468_1->fixed)qbs_set(oldstr468_1,_FUNC_IDEZTAKEPATH_STRING_F);
-qbs_free(_FUNC_IDEZTAKEPATH_STRING_F);
+if(oldstr468_1->fixed)qbs_set(oldstr468_1,_SUB_IDESETLINE_STRING_TEXT);
+qbs_free(_SUB_IDESETLINE_STRING_TEXT);
 }
-qbs_free(_FUNC_IDEZTAKEPATH_STRING_P);
-qbs_free(_FUNC_IDEZTAKEPATH_STRING_A);
