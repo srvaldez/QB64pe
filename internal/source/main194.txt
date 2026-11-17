@@ -1,86 +1,122 @@
-#line 631 "utilities/elements.bas"
-qbs* FUNC_ELEMENTSTRINGCONCAT(qbs*_FUNC_ELEMENTSTRINGCONCAT_STRING_OS1,qbs*_FUNC_ELEMENTSTRINGCONCAT_STRING_OS2){
-#line 631 "utilities/elements.bas"
+#line 170 "utilities/elements.bas"
+int32 FUNC_NUMELEMENTS(qbs*_FUNC_NUMELEMENTS_STRING_A){
+#line 170 "utilities/elements.bas"
 qbs *tqbs;
-#line 631 "utilities/elements.bas"
+#line 170 "utilities/elements.bas"
 ptrszint tmp_long;
-#line 631 "utilities/elements.bas"
+#line 170 "utilities/elements.bas"
 int32 tmp_fileno;
-#line 631 "utilities/elements.bas"
+#line 170 "utilities/elements.bas"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
-#line 631 "utilities/elements.bas"
+#line 170 "utilities/elements.bas"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
-#line 631 "utilities/elements.bas"
+#line 170 "utilities/elements.bas"
 uint32 tmp_cmem_sp=cmem_sp;
-#line 631 "utilities/elements.bas"
+#line 170 "utilities/elements.bas"
 #include "data194.txt"
-#line 631 "utilities/elements.bas"
+#line 170 "utilities/elements.bas"
 mem_lock *sf_mem_lock;
-#line 631 "utilities/elements.bas"
+#line 170 "utilities/elements.bas"
 new_mem_lock();
-#line 631 "utilities/elements.bas"
+#line 170 "utilities/elements.bas"
 sf_mem_lock=mem_lock_tmp;
-#line 631 "utilities/elements.bas"
+#line 170 "utilities/elements.bas"
 sf_mem_lock->type=3;
-#line 631 "utilities/elements.bas"
+#line 170 "utilities/elements.bas"
 libqb_check_stack();
-#line 631 "utilities/elements.bas"
+#line 170 "utilities/elements.bas"
 if (is_error_pending()) goto exit_subfunc;
-#line 632 "utilities/elements.bas"
+#line 171 "utilities/elements.bas"
 do{
-#line 632 "utilities/elements.bas"
-if(!qbevent)break;evnt(28741,632,"elements.bas");}while(r);
-#line 634 "utilities/elements.bas"
+#line 171 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,171,"elements.bas");}while(r);
+#line 173 "utilities/elements.bas"
+S_194_2:;
+#line 173 "utilities/elements.bas"
+if ((qbs_cleanup(qbs_tmp_base,-(_FUNC_NUMELEMENTS_STRING_A->len== 0 )))||is_error_pending()){
+#line 173 "utilities/elements.bas"
+if(qbevent){evnt(30080,173,"elements.bas");if(r)goto S_194_2;}
+#line 173 "utilities/elements.bas"
 do{
-#line 634 "utilities/elements.bas"
-qbs_set(_FUNC_ELEMENTSTRINGCONCAT_STRING_S1,func_mid(_FUNC_ELEMENTSTRINGCONCAT_STRING_OS1, 2 ,func__instrrev(NULL,_FUNC_ELEMENTSTRINGCONCAT_STRING_OS1,func_chr( 34 ),0)- 2 ,0|1));
-#line 634 "utilities/elements.bas"
+#line 173 "utilities/elements.bas"
+goto exit_subfunc;
+#line 173 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,173,"elements.bas");}while(r);
+#line 173 "utilities/elements.bas"
+}
+#line 174 "utilities/elements.bas"
+do{
+#line 174 "utilities/elements.bas"
+*_FUNC_NUMELEMENTS_LONG_N= 1 ;
+#line 174 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,174,"elements.bas");}while(r);
+#line 175 "utilities/elements.bas"
+do{
+#line 175 "utilities/elements.bas"
+*_FUNC_NUMELEMENTS_LONG_P= 1 ;
+#line 175 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,175,"elements.bas");}while(r);
+#line 176 "utilities/elements.bas"
+LABEL_NUMELEMENTSNEXT:;
+#line 176 "utilities/elements.bas"
+if(qbevent){evnt(30080,176,"elements.bas");r=0;}
+#line 177 "utilities/elements.bas"
+do{
+#line 177 "utilities/elements.bas"
+*_FUNC_NUMELEMENTS_LONG_I=func_instr(*_FUNC_NUMELEMENTS_LONG_P,_FUNC_NUMELEMENTS_STRING_A,__STRING1_SP,0|1);
+#line 177 "utilities/elements.bas"
 qbs_cleanup(qbs_tmp_base,0);
-#line 634 "utilities/elements.bas"
-if(!qbevent)break;evnt(28741,634,"elements.bas");}while(r);
-#line 635 "utilities/elements.bas"
+#line 177 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,177,"elements.bas");}while(r);
+#line 178 "utilities/elements.bas"
+S_194_8:;
+#line 178 "utilities/elements.bas"
+if ((-(*_FUNC_NUMELEMENTS_LONG_I== 0 ))||is_error_pending()){
+#line 178 "utilities/elements.bas"
+if(qbevent){evnt(30080,178,"elements.bas");if(r)goto S_194_8;}
+#line 178 "utilities/elements.bas"
 do{
-#line 635 "utilities/elements.bas"
-*_FUNC_ELEMENTSTRINGCONCAT_LONG_S1SIZE=qbr(qbs_val<long double>(qbs_right(_FUNC_ELEMENTSTRINGCONCAT_STRING_OS1,_FUNC_ELEMENTSTRINGCONCAT_STRING_OS1->len-_FUNC_ELEMENTSTRINGCONCAT_STRING_S1->len- 3 )));
-#line 635 "utilities/elements.bas"
-qbs_cleanup(qbs_tmp_base,0);
-#line 635 "utilities/elements.bas"
-if(!qbevent)break;evnt(28741,635,"elements.bas");}while(r);
-#line 637 "utilities/elements.bas"
+#line 178 "utilities/elements.bas"
+*_FUNC_NUMELEMENTS_LONG_NUMELEMENTS=*_FUNC_NUMELEMENTS_LONG_N;
+#line 178 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,178,"elements.bas");}while(r);
+#line 178 "utilities/elements.bas"
 do{
-#line 637 "utilities/elements.bas"
-qbs_set(_FUNC_ELEMENTSTRINGCONCAT_STRING_S2,func_mid(_FUNC_ELEMENTSTRINGCONCAT_STRING_OS2, 2 ,func__instrrev(NULL,_FUNC_ELEMENTSTRINGCONCAT_STRING_OS2,func_chr( 34 ),0)- 2 ,0|1));
-#line 637 "utilities/elements.bas"
-qbs_cleanup(qbs_tmp_base,0);
-#line 637 "utilities/elements.bas"
-if(!qbevent)break;evnt(28741,637,"elements.bas");}while(r);
-#line 638 "utilities/elements.bas"
+#line 178 "utilities/elements.bas"
+goto exit_subfunc;
+#line 178 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,178,"elements.bas");}while(r);
+#line 178 "utilities/elements.bas"
+}
+#line 179 "utilities/elements.bas"
 do{
-#line 638 "utilities/elements.bas"
-*_FUNC_ELEMENTSTRINGCONCAT_LONG_S2SIZE=qbr(qbs_val<long double>(qbs_right(_FUNC_ELEMENTSTRINGCONCAT_STRING_OS2,_FUNC_ELEMENTSTRINGCONCAT_STRING_OS2->len-_FUNC_ELEMENTSTRINGCONCAT_STRING_S2->len- 3 )));
-#line 638 "utilities/elements.bas"
-qbs_cleanup(qbs_tmp_base,0);
-#line 638 "utilities/elements.bas"
-if(!qbevent)break;evnt(28741,638,"elements.bas");}while(r);
-#line 640 "utilities/elements.bas"
+#line 179 "utilities/elements.bas"
+*_FUNC_NUMELEMENTS_LONG_N=*_FUNC_NUMELEMENTS_LONG_N+ 1 ;
+#line 179 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,179,"elements.bas");}while(r);
+#line 180 "utilities/elements.bas"
 do{
-#line 640 "utilities/elements.bas"
-qbs_set(_FUNC_ELEMENTSTRINGCONCAT_STRING_ELEMENTSTRINGCONCAT,qbs_add(qbs_add(qbs_add(qbs_add(qbs_add(func_chr( 34 ),_FUNC_ELEMENTSTRINGCONCAT_STRING_S1),_FUNC_ELEMENTSTRINGCONCAT_STRING_S2),func_chr( 34 )),qbs_new_txt_len(",",1)),qbs__tostr((int64)(*_FUNC_ELEMENTSTRINGCONCAT_LONG_S1SIZE+*_FUNC_ELEMENTSTRINGCONCAT_LONG_S2SIZE),NULL,0)));
-#line 640 "utilities/elements.bas"
-qbs_cleanup(qbs_tmp_base,0);
-#line 640 "utilities/elements.bas"
-if(!qbevent)break;evnt(28741,640,"elements.bas");}while(r);
-#line 641 "utilities/elements.bas"
+#line 180 "utilities/elements.bas"
+*_FUNC_NUMELEMENTS_LONG_P=*_FUNC_NUMELEMENTS_LONG_I+ 1 ;
+#line 180 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,180,"elements.bas");}while(r);
+#line 181 "utilities/elements.bas"
+do{
+#line 181 "utilities/elements.bas"
+goto LABEL_NUMELEMENTSNEXT;
+#line 181 "utilities/elements.bas"
+if(!qbevent)break;evnt(30080,181,"elements.bas");}while(r);
+#line 182 "utilities/elements.bas"
 exit_subfunc:;
-#line 641 "utilities/elements.bas"
+#line 182 "utilities/elements.bas"
 free_mem_lock(sf_mem_lock);
-#line 641 "utilities/elements.bas"
+#line 182 "utilities/elements.bas"
 #include "free194.txt"
-#line 641 "utilities/elements.bas"
+#line 182 "utilities/elements.bas"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
-#line 641 "utilities/elements.bas"
+#line 182 "utilities/elements.bas"
 cmem_sp=tmp_cmem_sp;
-#line 641 "utilities/elements.bas"
-qbs_maketmp(_FUNC_ELEMENTSTRINGCONCAT_STRING_ELEMENTSTRINGCONCAT);return _FUNC_ELEMENTSTRINGCONCAT_STRING_ELEMENTSTRINGCONCAT;
-#line 641 "utilities/elements.bas"
+#line 182 "utilities/elements.bas"
+return *_FUNC_NUMELEMENTS_LONG_NUMELEMENTS;
+#line 182 "utilities/elements.bas"
 }

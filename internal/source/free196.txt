@@ -1,8 +1,4 @@
 if(oldstr196_1){
-if(oldstr196_1->fixed)qbs_set(oldstr196_1,_FUNC_READCHUNK_STRING_A);
-qbs_free(_FUNC_READCHUNK_STRING_A);
-}
-if(oldstr196_2){
-if(oldstr196_2->fixed)qbs_set(oldstr196_2,_FUNC_READCHUNK_STRING_LAST_CHARACTER);
-qbs_free(_FUNC_READCHUNK_STRING_LAST_CHARACTER);
+if(oldstr196_1->fixed)qbs_set(oldstr196_1,_SUB_REMOVEELEMENT_STRING_A);
+qbs_free(_SUB_REMOVEELEMENT_STRING_A);
 }

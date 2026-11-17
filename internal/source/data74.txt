@@ -1,57 +1,103 @@
-int32 *_FUNC_ISOPERATOR_LONG_ISOPERATOR=NULL;
-#line 24521 "qb64pe.bas"
-if(_FUNC_ISOPERATOR_LONG_ISOPERATOR==NULL){
-#line 24521 "qb64pe.bas"
-_FUNC_ISOPERATOR_LONG_ISOPERATOR=(int32*)mem_static_malloc(4);
-#line 24521 "qb64pe.bas"
-*_FUNC_ISOPERATOR_LONG_ISOPERATOR=0;
-#line 24521 "qb64pe.bas"
-}
-#line 24521 "qb64pe.bas"
+qbs *_FUNC_WHOLEMEMBERBUFFERREF_STRING_WHOLEMEMBERBUFFERREF=NULL;
+#line 23057 "qb64pe.bas"
+if (!_FUNC_WHOLEMEMBERBUFFERREF_STRING_WHOLEMEMBERBUFFERREF)_FUNC_WHOLEMEMBERBUFFERREF_STRING_WHOLEMEMBERBUFFERREF=qbs_new(0,0);
+#line 23057 "qb64pe.bas"
 qbs*oldstr74_1=NULL;
-#line 24521 "qb64pe.bas"
-if(_FUNC_ISOPERATOR_STRING_A2->tmp||_FUNC_ISOPERATOR_STRING_A2->fixed||_FUNC_ISOPERATOR_STRING_A2->readonly){
-#line 24521 "qb64pe.bas"
-oldstr74_1=_FUNC_ISOPERATOR_STRING_A2;
-#line 24521 "qb64pe.bas"
+#line 23057 "qb64pe.bas"
+if(_FUNC_WHOLEMEMBERBUFFERREF_STRING_EXPR->tmp||_FUNC_WHOLEMEMBERBUFFERREF_STRING_EXPR->fixed||_FUNC_WHOLEMEMBERBUFFERREF_STRING_EXPR->readonly){
+#line 23057 "qb64pe.bas"
+oldstr74_1=_FUNC_WHOLEMEMBERBUFFERREF_STRING_EXPR;
+#line 23057 "qb64pe.bas"
 if (oldstr74_1->cmem_descriptor){
-#line 24521 "qb64pe.bas"
-_FUNC_ISOPERATOR_STRING_A2=qbs_new_cmem(oldstr74_1->len,0);
-#line 24521 "qb64pe.bas"
+#line 23057 "qb64pe.bas"
+_FUNC_WHOLEMEMBERBUFFERREF_STRING_EXPR=qbs_new_cmem(oldstr74_1->len,0);
+#line 23057 "qb64pe.bas"
 }else{
-#line 24521 "qb64pe.bas"
-_FUNC_ISOPERATOR_STRING_A2=qbs_new(oldstr74_1->len,0);
-#line 24521 "qb64pe.bas"
+#line 23057 "qb64pe.bas"
+_FUNC_WHOLEMEMBERBUFFERREF_STRING_EXPR=qbs_new(oldstr74_1->len,0);
+#line 23057 "qb64pe.bas"
 }
-#line 24521 "qb64pe.bas"
-memcpy(_FUNC_ISOPERATOR_STRING_A2->chr,oldstr74_1->chr,oldstr74_1->len);
-#line 24521 "qb64pe.bas"
+#line 23057 "qb64pe.bas"
+memcpy(_FUNC_WHOLEMEMBERBUFFERREF_STRING_EXPR->chr,oldstr74_1->chr,oldstr74_1->len);
+#line 23057 "qb64pe.bas"
 }
-#line 24524 "qb64pe.bas"
-byte_element_struct *byte_element_74_2=NULL;
-#line 24524 "qb64pe.bas"
-if (!byte_element_74_2){
-#line 24524 "qb64pe.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_74_2=(byte_element_struct*)(mem_static_pointer-12); else byte_element_74_2=(byte_element_struct*)mem_static_malloc(12);
-#line 24524 "qb64pe.bas"
+int32 *_FUNC_WHOLEMEMBERBUFFERREF_LONG_REF_KIND=NULL;
+#line 23058 "qb64pe.bas"
+if(_FUNC_WHOLEMEMBERBUFFERREF_LONG_REF_KIND==NULL){
+#line 23058 "qb64pe.bas"
+_FUNC_WHOLEMEMBERBUFFERREF_LONG_REF_KIND=(int32*)mem_static_malloc(4);
+#line 23058 "qb64pe.bas"
+*_FUNC_WHOLEMEMBERBUFFERREF_LONG_REF_KIND=0;
+#line 23058 "qb64pe.bas"
 }
-#line 24524 "qb64pe.bas"
-byte_element_struct *byte_element_74_3=NULL;
-#line 24524 "qb64pe.bas"
-if (!byte_element_74_3){
-#line 24524 "qb64pe.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_74_3=(byte_element_struct*)(mem_static_pointer-12); else byte_element_74_3=(byte_element_struct*)mem_static_malloc(12);
-#line 24524 "qb64pe.bas"
+int32 *_FUNC_WHOLEMEMBERBUFFERREF_LONG_HAS_MEMBER=NULL;
+#line 23058 "qb64pe.bas"
+if(_FUNC_WHOLEMEMBERBUFFERREF_LONG_HAS_MEMBER==NULL){
+#line 23058 "qb64pe.bas"
+_FUNC_WHOLEMEMBERBUFFERREF_LONG_HAS_MEMBER=(int32*)mem_static_malloc(4);
+#line 23058 "qb64pe.bas"
+*_FUNC_WHOLEMEMBERBUFFERREF_LONG_HAS_MEMBER=0;
+#line 23058 "qb64pe.bas"
 }
-qbs *_FUNC_ISOPERATOR_STRING_A=NULL;
-#line 24525 "qb64pe.bas"
-if (!_FUNC_ISOPERATOR_STRING_A)_FUNC_ISOPERATOR_STRING_A=qbs_new(0,0);
-int32 *_FUNC_ISOPERATOR_LONG_L=NULL;
-#line 24526 "qb64pe.bas"
-if(_FUNC_ISOPERATOR_LONG_L==NULL){
-#line 24526 "qb64pe.bas"
-_FUNC_ISOPERATOR_LONG_L=(int32*)mem_static_malloc(4);
-#line 24526 "qb64pe.bas"
-*_FUNC_ISOPERATOR_LONG_L=0;
-#line 24526 "qb64pe.bas"
+int32 *_FUNC_WHOLEMEMBERBUFFERREF_LONG_TOKEN_POS=NULL;
+#line 23059 "qb64pe.bas"
+if(_FUNC_WHOLEMEMBERBUFFERREF_LONG_TOKEN_POS==NULL){
+#line 23059 "qb64pe.bas"
+_FUNC_WHOLEMEMBERBUFFERREF_LONG_TOKEN_POS=(int32*)mem_static_malloc(4);
+#line 23059 "qb64pe.bas"
+*_FUNC_WHOLEMEMBERBUFFERREF_LONG_TOKEN_POS=0;
+#line 23059 "qb64pe.bas"
 }
+int32 *_FUNC_WHOLEMEMBERBUFFERREF_LONG_TOKEN_COUNT=NULL;
+#line 23059 "qb64pe.bas"
+if(_FUNC_WHOLEMEMBERBUFFERREF_LONG_TOKEN_COUNT==NULL){
+#line 23059 "qb64pe.bas"
+_FUNC_WHOLEMEMBERBUFFERREF_LONG_TOKEN_COUNT=(int32*)mem_static_malloc(4);
+#line 23059 "qb64pe.bas"
+*_FUNC_WHOLEMEMBERBUFFERREF_LONG_TOKEN_COUNT=0;
+#line 23059 "qb64pe.bas"
+}
+qbs *_FUNC_WHOLEMEMBERBUFFERREF_STRING_FINAL_NAME=NULL;
+#line 23060 "qb64pe.bas"
+if (!_FUNC_WHOLEMEMBERBUFFERREF_STRING_FINAL_NAME)_FUNC_WHOLEMEMBERBUFFERREF_STRING_FINAL_NAME=qbs_new(0,0);
+qbs *_FUNC_WHOLEMEMBERBUFFERREF_STRING_ROOT_NAME=NULL;
+#line 23060 "qb64pe.bas"
+if (!_FUNC_WHOLEMEMBERBUFFERREF_STRING_ROOT_NAME)_FUNC_WHOLEMEMBERBUFFERREF_STRING_ROOT_NAME=qbs_new(0,0);
+qbs *_FUNC_WHOLEMEMBERBUFFERREF_STRING_RESOLVED=NULL;
+#line 23060 "qb64pe.bas"
+if (!_FUNC_WHOLEMEMBERBUFFERREF_STRING_RESOLVED)_FUNC_WHOLEMEMBERBUFFERREF_STRING_RESOLVED=qbs_new(0,0);
+qbs *_FUNC_WHOLEMEMBERBUFFERREF_STRING_SYNTAX_EXPR=NULL;
+#line 23060 "qb64pe.bas"
+if (!_FUNC_WHOLEMEMBERBUFFERREF_STRING_SYNTAX_EXPR)_FUNC_WHOLEMEMBERBUFFERREF_STRING_SYNTAX_EXPR=qbs_new(0,0);
+qbs *_FUNC_WHOLEMEMBERBUFFERREF_STRING_TOKEN_TEXT=NULL;
+#line 23061 "qb64pe.bas"
+if (!_FUNC_WHOLEMEMBERBUFFERREF_STRING_TOKEN_TEXT)_FUNC_WHOLEMEMBERBUFFERREF_STRING_TOKEN_TEXT=qbs_new(0,0);
+qbs *_FUNC_WHOLEMEMBERBUFFERREF_STRING_UNSUFFIXED=NULL;
+#line 23061 "qb64pe.bas"
+if (!_FUNC_WHOLEMEMBERBUFFERREF_STRING_UNSUFFIXED)_FUNC_WHOLEMEMBERBUFFERREF_STRING_UNSUFFIXED=qbs_new(0,0);
+qbs *_FUNC_WHOLEMEMBERBUFFERREF_STRING_TYPE_SUFFIX=NULL;
+#line 23061 "qb64pe.bas"
+if (!_FUNC_WHOLEMEMBERBUFFERREF_STRING_TYPE_SUFFIX)_FUNC_WHOLEMEMBERBUFFERREF_STRING_TYPE_SUFFIX=qbs_new(0,0);
+int16 *_FUNC_WHOLEMEMBERBUFFERREF_INTEGER_SAVED_BARE=NULL;
+#line 23062 "qb64pe.bas"
+if(_FUNC_WHOLEMEMBERBUFFERREF_INTEGER_SAVED_BARE==NULL){
+#line 23062 "qb64pe.bas"
+_FUNC_WHOLEMEMBERBUFFERREF_INTEGER_SAVED_BARE=(int16*)mem_static_malloc(2);
+#line 23062 "qb64pe.bas"
+*_FUNC_WHOLEMEMBERBUFFERREF_INTEGER_SAVED_BARE=0;
+#line 23062 "qb64pe.bas"
+}
+#line 23074 "qb64pe.bas"
+int64 fornext_value74_3;
+#line 23074 "qb64pe.bas"
+int64 fornext_finalvalue74_3;
+#line 23074 "qb64pe.bas"
+int64 fornext_step74_3;
+#line 23074 "qb64pe.bas"
+uint8 fornext_step_negative74_3;
+#line 23075 "qb64pe.bas"
+int32 pass74_4;
+#line 23080 "qb64pe.bas"
+int32 pass74_5;
+#line 23081 "qb64pe.bas"
+int32 pass74_6;

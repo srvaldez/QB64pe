@@ -1,60 +1,110 @@
-#line 20820 "ide/ide_methods.bas"
-byte_element_struct *byte_element_508_1=NULL;
-#line 20820 "ide/ide_methods.bas"
-if (!byte_element_508_1){
-#line 20820 "ide/ide_methods.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_508_1=(byte_element_struct*)(mem_static_pointer-12); else byte_element_508_1=(byte_element_struct*)mem_static_malloc(12);
-#line 20820 "ide/ide_methods.bas"
+int32 *_SUB_IDEMAKEFILEMENU_LONG_M=NULL;
+#line 19446 "ide/ide_methods.bas"
+if(_SUB_IDEMAKEFILEMENU_LONG_M==NULL){
+#line 19446 "ide/ide_methods.bas"
+_SUB_IDEMAKEFILEMENU_LONG_M=(int32*)mem_static_malloc(4);
+#line 19446 "ide/ide_methods.bas"
+*_SUB_IDEMAKEFILEMENU_LONG_M=0;
+#line 19446 "ide/ide_methods.bas"
 }
-int16 *_SUB_UPDATEIDEINFO_INTEGER_PERCENTAGE=NULL;
-#line 20824 "ide/ide_methods.bas"
-if(_SUB_UPDATEIDEINFO_INTEGER_PERCENTAGE==NULL){
-#line 20824 "ide/ide_methods.bas"
-_SUB_UPDATEIDEINFO_INTEGER_PERCENTAGE=(int16*)mem_static_malloc(2);
-#line 20824 "ide/ide_methods.bas"
-*_SUB_UPDATEIDEINFO_INTEGER_PERCENTAGE=0;
-#line 20824 "ide/ide_methods.bas"
+int32 *_SUB_IDEMAKEFILEMENU_LONG_I=NULL;
+#line 19446 "ide/ide_methods.bas"
+if(_SUB_IDEMAKEFILEMENU_LONG_I==NULL){
+#line 19446 "ide/ide_methods.bas"
+_SUB_IDEMAKEFILEMENU_LONG_I=(int32*)mem_static_malloc(4);
+#line 19446 "ide/ide_methods.bas"
+*_SUB_IDEMAKEFILEMENU_LONG_I=0;
+#line 19446 "ide/ide_methods.bas"
 }
-qbs *_SUB_UPDATEIDEINFO_STRING_A=NULL;
-#line 20836 "ide/ide_methods.bas"
-if (!_SUB_UPDATEIDEINFO_STRING_A)_SUB_UPDATEIDEINFO_STRING_A=qbs_new(0,0);
-#line 20837 "ide/ide_methods.bas"
-byte_element_struct *byte_element_508_2=NULL;
-#line 20837 "ide/ide_methods.bas"
-if (!byte_element_508_2){
-#line 20837 "ide/ide_methods.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_508_2=(byte_element_struct*)(mem_static_pointer-12); else byte_element_508_2=(byte_element_struct*)mem_static_malloc(12);
-#line 20837 "ide/ide_methods.bas"
+qbs *_SUB_IDEMAKEFILEMENU_STRING_EAA=NULL;
+#line 19457 "ide/ide_methods.bas"
+if (!_SUB_IDEMAKEFILEMENU_STRING_EAA)_SUB_IDEMAKEFILEMENU_STRING_EAA=qbs_new(0,0);
+int32 *_SUB_IDEMAKEFILEMENU_LONG_BH=NULL;
+#line 19461 "ide/ide_methods.bas"
+if(_SUB_IDEMAKEFILEMENU_LONG_BH==NULL){
+#line 19461 "ide/ide_methods.bas"
+_SUB_IDEMAKEFILEMENU_LONG_BH=(int32*)mem_static_malloc(4);
+#line 19461 "ide/ide_methods.bas"
+*_SUB_IDEMAKEFILEMENU_LONG_BH=0;
+#line 19461 "ide/ide_methods.bas"
 }
-#line 20838 "ide/ide_methods.bas"
+int16 *_SUB_IDEMAKEFILEMENU_INTEGER_MAXFILES=NULL;
+#line 19462 "ide/ide_methods.bas"
+if(_SUB_IDEMAKEFILEMENU_INTEGER_MAXFILES==NULL){
+#line 19462 "ide/ide_methods.bas"
+_SUB_IDEMAKEFILEMENU_INTEGER_MAXFILES=(int16*)mem_static_malloc(2);
+#line 19462 "ide/ide_methods.bas"
+*_SUB_IDEMAKEFILEMENU_INTEGER_MAXFILES=0;
+#line 19462 "ide/ide_methods.bas"
+}
+int16 *_SUB_IDEMAKEFILEMENU_INTEGER_MAXLENGTH=NULL;
+#line 19462 "ide/ide_methods.bas"
+if(_SUB_IDEMAKEFILEMENU_INTEGER_MAXLENGTH==NULL){
+#line 19462 "ide/ide_methods.bas"
+_SUB_IDEMAKEFILEMENU_INTEGER_MAXLENGTH=(int16*)mem_static_malloc(2);
+#line 19462 "ide/ide_methods.bas"
+*_SUB_IDEMAKEFILEMENU_INTEGER_MAXLENGTH=0;
+#line 19462 "ide/ide_methods.bas"
+}
+int16 *_SUB_IDEMAKEFILEMENU_INTEGER_R=NULL;
+#line 19463 "ide/ide_methods.bas"
+if(_SUB_IDEMAKEFILEMENU_INTEGER_R==NULL){
+#line 19463 "ide/ide_methods.bas"
+_SUB_IDEMAKEFILEMENU_INTEGER_R=(int16*)mem_static_malloc(2);
+#line 19463 "ide/ide_methods.bas"
+*_SUB_IDEMAKEFILEMENU_INTEGER_R=0;
+#line 19463 "ide/ide_methods.bas"
+}
+#line 19463 "ide/ide_methods.bas"
+int32 fornext_value508_2;
+#line 19463 "ide/ide_methods.bas"
+int32 fornext_finalvalue508_2;
+#line 19463 "ide/ide_methods.bas"
+int32 fornext_step508_2;
+#line 19463 "ide/ide_methods.bas"
+uint8 fornext_step_negative508_2;
+qbs *_SUB_IDEMAKEFILEMENU_STRING_F=NULL;
+#line 19465 "ide/ide_methods.bas"
+if (!_SUB_IDEMAKEFILEMENU_STRING_F)_SUB_IDEMAKEFILEMENU_STRING_F=qbs_new(0,0);
+#line 19466 "ide/ide_methods.bas"
 byte_element_struct *byte_element_508_3=NULL;
-#line 20838 "ide/ide_methods.bas"
+#line 19466 "ide/ide_methods.bas"
 if (!byte_element_508_3){
-#line 20838 "ide/ide_methods.bas"
+#line 19466 "ide/ide_methods.bas"
 if ((mem_static_pointer+=12)<mem_static_limit) byte_element_508_3=(byte_element_struct*)(mem_static_pointer-12); else byte_element_508_3=(byte_element_struct*)mem_static_malloc(12);
-#line 20838 "ide/ide_methods.bas"
+#line 19466 "ide/ide_methods.bas"
 }
-#line 20838 "ide/ide_methods.bas"
+#line 19469 "ide/ide_methods.bas"
 byte_element_struct *byte_element_508_4=NULL;
-#line 20838 "ide/ide_methods.bas"
+#line 19469 "ide/ide_methods.bas"
 if (!byte_element_508_4){
-#line 20838 "ide/ide_methods.bas"
+#line 19469 "ide/ide_methods.bas"
 if ((mem_static_pointer+=12)<mem_static_limit) byte_element_508_4=(byte_element_struct*)(mem_static_pointer-12); else byte_element_508_4=(byte_element_struct*)mem_static_malloc(12);
-#line 20838 "ide/ide_methods.bas"
+#line 19469 "ide/ide_methods.bas"
 }
-#line 20842 "ide/ide_methods.bas"
+int16 *_SUB_IDEMAKEFILEMENU_INTEGER_MISSINGFILES=NULL;
+#line 19475 "ide/ide_methods.bas"
+if(_SUB_IDEMAKEFILEMENU_INTEGER_MISSINGFILES==NULL){
+#line 19475 "ide/ide_methods.bas"
+_SUB_IDEMAKEFILEMENU_INTEGER_MISSINGFILES=(int16*)mem_static_malloc(2);
+#line 19475 "ide/ide_methods.bas"
+*_SUB_IDEMAKEFILEMENU_INTEGER_MISSINGFILES=0;
+#line 19475 "ide/ide_methods.bas"
+}
+int16 *_SUB_IDEMAKEFILEMENU_INTEGER_CUT=NULL;
+#line 19476 "ide/ide_methods.bas"
+if(_SUB_IDEMAKEFILEMENU_INTEGER_CUT==NULL){
+#line 19476 "ide/ide_methods.bas"
+_SUB_IDEMAKEFILEMENU_INTEGER_CUT=(int16*)mem_static_malloc(2);
+#line 19476 "ide/ide_methods.bas"
+*_SUB_IDEMAKEFILEMENU_INTEGER_CUT=0;
+#line 19476 "ide/ide_methods.bas"
+}
+#line 19476 "ide/ide_methods.bas"
 byte_element_struct *byte_element_508_5=NULL;
-#line 20842 "ide/ide_methods.bas"
+#line 19476 "ide/ide_methods.bas"
 if (!byte_element_508_5){
-#line 20842 "ide/ide_methods.bas"
+#line 19476 "ide/ide_methods.bas"
 if ((mem_static_pointer+=12)<mem_static_limit) byte_element_508_5=(byte_element_struct*)(mem_static_pointer-12); else byte_element_508_5=(byte_element_struct*)mem_static_malloc(12);
-#line 20842 "ide/ide_methods.bas"
-}
-#line 20847 "ide/ide_methods.bas"
-byte_element_struct *byte_element_508_6=NULL;
-#line 20847 "ide/ide_methods.bas"
-if (!byte_element_508_6){
-#line 20847 "ide/ide_methods.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_508_6=(byte_element_struct*)(mem_static_pointer-12); else byte_element_508_6=(byte_element_struct*)mem_static_malloc(12);
-#line 20847 "ide/ide_methods.bas"
+#line 19476 "ide/ide_methods.bas"
 }

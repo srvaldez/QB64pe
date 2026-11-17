@@ -1,4 +1,14 @@
 if(oldstr156_1){
-if(oldstr156_1->fixed)qbs_set(oldstr156_1,_FUNC_FILEMODTIME_STRING_FILESPEC);
-qbs_free(_FUNC_FILEMODTIME_STRING_FILESPEC);
+if(oldstr156_1->fixed)qbs_set(oldstr156_1,_FUNC_STRREPLACE_STRING_MYSTRING);
+qbs_free(_FUNC_STRREPLACE_STRING_MYSTRING);
 }
+if(oldstr156_2){
+if(oldstr156_2->fixed)qbs_set(oldstr156_2,_FUNC_STRREPLACE_STRING_FIND);
+qbs_free(_FUNC_STRREPLACE_STRING_FIND);
+}
+if(oldstr156_3){
+if(oldstr156_3->fixed)qbs_set(oldstr156_3,_FUNC_STRREPLACE_STRING_REPLACEWITH);
+qbs_free(_FUNC_STRREPLACE_STRING_REPLACEWITH);
+}
+qbs_free(_FUNC_STRREPLACE_STRING_A);
+qbs_free(_FUNC_STRREPLACE_STRING_B);

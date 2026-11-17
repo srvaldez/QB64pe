@@ -1,4 +1,9 @@
 if(oldstr104_1){
-if(oldstr104_1->fixed)qbs_set(oldstr104_1,_FUNC_REMOVECAST_STRING_A);
-qbs_free(_FUNC_REMOVECAST_STRING_A);
+if(oldstr104_1->fixed)qbs_set(oldstr104_1,_SUB_EVALFILETEXTITEM_STRING_EXPR);
+qbs_free(_SUB_EVALFILETEXTITEM_STRING_EXPR);
 }
+if(oldstr104_2){
+if(oldstr104_2->fixed)qbs_set(oldstr104_2,_SUB_EVALFILETEXTITEM_STRING_OUTPUT_REF);
+qbs_free(_SUB_EVALFILETEXTITEM_STRING_OUTPUT_REF);
+}
+qbs_free(_SUB_EVALFILETEXTITEM_STRING_WHOLE_REF);

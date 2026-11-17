@@ -1,9 +1,21 @@
-int32 *_SUB_IDERESTRICT417_LONG_X=NULL;
-#line 18838 "ide/ide_methods.bas"
-if(_SUB_IDERESTRICT417_LONG_X==NULL){
-#line 18838 "ide/ide_methods.bas"
-_SUB_IDERESTRICT417_LONG_X=(int32*)mem_static_malloc(4);
-#line 18838 "ide/ide_methods.bas"
-*_SUB_IDERESTRICT417_LONG_X=0;
-#line 18838 "ide/ide_methods.bas"
+qbs *_SUB_IDEGOTOBOX_STRING_A2=NULL;
+#line 16274 "ide/ide_methods.bas"
+if (!_SUB_IDEGOTOBOX_STRING_A2)_SUB_IDEGOTOBOX_STRING_A2=qbs_new(0,0);
+qbs *_SUB_IDEGOTOBOX_STRING_V=NULL;
+#line 16275 "ide/ide_methods.bas"
+if (!_SUB_IDEGOTOBOX_STRING_V)_SUB_IDEGOTOBOX_STRING_V=qbs_new(0,0);
+#line 16275 "ide/ide_methods.bas"
+int32 pass485_1;
+#line 16275 "ide/ide_methods.bas"
+int32 pass485_2;
+#line 16275 "ide/ide_methods.bas"
+int32 pass485_3;
+int32 *_SUB_IDEGOTOBOX_LONG_V=NULL;
+#line 16278 "ide/ide_methods.bas"
+if(_SUB_IDEGOTOBOX_LONG_V==NULL){
+#line 16278 "ide/ide_methods.bas"
+_SUB_IDEGOTOBOX_LONG_V=(int32*)mem_static_malloc(4);
+#line 16278 "ide/ide_methods.bas"
+*_SUB_IDEGOTOBOX_LONG_V=0;
+#line 16278 "ide/ide_methods.bas"
 }

@@ -1,4 +1,10 @@
 if(oldstr155_1){
-if(oldstr155_1->fixed)qbs_set(oldstr155_1,_FUNC_FILELENGTH_STRING_FILESPEC);
-qbs_free(_FUNC_FILELENGTH_STRING_FILESPEC);
+if(oldstr155_1->fixed)qbs_set(oldstr155_1,_FUNC_STRREMOVE_STRING_MYSTRING);
+qbs_free(_FUNC_STRREMOVE_STRING_MYSTRING);
 }
+if(oldstr155_2){
+if(oldstr155_2->fixed)qbs_set(oldstr155_2,_FUNC_STRREMOVE_STRING_WHATTOREMOVE);
+qbs_free(_FUNC_STRREMOVE_STRING_WHATTOREMOVE);
+}
+qbs_free(_FUNC_STRREMOVE_STRING_A);
+qbs_free(_FUNC_STRREMOVE_STRING_B);

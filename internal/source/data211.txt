@@ -1,62 +1,72 @@
-int32 *_FUNC_CREATEBUF_LONG_CREATEBUF=NULL;
-#line 23 "utilities/s-buffer/simplebuffer.bm"
-if(_FUNC_CREATEBUF_LONG_CREATEBUF==NULL){
-#line 23 "utilities/s-buffer/simplebuffer.bm"
-_FUNC_CREATEBUF_LONG_CREATEBUF=(int32*)mem_static_malloc(4);
-#line 23 "utilities/s-buffer/simplebuffer.bm"
-*_FUNC_CREATEBUF_LONG_CREATEBUF=0;
-#line 23 "utilities/s-buffer/simplebuffer.bm"
+int32 *_SUB_GL_INCLUDE_CONTENT_LONG_GLHELPERBUF=NULL;
+#line 310 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(_SUB_GL_INCLUDE_CONTENT_LONG_GLHELPERBUF==NULL){
+#line 310 "subs_functions/extensions/opengl/opengl_methods.bas"
+_SUB_GL_INCLUDE_CONTENT_LONG_GLHELPERBUF=(int32*)mem_static_malloc(4);
+#line 310 "subs_functions/extensions/opengl/opengl_methods.bas"
+*_SUB_GL_INCLUDE_CONTENT_LONG_GLHELPERBUF=0;
+#line 310 "subs_functions/extensions/opengl/opengl_methods.bas"
 }
-int32 *_FUNC_CREATEBUF_LONG_AUB=NULL;
-#line 25 "utilities/s-buffer/simplebuffer.bm"
-if(_FUNC_CREATEBUF_LONG_AUB==NULL){
-#line 25 "utilities/s-buffer/simplebuffer.bm"
-_FUNC_CREATEBUF_LONG_AUB=(int32*)mem_static_malloc(4);
-#line 25 "utilities/s-buffer/simplebuffer.bm"
-*_FUNC_CREATEBUF_LONG_AUB=0;
-#line 25 "utilities/s-buffer/simplebuffer.bm"
+int32 *_SUB_GL_INCLUDE_CONTENT_LONG_D=NULL;
+#line 315 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(_SUB_GL_INCLUDE_CONTENT_LONG_D==NULL){
+#line 315 "subs_functions/extensions/opengl/opengl_methods.bas"
+_SUB_GL_INCLUDE_CONTENT_LONG_D=(int32*)mem_static_malloc(4);
+#line 315 "subs_functions/extensions/opengl/opengl_methods.bas"
+*_SUB_GL_INCLUDE_CONTENT_LONG_D=0;
+#line 315 "subs_functions/extensions/opengl/opengl_methods.bas"
 }
-int32 *_FUNC_CREATEBUF_LONG_BUF=NULL;
-#line 25 "utilities/s-buffer/simplebuffer.bm"
-if(_FUNC_CREATEBUF_LONG_BUF==NULL){
-#line 25 "utilities/s-buffer/simplebuffer.bm"
-_FUNC_CREATEBUF_LONG_BUF=(int32*)mem_static_malloc(4);
-#line 25 "utilities/s-buffer/simplebuffer.bm"
-*_FUNC_CREATEBUF_LONG_BUF=0;
-#line 25 "utilities/s-buffer/simplebuffer.bm"
+#line 315 "subs_functions/extensions/opengl/opengl_methods.bas"
+int64 fornext_value211_2;
+#line 315 "subs_functions/extensions/opengl/opengl_methods.bas"
+int64 fornext_finalvalue211_2;
+#line 315 "subs_functions/extensions/opengl/opengl_methods.bas"
+int64 fornext_step211_2;
+#line 315 "subs_functions/extensions/opengl/opengl_methods.bas"
+uint8 fornext_step_negative211_2;
+int32 *_SUB_GL_INCLUDE_CONTENT_LONG_I=NULL;
+#line 333 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(_SUB_GL_INCLUDE_CONTENT_LONG_I==NULL){
+#line 333 "subs_functions/extensions/opengl/opengl_methods.bas"
+_SUB_GL_INCLUDE_CONTENT_LONG_I=(int32*)mem_static_malloc(4);
+#line 333 "subs_functions/extensions/opengl/opengl_methods.bas"
+*_SUB_GL_INCLUDE_CONTENT_LONG_I=0;
+#line 333 "subs_functions/extensions/opengl/opengl_methods.bas"
 }
-int16 *_FUNC_CREATEBUF_INTEGER_IDX=NULL;
-#line 25 "utilities/s-buffer/simplebuffer.bm"
-if(_FUNC_CREATEBUF_INTEGER_IDX==NULL){
-#line 25 "utilities/s-buffer/simplebuffer.bm"
-_FUNC_CREATEBUF_INTEGER_IDX=(int16*)mem_static_malloc(2);
-#line 25 "utilities/s-buffer/simplebuffer.bm"
-*_FUNC_CREATEBUF_INTEGER_IDX=0;
-#line 25 "utilities/s-buffer/simplebuffer.bm"
+#line 342 "subs_functions/extensions/opengl/opengl_methods.bas"
+int32 pass211_3;
+int32 *_SUB_GL_INCLUDE_CONTENT_LONG_C=NULL;
+#line 347 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(_SUB_GL_INCLUDE_CONTENT_LONG_C==NULL){
+#line 347 "subs_functions/extensions/opengl/opengl_methods.bas"
+_SUB_GL_INCLUDE_CONTENT_LONG_C=(int32*)mem_static_malloc(4);
+#line 347 "subs_functions/extensions/opengl/opengl_methods.bas"
+*_SUB_GL_INCLUDE_CONTENT_LONG_C=0;
+#line 347 "subs_functions/extensions/opengl/opengl_methods.bas"
 }
-int32 *_FUNC_CREATEBUF_LONG_BUFS=NULL;
-#line 25 "utilities/s-buffer/simplebuffer.bm"
-if(_FUNC_CREATEBUF_LONG_BUFS==NULL){
-#line 25 "utilities/s-buffer/simplebuffer.bm"
-_FUNC_CREATEBUF_LONG_BUFS=(int32*)mem_static_malloc(4);
-#line 25 "utilities/s-buffer/simplebuffer.bm"
-*_FUNC_CREATEBUF_LONG_BUFS=0;
-#line 25 "utilities/s-buffer/simplebuffer.bm"
+#line 347 "subs_functions/extensions/opengl/opengl_methods.bas"
+int64 fornext_value211_5;
+#line 347 "subs_functions/extensions/opengl/opengl_methods.bas"
+int64 fornext_finalvalue211_5;
+#line 347 "subs_functions/extensions/opengl/opengl_methods.bas"
+int64 fornext_step211_5;
+#line 347 "subs_functions/extensions/opengl/opengl_methods.bas"
+uint8 fornext_step_negative211_5;
+void *_SUB_GL_INCLUDE_CONTENT_UDT_G=NULL;
+#line 348 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(_SUB_GL_INCLUDE_CONTENT_UDT_G==NULL){
+#line 348 "subs_functions/extensions/opengl/opengl_methods.bas"
+_SUB_GL_INCLUDE_CONTENT_UDT_G=(void*)mem_static_malloc(216);
+#line 348 "subs_functions/extensions/opengl/opengl_methods.bas"
+memset(_SUB_GL_INCLUDE_CONTENT_UDT_G,0,216);
+#line 348 "subs_functions/extensions/opengl/opengl_methods.bas"
 }
-int32 *_FUNC_CREATEBUF_LONG_NEWBUFS=NULL;
-#line 25 "utilities/s-buffer/simplebuffer.bm"
-if(_FUNC_CREATEBUF_LONG_NEWBUFS==NULL){
-#line 25 "utilities/s-buffer/simplebuffer.bm"
-_FUNC_CREATEBUF_LONG_NEWBUFS=(int32*)mem_static_malloc(4);
-#line 25 "utilities/s-buffer/simplebuffer.bm"
-*_FUNC_CREATEBUF_LONG_NEWBUFS=0;
-#line 25 "utilities/s-buffer/simplebuffer.bm"
-}
-#line 31 "utilities/s-buffer/simplebuffer.bm"
-byte_element_struct *byte_element_211_2=NULL;
-#line 31 "utilities/s-buffer/simplebuffer.bm"
-if (!byte_element_211_2){
-#line 31 "utilities/s-buffer/simplebuffer.bm"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_211_2=(byte_element_struct*)(mem_static_pointer-12); else byte_element_211_2=(byte_element_struct*)mem_static_malloc(12);
-#line 31 "utilities/s-buffer/simplebuffer.bm"
+int32 *_SUB_GL_INCLUDE_CONTENT_LONG_S=NULL;
+#line 363 "subs_functions/extensions/opengl/opengl_methods.bas"
+if(_SUB_GL_INCLUDE_CONTENT_LONG_S==NULL){
+#line 363 "subs_functions/extensions/opengl/opengl_methods.bas"
+_SUB_GL_INCLUDE_CONTENT_LONG_S=(int32*)mem_static_malloc(4);
+#line 363 "subs_functions/extensions/opengl/opengl_methods.bas"
+*_SUB_GL_INCLUDE_CONTENT_LONG_S=0;
+#line 363 "subs_functions/extensions/opengl/opengl_methods.bas"
 }

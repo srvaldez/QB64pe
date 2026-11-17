@@ -1,40 +1,122 @@
-#line 1516 "utilities/type.bas"
+#line 1229 "utilities/type.bas"
 qbs*oldstr336_1=NULL;
-#line 1516 "utilities/type.bas"
-if(_SUB_APPENDDYNMEMBERERASETYPED_STRING_DESC_SLOT->tmp||_SUB_APPENDDYNMEMBERERASETYPED_STRING_DESC_SLOT->fixed||_SUB_APPENDDYNMEMBERERASETYPED_STRING_DESC_SLOT->readonly){
-#line 1516 "utilities/type.bas"
-oldstr336_1=_SUB_APPENDDYNMEMBERERASETYPED_STRING_DESC_SLOT;
-#line 1516 "utilities/type.bas"
+#line 1229 "utilities/type.bas"
+if(_SUB_APPENDDYNUDTOWNSETAT_STRING_DST_EXPR->tmp||_SUB_APPENDDYNUDTOWNSETAT_STRING_DST_EXPR->fixed||_SUB_APPENDDYNUDTOWNSETAT_STRING_DST_EXPR->readonly){
+#line 1229 "utilities/type.bas"
+oldstr336_1=_SUB_APPENDDYNUDTOWNSETAT_STRING_DST_EXPR;
+#line 1229 "utilities/type.bas"
 if (oldstr336_1->cmem_descriptor){
-#line 1516 "utilities/type.bas"
-_SUB_APPENDDYNMEMBERERASETYPED_STRING_DESC_SLOT=qbs_new_cmem(oldstr336_1->len,0);
-#line 1516 "utilities/type.bas"
+#line 1229 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNSETAT_STRING_DST_EXPR=qbs_new_cmem(oldstr336_1->len,0);
+#line 1229 "utilities/type.bas"
 }else{
-#line 1516 "utilities/type.bas"
-_SUB_APPENDDYNMEMBERERASETYPED_STRING_DESC_SLOT=qbs_new(oldstr336_1->len,0);
-#line 1516 "utilities/type.bas"
+#line 1229 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNSETAT_STRING_DST_EXPR=qbs_new(oldstr336_1->len,0);
+#line 1229 "utilities/type.bas"
 }
-#line 1516 "utilities/type.bas"
-memcpy(_SUB_APPENDDYNMEMBERERASETYPED_STRING_DESC_SLOT->chr,oldstr336_1->chr,oldstr336_1->len);
-#line 1516 "utilities/type.bas"
+#line 1229 "utilities/type.bas"
+memcpy(_SUB_APPENDDYNUDTOWNSETAT_STRING_DST_EXPR->chr,oldstr336_1->chr,oldstr336_1->len);
+#line 1229 "utilities/type.bas"
 }
-#line 1516 "utilities/type.bas"
+#line 1229 "utilities/type.bas"
 qbs*oldstr336_2=NULL;
-#line 1516 "utilities/type.bas"
-if(_SUB_APPENDDYNMEMBERERASETYPED_STRING_ACC->tmp||_SUB_APPENDDYNMEMBERERASETYPED_STRING_ACC->fixed||_SUB_APPENDDYNMEMBERERASETYPED_STRING_ACC->readonly){
-#line 1516 "utilities/type.bas"
-oldstr336_2=_SUB_APPENDDYNMEMBERERASETYPED_STRING_ACC;
-#line 1516 "utilities/type.bas"
+#line 1229 "utilities/type.bas"
+if(_SUB_APPENDDYNUDTOWNSETAT_STRING_SRC_EXPR->tmp||_SUB_APPENDDYNUDTOWNSETAT_STRING_SRC_EXPR->fixed||_SUB_APPENDDYNUDTOWNSETAT_STRING_SRC_EXPR->readonly){
+#line 1229 "utilities/type.bas"
+oldstr336_2=_SUB_APPENDDYNUDTOWNSETAT_STRING_SRC_EXPR;
+#line 1229 "utilities/type.bas"
 if (oldstr336_2->cmem_descriptor){
-#line 1516 "utilities/type.bas"
-_SUB_APPENDDYNMEMBERERASETYPED_STRING_ACC=qbs_new_cmem(oldstr336_2->len,0);
-#line 1516 "utilities/type.bas"
+#line 1229 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNSETAT_STRING_SRC_EXPR=qbs_new_cmem(oldstr336_2->len,0);
+#line 1229 "utilities/type.bas"
 }else{
-#line 1516 "utilities/type.bas"
-_SUB_APPENDDYNMEMBERERASETYPED_STRING_ACC=qbs_new(oldstr336_2->len,0);
-#line 1516 "utilities/type.bas"
+#line 1229 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNSETAT_STRING_SRC_EXPR=qbs_new(oldstr336_2->len,0);
+#line 1229 "utilities/type.bas"
 }
-#line 1516 "utilities/type.bas"
-memcpy(_SUB_APPENDDYNMEMBERERASETYPED_STRING_ACC->chr,oldstr336_2->chr,oldstr336_2->len);
-#line 1516 "utilities/type.bas"
+#line 1229 "utilities/type.bas"
+memcpy(_SUB_APPENDDYNUDTOWNSETAT_STRING_SRC_EXPR->chr,oldstr336_2->chr,oldstr336_2->len);
+#line 1229 "utilities/type.bas"
 }
+#line 1229 "utilities/type.bas"
+qbs*oldstr336_3=NULL;
+#line 1229 "utilities/type.bas"
+if(_SUB_APPENDDYNUDTOWNSETAT_STRING_ELEM_BYTES->tmp||_SUB_APPENDDYNUDTOWNSETAT_STRING_ELEM_BYTES->fixed||_SUB_APPENDDYNUDTOWNSETAT_STRING_ELEM_BYTES->readonly){
+#line 1229 "utilities/type.bas"
+oldstr336_3=_SUB_APPENDDYNUDTOWNSETAT_STRING_ELEM_BYTES;
+#line 1229 "utilities/type.bas"
+if (oldstr336_3->cmem_descriptor){
+#line 1229 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNSETAT_STRING_ELEM_BYTES=qbs_new_cmem(oldstr336_3->len,0);
+#line 1229 "utilities/type.bas"
+}else{
+#line 1229 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNSETAT_STRING_ELEM_BYTES=qbs_new(oldstr336_3->len,0);
+#line 1229 "utilities/type.bas"
+}
+#line 1229 "utilities/type.bas"
+memcpy(_SUB_APPENDDYNUDTOWNSETAT_STRING_ELEM_BYTES->chr,oldstr336_3->chr,oldstr336_3->len);
+#line 1229 "utilities/type.bas"
+}
+#line 1229 "utilities/type.bas"
+qbs*oldstr336_4=NULL;
+#line 1229 "utilities/type.bas"
+if(_SUB_APPENDDYNUDTOWNSETAT_STRING_DST_INDEX->tmp||_SUB_APPENDDYNUDTOWNSETAT_STRING_DST_INDEX->fixed||_SUB_APPENDDYNUDTOWNSETAT_STRING_DST_INDEX->readonly){
+#line 1229 "utilities/type.bas"
+oldstr336_4=_SUB_APPENDDYNUDTOWNSETAT_STRING_DST_INDEX;
+#line 1229 "utilities/type.bas"
+if (oldstr336_4->cmem_descriptor){
+#line 1229 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNSETAT_STRING_DST_INDEX=qbs_new_cmem(oldstr336_4->len,0);
+#line 1229 "utilities/type.bas"
+}else{
+#line 1229 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNSETAT_STRING_DST_INDEX=qbs_new(oldstr336_4->len,0);
+#line 1229 "utilities/type.bas"
+}
+#line 1229 "utilities/type.bas"
+memcpy(_SUB_APPENDDYNUDTOWNSETAT_STRING_DST_INDEX->chr,oldstr336_4->chr,oldstr336_4->len);
+#line 1229 "utilities/type.bas"
+}
+#line 1229 "utilities/type.bas"
+qbs*oldstr336_5=NULL;
+#line 1229 "utilities/type.bas"
+if(_SUB_APPENDDYNUDTOWNSETAT_STRING_SRC_INDEX->tmp||_SUB_APPENDDYNUDTOWNSETAT_STRING_SRC_INDEX->fixed||_SUB_APPENDDYNUDTOWNSETAT_STRING_SRC_INDEX->readonly){
+#line 1229 "utilities/type.bas"
+oldstr336_5=_SUB_APPENDDYNUDTOWNSETAT_STRING_SRC_INDEX;
+#line 1229 "utilities/type.bas"
+if (oldstr336_5->cmem_descriptor){
+#line 1229 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNSETAT_STRING_SRC_INDEX=qbs_new_cmem(oldstr336_5->len,0);
+#line 1229 "utilities/type.bas"
+}else{
+#line 1229 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNSETAT_STRING_SRC_INDEX=qbs_new(oldstr336_5->len,0);
+#line 1229 "utilities/type.bas"
+}
+#line 1229 "utilities/type.bas"
+memcpy(_SUB_APPENDDYNUDTOWNSETAT_STRING_SRC_INDEX->chr,oldstr336_5->chr,oldstr336_5->len);
+#line 1229 "utilities/type.bas"
+}
+#line 1229 "utilities/type.bas"
+qbs*oldstr336_6=NULL;
+#line 1229 "utilities/type.bas"
+if(_SUB_APPENDDYNUDTOWNSETAT_STRING_ACC->tmp||_SUB_APPENDDYNUDTOWNSETAT_STRING_ACC->fixed||_SUB_APPENDDYNUDTOWNSETAT_STRING_ACC->readonly){
+#line 1229 "utilities/type.bas"
+oldstr336_6=_SUB_APPENDDYNUDTOWNSETAT_STRING_ACC;
+#line 1229 "utilities/type.bas"
+if (oldstr336_6->cmem_descriptor){
+#line 1229 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNSETAT_STRING_ACC=qbs_new_cmem(oldstr336_6->len,0);
+#line 1229 "utilities/type.bas"
+}else{
+#line 1229 "utilities/type.bas"
+_SUB_APPENDDYNUDTOWNSETAT_STRING_ACC=qbs_new(oldstr336_6->len,0);
+#line 1229 "utilities/type.bas"
+}
+#line 1229 "utilities/type.bas"
+memcpy(_SUB_APPENDDYNUDTOWNSETAT_STRING_ACC->chr,oldstr336_6->chr,oldstr336_6->len);
+#line 1229 "utilities/type.bas"
+}
+#line 1230 "utilities/type.bas"
+int32 pass336_7;

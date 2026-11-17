@@ -1,0 +1,5 @@
+if(oldstr569_1){
+if(oldstr569_1->fixed)qbs_set(oldstr569_1,_FUNC_IDEHINTKEY_STRING_WORD);
+qbs_free(_FUNC_IDEHINTKEY_STRING_WORD);
+}
+qbs_free(_FUNC_IDEHINTKEY_STRING_K);

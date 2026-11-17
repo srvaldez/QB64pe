@@ -1,68 +1,92 @@
-#line 158 "utilities/file.bas"
-qbs* FUNC_FIXDIRECTORYNAME(qbs*_FUNC_FIXDIRECTORYNAME_STRING_DIR_NAME){
-#line 158 "utilities/file.bas"
+#line 116 "utilities/strings.bas"
+qbs* FUNC_READWRITESTRINGSETTINGVALUE(qbs*_FUNC_READWRITESTRINGSETTINGVALUE_STRING_SECTION,qbs*_FUNC_READWRITESTRINGSETTINGVALUE_STRING_SETTING,qbs*_FUNC_READWRITESTRINGSETTINGVALUE_STRING_DEFAULT){
+#line 116 "utilities/strings.bas"
 qbs *tqbs;
-#line 158 "utilities/file.bas"
+#line 116 "utilities/strings.bas"
 ptrszint tmp_long;
-#line 158 "utilities/file.bas"
+#line 116 "utilities/strings.bas"
 int32 tmp_fileno;
-#line 158 "utilities/file.bas"
+#line 116 "utilities/strings.bas"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
-#line 158 "utilities/file.bas"
+#line 116 "utilities/strings.bas"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
-#line 158 "utilities/file.bas"
+#line 116 "utilities/strings.bas"
 uint32 tmp_cmem_sp=cmem_sp;
-#line 158 "utilities/file.bas"
+#line 116 "utilities/strings.bas"
 #include "data165.txt"
-#line 158 "utilities/file.bas"
+#line 116 "utilities/strings.bas"
 mem_lock *sf_mem_lock;
-#line 158 "utilities/file.bas"
+#line 116 "utilities/strings.bas"
 new_mem_lock();
-#line 158 "utilities/file.bas"
+#line 116 "utilities/strings.bas"
 sf_mem_lock=mem_lock_tmp;
-#line 158 "utilities/file.bas"
+#line 116 "utilities/strings.bas"
 sf_mem_lock->type=3;
-#line 158 "utilities/file.bas"
+#line 116 "utilities/strings.bas"
 libqb_check_stack();
-#line 158 "utilities/file.bas"
+#line 116 "utilities/strings.bas"
 if (is_error_pending()) goto exit_subfunc;
-#line 159 "utilities/file.bas"
-S_165_1:;
-#line 159 "utilities/file.bas"
-if ((qbs_cleanup(qbs_tmp_base,(-(_FUNC_FIXDIRECTORYNAME_STRING_DIR_NAME->len> 0 ))&(qbs_notequal(qbs_right(_FUNC_FIXDIRECTORYNAME_STRING_DIR_NAME, 1 ),__STRING1_PATHSEP))))||is_error_pending()){
-#line 159 "utilities/file.bas"
-if(qbevent){evnt(28739,159,"file.bas");if(r)goto S_165_1;}
-#line 160 "utilities/file.bas"
+#line 117 "utilities/strings.bas"
 do{
-#line 160 "utilities/file.bas"
-qbs_set(_FUNC_FIXDIRECTORYNAME_STRING_FIXDIRECTORYNAME,qbs_add(_FUNC_FIXDIRECTORYNAME_STRING_DIR_NAME,__STRING1_PATHSEP));
-#line 160 "utilities/file.bas"
+#line 117 "utilities/strings.bas"
+if(!qbevent)break;evnt(30077,117,"strings.bas");}while(r);
+#line 118 "utilities/strings.bas"
+do{
+#line 118 "utilities/strings.bas"
+if(!qbevent)break;evnt(30077,118,"strings.bas");}while(r);
+#line 120 "utilities/strings.bas"
+do{
+#line 120 "utilities/strings.bas"
+*_FUNC_READWRITESTRINGSETTINGVALUE_INTEGER_RESULT=FUNC_READCONFIGSETTING(_FUNC_READWRITESTRINGSETTINGVALUE_STRING_SECTION,_FUNC_READWRITESTRINGSETTINGVALUE_STRING_SETTING,_FUNC_READWRITESTRINGSETTINGVALUE_STRING_VALUE);
+#line 120 "utilities/strings.bas"
 qbs_cleanup(qbs_tmp_base,0);
-#line 160 "utilities/file.bas"
-if(!qbevent)break;evnt(28739,160,"file.bas");}while(r);
-#line 161 "utilities/file.bas"
+#line 120 "utilities/strings.bas"
+if(!qbevent)break;evnt(30077,120,"strings.bas");}while(r);
+#line 122 "utilities/strings.bas"
+S_165_4:;
+#line 122 "utilities/strings.bas"
+if ((-(*_FUNC_READWRITESTRINGSETTINGVALUE_INTEGER_RESULT== 0 ))||is_error_pending()){
+#line 122 "utilities/strings.bas"
+if(qbevent){evnt(30077,122,"strings.bas");if(r)goto S_165_4;}
+#line 123 "utilities/strings.bas"
+do{
+#line 123 "utilities/strings.bas"
+SUB_WRITECONFIGSETTING(_FUNC_READWRITESTRINGSETTINGVALUE_STRING_SECTION,_FUNC_READWRITESTRINGSETTINGVALUE_STRING_SETTING,_FUNC_READWRITESTRINGSETTINGVALUE_STRING_DEFAULT);
+#line 123 "utilities/strings.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 123 "utilities/strings.bas"
+if(!qbevent)break;evnt(30077,123,"strings.bas");}while(r);
+#line 124 "utilities/strings.bas"
+do{
+#line 124 "utilities/strings.bas"
+qbs_set(_FUNC_READWRITESTRINGSETTINGVALUE_STRING_READWRITESTRINGSETTINGVALUE,_FUNC_READWRITESTRINGSETTINGVALUE_STRING_DEFAULT);
+#line 124 "utilities/strings.bas"
+qbs_cleanup(qbs_tmp_base,0);
+#line 124 "utilities/strings.bas"
+if(!qbevent)break;evnt(30077,124,"strings.bas");}while(r);
+#line 125 "utilities/strings.bas"
 }else{
-#line 162 "utilities/file.bas"
+#line 126 "utilities/strings.bas"
 do{
-#line 162 "utilities/file.bas"
-qbs_set(_FUNC_FIXDIRECTORYNAME_STRING_FIXDIRECTORYNAME,_FUNC_FIXDIRECTORYNAME_STRING_DIR_NAME);
-#line 162 "utilities/file.bas"
+#line 126 "utilities/strings.bas"
+qbs_set(_FUNC_READWRITESTRINGSETTINGVALUE_STRING_READWRITESTRINGSETTINGVALUE,_FUNC_READWRITESTRINGSETTINGVALUE_STRING_VALUE);
+#line 126 "utilities/strings.bas"
 qbs_cleanup(qbs_tmp_base,0);
-#line 162 "utilities/file.bas"
-if(!qbevent)break;evnt(28739,162,"file.bas");}while(r);
-#line 163 "utilities/file.bas"
+#line 126 "utilities/strings.bas"
+if(!qbevent)break;evnt(30077,126,"strings.bas");}while(r);
+#line 127 "utilities/strings.bas"
 }
-#line 164 "utilities/file.bas"
+#line 128 "utilities/strings.bas"
 exit_subfunc:;
-#line 164 "utilities/file.bas"
+#line 128 "utilities/strings.bas"
 free_mem_lock(sf_mem_lock);
-#line 164 "utilities/file.bas"
+#line 128 "utilities/strings.bas"
 #include "free165.txt"
-#line 164 "utilities/file.bas"
+#line 128 "utilities/strings.bas"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
-#line 164 "utilities/file.bas"
+#line 128 "utilities/strings.bas"
 cmem_sp=tmp_cmem_sp;
-#line 164 "utilities/file.bas"
-qbs_maketmp(_FUNC_FIXDIRECTORYNAME_STRING_FIXDIRECTORYNAME);return _FUNC_FIXDIRECTORYNAME_STRING_FIXDIRECTORYNAME;
-#line 164 "utilities/file.bas"
+#line 128 "utilities/strings.bas"
+qbs_maketmp(_FUNC_READWRITESTRINGSETTINGVALUE_STRING_READWRITESTRINGSETTINGVALUE);return _FUNC_READWRITESTRINGSETTINGVALUE_STRING_READWRITESTRINGSETTINGVALUE;
+#line 128 "utilities/strings.bas"
 }

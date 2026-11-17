@@ -1,56 +1,100 @@
-#line 230 "utilities/s-buffer/sb_qb64pe_extension.bm"
-void SUB_WRITEBUFFERAT(int32*_SUB_WRITEBUFFERAT_LONG_BUF){
-#line 230 "utilities/s-buffer/sb_qb64pe_extension.bm"
+#line 604 "utilities/s-buffer/simplebuffer.bm"
+void SUB_CONVBUFTONATIVEEOL(int32*_SUB_CONVBUFTONATIVEEOL_LONG_HANDLE){
+#line 604 "utilities/s-buffer/simplebuffer.bm"
 qbs *tqbs;
-#line 230 "utilities/s-buffer/sb_qb64pe_extension.bm"
+#line 604 "utilities/s-buffer/simplebuffer.bm"
 ptrszint tmp_long;
-#line 230 "utilities/s-buffer/sb_qb64pe_extension.bm"
+#line 604 "utilities/s-buffer/simplebuffer.bm"
 int32 tmp_fileno;
-#line 230 "utilities/s-buffer/sb_qb64pe_extension.bm"
+#line 604 "utilities/s-buffer/simplebuffer.bm"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
-#line 230 "utilities/s-buffer/sb_qb64pe_extension.bm"
+#line 604 "utilities/s-buffer/simplebuffer.bm"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
-#line 230 "utilities/s-buffer/sb_qb64pe_extension.bm"
+#line 604 "utilities/s-buffer/simplebuffer.bm"
 uint32 tmp_cmem_sp=cmem_sp;
-#line 230 "utilities/s-buffer/sb_qb64pe_extension.bm"
+#line 604 "utilities/s-buffer/simplebuffer.bm"
 #include "data241.txt"
-#line 230 "utilities/s-buffer/sb_qb64pe_extension.bm"
+#line 604 "utilities/s-buffer/simplebuffer.bm"
 mem_lock *sf_mem_lock;
-#line 230 "utilities/s-buffer/sb_qb64pe_extension.bm"
+#line 604 "utilities/s-buffer/simplebuffer.bm"
 new_mem_lock();
-#line 230 "utilities/s-buffer/sb_qb64pe_extension.bm"
+#line 604 "utilities/s-buffer/simplebuffer.bm"
 sf_mem_lock=mem_lock_tmp;
-#line 230 "utilities/s-buffer/sb_qb64pe_extension.bm"
+#line 604 "utilities/s-buffer/simplebuffer.bm"
 sf_mem_lock->type=3;
-#line 230 "utilities/s-buffer/sb_qb64pe_extension.bm"
+#line 604 "utilities/s-buffer/simplebuffer.bm"
 libqb_check_stack();
-#line 230 "utilities/s-buffer/sb_qb64pe_extension.bm"
+#line 604 "utilities/s-buffer/simplebuffer.bm"
 if (is_error_pending()) goto exit_subfunc;
-#line 231 "utilities/s-buffer/sb_qb64pe_extension.bm"
-S_241_1:;
-#line 231 "utilities/s-buffer/sb_qb64pe_extension.bm"
-if ((qbs_cleanup(qbs_tmp_base,-((FUNC_ISBUFCHANGED(_SUB_WRITEBUFFERAT_LONG_BUF))&&(~(FUNC_BUFMATCHESFILE(_SUB_WRITEBUFFERAT_LONG_BUF,(((qbs**)(__ARRAY_STRING_SBUFN[0]))[array_check((*_SUB_WRITEBUFFERAT_LONG_BUF)-__ARRAY_STRING_SBUFN[4],__ARRAY_STRING_SBUFN[5])])))))))||is_error_pending()){
-#line 231 "utilities/s-buffer/sb_qb64pe_extension.bm"
-if(qbevent){evnt(28744,231,"sb_qb64pe_extension.bm");if(r)goto S_241_1;}
-#line 231 "utilities/s-buffer/sb_qb64pe_extension.bm"
+#line 606 "utilities/s-buffer/simplebuffer.bm"
 do{
-#line 231 "utilities/s-buffer/sb_qb64pe_extension.bm"
-SUB_BUFTOFILE(_SUB_WRITEBUFFERAT_LONG_BUF,(((qbs**)(__ARRAY_STRING_SBUFN[0]))[array_check((*_SUB_WRITEBUFFERAT_LONG_BUF)-__ARRAY_STRING_SBUFN[4],__ARRAY_STRING_SBUFN[5])]));
-#line 231 "utilities/s-buffer/sb_qb64pe_extension.bm"
-qbs_cleanup(qbs_tmp_base,0);
-#line 231 "utilities/s-buffer/sb_qb64pe_extension.bm"
-if(!qbevent)break;evnt(28744,231,"sb_qb64pe_extension.bm");}while(r);
-#line 231 "utilities/s-buffer/sb_qb64pe_extension.bm"
+#line 606 "utilities/s-buffer/simplebuffer.bm"
+if(!qbevent)break;evnt(30083,606,"simplebuffer.bm");}while(r);
+#line 608 "utilities/s-buffer/simplebuffer.bm"
+S_241_2:;
+#line 608 "utilities/s-buffer/simplebuffer.bm"
+if ((~(FUNC_CHECKHANDLE(_SUB_CONVBUFTONATIVEEOL_LONG_HANDLE)))||is_error_pending()){
+#line 608 "utilities/s-buffer/simplebuffer.bm"
+if(qbevent){evnt(30083,608,"simplebuffer.bm");if(r)goto S_241_2;}
+#line 608 "utilities/s-buffer/simplebuffer.bm"
+do{
+#line 608 "utilities/s-buffer/simplebuffer.bm"
+error( 258 );
+#line 608 "utilities/s-buffer/simplebuffer.bm"
+if(!qbevent)break;evnt(30083,608,"simplebuffer.bm");}while(r);
+#line 608 "utilities/s-buffer/simplebuffer.bm"
+do{
+#line 608 "utilities/s-buffer/simplebuffer.bm"
+close_program=1;
+#line 608 "utilities/s-buffer/simplebuffer.bm"
+end();
+#line 608 "utilities/s-buffer/simplebuffer.bm"
+if(!qbevent)break;evnt(30083,608,"simplebuffer.bm");}while(r);
+#line 608 "utilities/s-buffer/simplebuffer.bm"
 }
-#line 232 "utilities/s-buffer/sb_qb64pe_extension.bm"
+#line 609 "utilities/s-buffer/simplebuffer.bm"
+do{
+#line 609 "utilities/s-buffer/simplebuffer.bm"
+*_SUB_CONVBUFTONATIVEEOL_LONG_BUF=*_SUB_CONVBUFTONATIVEEOL_LONG_HANDLE* 2ll ;
+#line 609 "utilities/s-buffer/simplebuffer.bm"
+if(!qbevent)break;evnt(30083,609,"simplebuffer.bm");}while(r);
+#line 611 "utilities/s-buffer/simplebuffer.bm"
+S_241_7:;
+#line 611 "utilities/s-buffer/simplebuffer.bm"
+if ((qbs_cleanup(qbs_tmp_base,-(func_instr(NULL,func__os(),qbs_new_txt_len("[LINUX]",7),0)> 0 )))||is_error_pending()){
+#line 611 "utilities/s-buffer/simplebuffer.bm"
+if(qbevent){evnt(30083,611,"simplebuffer.bm");if(r)goto S_241_7;}
+#line 612 "utilities/s-buffer/simplebuffer.bm"
+do{
+#line 612 "utilities/s-buffer/simplebuffer.bm"
+SUB_CONVBUFTOLNXMACEOL(_SUB_CONVBUFTONATIVEEOL_LONG_HANDLE);
+#line 612 "utilities/s-buffer/simplebuffer.bm"
+if(!qbevent)break;evnt(30083,612,"simplebuffer.bm");}while(r);
+#line 613 "utilities/s-buffer/simplebuffer.bm"
+}else{
+#line 614 "utilities/s-buffer/simplebuffer.bm"
+do{
+#line 614 "utilities/s-buffer/simplebuffer.bm"
+SUB_CONVBUFTOWINEOL(_SUB_CONVBUFTONATIVEEOL_LONG_HANDLE);
+#line 614 "utilities/s-buffer/simplebuffer.bm"
+if(!qbevent)break;evnt(30083,614,"simplebuffer.bm");}while(r);
+#line 615 "utilities/s-buffer/simplebuffer.bm"
+}
+#line 616 "utilities/s-buffer/simplebuffer.bm"
+do{
+#line 616 "utilities/s-buffer/simplebuffer.bm"
+sub_mid((((qbs**)(__ARRAY_STRING_SIMPLEBUFFER_ARRAY[0]))[array_check((*_SUB_CONVBUFTONATIVEEOL_LONG_BUF+ 1 )-__ARRAY_STRING_SIMPLEBUFFER_ARRAY[4],__ARRAY_STRING_SIMPLEBUFFER_ARRAY[5])]), 9 , 4 ,qbs_new_txt_len("EolN",4),1);
+#line 616 "utilities/s-buffer/simplebuffer.bm"
+if(!qbevent)break;evnt(30083,616,"simplebuffer.bm");}while(r);
+#line 617 "utilities/s-buffer/simplebuffer.bm"
 exit_subfunc:;
-#line 232 "utilities/s-buffer/sb_qb64pe_extension.bm"
+#line 617 "utilities/s-buffer/simplebuffer.bm"
 free_mem_lock(sf_mem_lock);
-#line 232 "utilities/s-buffer/sb_qb64pe_extension.bm"
+#line 617 "utilities/s-buffer/simplebuffer.bm"
 #include "free241.txt"
-#line 232 "utilities/s-buffer/sb_qb64pe_extension.bm"
+#line 617 "utilities/s-buffer/simplebuffer.bm"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
-#line 232 "utilities/s-buffer/sb_qb64pe_extension.bm"
+#line 617 "utilities/s-buffer/simplebuffer.bm"
 cmem_sp=tmp_cmem_sp;
-#line 232 "utilities/s-buffer/sb_qb64pe_extension.bm"
+#line 617 "utilities/s-buffer/simplebuffer.bm"
 }

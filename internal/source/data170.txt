@@ -1,26 +1,29 @@
-qbs *_FUNC_MAKENMOUTPUTFILENAME_STRING_MAKENMOUTPUTFILENAME=NULL;
-#line 32 "utilities/build.bas"
-if (!_FUNC_MAKENMOUTPUTFILENAME_STRING_MAKENMOUTPUTFILENAME)_FUNC_MAKENMOUTPUTFILENAME_STRING_MAKENMOUTPUTFILENAME=qbs_new(0,0);
-#line 32 "utilities/build.bas"
+int16 *_FUNC_CLAIMINSTANCELOCK_INTEGER_CLAIMINSTANCELOCK=NULL;
+#line 51 "utilities/file.bas"
+if(_FUNC_CLAIMINSTANCELOCK_INTEGER_CLAIMINSTANCELOCK==NULL){
+#line 51 "utilities/file.bas"
+_FUNC_CLAIMINSTANCELOCK_INTEGER_CLAIMINSTANCELOCK=(int16*)mem_static_malloc(2);
+#line 51 "utilities/file.bas"
+*_FUNC_CLAIMINSTANCELOCK_INTEGER_CLAIMINSTANCELOCK=0;
+#line 51 "utilities/file.bas"
+}
+#line 51 "utilities/file.bas"
 qbs*oldstr170_1=NULL;
-#line 32 "utilities/build.bas"
-if(_FUNC_MAKENMOUTPUTFILENAME_STRING_LIBFILE->tmp||_FUNC_MAKENMOUTPUTFILENAME_STRING_LIBFILE->fixed||_FUNC_MAKENMOUTPUTFILENAME_STRING_LIBFILE->readonly){
-#line 32 "utilities/build.bas"
-oldstr170_1=_FUNC_MAKENMOUTPUTFILENAME_STRING_LIBFILE;
-#line 32 "utilities/build.bas"
+#line 51 "utilities/file.bas"
+if(_FUNC_CLAIMINSTANCELOCK_STRING_FILESPEC->tmp||_FUNC_CLAIMINSTANCELOCK_STRING_FILESPEC->fixed||_FUNC_CLAIMINSTANCELOCK_STRING_FILESPEC->readonly){
+#line 51 "utilities/file.bas"
+oldstr170_1=_FUNC_CLAIMINSTANCELOCK_STRING_FILESPEC;
+#line 51 "utilities/file.bas"
 if (oldstr170_1->cmem_descriptor){
-#line 32 "utilities/build.bas"
-_FUNC_MAKENMOUTPUTFILENAME_STRING_LIBFILE=qbs_new_cmem(oldstr170_1->len,0);
-#line 32 "utilities/build.bas"
+#line 51 "utilities/file.bas"
+_FUNC_CLAIMINSTANCELOCK_STRING_FILESPEC=qbs_new_cmem(oldstr170_1->len,0);
+#line 51 "utilities/file.bas"
 }else{
-#line 32 "utilities/build.bas"
-_FUNC_MAKENMOUTPUTFILENAME_STRING_LIBFILE=qbs_new(oldstr170_1->len,0);
-#line 32 "utilities/build.bas"
+#line 51 "utilities/file.bas"
+_FUNC_CLAIMINSTANCELOCK_STRING_FILESPEC=qbs_new(oldstr170_1->len,0);
+#line 51 "utilities/file.bas"
 }
-#line 32 "utilities/build.bas"
-memcpy(_FUNC_MAKENMOUTPUTFILENAME_STRING_LIBFILE->chr,oldstr170_1->chr,oldstr170_1->len);
-#line 32 "utilities/build.bas"
+#line 51 "utilities/file.bas"
+memcpy(_FUNC_CLAIMINSTANCELOCK_STRING_FILESPEC->chr,oldstr170_1->chr,oldstr170_1->len);
+#line 51 "utilities/file.bas"
 }
-qbs *_FUNC_MAKENMOUTPUTFILENAME_STRING_DYN=NULL;
-#line 33 "utilities/build.bas"
-if (!_FUNC_MAKENMOUTPUTFILENAME_STRING_DYN)_FUNC_MAKENMOUTPUTFILENAME_STRING_DYN=qbs_new(0,0);

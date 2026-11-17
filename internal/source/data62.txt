@@ -1,106 +1,575 @@
-qbs *_FUNC_FINALMEMBERARRAYWHOLEEXPR_STRING_FINALMEMBERARRAYWHOLEEXPR=NULL;
-#line 19062 "qb64pe.bas"
-if (!_FUNC_FINALMEMBERARRAYWHOLEEXPR_STRING_FINALMEMBERARRAYWHOLEEXPR)_FUNC_FINALMEMBERARRAYWHOLEEXPR_STRING_FINALMEMBERARRAYWHOLEEXPR=qbs_new(0,0);
-#line 19062 "qb64pe.bas"
+int32 *_FUNC_DIM2_LONG_DIM2=NULL;
+#line 18161 "qb64pe.bas"
+if(_FUNC_DIM2_LONG_DIM2==NULL){
+#line 18161 "qb64pe.bas"
+_FUNC_DIM2_LONG_DIM2=(int32*)mem_static_malloc(4);
+#line 18161 "qb64pe.bas"
+*_FUNC_DIM2_LONG_DIM2=0;
+#line 18161 "qb64pe.bas"
+}
+#line 18161 "qb64pe.bas"
 qbs*oldstr62_1=NULL;
-#line 19062 "qb64pe.bas"
-if(_FUNC_FINALMEMBERARRAYWHOLEEXPR_STRING_EXPR->tmp||_FUNC_FINALMEMBERARRAYWHOLEEXPR_STRING_EXPR->fixed||_FUNC_FINALMEMBERARRAYWHOLEEXPR_STRING_EXPR->readonly){
-#line 19062 "qb64pe.bas"
-oldstr62_1=_FUNC_FINALMEMBERARRAYWHOLEEXPR_STRING_EXPR;
-#line 19062 "qb64pe.bas"
+#line 18161 "qb64pe.bas"
+if(_FUNC_DIM2_STRING_VARNAME->tmp||_FUNC_DIM2_STRING_VARNAME->fixed||_FUNC_DIM2_STRING_VARNAME->readonly){
+#line 18161 "qb64pe.bas"
+oldstr62_1=_FUNC_DIM2_STRING_VARNAME;
+#line 18161 "qb64pe.bas"
 if (oldstr62_1->cmem_descriptor){
-#line 19062 "qb64pe.bas"
-_FUNC_FINALMEMBERARRAYWHOLEEXPR_STRING_EXPR=qbs_new_cmem(oldstr62_1->len,0);
-#line 19062 "qb64pe.bas"
+#line 18161 "qb64pe.bas"
+_FUNC_DIM2_STRING_VARNAME=qbs_new_cmem(oldstr62_1->len,0);
+#line 18161 "qb64pe.bas"
 }else{
-#line 19062 "qb64pe.bas"
-_FUNC_FINALMEMBERARRAYWHOLEEXPR_STRING_EXPR=qbs_new(oldstr62_1->len,0);
-#line 19062 "qb64pe.bas"
+#line 18161 "qb64pe.bas"
+_FUNC_DIM2_STRING_VARNAME=qbs_new(oldstr62_1->len,0);
+#line 18161 "qb64pe.bas"
 }
-#line 19062 "qb64pe.bas"
-memcpy(_FUNC_FINALMEMBERARRAYWHOLEEXPR_STRING_EXPR->chr,oldstr62_1->chr,oldstr62_1->len);
-#line 19062 "qb64pe.bas"
+#line 18161 "qb64pe.bas"
+memcpy(_FUNC_DIM2_STRING_VARNAME->chr,oldstr62_1->chr,oldstr62_1->len);
+#line 18161 "qb64pe.bas"
 }
-qbs *_FUNC_FINALMEMBERARRAYWHOLEEXPR_STRING_WORK=NULL;
-#line 19063 "qb64pe.bas"
-if (!_FUNC_FINALMEMBERARRAYWHOLEEXPR_STRING_WORK)_FUNC_FINALMEMBERARRAYWHOLEEXPR_STRING_WORK=qbs_new(0,0);
-qbs *_FUNC_FINALMEMBERARRAYWHOLEEXPR_STRING_LEADING_WRAPS=NULL;
-#line 19064 "qb64pe.bas"
-if (!_FUNC_FINALMEMBERARRAYWHOLEEXPR_STRING_LEADING_WRAPS)_FUNC_FINALMEMBERARRAYWHOLEEXPR_STRING_LEADING_WRAPS=qbs_new(0,0);
-qbs *_FUNC_FINALMEMBERARRAYWHOLEEXPR_STRING_TRAILING_WRAPS=NULL;
-#line 19065 "qb64pe.bas"
-if (!_FUNC_FINALMEMBERARRAYWHOLEEXPR_STRING_TRAILING_WRAPS)_FUNC_FINALMEMBERARRAYWHOLEEXPR_STRING_TRAILING_WRAPS=qbs_new(0,0);
-int32 *_FUNC_FINALMEMBERARRAYWHOLEEXPR_LONG_TOK_COUNT=NULL;
-#line 19066 "qb64pe.bas"
-if(_FUNC_FINALMEMBERARRAYWHOLEEXPR_LONG_TOK_COUNT==NULL){
-#line 19066 "qb64pe.bas"
-_FUNC_FINALMEMBERARRAYWHOLEEXPR_LONG_TOK_COUNT=(int32*)mem_static_malloc(4);
-#line 19066 "qb64pe.bas"
-*_FUNC_FINALMEMBERARRAYWHOLEEXPR_LONG_TOK_COUNT=0;
-#line 19066 "qb64pe.bas"
+#line 18161 "qb64pe.bas"
+qbs*oldstr62_2=NULL;
+#line 18161 "qb64pe.bas"
+if(_FUNC_DIM2_STRING_TYP2->tmp||_FUNC_DIM2_STRING_TYP2->fixed||_FUNC_DIM2_STRING_TYP2->readonly){
+#line 18161 "qb64pe.bas"
+oldstr62_2=_FUNC_DIM2_STRING_TYP2;
+#line 18161 "qb64pe.bas"
+if (oldstr62_2->cmem_descriptor){
+#line 18161 "qb64pe.bas"
+_FUNC_DIM2_STRING_TYP2=qbs_new_cmem(oldstr62_2->len,0);
+#line 18161 "qb64pe.bas"
+}else{
+#line 18161 "qb64pe.bas"
+_FUNC_DIM2_STRING_TYP2=qbs_new(oldstr62_2->len,0);
+#line 18161 "qb64pe.bas"
 }
-int32 *_FUNC_FINALMEMBERARRAYWHOLEEXPR_LONG_TOKEN_INDEX=NULL;
-#line 19067 "qb64pe.bas"
-if(_FUNC_FINALMEMBERARRAYWHOLEEXPR_LONG_TOKEN_INDEX==NULL){
-#line 19067 "qb64pe.bas"
-_FUNC_FINALMEMBERARRAYWHOLEEXPR_LONG_TOKEN_INDEX=(int32*)mem_static_malloc(4);
-#line 19067 "qb64pe.bas"
-*_FUNC_FINALMEMBERARRAYWHOLEEXPR_LONG_TOKEN_INDEX=0;
-#line 19067 "qb64pe.bas"
+#line 18161 "qb64pe.bas"
+memcpy(_FUNC_DIM2_STRING_TYP2->chr,oldstr62_2->chr,oldstr62_2->len);
+#line 18161 "qb64pe.bas"
 }
-int32 *_FUNC_FINALMEMBERARRAYWHOLEEXPR_LONG_DEPTH=NULL;
-#line 19068 "qb64pe.bas"
-if(_FUNC_FINALMEMBERARRAYWHOLEEXPR_LONG_DEPTH==NULL){
-#line 19068 "qb64pe.bas"
-_FUNC_FINALMEMBERARRAYWHOLEEXPR_LONG_DEPTH=(int32*)mem_static_malloc(4);
-#line 19068 "qb64pe.bas"
-*_FUNC_FINALMEMBERARRAYWHOLEEXPR_LONG_DEPTH=0;
-#line 19068 "qb64pe.bas"
+#line 18161 "qb64pe.bas"
+qbs*oldstr62_3=NULL;
+#line 18161 "qb64pe.bas"
+if(_FUNC_DIM2_STRING_ELEMENTS->tmp||_FUNC_DIM2_STRING_ELEMENTS->fixed||_FUNC_DIM2_STRING_ELEMENTS->readonly){
+#line 18161 "qb64pe.bas"
+oldstr62_3=_FUNC_DIM2_STRING_ELEMENTS;
+#line 18161 "qb64pe.bas"
+if (oldstr62_3->cmem_descriptor){
+#line 18161 "qb64pe.bas"
+_FUNC_DIM2_STRING_ELEMENTS=qbs_new_cmem(oldstr62_3->len,0);
+#line 18161 "qb64pe.bas"
+}else{
+#line 18161 "qb64pe.bas"
+_FUNC_DIM2_STRING_ELEMENTS=qbs_new(oldstr62_3->len,0);
+#line 18161 "qb64pe.bas"
 }
-int32 *_FUNC_FINALMEMBERARRAYWHOLEEXPR_LONG_WRAPPED=NULL;
-#line 19069 "qb64pe.bas"
-if(_FUNC_FINALMEMBERARRAYWHOLEEXPR_LONG_WRAPPED==NULL){
-#line 19069 "qb64pe.bas"
-_FUNC_FINALMEMBERARRAYWHOLEEXPR_LONG_WRAPPED=(int32*)mem_static_malloc(4);
-#line 19069 "qb64pe.bas"
-*_FUNC_FINALMEMBERARRAYWHOLEEXPR_LONG_WRAPPED=0;
-#line 19069 "qb64pe.bas"
+#line 18161 "qb64pe.bas"
+memcpy(_FUNC_DIM2_STRING_ELEMENTS->chr,oldstr62_3->chr,oldstr62_3->len);
+#line 18161 "qb64pe.bas"
 }
-qbs *_FUNC_FINALMEMBERARRAYWHOLEEXPR_STRING_TOKEN=NULL;
-#line 19070 "qb64pe.bas"
-if (!_FUNC_FINALMEMBERARRAYWHOLEEXPR_STRING_TOKEN)_FUNC_FINALMEMBERARRAYWHOLEEXPR_STRING_TOKEN=qbs_new(0,0);
-int32 *_FUNC_FINALMEMBERARRAYWHOLEEXPR_LONG_OPEN_INDEX=NULL;
-#line 19071 "qb64pe.bas"
-if(_FUNC_FINALMEMBERARRAYWHOLEEXPR_LONG_OPEN_INDEX==NULL){
-#line 19071 "qb64pe.bas"
-_FUNC_FINALMEMBERARRAYWHOLEEXPR_LONG_OPEN_INDEX=(int32*)mem_static_malloc(4);
-#line 19071 "qb64pe.bas"
-*_FUNC_FINALMEMBERARRAYWHOLEEXPR_LONG_OPEN_INDEX=0;
-#line 19071 "qb64pe.bas"
+qbs *_FUNC_DIM2_STRING_TYP=NULL;
+#line 18186 "qb64pe.bas"
+if (!_FUNC_DIM2_STRING_TYP)_FUNC_DIM2_STRING_TYP=qbs_new(0,0);
+qbs *_FUNC_DIM2_STRING_CVARNAME=NULL;
+#line 18191 "qb64pe.bas"
+if (!_FUNC_DIM2_STRING_CVARNAME)_FUNC_DIM2_STRING_CVARNAME=qbs_new(0,0);
+qbs *_FUNC_DIM2_STRING_L=NULL;
+#line 18192 "qb64pe.bas"
+if (!_FUNC_DIM2_STRING_L)_FUNC_DIM2_STRING_L=qbs_new(0,0);
+int32 *_FUNC_DIM2_LONG_F=NULL;
+#line 18195 "qb64pe.bas"
+if(_FUNC_DIM2_LONG_F==NULL){
+#line 18195 "qb64pe.bas"
+_FUNC_DIM2_LONG_F=(int32*)mem_static_malloc(4);
+#line 18195 "qb64pe.bas"
+*_FUNC_DIM2_LONG_F=0;
+#line 18195 "qb64pe.bas"
 }
-#line 19078 "qb64pe.bas"
-int32 pass62_3;
-#line 19082 "qb64pe.bas"
-int64 fornext_value62_5;
-#line 19082 "qb64pe.bas"
-int64 fornext_finalvalue62_5;
-#line 19082 "qb64pe.bas"
-int64 fornext_step62_5;
-#line 19082 "qb64pe.bas"
-uint8 fornext_step_negative62_5;
-#line 19092 "qb64pe.bas"
-int32 pass62_6;
-#line 19092 "qb64pe.bas"
-int32 pass62_7;
-#line 19102 "qb64pe.bas"
+qbs *_FUNC_DIM2_STRING_SCOPE2=NULL;
+#line 18206 "qb64pe.bas"
+if (!_FUNC_DIM2_STRING_SCOPE2)_FUNC_DIM2_STRING_SCOPE2=qbs_new(0,0);
+#line 18209 "qb64pe.bas"
+byte_element_struct *byte_element_62_5=NULL;
+#line 18209 "qb64pe.bas"
+if (!byte_element_62_5){
+#line 18209 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_62_5=(byte_element_struct*)(mem_static_pointer-12); else byte_element_62_5=(byte_element_struct*)mem_static_malloc(12);
+#line 18209 "qb64pe.bas"
+}
+#line 18215 "qb64pe.bas"
+byte_element_struct *byte_element_62_6=NULL;
+#line 18215 "qb64pe.bas"
+if (!byte_element_62_6){
+#line 18215 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_62_6=(byte_element_struct*)(mem_static_pointer-12); else byte_element_62_6=(byte_element_struct*)mem_static_malloc(12);
+#line 18215 "qb64pe.bas"
+}
+qbs *_FUNC_DIM2_STRING_TYPPADDED=NULL;
+#line 18216 "qb64pe.bas"
+if (!_FUNC_DIM2_STRING_TYPPADDED)_FUNC_DIM2_STRING_TYPPADDED=qbs_new(0,0);
+#line 18216 "qb64pe.bas"
+byte_element_struct *byte_element_62_7=NULL;
+#line 18216 "qb64pe.bas"
+if (!byte_element_62_7){
+#line 18216 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_62_7=(byte_element_struct*)(mem_static_pointer-12); else byte_element_62_7=(byte_element_struct*)mem_static_malloc(12);
+#line 18216 "qb64pe.bas"
+}
+int32 *_FUNC_DIM2_LONG_I=NULL;
+#line 18220 "qb64pe.bas"
+if(_FUNC_DIM2_LONG_I==NULL){
+#line 18220 "qb64pe.bas"
+_FUNC_DIM2_LONG_I=(int32*)mem_static_malloc(4);
+#line 18220 "qb64pe.bas"
+*_FUNC_DIM2_LONG_I=0;
+#line 18220 "qb64pe.bas"
+}
+#line 18220 "qb64pe.bas"
 int64 fornext_value62_9;
-#line 19102 "qb64pe.bas"
+#line 18220 "qb64pe.bas"
 int64 fornext_finalvalue62_9;
-#line 19102 "qb64pe.bas"
+#line 18220 "qb64pe.bas"
 int64 fornext_step62_9;
-#line 19102 "qb64pe.bas"
+#line 18220 "qb64pe.bas"
 uint8 fornext_step_negative62_9;
-#line 19117 "qb64pe.bas"
-int32 pass62_10;
-#line 19119 "qb64pe.bas"
-int32 pass62_11;
+qbs *_FUNC_DIM2_STRING_N=NULL;
+#line 18224 "qb64pe.bas"
+if (!_FUNC_DIM2_STRING_N)_FUNC_DIM2_STRING_N=qbs_new(0,0);
+int32 *_FUNC_DIM2_LONG_TRY=NULL;
+#line 18230 "qb64pe.bas"
+if(_FUNC_DIM2_LONG_TRY==NULL){
+#line 18230 "qb64pe.bas"
+_FUNC_DIM2_LONG_TRY=(int32*)mem_static_malloc(4);
+#line 18230 "qb64pe.bas"
+*_FUNC_DIM2_LONG_TRY=0;
+#line 18230 "qb64pe.bas"
+}
+int32 *_FUNC_DIM2_LONG_DYNPARAMMODE=NULL;
+#line 18243 "qb64pe.bas"
+if(_FUNC_DIM2_LONG_DYNPARAMMODE==NULL){
+#line 18243 "qb64pe.bas"
+_FUNC_DIM2_LONG_DYNPARAMMODE=(int32*)mem_static_malloc(4);
+#line 18243 "qb64pe.bas"
+*_FUNC_DIM2_LONG_DYNPARAMMODE=0;
+#line 18243 "qb64pe.bas"
+}
+int32 *_FUNC_DIM2_LONG_DYN_UDT_MODE=NULL;
+#line 18244 "qb64pe.bas"
+if(_FUNC_DIM2_LONG_DYN_UDT_MODE==NULL){
+#line 18244 "qb64pe.bas"
+_FUNC_DIM2_LONG_DYN_UDT_MODE=(int32*)mem_static_malloc(4);
+#line 18244 "qb64pe.bas"
+*_FUNC_DIM2_LONG_DYN_UDT_MODE=0;
+#line 18244 "qb64pe.bas"
+}
+int32 *_FUNC_DIM2_LONG_BITS=NULL;
+#line 18254 "qb64pe.bas"
+if(_FUNC_DIM2_LONG_BITS==NULL){
+#line 18254 "qb64pe.bas"
+_FUNC_DIM2_LONG_BITS=(int32*)mem_static_malloc(4);
+#line 18254 "qb64pe.bas"
+*_FUNC_DIM2_LONG_BITS=0;
+#line 18254 "qb64pe.bas"
+}
+int32 *_FUNC_DIM2_LONG_DYN_UDT_LAYOUT=NULL;
+#line 18255 "qb64pe.bas"
+if(_FUNC_DIM2_LONG_DYN_UDT_LAYOUT==NULL){
+#line 18255 "qb64pe.bas"
+_FUNC_DIM2_LONG_DYN_UDT_LAYOUT=(int32*)mem_static_malloc(4);
+#line 18255 "qb64pe.bas"
+*_FUNC_DIM2_LONG_DYN_UDT_LAYOUT=0;
+#line 18255 "qb64pe.bas"
+}
+#line 18264 "qb64pe.bas"
+byte_element_struct *byte_element_62_11=NULL;
+#line 18264 "qb64pe.bas"
+if (!byte_element_62_11){
+#line 18264 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_62_11=(byte_element_struct*)(mem_static_pointer-12); else byte_element_62_11=(byte_element_struct*)mem_static_malloc(12);
+#line 18264 "qb64pe.bas"
+}
+int32 *_FUNC_DIM2_LONG_NUME=NULL;
+#line 18268 "qb64pe.bas"
+if(_FUNC_DIM2_LONG_NUME==NULL){
+#line 18268 "qb64pe.bas"
+_FUNC_DIM2_LONG_NUME=(int32*)mem_static_malloc(4);
+#line 18268 "qb64pe.bas"
+*_FUNC_DIM2_LONG_NUME=0;
+#line 18268 "qb64pe.bas"
+}
+#line 18268 "qb64pe.bas"
+int32 pass62_12;
+#line 18299 "qb64pe.bas"
+int8 pass62_13;
+int32 *_FUNC_DIM2_LONG_SCALAR_DYN_LAYOUT=NULL;
+#line 18305 "qb64pe.bas"
+if(_FUNC_DIM2_LONG_SCALAR_DYN_LAYOUT==NULL){
+#line 18305 "qb64pe.bas"
+_FUNC_DIM2_LONG_SCALAR_DYN_LAYOUT=(int32*)mem_static_malloc(4);
+#line 18305 "qb64pe.bas"
+*_FUNC_DIM2_LONG_SCALAR_DYN_LAYOUT=0;
+#line 18305 "qb64pe.bas"
+}
+int32 *_FUNC_DIM2_LONG_SCALAR_DYN_MODE=NULL;
+#line 18306 "qb64pe.bas"
+if(_FUNC_DIM2_LONG_SCALAR_DYN_MODE==NULL){
+#line 18306 "qb64pe.bas"
+_FUNC_DIM2_LONG_SCALAR_DYN_MODE=(int32*)mem_static_malloc(4);
+#line 18306 "qb64pe.bas"
+*_FUNC_DIM2_LONG_SCALAR_DYN_MODE=0;
+#line 18306 "qb64pe.bas"
+}
+int32 *_FUNC_DIM2_LONG_BYTES=NULL;
+#line 18325 "qb64pe.bas"
+if(_FUNC_DIM2_LONG_BYTES==NULL){
+#line 18325 "qb64pe.bas"
+_FUNC_DIM2_LONG_BYTES=(int32*)mem_static_malloc(4);
+#line 18325 "qb64pe.bas"
+*_FUNC_DIM2_LONG_BYTES=0;
+#line 18325 "qb64pe.bas"
+}
+qbs *_FUNC_DIM2_STRING_ACC=NULL;
+#line 18344 "qb64pe.bas"
+if (!_FUNC_DIM2_STRING_ACC)_FUNC_DIM2_STRING_ACC=qbs_new(0,0);
+#line 18350 "qb64pe.bas"
+int32 pass62_14;
+#line 18352 "qb64pe.bas"
+int32 pass62_15;
+#line 18358 "qb64pe.bas"
+int32 pass62_16;
+#line 18360 "qb64pe.bas"
+int32 pass62_17;
+#line 18379 "qb64pe.bas"
+int32 pass62_18;
+#line 18381 "qb64pe.bas"
+int32 pass62_19;
+#line 18387 "qb64pe.bas"
+int32 pass62_20;
+#line 18389 "qb64pe.bas"
+int32 pass62_21;
+#line 18395 "qb64pe.bas"
+int32 pass62_22;
+#line 18396 "qb64pe.bas"
+int32 pass62_23;
+#line 18403 "qb64pe.bas"
+int8 pass62_24;
+int32 *_FUNC_DIM2_LONG_UNSGN=NULL;
+#line 18414 "qb64pe.bas"
+if(_FUNC_DIM2_LONG_UNSGN==NULL){
+#line 18414 "qb64pe.bas"
+_FUNC_DIM2_LONG_UNSGN=(int32*)mem_static_malloc(4);
+#line 18414 "qb64pe.bas"
+*_FUNC_DIM2_LONG_UNSGN=0;
+#line 18414 "qb64pe.bas"
+}
+#line 18418 "qb64pe.bas"
+byte_element_struct *byte_element_62_25=NULL;
+#line 18418 "qb64pe.bas"
+if (!byte_element_62_25){
+#line 18418 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_62_25=(byte_element_struct*)(mem_static_pointer-12); else byte_element_62_25=(byte_element_struct*)mem_static_malloc(12);
+#line 18418 "qb64pe.bas"
+}
+#line 18425 "qb64pe.bas"
+byte_element_struct *byte_element_62_26=NULL;
+#line 18425 "qb64pe.bas"
+if (!byte_element_62_26){
+#line 18425 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_62_26=(byte_element_struct*)(mem_static_pointer-12); else byte_element_62_26=(byte_element_struct*)mem_static_malloc(12);
+#line 18425 "qb64pe.bas"
+}
+qbs *_FUNC_DIM2_STRING_C=NULL;
+#line 18428 "qb64pe.bas"
+if (!_FUNC_DIM2_STRING_C)_FUNC_DIM2_STRING_C=qbs_new(0,0);
+#line 18428 "qb64pe.bas"
+byte_element_struct *byte_element_62_27=NULL;
+#line 18428 "qb64pe.bas"
+if (!byte_element_62_27){
+#line 18428 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_62_27=(byte_element_struct*)(mem_static_pointer-12); else byte_element_62_27=(byte_element_struct*)mem_static_malloc(12);
+#line 18428 "qb64pe.bas"
+}
+int32 *_FUNC_DIM2_LONG_HASHFOUND=NULL;
+#line 18431 "qb64pe.bas"
+if(_FUNC_DIM2_LONG_HASHFOUND==NULL){
+#line 18431 "qb64pe.bas"
+_FUNC_DIM2_LONG_HASHFOUND=(int32*)mem_static_malloc(4);
+#line 18431 "qb64pe.bas"
+*_FUNC_DIM2_LONG_HASHFOUND=0;
+#line 18431 "qb64pe.bas"
+}
+qbs *_FUNC_DIM2_STRING_HASHNAME=NULL;
+#line 18432 "qb64pe.bas"
+if (!_FUNC_DIM2_STRING_HASHNAME)_FUNC_DIM2_STRING_HASHNAME=qbs_new(0,0);
+int32 *_FUNC_DIM2_LONG_HASHCHKFLAGS=NULL;
+#line 18433 "qb64pe.bas"
+if(_FUNC_DIM2_LONG_HASHCHKFLAGS==NULL){
+#line 18433 "qb64pe.bas"
+_FUNC_DIM2_LONG_HASHCHKFLAGS=(int32*)mem_static_malloc(4);
+#line 18433 "qb64pe.bas"
+*_FUNC_DIM2_LONG_HASHCHKFLAGS=0;
+#line 18433 "qb64pe.bas"
+}
+int32 *_FUNC_DIM2_LONG_HASHRES=NULL;
+#line 18434 "qb64pe.bas"
+if(_FUNC_DIM2_LONG_HASHRES==NULL){
+#line 18434 "qb64pe.bas"
+_FUNC_DIM2_LONG_HASHRES=(int32*)mem_static_malloc(4);
+#line 18434 "qb64pe.bas"
+*_FUNC_DIM2_LONG_HASHRES=0;
+#line 18434 "qb64pe.bas"
+}
+int32 *_FUNC_DIM2_LONG_HASHRESFLAGS=NULL;
+#line 18434 "qb64pe.bas"
+if(_FUNC_DIM2_LONG_HASHRESFLAGS==NULL){
+#line 18434 "qb64pe.bas"
+_FUNC_DIM2_LONG_HASHRESFLAGS=(int32*)mem_static_malloc(4);
+#line 18434 "qb64pe.bas"
+*_FUNC_DIM2_LONG_HASHRESFLAGS=0;
+#line 18434 "qb64pe.bas"
+}
+int32 *_FUNC_DIM2_LONG_HASHRESREF=NULL;
+#line 18434 "qb64pe.bas"
+if(_FUNC_DIM2_LONG_HASHRESREF==NULL){
+#line 18434 "qb64pe.bas"
+_FUNC_DIM2_LONG_HASHRESREF=(int32*)mem_static_malloc(4);
+#line 18434 "qb64pe.bas"
+*_FUNC_DIM2_LONG_HASHRESREF=0;
+#line 18434 "qb64pe.bas"
+}
+int32 *_FUNC_DIM2_LONG_I2=NULL;
+#line 18445 "qb64pe.bas"
+if(_FUNC_DIM2_LONG_I2==NULL){
+#line 18445 "qb64pe.bas"
+_FUNC_DIM2_LONG_I2=(int32*)mem_static_malloc(4);
+#line 18445 "qb64pe.bas"
+*_FUNC_DIM2_LONG_I2=0;
+#line 18445 "qb64pe.bas"
+}
+int32 *_FUNC_DIM2_LONG_T=NULL;
+#line 18446 "qb64pe.bas"
+if(_FUNC_DIM2_LONG_T==NULL){
+#line 18446 "qb64pe.bas"
+_FUNC_DIM2_LONG_T=(int32*)mem_static_malloc(4);
+#line 18446 "qb64pe.bas"
+*_FUNC_DIM2_LONG_T=0;
+#line 18446 "qb64pe.bas"
+}
+long double *_FUNC_DIM2_FLOAT_V=NULL;
+#line 18450 "qb64pe.bas"
+if(_FUNC_DIM2_FLOAT_V==NULL){
+#line 18450 "qb64pe.bas"
+_FUNC_DIM2_FLOAT_V=(long double*)mem_static_malloc(32);
+#line 18450 "qb64pe.bas"
+*_FUNC_DIM2_FLOAT_V=0;
+#line 18450 "qb64pe.bas"
+}
+int64 *_FUNC_DIM2_INTEGER64_V=NULL;
+#line 18451 "qb64pe.bas"
+if(_FUNC_DIM2_INTEGER64_V==NULL){
+#line 18451 "qb64pe.bas"
+_FUNC_DIM2_INTEGER64_V=(int64*)mem_static_malloc(8);
+#line 18451 "qb64pe.bas"
+*_FUNC_DIM2_INTEGER64_V=0;
+#line 18451 "qb64pe.bas"
+}
+uint64 *_FUNC_DIM2_UINTEGER64_V=NULL;
+#line 18452 "qb64pe.bas"
+if(_FUNC_DIM2_UINTEGER64_V==NULL){
+#line 18452 "qb64pe.bas"
+_FUNC_DIM2_UINTEGER64_V=(uint64*)mem_static_malloc(8);
+#line 18452 "qb64pe.bas"
+*_FUNC_DIM2_UINTEGER64_V=0;
+#line 18452 "qb64pe.bas"
+}
+#line 18471 "qb64pe.bas"
+byte_element_struct *byte_element_62_29=NULL;
+#line 18471 "qb64pe.bas"
+if (!byte_element_62_29){
+#line 18471 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_62_29=(byte_element_struct*)(mem_static_pointer-12); else byte_element_62_29=(byte_element_struct*)mem_static_malloc(12);
+#line 18471 "qb64pe.bas"
+}
+#line 18503 "qb64pe.bas"
+byte_element_struct *byte_element_62_31=NULL;
+#line 18503 "qb64pe.bas"
+if (!byte_element_62_31){
+#line 18503 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_62_31=(byte_element_struct*)(mem_static_pointer-12); else byte_element_62_31=(byte_element_struct*)mem_static_malloc(12);
+#line 18503 "qb64pe.bas"
+}
+#line 18506 "qb64pe.bas"
+int32 pass62_32;
+#line 18539 "qb64pe.bas"
+int8 pass62_33;
+qbs *_FUNC_DIM2_STRING_O=NULL;
+#line 18560 "qb64pe.bas"
+if (!_FUNC_DIM2_STRING_O)_FUNC_DIM2_STRING_O=qbs_new(0,0);
+#line 18574 "qb64pe.bas"
+int8 pass62_34;
+#line 18608 "qb64pe.bas"
+byte_element_struct *byte_element_62_36=NULL;
+#line 18608 "qb64pe.bas"
+if (!byte_element_62_36){
+#line 18608 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_62_36=(byte_element_struct*)(mem_static_pointer-12); else byte_element_62_36=(byte_element_struct*)mem_static_malloc(12);
+#line 18608 "qb64pe.bas"
+}
+#line 18611 "qb64pe.bas"
+int32 pass62_37;
+#line 18611 "qb64pe.bas"
+int32 pass62_38;
+#line 18643 "qb64pe.bas"
+int8 pass62_39;
+#line 18669 "qb64pe.bas"
+int8 pass62_40;
+#line 18675 "qb64pe.bas"
+byte_element_struct *byte_element_62_41=NULL;
+#line 18675 "qb64pe.bas"
+if (!byte_element_62_41){
+#line 18675 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_62_41=(byte_element_struct*)(mem_static_pointer-12); else byte_element_62_41=(byte_element_struct*)mem_static_malloc(12);
+#line 18675 "qb64pe.bas"
+}
+#line 18679 "qb64pe.bas"
+byte_element_struct *byte_element_62_42=NULL;
+#line 18679 "qb64pe.bas"
+if (!byte_element_62_42){
+#line 18679 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_62_42=(byte_element_struct*)(mem_static_pointer-12); else byte_element_62_42=(byte_element_struct*)mem_static_malloc(12);
+#line 18679 "qb64pe.bas"
+}
+qbs *_FUNC_DIM2_STRING_CT=NULL;
+#line 18686 "qb64pe.bas"
+if (!_FUNC_DIM2_STRING_CT)_FUNC_DIM2_STRING_CT=qbs_new(0,0);
+qbs *_FUNC_DIM2_STRING_CMPS=NULL;
+#line 18694 "qb64pe.bas"
+if (!_FUNC_DIM2_STRING_CMPS)_FUNC_DIM2_STRING_CMPS=qbs_new(0,0);
+#line 18717 "qb64pe.bas"
+byte_element_struct *byte_element_62_44=NULL;
+#line 18717 "qb64pe.bas"
+if (!byte_element_62_44){
+#line 18717 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_62_44=(byte_element_struct*)(mem_static_pointer-12); else byte_element_62_44=(byte_element_struct*)mem_static_malloc(12);
+#line 18717 "qb64pe.bas"
+}
+#line 18720 "qb64pe.bas"
+int32 pass62_45;
+#line 18720 "qb64pe.bas"
+int32 pass62_46;
+#line 18753 "qb64pe.bas"
+int8 pass62_47;
+#line 18783 "qb64pe.bas"
+int8 pass62_48;
+#line 18818 "qb64pe.bas"
+byte_element_struct *byte_element_62_50=NULL;
+#line 18818 "qb64pe.bas"
+if (!byte_element_62_50){
+#line 18818 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_62_50=(byte_element_struct*)(mem_static_pointer-12); else byte_element_62_50=(byte_element_struct*)mem_static_malloc(12);
+#line 18818 "qb64pe.bas"
+}
+#line 18821 "qb64pe.bas"
+int32 pass62_51;
+#line 18821 "qb64pe.bas"
+int32 pass62_52;
+#line 18870 "qb64pe.bas"
+int8 pass62_53;
+#line 18901 "qb64pe.bas"
+byte_element_struct *byte_element_62_55=NULL;
+#line 18901 "qb64pe.bas"
+if (!byte_element_62_55){
+#line 18901 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_62_55=(byte_element_struct*)(mem_static_pointer-12); else byte_element_62_55=(byte_element_struct*)mem_static_malloc(12);
+#line 18901 "qb64pe.bas"
+}
+#line 18904 "qb64pe.bas"
+int32 pass62_56;
+#line 18904 "qb64pe.bas"
+int32 pass62_57;
+#line 18954 "qb64pe.bas"
+int8 pass62_58;
+#line 18991 "qb64pe.bas"
+byte_element_struct *byte_element_62_60=NULL;
+#line 18991 "qb64pe.bas"
+if (!byte_element_62_60){
+#line 18991 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_62_60=(byte_element_struct*)(mem_static_pointer-12); else byte_element_62_60=(byte_element_struct*)mem_static_malloc(12);
+#line 18991 "qb64pe.bas"
+}
+#line 18994 "qb64pe.bas"
+int32 pass62_61;
+#line 18994 "qb64pe.bas"
+int32 pass62_62;
+#line 19043 "qb64pe.bas"
+int8 pass62_63;
+#line 19077 "qb64pe.bas"
+byte_element_struct *byte_element_62_65=NULL;
+#line 19077 "qb64pe.bas"
+if (!byte_element_62_65){
+#line 19077 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_62_65=(byte_element_struct*)(mem_static_pointer-12); else byte_element_62_65=(byte_element_struct*)mem_static_malloc(12);
+#line 19077 "qb64pe.bas"
+}
+#line 19080 "qb64pe.bas"
+int32 pass62_66;
+#line 19080 "qb64pe.bas"
+int32 pass62_67;
+#line 19129 "qb64pe.bas"
+int8 pass62_68;
+#line 19163 "qb64pe.bas"
+byte_element_struct *byte_element_62_70=NULL;
+#line 19163 "qb64pe.bas"
+if (!byte_element_62_70){
+#line 19163 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_62_70=(byte_element_struct*)(mem_static_pointer-12); else byte_element_62_70=(byte_element_struct*)mem_static_malloc(12);
+#line 19163 "qb64pe.bas"
+}
+#line 19166 "qb64pe.bas"
+int32 pass62_71;
+#line 19166 "qb64pe.bas"
+int32 pass62_72;
+#line 19215 "qb64pe.bas"
+int8 pass62_73;
+#line 19249 "qb64pe.bas"
+byte_element_struct *byte_element_62_75=NULL;
+#line 19249 "qb64pe.bas"
+if (!byte_element_62_75){
+#line 19249 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_62_75=(byte_element_struct*)(mem_static_pointer-12); else byte_element_62_75=(byte_element_struct*)mem_static_malloc(12);
+#line 19249 "qb64pe.bas"
+}
+#line 19252 "qb64pe.bas"
+int32 pass62_76;
+#line 19252 "qb64pe.bas"
+int32 pass62_77;
+#line 19301 "qb64pe.bas"
+int8 pass62_78;
+#line 19333 "qb64pe.bas"
+byte_element_struct *byte_element_62_80=NULL;
+#line 19333 "qb64pe.bas"
+if (!byte_element_62_80){
+#line 19333 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_62_80=(byte_element_struct*)(mem_static_pointer-12); else byte_element_62_80=(byte_element_struct*)mem_static_malloc(12);
+#line 19333 "qb64pe.bas"
+}
+#line 19336 "qb64pe.bas"
+int32 pass62_81;
+#line 19336 "qb64pe.bas"
+int32 pass62_82;
+#line 19385 "qb64pe.bas"
+int8 pass62_83;
+#line 19417 "qb64pe.bas"
+byte_element_struct *byte_element_62_85=NULL;
+#line 19417 "qb64pe.bas"
+if (!byte_element_62_85){
+#line 19417 "qb64pe.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_62_85=(byte_element_struct*)(mem_static_pointer-12); else byte_element_62_85=(byte_element_struct*)mem_static_malloc(12);
+#line 19417 "qb64pe.bas"
+}
+#line 19420 "qb64pe.bas"
+int32 pass62_86;
+#line 19420 "qb64pe.bas"
+int32 pass62_87;
+#line 19469 "qb64pe.bas"
+int8 pass62_88;

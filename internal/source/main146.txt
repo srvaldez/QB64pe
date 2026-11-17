@@ -1,50 +1,460 @@
-#line 51 "utilities/strings.bas"
-qbs* FUNC_ADDQUOTES(qbs*_FUNC_ADDQUOTES_STRING_S){
-#line 51 "utilities/strings.bas"
+#line 562 "utilities/arrcpy.bm"
+void SUB_PARSEARRAYCOPYDESTINATIONSTARTS(qbs*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_DST_START_LIST,int32*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_DST_DIMS,int32*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COMPILE_COORDS,qbs*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_COORD_INIT,qbs*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_FIRST_COORD){
+#line 562 "utilities/arrcpy.bm"
 qbs *tqbs;
-#line 51 "utilities/strings.bas"
+#line 562 "utilities/arrcpy.bm"
 ptrszint tmp_long;
-#line 51 "utilities/strings.bas"
+#line 562 "utilities/arrcpy.bm"
 int32 tmp_fileno;
-#line 51 "utilities/strings.bas"
+#line 562 "utilities/arrcpy.bm"
 uint32 qbs_tmp_base=qbs_tmp_list_nexti;
-#line 51 "utilities/strings.bas"
+#line 562 "utilities/arrcpy.bm"
 uint8 *tmp_mem_static_pointer=mem_static_pointer;
-#line 51 "utilities/strings.bas"
+#line 562 "utilities/arrcpy.bm"
 uint32 tmp_cmem_sp=cmem_sp;
-#line 51 "utilities/strings.bas"
+#line 562 "utilities/arrcpy.bm"
 #include "data146.txt"
-#line 51 "utilities/strings.bas"
+#line 562 "utilities/arrcpy.bm"
 mem_lock *sf_mem_lock;
-#line 51 "utilities/strings.bas"
+#line 562 "utilities/arrcpy.bm"
 new_mem_lock();
-#line 51 "utilities/strings.bas"
+#line 562 "utilities/arrcpy.bm"
 sf_mem_lock=mem_lock_tmp;
-#line 51 "utilities/strings.bas"
+#line 562 "utilities/arrcpy.bm"
 sf_mem_lock->type=3;
-#line 51 "utilities/strings.bas"
+#line 562 "utilities/arrcpy.bm"
 libqb_check_stack();
-#line 51 "utilities/strings.bas"
+#line 562 "utilities/arrcpy.bm"
 if (is_error_pending()) goto exit_subfunc;
-#line 52 "utilities/strings.bas"
+#line 563 "utilities/arrcpy.bm"
 do{
-#line 52 "utilities/strings.bas"
-qbs_set(_FUNC_ADDQUOTES_STRING_ADDQUOTES,qbs_add(qbs_add(func_chr( 34 ),_FUNC_ADDQUOTES_STRING_S),func_chr( 34 )));
-#line 52 "utilities/strings.bas"
+#line 563 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,563,"arrcpy.bm");}while(r);
+#line 564 "utilities/arrcpy.bm"
+do{
+#line 564 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,564,"arrcpy.bm");}while(r);
+#line 566 "utilities/arrcpy.bm"
+do{
+#line 566 "utilities/arrcpy.bm"
+*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_TOKENS=FUNC_NUMELEMENTS(_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_DST_START_LIST);
+#line 566 "utilities/arrcpy.bm"
 qbs_cleanup(qbs_tmp_base,0);
-#line 52 "utilities/strings.bas"
-if(!qbevent)break;evnt(28738,52,"strings.bas");}while(r);
-#line 53 "utilities/strings.bas"
+#line 566 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,566,"arrcpy.bm");}while(r);
+#line 567 "utilities/arrcpy.bm"
+S_146_4:;
+#line 567 "utilities/arrcpy.bm"
+if ((-(*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_TOKENS<= 0 ))||is_error_pending()){
+#line 567 "utilities/arrcpy.bm"
+if(qbevent){evnt(30076,567,"arrcpy.bm");if(r)goto S_146_4;}
+#line 567 "utilities/arrcpy.bm"
+do{
+#line 567 "utilities/arrcpy.bm"
+SUB_GIVE_ERROR(qbs_new_txt_len("_ArrayCopy destination requires one start coordinate per dimension",66));
+#line 567 "utilities/arrcpy.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 567 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,567,"arrcpy.bm");}while(r);
+#line 567 "utilities/arrcpy.bm"
+do{
+#line 567 "utilities/arrcpy.bm"
+goto exit_subfunc;
+#line 567 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,567,"arrcpy.bm");}while(r);
+#line 567 "utilities/arrcpy.bm"
+}
+#line 569 "utilities/arrcpy.bm"
+do{
+#line 569 "utilities/arrcpy.bm"
+*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_DEPTH= 0 ;
+#line 569 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,569,"arrcpy.bm");}while(r);
+#line 570 "utilities/arrcpy.bm"
+do{
+#line 570 "utilities/arrcpy.bm"
+*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_BEGIN= 1 ;
+#line 570 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,570,"arrcpy.bm");}while(r);
+#line 571 "utilities/arrcpy.bm"
+do{
+#line 571 "utilities/arrcpy.bm"
+*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_COUNT= 0 ;
+#line 571 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,571,"arrcpy.bm");}while(r);
+#line 572 "utilities/arrcpy.bm"
+do{
+#line 572 "utilities/arrcpy.bm"
+qbs_set(_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_COORD_INIT,qbs_new_txt_len("",0));
+#line 572 "utilities/arrcpy.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 572 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,572,"arrcpy.bm");}while(r);
+#line 573 "utilities/arrcpy.bm"
+do{
+#line 573 "utilities/arrcpy.bm"
+qbs_set(_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_FIRST_COORD,qbs_new_txt_len("",0));
+#line 573 "utilities/arrcpy.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 573 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,573,"arrcpy.bm");}while(r);
+#line 575 "utilities/arrcpy.bm"
+S_146_13:;
+#line 575 "utilities/arrcpy.bm"
+fornext_value146_5= 1 ;
+#line 575 "utilities/arrcpy.bm"
+fornext_finalvalue146_5=*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_TOKENS+ 1 ;
+#line 575 "utilities/arrcpy.bm"
+fornext_step146_5= 1 ;
+#line 575 "utilities/arrcpy.bm"
+if (fornext_step146_5<0) fornext_step_negative146_5=1; else fornext_step_negative146_5=0;
+#line 575 "utilities/arrcpy.bm"
+if (is_error_pending()) goto fornext_error146_5;
+#line 575 "utilities/arrcpy.bm"
+goto fornext_entrylabel146_5;
+#line 575 "utilities/arrcpy.bm"
+while(1){
+#line 575 "utilities/arrcpy.bm"
+fornext_value146_5=fornext_step146_5+(*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_AT);
+#line 575 "utilities/arrcpy.bm"
+fornext_entrylabel146_5:
+#line 575 "utilities/arrcpy.bm"
+*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_AT=fornext_value146_5;
+#line 575 "utilities/arrcpy.bm"
+if (fornext_step_negative146_5){
+#line 575 "utilities/arrcpy.bm"
+if (fornext_value146_5<fornext_finalvalue146_5) break;
+#line 575 "utilities/arrcpy.bm"
+}else{
+#line 575 "utilities/arrcpy.bm"
+if (fornext_value146_5>fornext_finalvalue146_5) break;
+#line 575 "utilities/arrcpy.bm"
+}
+#line 575 "utilities/arrcpy.bm"
+fornext_error146_5:;
+#line 575 "utilities/arrcpy.bm"
+if(qbevent){evnt(30076,575,"arrcpy.bm");if(r)goto S_146_13;}
+#line 576 "utilities/arrcpy.bm"
+do{
+#line 576 "utilities/arrcpy.bm"
+*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_CUT= 0 ;
+#line 576 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,576,"arrcpy.bm");}while(r);
+#line 577 "utilities/arrcpy.bm"
+S_146_15:;
+#line 577 "utilities/arrcpy.bm"
+if ((-(*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_AT>*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_TOKENS))||is_error_pending()){
+#line 577 "utilities/arrcpy.bm"
+if(qbevent){evnt(30076,577,"arrcpy.bm");if(r)goto S_146_15;}
+#line 578 "utilities/arrcpy.bm"
+do{
+#line 578 "utilities/arrcpy.bm"
+*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_CUT= -1 ;
+#line 578 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,578,"arrcpy.bm");}while(r);
+#line 579 "utilities/arrcpy.bm"
+}else{
+#line 580 "utilities/arrcpy.bm"
+do{
+#line 580 "utilities/arrcpy.bm"
+qbs_set(_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_COORD_TOKEN,FUNC_GETELEMENT(_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_DST_START_LIST,_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_AT));
+#line 580 "utilities/arrcpy.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 580 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,580,"arrcpy.bm");}while(r);
+#line 581 "utilities/arrcpy.bm"
+S_146_19:;
+#line 581 "utilities/arrcpy.bm"
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_COORD_TOKEN,qbs_new_txt_len("(",1))))||is_error_pending()){
+#line 581 "utilities/arrcpy.bm"
+if(qbevent){evnt(30076,581,"arrcpy.bm");if(r)goto S_146_19;}
+#line 582 "utilities/arrcpy.bm"
+do{
+#line 582 "utilities/arrcpy.bm"
+*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_DEPTH=*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_DEPTH+ 1 ;
+#line 582 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,582,"arrcpy.bm");}while(r);
+#line 583 "utilities/arrcpy.bm"
+S_146_21:;
+#line 583 "utilities/arrcpy.bm"
+}else{
+#line 583 "utilities/arrcpy.bm"
+if (qbs_cleanup(qbs_tmp_base,qbs_equal(_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_COORD_TOKEN,qbs_new_txt_len(")",1)))){
+#line 583 "utilities/arrcpy.bm"
+if(qbevent){evnt(30076,583,"arrcpy.bm");if(r)goto S_146_21;}
+#line 584 "utilities/arrcpy.bm"
+do{
+#line 584 "utilities/arrcpy.bm"
+*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_DEPTH=*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_DEPTH- 1 ;
+#line 584 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,584,"arrcpy.bm");}while(r);
+#line 585 "utilities/arrcpy.bm"
+S_146_23:;
+#line 585 "utilities/arrcpy.bm"
+if ((-(*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_DEPTH< 0 ))||is_error_pending()){
+#line 585 "utilities/arrcpy.bm"
+if(qbevent){evnt(30076,585,"arrcpy.bm");if(r)goto S_146_23;}
+#line 585 "utilities/arrcpy.bm"
+do{
+#line 585 "utilities/arrcpy.bm"
+SUB_GIVE_ERROR(qbs_new_txt_len("_ArrayCopy destination coordinate expression has unmatched parentheses",70));
+#line 585 "utilities/arrcpy.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 585 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,585,"arrcpy.bm");}while(r);
+#line 585 "utilities/arrcpy.bm"
+do{
+#line 585 "utilities/arrcpy.bm"
+goto exit_subfunc;
+#line 585 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,585,"arrcpy.bm");}while(r);
+#line 585 "utilities/arrcpy.bm"
+}
+#line 586 "utilities/arrcpy.bm"
+S_146_27:;
+#line 586 "utilities/arrcpy.bm"
+}else{
+#line 586 "utilities/arrcpy.bm"
+if (qbs_cleanup(qbs_tmp_base,(-(*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_DEPTH== 0 ))&(qbs_equal(_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_COORD_TOKEN,qbs_new_txt_len(",",1))))){
+#line 586 "utilities/arrcpy.bm"
+if(qbevent){evnt(30076,586,"arrcpy.bm");if(r)goto S_146_27;}
+#line 587 "utilities/arrcpy.bm"
+do{
+#line 587 "utilities/arrcpy.bm"
+*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_CUT= -1 ;
+#line 587 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,587,"arrcpy.bm");}while(r);
+#line 588 "utilities/arrcpy.bm"
+}
+#line 588 "utilities/arrcpy.bm"
+}
+#line 588 "utilities/arrcpy.bm"
+}
+#line 589 "utilities/arrcpy.bm"
+}
+#line 591 "utilities/arrcpy.bm"
+S_146_31:;
+#line 591 "utilities/arrcpy.bm"
+if ((*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_CUT)||is_error_pending()){
+#line 591 "utilities/arrcpy.bm"
+if(qbevent){evnt(30076,591,"arrcpy.bm");if(r)goto S_146_31;}
+#line 592 "utilities/arrcpy.bm"
+S_146_32:;
+#line 592 "utilities/arrcpy.bm"
+if ((-(*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_AT<=*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_BEGIN))||is_error_pending()){
+#line 592 "utilities/arrcpy.bm"
+if(qbevent){evnt(30076,592,"arrcpy.bm");if(r)goto S_146_32;}
+#line 592 "utilities/arrcpy.bm"
+do{
+#line 592 "utilities/arrcpy.bm"
+SUB_GIVE_ERROR(qbs_new_txt_len("_ArrayCopy destination coordinate expression cannot be empty",60));
+#line 592 "utilities/arrcpy.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 592 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,592,"arrcpy.bm");}while(r);
+#line 592 "utilities/arrcpy.bm"
+do{
+#line 592 "utilities/arrcpy.bm"
+goto exit_subfunc;
+#line 592 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,592,"arrcpy.bm");}while(r);
+#line 592 "utilities/arrcpy.bm"
+}
+#line 593 "utilities/arrcpy.bm"
+do{
+#line 593 "utilities/arrcpy.bm"
+qbs_set(_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_COORD_EXPR,FUNC_GETELEMENTS(_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_DST_START_LIST,_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_BEGIN,&(pass146_6=*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_AT- 1 )));
+#line 593 "utilities/arrcpy.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 593 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,593,"arrcpy.bm");}while(r);
+#line 594 "utilities/arrcpy.bm"
+S_146_37:;
+#line 594 "utilities/arrcpy.bm"
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_COORD_EXPR,qbs_new_txt_len("",0))))||is_error_pending()){
+#line 594 "utilities/arrcpy.bm"
+if(qbevent){evnt(30076,594,"arrcpy.bm");if(r)goto S_146_37;}
+#line 594 "utilities/arrcpy.bm"
+do{
+#line 594 "utilities/arrcpy.bm"
+SUB_GIVE_ERROR(qbs_new_txt_len("_ArrayCopy destination coordinate expression cannot be empty",60));
+#line 594 "utilities/arrcpy.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 594 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,594,"arrcpy.bm");}while(r);
+#line 594 "utilities/arrcpy.bm"
+do{
+#line 594 "utilities/arrcpy.bm"
+goto exit_subfunc;
+#line 594 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,594,"arrcpy.bm");}while(r);
+#line 594 "utilities/arrcpy.bm"
+}
+#line 596 "utilities/arrcpy.bm"
+do{
+#line 596 "utilities/arrcpy.bm"
+*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_COUNT=*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_COUNT+ 1 ;
+#line 596 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,596,"arrcpy.bm");}while(r);
+#line 597 "utilities/arrcpy.bm"
+S_146_42:;
+#line 597 "utilities/arrcpy.bm"
+if ((-(*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_COUNT== 1 ))||is_error_pending()){
+#line 597 "utilities/arrcpy.bm"
+if(qbevent){evnt(30076,597,"arrcpy.bm");if(r)goto S_146_42;}
+#line 597 "utilities/arrcpy.bm"
+do{
+#line 597 "utilities/arrcpy.bm"
+qbs_set(_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_FIRST_COORD,_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_COORD_EXPR);
+#line 597 "utilities/arrcpy.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 597 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,597,"arrcpy.bm");}while(r);
+#line 597 "utilities/arrcpy.bm"
+}
+#line 599 "utilities/arrcpy.bm"
+S_146_45:;
+#line 599 "utilities/arrcpy.bm"
+if ((*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COMPILE_COORDS)||is_error_pending()){
+#line 599 "utilities/arrcpy.bm"
+if(qbevent){evnt(30076,599,"arrcpy.bm");if(r)goto S_146_45;}
+#line 600 "utilities/arrcpy.bm"
+do{
+#line 600 "utilities/arrcpy.bm"
+qbs_set(_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_COORD_WORK,FUNC_FIXOPERATIONORDER(_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_COORD_EXPR));
+#line 600 "utilities/arrcpy.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 600 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,600,"arrcpy.bm");}while(r);
+#line 601 "utilities/arrcpy.bm"
+S_146_47:;
+#line 601 "utilities/arrcpy.bm"
+if ((*__LONG_ERROR_HAPPENED)||is_error_pending()){
+#line 601 "utilities/arrcpy.bm"
+if(qbevent){evnt(30076,601,"arrcpy.bm");if(r)goto S_146_47;}
+#line 601 "utilities/arrcpy.bm"
+do{
+#line 601 "utilities/arrcpy.bm"
+goto exit_subfunc;
+#line 601 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,601,"arrcpy.bm");}while(r);
+#line 601 "utilities/arrcpy.bm"
+}
+#line 602 "utilities/arrcpy.bm"
+do{
+#line 602 "utilities/arrcpy.bm"
+qbs_set(_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_COORD_CODE,FUNC_EVALUATETOTYP(_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_COORD_WORK,&(pass146_7= 64 )));
+#line 602 "utilities/arrcpy.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 602 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,602,"arrcpy.bm");}while(r);
+#line 603 "utilities/arrcpy.bm"
+S_146_51:;
+#line 603 "utilities/arrcpy.bm"
+if ((*__LONG_ERROR_HAPPENED)||is_error_pending()){
+#line 603 "utilities/arrcpy.bm"
+if(qbevent){evnt(30076,603,"arrcpy.bm");if(r)goto S_146_51;}
+#line 603 "utilities/arrcpy.bm"
+do{
+#line 603 "utilities/arrcpy.bm"
+goto exit_subfunc;
+#line 603 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,603,"arrcpy.bm");}while(r);
+#line 603 "utilities/arrcpy.bm"
+}
+#line 604 "utilities/arrcpy.bm"
+S_146_54:;
+#line 604 "utilities/arrcpy.bm"
+if ((qbs_cleanup(qbs_tmp_base,qbs_notequal(_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_COORD_INIT,qbs_new_txt_len("",0))))||is_error_pending()){
+#line 604 "utilities/arrcpy.bm"
+if(qbevent){evnt(30076,604,"arrcpy.bm");if(r)goto S_146_54;}
+#line 604 "utilities/arrcpy.bm"
+do{
+#line 604 "utilities/arrcpy.bm"
+qbs_set(_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_COORD_INIT,qbs_add(_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_COORD_INIT,qbs_new_txt_len(",",1)));
+#line 604 "utilities/arrcpy.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 604 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,604,"arrcpy.bm");}while(r);
+#line 604 "utilities/arrcpy.bm"
+}
+#line 605 "utilities/arrcpy.bm"
+do{
+#line 605 "utilities/arrcpy.bm"
+qbs_set(_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_COORD_INIT,qbs_add(qbs_add(qbs_add(_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_COORD_INIT,qbs_new_txt_len("(int64)(",8)),_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_STRING_COORD_CODE),qbs_new_txt_len(")",1)));
+#line 605 "utilities/arrcpy.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 605 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,605,"arrcpy.bm");}while(r);
+#line 606 "utilities/arrcpy.bm"
+}
+#line 608 "utilities/arrcpy.bm"
+do{
+#line 608 "utilities/arrcpy.bm"
+*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_BEGIN=*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_AT+ 1 ;
+#line 608 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,608,"arrcpy.bm");}while(r);
+#line 609 "utilities/arrcpy.bm"
+}
+#line 610 "utilities/arrcpy.bm"
+fornext_continue_146_4:;
+#line 610 "utilities/arrcpy.bm"
+}
+#line 610 "utilities/arrcpy.bm"
+fornext_exit_146_4:;
+#line 612 "utilities/arrcpy.bm"
+S_146_62:;
+#line 612 "utilities/arrcpy.bm"
+if ((-(*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_DEPTH!= 0 ))||is_error_pending()){
+#line 612 "utilities/arrcpy.bm"
+if(qbevent){evnt(30076,612,"arrcpy.bm");if(r)goto S_146_62;}
+#line 612 "utilities/arrcpy.bm"
+do{
+#line 612 "utilities/arrcpy.bm"
+SUB_GIVE_ERROR(qbs_new_txt_len("_ArrayCopy destination coordinate expression has unmatched parentheses",70));
+#line 612 "utilities/arrcpy.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 612 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,612,"arrcpy.bm");}while(r);
+#line 612 "utilities/arrcpy.bm"
+do{
+#line 612 "utilities/arrcpy.bm"
+goto exit_subfunc;
+#line 612 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,612,"arrcpy.bm");}while(r);
+#line 612 "utilities/arrcpy.bm"
+}
+#line 613 "utilities/arrcpy.bm"
+S_146_66:;
+#line 613 "utilities/arrcpy.bm"
+if ((-(*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_COORD_COUNT!=*_SUB_PARSEARRAYCOPYDESTINATIONSTARTS_LONG_DST_DIMS))||is_error_pending()){
+#line 613 "utilities/arrcpy.bm"
+if(qbevent){evnt(30076,613,"arrcpy.bm");if(r)goto S_146_66;}
+#line 613 "utilities/arrcpy.bm"
+do{
+#line 613 "utilities/arrcpy.bm"
+SUB_GIVE_ERROR(qbs_new_txt_len("_ArrayCopy destination start coordinate count must match destination dimensions",79));
+#line 613 "utilities/arrcpy.bm"
+qbs_cleanup(qbs_tmp_base,0);
+#line 613 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,613,"arrcpy.bm");}while(r);
+#line 613 "utilities/arrcpy.bm"
+do{
+#line 613 "utilities/arrcpy.bm"
+goto exit_subfunc;
+#line 613 "utilities/arrcpy.bm"
+if(!qbevent)break;evnt(30076,613,"arrcpy.bm");}while(r);
+#line 613 "utilities/arrcpy.bm"
+}
+#line 614 "utilities/arrcpy.bm"
 exit_subfunc:;
-#line 53 "utilities/strings.bas"
+#line 614 "utilities/arrcpy.bm"
 free_mem_lock(sf_mem_lock);
-#line 53 "utilities/strings.bas"
+#line 614 "utilities/arrcpy.bm"
 #include "free146.txt"
-#line 53 "utilities/strings.bas"
+#line 614 "utilities/arrcpy.bm"
 if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
-#line 53 "utilities/strings.bas"
+#line 614 "utilities/arrcpy.bm"
 cmem_sp=tmp_cmem_sp;
-#line 53 "utilities/strings.bas"
-qbs_maketmp(_FUNC_ADDQUOTES_STRING_ADDQUOTES);return _FUNC_ADDQUOTES_STRING_ADDQUOTES;
-#line 53 "utilities/strings.bas"
+#line 614 "utilities/arrcpy.bm"
 }

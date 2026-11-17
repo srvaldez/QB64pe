@@ -1,6 +1,4 @@
 if(oldstr253_1){
-if(oldstr253_1->fixed)qbs_set(oldstr253_1,_FUNC_STREXPRESSION_STRING_EXP);
-qbs_free(_FUNC_STREXPRESSION_STRING_EXP);
+if(oldstr253_1->fixed)qbs_set(oldstr253_1,_SUB_WRITEBUFFERS_STRING_SBNAME);
+qbs_free(_SUB_WRITEBUFFERS_STRING_SBNAME);
 }
-qbs_free(_FUNC_STREXPRESSION_STRING_S);
-qbs_free(_FUNC_STREXPRESSION_STRING_ELE);

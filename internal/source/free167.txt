@@ -1,4 +1,9 @@
 if(oldstr167_1){
-if(oldstr167_1->fixed)qbs_set(oldstr167_1,_SUB_PURGETEMPORARYBUILDFILES_STRING_OS);
-qbs_free(_SUB_PURGETEMPORARYBUILDFILES_STRING_OS);
+if(oldstr167_1->fixed)qbs_set(oldstr167_1,_FUNC_COPYFILE_STRING_SOURCEFILE);
+qbs_free(_FUNC_COPYFILE_STRING_SOURCEFILE);
 }
+if(oldstr167_2){
+if(oldstr167_2->fixed)qbs_set(oldstr167_2,_FUNC_COPYFILE_STRING_DESTFILE);
+qbs_free(_FUNC_COPYFILE_STRING_DESTFILE);
+}
+qbs_free(_FUNC_COPYFILE_STRING_DAT);

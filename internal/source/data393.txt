@@ -1,20 +1,69 @@
-#line 11 "emit/globals.bas"
+#line 30 "utilities/terminal.bas"
 qbs*oldstr393_1=NULL;
-#line 11 "emit/globals.bas"
-if(_SUB_DECLAREGLOBALDATA_STRING_DECL->tmp||_SUB_DECLAREGLOBALDATA_STRING_DECL->fixed||_SUB_DECLAREGLOBALDATA_STRING_DECL->readonly){
-#line 11 "emit/globals.bas"
-oldstr393_1=_SUB_DECLAREGLOBALDATA_STRING_DECL;
-#line 11 "emit/globals.bas"
+#line 30 "utilities/terminal.bas"
+if(_SUB_GENERATEMACOSLOGSCRIPT_STRING_EXE->tmp||_SUB_GENERATEMACOSLOGSCRIPT_STRING_EXE->fixed||_SUB_GENERATEMACOSLOGSCRIPT_STRING_EXE->readonly){
+#line 30 "utilities/terminal.bas"
+oldstr393_1=_SUB_GENERATEMACOSLOGSCRIPT_STRING_EXE;
+#line 30 "utilities/terminal.bas"
 if (oldstr393_1->cmem_descriptor){
-#line 11 "emit/globals.bas"
-_SUB_DECLAREGLOBALDATA_STRING_DECL=qbs_new_cmem(oldstr393_1->len,0);
-#line 11 "emit/globals.bas"
+#line 30 "utilities/terminal.bas"
+_SUB_GENERATEMACOSLOGSCRIPT_STRING_EXE=qbs_new_cmem(oldstr393_1->len,0);
+#line 30 "utilities/terminal.bas"
 }else{
-#line 11 "emit/globals.bas"
-_SUB_DECLAREGLOBALDATA_STRING_DECL=qbs_new(oldstr393_1->len,0);
-#line 11 "emit/globals.bas"
+#line 30 "utilities/terminal.bas"
+_SUB_GENERATEMACOSLOGSCRIPT_STRING_EXE=qbs_new(oldstr393_1->len,0);
+#line 30 "utilities/terminal.bas"
 }
-#line 11 "emit/globals.bas"
-memcpy(_SUB_DECLAREGLOBALDATA_STRING_DECL->chr,oldstr393_1->chr,oldstr393_1->len);
-#line 11 "emit/globals.bas"
+#line 30 "utilities/terminal.bas"
+memcpy(_SUB_GENERATEMACOSLOGSCRIPT_STRING_EXE->chr,oldstr393_1->chr,oldstr393_1->len);
+#line 30 "utilities/terminal.bas"
+}
+#line 30 "utilities/terminal.bas"
+qbs*oldstr393_2=NULL;
+#line 30 "utilities/terminal.bas"
+if(_SUB_GENERATEMACOSLOGSCRIPT_STRING_CMDSTR->tmp||_SUB_GENERATEMACOSLOGSCRIPT_STRING_CMDSTR->fixed||_SUB_GENERATEMACOSLOGSCRIPT_STRING_CMDSTR->readonly){
+#line 30 "utilities/terminal.bas"
+oldstr393_2=_SUB_GENERATEMACOSLOGSCRIPT_STRING_CMDSTR;
+#line 30 "utilities/terminal.bas"
+if (oldstr393_2->cmem_descriptor){
+#line 30 "utilities/terminal.bas"
+_SUB_GENERATEMACOSLOGSCRIPT_STRING_CMDSTR=qbs_new_cmem(oldstr393_2->len,0);
+#line 30 "utilities/terminal.bas"
+}else{
+#line 30 "utilities/terminal.bas"
+_SUB_GENERATEMACOSLOGSCRIPT_STRING_CMDSTR=qbs_new(oldstr393_2->len,0);
+#line 30 "utilities/terminal.bas"
+}
+#line 30 "utilities/terminal.bas"
+memcpy(_SUB_GENERATEMACOSLOGSCRIPT_STRING_CMDSTR->chr,oldstr393_2->chr,oldstr393_2->len);
+#line 30 "utilities/terminal.bas"
+}
+#line 30 "utilities/terminal.bas"
+qbs*oldstr393_3=NULL;
+#line 30 "utilities/terminal.bas"
+if(_SUB_GENERATEMACOSLOGSCRIPT_STRING_SCRIPT->tmp||_SUB_GENERATEMACOSLOGSCRIPT_STRING_SCRIPT->fixed||_SUB_GENERATEMACOSLOGSCRIPT_STRING_SCRIPT->readonly){
+#line 30 "utilities/terminal.bas"
+oldstr393_3=_SUB_GENERATEMACOSLOGSCRIPT_STRING_SCRIPT;
+#line 30 "utilities/terminal.bas"
+if (oldstr393_3->cmem_descriptor){
+#line 30 "utilities/terminal.bas"
+_SUB_GENERATEMACOSLOGSCRIPT_STRING_SCRIPT=qbs_new_cmem(oldstr393_3->len,0);
+#line 30 "utilities/terminal.bas"
+}else{
+#line 30 "utilities/terminal.bas"
+_SUB_GENERATEMACOSLOGSCRIPT_STRING_SCRIPT=qbs_new(oldstr393_3->len,0);
+#line 30 "utilities/terminal.bas"
+}
+#line 30 "utilities/terminal.bas"
+memcpy(_SUB_GENERATEMACOSLOGSCRIPT_STRING_SCRIPT->chr,oldstr393_3->chr,oldstr393_3->len);
+#line 30 "utilities/terminal.bas"
+}
+int32 *_SUB_GENERATEMACOSLOGSCRIPT_LONG_FF=NULL;
+#line 37 "utilities/terminal.bas"
+if(_SUB_GENERATEMACOSLOGSCRIPT_LONG_FF==NULL){
+#line 37 "utilities/terminal.bas"
+_SUB_GENERATEMACOSLOGSCRIPT_LONG_FF=(int32*)mem_static_malloc(4);
+#line 37 "utilities/terminal.bas"
+*_SUB_GENERATEMACOSLOGSCRIPT_LONG_FF=0;
+#line 37 "utilities/terminal.bas"
 }

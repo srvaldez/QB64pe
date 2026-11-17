@@ -1,5 +1,0 @@
-if(oldstr499_1){
-if(oldstr499_1->fixed)qbs_set(oldstr499_1,_FUNC_ASKCLEARHISTORY_STRING_WHICH);
-qbs_free(_FUNC_ASKCLEARHISTORY_STRING_WHICH);
-}
-qbs_free(_FUNC_ASKCLEARHISTORY_STRING_T);

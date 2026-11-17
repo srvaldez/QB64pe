@@ -1,9 +1,43 @@
-int8 *_FUNC_TYPE_ISUNSIGNED_BYTE_TYPE_ISUNSIGNED=NULL;
-#line 2291 "utilities/type.bas"
-if(_FUNC_TYPE_ISUNSIGNED_BYTE_TYPE_ISUNSIGNED==NULL){
-#line 2291 "utilities/type.bas"
-_FUNC_TYPE_ISUNSIGNED_BYTE_TYPE_ISUNSIGNED=(int8*)mem_static_malloc(1);
-#line 2291 "utilities/type.bas"
-*_FUNC_TYPE_ISUNSIGNED_BYTE_TYPE_ISUNSIGNED=0;
-#line 2291 "utilities/type.bas"
+#line 2049 "utilities/type.bas"
+qbs*oldstr367_1=NULL;
+#line 2049 "utilities/type.bas"
+if(_SUB_COPY_FULL_UDT_DYN_STRING_DST->tmp||_SUB_COPY_FULL_UDT_DYN_STRING_DST->fixed||_SUB_COPY_FULL_UDT_DYN_STRING_DST->readonly){
+#line 2049 "utilities/type.bas"
+oldstr367_1=_SUB_COPY_FULL_UDT_DYN_STRING_DST;
+#line 2049 "utilities/type.bas"
+if (oldstr367_1->cmem_descriptor){
+#line 2049 "utilities/type.bas"
+_SUB_COPY_FULL_UDT_DYN_STRING_DST=qbs_new_cmem(oldstr367_1->len,0);
+#line 2049 "utilities/type.bas"
+}else{
+#line 2049 "utilities/type.bas"
+_SUB_COPY_FULL_UDT_DYN_STRING_DST=qbs_new(oldstr367_1->len,0);
+#line 2049 "utilities/type.bas"
 }
+#line 2049 "utilities/type.bas"
+memcpy(_SUB_COPY_FULL_UDT_DYN_STRING_DST->chr,oldstr367_1->chr,oldstr367_1->len);
+#line 2049 "utilities/type.bas"
+}
+#line 2049 "utilities/type.bas"
+qbs*oldstr367_2=NULL;
+#line 2049 "utilities/type.bas"
+if(_SUB_COPY_FULL_UDT_DYN_STRING_SRC->tmp||_SUB_COPY_FULL_UDT_DYN_STRING_SRC->fixed||_SUB_COPY_FULL_UDT_DYN_STRING_SRC->readonly){
+#line 2049 "utilities/type.bas"
+oldstr367_2=_SUB_COPY_FULL_UDT_DYN_STRING_SRC;
+#line 2049 "utilities/type.bas"
+if (oldstr367_2->cmem_descriptor){
+#line 2049 "utilities/type.bas"
+_SUB_COPY_FULL_UDT_DYN_STRING_SRC=qbs_new_cmem(oldstr367_2->len,0);
+#line 2049 "utilities/type.bas"
+}else{
+#line 2049 "utilities/type.bas"
+_SUB_COPY_FULL_UDT_DYN_STRING_SRC=qbs_new(oldstr367_2->len,0);
+#line 2049 "utilities/type.bas"
+}
+#line 2049 "utilities/type.bas"
+memcpy(_SUB_COPY_FULL_UDT_DYN_STRING_SRC->chr,oldstr367_2->chr,oldstr367_2->len);
+#line 2049 "utilities/type.bas"
+}
+qbs *_SUB_COPY_FULL_UDT_DYN_STRING_DYN_ACC=NULL;
+#line 2050 "utilities/type.bas"
+if (!_SUB_COPY_FULL_UDT_DYN_STRING_DYN_ACC)_SUB_COPY_FULL_UDT_DYN_STRING_DYN_ACC=qbs_new(0,0);

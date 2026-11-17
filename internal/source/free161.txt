@@ -1,4 +1,5 @@
 if(oldstr161_1){
-if(oldstr161_1->fixed)qbs_set(oldstr161_1,_FUNC_GETFILEEXTENSION_STRING_F);
-qbs_free(_FUNC_GETFILEEXTENSION_STRING_F);
+if(oldstr161_1->fixed)qbs_set(oldstr161_1,_FUNC_TFSTRINGTOBOOL_STRING_S);
+qbs_free(_FUNC_TFSTRINGTOBOOL_STRING_S);
 }
+qbs_free(_FUNC_TFSTRINGTOBOOL_STRING_S2);

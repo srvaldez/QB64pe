@@ -1,31 +1,54 @@
-qbs *_FUNC_REMOVECAST_STRING_REMOVECAST=NULL;
-#line 28143 "qb64pe.bas"
-if (!_FUNC_REMOVECAST_STRING_REMOVECAST)_FUNC_REMOVECAST_STRING_REMOVECAST=qbs_new(0,0);
-#line 28143 "qb64pe.bas"
+#line 28435 "qb64pe.bas"
 qbs*oldstr104_1=NULL;
-#line 28143 "qb64pe.bas"
-if(_FUNC_REMOVECAST_STRING_A->tmp||_FUNC_REMOVECAST_STRING_A->fixed||_FUNC_REMOVECAST_STRING_A->readonly){
-#line 28143 "qb64pe.bas"
-oldstr104_1=_FUNC_REMOVECAST_STRING_A;
-#line 28143 "qb64pe.bas"
+#line 28435 "qb64pe.bas"
+if(_SUB_EVALFILETEXTITEM_STRING_EXPR->tmp||_SUB_EVALFILETEXTITEM_STRING_EXPR->fixed||_SUB_EVALFILETEXTITEM_STRING_EXPR->readonly){
+#line 28435 "qb64pe.bas"
+oldstr104_1=_SUB_EVALFILETEXTITEM_STRING_EXPR;
+#line 28435 "qb64pe.bas"
 if (oldstr104_1->cmem_descriptor){
-#line 28143 "qb64pe.bas"
-_FUNC_REMOVECAST_STRING_A=qbs_new_cmem(oldstr104_1->len,0);
-#line 28143 "qb64pe.bas"
+#line 28435 "qb64pe.bas"
+_SUB_EVALFILETEXTITEM_STRING_EXPR=qbs_new_cmem(oldstr104_1->len,0);
+#line 28435 "qb64pe.bas"
 }else{
-#line 28143 "qb64pe.bas"
-_FUNC_REMOVECAST_STRING_A=qbs_new(oldstr104_1->len,0);
-#line 28143 "qb64pe.bas"
+#line 28435 "qb64pe.bas"
+_SUB_EVALFILETEXTITEM_STRING_EXPR=qbs_new(oldstr104_1->len,0);
+#line 28435 "qb64pe.bas"
 }
-#line 28143 "qb64pe.bas"
-memcpy(_FUNC_REMOVECAST_STRING_A->chr,oldstr104_1->chr,oldstr104_1->len);
-#line 28143 "qb64pe.bas"
+#line 28435 "qb64pe.bas"
+memcpy(_SUB_EVALFILETEXTITEM_STRING_EXPR->chr,oldstr104_1->chr,oldstr104_1->len);
+#line 28435 "qb64pe.bas"
 }
-#line 28146 "qb64pe.bas"
-byte_element_struct *byte_element_104_2=NULL;
-#line 28146 "qb64pe.bas"
-if (!byte_element_104_2){
-#line 28146 "qb64pe.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_104_2=(byte_element_struct*)(mem_static_pointer-12); else byte_element_104_2=(byte_element_struct*)mem_static_malloc(12);
-#line 28146 "qb64pe.bas"
+#line 28435 "qb64pe.bas"
+qbs*oldstr104_2=NULL;
+#line 28435 "qb64pe.bas"
+if(_SUB_EVALFILETEXTITEM_STRING_OUTPUT_REF->tmp||_SUB_EVALFILETEXTITEM_STRING_OUTPUT_REF->fixed||_SUB_EVALFILETEXTITEM_STRING_OUTPUT_REF->readonly){
+#line 28435 "qb64pe.bas"
+oldstr104_2=_SUB_EVALFILETEXTITEM_STRING_OUTPUT_REF;
+#line 28435 "qb64pe.bas"
+if (oldstr104_2->cmem_descriptor){
+#line 28435 "qb64pe.bas"
+_SUB_EVALFILETEXTITEM_STRING_OUTPUT_REF=qbs_new_cmem(oldstr104_2->len,0);
+#line 28435 "qb64pe.bas"
+}else{
+#line 28435 "qb64pe.bas"
+_SUB_EVALFILETEXTITEM_STRING_OUTPUT_REF=qbs_new(oldstr104_2->len,0);
+#line 28435 "qb64pe.bas"
 }
+#line 28435 "qb64pe.bas"
+memcpy(_SUB_EVALFILETEXTITEM_STRING_OUTPUT_REF->chr,oldstr104_2->chr,oldstr104_2->len);
+#line 28435 "qb64pe.bas"
+}
+int32 *_SUB_EVALFILETEXTITEM_LONG_EXPLICIT_ARRAY=NULL;
+#line 28436 "qb64pe.bas"
+if(_SUB_EVALFILETEXTITEM_LONG_EXPLICIT_ARRAY==NULL){
+#line 28436 "qb64pe.bas"
+_SUB_EVALFILETEXTITEM_LONG_EXPLICIT_ARRAY=(int32*)mem_static_malloc(4);
+#line 28436 "qb64pe.bas"
+*_SUB_EVALFILETEXTITEM_LONG_EXPLICIT_ARRAY=0;
+#line 28436 "qb64pe.bas"
+}
+qbs *_SUB_EVALFILETEXTITEM_STRING_WHOLE_REF=NULL;
+#line 28437 "qb64pe.bas"
+if (!_SUB_EVALFILETEXTITEM_STRING_WHOLE_REF)_SUB_EVALFILETEXTITEM_STRING_WHOLE_REF=qbs_new(0,0);
+#line 28441 "qb64pe.bas"
+int32 pass104_3;

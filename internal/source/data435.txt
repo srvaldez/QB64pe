@@ -1,68 +1,102 @@
-qbs *_FUNC_IDEFILEEXISTS_STRING_IDEFILEEXISTS=NULL;
-#line 11717 "ide/ide_methods.bas"
-if (!_FUNC_IDEFILEEXISTS_STRING_IDEFILEEXISTS)_FUNC_IDEFILEEXISTS_STRING_IDEFILEEXISTS=qbs_new(0,0);
-#line 11717 "ide/ide_methods.bas"
+qbs *_FUNC_EXPANDARRAY_STRING_EXPANDARRAY=NULL;
+#line 10561 "ide/ide_methods.bas"
+if (!_FUNC_EXPANDARRAY_STRING_EXPANDARRAY)_FUNC_EXPANDARRAY_STRING_EXPANDARRAY=qbs_new(0,0);
+#line 10561 "ide/ide_methods.bas"
 qbs*oldstr435_1=NULL;
-#line 11717 "ide/ide_methods.bas"
-if(_FUNC_IDEFILEEXISTS_STRING_F->tmp||_FUNC_IDEFILEEXISTS_STRING_F->fixed||_FUNC_IDEFILEEXISTS_STRING_F->readonly){
-#line 11717 "ide/ide_methods.bas"
-oldstr435_1=_FUNC_IDEFILEEXISTS_STRING_F;
-#line 11717 "ide/ide_methods.bas"
+#line 10561 "ide/ide_methods.bas"
+if(_FUNC_EXPANDARRAY_STRING___INDEXES->tmp||_FUNC_EXPANDARRAY_STRING___INDEXES->fixed||_FUNC_EXPANDARRAY_STRING___INDEXES->readonly){
+#line 10561 "ide/ide_methods.bas"
+oldstr435_1=_FUNC_EXPANDARRAY_STRING___INDEXES;
+#line 10561 "ide/ide_methods.bas"
 if (oldstr435_1->cmem_descriptor){
-#line 11717 "ide/ide_methods.bas"
-_FUNC_IDEFILEEXISTS_STRING_F=qbs_new_cmem(oldstr435_1->len,0);
-#line 11717 "ide/ide_methods.bas"
+#line 10561 "ide/ide_methods.bas"
+_FUNC_EXPANDARRAY_STRING___INDEXES=qbs_new_cmem(oldstr435_1->len,0);
+#line 10561 "ide/ide_methods.bas"
 }else{
-#line 11717 "ide/ide_methods.bas"
-_FUNC_IDEFILEEXISTS_STRING_F=qbs_new(oldstr435_1->len,0);
-#line 11717 "ide/ide_methods.bas"
+#line 10561 "ide/ide_methods.bas"
+_FUNC_EXPANDARRAY_STRING___INDEXES=qbs_new(oldstr435_1->len,0);
+#line 10561 "ide/ide_methods.bas"
 }
-#line 11717 "ide/ide_methods.bas"
-memcpy(_FUNC_IDEFILEEXISTS_STRING_F->chr,oldstr435_1->chr,oldstr435_1->len);
-#line 11717 "ide/ide_methods.bas"
+#line 10561 "ide/ide_methods.bas"
+memcpy(_FUNC_EXPANDARRAY_STRING___INDEXES->chr,oldstr435_1->chr,oldstr435_1->len);
+#line 10561 "ide/ide_methods.bas"
 }
-int32 *_FUNC_IDEFILEEXISTS_LONG_L=NULL;
-#line 11718 "ide/ide_methods.bas"
-if(_FUNC_IDEFILEEXISTS_LONG_L==NULL){
-#line 11718 "ide/ide_methods.bas"
-_FUNC_IDEFILEEXISTS_LONG_L=(int32*)mem_static_malloc(4);
-#line 11718 "ide/ide_methods.bas"
-*_FUNC_IDEFILEEXISTS_LONG_L=0;
-#line 11718 "ide/ide_methods.bas"
+#line 10561 "ide/ide_methods.bas"
+qbs*oldstr435_2=NULL;
+#line 10561 "ide/ide_methods.bas"
+if(_FUNC_EXPANDARRAY_STRING___PATH->tmp||_FUNC_EXPANDARRAY_STRING___PATH->fixed||_FUNC_EXPANDARRAY_STRING___PATH->readonly){
+#line 10561 "ide/ide_methods.bas"
+oldstr435_2=_FUNC_EXPANDARRAY_STRING___PATH;
+#line 10561 "ide/ide_methods.bas"
+if (oldstr435_2->cmem_descriptor){
+#line 10561 "ide/ide_methods.bas"
+_FUNC_EXPANDARRAY_STRING___PATH=qbs_new_cmem(oldstr435_2->len,0);
+#line 10561 "ide/ide_methods.bas"
+}else{
+#line 10561 "ide/ide_methods.bas"
+_FUNC_EXPANDARRAY_STRING___PATH=qbs_new(oldstr435_2->len,0);
+#line 10561 "ide/ide_methods.bas"
 }
-#line 11718 "ide/ide_methods.bas"
-byte_element_struct *byte_element_435_2=NULL;
-#line 11718 "ide/ide_methods.bas"
-if (!byte_element_435_2){
-#line 11718 "ide/ide_methods.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_435_2=(byte_element_struct*)(mem_static_pointer-12); else byte_element_435_2=(byte_element_struct*)mem_static_malloc(12);
-#line 11718 "ide/ide_methods.bas"
+#line 10561 "ide/ide_methods.bas"
+memcpy(_FUNC_EXPANDARRAY_STRING___PATH->chr,oldstr435_2->chr,oldstr435_2->len);
+#line 10561 "ide/ide_methods.bas"
 }
-#line 11720 "ide/ide_methods.bas"
-byte_element_struct *byte_element_435_4=NULL;
-#line 11720 "ide/ide_methods.bas"
-if (!byte_element_435_4){
-#line 11720 "ide/ide_methods.bas"
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_435_4=(byte_element_struct*)(mem_static_pointer-12); else byte_element_435_4=(byte_element_struct*)mem_static_malloc(12);
-#line 11720 "ide/ide_methods.bas"
+int32 *_FUNC_EXPANDARRAY_LONG_TOTALINDEXES=NULL;
+#line 10570 "ide/ide_methods.bas"
+if(_FUNC_EXPANDARRAY_LONG_TOTALINDEXES==NULL){
+#line 10570 "ide/ide_methods.bas"
+_FUNC_EXPANDARRAY_LONG_TOTALINDEXES=(int32*)mem_static_malloc(4);
+#line 10570 "ide/ide_methods.bas"
+*_FUNC_EXPANDARRAY_LONG_TOTALINDEXES=0;
+#line 10570 "ide/ide_methods.bas"
 }
-qbs *_FUNC_IDEFILEEXISTS_STRING_M=NULL;
-#line 11721 "ide/ide_methods.bas"
-if (!_FUNC_IDEFILEEXISTS_STRING_M)_FUNC_IDEFILEEXISTS_STRING_M=qbs_new(0,0);
-#line 11726 "ide/ide_methods.bas"
+qbs *_FUNC_EXPANDARRAY_STRING_INDEXES=NULL;
+#line 10571 "ide/ide_methods.bas"
+if (!_FUNC_EXPANDARRAY_STRING_INDEXES)_FUNC_EXPANDARRAY_STRING_INDEXES=qbs_new(0,0);
+qbs *_FUNC_EXPANDARRAY_STRING_REMAININGINDEXES=NULL;
+#line 10572 "ide/ide_methods.bas"
+if (!_FUNC_EXPANDARRAY_STRING_REMAININGINDEXES)_FUNC_EXPANDARRAY_STRING_REMAININGINDEXES=qbs_new(0,0);
+int32 *_FUNC_EXPANDARRAY_LONG_I=NULL;
+#line 10575 "ide/ide_methods.bas"
+if(_FUNC_EXPANDARRAY_LONG_I==NULL){
+#line 10575 "ide/ide_methods.bas"
+_FUNC_EXPANDARRAY_LONG_I=(int32*)mem_static_malloc(4);
+#line 10575 "ide/ide_methods.bas"
+*_FUNC_EXPANDARRAY_LONG_I=0;
+#line 10575 "ide/ide_methods.bas"
+}
+#line 10575 "ide/ide_methods.bas"
+int64 fornext_value435_4;
+#line 10575 "ide/ide_methods.bas"
+int64 fornext_finalvalue435_4;
+#line 10575 "ide/ide_methods.bas"
+int64 fornext_step435_4;
+#line 10575 "ide/ide_methods.bas"
+uint8 fornext_step_negative435_4;
+qbs *_FUNC_EXPANDARRAY_STRING_TEMP=NULL;
+#line 10576 "ide/ide_methods.bas"
+if (!_FUNC_EXPANDARRAY_STRING_TEMP)_FUNC_EXPANDARRAY_STRING_TEMP=qbs_new(0,0);
+#line 10577 "ide/ide_methods.bas"
 byte_element_struct *byte_element_435_5=NULL;
-#line 11726 "ide/ide_methods.bas"
+#line 10577 "ide/ide_methods.bas"
 if (!byte_element_435_5){
-#line 11726 "ide/ide_methods.bas"
+#line 10577 "ide/ide_methods.bas"
 if ((mem_static_pointer+=12)<mem_static_limit) byte_element_435_5=(byte_element_struct*)(mem_static_pointer-12); else byte_element_435_5=(byte_element_struct*)mem_static_malloc(12);
-#line 11726 "ide/ide_methods.bas"
+#line 10577 "ide/ide_methods.bas"
 }
-int32 *_FUNC_IDEFILEEXISTS_LONG_RESULT=NULL;
-#line 11728 "ide/ide_methods.bas"
-if(_FUNC_IDEFILEEXISTS_LONG_RESULT==NULL){
-#line 11728 "ide/ide_methods.bas"
-_FUNC_IDEFILEEXISTS_LONG_RESULT=(int32*)mem_static_malloc(4);
-#line 11728 "ide/ide_methods.bas"
-*_FUNC_IDEFILEEXISTS_LONG_RESULT=0;
-#line 11728 "ide/ide_methods.bas"
+#line 10580 "ide/ide_methods.bas"
+byte_element_struct *byte_element_435_6=NULL;
+#line 10580 "ide/ide_methods.bas"
+if (!byte_element_435_6){
+#line 10580 "ide/ide_methods.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_435_6=(byte_element_struct*)(mem_static_pointer-12); else byte_element_435_6=(byte_element_struct*)mem_static_malloc(12);
+#line 10580 "ide/ide_methods.bas"
+}
+#line 10581 "ide/ide_methods.bas"
+byte_element_struct *byte_element_435_7=NULL;
+#line 10581 "ide/ide_methods.bas"
+if (!byte_element_435_7){
+#line 10581 "ide/ide_methods.bas"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_435_7=(byte_element_struct*)(mem_static_pointer-12); else byte_element_435_7=(byte_element_struct*)mem_static_malloc(12);
+#line 10581 "ide/ide_methods.bas"
 }

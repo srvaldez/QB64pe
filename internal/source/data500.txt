@@ -1,18 +1,23 @@
-int32 *_SUB_RETRIEVESEARCHHISTORY_LONG_BH=NULL;
-#line 19986 "ide/ide_methods.bas"
-if(_SUB_RETRIEVESEARCHHISTORY_LONG_BH==NULL){
-#line 19986 "ide/ide_methods.bas"
-_SUB_RETRIEVESEARCHHISTORY_LONG_BH=(int32*)mem_static_malloc(4);
-#line 19986 "ide/ide_methods.bas"
-*_SUB_RETRIEVESEARCHHISTORY_LONG_BH=0;
-#line 19986 "ide/ide_methods.bas"
+qbs *_FUNC_SHORTCUTLABEL_STRING_SHORTCUTLABEL=NULL;
+#line 18859 "ide/ide_methods.bas"
+if (!_FUNC_SHORTCUTLABEL_STRING_SHORTCUTLABEL)_FUNC_SHORTCUTLABEL_STRING_SHORTCUTLABEL=qbs_new(0,0);
+#line 18859 "ide/ide_methods.bas"
+qbs*oldstr500_1=NULL;
+#line 18859 "ide/ide_methods.bas"
+if(_FUNC_SHORTCUTLABEL_STRING_A->tmp||_FUNC_SHORTCUTLABEL_STRING_A->fixed||_FUNC_SHORTCUTLABEL_STRING_A->readonly){
+#line 18859 "ide/ide_methods.bas"
+oldstr500_1=_FUNC_SHORTCUTLABEL_STRING_A;
+#line 18859 "ide/ide_methods.bas"
+if (oldstr500_1->cmem_descriptor){
+#line 18859 "ide/ide_methods.bas"
+_FUNC_SHORTCUTLABEL_STRING_A=qbs_new_cmem(oldstr500_1->len,0);
+#line 18859 "ide/ide_methods.bas"
+}else{
+#line 18859 "ide/ide_methods.bas"
+_FUNC_SHORTCUTLABEL_STRING_A=qbs_new(oldstr500_1->len,0);
+#line 18859 "ide/ide_methods.bas"
 }
-int16 *_SUB_RETRIEVESEARCHHISTORY_INTEGER_LC=NULL;
-#line 19988 "ide/ide_methods.bas"
-if(_SUB_RETRIEVESEARCHHISTORY_INTEGER_LC==NULL){
-#line 19988 "ide/ide_methods.bas"
-_SUB_RETRIEVESEARCHHISTORY_INTEGER_LC=(int16*)mem_static_malloc(2);
-#line 19988 "ide/ide_methods.bas"
-*_SUB_RETRIEVESEARCHHISTORY_INTEGER_LC=0;
-#line 19988 "ide/ide_methods.bas"
+#line 18859 "ide/ide_methods.bas"
+memcpy(_FUNC_SHORTCUTLABEL_STRING_A->chr,oldstr500_1->chr,oldstr500_1->len);
+#line 18859 "ide/ide_methods.bas"
 }

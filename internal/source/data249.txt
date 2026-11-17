@@ -1,20 +1,17 @@
-#line 390 "utilities/s-buffer/sb_qb64pe_extension.bm"
-qbs*oldstr249_1=NULL;
-#line 390 "utilities/s-buffer/sb_qb64pe_extension.bm"
-if(_SUB_WRITEBUFRAWDATACPP_STRING_S->tmp||_SUB_WRITEBUFRAWDATACPP_STRING_S->fixed||_SUB_WRITEBUFRAWDATACPP_STRING_S->readonly){
-#line 390 "utilities/s-buffer/sb_qb64pe_extension.bm"
-oldstr249_1=_SUB_WRITEBUFRAWDATACPP_STRING_S;
-#line 390 "utilities/s-buffer/sb_qb64pe_extension.bm"
-if (oldstr249_1->cmem_descriptor){
-#line 390 "utilities/s-buffer/sb_qb64pe_extension.bm"
-_SUB_WRITEBUFRAWDATACPP_STRING_S=qbs_new_cmem(oldstr249_1->len,0);
-#line 390 "utilities/s-buffer/sb_qb64pe_extension.bm"
-}else{
-#line 390 "utilities/s-buffer/sb_qb64pe_extension.bm"
-_SUB_WRITEBUFRAWDATACPP_STRING_S=qbs_new(oldstr249_1->len,0);
-#line 390 "utilities/s-buffer/sb_qb64pe_extension.bm"
+int32 *_SUB_SBUFNINDEX_LONG_H=NULL;
+#line 130 "utilities/s-buffer/sb_qb64pe_extension.bm"
+if(_SUB_SBUFNINDEX_LONG_H==NULL){
+#line 130 "utilities/s-buffer/sb_qb64pe_extension.bm"
+_SUB_SBUFNINDEX_LONG_H=(int32*)mem_static_malloc(4);
+#line 130 "utilities/s-buffer/sb_qb64pe_extension.bm"
+*_SUB_SBUFNINDEX_LONG_H=0;
+#line 130 "utilities/s-buffer/sb_qb64pe_extension.bm"
 }
-#line 390 "utilities/s-buffer/sb_qb64pe_extension.bm"
-memcpy(_SUB_WRITEBUFRAWDATACPP_STRING_S->chr,oldstr249_1->chr,oldstr249_1->len);
-#line 390 "utilities/s-buffer/sb_qb64pe_extension.bm"
+#line 131 "utilities/s-buffer/sb_qb64pe_extension.bm"
+byte_element_struct *byte_element_249_1=NULL;
+#line 131 "utilities/s-buffer/sb_qb64pe_extension.bm"
+if (!byte_element_249_1){
+#line 131 "utilities/s-buffer/sb_qb64pe_extension.bm"
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_249_1=(byte_element_struct*)(mem_static_pointer-12); else byte_element_249_1=(byte_element_struct*)mem_static_malloc(12);
+#line 131 "utilities/s-buffer/sb_qb64pe_extension.bm"
 }

@@ -1,78 +1,9 @@
-#line 239 "emit/embed.bas"
-qbs*oldstr386_1=NULL;
-#line 239 "emit/embed.bas"
-if(_SUB_EMBEDMANADD_STRING_HANDLE->tmp||_SUB_EMBEDMANADD_STRING_HANDLE->fixed||_SUB_EMBEDMANADD_STRING_HANDLE->readonly){
-#line 239 "emit/embed.bas"
-oldstr386_1=_SUB_EMBEDMANADD_STRING_HANDLE;
-#line 239 "emit/embed.bas"
-if (oldstr386_1->cmem_descriptor){
-#line 239 "emit/embed.bas"
-_SUB_EMBEDMANADD_STRING_HANDLE=qbs_new_cmem(oldstr386_1->len,0);
-#line 239 "emit/embed.bas"
-}else{
-#line 239 "emit/embed.bas"
-_SUB_EMBEDMANADD_STRING_HANDLE=qbs_new(oldstr386_1->len,0);
-#line 239 "emit/embed.bas"
-}
-#line 239 "emit/embed.bas"
-memcpy(_SUB_EMBEDMANADD_STRING_HANDLE->chr,oldstr386_1->chr,oldstr386_1->len);
-#line 239 "emit/embed.bas"
-}
-#line 239 "emit/embed.bas"
-qbs*oldstr386_2=NULL;
-#line 239 "emit/embed.bas"
-if(_SUB_EMBEDMANADD_STRING_FILESPEC->tmp||_SUB_EMBEDMANADD_STRING_FILESPEC->fixed||_SUB_EMBEDMANADD_STRING_FILESPEC->readonly){
-#line 239 "emit/embed.bas"
-oldstr386_2=_SUB_EMBEDMANADD_STRING_FILESPEC;
-#line 239 "emit/embed.bas"
-if (oldstr386_2->cmem_descriptor){
-#line 239 "emit/embed.bas"
-_SUB_EMBEDMANADD_STRING_FILESPEC=qbs_new_cmem(oldstr386_2->len,0);
-#line 239 "emit/embed.bas"
-}else{
-#line 239 "emit/embed.bas"
-_SUB_EMBEDMANADD_STRING_FILESPEC=qbs_new(oldstr386_2->len,0);
-#line 239 "emit/embed.bas"
-}
-#line 239 "emit/embed.bas"
-memcpy(_SUB_EMBEDMANADD_STRING_FILESPEC->chr,oldstr386_2->chr,oldstr386_2->len);
-#line 239 "emit/embed.bas"
-}
-#line 239 "emit/embed.bas"
-qbs*oldstr386_3=NULL;
-#line 239 "emit/embed.bas"
-if(_SUB_EMBEDMANADD_STRING_FILEHASH->tmp||_SUB_EMBEDMANADD_STRING_FILEHASH->fixed||_SUB_EMBEDMANADD_STRING_FILEHASH->readonly){
-#line 239 "emit/embed.bas"
-oldstr386_3=_SUB_EMBEDMANADD_STRING_FILEHASH;
-#line 239 "emit/embed.bas"
-if (oldstr386_3->cmem_descriptor){
-#line 239 "emit/embed.bas"
-_SUB_EMBEDMANADD_STRING_FILEHASH=qbs_new_cmem(oldstr386_3->len,0);
-#line 239 "emit/embed.bas"
-}else{
-#line 239 "emit/embed.bas"
-_SUB_EMBEDMANADD_STRING_FILEHASH=qbs_new(oldstr386_3->len,0);
-#line 239 "emit/embed.bas"
-}
-#line 239 "emit/embed.bas"
-memcpy(_SUB_EMBEDMANADD_STRING_FILEHASH->chr,oldstr386_3->chr,oldstr386_3->len);
-#line 239 "emit/embed.bas"
-}
-int32 *_SUB_EMBEDMANADD_LONG_IDX=NULL;
-#line 240 "emit/embed.bas"
-if(_SUB_EMBEDMANADD_LONG_IDX==NULL){
-#line 240 "emit/embed.bas"
-_SUB_EMBEDMANADD_LONG_IDX=(int32*)mem_static_malloc(4);
-#line 240 "emit/embed.bas"
-*_SUB_EMBEDMANADD_LONG_IDX=0;
-#line 240 "emit/embed.bas"
-}
-int32 *_SUB_EMBEDMANADD_LONG_NEWUB=NULL;
-#line 240 "emit/embed.bas"
-if(_SUB_EMBEDMANADD_LONG_NEWUB==NULL){
-#line 240 "emit/embed.bas"
-_SUB_EMBEDMANADD_LONG_NEWUB=(int32*)mem_static_malloc(4);
-#line 240 "emit/embed.bas"
-*_SUB_EMBEDMANADD_LONG_NEWUB=0;
-#line 240 "emit/embed.bas"
+int8 *_FUNC_TYPE_ISUDTMEMBER_BYTE_TYPE_ISUDTMEMBER=NULL;
+#line 2317 "utilities/type.bas"
+if(_FUNC_TYPE_ISUDTMEMBER_BYTE_TYPE_ISUDTMEMBER==NULL){
+#line 2317 "utilities/type.bas"
+_FUNC_TYPE_ISUDTMEMBER_BYTE_TYPE_ISUDTMEMBER=(int8*)mem_static_malloc(1);
+#line 2317 "utilities/type.bas"
+*_FUNC_TYPE_ISUDTMEMBER_BYTE_TYPE_ISUDTMEMBER=0;
+#line 2317 "utilities/type.bas"
 }

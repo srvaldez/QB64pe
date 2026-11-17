@@ -1,4 +1,4 @@
 if(oldstr390_1){
-if(oldstr390_1->fixed)qbs_set(oldstr390_1,_FUNC_EMBEDMANFIELD_STRING_LN);
-qbs_free(_FUNC_EMBEDMANFIELD_STRING_LN);
+if(oldstr390_1->fixed)qbs_set(oldstr390_1,_SUB_GIVE_ERROR_STRING_A);
+qbs_free(_SUB_GIVE_ERROR_STRING_A);
 }

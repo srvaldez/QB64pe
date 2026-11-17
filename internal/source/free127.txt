@@ -1,0 +1,4 @@
+if(oldstr127_1){
+if(oldstr127_1->fixed)qbs_set(oldstr127_1,_FUNC_VARLISTHASHVALUE_STRING_A);
+qbs_free(_FUNC_VARLISTHASHVALUE_STRING_A);
+}
